@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booked. — Digital Infrastructure for Fashion Creatives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Helvetica+Neue:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --black:                #080808;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --grey:                 #888888;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-hover:      rgba(200,169,110,0.03);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    /* legacy aliases */
+    --bg: var(--void);
+    --bg-card: #0e1020;
+    --gold-border: var(--gold-border-default);
+    --gold-dim: rgba(200,169,110,0.15);
+    --text: var(--off-white);
+    --muted: var(--subtext);
+    --dim: #444;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Dual radial gradient — design system spec */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .nav-contact:hover {
+    background: var(--gold-dim);
+    color: var(--gold-light) !important;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-tag {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    max-width: 800px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--violet-italic);
+  }
+
+  .hero-sub {
+    font-size: 0.85rem;
+    font-weight: 200;
+    color: var(--subtext);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .hero-sub strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold-border);
+    color: var(--text);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* SERVICES */
+  .services {
+    position: relative;
+    z-index: 1;
+    padding: 80px 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 48px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, var(--gold-fill-subtle), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: var(--gold-border-hover);
+    background: var(--gold-fill-hover);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .card-number {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .card-tag {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 4px 10px;
+    border: 1px solid var(--dim);
+  }
+
+  .card-tag.free {
+    border-color: rgba(200,169,110,0.3);
+    color: var(--gold);
+  }
+
+  .service-card h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .service-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .card-link {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-link::after {
+    content: '→';
+    transition: transform 0.2s;
+  }
+
+  .service-card:hover .card-link::after {
+    transform: translateX(4px);
+  }
+
+  .card-coming {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .card-wa {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .card-wa:hover { opacity: 1; }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .footer-note {
+    font-size: 11px;
+    color: var(--subtext);
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+
+  .service-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
+  .service-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
+  .service-card:nth-child(3) { animation: fadeUp 0.5s 0.3s ease both; }
+  .service-card:nth-child(4) { animation: fadeUp 0.5s 0.4s ease both; }
+
+  /* LARGE SCREENS */
+  @media (min-width: 1440px) {
+    nav { max-width: 1440px; margin: 0 auto; left: 0; right: 0; }
+    .hero { max-width: 1400px; }
+    .services { max-width: 1400px; }
+  }
+
+  /* TABLET */
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .hero { padding: 130px 32px 60px; }
+    .services { padding: 60px 32px 100px; }
+    .services-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
+    .service-card { padding: 36px 32px; }
+    .service-card h2 { font-size: 26px; }
+    footer { padding: 36px 32px; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 18px 20px; }
+    .nav-links { display: none; }
+    .nav-contact { padding: 9px 16px; font-size: 9px !important; }
+    .hero { padding: 110px 20px 60px; }
+    .hero h1 { font-size: clamp(40px, 10vw, 64px); }
+    .hero-sub { font-size: 14px; max-width: 100%; }
+    .hero-ctas { flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 16px 24px; }
+    .services { padding: 40px 20px 80px; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+    .service-card { padding: 32px 24px; }
+    .service-card h2 { font-size: 28px; }
+    .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  /* SMALL MOBILE */
+  @media (max-width: 390px) {
+    nav { padding: 16px 16px; }
+    .nav-logo { font-size: 15px; }
+    .nav-contact { display: none; }
+    .hero { padding: 100px 16px 48px; }
+    .hero h1 { font-size: 38px; }
+    .hero-tag { font-size: 9px; }
+    .hero-sub { font-size: 13px; }
+    .services { padding: 32px 16px 64px; }
+    .service-card { padding: 28px 20px; }
+    .service-card h2 { font-size: 24px; }
+    footer { padding: 24px 16px; }
+    .footer-note { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Scan%20%E2%80%94%20the%20AI%20discoverability%20audit.%20When%20does%20it%20launch%3F" target="_blank">Scan</a></li>
+    <li><a href="https://booked-demo.netlify.app/" target="_blank">Structure</a></li>
+    <li><a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Canvas%20%E2%80%94%20I%20have%20a%20revenue%20idea%20I%27d%20like%20to%20build%20out.%20Can%20we%20talk%3F" target="_blank">Canvas</a></li>
+    <li><a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Signal%20%E2%80%94%20I%27d%20like%20to%20understand%20my%20positioning%20in%20the%20industry.%20Can%20we%20talk%3F" target="_blank">Signal</a></li>
+  </ul>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank">
+    Chat with me
+  </a>
+</nav>
+
+<main>
+  <section class="hero">
+    <p class="hero-tag">Made for the ones who create</p>
+    <h1>Your career<br>is the brand.<br><em>I build the<br>infrastructure.</em></h1>
+    <p class="hero-sub">
+      Booked is built for <strong>fashion creatives</strong> who refuse to be left behind. I audit your visibility, build your digital presence, and help you launch in an era where AI is changing how talent gets found.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://booked-demo.netlify.app/" class="btn-primary">See your website demo →</a>
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="btn-secondary" target="_blank">Chat with me</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services-grid">
+
+      <!-- 01 SCAN -->
+      <div class="service-card" style="cursor:default;">
+        <div class="card-meta">
+          <span class="card-number">01 — SCAN</span>
+          <span class="card-tag free">Free · 2 min</span>
+        </div>
+        <h2>AI Discoverability<br>Audit</h2>
+        <p>Are you findable in the AI era? Scan scores your digital presence across two dimensions — AI discoverability and general visibility — and shows you exactly what's costing you bookings.</p>
+        <div class="card-footer">
+          <span class="card-coming">Coming soon</span>
+          <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Scan%20%E2%80%94%20the%20AI%20discoverability%20audit.%20When%20does%20it%20launch%3F" class="card-wa" target="_blank">Get notified →</a>
+        </div>
+      </div>
+
+      <!-- 02 STRUCTURE -->
+      <a href="https://booked-demo.netlify.app/" class="service-card">
+        <div class="card-meta">
+          <span class="card-number">02 — STRUCTURE</span>
+          <span class="card-tag free">Free demo</span>
+        </div>
+        <h2>Portfolio<br>Website Build</h2>
+        <p>See your website before you pay for it. Generate a personalised portfolio demo in 2 minutes — built around your aesthetic, your work, your presence. If you love it, I build the real thing.</p>
+        <span class="card-link">See your demo</span>
+      </a>
+
+      <!-- 03 CANVAS -->
+      <div class="service-card" style="cursor:default;">
+        <div class="card-meta">
+          <span class="card-number">03 — CANVAS</span>
+          <span class="card-tag">Coming soon</span>
+        </div>
+        <h2>Launch Your<br>Revenue Idea</h2>
+        <p>You have the idea. Canvas validates it and builds the infrastructure around it — website, payments, email systems. Paste your concept, get a viability score and launch roadmap. Then I build it with you.</p>
+        <div class="card-footer">
+          <span class="card-coming">Coming soon</span>
+          <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Canvas%20%E2%80%94%20I%20have%20a%20revenue%20idea%20I%27d%20like%20to%20build%20out.%20Can%20we%20talk%3F" class="card-wa" target="_blank">Tell us your idea →</a>
+        </div>
+      </div>
+
+      <!-- 04 SIGNAL -->
+      <div class="service-card" style="cursor:default;">
+        <div class="card-meta">
+          <span class="card-number">04 — SIGNAL</span>
+          <span class="card-tag">Coming soon</span>
+        </div>
+        <h2>Creative Identity<br>Assessment</h2>
+        <p>The gap between how you see yourself and how the industry sees you is where bookings are lost. Signal surfaces that gap — and closes it.</p>
+        <div class="card-footer">
+          <span class="card-coming">Coming soon</span>
+          <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Signal%20%E2%80%94%20I%27d%20like%20to%20understand%20my%20positioning%20in%20the%20industry.%20Can%20we%20talk%3F" class="card-wa" target="_blank">Start the conversation →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="footer-logo">Booked.</span>
+  <span class="footer-note">One person. One lens. A decade inside the industry.</span>
+</footer>
+
+</body>
+</html>
