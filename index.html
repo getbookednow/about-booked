@@ -14,8 +14,8 @@
     --black:                #080808;
     --void:                 #0e0a1a;
     --off-white:            #f0ede8;
-    --grey:                 #888888;
-    --subtext:              #9a9a9a;
+    --grey:                 #d4d4d4;
+    --subtext:              #e8e5e0;
     --violet-italic:        #a98fe0;
     --gold-border-default:  rgba(200,169,110,0.12);
     --gold-border-hover:    rgba(200,169,110,0.35);
@@ -34,7 +34,7 @@
     --dim: #444;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
   html { scroll-behavior: smooth; }
 
@@ -78,10 +78,10 @@
 
   .nav-logo {
     font-family: var(--font-display);
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 600;
     letter-spacing: 0.15em;
-    color: var(--text);
+    color: var(--gold);
     text-decoration: none;
     text-transform: uppercase;
   }
@@ -94,7 +94,7 @@
   }
 
   .nav-links a {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--muted);
@@ -111,7 +111,7 @@
     padding: 10px 20px;
     border: 1px solid var(--gold-border);
     color: var(--gold) !important;
-    font-size: 10px !important;
+    font-size: 13px !important;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     text-decoration: none;
@@ -138,7 +138,7 @@
   }
 
   .hero-tag {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
@@ -172,7 +172,7 @@
   }
 
   .hero-sub {
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     font-weight: 200;
     color: var(--subtext);
     max-width: 480px;
@@ -198,7 +198,7 @@
     padding: 14px 28px;
     background: var(--gold);
     color: var(--bg);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -216,7 +216,7 @@
     padding: 14px 28px;
     border: 1px solid var(--gold-border);
     color: var(--text);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 300;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -281,14 +281,14 @@
   }
 
   .card-number {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     color: var(--gold);
     font-weight: 400;
   }
 
   .card-tag {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
@@ -303,14 +303,14 @@
 
   .service-card h2 {
     font-family: var(--font-display);
-    font-size: 32px;
+    font-size: 35px;
     font-weight: 400;
     margin-bottom: 16px;
     line-height: 1.1;
   }
 
   .service-card p {
-    font-size: 13px;
+    font-size: 18px;
     color: var(--muted);
     line-height: 1.7;
     margin-bottom: 32px;
@@ -318,7 +318,7 @@
   }
 
   .card-link {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
@@ -337,7 +337,7 @@
   }
 
   .card-coming {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--dim);
@@ -351,7 +351,7 @@
   }
 
   .card-wa {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
@@ -377,17 +377,236 @@
 
   .footer-logo {
     font-family: var(--font-display);
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--gold);
   }
 
   .footer-note {
-    font-size: 11px;
+    font-size: 18px;
     color: var(--subtext);
     letter-spacing: 0.05em;
+  }
+
+  .footer-work {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .footer-work:hover { color: var(--gold); }
+
+  /* FOUNDER */
+  .founder {
+    position: relative;
+    z-index: 1;
+    padding: 120px 48px 140px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+
+  .founder-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 96px;
+    align-items: start;
+  }
+
+  .founder-left {
+    position: sticky;
+    top: 120px;
+  }
+
+  .founder-tag {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .founder-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .founder-name {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .founder-name em {
+    font-style: italic;
+    color: var(--violet-italic);
+    display: block;
+  }
+
+  .founder-identity {
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 2;
+  }
+
+  .founder-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+
+  .founder-contact:hover {
+    background: var(--gold-dim);
+    border-color: rgba(200,169,110,0.35);
+  }
+
+  .founder-right {}
+
+  .founder-bio {
+    margin-bottom: 56px;
+  }
+
+  .founder-bio p {
+    font-size: 18px;
+    font-weight: 200;
+    color: var(--off-white);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  .founder-bio p:last-child { margin-bottom: 0; }
+
+  .founder-bio strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  .founder-bio em {
+    font-style: italic;
+    color: var(--violet-italic);
+  }
+
+  .founder-markets {
+    margin-bottom: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+
+  .founder-markets-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .markets-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .market-pill {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 6px 14px;
+    border: 1px solid var(--gold-border-default);
+    font-family: var(--font-body);
+  }
+
+  .founder-built {
+    padding-top: 40px;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+
+  .founder-built-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .built-list {
+    list-style: none;
+  }
+
+  .built-list li {
+    font-size: 18px;
+    font-weight: 200;
+    color: var(--muted);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gold-border-divider);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    line-height: 1.5;
+  }
+
+  .built-list li::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .built-list li:last-child { border-bottom: none; }
+
+  /* FOUNDER RESPONSIVE */
+  @media (max-width: 1024px) {
+    .founder { padding: 80px 32px 100px; }
+    .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+    .founder-left { position: static; }
+  }
+
+  @media (max-width: 768px) {
+    .founder { padding: 60px 20px 80px; }
+    .founder-inner { gap: 40px; }
+    .founder-name { font-size: clamp(36px, 9vw, 52px); }
+    .founder-bio p { font-size: 16px; }
+    .markets-list { gap: 6px; }
+    .market-pill { font-size: 11px; padding: 5px 12px; }
+    .built-list li { font-size: 14px; }
+    .founder-contact { width: 100%; justify-content: center; }
+  }
+
+  @media (max-width: 390px) {
+    .founder { padding: 48px 16px 64px; }
+    .founder-name { font-size: 36px; }
+    .founder-identity { font-size: 13px; }
+    .founder-bio p { font-size: 15px; }
   }
 
   /* ANIMATIONS */
@@ -420,7 +639,7 @@
     .services { padding: 60px 32px 100px; }
     .services-grid { grid-template-columns: 1fr 1fr; gap: 2px; }
     .service-card { padding: 36px 32px; }
-    .service-card h2 { font-size: 26px; }
+    .service-card h2 { font-size: 31px; }
     footer { padding: 36px 32px; }
   }
 
@@ -428,34 +647,35 @@
   @media (max-width: 768px) {
     nav { padding: 18px 20px; }
     .nav-links { display: none; }
-    .nav-contact { padding: 9px 16px; font-size: 9px !important; }
+    .nav-contact { padding: 9px 16px; font-size: 11px !important; }
     .hero { padding: 110px 20px 60px; }
     .hero h1 { font-size: clamp(40px, 10vw, 64px); }
-    .hero-sub { font-size: 14px; max-width: 100%; }
+    .hero-sub { font-size: 17px; max-width: 100%; }
     .hero-ctas { flex-direction: column; gap: 12px; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 16px 24px; }
     .services { padding: 40px 20px 80px; }
     .services-grid { grid-template-columns: 1fr; gap: 2px; }
     .service-card { padding: 32px 24px; }
-    .service-card h2 { font-size: 28px; }
+    .service-card h2 { font-size: 31px; }
     .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
-    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 14px; text-align: center; align-items: center; }
+    .footer-work { margin-top: 4px; }
   }
 
   /* SMALL MOBILE */
   @media (max-width: 390px) {
     nav { padding: 16px 16px; }
-    .nav-logo { font-size: 15px; }
+    .nav-logo { font-size: 18px; }
     .nav-contact { display: none; }
     .hero { padding: 100px 16px 48px; }
-    .hero h1 { font-size: 38px; }
-    .hero-tag { font-size: 9px; }
-    .hero-sub { font-size: 13px; }
+    .hero h1 { font-size: 41px; }
+    .hero-tag { font-size: 12px; }
+    .hero-sub { font-size: 15px; }
     .services { padding: 32px 16px 64px; }
     .service-card { padding: 28px 20px; }
-    .service-card h2 { font-size: 24px; }
+    .service-card h2 { font-size: 27px; }
     footer { padding: 24px 16px; }
-    .footer-note { font-size: 10px; }
+    .footer-note { font-size: 13px; }
   }
 </style>
 </head>
@@ -465,9 +685,10 @@
   <a href="#" class="nav-logo">Booked.</a>
   <ul class="nav-links">
     <li><a href="https://getbookednow.github.io/scan/scan.html" target="_blank">Scan</a></li>
-    <li><a href="https://getbookednow.github.io/booked-demo" target="_blank">Structure</a></li>
+    <li><a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Structure%20%E2%80%94%20I%27d%20love%20to%20see%20a%20demo%20of%20my%20portfolio%20website.%20Can%20you%20send%20me%20one%3F" target="_blank">Structure</a></li>
     <li><a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Canvas%20%E2%80%94%20I%20have%20a%20revenue%20idea%20I%27d%20like%20to%20build%20out.%20Can%20we%20talk%3F" target="_blank">Canvas</a></li>
     <li><a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20Signal%20%E2%80%94%20I%27d%20like%20to%20understand%20my%20positioning%20in%20the%20industry.%20Can%20we%20talk%3F" target="_blank">Signal</a></li>
+    <li><a href="#founder">About</a></li>
   </ul>
   <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank">
     Chat with me
@@ -482,7 +703,6 @@
       Booked is built for <strong>fashion creatives</strong> who refuse to be left behind. I audit your visibility, build your digital presence, and help you launch in an era where AI is changing how talent gets found.
     </p>
     <div class="hero-ctas">
-      
       <a href="https://getbookednow.github.io/scan/scan.html" class="btn-primary" target="_blank">Scan my digital presence</a>
       <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="btn-secondary" target="_blank">Chat with me</a>
     </div>
@@ -495,11 +715,11 @@
       <a href="https://getbookednow.github.io/scan/scan.html" target="_blank" class="service-card">
         <div class="card-meta">
           <span class="card-number">01 — SCAN</span>
-          <span class="card-tag free">Free · 2 min</span>
+          <span class="card-tag free">Free · 5 min</span>
         </div>
         <h2>AI Discoverability<br>Audit</h2>
         <p>Are you findable in the AI era? Scan scores your digital presence across two dimensions — AI discoverability and general visibility — and shows you exactly what's costing you bookings.</p>
-        <span class="card-link">Take the audit</span>
+        <span class="card-link">Run your Scan</span>
       </a>
 
       <!-- 02 STRUCTURE -->
@@ -510,7 +730,7 @@
         </div>
         <h2>Portfolio<br>Website Build</h2>
         <p>See your website before you pay for it. Generate a personalised portfolio demo in 2 minutes — built around your aesthetic, your work, your presence. If you love it, I build the real thing.</p>
-        <span class="card-link">Send me a demo</span>
+        <span class="card-link">What would your portfolio look like?</span>
       </a>
 
       <!-- 03 CANVAS -->
@@ -545,9 +765,70 @@
   </section>
 </main>
 
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="founder-inner">
+
+    <div class="founder-left">
+      <p class="founder-tag">The founder</p>
+      <h2 class="founder-name">Luca.<br><em>Built from<br>the inside.</em></h2>
+      <p class="founder-identity">
+        A decade on set.<br>
+        Now building what gets you there.
+      </p>
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect." class="founder-contact" target="_blank">
+        Get in touch →
+      </a>
+    </div>
+
+    <div class="founder-right">
+      <div class="founder-bio">
+        <p>
+          I spent a decade being booked — across South Africa, Asia, and Europe. Not observing the industry. Working in it. On set in Shanghai, in the showrooms in Milan, in the castings in Cape Town. I know what a casting director looks at in the first three seconds, because I was on the other side of that table more times than I can count.
+        </p>
+        <p>
+          That decade also showed me something most people building for creatives miss: <strong>the gap isn't talent. It's infrastructure.</strong> The photographers who consistently get hired aren't always the most technically gifted — they're the ones who are findable, credible, and professional before anyone even sees their work.
+        </p>
+        <p>
+          I tried the digital marketing agency route before this. Broad services, no clear focus, no industry-specific edge. It didn't stick. Booked is what happened when I stopped trying to serve everyone and started building for the one industry I actually know from the inside.
+        </p>
+        <p>
+          <em>Booked is what I would have needed.</em> A decade inside the industry, now applied to building the digital infrastructure that gets creatives found in an era where AI is making the first cut before a human ever looks.
+        </p>
+      </div>
+
+      <div class="founder-markets">
+        <p class="founder-markets-label">Markets worked</p>
+        <div class="markets-list">
+          <span class="market-pill">Cape Town</span>
+          <span class="market-pill">Milan</span>
+          <span class="market-pill">Shanghai</span>
+          <span class="market-pill">Hong Kong</span>
+          <span class="market-pill">Seoul</span>
+          <span class="market-pill">Bali</span>
+          <span class="market-pill">Mumbai</span>
+        </div>
+      </div>
+
+      <div class="founder-built">
+        <p class="founder-built-label">What Booked builds</p>
+        <ul class="built-list">
+          <li>AI discoverability audits — scoring how creatives are found by the systems making the first cut</li>
+          <li>Portfolio websites built to perform, not just look good — clean, fast, credible</li>
+          <li>Digital infrastructure for boutique agencies managing creative rosters</li>
+          <li>Revenue ideas validated and built — from concept to live site</li>
+          <li>Creative identity positioning — closing the gap between how you see yourself and how the industry does</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <footer>
   <span class="footer-logo">Booked.</span>
-  <span class="footer-note">One person. One lens. A decade inside the industry.</span>
+  <span class="footer-note">A decade on set. Now building what gets you there.</span>
+  <a href="https://tally.so/r/68rPoe" target="_blank" class="footer-work">Work with Booked</a>
 </footer>
 
 </body>
