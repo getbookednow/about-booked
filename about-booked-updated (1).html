@@ -34,7 +34,7 @@
     --dim: #444;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
   html { scroll-behavior: smooth; }
 
@@ -594,12 +594,19 @@
   @media (max-width: 768px) {
     .founder { padding: 60px 20px 80px; }
     .founder-inner { gap: 40px; }
-    .founder-name { font-size: clamp(38px, 9vw, 56px); }
+    .founder-name { font-size: clamp(36px, 9vw, 52px); }
+    .founder-bio p { font-size: 16px; }
+    .markets-list { gap: 6px; }
+    .market-pill { font-size: 11px; padding: 5px 12px; }
+    .built-list li { font-size: 14px; }
+    .founder-contact { width: 100%; justify-content: center; }
   }
 
   @media (max-width: 390px) {
     .founder { padding: 48px 16px 64px; }
-    .founder-name { font-size: 41px; }
+    .founder-name { font-size: 36px; }
+    .founder-identity { font-size: 13px; }
+    .founder-bio p { font-size: 15px; }
   }
 
   /* ANIMATIONS */
@@ -651,7 +658,8 @@
     .service-card { padding: 32px 24px; }
     .service-card h2 { font-size: 31px; }
     .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
-    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 14px; text-align: center; align-items: center; }
+    .footer-work { margin-top: 4px; }
   }
 
   /* SMALL MOBILE */
@@ -662,7 +670,7 @@
     .hero { padding: 100px 16px 48px; }
     .hero h1 { font-size: 41px; }
     .hero-tag { font-size: 12px; }
-    .hero-sub { font-size: 18px; }
+    .hero-sub { font-size: 15px; }
     .services { padding: 32px 16px 64px; }
     .service-card { padding: 28px 20px; }
     .service-card h2 { font-size: 27px; }
