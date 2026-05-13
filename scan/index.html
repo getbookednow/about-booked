@@ -1334,9 +1334,8 @@
         `Context: ${contextRaw || 'Not provided'}`
       ].join('\n');
 
-      whatsappLink.href = `https://wa.me/27637549122?text=${encodeURIComponent(latestReadout + '
-
-I want to request the manual Full BOOKED. Audit.')}`;
+      const auditRequestText = latestReadout + '\n\nI want to request the manual Full BOOKED. Audit.';
+      whatsappLink.href = `https://wa.me/27637549122?text=${encodeURIComponent(auditRequestText)}`;
 
       results.classList.add('active');
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
