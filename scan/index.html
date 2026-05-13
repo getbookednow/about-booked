@@ -844,7 +844,7 @@
         </p>
         <div class="hero-actions">
           <a href="#scan-form" class="btn btn-primary">Start the scan</a>
-          <a href="#full-audit" class="btn">View paid audit</a>
+          <a href="#full-audit" class="btn">How paid audit works</a>
         </div>
       </div>
 
@@ -873,7 +873,7 @@
             <div class="bar-meta"><span>Booking friction</span><span>61%</span></div>
             <div class="bar" aria-hidden="true"><span style="width:61%"></span></div>
           </div>
-          <p class="note">The free scan gives a directional readout. The full audit identifies exact blockers and the 30-day action plan.</p>
+          <p class="note">The free scan gives a directional, self-reported readout. The full audit is manually reviewed against your actual links, search presence, and portfolio structure.</p>
         </div>
       </aside>
     </section>
@@ -930,7 +930,7 @@
     <section class="wrap section" id="scan-form">
       <div class="section-head">
         <h2>Run the scan.</h2>
-        <p>Answer the questions below. You will receive a first-pass visibility readout and the option to unlock the full Booked audit.</p>
+        <p>Answer the questions below. You will receive a directional visibility readout based on your inputs, then the option to request a manually reviewed Booked audit.</p>
       </div>
 
       <div class="form-shell">
@@ -1062,7 +1062,7 @@
 
             <div class="submit-row">
               <button class="btn btn-primary" type="submit">Generate readout</button>
-              <span class="microcopy">This first-pass readout is directional. The full audit is manually reviewed and built around your exact links and target market.</span>
+              <span class="microcopy">This first-pass readout is generated in-browser from your answers. The full audit is manually reviewed and built around your exact links, target market, and visible digital presence.</span>
             </div>
           </form>
 
@@ -1087,21 +1087,22 @@
               </div>
 
               <div class="offer" id="full-audit">
-                <h3>Unlock the Full BOOKED. Audit — R2,500</h3>
-                <p>The full audit identifies exactly what is blocking your visibility and gives you a 30-day action plan to improve your digital infrastructure.</p>
+                <h3>How the paid audit works</h3>
+                <p>The free scan is a directional first-pass readout generated from your answers. The full BOOKED. audit is manually reviewed against your actual portfolio, search presence, Instagram, credibility signals, and target market.</p>
+                <p>It identifies what is blocking your visibility and gives you a 30-day action plan to improve your digital infrastructure.</p>
                 <ul>
-                  <li>Full visibility score across portfolio, search, social, and AI readability</li>
+                  <li>Verified visibility score across portfolio, search, social, and AI readability</li>
                   <li>Specific blockers stopping clients from understanding or finding you</li>
                   <li>Website / Instagram / Google presence review</li>
                   <li>Priority action plan for the next 30 days</li>
                   <li>PDF report delivered within 5 business days</li>
                 </ul>
                 <div class="result-actions">
-                  <a class="btn btn-primary" id="whatsappLink" target="_blank" rel="noopener" href="https://wa.me/27637549122?text=Hi%20BOOKED.%20I%20want%20to%20unlock%20the%20Full%20BOOKED%20Audit%20for%20R2%2C500.">Unlock full audit</a>
+                  <a class="btn btn-primary" id="whatsappLink" target="_blank" rel="noopener" href="https://wa.me/27637549122?text=Hi%20BOOKED.%20I%20completed%20the%20Visibility%20Scan%20and%20want%20to%20request%20the%20manual%20Full%20BOOKED.%20Audit%20for%20R2%2C500.">Request manual audit</a>
                   <button class="btn" type="button" id="copyReadout">Copy readout</button>
                 </div>
                 <div class="copy-status" id="copyStatus" aria-live="polite"></div>
-                <p class="data-note">Your answers stay in this browser unless you choose to send them through WhatsApp. No form database is connected yet.</p>
+                <p class="data-note">This page does not run a live AI crawl or save your data yet. Your answers stay in this browser unless you choose to send them through WhatsApp. The paid audit is the verified manual review layer.</p>
               </div>
             </div>
           </div>
@@ -1304,7 +1305,9 @@
         `Context: ${contextRaw || 'Not provided'}`
       ].join('\n');
 
-      whatsappLink.href = `https://wa.me/27637549122?text=${encodeURIComponent(latestReadout + '\n\nI want to unlock the full audit.')}`;
+      whatsappLink.href = `https://wa.me/27637549122?text=${encodeURIComponent(latestReadout + '
+
+I want to request the manual Full BOOKED. Audit for R2,500.')}`;
 
       results.classList.add('active');
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
