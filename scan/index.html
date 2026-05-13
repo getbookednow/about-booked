@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080611" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.bookednow.co.za/scan" />
+
+  <title>BOOKED. Visibility Scan | AI Discoverability Audit for Fashion Creatives</title>
+  <meta name="description" content="Run the BOOKED. Visibility Scan to see how findable, readable, trusted, and bookable your fashion creative presence is across search, portfolio structure, social signals, and AI-assisted discovery." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bookednow.co.za/scan" />
+  <meta property="og:title" content="BOOKED. Visibility Scan" />
+  <meta property="og:description" content="See how easy you are to find, understand, trust, and book across search, social, portfolio structure, and AI-assisted discovery." />
+  <meta property="og:site_name" content="BOOKED." />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "BOOKED. Visibility Scan",
+      "serviceType": "AI discoverability and visibility audit for fashion creatives",
+      "provider": {
+        "@type": "Organization",
+        "name": "BOOKED.",
+        "url": "https://www.bookednow.co.za"
+      },
+      "areaServed": "Global",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Fashion creatives, models, stylists, photographers, creative directors, art directors, and boutique agencies"
+      },
+      "description": "A diagnostic visibility scan that evaluates how findable, readable, trusted, and bookable a fashion creative's digital presence is across portfolio structure, search, social proof, and AI-assisted discovery."
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #080611;
+      --panel: #0f0b1d;
+      --panel-2: #151024;
+      --line: rgba(218, 187, 112, 0.18);
+      --gold: #d8b96f;
+      --gold-soft: rgba(216, 185, 111, 0.12);
+      --purple: #b694ff;
+      --text: #f5f1ea;
+      --muted: #a8a0b4;
+      --soft: #756d81;
+      --radius: 22px;
+      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(182, 148, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(216, 185, 111, 0.11), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { border: 0; }
+    ::selection { background: rgba(216,185,111,0.32); color: var(--text); }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 6, 17, 0.76);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.12rem;
+      white-space: nowrap;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .navlinks a:hover { color: var(--text); }
+
+    .hero {
+      padding: 94px 0 58px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.78rem;
+      margin-bottom: 28px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.8;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(3.2rem, 8vw, 7.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+    }
+
+    h1 em {
+      display: block;
+      color: var(--purple);
+      font-style: italic;
+    }
+
+    .hero p {
+      margin: 30px 0 0;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .hero p strong { color: var(--text); }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      padding: 15px 22px;
+      border-radius: 0;
+      background: transparent;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #16100a;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
+      outline: 2px solid var(--purple);
+      outline-offset: 4px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(21,16,36,0.92), rgba(10,7,18,0.92));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .score-card {
+      border: 1px solid var(--line);
+      background: rgba(216,185,111,0.05);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .score-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .score-label {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+    }
+
+    .score-num {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4.4rem;
+      line-height: 0.9;
+      color: var(--gold);
+    }
+
+    .bar-row { margin-top: 16px; }
+
+    .bar-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+
+    .bar {
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--purple));
+      border-radius: 99px;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section { padding: 58px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 460px;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pill-card, .form-card, .result-card, .fit-card {
+      background: rgba(15, 11, 29, 0.82);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .fit-card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .fit-card li { margin: 8px 0; }
+
+    .fit-card strong { color: var(--text); }
+
+    fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      min-width: 0;
+    }
+
+    .pill-card span {
+      color: var(--gold);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .pill-card h3 {
+      margin: 18px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .pill-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .form-shell {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .steps {
+      position: sticky;
+      top: 104px;
+      background: rgba(15, 11, 29, 0.82);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .step-item:last-child { border-bottom: 0; }
+    .step-num { color: var(--gold); min-width: 26px; }
+
+    .form-card { padding: 30px; }
+
+    .question {
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .question:first-child { padding-top: 0; }
+    .question:last-child { border-bottom: 0; }
+
+    label.q-title {
+      display: block;
+      font-weight: 650;
+      margin-bottom: 10px;
+      font-size: 1.02rem;
+    }
+
+    .q-help {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 14px;
+      outline: none;
+    }
+
+    textarea { min-height: 110px; resize: vertical; }
+    select option { background: #111; color: var(--text); }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .option {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.035);
+      border-radius: 14px;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.92rem;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .option input { width: auto; margin-top: 4px; accent-color: var(--gold); }
+    .option.is-selected,
+    .option:has(input:checked) {
+      border-color: rgba(216,185,111,0.55);
+      background: var(--gold-soft);
+      color: var(--text);
+    }
+
+    .submit-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .microcopy {
+      color: var(--soft);
+      font-size: 0.82rem;
+      max-width: 440px;
+    }
+
+    .results {
+      display: none;
+      margin-top: 26px;
+    }
+
+    .results.active { display: block; }
+
+    .result-card {
+      border-color: rgba(216,185,111,0.28);
+      background: linear-gradient(180deg, rgba(216,185,111,0.08), rgba(15,11,29,0.92));
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .final-score {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 0.9;
+    }
+
+    .result-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .result-card p { color: var(--muted); }
+
+    .blockers {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .blocker {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.035);
+      border-radius: 14px;
+      color: var(--muted);
+    }
+
+    .offer {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid rgba(216,185,111,0.28);
+      border-radius: 18px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .offer ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .offer li { margin: 8px 0; }
+
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .copy-status {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-top: 10px;
+      min-height: 1.2em;
+    }
+
+    .data-note {
+      margin-top: 16px;
+      color: var(--soft);
+      font-size: 0.8rem;
+    }
+
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: var(--soft);
+      font-size: 0.86rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+      .btn:hover { transform: none; }
+    }
+
+    @media (max-width: 900px) {
+      .hero, .form-shell, .result-grid, .fit-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .navlinks { display: none; }
+      .steps { position: static; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 16px; }
+      .options { grid-template-columns: 1fr; }
+      .hero { padding-top: 70px; }
+      .score-num, .final-score { font-size: 4rem; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .nav { gap: 14px; }
+      .brand { font-size: 0.98rem; }
+      .nav .btn { padding: 12px 14px; min-height: 44px; letter-spacing: 0.12em; }
+      .hero { padding: 54px 0 36px; }
+      h1 { font-size: clamp(3rem, 17vw, 4.4rem); }
+      .hero-card, .form-card, .pill-card, .result-card { padding: 20px; border-radius: 18px; }
+      .score-top { align-items: center; }
+      .bar-meta { font-size: 0.66rem; }
+      .section { padding: 42px 0; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://www.bookednow.co.za/" aria-label="BOOKED homepage">BOOKED.</a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="https://www.bookednow.co.za/scan" aria-current="page">Scan</a>
+        <a href="https://www.bookednow.co.za/#audits">Audits</a>
+        <a href="https://www.bookednow.co.za/#builds">Builds</a>
+        <a href="https://www.bookednow.co.za/#about">About</a>
+      </nav>
+      <a class="btn" href="https://wa.me/27637549122?text=Hi%20BOOKED.%20I%20want%20to%20run%20the%20Visibility%20Scan." target="_blank" rel="noopener">Chat with me</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">AI-era creative visibility</div>
+        <h1>BOOKED. <em>Visibility Scan.</em></h1>
+        <p>
+          See how easy you are to <strong>find, understand, trust, and book</strong> across search, social, portfolio structure, and AI-assisted discovery.
+        </p>
+        <p>
+          Before a client messages you, they need to read your presence fast. This scan shows where that system is working — and where it is breaking.
+        </p>
+        <div class="hero-actions">
+          <a href="#scan-form" class="btn btn-primary">Start the scan</a>
+          <a href="#full-audit" class="btn">View paid audit</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Example visibility score card">
+        <div class="score-card">
+          <div class="score-top">
+            <div>
+              <div class="score-label">Sample readout</div>
+              <div class="note">First-pass diagnostic score</div>
+            </div>
+            <div class="score-num">6.4</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta"><span>Portfolio clarity</span><span>72%</span></div>
+            <div class="bar" aria-hidden="true"><span style="width:72%"></span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta"><span>Search readability</span><span>48%</span></div>
+            <div class="bar" aria-hidden="true"><span style="width:48%"></span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta"><span>AI discoverability</span><span>39%</span></div>
+            <div class="bar" aria-hidden="true"><span style="width:39%"></span></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-meta"><span>Booking friction</span><span>61%</span></div>
+            <div class="bar" aria-hidden="true"><span style="width:61%"></span></div>
+          </div>
+          <p class="note">The free scan gives a directional readout. The full audit identifies exact blockers and the 30-day action plan.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head">
+        <h2>What the scan evaluates.</h2>
+        <p>Booked does not review aesthetics in isolation. It audits the signals around your work that affect whether the right people can find, read, trust, and book you.</p>
+      </div>
+      <div class="grid-3">
+        <article class="pill-card">
+          <span>01</span>
+          <h3>Industry readability</h3>
+          <p>Can a casting director, agency, brand, or client understand what you do within seconds?</p>
+        </article>
+        <article class="pill-card">
+          <span>02</span>
+          <h3>AI discoverability</h3>
+          <p>Can search engines and AI-assisted systems parse who you are, where you work, and why you are credible?</p>
+        </article>
+        <article class="pill-card">
+          <span>03</span>
+          <h3>Booking friction</h3>
+          <p>How many steps, gaps, or trust issues sit between discovery and someone contacting you?</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-label="Who the scan is for">
+      <div class="section-head">
+        <h2>Built for working creatives.</h2>
+        <p>This scan is designed for people who already have work to show, but need stronger infrastructure around how that work is read.</p>
+      </div>
+      <div class="fit-grid">
+        <article class="fit-card">
+          <h3>Best fit</h3>
+          <ul>
+            <li><strong>Fashion creatives</strong> with existing work, credits, or agency visibility.</li>
+            <li><strong>Stylists, photographers, models, HMU artists, and creative directors</strong> who need a cleaner digital read.</li>
+            <li><strong>Boutique agencies or roster managers</strong> who want stronger talent discoverability infrastructure.</li>
+          </ul>
+        </article>
+        <article class="fit-card">
+          <h3>Not the right fit</h3>
+          <ul>
+            <li>People looking for follower growth hacks.</li>
+            <li>Students with no portfolio material yet.</li>
+            <li>Generic personal branding outside fashion or image-led creative work.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="scan-form">
+      <div class="section-head">
+        <h2>Run the scan.</h2>
+        <p>Answer the questions below. You will receive a first-pass visibility readout and the option to unlock the full Booked audit.</p>
+      </div>
+
+      <div class="form-shell">
+        <aside class="steps" aria-label="Scan process">
+          <div class="step-item"><span class="step-num">01</span><span>Identify your creative type and current commercial level.</span></div>
+          <div class="step-item"><span class="step-num">02</span><span>Map your market, portfolio, search, and social presence.</span></div>
+          <div class="step-item"><span class="step-num">03</span><span>Score the signal strength around your creative work.</span></div>
+          <div class="step-item"><span class="step-num">04</span><span>Unlock the full 30-day visibility audit if you want the exact fix path.</span></div>
+        </aside>
+
+        <section class="form-card" aria-labelledby="scan-form-title">
+          <h2 class="sr-only" id="scan-form-title">BOOKED Visibility Scan form</h2>
+          <form id="visibilityForm" novalidate>
+            <div class="question">
+              <label class="q-title" for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required />
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="creativeType">Creative type</label>
+              <select id="creativeType" name="creativeType" required>
+                <option value="">Select one</option>
+                <option>Model</option>
+                <option>Stylist</option>
+                <option>Photographer</option>
+                <option>Makeup / Hair artist</option>
+                <option>Creative director</option>
+                <option>Art director</option>
+                <option>Agency / roster manager</option>
+                <option>Other fashion creative</option>
+              </select>
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="level">Current commercial level</label>
+              <select id="level" name="level" required>
+                <option value="">Select one</option>
+                <option>Emerging / building portfolio</option>
+                <option>Working professional</option>
+                <option>Agency represented</option>
+                <option>Established / commercial clients</option>
+                <option>Agency or roster manager</option>
+              </select>
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="market">Primary market you want to be booked in</label>
+              <select id="market" name="market" required>
+                <option value="">Select one</option>
+                <option>Cape Town</option>
+                <option>Johannesburg</option>
+                <option>Milan</option>
+                <option>London</option>
+                <option>New York</option>
+                <option>Shanghai</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="timeline">How soon do you want to improve this?</label>
+              <select id="timeline" name="timeline" required>
+                <option value="">Select one</option>
+                <option>Immediately</option>
+                <option>Within 30 days</option>
+                <option>Within 90 days</option>
+                <option>Researching options</option>
+              </select>
+            </div>
+
+            <div class="question">
+              <fieldset>
+                <legend class="q-title">What outcome matters most right now?</legend>
+                <div class="options">
+                  <label class="option"><input type="radio" name="outcome" value="get found" data-score="8" required /> Get found by better clients or agencies</label>
+                  <label class="option"><input type="radio" name="outcome" value="look premium" data-score="7" /> Look more premium and commercially credible</label>
+                  <label class="option"><input type="radio" name="outcome" value="fix portfolio" data-score="8" /> Fix portfolio structure and sequencing</label>
+                  <label class="option"><input type="radio" name="outcome" value="roster" data-score="10" /> Improve a full agency roster</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="website">Portfolio / website link</label>
+              <p class="q-help">Use your strongest current link. Website, agency profile, PDF, Behance, or portfolio platform.</p>
+              <input id="website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="www.example.com or https://example.com" />
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="instagram">Instagram link</label>
+              <input id="instagram" name="instagram" type="text" inputmode="url" placeholder="@username or https://instagram.com/username" />
+            </div>
+
+            <div class="question">
+              <fieldset>
+                <legend class="q-title">Which of these do you currently have?</legend>
+                <div class="options">
+                  <label class="option"><input type="checkbox" name="signals" value="domain" data-score="12" /> Own domain</label>
+                  <label class="option"><input type="checkbox" name="signals" value="email" data-score="8" /> Professional email</label>
+                  <label class="option"><input type="checkbox" name="signals" value="credits" data-score="12" /> Clear client credits</label>
+                  <label class="option"><input type="checkbox" name="signals" value="bio" data-score="10" /> Strong professional bio</label>
+                  <label class="option"><input type="checkbox" name="signals" value="contact" data-score="10" /> Fast contact path</label>
+                  <label class="option"><input type="checkbox" name="signals" value="search" data-score="12" /> Google result looks credible</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="question">
+              <fieldset>
+                <legend class="q-title">What is the biggest current issue?</legend>
+                <div class="options">
+                  <label class="option"><input type="radio" name="issue" value="hard to find" data-penalty="10" required /> People cannot find me easily</label>
+                  <label class="option"><input type="radio" name="issue" value="portfolio unclear" data-penalty="8" /> My portfolio feels unclear</label>
+                  <label class="option"><input type="radio" name="issue" value="weak site" data-penalty="8" /> My website / profile feels weak</label>
+                  <label class="option"><input type="radio" name="issue" value="not converting" data-penalty="7" /> People view but do not enquire</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="question">
+              <label class="q-title" for="context">Anything specific you want Booked to look at?</label>
+              <textarea id="context" name="context" placeholder="Example: I want to look more premium, get found by agencies, improve my agency profile, rebuild my portfolio, or prepare for Milan."></textarea>
+            </div>
+
+            <div class="submit-row">
+              <button class="btn btn-primary" type="submit">Generate readout</button>
+              <span class="microcopy">This first-pass readout is directional. The full audit is manually reviewed and built around your exact links and target market.</span>
+            </div>
+          </form>
+
+          <div class="results" id="results" aria-live="polite">
+            <div class="result-card">
+              <div class="result-grid">
+                <div>
+                  <div class="score-label">Your visibility readout</div>
+                  <div class="final-score"><span id="score">0.0</span></div>
+                  <p id="scoreLabel">Assessment pending</p>
+                </div>
+                <div>
+                  <h3 id="resultTitle">Your creative presence needs clearer infrastructure.</h3>
+                  <p id="resultText">Your answers suggest there are gaps in how your work is being found, understood, and converted into booking opportunities.</p>
+                  <div class="blockers" id="blockers"></div>
+                </div>
+              </div>
+
+              <div class="offer" style="margin-bottom:18px; border-color:rgba(182,148,255,0.22); background:rgba(182,148,255,0.05);">
+                <h3>How the industry is probably reading your presence</h3>
+                <p id="industryNarrative" style="font-size:1.02rem; line-height:1.8; color:var(--text); margin-top:16px; white-space:pre-line;">Your current digital presence likely depends too heavily on viewers already understanding your context.</p>
+              </div>
+
+              <div class="offer" id="full-audit">
+                <h3>Unlock the Full BOOKED. Audit — R2,500</h3>
+                <p>The full audit identifies exactly what is blocking your visibility and gives you a 30-day action plan to improve your digital infrastructure.</p>
+                <ul>
+                  <li>Full visibility score across portfolio, search, social, and AI readability</li>
+                  <li>Specific blockers stopping clients from understanding or finding you</li>
+                  <li>Website / Instagram / Google presence review</li>
+                  <li>Priority action plan for the next 30 days</li>
+                  <li>PDF report delivered within 5 business days</li>
+                </ul>
+                <div class="result-actions">
+                  <a class="btn btn-primary" id="whatsappLink" target="_blank" rel="noopener" href="https://wa.me/27637549122?text=Hi%20BOOKED.%20I%20want%20to%20unlock%20the%20Full%20BOOKED%20Audit%20for%20R2%2C500.">Unlock full audit</a>
+                  <button class="btn" type="button" id="copyReadout">Copy readout</button>
+                </div>
+                <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+                <p class="data-note">Your answers stay in this browser unless you choose to send them through WhatsApp. No form database is connected yet.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>BOOKED.</strong> — A decade inside fashion. Now building discoverability infrastructure for the AI era.
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('visibilityForm');
+    const results = document.getElementById('results');
+    const scoreEl = document.getElementById('score');
+    const scoreLabel = document.getElementById('scoreLabel');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultText = document.getElementById('resultText');
+    const blockersEl = document.getElementById('blockers');
+    const industryNarrative = document.getElementById('industryNarrative');
+    const whatsappLink = document.getElementById('whatsappLink');
+    const copyReadout = document.getElementById('copyReadout');
+    const copyStatus = document.getElementById('copyStatus');
+    let latestReadout = '';
+
+    function normalizeUrl(value, fallbackPrefix = 'https://') {
+      const clean = String(value || '').trim();
+      if (!clean) return '';
+      if (clean.startsWith('@')) return `https://instagram.com/${clean.slice(1)}`;
+      if (/^https?:\/\//i.test(clean)) return clean;
+      return `${fallbackPrefix}${clean}`;
+    }
+
+    function setSelectedStates() {
+      document.querySelectorAll('.option').forEach(label => {
+        const input = label.querySelector('input');
+        label.classList.toggle('is-selected', Boolean(input && input.checked));
+      });
+    }
+
+    document.querySelectorAll('.option input').forEach(input => {
+      input.addEventListener('change', setSelectedStates);
+    });
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+      let score = 38;
+
+      const level = data.get('level');
+      if (level === 'Working professional') score += 8;
+      if (level === 'Agency represented') score += 10;
+      if (level === 'Established / commercial clients') score += 14;
+      if (level === 'Agency or roster manager') score += 12;
+
+      const website = normalizeUrl(data.get('website'));
+      const instagram = normalizeUrl(data.get('instagram'), 'https://instagram.com/');
+      if (website) score += 14;
+      if (instagram) score += 8;
+
+      document.querySelectorAll('input[name="signals"]:checked').forEach(input => {
+        score += Number(input.dataset.score || 0);
+      });
+
+      const outcome = document.querySelector('input[name="outcome"]:checked');
+      if (outcome) score += Number(outcome.dataset.score || 0);
+
+      const issue = document.querySelector('input[name="issue"]:checked');
+      if (issue) score -= Number(issue.dataset.penalty || 0);
+
+      score = Math.max(18, Math.min(score, 96));
+      const display = (score / 10).toFixed(1);
+
+      scoreEl.textContent = display;
+
+      let label = 'Needs infrastructure';
+      let title = 'Your creative presence needs clearer infrastructure.';
+      let text = 'Your answers suggest there are gaps in how your work is being found, understood, and converted into booking opportunities.';
+
+      if (score >= 76) {
+        label = 'Strong foundation';
+        title = 'You have a strong foundation — now refine the signal layer.';
+        text = 'Your presence has several strong trust signals. The next move is improving precision: clearer positioning, better AI readability, and tighter conversion paths.';
+      } else if (score >= 58) {
+        label = 'Readable, but leaking opportunity';
+        title = 'You are visible, but not fully optimized for being booked.';
+        text = 'Your current presence likely works for people who already know you. The gap is making your value easier to discover, parse, and trust for new clients and AI-assisted search systems.';
+      }
+
+      scoreLabel.textContent = label;
+      resultTitle.textContent = title;
+      resultText.textContent = text;
+
+      const creativeTypeRaw = String(data.get('creativeType') || '').toLowerCase();
+      const issueRaw = String(data.get('issue') || '').toLowerCase();
+
+      let narrativeIntro = 'Your current presence likely performs better in referral environments where context already exists.';
+
+      let narrativeMiddle = 'But during cold discovery — especially through search, forwarding, portfolio scanning, and AI-assisted filtering — your positioning becomes less clear.';
+
+      let narrativeProblem = 'The work itself is likely not the issue. The friction appears to come from signal hierarchy, discoverability structure, and how quickly your value can be interpreted.';
+
+      let narrativeLeak = 'This creates opportunity leakage during first-pass review, client forwarding, fast producer scanning, and recommendation systems.';
+
+      if (creativeTypeRaw.includes('model')) {
+        narrativeMiddle = 'Your current presence likely reads as visually capable but commercially ambiguous. Clients may understand your aesthetic after spending time with your work — but not your positioning within the first 10–15 seconds.';
+      } else if (creativeTypeRaw.includes('stylist')) {
+        narrativeMiddle = 'Your work likely reads stronger editorially than commercially. That can reduce campaign trust and make lifestyle-facing clients slower to place your capability.';
+      } else if (creativeTypeRaw.includes('photographer')) {
+        narrativeMiddle = 'Your work likely requires too much interpretation from the viewer. That reduces first-pass usability for agencies, producers, and art directors reviewing quickly.';
+      } else if (creativeTypeRaw.includes('creative')) {
+        narrativeMiddle = 'Your current signal stack likely communicates taste before execution clarity. That creates friction when clients try to understand commercial capability quickly.';
+      } else if (creativeTypeRaw.includes('agency')) {
+        narrativeMiddle = 'Your roster infrastructure likely depends too heavily on manual interpretation. That slows down talent understanding and forwarding velocity during agency review cycles.';
+      }
+
+      const frictionPoints = [];
+
+      if (!website) {
+        frictionPoints.push('• no central portfolio destination');
+      }
+
+      if (!document.querySelector('input[value="domain"]:checked')) {
+        frictionPoints.push('• weak ownership signals');
+      }
+
+      if (!document.querySelector('input[value="credits"]:checked')) {
+        frictionPoints.push('• insufficient credibility compression');
+      }
+
+      if (!document.querySelector('input[value="search"]:checked')) {
+        frictionPoints.push('• low search and AI readability');
+      }
+
+      if (issueRaw.includes('portfolio unclear')) {
+        frictionPoints.push('• unclear signal hierarchy');
+      }
+
+      if (issueRaw.includes('not converting')) {
+        frictionPoints.push('• aesthetic interest without enough booking confidence');
+      }
+
+      if (issueRaw.includes('hard to find')) {
+        narrativeLeak = 'The main leak appears to be discoverability. Your work may already be strong enough, but the surrounding infrastructure is not helping people surface you consistently.';
+      }
+
+      const narrative = [
+        narrativeIntro,
+        '',
+        narrativeMiddle,
+        '',
+        narrativeProblem,
+        '',
+        frictionPoints.length ? frictionPoints.join('\n') : '• positioning refinement needed',
+        '',
+        narrativeLeak
+      ].join('\n');
+
+      industryNarrative.textContent = narrative;
+
+      const blockers = [];
+      if (!website) blockers.push('No dedicated portfolio link means your work is harder to index, reference, and share professionally.');
+      if (!instagram) blockers.push('No social proof link reduces trust and makes visual context harder to verify.');
+      if (!document.querySelector('input[value="domain"]:checked')) blockers.push('No owned domain weakens long-term discoverability and makes your presence platform-dependent.');
+      if (!document.querySelector('input[value="credits"]:checked')) blockers.push('Unclear credits reduce commercial trust and makes it harder for clients to place your level quickly.');
+      if (!document.querySelector('input[value="search"]:checked')) blockers.push('Weak Google presence means AI and search systems have less structured evidence to recommend you.');
+      if (blockers.length === 0) blockers.push('Your base signals are present. The full audit would focus on sequencing, semantic structure, and conversion precision.');
+
+      blockersEl.innerHTML = blockers.slice(0, 4).map(item => `<div class="blocker">${item}</div>`).join('');
+
+      const name = encodeURIComponent(data.get('name') || '');
+      const email = encodeURIComponent(data.get('email') || '');
+      const creativeType = encodeURIComponent(data.get('creativeType') || '');
+      const market = encodeURIComponent(data.get('market') || '');
+      const timeline = data.get('timeline') || '';
+      const outcomeValue = data.get('outcome') || '';
+      const contextRaw = (data.get('context') || '').slice(0, 420);
+      const context = encodeURIComponent(contextRaw);
+
+      latestReadout = [
+        'BOOKED. Visibility Scan',
+        `Name: ${data.get('name') || ''}`,
+        `Email: ${data.get('email') || ''}`,
+        `Creative type: ${data.get('creativeType') || ''}`,
+        `Market: ${data.get('market') || ''}`,
+        `Timeline: ${timeline}`,
+        `Outcome: ${outcomeValue}`,
+        `Score: ${display}/10`,
+        `Portfolio: ${website || 'Not provided'}`,
+        `Instagram: ${instagram || 'Not provided'}`,
+        `Context: ${contextRaw || 'Not provided'}`
+      ].join('\n');
+
+      whatsappLink.href = `https://wa.me/27637549122?text=${encodeURIComponent(latestReadout + '\n\nI want to unlock the full audit.')}`;
+
+      results.classList.add('active');
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    if (copyReadout) {
+      copyReadout.addEventListener('click', async () => {
+        if (!latestReadout) return;
+        try {
+          await navigator.clipboard.writeText(latestReadout);
+          copyStatus.textContent = 'Readout copied.';
+        } catch (error) {
+          copyStatus.textContent = 'Copy failed. Select and copy the WhatsApp message instead.';
+        }
+      });
+    }
+
+    setSelectedStates();
+  </script>
+</body>
+</html>
