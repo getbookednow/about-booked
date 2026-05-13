@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Booked. — Discoverability Infrastructure for Fashion Creatives</title>
-<meta name="description" content="Booked helps working fashion creatives become easier to find, understand, trust, and book. AI audits, portfolio builds, and digital infrastructure — built from a decade inside the industry.">
+<meta name="description" content="Booked helps working fashion creatives become easier to find, understand, trust, and book. Visibility scans, portfolio audits, portfolio builds, and digital infrastructure — built from a decade inside the fashion industry.">
 <link rel="canonical" href="https://www.bookednow.co.za/">
 <meta property="og:title" content="Booked. — Discoverability Infrastructure for Fashion Creatives">
 <meta property="og:description" content="Booked helps fashion creatives become easier to find, understand, trust, and book.">
@@ -28,7 +28,7 @@
   },
   "areaServed": ["South Africa", "Italy", "Asia", "Europe"],
   "serviceType": [
-    "AI discoverability audit",
+    "Directional visibility scan",
     "Portfolio audit",
     "One-page portfolio build",
     "Full portfolio website build",
@@ -49,6 +49,8 @@
     --gold-border-divider:  rgba(200,169,110,0.10);
     --gold-fill-hover:      rgba(200,169,110,0.03);
     --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --violet-fill:          rgba(169,143,224,0.08);
+    --violet-border:        rgba(169,143,224,0.22);
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'Helvetica Neue', Helvetica, sans-serif;
     --bg:         var(--void);
@@ -71,6 +73,8 @@
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   body::before {
@@ -83,6 +87,9 @@
     pointer-events: none;
     z-index: 0;
   }
+
+  a { color: inherit; }
+  ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
 
   /* NAV */
   nav {
@@ -198,7 +205,7 @@
     line-height: 1.05;
     letter-spacing: -0.01em;
     margin-bottom: 32px;
-    max-width: 800px;
+    max-width: 840px;
   }
 
   .hero h1 em { font-style: italic; color: var(--violet-italic); }
@@ -207,19 +214,28 @@
     font-size: 1.05rem;
     font-weight: 200;
     color: var(--subtext);
-    max-width: 480px;
+    max-width: 560px;
     line-height: 1.8;
-    margin-bottom: 48px;
+    margin-bottom: 0;
   }
 
   .hero-sub strong { color: var(--text); font-weight: 400; }
 
-  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-sub-note {
+    margin-top: 18px;
+    max-width: 720px;
+    color: rgba(255,255,255,0.62);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
 
   /* BUTTONS */
   .btn-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     padding: 14px 28px;
     background: var(--gold);
@@ -230,14 +246,15 @@
     text-transform: uppercase;
     text-decoration: none;
     font-family: var(--font-body);
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
   }
 
-  .btn-primary:hover { background: var(--gold-light); }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
   .btn-secondary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     padding: 14px 28px;
     border: 1px solid var(--gold-border);
@@ -251,7 +268,7 @@
     transition: all 0.2s;
   }
 
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
   /* FOUNDER STRIP */
   .founder-strip {
@@ -349,7 +366,7 @@
     text-decoration: none;
     color: inherit;
     display: block;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s, background 0.2s, transform 0.35s ease;
     position: relative;
     overflow: hidden;
   }
@@ -363,10 +380,10 @@
     transition: opacity 0.3s;
   }
 
-  .service-card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); }
+  .service-card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); transform: translateY(-4px); }
   .service-card:hover::before { opacity: 1; }
 
-  .card-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .card-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
 
   .card-number { font-size: 12px; letter-spacing: 0.2em; color: var(--gold); font-weight: 400; }
 
@@ -380,6 +397,7 @@
   }
 
   .card-tag.free, .card-tag.live { border-color: rgba(200,169,110,0.3); color: var(--gold); }
+  .card-tag.live { background: var(--violet-fill); border-color: var(--violet-border); color: #c9afff; }
 
   .service-card h2 {
     font-family: var(--font-display);
@@ -395,7 +413,7 @@
     color: var(--gold);
     margin-bottom: 16px;
     font-weight: 300;
-    opacity: 0.8;
+    opacity: 0.88;
   }
 
   .service-card p {
@@ -869,6 +887,7 @@
   .hero-tag  { animation: fadeUp 0.6s ease both; }
   .hero h1   { animation: fadeUp 0.6s 0.1s ease both; }
   .hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-sub-note { animation: fadeUp 0.6s 0.25s ease both; }
   .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
   .service-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
   .service-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
@@ -910,6 +929,7 @@
     .hero { padding: 110px 20px 60px; }
     .hero h1 { font-size: clamp(40px, 10vw, 64px); }
     .hero-sub { font-size: 16px; max-width: 100%; }
+    .hero-sub-note { font-size: 14px; max-width: 100%; }
     .hero-ctas { flex-direction: column; gap: 12px; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 16px 24px; }
     .founder-strip { padding: 0 20px; margin-bottom: 40px; }
@@ -942,7 +962,7 @@
     .nav-logo { font-size: 18px; }
     .hero { padding: 100px 16px 48px; }
     .hero h1 { font-size: 38px; }
-    .hero-tag { font-size: 13px; }
+    .hero-tag { font-size: 12px; line-height: 1.4; }
     .hero-sub { font-size: 16px; }
     .founder-strip { padding: 0 16px; }
     .diagnosis { padding: 0 16px 32px; }
@@ -968,29 +988,32 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Booked.</a>
+  <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
   <ul class="nav-links">
-    <li><a href="https://getbookednow.github.io/scan/scan.html" target="_blank">Scan</a></li>
+    <li><a href="https://www.bookednow.co.za/scan">Visibility Scan</a></li>
     <li><a href="#services">Audits</a></li>
-    <li><a href="#services">Builds</a></li>
+    <li><a href="#builds">Builds</a></li>
     <li><a href="#founder">About</a></li>
   </ul>
-  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20nav%5D" class="nav-contact" target="_blank">Chat with me</a>
-  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20nav_mobile%5D" class="nav-chat-mobile" target="_blank">Chat</a>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20nav%5D" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20nav_mobile%5D" class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
 </nav>
 
 <main>
 
   <!-- HERO -->
   <section class="hero">
-    <p class="hero-tag">Fashion. Discoverability. Done right.</p>
+    <p class="hero-tag">Fashion careers are becoming infrastructure.</p>
     <h1>Your career<br>is the brand.<br><em>I build the<br>infrastructure.</em></h1>
     <p class="hero-sub">
       Booked helps <strong>working fashion creatives</strong> become easier to find, understand, trust, and book. I audit your visibility, structure your digital presence, and build the infrastructure that helps you surface before the opportunity disappears.
     </p>
+    <p class="hero-sub-note">
+      The free scan is directional. The full audit is manually verified against your actual portfolio, search presence, structure, trust signals, and commercial readability.
+    </p>
     <div class="hero-ctas">
-      <a href="https://getbookednow.github.io/scan/scan.html" class="btn-primary" target="_blank">Check your discoverability</a>
-      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20hero%5D" class="btn-secondary" target="_blank">Chat with me</a>
+      <a href="https://www.bookednow.co.za/scan" class="btn-primary">Run the Visibility Scan</a>
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20hero%5D" class="btn-secondary" target="_blank" rel="noopener">Chat with me</a>
     </div>
   </section>
 
@@ -1020,22 +1043,22 @@
     <div class="services-grid" style="margin-bottom: 2px;">
 
       <!-- 01 SCAN -->
-      <a href="https://getbookednow.github.io/scan/scan.html" target="_blank" class="service-card">
+      <a href="https://www.bookednow.co.za/scan" class="service-card">
         <div class="card-meta">
           <span class="card-number">01 — SCAN</span>
-          <span class="card-tag live">Free · 5 min</span>
+          <span class="card-tag live">Free · Directional</span>
         </div>
-        <h2>AI Discoverability<br>Audit</h2>
-        <p class="card-best-for">Best for: creatives who want to know why they are not being found.</p>
-        <p>Scan scores your digital presence across two dimensions — AI discoverability and general visibility — and shows you exactly what's costing you bookings. Free preview. Full report from R 2,500.</p>
+        <h2>Visibility<br>Scan</h2>
+        <p class="card-best-for">Best for: fashion creatives who want to understand how readable, findable, and bookable their digital presence appears.</p>
+        <p>Run a directional self-reported scan to identify likely visibility gaps, weak trust signals, and booking friction. The verified manual audit goes deeper into your actual links, search presence, portfolio structure, and discoverability infrastructure.</p>
         <div class="card-footer">
-          <span class="card-link">Check your discoverability</span>
-          <span class="card-price">Free · Full report R 2 500</span>
+          <span class="card-link">Run the scan</span>
+          <span class="card-price">Free · Manual audit from R 2 500</span>
         </div>
       </a>
 
       <!-- 02 PORTFOLIO AUDIT -->
-      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit%20%5Bsource%3A%20services_card%5D" target="_blank" class="service-card">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit%20%5Bsource%3A%20services_card%5D" target="_blank" rel="noopener" class="service-card">
         <div class="card-meta">
           <span class="card-number">02 — PORTFOLIO AUDIT</span>
           <span class="card-tag live">R 4 000</span>
@@ -1051,11 +1074,11 @@
 
     </div>
 
-    <p class="services-category-label" style="margin-top: 48px;">Infrastructure builds</p>
+    <p class="services-category-label" id="builds" style="margin-top: 48px; scroll-margin-top: 120px;">Infrastructure builds</p>
     <div class="services-grid">
 
       <!-- 03 ONE-PAGE PORTFOLIO -->
-      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20One-Page%20Portfolio%20%E2%80%94%20can%20you%20send%20me%20a%20demo%3F%20%5Bsource%3A%20services_card%5D" target="_blank" class="service-card">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20One-Page%20Portfolio%20%E2%80%94%20can%20you%20send%20me%20a%20demo%3F%20%5Bsource%3A%20services_card%5D" target="_blank" rel="noopener" class="service-card">
         <div class="card-meta">
           <span class="card-number">03 — ONE-PAGE PORTFOLIO</span>
           <span class="card-tag free">Free demo</span>
@@ -1070,7 +1093,7 @@
       </a>
 
       <!-- 04 STRUCTURE -->
-      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20love%20to%20see%20a%20demo%20of%20my%20portfolio%20website%20%5Bsource%3A%20services_card%5D" target="_blank" class="service-card">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20love%20to%20see%20a%20demo%20of%20my%20portfolio%20website%20%5Bsource%3A%20services_card%5D" target="_blank" rel="noopener" class="service-card">
         <div class="card-meta">
           <span class="card-number">04 — STRUCTURE</span>
           <span class="card-tag free">Free demo</span>
@@ -1160,12 +1183,12 @@
       <h2 class="contact-heading">Reach out.<br><em>I'll figure out what's<br>holding you back.</em></h2>
       <p class="contact-sub">Send one message. No form. Tell me what you do, where your work lives, and what feels stuck. I'll tell you what needs fixing first.</p>
       <div class="contact-actions">
-        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20came%20from%20the%20Booked%20homepage.%20Here%27s%20what%20I%20do%20and%20what%20feels%20stuck%3A%20%5Bsource%3A%20homepage_contact_cta%5D" class="btn-wa-full" target="_blank">
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20came%20from%20the%20Booked%20homepage.%20Here%27s%20what%20I%20do%20and%20what%20feels%20stuck%3A%20%5Bsource%3A%20homepage_contact_cta%5D" class="btn-wa-full" target="_blank" rel="noopener">
           Chat on WhatsApp
           <span class="arrow">→</span>
         </a>
-        <a href="https://getbookednow.github.io/scan/scan.html" class="btn-scan-outline" target="_blank">
-          Or run a free Scan first
+        <a href="https://www.bookednow.co.za/scan" class="btn-scan-outline">
+          Or run a free Visibility Scan first
         </a>
       </div>
     </div>
@@ -1184,7 +1207,7 @@
         A decade on set.<br>
         Now building what gets you there.
       </p>
-      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect%20%5Bsource%3A%20founder_section%5D" class="founder-contact" target="_blank">
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect%20%5Bsource%3A%20founder_section%5D" class="founder-contact" target="_blank" rel="noopener">
         Get in touch →
       </a>
     </div>
@@ -1195,7 +1218,7 @@
           I spent a decade being booked — across South Africa, Asia, and Europe. Not observing the industry. Working in it. On set in Shanghai, in the showrooms in Milan, in the castings in Cape Town. I know what a casting director looks at in the first three seconds, because I was on the other side of that table more times than I can count.
         </p>
         <p>
-          That decade also showed me something most people building for creatives miss: <strong>the gap isn't talent. It's infrastructure.</strong> The photographers who consistently get hired aren't always the most technically gifted — they're the ones who are findable, credible, and professional before anyone even sees their work.
+          That decade also showed me something most people building for creatives miss: <strong>the gap isn't talent. It's infrastructure.</strong> The creatives who consistently get hired are often the ones who are findable, credible, and professional before anyone even sees the full body of work.
         </p>
         <p>
           I tried the digital marketing agency route before this. Broad services, no clear focus, no industry-specific edge. It didn't stick. Booked is what happened when I stopped trying to serve everyone and started building for the one industry I actually know from the inside.
@@ -1222,10 +1245,10 @@
       <div class="founder-built">
         <p class="founder-built-label">What Booked builds</p>
         <ul class="built-list">
-          <li>AI discoverability audits — scoring how creatives are found by the systems making the first cut</li>
-          <li>Portfolio audits calibrated against what casting directors and art directors actually evaluate</li>
+          <li>Directional visibility scans — helping creatives understand how their presence may be read before a client ever messages</li>
+          <li>Portfolio audits calibrated against what casting directors, art directors, and clients actually evaluate</li>
           <li>One-page portfolio infrastructure for creatives who need a professional presence immediately</li>
-          <li>Full portfolio website builds — clean, fast, credible, AI-readable</li>
+          <li>Full portfolio website builds — clean, fast, credible, and AI-readable</li>
           <li>Digital infrastructure for boutique agencies managing creative rosters</li>
         </ul>
       </div>
@@ -1238,14 +1261,14 @@
 <div class="post-founder-cta">
   <div class="post-founder-cta-inner">
     <p>Not sure where to start? Send me your portfolio. I'll tell you what I would fix first.</p>
-    <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20send%20you%20my%20portfolio%20for%20a%20quick%20read%20%5Bsource%3A%20post_founder_cta%5D" class="btn-primary" target="_blank">Send Portfolio on WhatsApp</a>
+    <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20send%20you%20my%20portfolio%20for%20a%20quick%20read%20%5Bsource%3A%20post_founder_cta%5D" class="btn-primary" target="_blank" rel="noopener">Send Portfolio on WhatsApp</a>
   </div>
 </div>
 
 <footer>
   <span class="footer-logo">Booked.</span>
   <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
-  <a href="https://tally.so/r/68rPoe" target="_blank" class="footer-work">Work with Booked</a>
+  <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
 </footer>
 
 </body>
