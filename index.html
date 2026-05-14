@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Booked. — Discoverability Infrastructure for Fashion Creatives</title>
 <meta name="description" content="Booked helps working fashion creatives and boutique agencies become easier to find, understand, trust, and book. Visibility scans, portfolio audits, roster intelligence, portfolio builds, and digital infrastructure — built from a decade inside the fashion industry.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='34' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
-<link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='34' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="booked-icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="booked-icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="booked-icon-180.png">
+<link rel="shortcut icon" href="favicon.ico">
 <meta name="theme-color" content="#0e0a1a">
 <link rel="canonical" href="https://www.bookednow.co.za/">
 <meta property="og:title" content="Booked. — Discoverability Infrastructure for Fashion Creatives">
@@ -628,7 +630,7 @@
     justify-content: space-between;
     gap: 16px;
     padding: 17px 22px;
-    background: var(--violet-italic);
+    background: var(--gold);
     color: var(--void);
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -741,6 +743,45 @@
     background: linear-gradient(90deg, var(--violet-italic), rgba(169,143,224,0.08));
   }
 
+
+
+  /* AGENCY INTELLIGENCE SPACING FIX */
+  .agency-intelligence-section {
+    margin-top: 96px !important;
+  }
+
+  .agency-intelligence-section .services-category-label {
+    margin-bottom: 32px !important;
+    padding-bottom: 28px !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (max-width: 768px) {
+    .agency-intelligence-section {
+      margin-top: 72px !important;
+    }
+
+    .agency-intelligence-section .services-category-label {
+      margin-bottom: 24px !important;
+      padding-bottom: 22px !important;
+    }
+  }
+
+
+  .agency-intelligence-label {
+    margin-top: 72px !important;
+    margin-bottom: 34px !important;
+    padding-bottom: 28px !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (max-width: 768px) {
+    .agency-intelligence-label {
+      margin-top: 56px !important;
+      margin-bottom: 24px !important;
+      padding-bottom: 22px !important;
+    }
+  }
 
   /* IMPROVES */
   .improves {
@@ -946,7 +987,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 22px 32px;
-    background: var(--violet-italic);
+    background: var(--gold);
     color: var(--void);
     font-size: 12px;
     font-weight: 400;
@@ -957,7 +998,7 @@
     transition: background 0.2s;
   }
 
-  .btn-wa-full:hover { background: #bba3f0; }
+  .btn-wa-full:hover { background: var(--gold-light); }
   .btn-wa-full .arrow { font-size: 16px; }
 
   .btn-scan-outline {
@@ -1430,7 +1471,7 @@
   <!-- AGENCY INTELLIGENCE -->
   <section class="services agency-intelligence" id="agencies">
 
-    <p class="services-category-label">Agency Intelligence</p>
+    <p class="services-category-label agency-intelligence-label">Agency Intelligence</p>
     <div class="services-grid">
 
       <!-- 05 ROSTER SCAN SPRINT -->
