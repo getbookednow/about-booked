@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOOKED. — Portfolio Direction Engine</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #0A0E27;
+  --offblack: #0d1130;
+  --border: rgba(107,114,128,0.35);
+  --border-focus: #C9A961;
+  --text: #F5F5F5;
+  --muted: #9CA3AF;
+  --accent: #C9A961;
+  --accent-dim: rgba(201,169,97,0.12);
+}
+html, body { height: 100%; background: var(--black) !important; color-scheme: dark; }
+body { background: var(--black) !important; color: var(--text) !important; font-family: 'DM Sans', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
+
+#form-page { min-height: 100vh; display: flex; flex-direction: column; background: var(--black) !important; color: var(--text); }
+#loading-page { display: none; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; }
+#demo-page { display: none; flex-direction: column; height: 100vh; }
+
+.top-bar { padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: 6px; color: #fff; }
+.logo-dot { color: var(--accent); }
+.top-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--muted); }
+.body-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; background: var(--black) !important; }
+.left-panel { background: var(--black) !important; padding: 80px 60px; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; position: sticky; top: 0; height: calc(100vh - 73px); }
+.left-inner { max-width: 400px; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; color: var(--accent); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
+.headline { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 600; line-height: 1.05; color: #fff; margin-bottom: 28px; }
+.headline em { font-style: italic; color: #C9A961; font-weight: 400; }
+.subtext { font-size: 15px; line-height: 1.9; color: var(--muted); margin-bottom: 48px; font-weight: 300; }
+.left-stats { display: flex; gap: 40px; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--accent); }
+.stat-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--muted); margin-top: 4px; }
+
+/* Form panel */
+.right-panel { background: var(--black) !important; color: var(--text); padding: 80px 60px; display: flex; flex-direction: column; }
+.form-section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--accent); margin-bottom: 32px; padding-bottom: 12px; border-bottom: 1px solid var(--border); text-transform: uppercase; }
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+
+/* Fields */
+.field { margin-bottom: 32px; }
+.field label { display: block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; }
+.field input[type="text"], .field textarea, .field select {
+  width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border);
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 17px;
+  padding: 12px 0; outline: none; transition: border-color 0.3s; -webkit-appearance: none; border-radius: 0;
+}
+.field input[type="text"]:focus, .field textarea:focus, .field select:focus { border-bottom-color: var(--accent); }
+.field input::placeholder, .field textarea::placeholder { color: rgba(156,163,175,0.55) !important; font-size: 16px; opacity: 1; }
+.field select:invalid, .field select option[value=''] { color: rgba(156,163,175,0.55) !important; }
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #0A0E27 inset !important;
+  -webkit-text-fill-color: #F5F5F5 !important;
+  caret-color: #F5F5F5;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.field textarea { resize: none; min-height: 56px; line-height: 1.6; }
+.field select { cursor: pointer; }
+.field select option { background: #0d1130 !important; color: var(--text) !important; }
+.select-wrap { position: relative; }
+.select-wrap::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--accent); pointer-events: none; }
+.field .hint { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(156,163,175,0.4); margin-top: 8px; }
+.fields-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+
+/* Image upload */
+.image-upload-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.img-slot { position: relative; cursor: pointer; }
+.img-slot input[type="file"] { display: none; }
+.img-drop-zone { width: 100%; aspect-ratio: 3/4; border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: border-color 0.25s, background 0.25s; position: relative; overflow: hidden; background: rgba(107,114,128,0.05); }
+.img-drop-zone:hover { border-color: var(--accent); background: var(--accent-dim); }
+.img-drop-zone.has-image { border-color: var(--accent); }
+.img-drop-zone .direction-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+.img-drop-zone.has-image .direction-img { display: block; }
+.img-drop-zone.has-image .upload-ui { display: none; }
+.upload-ui { display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; }
+.upload-icon { width: 20px; height: 20px; opacity: 0.25; }
+.upload-label-text { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; text-align: center; line-height: 1.5; }
+.img-slot-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-top: 8px; text-align: center; display: block; }
+.img-remove { position: absolute; top: 6px; right: 6px; z-index: 2; background: rgba(10,14,39,0.85); border: 1px solid var(--border); color: var(--muted); font-size: 10px; width: 22px; height: 22px; display: none; align-items: center; justify-content: center; cursor: pointer; line-height: 1; }
+.img-drop-zone.has-image .img-remove { display: flex; }
+.img-remove:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Pills */
+.pill-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.spec-pill { background: transparent; border: 1px solid var(--border); color: var(--muted); font-family: 'DM Mono', monospace; font-weight: 300; font-size: 10px; letter-spacing: 2px; padding: 10px 14px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; user-select: none; }
+.spec-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.spec-pill.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.vibe-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; }
+.vibe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.vibe-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 2px; padding: 18px 12px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+.vibe-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.vibe-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); box-shadow: inset 0 0 0 1px var(--accent); }
+
+.generate-btn { width: 100%; background: var(--accent); color: #0A0E27; border: none; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: 5px; text-transform: uppercase; padding: 22px; cursor: pointer; transition: opacity 0.2s; margin-top: 12px; }
+.generate-btn:hover { opacity: 0.88; }
+.generate-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.form-error { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: #e06060; margin-top: 12px; display: none; }
+.test-mode-btn { display:none; position:fixed; left:18px; bottom:18px; z-index:9998; background:var(--accent); color:#0A0E27; border:none; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:12px 16px; border-radius:999px; cursor:pointer; box-shadow:0 12px 32px rgba(0,0,0,0.35); }
+.test-mode-btn.visible { display:block; }
+.test-mode-btn:hover { opacity:0.9; }
+
+
+
+.consent-row { display:flex; gap:10px; align-items:flex-start; margin-top:-8px; margin-bottom:24px; color:rgba(156,163,175,0.65); font-size:11px; line-height:1.6; }
+.consent-row input { margin-top:3px; accent-color: var(--accent); }
+.direction-badge { border:1px solid rgba(201,169,97,0.35); color:var(--accent); padding:8px 12px; font-family:'DM Mono',monospace; font-size:8px; letter-spacing:2px; text-transform:uppercase; }
+@media (max-width:768px){ .direction-badge{width:100%;text-align:center;} }
+
+/* Loading */
+.loading-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: 9px; color: var(--muted); margin-bottom: 64px; }
+.loading-headline { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 400; color: #fff; margin-bottom: 10px; }
+.loading-status { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 40px; transition: opacity 0.4s; min-height: 16px; }
+.progress-wrap { width: 280px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.progress-track { width: 100%; height: 1px; background: var(--border); position: relative; }
+.progress-fill { position: absolute; left: 0; top: 0; height: 1px; background: var(--accent); width: 0%; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); }
+.progress-pct { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; line-height: 1; }
+.progress-pct span { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--muted); margin-left: 2px; }
+
+/* Demo topbar */
+.demo-topbar { background: var(--offblack); border-bottom: 1px solid var(--border); padding: 0 40px; height: 56px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.demo-info { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--muted); }
+.demo-name-tag { color: var(--text); margin-left: 8px; }
+.demo-actions { display: flex; gap: 10px; }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; padding: 10px 20px; cursor: pointer; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-book { background: var(--accent); color: #0A0E27; border: none; font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 4px; padding: 10px 24px; cursor: pointer; text-transform: uppercase; transition: opacity 0.2s; }
+.btn-book:hover { opacity: 0.85; }
+.demo-viewport { flex: 1; overflow: hidden; }
+#demo-frame { width: 100%; height: 100%; border: none; display: block; }
+
+@media (max-width: 768px) {
+  .demo-topbar { padding: 0 16px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 8px; padding: 10px 16px; }
+  .demo-info { font-size: 8px; letter-spacing: 2px; width: 100%; }
+  .demo-name-tag { display: inline; }
+  .demo-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; }
+  .btn-ghost { padding: 8px 4px; font-size: 8px; letter-spacing: 1px; text-align: center; }
+  .btn-book { padding: 8px 4px; font-size: 8px; letter-spacing: 1px; text-align: center; }
+}
+
+.mobile-intro { display: none; }
+@media (max-width: 1000px) {
+  .body-grid { grid-template-columns: 1fr; }
+  .left-panel { display: none; }
+  .mobile-intro { display: block; }
+  .right-panel { padding: 48px 32px; }
+  .top-bar { padding: 20px 24px; }
+  .top-tag { display: none; }
+  .fields-row { grid-template-columns: 1fr; gap: 0; }
+}
+@media (max-width: 600px) {
+  .right-panel { padding: 32px 20px 60px; }
+  .top-bar { padding: 18px 20px; }
+  .logo { font-size: 11px; letter-spacing: 7px; }
+  .form-section-label { font-size: 8px; letter-spacing: 4px; margin-bottom: 24px; }
+  .field { margin-bottom: 24px; }
+  .field input[type="text"], .field textarea, .field select { font-size: 16px; } /* prevents iOS zoom */
+  .image-upload-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .img-drop-zone { aspect-ratio: 1/1; } /* square on mobile — easier to tap */
+  .upload-label-text { font-size: 7px; }
+  .vibe-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .vibe-btn { padding: 14px 8px; font-size: 9px; letter-spacing: 2px; }
+  .pill-wrap { gap: 6px; }
+  .spec-pill { padding: 8px 10px; font-size: 8px; }
+  .generate-btn { padding: 18px; font-size: 9px; letter-spacing: 4px; margin-top: 20px; }
+  .prefill-btn { padding: 14px; }
+  .section-divider { margin: 28px 0; }
+  .demo-topbar { padding: 0 16px; height: 52px; }
+  .demo-info { font-size: 8px; }
+  .btn-ghost { padding: 8px 12px; font-size: 8px; letter-spacing: 2px; }
+  .btn-book { padding: 8px 14px; font-size: 8px; letter-spacing: 3px; }
+  .demo-name-tag { display: none; }
+}
+
+/* Defensive dark-mode lock: prevents browser/site-builder defaults from turning the form white */
+#form-page, #form-page .top-bar, #form-page .body-grid, #form-page .left-panel, #form-page .right-panel { background-color: var(--black) !important; }
+#form-page input, #form-page textarea, #form-page select { background-color: transparent !important; color: var(--text) !important; }
+#form-page label, #form-page .field label { color: var(--muted) !important; }
+</style>
+</head>
+<body>
+
+<button type="button" id="auto-test-btn" class="test-mode-btn" onclick="autoTestGenerate()">Auto Test</button>
+
+<!-- ══════════ FORM PAGE ══════════ -->
+<div id="form-page">
+  <header class="top-bar">
+    <span class="logo">BOOKED<span class="logo-dot">.</span></span>
+    <span class="top-tag">CREATIVE INFRASTRUCTURE</span>
+  </header>
+  <div class="body-grid">
+    <div class="left-panel">
+      <div class="left-inner">
+        <p class="eyebrow">PORTFOLIO DIRECTION</p>
+        <h1 class="headline">See What<br>Your <em style="color:var(--accent);">Portfolio</em><br>Could Become.</h1>
+        <p class="subtext">Upload your details and images. Booked generates a personalised portfolio direction built around your role, aesthetic direction, work categories, and booking goals.</p>
+      </div>
+      <div class="left-stats">
+        <div><div class="stat-num">2</div><div class="stat-label">MIN TO GENERATE</div></div>
+        <div><div class="stat-num">6</div><div class="stat-label">VISUAL DIRECTIONS</div></div>
+        <div><div class="stat-num">FREE</div><div class="stat-label">DIRECTION</div></div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <!-- Mobile-only intro -->
+      <div class="mobile-intro">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#fff;line-height:1.1;margin-bottom:12px;">See What Your <em style="font-style:italic;color:#C9A961;">Portfolio</em><br>Could Become.</p>
+        <p style="font-size:13px;line-height:1.8;color:#888;margin-bottom:36px;">A personalised portfolio direction built around your role, images, and booking goal.</p>
+      </div>
+      <p class="form-section-label">01 — IDENTITY</p>
+      <div class="fields-row">
+        <div class="field"><label>Full Name *</label><input type="text" id="f-name" placeholder="" autocomplete="off"></div>
+        <div class="field"><label>Your Role *</label>
+          <div class="select-wrap"><select id="f-role">
+            <option value="">Select role</option>
+            <option>Fashion Model</option><option>Commercial Model</option><option>Photographer</option>
+            <option>Stylist</option><option>Hair & Makeup Artist</option><option>Creative Director</option>
+            <option>Art Director</option><option>Casting Director</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="fields-row">
+        <div class="field"><label>Instagram *</label><input type="text" id="f-insta" placeholder="" autocomplete="off"></div>
+        <div class="field"><label>Based In *</label><input type="text" id="f-location" placeholder=""></div>
+      </div>
+      <div class="field"><label>One Line About Your Work</label><input type="text" id="f-bio" placeholder=""></div>
+
+      <hr class="section-divider">
+      <p class="form-section-label">02 — YOUR IMAGES</p>
+      <!-- Row 1: Hero + About -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+        <div class="img-slot">
+          <input type="file" id="img-hero" accept="image/*" onchange="handleImage(this,'zone-hero','prev-hero')">
+          <div class="img-drop-zone" id="zone-hero" onclick="document.getElementById('img-hero').click()">
+            <img class="direction-img" id="prev-hero" alt="">
+            <div class="img-remove" onclick="removeImage(event,'img-hero','zone-hero','prev-hero')">✕</div>
+            <div class="upload-ui">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span class="upload-label-text">Hero<br>Image</span>
+            </div>
+          </div>
+          <span class="img-slot-label">Hero</span>
+        </div>
+        <div class="img-slot">
+          <input type="file" id="img-about" accept="image/*" onchange="handleImage(this,'zone-about','prev-about')">
+          <div class="img-drop-zone" id="zone-about" onclick="document.getElementById('img-about').click()">
+            <img class="direction-img" id="prev-about" alt="">
+            <div class="img-remove" onclick="removeImage(event,'img-about','zone-about','prev-about')">✕</div>
+            <div class="upload-ui">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span class="upload-label-text">About<br>Image</span>
+            </div>
+          </div>
+          <span class="img-slot-label">About</span>
+        </div>
+      </div>
+      <!-- Row 2: 3 Portfolio shots -->
+      <div class="image-upload-grid">
+        <div class="img-slot">
+          <input type="file" id="img-port1" accept="image/*" onchange="handleImage(this,'zone-port1','prev-port1')">
+          <div class="img-drop-zone" id="zone-port1" onclick="document.getElementById('img-port1').click()">
+            <img class="direction-img" id="prev-port1" alt="">
+            <div class="img-remove" onclick="removeImage(event,'img-port1','zone-port1','prev-port1')">✕</div>
+            <div class="upload-ui">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span class="upload-label-text">Work 1</span>
+            </div>
+          </div>
+          <span class="img-slot-label">Work 1</span>
+        </div>
+        <div class="img-slot">
+          <input type="file" id="img-port2" accept="image/*" onchange="handleImage(this,'zone-port2','prev-port2')">
+          <div class="img-drop-zone" id="zone-port2" onclick="document.getElementById('img-port2').click()">
+            <img class="direction-img" id="prev-port2" alt="">
+            <div class="img-remove" onclick="removeImage(event,'img-port2','zone-port2','prev-port2')">✕</div>
+            <div class="upload-ui">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span class="upload-label-text">Work 2</span>
+            </div>
+          </div>
+          <span class="img-slot-label">Work 2</span>
+        </div>
+        <div class="img-slot">
+          <input type="file" id="img-port3" accept="image/*" onchange="handleImage(this,'zone-port3','prev-port3')">
+          <div class="img-drop-zone" id="zone-port3" onclick="document.getElementById('img-port3').click()">
+            <img class="direction-img" id="prev-port3" alt="">
+            <div class="img-remove" onclick="removeImage(event,'img-port3','zone-port3','prev-port3')">✕</div>
+            <div class="upload-ui">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span class="upload-label-text">Work 3</span>
+            </div>
+          </div>
+          <span class="img-slot-label">Work 3</span>
+        </div>
+      </div>
+      <p class="hint" style="margin-bottom:0;margin-top:-16px;">All optional — upload the strongest images you want reflected in the site direction.</p>
+
+      <hr class="section-divider">
+      <p class="form-section-label">03 — WORK PROFILE</p>
+      <div class="field">
+        <label>Specialisms</label>
+        <div class="pill-wrap">
+          <button class="spec-pill" onclick="toggleSpec(this,'Runway')">Runway</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Editorial')">Editorial Minimal</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Beauty')">Beauty</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Campaign')">Campaign</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Lookbook')">Lookbook</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'E-commerce')">E-commerce</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Fitness')">Fitness</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Video')">Video</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Brand Content')">Brand Content</button>
+          <button class="spec-pill" onclick="toggleSpec(this,'Fine Art')">Fine Art</button>
+        </div>
+      </div>
+      <div class="field"><label>Notable Clients or Brands</label><input type="text" id="f-clients" placeholder=""><p class="hint">Separate with commas.</p></div>
+      <div class="field"><label>5 Words That Define Your Work</label><input type="text" id="f-words" placeholder=""></div>
+
+      <hr class="section-divider">
+      <p class="form-section-label">04 — WEBSITE STYLE</p>
+      <div class="vibe-label">Choose Your Site's Visual Vibe *</div>
+      <div class="vibe-grid">
+        <button class="vibe-btn" onclick="pickVibe(this,'Editorial')">Editorial</button>
+        <button class="vibe-btn" onclick="pickVibe(this,'Commercial')">Clean Commercial</button>
+        <button class="vibe-btn" onclick="pickVibe(this,'Dark & Moody')">Luxury Dark</button>
+        <button class="vibe-btn" onclick="pickVibe(this,'Clean & Minimal')">Agency Minimal</button>
+        <button class="vibe-btn" onclick="pickVibe(this,'Avant-Garde')">Art Direction</button>
+        <button class="vibe-btn" onclick="pickVibe(this,'Warm & Natural')">Lifestyle Natural</button>
+      </div>
+
+      <hr class="section-divider">
+      <p class="form-section-label">05 — BUSINESS</p>
+      <div class="fields-row">
+        <div class="field"><label>Primary Goal *</label>
+          <div class="select-wrap"><select id="f-goal">
+            <option value="">Select goal</option>
+            <option value="attract agency representation">Get Agency Representation</option>
+            <option value="attract direct brand clients">Attract Brand Clients</option>
+            <option value="sell freelance creative services">Sell Freelance Services</option>
+            <option value="build a personal brand">Build Personal Brand</option>
+            <option value="attract editorial and press features">Editorial / Press</option>
+            <option value="drive casting inquiries">Drive Casting Inquiries</option>
+          </select></div>
+        </div>
+        <div class="field"><label>Where Are You in Your Career?</label>
+          <div class="select-wrap"><select id="f-pricing">
+            <option value="">Not specified</option>
+            <option value="entry-level">Emerging — Just Getting Started</option>
+            <option value="mid-tier">Established — Working Consistently</option>
+            <option value="premium">Premium — Selective & In Demand</option>
+            <option value="luxury">Top-Tier — Industry Leader</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="field"><label>Services Offered</label><textarea id="f-services" placeholder=""></textarea></div>
+
+      <button class="generate-btn" id="gen-btn" onclick="startGenerate()">Generate My Portfolio Direction →</button>
+      <p class="form-error" id="form-error">Please complete all required fields (*) and select a visual direction.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LOADING PAGE ══════════ -->
+<div id="loading-page">
+  <p class="loading-logo">BOOKED.</p>
+  <h2 class="loading-headline">Building your site...</h2>
+  <p class="loading-status" id="load-status">Writing your copy</p>
+  <div class="progress-wrap">
+    <div class="progress-pct"><span id="pct-num">0</span><span>%</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+</div>
+
+<!-- ══════════ DEMO PAGE ══════════ -->
+<div id="demo-page">
+  <div class="demo-topbar">
+    <div class="demo-info">BOOKED. SITE —<span class="demo-name-tag" id="demo-name-display"></span></div>
+    <div class="demo-actions">
+      <button class="btn-ghost" onclick="resetForm()">← Edit</button>
+      <button class="btn-ghost" id="share-btn" onclick="shareDemo()">↗ Share</button>
+      <button class="btn-book" onclick="bookNow()">Build Full Portfolio →</button>
+    </div>
+  </div>
+  <div class="demo-viewport">
+    <iframe id="demo-frame" title="Your demo site"></iframe>
+  </div>
+</div>
+
+<script>
+let chosenVibe = '';
+let selectedSpecs = [];
+let lastHTML = '';
+const images = { hero: null, about: null, port1: null, port2: null, port3: null };
+
+// ── Image handling ────────────────────────────────────────────────
+function handleImage(input, zoneId, prevId) {
+  const file = input.files[0];
+  if (!file) return;
+  const key = zoneId.replace('zone-', '');
+  const reader = new FileReader();
+  reader.onload = e => {
+    images[key] = e.target.result;
+    document.getElementById(prevId).src = e.target.result;
+    document.getElementById(zoneId).classList.add('has-image');
+  };
+  reader.readAsDataURL(file);
+}
+function removeImage(e, inputId, zoneId, prevId) {
+  e.stopPropagation();
+  const key = zoneId.replace('zone-', '');
+  images[key] = null;
+  document.getElementById(inputId).value = '';
+  document.getElementById(prevId).src = '';
+  document.getElementById(zoneId).classList.remove('has-image');
+}
+
+function pickVibe(el, vibe) {
+  document.querySelectorAll('.vibe-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  chosenVibe = vibe;
+}
+function toggleSpec(el, spec) {
+  if (el.classList.contains('active')) { el.classList.remove('active'); selectedSpecs = selectedSpecs.filter(s => s !== spec); }
+  else { el.classList.add('active'); selectedSpecs.push(spec); }
+}
+
+// ── Progress ──────────────────────────────────────────────────────
+const steps = [
+  { msg: 'Analysing your images',        pct: 12 },
+  { msg: 'Writing your copy',            pct: 30 },
+  { msg: 'Crafting your headline',       pct: 48 },
+  { msg: 'Composing your bio',           pct: 62 },
+  { msg: 'Building your portfolio',      pct: 76 },
+  { msg: 'Placing your images',          pct: 88 },
+  { msg: 'Final touches',                pct: 94 },
+];
+let timerRef = null;
+
+function setProgress(pct, msg) {
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('pct-num').textContent = pct;
+  if (msg !== undefined) {
+    const el = document.getElementById('load-status');
+    el.style.opacity = '0';
+    setTimeout(() => { el.textContent = msg; el.style.opacity = '1'; }, 200);
+  }
+}
+
+// ── Vibe themes ───────────────────────────────────────────────────
+const vibeThemes = {
+  'Editorial': {
+    bg: '#080808', text: '#f0f0f0', accent: '#f0f0f0', muted: '#666',
+    border: 'rgba(255,255,255,0.08)', heroGrad: 'linear-gradient(160deg,#0a0a0a 0%,#1a1a1a 100%)',
+    font: "'Playfair Display', Georgia, serif", bodyFont: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    btnBg: '#f0f0f0', btnText: '#080808', cardBg: '#111', navBg: 'rgba(8,8,8,0.95)'
+  },
+  'Commercial': {
+    bg: '#ffffff', text: '#0a0a0a', accent: '#0a0a0a', muted: '#888',
+    border: 'rgba(0,0,0,0.08)', heroGrad: 'linear-gradient(160deg,#f5f5f5 0%,#ffffff 100%)',
+    font: "'Helvetica Neue', Helvetica, Arial, sans-serif", bodyFont: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    btnBg: '#0a0a0a', btnText: '#ffffff', cardBg: '#f5f5f5', navBg: 'rgba(255,255,255,0.95)'
+  },
+  'Dark & Moody': {
+    bg: '#030303', text: '#d4c9b8', accent: '#c9a96e', muted: '#555',
+    border: 'rgba(201,169,110,0.15)', heroGrad: 'linear-gradient(160deg,#030303 0%,#0d0a07 100%)',
+    font: "'Cormorant Garamond', Georgia, serif", bodyFont: "'DM Sans', sans-serif",
+    btnBg: '#c9a96e', btnText: '#030303', cardBg: '#0a0906', navBg: 'rgba(3,3,3,0.97)'
+  },
+  'Clean & Minimal': {
+    bg: '#fafafa', text: '#111111', accent: '#111111', muted: '#999',
+    border: 'rgba(0,0,0,0.06)', heroGrad: 'linear-gradient(160deg,#f0f0f0 0%,#fafafa 100%)',
+    font: "'DM Sans', sans-serif", bodyFont: "'DM Sans', sans-serif",
+    btnBg: '#111111', btnText: '#fafafa', cardBg: '#f0f0f0', navBg: 'rgba(250,250,250,0.97)'
+  },
+  'Avant-Garde': {
+    bg: '#0d0d0d', text: '#e8e8e8', accent: '#c0392b', muted: '#555',
+    border: 'rgba(192,57,43,0.2)', heroGrad: 'linear-gradient(135deg,#0d0d0d 0%,#1a0808 100%)',
+    font: "'Oswald', 'Helvetica Neue', sans-serif", bodyFont: "'Helvetica Neue', Helvetica, sans-serif",
+    btnBg: '#c0392b', btnText: '#e8e8e8', cardBg: '#111', navBg: 'rgba(13,13,13,0.97)'
+  },
+  'Warm & Natural': {
+    bg: '#f5f0e8', text: '#2c1f14', accent: '#c4704a', muted: '#a08060',
+    border: 'rgba(196,112,74,0.15)', heroGrad: 'linear-gradient(160deg,#ede5d8 0%,#f5f0e8 100%)',
+    font: "'Cormorant Garamond', Georgia, serif", bodyFont: "'DM Sans', sans-serif",
+    btnBg: '#c4704a', btnText: '#f5f0e8', cardBg: '#ede5d8', navBg: 'rgba(245,240,232,0.97)'
+  }
+};
+
+const goalCTA = {
+  'attract agency representation': 'Request Composite Card',
+  'attract direct brand clients': 'Request Rate Card',
+  'sell freelance creative services': 'Book a Project',
+  'build a personal brand': "Let's Connect",
+  'attract editorial and press features': 'Editorial Enquiries',
+  'drive casting inquiries': 'Submit Casting Request'
+};
+
+function buildBookedWhatsAppUrl(data, intent) {
+  const lines = [
+    `Hi Luca, I generated my Booked Portfolio Direction.`,
+    ``,
+    `Name: ${data.name || ''}`,
+    `Role: ${data.role || ''}`,
+    `Location: ${data.location || ''}`,
+    `Instagram: ${data.insta || ''}`,
+    `Goal: ${data.goal || ''}`,
+    `Visual direction: ${data.chosenVibe || ''}`,
+    `Specialisms: ${data.specs || ''}`,
+    `Clients / brands: ${data.clients || 'Not listed'}`,
+    ``,
+    intent || `I’d like to know what it would cost to build this properly.`
+  ];
+  return `https://wa.me/27637549122?text=${encodeURIComponent(lines.join('\n'))}`;
+}
+
+// ── Build the portfolio HTML from copy JSON + theme ───────────────
+function buildSite(copy, theme, data, heroLayout = {}) {
+  const { bg, text, accent, muted, border, heroGrad, font, bodyFont, btnBg, btnText, cardBg, navBg } = theme;
+
+  // Hero image layout
+  const hl = {
+    textSide: heroLayout.textSide || 'left',
+    overlayOpacity: heroLayout.overlayOpacity || 0.5,
+    textColor: heroLayout.textColor || 'light',
+    focalX: heroLayout.focalX || '50%',
+    focalY: heroLayout.focalY || '30%'
+  };
+
+  const heroImg   = images.hero ? `url('${images.hero}')` : heroGrad;
+  const heroTextC = images.hero ? (hl.textColor === 'light' ? '#ffffff' : '#111111') : text;
+  const heroMutedC = images.hero ? (hl.textColor === 'light' ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.5)') : muted;
+
+  // Text alignment based on subject position
+  const textAlign  = hl.textSide === 'right' ? 'right' : 'left';
+  const textMargin = hl.textSide === 'right' ? 'margin-left:auto;' : '';
+  const bgPosX     = hl.textSide === 'left' ? '65%' : '35%'; // push subject to opposite side
+  const overlayGrad = hl.textSide === 'left'
+    ? `linear-gradient(to right, rgba(0,0,0,${hl.overlayOpacity}) 50%, rgba(0,0,0,${Math.max(0, hl.overlayOpacity - 0.25)}) 100%)`
+    : `linear-gradient(to left, rgba(0,0,0,${hl.overlayOpacity}) 50%, rgba(0,0,0,${Math.max(0, hl.overlayOpacity - 0.25)}) 100%)`;
+  const heroOverlay = images.hero
+    ? `<div style="position:absolute;inset:0;background:${overlayGrad};"></div>`
+    : '';
+
+  const aboutImg = images.about ? `url('${images.about}')` : null;
+  const portImgs = [images.port1, images.port2, images.port3];
+
+  const gFonts = font.includes('Playfair') ? 'Playfair+Display:wght@400;700' :
+                 font.includes('Cormorant') ? 'Cormorant+Garamond:ital,wght@0,300;0,400;1,300' :
+                 font.includes('Oswald')    ? 'Oswald:wght@300;400;600' : '';
+  const gFontLink = gFonts ? `<link href="https://fonts.googleapis.com/css2?family=${gFonts}&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">` : '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">';
+
+  // Work items
+  const workItems = (copy.projects || []).map((p, i) => {
+    const bg_img = portImgs[i] ? `background-image:url('${portImgs[i]}');background-size:cover;background-position:center;` : '';
+    const fallback = i === 0 ? `background-color:${cardBg};` :
+                     i === 1 ? `background:linear-gradient(135deg,${cardBg} 0%,${accent}22 100%);` :
+                               `background:linear-gradient(135deg,${accent}11 0%,${cardBg} 100%);`;
+    return `
+    <div style="break-inside:avoid;">
+      <div style="width:100%;aspect-ratio:3/4;${bg_img || fallback}position:relative;overflow:hidden;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);">
+          <div style="font-family:${font};font-size:16px;color:#fff;font-weight:400;">${p.title}</div>
+          <div style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-top:4px;text-transform:uppercase;">${p.category} · ${p.year}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Services
+  const serviceItems = (copy.services || []).map(s => `
+    <div style="padding:32px;border:1px solid ${border};background:${cardBg};">
+      <div style="font-family:${font};font-size:20px;color:${accent};margin-bottom:12px;font-weight:400;">${s.title}</div>
+      <div style="font-size:13px;line-height:1.8;color:${muted};">${s.description}</div>
+    </div>`).join('');
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${data.name} — ${data.role}</title>
+${gFontLink}
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:${bg};color:${text};font-family:${bodyFont};font-weight:300;-webkit-font-smoothing:antialiased;padding-top:72px;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+.container{max-width:1140px;margin:0 auto;padding:0 40px;}
+section{padding:100px 0;}
+@media(max-width:768px){section{padding:64px 0;}.container{padding:0 24px;}}
+@media(max-width:480px){.container{padding:0 16px;}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:${navBg};backdrop-filter:blur(12px);border-bottom:1px solid ${border};height:72px;display:flex;align-items:center;}
+.nav-inner{width:100%;max-width:1140px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:${font};font-size:14px;letter-spacing:6px;color:${text};font-weight:400;text-transform:uppercase;}
+.nav-links{display:flex;gap:40px;}
+.nav-links a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${muted};transition:color 0.2s;}
+.nav-links a:hover{color:${text};}
+@media(max-width:600px){.nav-links{display:none;}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;background-image:${heroImg};background-size:cover;background-position:${images.hero ? bgPosX + ' ' + hl.focalY : 'center'};}
+.hero-content{position:relative;z-index:1;padding:0 5%;max-width:640px;text-align:${textAlign};${textMargin}}
+.hero-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:${heroMutedC};margin-bottom:24px;}
+.hero-name{font-family:${font};font-size:clamp(56px,9vw,120px);font-weight:${font.includes('Oswald') ? '600' : '300'};line-height:0.95;color:${heroTextC};margin-bottom:24px;letter-spacing:-0.02em;}
+.hero-role{font-size:clamp(11px,1.5vw,14px);letter-spacing:5px;text-transform:uppercase;color:${heroMutedC};margin-bottom:16px;}
+.hero-meta{font-size:11px;letter-spacing:3px;color:${heroMutedC};margin-bottom:40px;opacity:0.8;}
+.hero-headline{font-family:${font};font-size:clamp(20px,2.5vw,32px);font-style:italic;color:${heroTextC};font-weight:300;line-height:1.3;opacity:0.92;}
+.hero-scroll{position:absolute;bottom:40px;right:5%;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:${images.hero ? 'rgba(255,255,255,0.3)' : muted};writing-mode:vertical-rl;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-image{width:100%;aspect-ratio:4/5;background:${aboutImg ? `url('${images.about}') center/cover` : `linear-gradient(135deg,${cardBg} 0%,${accent}22 100%)`};position:relative;}
+.about-text{}
+.section-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:${accent};margin-bottom:32px;display:flex;align-items:center;gap:16px;}
+.section-label::before{content:'';width:32px;height:1px;background:${accent};}
+.about-bio{font-size:17px;line-height:1.9;color:${text};margin-bottom:32px;font-weight:300;}
+.about-quote{font-family:${font};font-size:clamp(22px,2.5vw,30px);font-style:italic;color:${accent};font-weight:300;line-height:1.3;padding-left:24px;border-left:2px solid ${accent};}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+
+/* WORK */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:768px){.work-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.work-grid{grid-template-columns:1fr;}}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr;}}
+
+/* CONTACT */
+.contact-inner{max-width:640px;}
+.contact-headline{font-family:${font};font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.1;color:${text};margin-bottom:48px;}
+.contact-links{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;}
+.contact-link{font-size:14px;letter-spacing:2px;color:${accent};transition:opacity 0.2s;}
+.contact-link:hover{opacity:0.7;}
+.cta-btn{display:inline-block;padding:18px 48px;background:${btnBg};color:${btnText};font-size:10px;letter-spacing:5px;text-transform:uppercase;font-family:${bodyFont};font-weight:400;border:none;cursor:pointer;transition:opacity 0.2s;}
+.cta-btn:hover{opacity:0.85;}
+
+/* BOOKED DIRECTION DIAGNOSTIC */
+.booked-direction-note{background:${bg};border-top:1px solid ${border};border-bottom:1px solid ${border};}
+.diagnostic-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:32px 0;}
+.diagnostic-card{border:1px solid ${border};background:${cardBg};padding:20px;}
+.diagnostic-score{font-family:${font};font-size:32px;color:${accent};line-height:1;margin-bottom:10px;}
+.diagnostic-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${muted};line-height:1.5;}
+.missing-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;margin:32px 0 40px;padding:0;list-style:none;}
+.missing-list li{font-size:12px;letter-spacing:1px;color:${muted};border-bottom:1px solid ${border};padding-bottom:10px;}
+.direction-copy{font-size:15px;line-height:1.9;color:${muted};max-width:760px;}
+@media(max-width:900px){.diagnostic-grid{grid-template-columns:repeat(2,1fr);}.missing-list{grid-template-columns:1fr;}}
+@media(max-width:480px){.diagnostic-grid{grid-template-columns:1fr;}}
+
+/* FOOTER */
+footer{padding:32px 0;border-top:1px solid ${border};}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;}
+.footer-text{font-size:10px;letter-spacing:2px;color:${muted};}
+@media(max-width:480px){.footer-inner{flex-direction:column;gap:12px;text-align:center;}}
+
+/* Defensive dark-mode lock: prevents browser/site-builder defaults from turning the form white */
+#form-page, #form-page .top-bar, #form-page .body-grid, #form-page .left-panel, #form-page .right-panel { background-color: var(--black) !important; }
+#form-page input, #form-page textarea, #form-page select { background-color: transparent !important; color: var(--text) !important; }
+#form-page label, #form-page .field label { color: var(--muted) !important; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">${data.name.split(' ')[0]}</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="${buildBookedWhatsAppUrl(data, 'I generated my portfolio direction and want to ask about building it properly.')}" target="_blank">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  ${heroOverlay}
+  <div class="hero-content">
+    <div class="hero-eyebrow">${data.role}</div>
+    <div class="hero-name">${data.name}</div>
+    <div class="hero-role">${data.role}</div>
+    <div class="hero-meta">${data.location}${data.insta ? ' &nbsp;·&nbsp; ' + data.insta : ''}</div>
+    <div class="hero-headline">${copy.headline}</div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image"></div>
+      <div class="about-text">
+        <div class="section-label">About</div>
+        <p class="about-bio">${copy.bio}</p>
+        <blockquote class="about-quote">${copy.pullQuote}</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:${cardBg};">
+  <div class="container">
+    <div class="section-label">Selected Work</div>
+    <div class="work-grid">${workItems}</div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <div class="services-grid">${serviceItems}</div>
+  </div>
+</section>
+
+<section class="booked-direction-note" id="direction-note">
+  <div class="container">
+    <div class="section-label">Booked Direction</div>
+    <h2 class="contact-headline" style="margin-bottom:24px;">Next step: make this live.</h2>
+    <p class="direction-copy">A live Booked portfolio turns this direction into structured digital infrastructure: sharper copy, stronger sequencing, domain setup, search-readable pages, and a clearer booking path.</p>
+    <div class="diagnostic-grid">
+      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.roleClarity || '7.5'}</div><div class="diagnostic-label">Role clarity</div></div>
+      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.visualDirection || '7.0'}</div><div class="diagnostic-label">Visual direction</div></div>
+      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.bookingPath || '5.5'}</div><div class="diagnostic-label">Booking path</div></div>
+      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.categoryStructure || '6.0'}</div><div class="diagnostic-label">Category structure</div></div>
+      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.aiReadability || '5.0'}</div><div class="diagnostic-label">AI readability</div></div>
+    </div>
+    <p class="direction-copy"><strong style="color:${text};">Likely next priority:</strong> ${copy.nextPriority || 'Turn this visual direction into a live, indexed portfolio with clearer structure and contact routing.'}</p>
+    <ul class="missing-list">
+      <li>Custom domain setup</li><li>Professional email routing</li><li>Search indexing</li><li>AI-readable metadata</li><li>Portfolio sequencing</li><li>Image optimisation</li><li>Google Search Console</li><li>Final copy refinement</li>
+    </ul>
+    <a class="cta-btn" href="${buildBookedWhatsAppUrl(data, 'I’d like to turn this into a live portfolio. Can you send me the next step and pricing?')}" target="_blank">Build This as a Live Portfolio</a>
+  </div>
+</section>
+
+<section id="contact" style="background:${cardBg};">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="contact-headline">${copy.contactHeadline}</h2>
+      <div class="contact-links">
+        ${data.insta ? `<a class="contact-link" href="${buildBookedWhatsAppUrl(data, 'I just saw my portfolio direction and I’d like your advice on the best next step.')}" target="_blank">${data.insta}</a>` : ''}
+        <a class="contact-link" href="${buildBookedWhatsAppUrl(data, 'I’d like a professional contact setup and a proper portfolio build.')}" target="_blank">Professional email recommended</a>
+      </div>
+      <a class="cta-btn" href="${buildBookedWhatsAppUrl(data, 'I generated my portfolio direction and I’d like to build this properly. Can we chat?')}" target="_blank">${data.ctaCopy}</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-text">${data.name} © 2026</span>
+      <a class="footer-text" href="${buildBookedWhatsAppUrl(data, 'I’m interested in a Booked portfolio site. Can we chat?')}" target="_blank" style="text-decoration:none;">Built with BOOKED.</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>`;
+}
+
+// ── Main generate ─────────────────────────────────────────────────
+async function startGenerate() {
+  const name     = document.getElementById('f-name').value.trim();
+  const role     = document.getElementById('f-role').value.trim();
+  const insta    = document.getElementById('f-insta').value.trim();
+  const location = document.getElementById('f-location').value.trim() || 'International';
+  const bio      = document.getElementById('f-bio').value.trim();
+  const goal     = document.getElementById('f-goal').value;
+  const errEl    = document.getElementById('form-error');
+
+  if (!name || !role || !insta || !location || !goal || !chosenVibe) {
+    errEl.style.display = 'block';
+    errEl.textContent = 'Please complete all required fields (*) and select a visual direction.';
+    return;
+  }
+  errEl.style.display = 'none';
+
+  const instaHandle = insta ? (insta.startsWith('@') ? insta : '@' + insta) : null;
+  const clients  = document.getElementById('f-clients').value.trim();
+  const words    = document.getElementById('f-words').value.trim();
+  const pricing  = document.getElementById('f-pricing').value;
+  const services = document.getElementById('f-services').value.trim();
+  const specs    = selectedSpecs.length ? selectedSpecs.join(', ') : 'general';
+  const ctaCopy  = goalCTA[goal] || 'Get In Touch';
+
+  document.getElementById('gen-btn').disabled = true;
+  document.getElementById('form-page').style.display = 'none';
+  document.getElementById('loading-page').style.display = 'flex';
+
+  let si = 0;
+  setProgress(steps[0].pct, steps[0].msg);
+  si = 1;
+  timerRef = setInterval(() => {
+    if (si < steps.length) { setProgress(steps[si].pct, steps[si].msg); si++; }
+    else clearInterval(timerRef);
+  }, 2500);
+
+  const prompt = `You are a professional copywriter for fashion industry portfolios. Return ONLY a valid JSON object, no markdown, no explanation.
+
+SUBJECT:
+Name: ${name}
+Role: ${role}
+Instagram: ${instaHandle || 'not provided'}
+Location: ${location}
+Bio: ${bio || 'Not provided'}
+Specialisms: ${specs}
+Notable clients: ${clients || 'none — do not fabricate'}
+Work descriptors: ${words || 'creative, precise'}
+Goal: ${goal}
+CTA label: "${ctaCopy}"
+Services: ${services || 'infer from role'}
+Career stage: ${pricing || 'not specified'}
+Vibe: ${chosenVibe}
+
+COPY RULES:
+- Write like a real person, not a press release. Confident but not exaggerated.
+- Avoid: "passionate", "driven", "dedicated", "elevating", "curating", "crafting narratives", "bespoke"
+- Bio should sound honest and specific — something the person would actually say about themselves
+- Headlines should be short and direct, not over-poetic
+- Do not invent or allude to clients if none are provided
+- Match career stage: emerging sounds different from established
+
+Return this exact JSON structure:
+{
+  "headline": "4-7 word hero statement. Direct and specific to their role and descriptors. Not a tagline.",
+  "bio": "2-3 sentences. Factual, confident, specific. Written in third person. No superlatives.",
+  "pullQuote": "8-12 words. A real-sounding statement about their approach to work.",
+  "contactHeadline": "5-8 words. Direct call to action matching their goal.",
+  "projects": [
+    {"title": "Real-sounding project name", "category": "from their specialisms", "year": "2024"},
+    {"title": "Real-sounding project name", "category": "from their specialisms", "year": "2024"},
+    {"title": "Real-sounding project name", "category": "from their specialisms", "year": "2025"}
+  ],
+  "services": [
+    {"title": "Service name", "description": "One clear sentence describing what they offer and who it's for."},
+    {"title": "Service name", "description": "One clear sentence describing what they offer and who it's for."},
+    {"title": "Service name", "description": "One clear sentence describing what they offer and who it's for."}
+  ],
+  "snapshot": {
+    "roleClarity": "score from 1.0 to 10.0 as string",
+    "visualDirection": "score from 1.0 to 10.0 as string",
+    "bookingPath": "score from 1.0 to 10.0 as string",
+    "categoryStructure": "score from 1.0 to 10.0 as string",
+    "aiReadability": "score from 1.0 to 10.0 as string"
+  },
+  "nextPriority": "One direct sentence explaining the biggest infrastructure gap to fix next."
+}`;
+
+  try {
+    // ── VISION ANALYSIS (hero image only, if uploaded) ────────────
+    let heroLayout = { textSide: 'left', overlayOpacity: 0.5, textColor: 'light', focalX: '50%', focalY: '30%' };
+
+    if (images.hero) {
+      setProgress(10, 'Analysing your hero image...');
+      try {
+        const visionRes = await fetch('https://booked-proxy.boldcapetown.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'gpt-4o',
+            max_tokens: 200,
+            messages: [{
+              role: 'user',
+              content: [
+                {
+                  type: 'image_url',
+                  image_url: { url: images.hero, detail: 'low' }
+                },
+                {
+                  type: 'text',
+                  text: `Analyse this portrait/fashion photo. Return ONLY a JSON object, no markdown:
+{
+  "textSide": "left" or "right" (which side has the most empty space for text overlay),
+  "overlayOpacity": 0.3 to 0.65 (how dark the overlay needs to be for white text to be readable — higher if background is busy or light),
+  "textColor": "light" or "dark" (should text be white or dark based on image tones),
+  "focalX": "20%" to "80%" (horizontal position of the main subject, as CSS percentage),
+  "focalY": "10%" to "40%" (vertical position of subject's face/top, as CSS background-position-y)
+}`
+                }
+              ]
+            }]
+          })
+        });
+        const vd = await visionRes.json();
+        if (!vd.error) {
+          let vraw = (vd.choices?.[0]?.message?.content || '').trim();
+          vraw = vraw.replace(/^```json?\n?/i, '').replace(/\n?```$/i, '').trim();
+          const parsed = JSON.parse(vraw);
+          heroLayout = { ...heroLayout, ...parsed };
+        }
+      } catch(e) { /* fallback to defaults if vision fails */ }
+    }
+    const res = await fetch('https://booked-proxy.boldcapetown.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'gpt-4o',
+        max_tokens: 1200,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await res.json();
+    clearInterval(timerRef);
+
+    if (data.error) throw new Error(data.error.message);
+
+    let raw = (data.choices?.[0]?.message?.content || '').trim();
+    raw = raw.replace(/^```json?\n?/i, '').replace(/\n?```$/i, '').trim();
+    const copy = JSON.parse(raw);
+
+    const theme = vibeThemes[chosenVibe] || vibeThemes['Dark & Moody'];
+    const siteData = { name, role, insta: instaHandle, location, ctaCopy, goal, chosenVibe, clients, specs };
+    const html = buildSite(copy, theme, siteData, heroLayout);
+
+    setProgress(100, 'Done.');
+    await new Promise(r => setTimeout(r, 400));
+
+    lastHTML = html;
+    document.getElementById('loading-page').style.display = 'none';
+    document.getElementById('demo-page').style.display = 'flex';
+    document.getElementById('demo-name-display').textContent = name.toUpperCase();
+    document.getElementById('demo-frame').srcdoc = html;
+
+  } catch (err) {
+    clearInterval(timerRef);
+    document.getElementById('loading-page').style.display = 'none';
+    document.getElementById('form-page').style.display = 'flex';
+    errEl.textContent = 'Generation failed: ' + err.message;
+    errEl.style.display = 'block';
+    document.getElementById('gen-btn').disabled = false;
+  }
+}
+
+// ── Prefill ───────────────────────────────────────────────────────
+function prefill() {
+  document.getElementById('f-name').value = 'Luca Bold';
+  document.getElementById('f-role').value = 'Fashion Model';
+  document.getElementById('f-insta').value = '@lucaboldcpt';
+  document.getElementById('f-location').value = 'Cape Town · Global';
+  document.getElementById('f-bio').value = 'International fashion model with a decade of experience at the intersection of high-end editorial and commercial campaigns.';
+  document.getElementById('f-clients').value = 'Vogue, Nike, H&M, Woolworths';
+  document.getElementById('f-words').value = 'raw, cinematic, powerful, precise, fearless';
+  document.getElementById('f-goal').value = 'attract agency representation';
+  document.getElementById('f-pricing').value = 'premium';
+  document.getElementById('f-services').value = 'Full-day editorial shoots, brand campaigns, runway, creative direction';
+  document.querySelectorAll('.vibe-btn').forEach(b => {
+    b.classList.remove('active');
+    if (b.textContent.includes('Dark')) { b.classList.add('active'); chosenVibe = 'Dark & Moody'; }
+  });
+  selectedSpecs = [];
+  document.querySelectorAll('.spec-pill').forEach(p => p.classList.remove('active'));
+  ['Editorial','Campaign','Runway','Brand Content'].forEach(spec => {
+    document.querySelectorAll('.spec-pill').forEach(p => {
+      if (p.textContent.trim() === spec) { p.classList.add('active'); selectedSpecs.push(spec); }
+    });
+  });
+}
+
+// ── Test mode ─────────────────────────────────────────────────────
+function autoTestGenerate() {
+  prefill();
+  const btn = document.getElementById('auto-test-btn');
+  if (btn) btn.textContent = 'Running Test...';
+  setTimeout(() => startGenerate(), 150);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const testEnabled = params.has('test') || window.location.hash.toLowerCase().includes('test');
+  const btn = document.getElementById('auto-test-btn');
+  if (testEnabled && btn) btn.classList.add('visible');
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 't') {
+      if (btn) btn.classList.add('visible');
+      autoTestGenerate();
+    }
+  });
+});
+
+// ── Utils ─────────────────────────────────────────────────────────
+async function shareDemo() {
+  if (!lastHTML) return;
+  const btn = document.getElementById('share-btn');
+  btn.textContent = 'Creating link...';
+  btn.disabled = true;
+
+  try {
+    let htmlToSave = lastHTML
+      .replace(/url\('data:image\/[^']+'\)/g, "url('')")
+      .replace(/url\("data:image\/[^"]+"\)/g, 'url("")');
+
+    const res = await fetch('https://booked-proxy.boldcapetown.workers.dev/save', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ html: htmlToSave })
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    const shareUrl = data.url;
+    const name = document.getElementById('f-name')?.value.trim() || 'my';
+    const role = document.getElementById('f-role')?.value.trim() || '';
+
+    // Show share modal
+    showShareModal(shareUrl, name, role);
+
+    btn.textContent = '✓ Link Ready';
+    btn.style.borderColor = 'rgba(196,112,74,0.6)';
+    btn.style.color = '#c4704a';
+    setTimeout(() => {
+      btn.textContent = '↗ Share Link';
+      btn.disabled = false;
+      btn.style.borderColor = '';
+      btn.style.color = '';
+    }, 5000);
+
+  } catch(err) {
+    btn.textContent = 'Failed: ' + err.message;
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = '↗ Share Link'; }, 4000);
+  }
+}
+
+function showShareModal(shareUrl, name, role) {
+  // Remove existing modal if any
+  const existing = document.getElementById('share-modal');
+  if (existing) existing.remove();
+
+  const waMsg = encodeURIComponent(`Check out ${name}'s BOOKED. portfolio direction${role ? ' — ' + role : ''}:\n${shareUrl}\n\nGenerate your own portfolio direction at booked-demo.netlify.app`);
+  const waUrl = `https://wa.me/?text=${waMsg}`;
+
+  const modal = document.createElement('div');
+  modal.id = 'share-modal';
+  modal.style.cssText = `
+    position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;
+    display:flex;align-items:center;justify-content:center;padding:24px;
+  `;
+  modal.innerHTML = `
+    <div style="background:#0f0f0f;border:1px solid rgba(255,255,255,0.12);padding:32px;max-width:480px;width:100%;">
+      <p style="font-size:9px;letter-spacing:4px;color:#c4704a;text-transform:uppercase;margin-bottom:16px;">Your Site Link</p>
+      <p style="font-size:11px;color:#aaa;margin-bottom:16px;line-height:1.6;">Tap the link below to copy it, or share directly to WhatsApp. Link expires in 7 days.</p>
+      <div style="background:#070707;border:1px solid rgba(255,255,255,0.1);padding:12px 16px;margin-bottom:20px;word-break:break-all;">
+        <a href="${shareUrl}" target="_blank" style="font-size:12px;color:#c4704a;text-decoration:none;">${shareUrl}</a>
+      </div>
+      <a href="${waUrl}" target="_blank" style="display:block;background:#c4704a;color:#fff;text-align:center;padding:16px;font-size:10px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;margin-bottom:12px;">
+        Share on WhatsApp →
+      </a>
+      <button onclick="document.getElementById('share-modal').remove()" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,0.1);color:#666;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:12px;cursor:pointer;">
+        Close
+      </button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+}
+
+function downloadSite() {
+  if (!lastHTML) return;
+  const name = document.getElementById('f-name').value.trim().replace(/\s+/g,'-').toLowerCase() || 'portfolio';
+  const blob = new Blob([lastHTML], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `booked-${name}-demo.html`;
+  a.click();
+}
+
+function resetForm() {
+  document.getElementById('demo-page').style.display = 'none';
+  document.getElementById('form-page').style.display = 'flex';
+  document.getElementById('gen-btn').disabled = false;
+  chosenVibe = ''; selectedSpecs = []; lastHTML = '';
+  images.hero = null; images.about = null; images.port1 = null; images.port2 = null; images.port3 = null;
+  document.querySelectorAll('.vibe-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.spec-pill').forEach(b => b.classList.remove('active'));
+  ['hero','about','port1','port2','port3'].forEach(k => {
+    const inp = document.getElementById(`img-${k}`);
+    const prev = document.getElementById(`prev-${k}`);
+    const zone = document.getElementById(`zone-${k}`);
+    if (inp) inp.value = '';
+    if (prev) prev.src = '';
+    if (zone) zone.classList.remove('has-image');
+  });
+}
+
+function bookNow() {
+  const data = {
+    name: document.getElementById('f-name')?.value.trim() || '',
+    role: document.getElementById('f-role')?.value.trim() || '',
+    location: document.getElementById('f-location')?.value.trim() || '',
+    insta: document.getElementById('f-insta')?.value.trim() || '',
+    goal: document.getElementById('f-goal')?.value || '',
+    chosenVibe,
+    specs: selectedSpecs.length ? selectedSpecs.join(', ') : 'general',
+    clients: document.getElementById('f-clients')?.value.trim() || ''
+  };
+  window.open(buildBookedWhatsAppUrl(data, 'I’d like to know what it would cost to build this properly.'), '_blank');
+}
+</script>
+</body>
+</html>
