@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BOOKED. — Portfolio Direction Engine</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230e0a1a%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2225%22%20fill%3D%22%23160f28%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23C8A96E%22%3EB%3C%2Ftext%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2244%22%20r%3D%223%22%20fill%3D%22%23C8A96E%22%2F%3E%3C%2Fsvg%3E">
+<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230e0a1a%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2225%22%20fill%3D%22%23160f28%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23C8A96E%22%3EB%3C%2Ftext%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2244%22%20r%3D%223%22%20fill%3D%22%23C8A96E%22%2F%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#0e0a1a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -66,7 +69,7 @@ a { color: inherit; }
 #demo-page { display: none; flex-direction: column; height: 100vh; background:var(--void); position:relative; z-index:1; }
 
 .top-bar { padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--gold-border-divider); background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); flex-shrink:0; position:sticky; top:0; z-index:10; }
-.logo { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-transform:uppercase; }
+.logo { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; }
 .logo-dot { color: var(--gold); }
 .top-tag { font-family: var(--font-body); font-size: 12px; letter-spacing: 0.25em; color: var(--muted); text-transform:uppercase; }
 .body-grid { flex: 1; display: grid; grid-template-columns: 0.92fr 1.08fr; background: transparent !important; width:100%; max-width:1200px; margin:0 auto; }
@@ -178,8 +181,8 @@ a { color: inherit; }
 .demo-actions { display: flex; gap: 10px; }
 .btn-ghost { background:transparent; border:1px solid var(--gold-border-default); color:var(--muted); font-family:var(--font-body); font-size:11px; letter-spacing:0.2em; padding:10px 20px; cursor:pointer; text-transform:uppercase; transition:all 0.2s; }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.btn-book { background:var(--violet-italic); color:var(--void); border:none; font-family:var(--font-body); font-size:11px; font-weight:400; letter-spacing:0.22em; padding:11px 24px; cursor:pointer; text-transform:uppercase; transition:background 0.2s; }
-.btn-book:hover { background:#bba3f0; }
+.btn-book { background:var(--gold); color:var(--void) !important; border:1px solid var(--gold); font-family:var(--font-body); font-size:11px; font-weight:400; letter-spacing:0.22em; padding:11px 24px; cursor:pointer; text-transform:uppercase; transition:background 0.2s, transform 0.2s; }
+.btn-book:hover { background:var(--gold-light); border-color:var(--gold-light); }
 .demo-viewport { flex: 1; overflow: hidden; }
 #demo-frame { width: 100%; height: 100%; border: none; display: block; }
 
@@ -187,7 +190,7 @@ a { color: inherit; }
   .demo-topbar { padding: 0 16px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 8px; padding: 10px 16px; }
   .demo-info { font-size: 8px; letter-spacing: 2px; width: 100%; }
   .demo-name-tag { display: inline; }
-  .demo-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; }
+  .demo-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
   .btn-ghost { padding: 8px 4px; font-size: 8px; letter-spacing: 1px; text-align: center; }
   .btn-book { padding: 8px 4px; font-size: 8px; letter-spacing: 1px; text-align: center; }
 }
@@ -219,10 +222,10 @@ a { color: inherit; }
   .generate-btn { padding: 18px; font-size: 9px; letter-spacing: 4px; margin-top: 20px; }
   .prefill-btn { padding: 14px; }
   .section-divider { margin: 28px 0; }
-  .demo-topbar { padding: 0 16px; height: 52px; }
-  .demo-info { font-size: 8px; }
-  .btn-ghost { padding: 8px 12px; font-size: 8px; letter-spacing: 2px; }
-  .btn-book { padding: 8px 14px; font-size: 8px; letter-spacing: 3px; }
+  .demo-topbar { padding: 10px 16px; height: auto; min-height: 72px; align-items:flex-start; }
+  .demo-info { font-size: 8px; padding-top:2px; }
+  .btn-ghost { padding: 10px 8px; font-size: 8px; letter-spacing: 1.6px; min-height:44px; }
+  .btn-book { padding: 10px 8px; font-size: 8px; letter-spacing: 1.6px; min-height:44px; }
   .demo-name-tag { display: none; }
 }
 
@@ -287,10 +290,18 @@ body { font-weight: 300; }
 }
 .spec-pill,
 .vibe-btn,
-.btn-ghost,
-.btn-book {
+.btn-ghost {
   color: rgba(240,237,232,0.78) !important;
   border-color: rgba(200,169,110,0.24) !important;
+}
+.btn-book {
+  background: var(--gold) !important;
+  color: var(--void) !important;
+  border-color: var(--gold) !important;
+}
+.btn-book:hover {
+  background: var(--gold-light) !important;
+  border-color: var(--gold-light) !important;
 }
 .spec-pill {
   font-size: 13px !important;
@@ -400,7 +411,7 @@ body { font-weight: 300; }
 <!-- ══════════ FORM PAGE ══════════ -->
 <div id="form-page">
   <header class="top-bar">
-    <span class="logo">BOOKED<span class="logo-dot">.</span></span>
+    <a class="logo" href="https://www.bookednow.co.za/" aria-label="Go to Booked homepage">BOOKED<span class="logo-dot">.</span></a>
     <span class="top-tag">CREATIVE INFRASTRUCTURE</span>
   </header>
   <div class="body-grid">
@@ -595,7 +606,7 @@ body { font-weight: 300; }
 <!-- ══════════ DEMO PAGE ══════════ -->
 <div id="demo-page">
   <div class="demo-topbar">
-    <div class="demo-info">BOOKED. SITE —<span class="demo-name-tag" id="demo-name-display"></span></div>
+    <div class="demo-info"><a class="demo-home-link" href="https://www.bookednow.co.za/" target="_top" aria-label="Go to Booked homepage">BOOKED. SITE</a> —<span class="demo-name-tag" id="demo-name-display"></span></div>
     <div class="demo-actions">
       <button class="btn-ghost" onclick="resetForm()">← Edit</button>
       <button class="btn-ghost" id="send-btn" onclick="sendDirectionToLuca()">Send to Luca</button>
@@ -846,7 +857,7 @@ section{padding:100px 0;}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:${navBg};backdrop-filter:blur(12px);border-bottom:1px solid ${border};height:72px;display:flex;align-items:center;}
 .nav-inner{width:100%;max-width:1140px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:${font};font-size:14px;letter-spacing:6px;color:${text};font-weight:400;text-transform:uppercase;}
+.nav-logo{font-family:${font};font-size:14px;letter-spacing:6px;color:${accent};font-weight:400;text-transform:uppercase;text-decoration:none;}
 .nav-links{display:flex;gap:40px;}
 .nav-links a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${muted};transition:color 0.2s;}
 .nav-links a:hover{color:${text};}
@@ -919,7 +930,7 @@ footer{padding:32px 0;border-top:1px solid ${border};}
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">${data.name.split(' ')[0]}</div>
+    <a class="nav-logo" href="https://www.bookednow.co.za/" target="_top" aria-label="Go to Booked homepage">BOOKED.</a>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#about">About</a>
