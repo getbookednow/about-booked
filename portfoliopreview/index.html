@@ -3,1418 +3,1615 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOOKED. — Portfolio Direction Engine</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230e0a1a%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2225%22%20fill%3D%22%23160f28%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23C8A96E%22%3EB%3C%2Ftext%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2244%22%20r%3D%223%22%20fill%3D%22%23C8A96E%22%2F%3E%3C%2Fsvg%3E">
-<link rel="shortcut icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230e0a1a%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2225%22%20fill%3D%22%23160f28%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20text-anchor%3D%22middle%22%20font-family%3D%22Georgia%2C%20serif%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23C8A96E%22%3EB%3C%2Ftext%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2244%22%20r%3D%223%22%20fill%3D%22%23C8A96E%22%2F%3E%3C%2Fsvg%3E">
+<title>Booked. — Discoverability Infrastructure for Fashion Creatives</title>
+<meta name="description" content="Booked helps working fashion creatives and boutique agencies become easier to find, understand, trust, and book. Visibility scans, portfolio audits, roster intelligence, portfolio builds, and digital infrastructure — built from a decade inside the fashion industry.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='34' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='34' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0e0a1a">
+<link rel="canonical" href="https://www.bookednow.co.za/">
+<meta property="og:title" content="Booked. — Discoverability Infrastructure for Fashion Creatives">
+<meta property="og:description" content="Booked helps fashion creatives and boutique agencies become easier to find, understand, trust, and book.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bookednow.co.za/">
+<meta property="og:image" content="https://www.bookednow.co.za/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Helvetica+Neue:wght@300;400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Booked.",
+  "description": "Discoverability infrastructure for fashion creatives.",
+  "url": "https://www.bookednow.co.za",
+  "founder": {
+    "@type": "Person",
+    "name": "Luca Bold"
+  },
+  "areaServed": ["South Africa", "Italy", "Asia", "Europe"],
+  "serviceType": [
+    "Directional visibility scan",
+    "Portfolio audit",
+    "Roster Scan Sprint for creative agencies",
+    "Agency roster intelligence",
+    "One-page portfolio build",
+    "Full portfolio website build",
+    "Digital infrastructure for fashion creatives"
+  ]
+}
+</script>
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --gold:                 #C8A96E;
-  --gold-light:           #e2c98a;
-  --void:                 #0e0a1a;
-  --off-white:            #f0ede8;
-  --subtext:              #9a9a9a;
-  --violet-italic:        #a98fe0;
-  --gold-border-default:  rgba(200,169,110,0.12);
-  --gold-border-hover:    rgba(200,169,110,0.35);
-  --gold-border-divider:  rgba(200,169,110,0.10);
-  --gold-fill-hover:      rgba(200,169,110,0.03);
-  --gold-fill-subtle:     rgba(200,169,110,0.02);
-  --violet-fill:          rgba(169,143,224,0.08);
-  --violet-border:        rgba(169,143,224,0.22);
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-  /* legacy aliases retained for existing generator styles */
-  --black: var(--void);
-  --offblack: #0e1020;
-  --border: var(--gold-border-default);
-  --border-focus: var(--gold);
-  --text: var(--off-white);
-  --muted: var(--subtext);
-  --accent: var(--gold);
-  --accent-dim: rgba(200,169,110,0.12);
-  --bg-card: #0e1020;
-}
-html, body { height: 100%; background: var(--void) !important; color-scheme: dark; scroll-behavior:smooth; }
-body {
-  background: var(--void) !important;
-  color: var(--off-white) !important;
-  font-family: var(--font-body);
-  font-weight: 200;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x:hidden;
-}
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-a { color: inherit; }
-::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
-
-#form-page { min-height: 100vh; display: flex; flex-direction: column; background: transparent !important; color: var(--text); position:relative; z-index:1; }
-#loading-page { display: none; min-height: 100vh; flex-direction: column; align-items: center; justify-content: center; background:transparent; position:relative; z-index:1; }
-#demo-page { display: none; flex-direction: column; height: 100vh; background:var(--void); position:relative; z-index:1; }
-
-.top-bar { padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--gold-border-divider); background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); flex-shrink:0; position:sticky; top:0; z-index:10; }
-.logo { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center; }
-.logo-dot { color: var(--gold); }
-.top-tag { font-family: var(--font-body); font-size: 12px; letter-spacing: 0.25em; color: var(--muted); text-transform:uppercase; }
-.body-grid { flex: 1; display: grid; grid-template-columns: 0.92fr 1.08fr; background: transparent !important; width:100%; max-width:1200px; margin:0 auto; }
-.left-panel { background: transparent !important; padding: 96px 60px 80px 48px; border-right:1px solid var(--gold-border-divider); display:flex; flex-direction:column; justify-content:space-between; position:sticky; top:73px; height:calc(100vh - 73px); }
-.left-inner { max-width: 400px; }
-.eyebrow { font-family:var(--font-body); font-size:12px; letter-spacing:0.3em; color:var(--gold); margin-bottom:32px; display:flex; align-items:center; gap:12px; text-transform:uppercase; }
-.eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
-.headline { font-family:var(--font-display); font-size:clamp(52px,7vw,86px); font-weight:300; line-height:1.05; letter-spacing:-0.01em; color:var(--off-white); margin-bottom:32px; }
-.headline em { font-style:italic; color:var(--violet-italic) !important; font-weight:300; }
-.subtext { font-size:1.05rem; line-height:1.8; color:var(--subtext); margin-bottom:48px; font-weight:200; max-width:520px; }
-.left-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; border-top:1px solid var(--gold-border-divider); padding-top:24px; }
-.stat-num { font-family:var(--font-display); font-size:32px; font-weight:300; color:var(--gold); line-height:1; }
-.stat-label { font-family:var(--font-body); font-size:10px; letter-spacing:0.2em; color:var(--muted); margin-top:8px; text-transform:uppercase; line-height:1.4; }
-
-/* Form panel */
-.right-panel { background: transparent !important; color:var(--text); padding:96px 48px 80px 60px; display:flex; flex-direction:column; }
-.form-section-label { font-family:var(--font-body); font-size:13px; letter-spacing:0.3em; color:var(--gold); margin-bottom:32px; padding-bottom:16px; border-bottom:1px solid var(--gold-border-divider); text-transform:uppercase; }
-.section-divider { border:none; border-top:1px solid var(--gold-border-divider); margin:40px 0; }
-
-/* Fields */
-.field { margin-bottom: 32px; }
-.field label { display:block; font-family:var(--font-body); font-size:12px; letter-spacing:0.25em; color:var(--muted); margin-bottom:12px; text-transform:uppercase; }
-.field input[type="text"], .field textarea, .field select {
-  width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--gold-border-default);
-  color: var(--text); font-family:var(--font-body); font-weight:200; font-size:18px;
-  padding: 12px 0; outline: none; transition: border-color 0.3s; -webkit-appearance: none; border-radius: 0;
-}
-.field input[type="text"]:focus, .field textarea:focus, .field select:focus { border-bottom-color:var(--gold); }
-.field input::placeholder, .field textarea::placeholder { color:rgba(255,255,255,0.22) !important; font-size:16px; opacity:1; }
-.field select:invalid, .field select option[value=''] { color: rgba(156,163,175,0.55) !important; }
-.field input:-webkit-autofill,
-.field input:-webkit-autofill:hover,
-.field input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px var(--void) inset !important;
-  -webkit-text-fill-color: var(--off-white) !important;
-  caret-color: var(--off-white);
-  transition: background-color 5000s ease-in-out 0s;
-}
-.field textarea { resize: none; min-height: 56px; line-height: 1.6; }
-.field select { cursor: pointer; }
-.field select option { background: var(--bg-card) !important; color: var(--text) !important; }
-.select-wrap { position: relative; }
-.select-wrap::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid var(--accent); pointer-events: none; }
-.field .hint { font-family:var(--font-body); font-size:11px; letter-spacing:0.12em; color:rgba(255,255,255,0.38); margin-top:8px; }
-.fields-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
-
-/* Image upload */
-.image-upload-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 28px; }
-.img-slot { position: relative; cursor: pointer; }
-.img-slot input[type="file"] { display: none; }
-.img-drop-zone { width: 100%; aspect-ratio: 3/4; border: 1px solid var(--gold-border-default); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; cursor: pointer; transition: border-color 0.25s, background 0.25s; position: relative; overflow: hidden; background: var(--gold-fill-subtle); }
-.img-drop-zone:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); }
-.img-drop-zone.has-image { border-color: var(--gold); }
-.img-drop-zone .direction-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
-.img-drop-zone.has-image .direction-img { display: block; }
-.img-drop-zone.has-image .upload-ui { display: none; }
-.upload-ui { display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; }
-.upload-icon { width: 20px; height: 20px; opacity: 0.25; }
-.upload-label-text { font-family: var(--font-body); font-size: 8px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; text-align: center; line-height: 1.5; }
-.img-slot-label { font-family: var(--font-body); font-size: 9px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-top: 8px; text-align: center; display: block; }
-.img-remove { position: absolute; top: 6px; right: 6px; z-index: 2; background: rgba(10,14,39,0.85); border: 1px solid var(--gold-border-default); color: var(--muted); font-size: 10px; width: 22px; height: 22px; display: none; align-items: center; justify-content: center; cursor: pointer; line-height: 1; }
-.img-drop-zone.has-image .img-remove { display: flex; }
-.img-remove:hover { color: var(--gold); border-color: var(--gold); }
-
-/* Pills */
-.pill-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-.spec-pill { background:var(--bg-card); border:1px solid var(--gold-border-default); color:var(--muted); font-family:var(--font-body); font-weight:300; font-size:11px; letter-spacing:0.18em; padding:10px 14px; cursor:pointer; transition:all 0.2s; text-transform:uppercase; user-select:none; }
-.spec-pill:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-fill-hover); }
-.spec-pill.active { border-color: var(--gold); color: var(--gold); background: var(--gold-fill-hover); }
-.vibe-label { font-family: var(--font-body); font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; }
-.vibe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-.vibe-btn { background:var(--bg-card); border:1px solid var(--gold-border-default); color:var(--muted); font-family:var(--font-body); font-weight:300; font-size:12px; letter-spacing:0.2em; padding:18px 12px; cursor:pointer; transition:all 0.2s; text-transform:uppercase; }
-.vibe-btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-fill-hover); }
-.vibe-btn.active { border-color: var(--gold); color: var(--gold); background: var(--gold-fill-hover); box-shadow: inset 0 0 0 1px var(--accent); }
-
-.generate-btn { width:100%; background:var(--gold); color:var(--void); border:none; font-family:var(--font-body); font-weight:400; font-size:12px; letter-spacing:0.25em; text-transform:uppercase; padding:22px 32px; cursor:pointer; transition:background 0.2s, transform 0.2s, opacity 0.2s; margin-top:12px; }
-.generate-btn:hover { background:var(--gold-light); transform:translateY(-2px); }
-.generate-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-.form-error { font-family: var(--font-body); font-size: 10px; letter-spacing: 2px; color: #e06060; margin-top: 12px; display: none; }
-.test-mode-btn { display:none; position:fixed; left:18px; bottom:18px; z-index:9998; background:var(--accent); color:var(--void); border:none; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase; padding:12px 16px; border-radius:999px; cursor:pointer; box-shadow:0 12px 32px rgba(0,0,0,0.35); }
-.test-mode-btn.visible { display:block; }
-.test-mode-btn:hover { opacity:0.9; }
-
-
-
-.consent-row { display:flex; gap:12px; align-items:flex-start; margin:18px 0 10px; padding:16px 18px; border:1px solid var(--gold-border-default); background:rgba(200,169,110,0.035); color:rgba(240,237,232,0.86); font-family:var(--font-body); font-size:12px; line-height:1.65; }
-.consent-row input { margin-top:4px; accent-color: var(--gold); flex:0 0 auto; width:16px; height:16px; }
-.privacy-note { margin:0 0 22px; color:rgba(240,237,232,0.62); font-family:var(--font-body); font-size:11px; line-height:1.65; }
-.privacy-note a { color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(200,169,110,0.35); }
-.privacy-note a:hover { color:var(--gold-light); border-bottom-color:var(--gold-light); }
-@media(max-width:600px){ .consent-row{font-size:14px; line-height:1.6; padding:16px; margin:22px 0 12px;} .privacy-note{font-size:13px; line-height:1.6; margin-bottom:24px;} .consent-row input{width:19px;height:19px;margin-top:3px;} }
-.direction-badge { border:1px solid rgba(200,169,110,0.35); color:var(--accent); padding:8px 12px; font-family:'DM Mono',monospace; font-size:8px; letter-spacing:2px; text-transform:uppercase; }
-@media (max-width:768px){ .direction-badge{width:100%;text-align:center;} }
-
-/* Loading */
-.loading-logo { font-family: var(--font-display); font-size: 20px; font-weight: 600; letter-spacing: 9px; color: var(--muted); margin-bottom: 64px; }
-.loading-headline { font-family:var(--font-display); font-size:42px; font-weight:300; color:var(--off-white); margin-bottom:10px; }
-.loading-status { font-family: var(--font-body); font-size: 10px; letter-spacing: 3px; color: var(--muted); margin-bottom: 40px; transition: opacity 0.4s; min-height: 16px; }
-.progress-wrap { width: 280px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
-.progress-track { width: 100%; height: 1px; background: var(--border); position: relative; }
-.progress-fill { position: absolute; left: 0; top: 0; height: 1px; background: var(--accent); width: 0%; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); }
-.progress-pct { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; line-height: 1; }
-.progress-pct span { font-family: var(--font-body); font-size: 13px; color: var(--muted); margin-left: 2px; }
-
-/* Demo topbar */
-.demo-topbar { background:rgba(10,14,26,0.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--gold-border-divider); padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
-.demo-info { font-family: var(--font-body); font-size: 9px; letter-spacing: 3px; color: var(--muted); }
-.demo-name-tag { color: var(--text); margin-left: 8px; }
-.demo-actions { display: flex; gap: 10px; }
-.btn-ghost { background:transparent; border:1px solid var(--gold-border-default); color:var(--muted); font-family:var(--font-body); font-size:11px; letter-spacing:0.2em; padding:10px 20px; cursor:pointer; text-transform:uppercase; transition:all 0.2s; }
-.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.btn-book { background:var(--gold); color:var(--void) !important; border:1px solid var(--gold); font-family:var(--font-body); font-size:11px; font-weight:400; letter-spacing:0.22em; padding:11px 24px; cursor:pointer; text-transform:uppercase; transition:background 0.2s, transform 0.2s; }
-.btn-book:hover { background:var(--gold-light); border-color:var(--gold-light); }
-.demo-viewport { flex: 1; overflow: hidden; }
-#demo-frame { width: 100%; height: 100%; border: none; display: block; }
-
-@media (max-width: 768px) {
-  .demo-topbar { padding: 0 16px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 8px; padding: 10px 16px; }
-  .demo-info { font-size: 8px; letter-spacing: 2px; width: 100%; }
-  .demo-name-tag { display: inline; }
-  .demo-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
-  .btn-ghost { padding: 8px 4px; font-size: 8px; letter-spacing: 1px; text-align: center; }
-  .btn-book { padding: 8px 4px; font-size: 8px; letter-spacing: 1px; text-align: center; }
-}
-
-.mobile-intro { display: none; }
-@media (max-width: 1000px) {
-  .body-grid { grid-template-columns: 1fr; }
-  .left-panel { display: none; }
-  .mobile-intro { display: block; }
-  .right-panel { padding: 48px 32px; }
-  .top-bar { padding: 20px 24px; }
-  .top-tag { display: none; }
-  .fields-row { grid-template-columns: 1fr; gap: 0; }
-}
-@media (max-width: 600px) {
-  .right-panel { padding: 32px 20px 60px; }
-  .top-bar { padding: 18px 20px; }
-  .logo { font-size: 11px; letter-spacing: 7px; }
-  .form-section-label { font-size: 8px; letter-spacing: 4px; margin-bottom: 24px; }
-  .field { margin-bottom: 24px; }
-  .field input[type="text"], .field textarea, .field select { font-size: 16px; } /* prevents iOS zoom */
-  .image-upload-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-  .img-drop-zone { aspect-ratio: 1/1; } /* square on mobile — easier to tap */
-  .upload-label-text { font-size: 7px; }
-  .vibe-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .vibe-btn { padding: 14px 8px; font-size: 9px; letter-spacing: 2px; }
-  .pill-wrap { gap: 6px; }
-  .spec-pill { padding: 8px 10px; font-size: 8px; }
-  .generate-btn { padding: 18px; font-size: 9px; letter-spacing: 4px; margin-top: 20px; }
-  .prefill-btn { padding: 14px; }
-  .section-divider { margin: 28px 0; }
-  .demo-topbar { padding: 10px 16px; height: auto; min-height: 72px; align-items:flex-start; }
-  .demo-info { font-size: 8px; padding-top:2px; }
-  .btn-ghost { padding: 10px 8px; font-size: 8px; letter-spacing: 1.6px; min-height:44px; }
-  .btn-book { padding: 10px 8px; font-size: 8px; letter-spacing: 1.6px; min-height:44px; }
-  .demo-name-tag { display: none; }
-}
-
-/* Defensive dark-mode lock: prevents browser/site-builder defaults from turning the form white */
-#form-page, #form-page .body-grid, #form-page .left-panel, #form-page .right-panel { background-color: transparent !important; }
-#form-page .top-bar { background-color: rgba(10,14,26,0.85) !important; }
-#form-page input, #form-page textarea, #form-page select { background-color: transparent !important; color: var(--text) !important; }
-#form-page label, #form-page .field label { color: var(--muted) !important; }
-
-
-/* Mobile readability upgrade — v11 */
-:root {
-  --subtext: #c8c0d6;
-  --muted: #c8c0d6;
-}
-body { font-weight: 300; }
-.subtext { color: rgba(240,237,232,0.74) !important; }
-.form-section-label {
-  font-size: 14px !important;
-  letter-spacing: 0.26em !important;
-  color: var(--gold-light) !important;
-  border-bottom-color: rgba(200,169,110,0.22) !important;
-}
-.field { margin-bottom: 38px !important; }
-.field label,
-#form-page label,
-#form-page .field label,
-.vibe-label {
-  font-size: 14px !important;
-  letter-spacing: 0.22em !important;
-  color: rgba(240,237,232,0.72) !important;
-  line-height: 1.45 !important;
-  margin-bottom: 16px !important;
-}
-.field input[type="text"],
-.field textarea,
-.field select,
-#form-page input,
-#form-page textarea,
-#form-page select {
-  font-size: 22px !important;
-  line-height: 1.45 !important;
-  color: var(--off-white) !important;
-  border-bottom-color: rgba(200,169,110,0.24) !important;
-  padding: 14px 0 16px !important;
-  font-weight: 300 !important;
-}
-.field input::placeholder,
-.field textarea::placeholder {
-  color: rgba(240,237,232,0.44) !important;
-  font-size: 20px !important;
-}
-.field select:invalid,
-.field select option[value=''] {
-  color: rgba(240,237,232,0.68) !important;
-}
-.field .hint {
-  font-size: 14px !important;
-  color: rgba(240,237,232,0.54) !important;
-  letter-spacing: 0.08em !important;
-  line-height: 1.6 !important;
-}
-.spec-pill,
-.vibe-btn,
-.btn-ghost {
-  color: rgba(240,237,232,0.78) !important;
-  border-color: rgba(200,169,110,0.24) !important;
-}
-.btn-book {
-  background: var(--gold) !important;
-  color: var(--void) !important;
-  border-color: var(--gold) !important;
-}
-.btn-book:hover {
-  background: var(--gold-light) !important;
-  border-color: var(--gold-light) !important;
-}
-.spec-pill {
-  font-size: 13px !important;
-  letter-spacing: 0.16em !important;
-  padding: 12px 16px !important;
-  line-height: 1.35 !important;
-}
-.vibe-btn {
-  font-size: 14px !important;
-  letter-spacing: 0.16em !important;
-  padding: 22px 14px !important;
-  line-height: 1.35 !important;
-}
-.spec-pill.active,
-.vibe-btn.active,
-.spec-pill:hover,
-.vibe-btn:hover {
-  color: var(--gold-light) !important;
-  border-color: rgba(200,169,110,0.56) !important;
-}
-.upload-label-text {
-  font-size: 11px !important;
-  color: rgba(240,237,232,0.62) !important;
-  letter-spacing: 0.22em !important;
-}
-.img-slot-label {
-  font-size: 12px !important;
-  color: rgba(240,237,232,0.62) !important;
-  letter-spacing: 0.22em !important;
-}
-.generate-btn {
-  font-size: 13px !important;
-  letter-spacing: 0.22em !important;
-  padding: 24px 28px !important;
-}
-
-@media (max-width: 600px) {
-  .right-panel { padding: 40px 22px 72px !important; }
-  .mobile-intro p:first-child {
-    font-size: 46px !important;
-    line-height: 1.08 !important;
-    margin-bottom: 18px !important;
-    color: var(--off-white) !important;
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-hover:      rgba(200,169,110,0.03);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --violet-fill:          rgba(169,143,224,0.08);
+    --violet-border:        rgba(169,143,224,0.22);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    --bg:         var(--void);
+    --bg-card:    #0e1020;
+    --gold-border: var(--gold-border-default);
+    --gold-dim:   rgba(200,169,110,0.15);
+    --text:       var(--off-white);
+    --muted:      var(--subtext);
+    --dim:        #444;
   }
-  .mobile-intro p:nth-child(2) {
-    font-size: 18px !important;
-    line-height: 1.75 !important;
-    color: rgba(240,237,232,0.72) !important;
-    margin-bottom: 44px !important;
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  .form-section-label {
-    font-size: 13px !important;
-    letter-spacing: 0.24em !important;
-    margin-bottom: 30px !important;
-    padding-bottom: 18px !important;
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
   }
-  .section-divider { margin: 38px 0 !important; }
-  .field { margin-bottom: 34px !important; }
-  .field label,
-  #form-page label,
-  #form-page .field label,
-  .vibe-label {
-    font-size: 15px !important;
-    letter-spacing: 0.20em !important;
-    color: rgba(240,237,232,0.76) !important;
-    margin-bottom: 18px !important;
+
+  a { color: inherit; }
+  ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
   }
-  .field input[type="text"],
-  .field textarea,
-  .field select,
-  #form-page input,
-  #form-page textarea,
-  #form-page select {
-    font-size: 23px !important;
-    line-height: 1.45 !important;
-    padding: 16px 0 18px !important;
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
   }
-  .field textarea { min-height: 96px !important; }
-  .field .hint { font-size: 15px !important; }
-  .pill-wrap { gap: 10px !important; }
-  .spec-pill {
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold) !important;
     font-size: 12px !important;
-    letter-spacing: 0.14em !important;
-    padding: 12px 14px !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: var(--font-body);
   }
-  .vibe-grid { gap: 10px !important; }
-  .vibe-btn {
-    font-size: 13px !important;
-    letter-spacing: 0.13em !important;
-    padding: 20px 12px !important;
+
+  .nav-contact:hover { background: var(--gold-dim); color: var(--gold-light) !important; }
+
+  .nav-chat-mobile {
+    display: none;
+    padding: 9px 16px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    white-space: nowrap;
+    transition: all 0.2s;
   }
-  .upload-label-text { font-size: 10px !important; }
-  .img-slot-label { font-size: 12px !important; }
-  .generate-btn {
-    font-size: 12px !important;
-    letter-spacing: 0.18em !important;
-    padding: 22px 20px !important;
+
+  .nav-chat-mobile:hover { background: var(--gold-dim); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-}
 
-</style>
-</head>
-<body>
-
-<button type="button" id="auto-test-btn" class="test-mode-btn" onclick="autoTestGenerate()">Auto Test</button>
-
-<!-- ══════════ FORM PAGE ══════════ -->
-<div id="form-page">
-  <header class="top-bar">
-    <a class="logo" href="https://www.bookednow.co.za/" aria-label="Go to Booked homepage">BOOKED<span class="logo-dot">.</span></a>
-    <span class="top-tag">CREATIVE INFRASTRUCTURE</span>
-  </header>
-  <div class="body-grid">
-    <div class="left-panel">
-      <div class="left-inner">
-        <p class="eyebrow">PORTFOLIO DIRECTION</p>
-        <h1 class="headline">See What<br>Your <em style="color:var(--accent);">Portfolio</em><br>Could Become.</h1>
-        <p class="subtext">Upload your details and images. Booked generates a personalised portfolio direction built around your role, aesthetic direction, work categories, and booking goals.</p>
-      </div>
-      <div class="left-stats">
-        <div><div class="stat-num">2</div><div class="stat-label">MIN TO GENERATE</div></div>
-        <div><div class="stat-num">6</div><div class="stat-label">VISUAL DIRECTIONS</div></div>
-        <div><div class="stat-num">FREE</div><div class="stat-label">DIRECTION</div></div>
-      </div>
-    </div>
-
-    <div class="right-panel">
-      <!-- Mobile-only intro -->
-      <div class="mobile-intro">
-        <p style="font-family:var(--font-display);font-size:36px;font-weight:300;color:var(--off-white);line-height:1.1;margin-bottom:12px;">See What Your <em style="font-style:italic;color:var(--gold);">Portfolio</em><br>Could Become.</p>
-        <p style="font-size:13px;line-height:1.8;color:var(--subtext);margin-bottom:36px;">A personalised portfolio direction built around your role, images, and booking goal.</p>
-      </div>
-      <p class="form-section-label">01 — IDENTITY</p>
-      <div class="fields-row">
-        <div class="field"><label>Full Name *</label><input type="text" id="f-name" placeholder="" autocomplete="off"></div>
-        <div class="field"><label>Your Role *</label>
-          <div class="select-wrap"><select id="f-role">
-            <option value="">Select role</option>
-            <option>Fashion Model</option><option>Commercial Model</option><option>Photographer</option>
-            <option>Stylist</option><option>Hair & Makeup Artist</option><option>Creative Director</option>
-            <option>Art Director</option><option>Casting Director</option>
-          </select></div>
-        </div>
-      </div>
-      <div class="fields-row">
-        <div class="field"><label>Instagram *</label><input type="text" id="f-insta" placeholder="" autocomplete="off"></div>
-        <div class="field"><label>Based In *</label><input type="text" id="f-location" placeholder=""></div>
-      </div>
-      <div class="field"><label>One Line About Your Work</label><input type="text" id="f-bio" placeholder=""></div>
-
-      <hr class="section-divider">
-      <p class="form-section-label">02 — YOUR IMAGES</p>
-      <!-- Row 1: Hero + About -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
-        <div class="img-slot">
-          <input type="file" id="img-hero" accept="image/*" onchange="handleImage(this,'zone-hero','prev-hero')">
-          <div class="img-drop-zone" id="zone-hero" onclick="document.getElementById('img-hero').click()">
-            <img class="direction-img" id="prev-hero" alt="">
-            <div class="img-remove" onclick="removeImage(event,'img-hero','zone-hero','prev-hero')">✕</div>
-            <div class="upload-ui">
-              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              <span class="upload-label-text">Hero<br>Image</span>
-            </div>
-          </div>
-          <span class="img-slot-label">Hero</span>
-        </div>
-        <div class="img-slot">
-          <input type="file" id="img-about" accept="image/*" onchange="handleImage(this,'zone-about','prev-about')">
-          <div class="img-drop-zone" id="zone-about" onclick="document.getElementById('img-about').click()">
-            <img class="direction-img" id="prev-about" alt="">
-            <div class="img-remove" onclick="removeImage(event,'img-about','zone-about','prev-about')">✕</div>
-            <div class="upload-ui">
-              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              <span class="upload-label-text">About<br>Image</span>
-            </div>
-          </div>
-          <span class="img-slot-label">About</span>
-        </div>
-      </div>
-      <!-- Row 2: 3 Portfolio shots -->
-      <div class="image-upload-grid">
-        <div class="img-slot">
-          <input type="file" id="img-port1" accept="image/*" onchange="handleImage(this,'zone-port1','prev-port1')">
-          <div class="img-drop-zone" id="zone-port1" onclick="document.getElementById('img-port1').click()">
-            <img class="direction-img" id="prev-port1" alt="">
-            <div class="img-remove" onclick="removeImage(event,'img-port1','zone-port1','prev-port1')">✕</div>
-            <div class="upload-ui">
-              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              <span class="upload-label-text">Work 1</span>
-            </div>
-          </div>
-          <span class="img-slot-label">Work 1</span>
-        </div>
-        <div class="img-slot">
-          <input type="file" id="img-port2" accept="image/*" onchange="handleImage(this,'zone-port2','prev-port2')">
-          <div class="img-drop-zone" id="zone-port2" onclick="document.getElementById('img-port2').click()">
-            <img class="direction-img" id="prev-port2" alt="">
-            <div class="img-remove" onclick="removeImage(event,'img-port2','zone-port2','prev-port2')">✕</div>
-            <div class="upload-ui">
-              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              <span class="upload-label-text">Work 2</span>
-            </div>
-          </div>
-          <span class="img-slot-label">Work 2</span>
-        </div>
-        <div class="img-slot">
-          <input type="file" id="img-port3" accept="image/*" onchange="handleImage(this,'zone-port3','prev-port3')">
-          <div class="img-drop-zone" id="zone-port3" onclick="document.getElementById('img-port3').click()">
-            <img class="direction-img" id="prev-port3" alt="">
-            <div class="img-remove" onclick="removeImage(event,'img-port3','zone-port3','prev-port3')">✕</div>
-            <div class="upload-ui">
-              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              <span class="upload-label-text">Work 3</span>
-            </div>
-          </div>
-          <span class="img-slot-label">Work 3</span>
-        </div>
-      </div>
-      <p class="hint" style="margin-bottom:0;margin-top:-16px;">All optional — upload the strongest images you want reflected in the site direction.</p>
-
-      <hr class="section-divider">
-      <p class="form-section-label">03 — WORK PROFILE</p>
-      <div class="field">
-        <label>Specialisms</label>
-        <div class="pill-wrap">
-          <button class="spec-pill" onclick="toggleSpec(this,'Runway')">Runway</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Editorial')">Editorial Minimal</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Beauty')">Beauty</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Campaign')">Campaign</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Lookbook')">Lookbook</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'E-commerce')">E-commerce</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Fitness')">Fitness</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Video')">Video</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Brand Content')">Brand Content</button>
-          <button class="spec-pill" onclick="toggleSpec(this,'Fine Art')">Fine Art</button>
-        </div>
-      </div>
-      <div class="field"><label>Notable Clients or Brands</label><input type="text" id="f-clients" placeholder=""><p class="hint">Separate with commas.</p></div>
-      <div class="field"><label>5 Words That Define Your Work</label><input type="text" id="f-words" placeholder=""></div>
-
-      <hr class="section-divider">
-      <p class="form-section-label">04 — WEBSITE STYLE</p>
-      <div class="vibe-label">Choose Your Site's Visual Vibe *</div>
-      <div class="vibe-grid">
-        <button class="vibe-btn" onclick="pickVibe(this,'Editorial')">Editorial</button>
-        <button class="vibe-btn" onclick="pickVibe(this,'Commercial')">Clean Commercial</button>
-        <button class="vibe-btn" onclick="pickVibe(this,'Dark & Moody')">Luxury Dark</button>
-        <button class="vibe-btn" onclick="pickVibe(this,'Clean & Minimal')">Agency Minimal</button>
-        <button class="vibe-btn" onclick="pickVibe(this,'Avant-Garde')">Art Direction</button>
-        <button class="vibe-btn" onclick="pickVibe(this,'Warm & Natural')">Lifestyle Natural</button>
-      </div>
-
-      <hr class="section-divider">
-      <p class="form-section-label">05 — BUSINESS</p>
-      <div class="fields-row">
-        <div class="field"><label>Primary Goal *</label>
-          <div class="select-wrap"><select id="f-goal">
-            <option value="">Select goal</option>
-            <option value="attract agency representation">Get Agency Representation</option>
-            <option value="attract direct brand clients">Attract Brand Clients</option>
-            <option value="sell freelance creative services">Sell Freelance Services</option>
-            <option value="build a personal brand">Build Personal Brand</option>
-            <option value="attract editorial and press features">Editorial / Press</option>
-            <option value="drive casting inquiries">Drive Casting Inquiries</option>
-          </select></div>
-        </div>
-        <div class="field"><label>Where Are You in Your Career?</label>
-          <div class="select-wrap"><select id="f-pricing">
-            <option value="">Not specified</option>
-            <option value="entry-level">Emerging — Just Getting Started</option>
-            <option value="mid-tier">Established — Working Consistently</option>
-            <option value="premium">Premium — Selective & In Demand</option>
-            <option value="luxury">Top-Tier — Industry Leader</option>
-          </select></div>
-        </div>
-      </div>
-      <div class="field"><label>Services Offered</label><textarea id="f-services" placeholder=""></textarea></div>
-
-      <label class="consent-row" for="f-consent">
-        <input type="checkbox" id="f-consent">
-        <span>I understand my submitted details will be sent to Booked so Luca can review my portfolio direction and follow up if relevant.</span>
-      </label>
-      <p class="privacy-note">Booked stores submitted details only for follow-up and service delivery. Your information is not sold. To delete a submission, message Luca on WhatsApp. <a href="https://www.bookednow.co.za/privacy/" target="_blank" rel="noopener">Privacy</a></p>
-
-      <button class="generate-btn" id="gen-btn" onclick="startGenerate()">Generate My Portfolio Direction →</button>
-      <p class="form-error" id="form-error">Please complete all required fields (*), select a visual direction, and confirm consent.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════ LOADING PAGE ══════════ -->
-<div id="loading-page">
-  <p class="loading-logo">BOOKED.</p>
-  <h2 class="loading-headline">Building your site...</h2>
-  <p class="loading-status" id="load-status">Writing your copy</p>
-  <div class="progress-wrap">
-    <div class="progress-pct"><span id="pct-num">0</span><span>%</span></div>
-    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
-  </div>
-</div>
-
-<!-- ══════════ DEMO PAGE ══════════ -->
-<div id="demo-page">
-  <div class="demo-topbar">
-    <div class="demo-info"><a class="demo-home-link" href="https://www.bookednow.co.za/" target="_top" aria-label="Go to Booked homepage">BOOKED. SITE</a> —<span class="demo-name-tag" id="demo-name-display"></span></div>
-    <div class="demo-actions">
-      <button class="btn-ghost" onclick="resetForm()">← Edit</button>
-      <button class="btn-ghost" id="send-btn" onclick="sendDirectionToLuca()">Send to Luca</button>
-      <button class="btn-book" onclick="bookNow()">Build Full Portfolio →</button>
-    </div>
-  </div>
-  <div class="demo-viewport">
-    <iframe id="demo-frame" title="Your demo site"></iframe>
-  </div>
-</div>
-
-<script>
-let chosenVibe = '';
-let selectedSpecs = [];
-let lastHTML = '';
-let lastGeneratedCopy = null;
-let lastSiteData = null;
-let leadCaptureSent = false;
-const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/8wifwwyx8ztms4zyfd9ouct6ackcmkbi';
-const images = { hero: null, about: null, port1: null, port2: null, port3: null };
-
-// ── Lead capture ──────────────────────────────────────────────────
-function countUploadedImages() {
-  return Object.values(images).filter(Boolean).length;
-}
-
-function sendLeadToMake(payload) {
-  if (!MAKE_WEBHOOK_URL || leadCaptureSent) return;
-  leadCaptureSent = true;
-
-  const body = new URLSearchParams();
-  Object.entries(payload).forEach(([key, value]) => {
-    body.append(key, value == null ? '' : String(value));
-  });
-
-  fetch(MAKE_WEBHOOK_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    body
-  }).catch(error => {
-    console.warn('Booked lead capture failed:', error);
-    leadCaptureSent = false;
-  });
-}
-
-// ── Image handling ────────────────────────────────────────────────
-function handleImage(input, zoneId, prevId) {
-  const file = input.files[0];
-  if (!file) return;
-  const key = zoneId.replace('zone-', '');
-  const reader = new FileReader();
-  reader.onload = e => {
-    images[key] = e.target.result;
-    document.getElementById(prevId).src = e.target.result;
-    document.getElementById(zoneId).classList.add('has-image');
-  };
-  reader.readAsDataURL(file);
-}
-function removeImage(e, inputId, zoneId, prevId) {
-  e.stopPropagation();
-  const key = zoneId.replace('zone-', '');
-  images[key] = null;
-  document.getElementById(inputId).value = '';
-  document.getElementById(prevId).src = '';
-  document.getElementById(zoneId).classList.remove('has-image');
-}
-
-function pickVibe(el, vibe) {
-  document.querySelectorAll('.vibe-btn').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  chosenVibe = vibe;
-}
-function toggleSpec(el, spec) {
-  if (el.classList.contains('active')) { el.classList.remove('active'); selectedSpecs = selectedSpecs.filter(s => s !== spec); }
-  else { el.classList.add('active'); selectedSpecs.push(spec); }
-}
-
-// ── Progress ──────────────────────────────────────────────────────
-const steps = [
-  { msg: 'Analysing your images',        pct: 12 },
-  { msg: 'Writing your copy',            pct: 30 },
-  { msg: 'Crafting your headline',       pct: 48 },
-  { msg: 'Composing your bio',           pct: 62 },
-  { msg: 'Building your portfolio',      pct: 76 },
-  { msg: 'Placing your images',          pct: 88 },
-  { msg: 'Final touches',                pct: 94 },
-];
-let timerRef = null;
-
-function setProgress(pct, msg) {
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('pct-num').textContent = pct;
-  if (msg !== undefined) {
-    const el = document.getElementById('load-status');
-    el.style.opacity = '0';
-    setTimeout(() => { el.textContent = msg; el.style.opacity = '1'; }, 200);
+  .hero-tag {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
-}
 
-// ── Vibe themes ───────────────────────────────────────────────────
-const vibeThemes = {
-  'Editorial': {
-    bg: '#080808', text: '#f0f0f0', accent: '#f0f0f0', muted: '#666',
-    border: 'rgba(255,255,255,0.08)', heroGrad: 'linear-gradient(160deg,#0a0a0a 0%,#1a1a1a 100%)',
-    font: "'Playfair Display', Georgia, serif", bodyFont: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    btnBg: '#f0f0f0', btnText: '#080808', cardBg: '#111', navBg: 'rgba(8,8,8,0.95)'
-  },
-  'Commercial': {
-    bg: '#ffffff', text: '#0a0a0a', accent: '#0a0a0a', muted: '#888',
-    border: 'rgba(0,0,0,0.08)', heroGrad: 'linear-gradient(160deg,#f5f5f5 0%,#ffffff 100%)',
-    font: "'Helvetica Neue', Helvetica, Arial, sans-serif", bodyFont: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-    btnBg: '#0a0a0a', btnText: '#ffffff', cardBg: '#f5f5f5', navBg: 'rgba(255,255,255,0.95)'
-  },
-  'Dark & Moody': {
-    bg: '#030303', text: '#d4c9b8', accent: '#c9a96e', muted: '#555',
-    border: 'rgba(201,169,110,0.15)', heroGrad: 'linear-gradient(160deg,#030303 0%,#0d0a07 100%)',
-    font: "'Cormorant Garamond', Georgia, serif", bodyFont: "var(--font-body)",
-    btnBg: '#c9a96e', btnText: '#030303', cardBg: '#0a0906', navBg: 'rgba(3,3,3,0.97)'
-  },
-  'Clean & Minimal': {
-    bg: '#fafafa', text: '#111111', accent: '#111111', muted: '#999',
-    border: 'rgba(0,0,0,0.06)', heroGrad: 'linear-gradient(160deg,#f0f0f0 0%,#fafafa 100%)',
-    font: "var(--font-body)", bodyFont: "var(--font-body)",
-    btnBg: '#111111', btnText: '#fafafa', cardBg: '#f0f0f0', navBg: 'rgba(250,250,250,0.97)'
-  },
-  'Avant-Garde': {
-    bg: '#0d0d0d', text: '#e8e8e8', accent: '#c0392b', muted: '#555',
-    border: 'rgba(192,57,43,0.2)', heroGrad: 'linear-gradient(135deg,#0d0d0d 0%,#1a0808 100%)',
-    font: "'Oswald', 'Helvetica Neue', sans-serif", bodyFont: "'Helvetica Neue', Helvetica, sans-serif",
-    btnBg: '#c0392b', btnText: '#e8e8e8', cardBg: '#111', navBg: 'rgba(13,13,13,0.97)'
-  },
-  'Warm & Natural': {
-    bg: '#f5f0e8', text: '#2c1f14', accent: '#c4704a', muted: '#a08060',
-    border: 'rgba(196,112,74,0.15)', heroGrad: 'linear-gradient(160deg,#ede5d8 0%,#f5f0e8 100%)',
-    font: "'Cormorant Garamond', Georgia, serif", bodyFont: "var(--font-body)",
-    btnBg: '#c4704a', btnText: '#f5f0e8', cardBg: '#ede5d8', navBg: 'rgba(245,240,232,0.97)'
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
   }
-};
 
-const goalCTA = {
-  'attract agency representation': 'Request Composite Card',
-  'attract direct brand clients': 'Request Rate Card',
-  'sell freelance creative services': 'Book a Project',
-  'build a personal brand': "Let's Connect",
-  'attract editorial and press features': 'Editorial Enquiries',
-  'drive casting inquiries': 'Submit Casting Request'
-};
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    max-width: 840px;
+  }
 
-function buildBookedWhatsAppUrl(data, intent) {
-  const lines = [
-    `Hi Luca, I generated my Booked Portfolio Direction.`,
-    ``,
-    `Name: ${data.name || ''}`,
-    `Role: ${data.role || ''}`,
-    `Location: ${data.location || ''}`,
-    `Instagram: ${data.insta || ''}`,
-    `Goal: ${data.goal || ''}`,
-    `Visual direction: ${data.chosenVibe || ''}`,
-    `Specialisms: ${data.specs || ''}`,
-    `Clients / brands: ${data.clients || 'Not listed'}`,
-    ``,
-    data.headline ? `Generated direction: ${data.headline}` : '',
-    data.contactHeadline ? `Suggested next step: ${data.contactHeadline}` : '',
-    ``,
-    intent || `I’d like to know what it would cost to build this properly.`
-  ].filter(line => line !== '');
-  return `https://wa.me/27637549122?text=${encodeURIComponent(lines.join('\n'))}`;
-}
+  .hero h1 em { font-style: italic; color: var(--violet-italic); }
 
-// ── Build the portfolio HTML from copy JSON + theme ───────────────
-function buildSite(copy, theme, data, heroLayout = {}) {
-  const { bg, text, accent, muted, border, heroGrad, font, bodyFont, btnBg, btnText, cardBg, navBg } = theme;
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 200;
+    color: var(--subtext);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
 
-  // Hero image layout
-  const hl = {
-    textSide: heroLayout.textSide || 'left',
-    overlayOpacity: heroLayout.overlayOpacity || 0.5,
-    textColor: heroLayout.textColor || 'light',
-    focalX: heroLayout.focalX || '50%',
-    focalY: heroLayout.focalY || '30%'
-  };
+  .hero-sub strong { color: var(--text); font-weight: 400; }
 
-  const heroImg   = images.hero ? `url('${images.hero}')` : heroGrad;
-  const heroTextC = images.hero ? (hl.textColor === 'light' ? '#ffffff' : '#111111') : text;
-  const heroMutedC = images.hero ? (hl.textColor === 'light' ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.5)') : muted;
+  .hero-sub-note {
+    margin-top: 18px;
+    max-width: 720px;
+    color: rgba(255,255,255,0.62);
+    font-size: 15px;
+    line-height: 1.7;
+  }
 
-  // Text alignment based on subject position
-  const textAlign  = hl.textSide === 'right' ? 'right' : 'left';
-  const textMargin = hl.textSide === 'right' ? 'margin-left:auto;' : '';
-  const bgPosX     = hl.textSide === 'left' ? '65%' : '35%'; // push subject to opposite side
-  const overlayGrad = hl.textSide === 'left'
-    ? `linear-gradient(to right, rgba(0,0,0,${hl.overlayOpacity}) 50%, rgba(0,0,0,${Math.max(0, hl.overlayOpacity - 0.25)}) 100%)`
-    : `linear-gradient(to left, rgba(0,0,0,${hl.overlayOpacity}) 50%, rgba(0,0,0,${Math.max(0, hl.overlayOpacity - 0.25)}) 100%)`;
-  const heroOverlay = images.hero
-    ? `<div style="position:absolute;inset:0;background:${overlayGrad};"></div>`
-    : '';
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
 
-  const aboutImg = images.about ? `url('${images.about}')` : null;
-  const portImgs = [images.port1, images.port2, images.port3];
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s, transform 0.2s;
+  }
 
-  const gFonts = font.includes('Playfair') ? 'Playfair+Display:wght@400;700' :
-                 font.includes('Cormorant') ? 'Cormorant+Garamond:ital,wght@0,300;0,400;1,300' :
-                 font.includes('Oswald')    ? 'Oswald:wght@300;400;600' : '';
-  const gFontLink = gFonts ? `<link href="https://fonts.googleapis.com/css2?family=${gFonts}&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">` : '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">';
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-  // Work items
-  const workItems = (copy.projects || []).map((p, i) => {
-    const bg_img = portImgs[i] ? `background-image:url('${portImgs[i]}');background-size:cover;background-position:center;` : '';
-    const fallback = i === 0 ? `background-color:${cardBg};` :
-                     i === 1 ? `background:linear-gradient(135deg,${cardBg} 0%,${accent}22 100%);` :
-                               `background:linear-gradient(135deg,${accent}11 0%,${cardBg} 100%);`;
-    return `
-    <div style="break-inside:avoid;">
-      <div style="width:100%;aspect-ratio:3/4;${bg_img || fallback}position:relative;overflow:hidden;">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);">
-          <div style="font-family:${font};font-size:16px;color:var(--off-white);font-weight:400;">${p.title}</div>
-          <div style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-top:4px;text-transform:uppercase;">${p.category} · ${p.year}</div>
-        </div>
-      </div>
-    </div>`;
-  }).join('');
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold-border);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
 
-  // Services
-  const serviceItems = (copy.services || []).map(s => `
-    <div style="padding:32px;border:1px solid ${border};background:${cardBg};">
-      <div style="font-family:${font};font-size:20px;color:${accent};margin-bottom:12px;font-weight:400;">${s.title}</div>
-      <div style="font-size:13px;line-height:1.8;color:${muted};">${s.description}</div>
-    </div>`).join('');
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${data.name} — ${data.role}</title>
-${gFontLink}
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:${bg};color:${text};font-family:${bodyFont};font-weight:300;-webkit-font-smoothing:antialiased;padding-top:72px;}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;}
-.container{max-width:1140px;margin:0 auto;padding:0 40px;}
-section{padding:100px 0;}
-@media(max-width:768px){section{padding:64px 0;}.container{padding:0 24px;}}
-@media(max-width:480px){.container{padding:0 16px;}}
+  /* FOUNDER STRIP */
+  .founder-strip {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+  }
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:${navBg};backdrop-filter:blur(12px);border-bottom:1px solid ${border};height:72px;display:flex;align-items:center;}
-.nav-inner{width:100%;max-width:1140px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:${font};font-size:14px;letter-spacing:6px;color:${accent};font-weight:400;text-transform:uppercase;text-decoration:none;}
-.nav-links{display:flex;gap:40px;}
-.nav-links a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${muted};transition:color 0.2s;}
-.nav-links a:hover{color:${text};}
-@media(max-width:600px){.nav-links{display:none;}}
+  .founder-strip-inner {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;background-image:${heroImg};background-size:cover;background-position:${images.hero ? bgPosX + ' ' + hl.focalY : 'center'};}
-.hero-content{position:relative;z-index:1;padding:0 5%;max-width:640px;text-align:${textAlign};${textMargin}}
-.hero-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:${heroMutedC};margin-bottom:24px;}
-.hero-name{font-family:${font};font-size:clamp(56px,9vw,120px);font-weight:${font.includes('Oswald') ? '600' : '300'};line-height:0.95;color:${heroTextC};margin-bottom:24px;letter-spacing:-0.02em;}
-.hero-role{font-size:clamp(11px,1.5vw,14px);letter-spacing:5px;text-transform:uppercase;color:${heroMutedC};margin-bottom:16px;}
-.hero-meta{font-size:11px;letter-spacing:3px;color:${heroMutedC};margin-bottom:40px;opacity:0.8;}
-.hero-headline{font-family:${font};font-size:clamp(20px,2.5vw,32px);font-style:italic;color:${heroTextC};font-weight:300;line-height:1.3;opacity:0.92;}
-.hero-scroll{position:absolute;bottom:40px;right:5%;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:${images.hero ? 'rgba(255,255,255,0.3)' : muted};writing-mode:vertical-rl;}
+  .founder-strip-line { width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.about-image{width:100%;aspect-ratio:4/5;background:${aboutImg ? `url('${images.about}') center/cover` : `linear-gradient(135deg,${cardBg} 0%,${accent}22 100%)`};position:relative;}
-.about-text{}
-.section-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:${accent};margin-bottom:32px;display:flex;align-items:center;gap:16px;}
-.section-label::before{content:'';width:32px;height:1px;background:${accent};}
-.about-bio{font-size:17px;line-height:1.9;color:${text};margin-bottom:32px;font-weight:300;}
-.about-quote{font-family:${font};font-size:clamp(22px,2.5vw,30px);font-style:italic;color:${accent};font-weight:300;line-height:1.3;padding-left:24px;border-left:2px solid ${accent};}
-@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+  .founder-strip p { font-size: 13px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
+  .founder-strip strong { color: var(--gold); font-weight: 400; }
 
-/* WORK */
-.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-@media(max-width:768px){.work-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.work-grid{grid-template-columns:1fr;}}
+  /* DIAGNOSIS */
+  .diagnosis {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-/* SERVICES */
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
-@media(max-width:768px){.services-grid{grid-template-columns:1fr;}}
+  .diagnosis-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
+    padding: 56px 0;
+    border-top: 1px solid var(--gold-border-divider);
+  }
 
-/* CONTACT */
-.contact-inner{max-width:640px;}
-.contact-headline{font-family:${font};font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.1;color:${text};margin-bottom:48px;}
-.contact-links{display:flex;flex-direction:column;gap:16px;margin-bottom:48px;}
-.contact-link{font-size:14px;letter-spacing:2px;color:${accent};transition:opacity 0.2s;}
-.contact-link:hover{opacity:0.7;}
-.cta-btn{display:inline-block;padding:18px 48px;background:${btnBg};color:${btnText};font-size:10px;letter-spacing:5px;text-transform:uppercase;font-family:${bodyFont};font-weight:400;border:none;cursor:pointer;transition:opacity 0.2s;}
-.cta-btn:hover{opacity:0.85;}
+  .diagnosis-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 4px;
+  }
 
-/* BOOKED DIRECTION DIAGNOSTIC */
-.booked-direction-note{background:${bg};border-top:1px solid ${border};border-bottom:1px solid ${border};}
-.diagnostic-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:32px 0;}
-.diagnostic-card{border:1px solid ${border};background:${cardBg};padding:20px;}
-.diagnostic-score{font-family:${font};font-size:32px;color:${accent};line-height:1;margin-bottom:10px;}
-.diagnostic-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:${muted};line-height:1.5;}
-.missing-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;margin:32px 0 40px;padding:0;list-style:none;}
-.missing-list li{font-size:12px;letter-spacing:1px;color:${muted};border-bottom:1px solid ${border};padding-bottom:10px;}
-.direction-copy{font-size:15px;line-height:1.9;color:${muted};max-width:760px;}
-@media(max-width:900px){.diagnostic-grid{grid-template-columns:repeat(2,1fr);}.missing-list{grid-template-columns:1fr;}}
-@media(max-width:480px){.diagnostic-grid{grid-template-columns:1fr;}}
+  .diagnosis-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
 
-/* FOOTER */
-footer{padding:32px 0;border-top:1px solid ${border};}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;}
-.footer-text{font-size:10px;letter-spacing:2px;color:${muted};}
-@media(max-width:480px){.footer-inner{flex-direction:column;gap:12px;text-align:center;}}
+  .diagnosis-copy h3 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--off-white);
+  }
 
-/* Defensive dark-mode lock: prevents browser/site-builder defaults from turning the form white */
-#form-page, #form-page .body-grid, #form-page .left-panel, #form-page .right-panel { background-color: transparent !important; }
-#form-page .top-bar { background-color: rgba(10,14,26,0.85) !important; }
-#form-page input, #form-page textarea, #form-page select { background-color: transparent !important; color: var(--text) !important; }
-#form-page label, #form-page .field label { color: var(--muted) !important; }
+  .diagnosis-copy h3 em { font-style: italic; color: var(--violet-italic); }
+
+  .diagnosis-copy p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  .services {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 48px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, background 0.2s, transform 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, var(--gold-fill-subtle), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .service-card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); transform: translateY(-4px); }
+  .service-card:hover::before { opacity: 1; }
+
+  .card-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+
+  .card-number { font-size: 12px; letter-spacing: 0.2em; color: var(--gold); font-weight: 400; }
+
+  .card-tag {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 4px 10px;
+    border: 1px solid var(--dim);
+  }
+
+  .card-tag.free, .card-tag.live { border-color: rgba(200,169,110,0.3); color: var(--gold); }
+  .card-tag.live { background: var(--violet-fill); border-color: var(--violet-border); color: #c9afff; }
+
+  .service-card h2 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .card-best-for {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 300;
+    opacity: 0.88;
+  }
+
+  .service-card p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .card-link {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-link::after { content: '→'; transition: transform 0.2s; }
+  .service-card:hover .card-link::after { transform: translateX(4px); }
+
+  .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+  .card-price { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
+
+  .service-card-wide { grid-column: 1 / -1; }
+
+  .agency-intelligence {
+    scroll-margin-top: 120px;
+    margin-top: -72px;
+  }
+
+  #services { padding-bottom: 72px; }
+
+  .services-category-label {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gold-border-divider);
+  }
+
+
+
+  /* AGENCY ROSTER SCAN */
+  .agency-scan {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: 120px;
+  }
+
+  .agency-scan-inner {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 72px;
+  }
+
+  .agency-kicker {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .agency-kicker::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+
+  .agency-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 48px;
+  }
+
+  .agency-heading {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 6vw, 84px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--off-white);
+    margin-bottom: 28px;
+  }
+
+  .agency-heading em { font-style: italic; color: var(--violet-italic); }
+
+  .agency-copy {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.85;
+    font-weight: 300;
+    max-width: 620px;
+  }
+
+  .agency-copy strong { color: var(--off-white); font-weight: 400; }
+
+  .agency-offer-card {
+    background:
+      linear-gradient(135deg, rgba(169,143,224,0.10), transparent 58%),
+      var(--bg-card);
+    border: 1px solid var(--violet-border);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .agency-offer-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .agency-offer-card > * { position: relative; z-index: 1; }
+
+  .agency-card-label {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .agency-card-title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--off-white);
+    margin-bottom: 24px;
+  }
+
+  .agency-price {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 16px;
+    padding: 22px 0;
+    border-top: 1px solid var(--gold-border-divider);
+    border-bottom: 1px solid var(--gold-border-divider);
+    margin-bottom: 28px;
+  }
+
+  .agency-price strong {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--off-white);
+    line-height: 1;
+  }
+
+  .agency-price span {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--violet-italic);
+    padding-bottom: 6px;
+    white-space: nowrap;
+  }
+
+  .agency-deliverables {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .agency-deliverables li {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .agency-deliverables li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.75;
+  }
+
+  .agency-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 17px 22px;
+    background: var(--violet-italic);
+    color: var(--void);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .agency-cta:hover { background: #bba3f0; transform: translateY(-2px); }
+
+  .agency-intel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .agency-intel-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 32px;
+  }
+
+  .agency-intel-card .mini-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .agency-intel-card h4 {
+    font-family: var(--font-display);
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--off-white);
+    margin-bottom: 14px;
+  }
+
+  .agency-intel-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .signals-panel {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2px;
+  }
+
+  .signals-left,
+  .signals-right {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 40px;
+  }
+
+  .signals-left h3 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .signals-left h3 em { font-style: italic; color: var(--violet-italic); }
+
+  .signals-left p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .signal-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gold-border-divider);
+  }
+
+  .signal-row:last-child { border-bottom: none; }
+
+  .signal-name {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+
+  .signal-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .signal-score::before {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--violet-italic), rgba(169,143,224,0.08));
+  }
+
+
+  /* IMPROVES */
+  .improves {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .improves-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 64px; }
+
+  .improves-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .improves-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+
+  .improves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+  .improves-col {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 40px;
+  }
+
+  .improves-col-label {
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .improves-col.before .improves-col-label { color: var(--dim); }
+  .improves-col.after .improves-col-label { color: var(--gold); }
+
+  .improves-col-label .dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .improves-col.before .dot { background: var(--dim); }
+  .improves-col.after .dot { background: var(--gold); }
+
+  .improves-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+  .improves-list li {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.5;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .improves-col.before .improves-list li { color: var(--muted); }
+  .improves-col.after .improves-list li { color: var(--off-white); }
+
+  .improves-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 1px;
+  }
+
+  .improves-col.before .improves-list li::before { background: var(--dim); }
+  .improves-col.after .improves-list li::before { background: var(--gold); }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pull-quote-inner {
+    border-left: 2px solid var(--gold);
+    padding: 48px 64px;
+    background: linear-gradient(135deg, rgba(120,80,200,0.05) 0%, transparent 70%);
+  }
+
+  .pull-quote blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--off-white);
+  }
+
+  /* FOR / NOT FOR */
+  .icp {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+
+  .icp-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 56px 48px;
+  }
+
+  .icp-panel.not-for { border-color: rgba(68,68,68,0.4); }
+
+  .icp-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .icp-label .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .icp-panel.for .icp-label { color: var(--gold); }
+  .icp-panel.for .dot { background: var(--gold); }
+  .icp-panel.not-for .icp-label { color: var(--dim); }
+  .icp-panel.not-for .dot { background: var(--dim); }
+
+  .icp-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+
+  .icp-list li {
+    font-family: var(--font-display);
+    font-size: clamp(17px, 1.8vw, 22px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .icp-panel.for .icp-list li { color: var(--off-white); }
+  .icp-panel.not-for .icp-list li { color: var(--muted); }
+
+  .icp-list li .marker {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-top: 3px;
+    line-height: 1;
+  }
+
+  .icp-panel.for .marker { color: var(--gold); }
+  .icp-panel.not-for .marker { color: var(--dim); }
+
+  /* CONTACT CTA */
+  .contact-cta {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-cta-inner {
+    padding: 96px 0 0;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+
+  .contact-heading {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .contact-heading em { font-style: italic; color: var(--violet-italic); }
+
+  .contact-sub {
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--subtext);
+    max-width: 440px;
+    line-height: 1.8;
+    margin-bottom: 56px;
+  }
+
+  .contact-actions { display: flex; flex-direction: column; gap: 2px; max-width: 640px; }
+
+  .btn-wa-full {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 32px;
+    background: var(--violet-italic);
+    color: var(--void);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s;
+  }
+
+  .btn-wa-full:hover { background: #bba3f0; }
+  .btn-wa-full .arrow { font-size: 16px; }
+
+  .btn-scan-outline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 32px;
+    border: 1px solid var(--gold-border-default);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-scan-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* FOUNDER */
+  .founder {
+    position: relative;
+    z-index: 1;
+    padding: 120px 48px 140px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+
+  .founder-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 96px; align-items: start; }
+
+  .founder-left { position: sticky; top: 120px; }
+
+  .founder-tag {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .founder-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+
+  .founder-name {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .founder-name em { font-style: italic; color: var(--violet-italic); display: block; }
+
+  .founder-identity {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 2.2;
+  }
+
+  .founder-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+
+  .founder-contact:hover { background: var(--gold-dim); border-color: rgba(200,169,110,0.35); }
+
+  .founder-bio p {
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--off-white);
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  .founder-bio p:last-child { margin-bottom: 0; }
+  .founder-bio strong { color: var(--off-white); font-weight: 400; }
+  .founder-bio em { font-style: italic; color: var(--violet-italic); }
+
+  .founder-markets { margin-top: 48px; margin-bottom: 48px; padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+
+  .founder-markets-label, .founder-built-label {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .markets-list { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .market-pill {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 6px 14px;
+    border: 1px solid var(--gold-border-default);
+    font-family: var(--font-body);
+  }
+
+  .founder-built { padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+  .built-list { list-style: none; }
+
+  .built-list li {
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--muted);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gold-border-divider);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    line-height: 1.6;
+  }
+
+  .built-list li::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 6px;
+    opacity: 0.6;
+  }
+
+  .built-list li:last-child { border-bottom: none; }
+
+  /* POST-FOUNDER CTA */
+  .post-founder-cta {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .post-founder-cta-inner {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .post-founder-cta p {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--off-white);
+    max-width: 500px;
+    line-height: 1.3;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
+
+  .footer-work {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .footer-work:hover { color: var(--gold); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag  { animation: fadeUp 0.6s ease both; }
+  .hero h1   { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-sub-note { animation: fadeUp 0.6s 0.25s ease both; }
+  .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+  .service-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
+  .service-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
+  .service-card:nth-child(3) { animation: fadeUp 0.5s 0.3s ease both; }
+  .service-card:nth-child(4) { animation: fadeUp 0.5s 0.4s ease both; }
+
+  /* RESPONSIVE */
+  @media (min-width: 1440px) {
+    nav { max-width: 1440px; margin: 0 auto; left: 0; right: 0; }
+    .hero, .founder-strip, .diagnosis, .services, .improves,
+    .pull-quote, .icp, .contact-cta, .post-founder-cta { max-width: 1400px; }
+  }
+
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .hero { padding: 130px 32px 60px; }
+    .founder-strip { padding: 0 32px; margin-bottom: 60px; }
+    .diagnosis { padding: 0 32px 48px; }
+    .diagnosis-inner { grid-template-columns: 1fr; gap: 24px; }
+    .services { padding: 0 32px 100px; }
+    .agency-intelligence { margin-top: -48px; }
+    #services { padding-bottom: 48px; }
+    .agency-scan { padding: 0 32px 100px; }
+    .agency-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .agency-intel-grid { grid-template-columns: 1fr; }
+    .signals-panel { grid-template-columns: 1fr; }
+    .improves { padding: 0 32px 100px; }
+    .pull-quote { padding: 0 32px 80px; }
+    .pull-quote-inner { padding: 40px 48px; }
+    .icp { padding: 0 32px 80px; }
+    .icp-panel { padding: 44px 36px; }
+    .contact-cta { padding: 0 32px 80px; }
+    .founder { padding: 80px 32px 100px; }
+    .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+    .founder-left { position: static; }
+    .post-founder-cta { padding: 0 32px 60px; }
+    footer { padding: 36px 32px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 18px 20px; }
+    .nav-links { display: none; }
+    .nav-contact { display: none; }
+    .nav-chat-mobile { display: flex; }
+    .hero { padding: 110px 20px 60px; }
+    .hero h1 { font-size: clamp(40px, 10vw, 64px); }
+    .hero-sub { font-size: 16px; max-width: 100%; }
+    .hero-sub-note { font-size: 14px; max-width: 100%; }
+    .hero-ctas { flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 16px 24px; }
+    .founder-strip { padding: 0 20px; margin-bottom: 40px; }
+    .diagnosis { padding: 0 20px 40px; }
+    .services { padding: 0 20px 80px; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+    .service-card { padding: 32px 24px; }
+    .service-card h2 { font-size: 28px; }
+    .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .agency-intelligence { margin-top: -36px; }
+    #services { padding-bottom: 44px; }
+    .agency-scan { padding: 0 20px 80px; }
+    .agency-scan-inner { padding-top: 56px; }
+    .agency-offer-card { padding: 32px 24px; }
+    .agency-intel-grid { grid-template-columns: 1fr; }
+    .agency-intel-card { padding: 28px 24px; }
+    .signals-panel { grid-template-columns: 1fr; }
+    .signals-left, .signals-right { padding: 32px 24px; }
+    .signal-row { grid-template-columns: 1fr; gap: 8px; }
+    .agency-price { grid-template-columns: 1fr; gap: 4px; }
+    .agency-price span { padding-bottom: 0; }
+    .improves { padding: 0 20px 80px; }
+    .improves-grid { grid-template-columns: 1fr; }
+    .improves-col { padding: 32px 28px; }
+    .pull-quote { padding: 0 20px 64px; }
+    .pull-quote-inner { padding: 32px 28px; }
+    .icp { padding: 0 20px 64px; }
+    .icp-grid { grid-template-columns: 1fr; }
+    .icp-panel { padding: 40px 28px; }
+    .contact-cta { padding: 0 20px 64px; }
+    .contact-heading { font-size: clamp(36px, 9vw, 56px); }
+    .contact-actions { max-width: 100%; }
+    .founder { padding: 60px 20px 80px; }
+    .founder-name { font-size: clamp(38px, 9vw, 56px); }
+    .post-founder-cta { padding: 0 20px 48px; }
+    .post-founder-cta-inner { flex-direction: column; gap: 24px; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  @media (max-width: 390px) {
+    nav { padding: 16px 16px; }
+    .nav-logo { font-size: 18px; }
+    .hero { padding: 100px 16px 48px; }
+    .hero h1 { font-size: 38px; }
+    .hero-tag { font-size: 12px; line-height: 1.4; }
+    .hero-sub { font-size: 16px; }
+    .founder-strip { padding: 0 16px; }
+    .diagnosis { padding: 0 16px 32px; }
+    .services { padding: 0 16px 64px; }
+    .service-card { padding: 28px 20px; }
+    .service-card h2 { font-size: 24px; }
+    .agency-intelligence { margin-top: -28px; }
+    #services { padding-bottom: 40px; }
+    .agency-scan { padding: 0 16px 64px; }
+    .agency-offer-card { padding: 28px 20px; }
+    .agency-intel-card { padding: 24px 20px; }
+    .signals-left, .signals-right { padding: 28px 20px; }
+    .agency-cta { padding: 16px 18px; font-size: 11px; }
+    .improves { padding: 0 16px 64px; }
+    .improves-col { padding: 28px 20px; }
+    .pull-quote { padding: 0 16px 48px; }
+    .pull-quote-inner { padding: 28px 20px; }
+    .icp { padding: 0 16px 48px; }
+    .icp-panel { padding: 32px 20px; }
+    .contact-cta { padding: 0 16px 48px; }
+    .contact-heading { font-size: 34px; }
+    .founder { padding: 48px 16px 64px; }
+    .founder-name { font-size: 38px; }
+    .post-founder-cta { padding: 0 16px 40px; }
+    footer { padding: 24px 16px; }
+    .footer-note { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="https://www.bookednow.co.za/" target="_top" aria-label="Go to Booked homepage">BOOKED.</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="${buildBookedWhatsAppUrl(data, 'I generated my portfolio direction and want to ask about building it properly.')}" target="_blank">Contact</a>
-    </div>
-  </div>
+  <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="https://www.bookednow.co.za/scan">Visibility Scan</a></li>
+    <li><a href="#services">Audits</a></li>
+    <li><a href="#builds">Builds</a></li>
+    <li><a href="#agencies">Agencies</a></li>
+    <li><a href="#founder">About</a></li>
+  </ul>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
 </nav>
 
-<section class="hero" id="hero">
-  ${heroOverlay}
-  <div class="hero-content">
-    <div class="hero-eyebrow">${data.role}</div>
-    <div class="hero-name">${data.name}</div>
-    <div class="hero-role">${data.role}</div>
-    <div class="hero-meta">${data.location}${data.insta ? ' &nbsp;·&nbsp; ' + data.insta : ''}</div>
-    <div class="hero-headline">${copy.headline}</div>
-  </div>
-  <div class="hero-scroll">Scroll</div>
-</section>
+<main>
 
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-image"></div>
-      <div class="about-text">
-        <div class="section-label">About</div>
-        <p class="about-bio">${copy.bio}</p>
-        <blockquote class="about-quote">${copy.pullQuote}</blockquote>
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Fashion careers are becoming infrastructure.</p>
+    <h1>Your career<br>is the brand.<br><em>I build the<br>infrastructure.</em></h1>
+    <p class="hero-sub">
+      Booked helps <strong>working fashion creatives</strong> become easier to find, understand, trust, and book. I audit your visibility, structure your digital presence, and build the infrastructure that helps you surface before the opportunity disappears.
+    </p>
+    <p class="hero-sub-note">
+      The free scan is directional. The full audit is manually verified against your actual portfolio, search presence, structure, trust signals, and commercial readability.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://www.bookednow.co.za/scan" class="btn-primary">Run the Visibility Scan</a>
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="btn-secondary" target="_blank" rel="noopener">Chat with me</a>
+    </div>
+  </section>
+
+  <!-- FOUNDER CREDIBILITY STRIP -->
+  <div class="founder-strip">
+    <div class="founder-strip-inner">
+      <div class="founder-strip-line"></div>
+      <p>Built by <strong>Luca Bold</strong> — 10 years inside fashion across Cape Town, Milan, Shanghai, Hong Kong, Seoul, Mumbai, Istanbul, and Bali.</p>
+    </div>
+  </div>
+
+  <!-- DIAGNOSIS INTRO -->
+  <section class="diagnosis">
+    <div class="diagnosis-inner">
+      <p class="diagnosis-label">Start with diagnosis</p>
+      <div class="diagnosis-copy">
+        <h3>Booked does not guess<br><em>what you need.</em></h3>
+        <p>It reads your visibility, portfolio structure, and digital presence first — then builds the infrastructure that closes the gap. Industry readability is the distance between how you see your work and how the industry reads it in three seconds. Booked measures that gap. Then builds what needs to exist to close it.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="work" style="background:${cardBg};">
-  <div class="container">
-    <div class="section-label">Selected Work</div>
-    <div class="work-grid">${workItems}</div>
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section class="services" id="services">
 
-<section id="services">
-  <div class="container">
-    <div class="section-label">Services</div>
-    <div class="services-grid">${serviceItems}</div>
-  </div>
-</section>
+    <p class="services-category-label">Start here</p>
+    <div class="services-grid" style="margin-bottom: 2px;">
 
-<section class="booked-direction-note" id="direction-note">
-  <div class="container">
-    <div class="section-label">Booked Direction</div>
-    <h2 class="contact-headline" style="margin-bottom:24px;">Next step: make this live.</h2>
-    <p class="direction-copy">A live Booked portfolio turns this direction into structured digital infrastructure: sharper copy, stronger sequencing, domain setup, search-readable pages, and a clearer booking path.</p>
-    <div class="diagnostic-grid">
-      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.roleClarity || '7.5'}</div><div class="diagnostic-label">Role clarity</div></div>
-      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.visualDirection || '7.0'}</div><div class="diagnostic-label">Visual direction</div></div>
-      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.bookingPath || '5.5'}</div><div class="diagnostic-label">Booking path</div></div>
-      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.categoryStructure || '6.0'}</div><div class="diagnostic-label">Category structure</div></div>
-      <div class="diagnostic-card"><div class="diagnostic-score">${copy.snapshot?.aiReadability || '5.0'}</div><div class="diagnostic-label">AI readability</div></div>
+      <!-- 01 SCAN -->
+      <a href="https://www.bookednow.co.za/scan" class="service-card">
+        <div class="card-meta">
+          <span class="card-number">01 — SCAN</span>
+          <span class="card-tag live">Free · Directional</span>
+        </div>
+        <h2>Visibility<br>Scan</h2>
+        <p class="card-best-for">Best for: fashion creatives who want to understand how readable, findable, and bookable their digital presence appears.</p>
+        <p>Run a directional self-reported scan to identify likely visibility gaps, weak trust signals, and booking friction. The verified manual audit goes deeper into your actual links, search presence, portfolio structure, and discoverability infrastructure.</p>
+        <div class="card-footer">
+          <span class="card-link">Run the scan</span>
+          <span class="card-price">Free · Manual audit from R 2 500</span>
+        </div>
+      </a>
+
+      <!-- 02 PORTFOLIO AUDIT -->
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit" target="_blank" rel="noopener" class="service-card">
+        <div class="card-meta">
+          <span class="card-number">02 — PORTFOLIO AUDIT</span>
+          <span class="card-tag live">R 4 000</span>
+        </div>
+        <h2>Portfolio<br>Audit</h2>
+        <p class="card-best-for">Best for: stylists, photographers, and creative directors with too much work and no clear sequence.</p>
+        <p>I audit every image against the signals that decide whether it earns its place: casting readability, art-direction value, brand fit, and AI discoverability. What to keep, what to cut, what's missing.</p>
+        <div class="card-footer">
+          <span class="card-link">Get your audit</span>
+          <span class="card-price">R 4 000</span>
+        </div>
+      </a>
+
     </div>
-    <p class="direction-copy"><strong style="color:${text};">Likely next priority:</strong> ${copy.nextPriority || 'Turn this visual direction into a live, indexed portfolio with clearer structure and contact routing.'}</p>
-    <ul class="missing-list">
-      <li>Custom domain setup</li><li>Professional email routing</li><li>Search indexing</li><li>AI-readable metadata</li><li>Portfolio sequencing</li><li>Image optimisation</li><li>Google Search Console</li><li>Final copy refinement</li>
-    </ul>
-    <a class="cta-btn" href="${buildBookedWhatsAppUrl(data, 'I’d like to turn this into a live portfolio. Can you send me the next step and pricing?')}" target="_blank">Build This as a Live Portfolio</a>
-  </div>
-</section>
 
-<section id="contact" style="background:${cardBg};">
-  <div class="container">
-    <div class="contact-inner">
-      <div class="section-label">Contact</div>
-      <h2 class="contact-headline">${copy.contactHeadline}</h2>
-      <div class="contact-links">
-        ${data.insta ? `<a class="contact-link" href="${buildBookedWhatsAppUrl(data, 'I just saw my portfolio direction and I’d like your advice on the best next step.')}" target="_blank">${data.insta}</a>` : ''}
-        <a class="contact-link" href="${buildBookedWhatsAppUrl(data, 'I’d like a professional contact setup and a proper portfolio build.')}" target="_blank">Professional email recommended</a>
+    <p class="services-category-label" id="builds" style="margin-top: 48px; scroll-margin-top: 120px;">Infrastructure builds</p>
+    <div class="services-grid">
+
+      <!-- 03 ONE-PAGE PORTFOLIO -->
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20One-Page%20Portfolio%20%E2%80%94%20can%20you%20send%20me%20a%20demo%3F" target="_blank" rel="noopener" class="service-card">
+        <div class="card-meta">
+          <span class="card-number">03 — ONE-PAGE PORTFOLIO</span>
+          <span class="card-tag free">Free demo</span>
+        </div>
+        <h2>One-Page<br>Portfolio</h2>
+        <p class="card-best-for">Best for: creatives who need a professional presence immediately.</p>
+        <p>One page. No CMS. Fast load, single conversion goal, live within a week. A focused, professional portfolio page built for fashion creatives who need infrastructure now — not in a month.</p>
+        <div class="card-footer">
+          <span class="card-link">See your demo</span>
+          <span class="card-price">R 7 500</span>
+        </div>
+      </a>
+
+      <!-- 04 STRUCTURE -->
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20love%20to%20see%20a%20demo%20of%20my%20portfolio%20website" target="_blank" rel="noopener" class="service-card">
+        <div class="card-meta">
+          <span class="card-number">04 — STRUCTURE</span>
+          <span class="card-tag free">Free demo</span>
+        </div>
+        <h2>Full Portfolio<br>Website Build</h2>
+        <p class="card-best-for">Best for: established creatives ready for a complete portfolio infrastructure build.</p>
+        <p>Your portfolio is the first thing a casting director reads before a human ever looks. I build it around your aesthetic, your credits, your market. See a personalised demo before you commit to anything.</p>
+        <div class="card-footer">
+          <span class="card-link">See your demo</span>
+          <span class="card-price">From R 15 000</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- AGENCY INTELLIGENCE -->
+  <section class="services agency-intelligence" id="agencies">
+
+    <p class="services-category-label">Agency Intelligence</p>
+    <div class="services-grid">
+
+      <!-- 05 ROSTER SCAN SPRINT -->
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20the%20Roster%20Scan%20Sprint%20for%20our%20agency" target="_blank" rel="noopener" class="service-card service-card-wide">
+        <div class="card-meta">
+          <span class="card-number">05 — ROSTER SCAN SPRINT</span>
+          <span class="card-tag live">R 15 000 once-off</span>
+        </div>
+        <h2>Agency<br>Intelligence</h2>
+        <p class="card-best-for">Best for: boutique agencies managing photographers, stylists, hair &amp; make-up artists, and creative rosters.</p>
+        <p>Most agencies know who they represent. Few can measure who is visible, under-positioned, AI-readable, or booking-ready across the talent pool. This 30-day diagnostic maps the roster into a clearer intelligence layer: visibility scores, booking-readiness tiers, infrastructure gaps, and a priority action plan.</p>
+        <div class="card-footer">
+          <span class="card-link">Start roster scan</span>
+          <span class="card-price">R 15 000</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- WHAT BOOKED IMPROVES -->
+  <section class="improves">
+    <div class="improves-inner">
+      <p class="improves-label">What gets improved</p>
+      <div class="improves-grid">
+        <div class="improves-col before">
+          <div class="improves-col-label"><span class="dot"></span> Before Booked</div>
+          <ul class="improves-list">
+            <li>Unclear portfolio sequence — strong work, weak structure</li>
+            <li>Invisible on Google and AI search</li>
+            <li>Instagram-only visibility — no owned infrastructure</li>
+            <li>No professional contact path</li>
+            <li>Credits buried or absent — AI can't read them</li>
+            <li>No consistent positioning across platforms</li>
+          </ul>
+        </div>
+        <div class="improves-col after">
+          <div class="improves-col-label"><span class="dot"></span> After Booked</div>
+          <ul class="improves-list">
+            <li>Clearer portfolio sequence built around casting logic</li>
+            <li>Indexed, structured, AI-readable digital presence</li>
+            <li>Owned infrastructure on a custom domain</li>
+            <li>Direct, frictionless contact path</li>
+            <li>Named credits in structured, searchable format</li>
+            <li>Consistent identity across all surfaces</li>
+          </ul>
+        </div>
       </div>
-      <a class="cta-btn" href="${buildBookedWhatsAppUrl(data, 'I generated my portfolio direction and I’d like to build this properly. Can we chat?')}" target="_blank">${data.ctaCopy}</a>
     </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull-quote">
+    <div class="pull-quote-inner">
+      <blockquote>
+        "The next advantage in fashion is not only talent. It is being easier to find, read, trust, and book."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FOR / NOT FOR -->
+  <section class="icp">
+    <div class="icp-grid">
+
+      <div class="icp-panel for">
+        <div class="icp-label"><span class="dot"></span> For</div>
+        <ul class="icp-list">
+          <li><span class="marker">+</span> Working photographers, stylists, creative directors, art directors, hair &amp; makeup artists, casting directors, set designers, and fashion filmmakers</li>
+          <li><span class="marker">+</span> Creatives who know something is off — but not where to start</li>
+          <li><span class="marker">+</span> Boutique agencies managing creative rosters</li>
+        </ul>
+      </div>
+
+      <div class="icp-panel not-for">
+        <div class="icp-label"><span class="dot"></span> Not for</div>
+        <ul class="icp-list">
+          <li><span class="marker">−</span> Emerging models, students, pre-career creatives</li>
+          <li><span class="marker">−</span> Anyone looking for cheaper, faster, generic</li>
+          <li><span class="marker">−</span> Anyone who wants a service menu to pick from</li>
+          <li><span class="marker">−</span> Anyone looking for surface-level design without fixing structure, visibility, or positioning</li>
+          <li><span class="marker">−</span> Industries outside fashion. The name stays in fashion.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="contact-cta-inner">
+      <h2 class="contact-heading">Reach out.<br><em>I'll figure out what's<br>holding you back.</em></h2>
+      <p class="contact-sub">Send one message. No form. Tell me what you do, where your work lives, and what feels stuck. I'll tell you what needs fixing first.</p>
+      <div class="contact-actions">
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20came%20from%20the%20Booked%20homepage.%20Here%27s%20what%20I%20do%20and%20what%20feels%20stuck%3A" class="btn-wa-full" target="_blank" rel="noopener">
+          Chat on WhatsApp
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://www.bookednow.co.za/scan" class="btn-scan-outline">
+          Or run a free Visibility Scan first
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="founder-inner">
+
+    <div class="founder-left">
+      <p class="founder-tag">The founder</p>
+      <h2 class="founder-name">Luca.<br><em>Built from<br>the inside.</em></h2>
+      <p class="founder-identity">
+        A decade on set.<br>
+        Now building what gets you there.
+      </p>
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect" class="founder-contact" target="_blank" rel="noopener">
+        Get in touch →
+      </a>
+    </div>
+
+    <div class="founder-right">
+      <div class="founder-bio">
+        <p>
+          I spent a decade being booked — across South Africa, Asia, and Europe. Not observing the industry. Working in it. On set in Shanghai, in the showrooms in Milan, in the castings in Cape Town. I know what a casting director looks at in the first three seconds, because I was on the other side of that table more times than I can count.
+        </p>
+        <p>
+          That decade also showed me something most people building for creatives miss: <strong>the gap isn't talent. It's infrastructure.</strong> The creatives who consistently get hired are often the ones who are findable, credible, and professional before anyone even sees the full body of work.
+        </p>
+        <p>
+          I tried the digital marketing agency route before this. Broad services, no clear focus, no industry-specific edge. It didn't stick. Booked is what happened when I stopped trying to serve everyone and started building for the one industry I actually know from the inside.
+        </p>
+        <p>
+          <em>Booked is what I would have needed.</em> A decade inside the industry, now applied to building the digital infrastructure that gets creatives found, understood, trusted, and hired.
+        </p>
+      </div>
+
+      <div class="founder-markets">
+        <p class="founder-markets-label">Markets worked</p>
+        <div class="markets-list">
+          <span class="market-pill">Cape Town</span>
+          <span class="market-pill">Milan</span>
+          <span class="market-pill">Shanghai</span>
+          <span class="market-pill">Hong Kong</span>
+          <span class="market-pill">Seoul</span>
+          <span class="market-pill">Bali</span>
+          <span class="market-pill">Mumbai</span>
+          <span class="market-pill">Istanbul</span>
+        </div>
+      </div>
+
+      <div class="founder-built">
+        <p class="founder-built-label">What Booked builds</p>
+        <ul class="built-list">
+          <li>Directional visibility scans — helping creatives understand how their presence may be read before a client ever messages</li>
+          <li>Portfolio audits calibrated against what casting directors, art directors, and clients actually evaluate</li>
+          <li>One-page portfolio infrastructure for creatives who need a professional presence immediately</li>
+          <li>Full portfolio website builds — clean, fast, credible, and AI-readable</li>
+          <li>Digital infrastructure for boutique agencies managing creative rosters</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- POST-FOUNDER CTA -->
+<div class="post-founder-cta">
+  <div class="post-founder-cta-inner">
+    <p>Not sure where to start? Send me your portfolio. I'll tell you what I would fix first.</p>
+    <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20send%20you%20my%20portfolio%20for%20a%20quick%20read" class="btn-primary" target="_blank" rel="noopener">Send Portfolio on WhatsApp</a>
+  </div>
+</div>
 
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <span class="footer-text">${data.name} © 2026</span>
-      <a class="footer-text" href="${buildBookedWhatsAppUrl(data, 'I’m interested in a Booked portfolio site. Can we chat?')}" target="_blank" style="text-decoration:none;">Built with BOOKED.</a>
-    </div>
-  </div>
+  <span class="footer-logo">Booked.</span>
+  <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+  <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
 </footer>
 
-</body>
-</html>`;
-}
-
-// ── Main generate ─────────────────────────────────────────────────
-async function startGenerate() {
-  const name     = document.getElementById('f-name').value.trim();
-  const role     = document.getElementById('f-role').value.trim();
-  const insta    = document.getElementById('f-insta').value.trim();
-  const location = document.getElementById('f-location').value.trim() || 'International';
-  const bio      = document.getElementById('f-bio').value.trim();
-  const goal     = document.getElementById('f-goal').value;
-  const consent  = document.getElementById('f-consent')?.checked;
-  const errEl    = document.getElementById('form-error');
-
-  if (!name || !role || !insta || !location || !goal || !chosenVibe || !consent) {
-    errEl.style.display = 'block';
-    errEl.textContent = 'Please complete all required fields (*), select a visual direction, and confirm consent.';
-    return;
-  }
-  errEl.style.display = 'none';
-
-  const instaHandle = insta ? (insta.startsWith('@') ? insta : '@' + insta) : null;
-  const clients  = document.getElementById('f-clients').value.trim();
-  const words    = document.getElementById('f-words').value.trim();
-  const pricing  = document.getElementById('f-pricing').value;
-  const services = document.getElementById('f-services').value.trim();
-  const specs    = selectedSpecs.length ? selectedSpecs.join(', ') : 'general';
-  const ctaCopy  = goalCTA[goal] || 'Get In Touch';
-
-  document.getElementById('gen-btn').disabled = true;
-  document.getElementById('form-page').style.display = 'none';
-  document.getElementById('loading-page').style.display = 'flex';
-
-  let si = 0;
-  setProgress(steps[0].pct, steps[0].msg);
-  si = 1;
-  timerRef = setInterval(() => {
-    if (si < steps.length) { setProgress(steps[si].pct, steps[si].msg); si++; }
-    else clearInterval(timerRef);
-  }, 2500);
-
-  const prompt = `You are a professional copywriter for fashion industry portfolios. Return ONLY a valid JSON object, no markdown, no explanation.
-
-SUBJECT:
-Name: ${name}
-Role: ${role}
-Instagram: ${instaHandle || 'not provided'}
-Location: ${location}
-Bio: ${bio || 'Not provided'}
-Specialisms: ${specs}
-Notable clients: ${clients || 'none — do not fabricate'}
-Work descriptors: ${words || 'creative, precise'}
-Goal: ${goal}
-CTA label: "${ctaCopy}"
-Services: ${services || 'infer from role'}
-Career stage: ${pricing || 'not specified'}
-Vibe: ${chosenVibe}
-
-COPY RULES:
-- Write like a real person, not a press release. Confident but not exaggerated.
-- Avoid: "passionate", "driven", "dedicated", "elevating", "curating", "crafting narratives", "bespoke"
-- Bio should sound honest and specific — something the person would actually say about themselves
-- Headlines should be short and direct, not over-poetic
-- Do not invent or allude to clients if none are provided
-- Match career stage: emerging sounds different from established
-
-Return this exact JSON structure:
-{
-  "headline": "4-7 word hero statement. Direct and specific to their role and descriptors. Not a tagline.",
-  "bio": "2-3 sentences. Factual, confident, specific. Written in third person. No superlatives.",
-  "pullQuote": "8-12 words. A real-sounding statement about their approach to work.",
-  "contactHeadline": "5-8 words. Direct call to action matching their goal.",
-  "projects": [
-    {"title": "Real-sounding project name", "category": "from their specialisms", "year": "2024"},
-    {"title": "Real-sounding project name", "category": "from their specialisms", "year": "2024"},
-    {"title": "Real-sounding project name", "category": "from their specialisms", "year": "2025"}
-  ],
-  "services": [
-    {"title": "Service name", "description": "One clear sentence describing what they offer and who it's for."},
-    {"title": "Service name", "description": "One clear sentence describing what they offer and who it's for."},
-    {"title": "Service name", "description": "One clear sentence describing what they offer and who it's for."}
-  ],
-  "snapshot": {
-    "roleClarity": "score from 1.0 to 10.0 as string",
-    "visualDirection": "score from 1.0 to 10.0 as string",
-    "bookingPath": "score from 1.0 to 10.0 as string",
-    "categoryStructure": "score from 1.0 to 10.0 as string",
-    "aiReadability": "score from 1.0 to 10.0 as string"
-  },
-  "nextPriority": "One direct sentence explaining the biggest infrastructure gap to fix next."
-}`;
-
-  try {
-    // ── VISION ANALYSIS (hero image only, if uploaded) ────────────
-    let heroLayout = { textSide: 'left', overlayOpacity: 0.5, textColor: 'light', focalX: '50%', focalY: '30%' };
-
-    if (images.hero) {
-      setProgress(10, 'Analysing your hero image...');
-      try {
-        const visionRes = await fetch('https://booked-proxy.boldcapetown.workers.dev', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            model: 'gpt-4o',
-            max_tokens: 200,
-            messages: [{
-              role: 'user',
-              content: [
-                {
-                  type: 'image_url',
-                  image_url: { url: images.hero, detail: 'low' }
-                },
-                {
-                  type: 'text',
-                  text: `Analyse this portrait/fashion photo. Return ONLY a JSON object, no markdown:
-{
-  "textSide": "left" or "right" (which side has the most empty space for text overlay),
-  "overlayOpacity": 0.3 to 0.65 (how dark the overlay needs to be for white text to be readable — higher if background is busy or light),
-  "textColor": "light" or "dark" (should text be white or dark based on image tones),
-  "focalX": "20%" to "80%" (horizontal position of the main subject, as CSS percentage),
-  "focalY": "10%" to "40%" (vertical position of subject's face/top, as CSS background-position-y)
-}`
-                }
-              ]
-            }]
-          })
-        });
-        const vd = await visionRes.json();
-        if (!vd.error) {
-          let vraw = (vd.choices?.[0]?.message?.content || '').trim();
-          vraw = vraw.replace(/^```json?\n?/i, '').replace(/\n?```$/i, '').trim();
-          const parsed = JSON.parse(vraw);
-          heroLayout = { ...heroLayout, ...parsed };
-        }
-      } catch(e) { /* fallback to defaults if vision fails */ }
-    }
-    const res = await fetch('https://booked-proxy.boldcapetown.workers.dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'gpt-4o',
-        max_tokens: 1200,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    const data = await res.json();
-    clearInterval(timerRef);
-
-    if (data.error) throw new Error(data.error.message);
-
-    let raw = (data.choices?.[0]?.message?.content || '').trim();
-    raw = raw.replace(/^```json?\n?/i, '').replace(/\n?```$/i, '').trim();
-    const copy = JSON.parse(raw);
-
-    const theme = vibeThemes[chosenVibe] || vibeThemes['Dark & Moody'];
-    const siteData = { name, role, insta: instaHandle, location, ctaCopy, goal, chosenVibe, clients, specs };
-    lastGeneratedCopy = copy;
-    lastSiteData = siteData;
-
-    sendLeadToMake({
-      timestamp: new Date().toISOString(),
-      source: 'portfolio_direction_tool',
-    consent: Boolean(document.getElementById('f-consent')?.checked),
-    consentText: 'I understand my submitted details will be sent to Booked so Luca can review my portfolio direction and follow up if relevant.',
-      page: window.location.href,
-      name,
-      role,
-      location,
-      instagram: instaHandle || '',
-      goal,
-      visualDirection: chosenVibe,
-      specialisms: specs,
-      clients,
-      careerStage: pricing || 'not specified',
-      workDescriptors: words,
-      servicesOffered: services,
-      uploadedImageCount: countUploadedImages(),
-      generatedHeadline: copy.headline || '',
-      generatedBio: copy.bio || '',
-      generatedPullQuote: copy.pullQuote || '',
-      generatedCTA: copy.contactHeadline || '',
-      nextPriority: copy.nextPriority || '',
-      roleClarity: copy.snapshot?.roleClarity || '',
-      visualDirectionScore: copy.snapshot?.visualDirection || '',
-      bookingPath: copy.snapshot?.bookingPath || '',
-      categoryStructure: copy.snapshot?.categoryStructure || '',
-      aiReadability: copy.snapshot?.aiReadability || '',
-      userAgent: navigator.userAgent || ''
-    });
-
-    const html = buildSite(copy, theme, siteData, heroLayout);
-
-    setProgress(100, 'Done.');
-    await new Promise(r => setTimeout(r, 400));
-
-    lastHTML = html;
-    document.getElementById('loading-page').style.display = 'none';
-    document.getElementById('demo-page').style.display = 'flex';
-    document.getElementById('demo-name-display').textContent = name.toUpperCase();
-    document.getElementById('demo-frame').srcdoc = html;
-
-  } catch (err) {
-    clearInterval(timerRef);
-    document.getElementById('loading-page').style.display = 'none';
-    document.getElementById('form-page').style.display = 'flex';
-    errEl.textContent = 'Generation failed: ' + err.message;
-    errEl.style.display = 'block';
-    document.getElementById('gen-btn').disabled = false;
-  }
-}
-
-// ── Prefill ───────────────────────────────────────────────────────
-function prefill() {
-  document.getElementById('f-name').value = 'Luca Bold';
-  document.getElementById('f-role').value = 'Fashion Model';
-  document.getElementById('f-insta').value = '@lucaboldcpt';
-  document.getElementById('f-location').value = 'Cape Town · Global';
-  document.getElementById('f-bio').value = 'International fashion model with a decade of experience at the intersection of high-end editorial and commercial campaigns.';
-  document.getElementById('f-clients').value = 'Vogue, Nike, H&M, Woolworths';
-  document.getElementById('f-words').value = 'raw, cinematic, powerful, precise, fearless';
-  document.getElementById('f-goal').value = 'attract agency representation';
-  document.getElementById('f-pricing').value = 'premium';
-  document.getElementById('f-services').value = 'Full-day editorial shoots, brand campaigns, runway, creative direction';
-  const consent = document.getElementById('f-consent');
-  if (consent) consent.checked = true;
-  document.querySelectorAll('.vibe-btn').forEach(b => {
-    b.classList.remove('active');
-    if (b.textContent.includes('Dark')) { b.classList.add('active'); chosenVibe = 'Dark & Moody'; }
-  });
-  selectedSpecs = [];
-  document.querySelectorAll('.spec-pill').forEach(p => p.classList.remove('active'));
-  ['Editorial','Campaign','Runway','Brand Content'].forEach(spec => {
-    document.querySelectorAll('.spec-pill').forEach(p => {
-      if (p.textContent.trim() === spec) { p.classList.add('active'); selectedSpecs.push(spec); }
-    });
-  });
-}
-
-// ── Test mode ─────────────────────────────────────────────────────
-function autoTestGenerate() {
-  prefill();
-  const btn = document.getElementById('auto-test-btn');
-  if (btn) btn.textContent = 'Running Test...';
-  setTimeout(() => startGenerate(), 150);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
-  const testEnabled = params.has('test') || window.location.hash.toLowerCase().includes('test');
-  const btn = document.getElementById('auto-test-btn');
-  if (testEnabled && btn) btn.classList.add('visible');
-
-  document.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key.toLowerCase() === 't') {
-      if (btn) btn.classList.add('visible');
-      autoTestGenerate();
-    }
-  });
-});
-
-// ── Utils ─────────────────────────────────────────────────────────
-async function shareDemo() {
-  if (!lastHTML) return;
-  const btn = document.getElementById('share-btn');
-  btn.textContent = 'Creating link...';
-  btn.disabled = true;
-
-  try {
-    let htmlToSave = lastHTML
-      .replace(/url\('data:image\/[^']+'\)/g, "url('')")
-      .replace(/url\("data:image\/[^"]+"\)/g, 'url("")');
-
-    const res = await fetch('https://booked-proxy.boldcapetown.workers.dev/save', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ html: htmlToSave })
-    });
-    const data = await res.json();
-    if (data.error) throw new Error(data.error);
-
-    const shareUrl = data.url;
-    const name = document.getElementById('f-name')?.value.trim() || 'my';
-    const role = document.getElementById('f-role')?.value.trim() || '';
-
-    // Show share modal
-    showShareModal(shareUrl, name, role);
-
-    btn.textContent = '✓ Link Ready';
-    btn.style.borderColor = 'rgba(196,112,74,0.6)';
-    btn.style.color = '#c4704a';
-    setTimeout(() => {
-      btn.textContent = '↗ Share Link';
-      btn.disabled = false;
-      btn.style.borderColor = '';
-      btn.style.color = '';
-    }, 5000);
-
-  } catch(err) {
-    btn.textContent = 'Failed: ' + err.message;
-    btn.disabled = false;
-    setTimeout(() => { btn.textContent = '↗ Share Link'; }, 4000);
-  }
-}
-
-function showShareModal(shareUrl, name, role) {
-  // Remove existing modal if any
-  const existing = document.getElementById('share-modal');
-  if (existing) existing.remove();
-
-  const waMsg = encodeURIComponent(`Check out ${name}'s BOOKED. portfolio direction${role ? ' — ' + role : ''}:\n${shareUrl}\n\nGenerate your own portfolio direction at booked-demo.netlify.app`);
-  const waUrl = `https://wa.me/?text=${waMsg}`;
-
-  const modal = document.createElement('div');
-  modal.id = 'share-modal';
-  modal.style.cssText = `
-    position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;
-    display:flex;align-items:center;justify-content:center;padding:24px;
-  `;
-  modal.innerHTML = `
-    <div style="background:#0f0f0f;border:1px solid rgba(255,255,255,0.12);padding:32px;max-width:480px;width:100%;">
-      <p style="font-size:9px;letter-spacing:4px;color:#c4704a;text-transform:uppercase;margin-bottom:16px;">Your Site Link</p>
-      <p style="font-size:11px;color:#aaa;margin-bottom:16px;line-height:1.6;">Tap the link below to copy it, or share directly to WhatsApp. Link expires in 7 days.</p>
-      <div style="background:#070707;border:1px solid rgba(255,255,255,0.1);padding:12px 16px;margin-bottom:20px;word-break:break-all;">
-        <a href="${shareUrl}" target="_blank" style="font-size:12px;color:#c4704a;text-decoration:none;">${shareUrl}</a>
-      </div>
-      <a href="${waUrl}" target="_blank" style="display:block;background:#c4704a;color:var(--off-white);text-align:center;padding:16px;font-size:10px;letter-spacing:4px;text-transform:uppercase;text-decoration:none;margin-bottom:12px;">
-        Share on WhatsApp →
-      </a>
-      <button onclick="document.getElementById('share-modal').remove()" style="width:100%;background:transparent;border:1px solid rgba(255,255,255,0.1);color:#666;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:12px;cursor:pointer;">
-        Close
-      </button>
-    </div>
-  `;
-  document.body.appendChild(modal);
-  modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
-}
-
-function downloadSite() {
-  if (!lastHTML) return;
-  const name = document.getElementById('f-name').value.trim().replace(/\s+/g,'-').toLowerCase() || 'portfolio';
-  const blob = new Blob([lastHTML], { type: 'text/html' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `booked-${name}-demo.html`;
-  a.click();
-}
-
-function resetForm() {
-  document.getElementById('demo-page').style.display = 'none';
-  document.getElementById('form-page').style.display = 'flex';
-  document.getElementById('gen-btn').disabled = false;
-  chosenVibe = ''; selectedSpecs = []; lastHTML = ''; lastGeneratedCopy = null; lastSiteData = null; leadCaptureSent = false;
-  images.hero = null; images.about = null; images.port1 = null; images.port2 = null; images.port3 = null;
-  document.querySelectorAll('.vibe-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.spec-pill').forEach(b => b.classList.remove('active'));
-  const consent = document.getElementById('f-consent');
-  if (consent) consent.checked = false;
-  ['hero','about','port1','port2','port3'].forEach(k => {
-    const inp = document.getElementById(`img-${k}`);
-    const prev = document.getElementById(`prev-${k}`);
-    const zone = document.getElementById(`zone-${k}`);
-    if (inp) inp.value = '';
-    if (prev) prev.src = '';
-    if (zone) zone.classList.remove('has-image');
-  });
-}
-
-
-function getCurrentDirectionData() {
-  return {
-    name: document.getElementById('f-name')?.value.trim() || '',
-    role: document.getElementById('f-role')?.value.trim() || '',
-    location: document.getElementById('f-location')?.value.trim() || '',
-    insta: document.getElementById('f-insta')?.value.trim() || '',
-    goal: document.getElementById('f-goal')?.value || '',
-    chosenVibe,
-    specs: selectedSpecs.length ? selectedSpecs.join(', ') : 'general',
-    clients: document.getElementById('f-clients')?.value.trim() || '',
-    headline: lastGeneratedCopy?.headline || '',
-    contactHeadline: lastGeneratedCopy?.contactHeadline || ''
-  };
-}
-
-function sendDirectionToLuca() {
-  const data = getCurrentDirectionData();
-  window.open(buildBookedWhatsAppUrl(data, 'Please take a look at this and tell me what you would fix first.'), '_blank');
-}
-
-function bookNow() {
-  const data = getCurrentDirectionData();
-  window.open(buildBookedWhatsAppUrl(data, 'I’d like to know what it would cost to build this properly.'), '_blank');
-}
-</script>
 </body>
 </html>
