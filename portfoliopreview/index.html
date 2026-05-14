@@ -227,6 +227,166 @@ a { color: inherit; }
 #form-page .top-bar { background-color: rgba(10,14,26,0.85) !important; }
 #form-page input, #form-page textarea, #form-page select { background-color: transparent !important; color: var(--text) !important; }
 #form-page label, #form-page .field label { color: var(--muted) !important; }
+
+
+/* Mobile readability upgrade — v11 */
+:root {
+  --subtext: #c8c0d6;
+  --muted: #c8c0d6;
+}
+body { font-weight: 300; }
+.subtext { color: rgba(240,237,232,0.74) !important; }
+.form-section-label {
+  font-size: 14px !important;
+  letter-spacing: 0.26em !important;
+  color: var(--gold-light) !important;
+  border-bottom-color: rgba(200,169,110,0.22) !important;
+}
+.field { margin-bottom: 38px !important; }
+.field label,
+#form-page label,
+#form-page .field label,
+.vibe-label {
+  font-size: 14px !important;
+  letter-spacing: 0.22em !important;
+  color: rgba(240,237,232,0.72) !important;
+  line-height: 1.45 !important;
+  margin-bottom: 16px !important;
+}
+.field input[type="text"],
+.field textarea,
+.field select,
+#form-page input,
+#form-page textarea,
+#form-page select {
+  font-size: 22px !important;
+  line-height: 1.45 !important;
+  color: var(--off-white) !important;
+  border-bottom-color: rgba(200,169,110,0.24) !important;
+  padding: 14px 0 16px !important;
+  font-weight: 300 !important;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(240,237,232,0.44) !important;
+  font-size: 20px !important;
+}
+.field select:invalid,
+.field select option[value=''] {
+  color: rgba(240,237,232,0.68) !important;
+}
+.field .hint {
+  font-size: 14px !important;
+  color: rgba(240,237,232,0.54) !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.6 !important;
+}
+.spec-pill,
+.vibe-btn,
+.btn-ghost,
+.btn-book {
+  color: rgba(240,237,232,0.78) !important;
+  border-color: rgba(200,169,110,0.24) !important;
+}
+.spec-pill {
+  font-size: 13px !important;
+  letter-spacing: 0.16em !important;
+  padding: 12px 16px !important;
+  line-height: 1.35 !important;
+}
+.vibe-btn {
+  font-size: 14px !important;
+  letter-spacing: 0.16em !important;
+  padding: 22px 14px !important;
+  line-height: 1.35 !important;
+}
+.spec-pill.active,
+.vibe-btn.active,
+.spec-pill:hover,
+.vibe-btn:hover {
+  color: var(--gold-light) !important;
+  border-color: rgba(200,169,110,0.56) !important;
+}
+.upload-label-text {
+  font-size: 11px !important;
+  color: rgba(240,237,232,0.62) !important;
+  letter-spacing: 0.22em !important;
+}
+.img-slot-label {
+  font-size: 12px !important;
+  color: rgba(240,237,232,0.62) !important;
+  letter-spacing: 0.22em !important;
+}
+.generate-btn {
+  font-size: 13px !important;
+  letter-spacing: 0.22em !important;
+  padding: 24px 28px !important;
+}
+
+@media (max-width: 600px) {
+  .right-panel { padding: 40px 22px 72px !important; }
+  .mobile-intro p:first-child {
+    font-size: 46px !important;
+    line-height: 1.08 !important;
+    margin-bottom: 18px !important;
+    color: var(--off-white) !important;
+  }
+  .mobile-intro p:nth-child(2) {
+    font-size: 18px !important;
+    line-height: 1.75 !important;
+    color: rgba(240,237,232,0.72) !important;
+    margin-bottom: 44px !important;
+  }
+  .form-section-label {
+    font-size: 13px !important;
+    letter-spacing: 0.24em !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 18px !important;
+  }
+  .section-divider { margin: 38px 0 !important; }
+  .field { margin-bottom: 34px !important; }
+  .field label,
+  #form-page label,
+  #form-page .field label,
+  .vibe-label {
+    font-size: 15px !important;
+    letter-spacing: 0.20em !important;
+    color: rgba(240,237,232,0.76) !important;
+    margin-bottom: 18px !important;
+  }
+  .field input[type="text"],
+  .field textarea,
+  .field select,
+  #form-page input,
+  #form-page textarea,
+  #form-page select {
+    font-size: 23px !important;
+    line-height: 1.45 !important;
+    padding: 16px 0 18px !important;
+  }
+  .field textarea { min-height: 96px !important; }
+  .field .hint { font-size: 15px !important; }
+  .pill-wrap { gap: 10px !important; }
+  .spec-pill {
+    font-size: 12px !important;
+    letter-spacing: 0.14em !important;
+    padding: 12px 14px !important;
+  }
+  .vibe-grid { gap: 10px !important; }
+  .vibe-btn {
+    font-size: 13px !important;
+    letter-spacing: 0.13em !important;
+    padding: 20px 12px !important;
+  }
+  .upload-label-text { font-size: 10px !important; }
+  .img-slot-label { font-size: 12px !important; }
+  .generate-btn {
+    font-size: 12px !important;
+    letter-spacing: 0.18em !important;
+    padding: 22px 20px !important;
+  }
+}
+
 </style>
 </head>
 <body>
