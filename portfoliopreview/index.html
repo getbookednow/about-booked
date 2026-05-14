@@ -152,8 +152,12 @@ a { color: inherit; }
 
 
 
-.consent-row { display:flex; gap:10px; align-items:flex-start; margin-top:-8px; margin-bottom:24px; color:rgba(156,163,175,0.65); font-size:11px; line-height:1.6; }
-.consent-row input { margin-top:3px; accent-color: var(--gold); }
+.consent-row { display:flex; gap:12px; align-items:flex-start; margin:18px 0 10px; padding:16px 18px; border:1px solid var(--gold-border-default); background:rgba(200,169,110,0.035); color:rgba(240,237,232,0.86); font-family:var(--font-body); font-size:12px; line-height:1.65; }
+.consent-row input { margin-top:4px; accent-color: var(--gold); flex:0 0 auto; width:16px; height:16px; }
+.privacy-note { margin:0 0 22px; color:rgba(240,237,232,0.62); font-family:var(--font-body); font-size:11px; line-height:1.65; }
+.privacy-note a { color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(200,169,110,0.35); }
+.privacy-note a:hover { color:var(--gold-light); border-bottom-color:var(--gold-light); }
+@media(max-width:600px){ .consent-row{font-size:14px; line-height:1.6; padding:16px; margin:22px 0 12px;} .privacy-note{font-size:13px; line-height:1.6; margin-bottom:24px;} .consent-row input{width:19px;height:19px;margin-top:3px;} }
 .direction-badge { border:1px solid rgba(200,169,110,0.35); color:var(--accent); padding:8px 12px; font-family:'DM Mono',monospace; font-size:8px; letter-spacing:2px; text-transform:uppercase; }
 @media (max-width:768px){ .direction-badge{width:100%;text-align:center;} }
 
@@ -565,8 +569,14 @@ body { font-weight: 300; }
       </div>
       <div class="field"><label>Services Offered</label><textarea id="f-services" placeholder=""></textarea></div>
 
+      <label class="consent-row" for="f-consent">
+        <input type="checkbox" id="f-consent">
+        <span>I understand my submitted details will be sent to Booked so Luca can review my portfolio direction and follow up if relevant.</span>
+      </label>
+      <p class="privacy-note">Booked stores submitted details only for follow-up and service delivery. Your information is not sold. To delete a submission, message Luca on WhatsApp. <a href="https://www.bookednow.co.za/privacy/" target="_blank" rel="noopener">Privacy</a></p>
+
       <button class="generate-btn" id="gen-btn" onclick="startGenerate()">Generate My Portfolio Direction →</button>
-      <p class="form-error" id="form-error">Please complete all required fields (*) and select a visual direction.</p>
+      <p class="form-error" id="form-error">Please complete all required fields (*), select a visual direction, and confirm consent.</p>
     </div>
   </div>
 </div>
@@ -588,7 +598,7 @@ body { font-weight: 300; }
     <div class="demo-info">BOOKED. SITE —<span class="demo-name-tag" id="demo-name-display"></span></div>
     <div class="demo-actions">
       <button class="btn-ghost" onclick="resetForm()">← Edit</button>
-      <button class="btn-ghost" id="share-btn" onclick="shareDemo()">↗ Share</button>
+      <button class="btn-ghost" id="send-btn" onclick="sendDirectionToLuca()">Send to Luca</button>
       <button class="btn-book" onclick="bookNow()">Build Full Portfolio →</button>
     </div>
   </div>
@@ -601,7 +611,35 @@ body { font-weight: 300; }
 let chosenVibe = '';
 let selectedSpecs = [];
 let lastHTML = '';
+let lastGeneratedCopy = null;
+let lastSiteData = null;
+let leadCaptureSent = false;
+const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/8wifwwyx8ztms4zyfd9ouct6ackcmkbi';
 const images = { hero: null, about: null, port1: null, port2: null, port3: null };
+
+// ── Lead capture ──────────────────────────────────────────────────
+function countUploadedImages() {
+  return Object.values(images).filter(Boolean).length;
+}
+
+function sendLeadToMake(payload) {
+  if (!MAKE_WEBHOOK_URL || leadCaptureSent) return;
+  leadCaptureSent = true;
+
+  const body = new URLSearchParams();
+  Object.entries(payload).forEach(([key, value]) => {
+    body.append(key, value == null ? '' : String(value));
+  });
+
+  fetch(MAKE_WEBHOOK_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body
+  }).catch(error => {
+    console.warn('Booked lead capture failed:', error);
+    leadCaptureSent = false;
+  });
+}
 
 // ── Image handling ────────────────────────────────────────────────
 function handleImage(input, zoneId, prevId) {
@@ -719,8 +757,11 @@ function buildBookedWhatsAppUrl(data, intent) {
     `Specialisms: ${data.specs || ''}`,
     `Clients / brands: ${data.clients || 'Not listed'}`,
     ``,
+    data.headline ? `Generated direction: ${data.headline}` : '',
+    data.contactHeadline ? `Suggested next step: ${data.contactHeadline}` : '',
+    ``,
     intent || `I’d like to know what it would cost to build this properly.`
-  ];
+  ].filter(line => line !== '');
   return `https://wa.me/27637549122?text=${encodeURIComponent(lines.join('\n'))}`;
 }
 
@@ -981,11 +1022,12 @@ async function startGenerate() {
   const location = document.getElementById('f-location').value.trim() || 'International';
   const bio      = document.getElementById('f-bio').value.trim();
   const goal     = document.getElementById('f-goal').value;
+  const consent  = document.getElementById('f-consent')?.checked;
   const errEl    = document.getElementById('form-error');
 
-  if (!name || !role || !insta || !location || !goal || !chosenVibe) {
+  if (!name || !role || !insta || !location || !goal || !chosenVibe || !consent) {
     errEl.style.display = 'block';
-    errEl.textContent = 'Please complete all required fields (*) and select a visual direction.';
+    errEl.textContent = 'Please complete all required fields (*), select a visual direction, and confirm consent.';
     return;
   }
   errEl.style.display = 'none';
@@ -1126,6 +1168,40 @@ Return this exact JSON structure:
 
     const theme = vibeThemes[chosenVibe] || vibeThemes['Dark & Moody'];
     const siteData = { name, role, insta: instaHandle, location, ctaCopy, goal, chosenVibe, clients, specs };
+    lastGeneratedCopy = copy;
+    lastSiteData = siteData;
+
+    sendLeadToMake({
+      timestamp: new Date().toISOString(),
+      source: 'portfolio_direction_tool',
+    consent: Boolean(document.getElementById('f-consent')?.checked),
+    consentText: 'I understand my submitted details will be sent to Booked so Luca can review my portfolio direction and follow up if relevant.',
+      page: window.location.href,
+      name,
+      role,
+      location,
+      instagram: instaHandle || '',
+      goal,
+      visualDirection: chosenVibe,
+      specialisms: specs,
+      clients,
+      careerStage: pricing || 'not specified',
+      workDescriptors: words,
+      servicesOffered: services,
+      uploadedImageCount: countUploadedImages(),
+      generatedHeadline: copy.headline || '',
+      generatedBio: copy.bio || '',
+      generatedPullQuote: copy.pullQuote || '',
+      generatedCTA: copy.contactHeadline || '',
+      nextPriority: copy.nextPriority || '',
+      roleClarity: copy.snapshot?.roleClarity || '',
+      visualDirectionScore: copy.snapshot?.visualDirection || '',
+      bookingPath: copy.snapshot?.bookingPath || '',
+      categoryStructure: copy.snapshot?.categoryStructure || '',
+      aiReadability: copy.snapshot?.aiReadability || '',
+      userAgent: navigator.userAgent || ''
+    });
+
     const html = buildSite(copy, theme, siteData, heroLayout);
 
     setProgress(100, 'Done.');
@@ -1159,6 +1235,8 @@ function prefill() {
   document.getElementById('f-goal').value = 'attract agency representation';
   document.getElementById('f-pricing').value = 'premium';
   document.getElementById('f-services').value = 'Full-day editorial shoots, brand campaigns, runway, creative direction';
+  const consent = document.getElementById('f-consent');
+  if (consent) consent.checked = true;
   document.querySelectorAll('.vibe-btn').forEach(b => {
     b.classList.remove('active');
     if (b.textContent.includes('Dark')) { b.classList.add('active'); chosenVibe = 'Dark & Moody'; }
@@ -1285,10 +1363,12 @@ function resetForm() {
   document.getElementById('demo-page').style.display = 'none';
   document.getElementById('form-page').style.display = 'flex';
   document.getElementById('gen-btn').disabled = false;
-  chosenVibe = ''; selectedSpecs = []; lastHTML = '';
+  chosenVibe = ''; selectedSpecs = []; lastHTML = ''; lastGeneratedCopy = null; lastSiteData = null; leadCaptureSent = false;
   images.hero = null; images.about = null; images.port1 = null; images.port2 = null; images.port3 = null;
   document.querySelectorAll('.vibe-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.spec-pill').forEach(b => b.classList.remove('active'));
+  const consent = document.getElementById('f-consent');
+  if (consent) consent.checked = false;
   ['hero','about','port1','port2','port3'].forEach(k => {
     const inp = document.getElementById(`img-${k}`);
     const prev = document.getElementById(`prev-${k}`);
@@ -1299,8 +1379,9 @@ function resetForm() {
   });
 }
 
-function bookNow() {
-  const data = {
+
+function getCurrentDirectionData() {
+  return {
     name: document.getElementById('f-name')?.value.trim() || '',
     role: document.getElementById('f-role')?.value.trim() || '',
     location: document.getElementById('f-location')?.value.trim() || '',
@@ -1308,8 +1389,19 @@ function bookNow() {
     goal: document.getElementById('f-goal')?.value || '',
     chosenVibe,
     specs: selectedSpecs.length ? selectedSpecs.join(', ') : 'general',
-    clients: document.getElementById('f-clients')?.value.trim() || ''
+    clients: document.getElementById('f-clients')?.value.trim() || '',
+    headline: lastGeneratedCopy?.headline || '',
+    contactHeadline: lastGeneratedCopy?.contactHeadline || ''
   };
+}
+
+function sendDirectionToLuca() {
+  const data = getCurrentDirectionData();
+  window.open(buildBookedWhatsAppUrl(data, 'Please take a look at this and tell me what you would fix first.'), '_blank');
+}
+
+function bookNow() {
+  const data = getCurrentDirectionData();
   window.open(buildBookedWhatsAppUrl(data, 'I’d like to know what it would cost to build this properly.'), '_blank');
 }
 </script>
