@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Booked. — Discoverability Infrastructure for Fashion Creatives</title>
-<meta name="description" content="Booked helps working fashion creatives become easier to find, understand, trust, and book. Visibility scans, portfolio audits, portfolio builds, and digital infrastructure — built from a decade inside the fashion industry.">
+<meta name="description" content="Booked helps working fashion creatives and boutique agencies become easier to find, understand, trust, and book. Visibility scans, portfolio audits, roster intelligence, portfolio builds, and digital infrastructure — built from a decade inside the fashion industry.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='34' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia, Times New Roman, serif' font-size='34' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e0a1a">
 <link rel="canonical" href="https://www.bookednow.co.za/">
 <meta property="og:title" content="Booked. — Discoverability Infrastructure for Fashion Creatives">
-<meta property="og:description" content="Booked helps fashion creatives become easier to find, understand, trust, and book.">
+<meta property="og:description" content="Booked helps fashion creatives and boutique agencies become easier to find, understand, trust, and book.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.bookednow.co.za/">
 <meta property="og:image" content="https://www.bookednow.co.za/og-image.jpg">
@@ -30,6 +33,8 @@
   "serviceType": [
     "Directional visibility scan",
     "Portfolio audit",
+    "Roster Scan Sprint for creative agencies",
+    "Agency roster intelligence",
     "One-page portfolio build",
     "Full portfolio website build",
     "Digital infrastructure for fashion creatives"
@@ -441,6 +446,15 @@
 
   .card-price { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
 
+  .service-card-wide { grid-column: 1 / -1; }
+
+  .agency-intelligence {
+    scroll-margin-top: 120px;
+    margin-top: -72px;
+  }
+
+  #services { padding-bottom: 72px; }
+
   .services-category-label {
     font-size: 13px;
     letter-spacing: 0.3em;
@@ -450,6 +464,283 @@
     padding-bottom: 16px;
     border-bottom: 1px solid var(--gold-border-divider);
   }
+
+
+
+  /* AGENCY ROSTER SCAN */
+  .agency-scan {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: 120px;
+  }
+
+  .agency-scan-inner {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 72px;
+  }
+
+  .agency-kicker {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .agency-kicker::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+
+  .agency-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 48px;
+  }
+
+  .agency-heading {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 6vw, 84px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--off-white);
+    margin-bottom: 28px;
+  }
+
+  .agency-heading em { font-style: italic; color: var(--violet-italic); }
+
+  .agency-copy {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.85;
+    font-weight: 300;
+    max-width: 620px;
+  }
+
+  .agency-copy strong { color: var(--off-white); font-weight: 400; }
+
+  .agency-offer-card {
+    background:
+      linear-gradient(135deg, rgba(169,143,224,0.10), transparent 58%),
+      var(--bg-card);
+    border: 1px solid var(--violet-border);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .agency-offer-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .agency-offer-card > * { position: relative; z-index: 1; }
+
+  .agency-card-label {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .agency-card-title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--off-white);
+    margin-bottom: 24px;
+  }
+
+  .agency-price {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 16px;
+    padding: 22px 0;
+    border-top: 1px solid var(--gold-border-divider);
+    border-bottom: 1px solid var(--gold-border-divider);
+    margin-bottom: 28px;
+  }
+
+  .agency-price strong {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 300;
+    color: var(--off-white);
+    line-height: 1;
+  }
+
+  .agency-price span {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--violet-italic);
+    padding-bottom: 6px;
+    white-space: nowrap;
+  }
+
+  .agency-deliverables {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .agency-deliverables li {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .agency-deliverables li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.75;
+  }
+
+  .agency-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 17px 22px;
+    background: var(--violet-italic);
+    color: var(--void);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .agency-cta:hover { background: #bba3f0; transform: translateY(-2px); }
+
+  .agency-intel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .agency-intel-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 32px;
+  }
+
+  .agency-intel-card .mini-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .agency-intel-card h4 {
+    font-family: var(--font-display);
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--off-white);
+    margin-bottom: 14px;
+  }
+
+  .agency-intel-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .signals-panel {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2px;
+  }
+
+  .signals-left,
+  .signals-right {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 40px;
+  }
+
+  .signals-left h3 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .signals-left h3 em { font-style: italic; color: var(--violet-italic); }
+
+  .signals-left p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .signal-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gold-border-divider);
+  }
+
+  .signal-row:last-child { border-bottom: none; }
+
+  .signal-name {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+
+  .signal-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+
+  .signal-score::before {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--violet-italic), rgba(169,143,224,0.08));
+  }
+
 
   /* IMPROVES */
   .improves {
@@ -908,6 +1199,12 @@
     .diagnosis { padding: 0 32px 48px; }
     .diagnosis-inner { grid-template-columns: 1fr; gap: 24px; }
     .services { padding: 0 32px 100px; }
+    .agency-intelligence { margin-top: -48px; }
+    #services { padding-bottom: 48px; }
+    .agency-scan { padding: 0 32px 100px; }
+    .agency-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .agency-intel-grid { grid-template-columns: 1fr; }
+    .signals-panel { grid-template-columns: 1fr; }
     .improves { padding: 0 32px 100px; }
     .pull-quote { padding: 0 32px 80px; }
     .pull-quote-inner { padding: 40px 48px; }
@@ -939,6 +1236,18 @@
     .service-card { padding: 32px 24px; }
     .service-card h2 { font-size: 28px; }
     .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .agency-intelligence { margin-top: -36px; }
+    #services { padding-bottom: 44px; }
+    .agency-scan { padding: 0 20px 80px; }
+    .agency-scan-inner { padding-top: 56px; }
+    .agency-offer-card { padding: 32px 24px; }
+    .agency-intel-grid { grid-template-columns: 1fr; }
+    .agency-intel-card { padding: 28px 24px; }
+    .signals-panel { grid-template-columns: 1fr; }
+    .signals-left, .signals-right { padding: 32px 24px; }
+    .signal-row { grid-template-columns: 1fr; gap: 8px; }
+    .agency-price { grid-template-columns: 1fr; gap: 4px; }
+    .agency-price span { padding-bottom: 0; }
     .improves { padding: 0 20px 80px; }
     .improves-grid { grid-template-columns: 1fr; }
     .improves-col { padding: 32px 28px; }
@@ -969,6 +1278,13 @@
     .services { padding: 0 16px 64px; }
     .service-card { padding: 28px 20px; }
     .service-card h2 { font-size: 24px; }
+    .agency-intelligence { margin-top: -28px; }
+    #services { padding-bottom: 40px; }
+    .agency-scan { padding: 0 16px 64px; }
+    .agency-offer-card { padding: 28px 20px; }
+    .agency-intel-card { padding: 24px 20px; }
+    .signals-left, .signals-right { padding: 28px 20px; }
+    .agency-cta { padding: 16px 18px; font-size: 11px; }
     .improves { padding: 0 16px 64px; }
     .improves-col { padding: 28px 20px; }
     .pull-quote { padding: 0 16px 48px; }
@@ -993,10 +1309,11 @@
     <li><a href="https://www.bookednow.co.za/scan">Visibility Scan</a></li>
     <li><a href="#services">Audits</a></li>
     <li><a href="#builds">Builds</a></li>
+    <li><a href="#agencies">Agencies</a></li>
     <li><a href="#founder">About</a></li>
   </ul>
-  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20nav%5D" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
-  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20nav_mobile%5D" class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
 </nav>
 
 <main>
@@ -1013,7 +1330,7 @@
     </p>
     <div class="hero-ctas">
       <a href="https://www.bookednow.co.za/scan" class="btn-primary">Run the Visibility Scan</a>
-      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked%20%5Bsource%3A%20hero%5D" class="btn-secondary" target="_blank" rel="noopener">Chat with me</a>
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="btn-secondary" target="_blank" rel="noopener">Chat with me</a>
     </div>
   </section>
 
@@ -1058,7 +1375,7 @@
       </a>
 
       <!-- 02 PORTFOLIO AUDIT -->
-      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit%20%5Bsource%3A%20services_card%5D" target="_blank" rel="noopener" class="service-card">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit" target="_blank" rel="noopener" class="service-card">
         <div class="card-meta">
           <span class="card-number">02 — PORTFOLIO AUDIT</span>
           <span class="card-tag live">R 4 000</span>
@@ -1078,37 +1395,62 @@
     <div class="services-grid">
 
       <!-- 03 ONE-PAGE PORTFOLIO -->
-      <a href="https://www.bookednow.co.za/portfoliopreview/" class="service-card">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20a%20One-Page%20Portfolio%20%E2%80%94%20can%20you%20send%20me%20a%20demo%3F" target="_blank" rel="noopener" class="service-card">
         <div class="card-meta">
           <span class="card-number">03 — ONE-PAGE PORTFOLIO</span>
-          <span class="card-tag free">Free tool</span>
+          <span class="card-tag free">Free demo</span>
         </div>
         <h2>One-Page<br>Portfolio</h2>
         <p class="card-best-for">Best for: creatives who need a professional presence immediately.</p>
-        <p>Generate a portfolio direction first, then turn it into a live one-page build. Fast load, single conversion goal, and a focused professional presence for fashion creatives who need infrastructure now — not in a month.</p>
+        <p>One page. No CMS. Fast load, single conversion goal, live within a week. A focused, professional portfolio page built for fashion creatives who need infrastructure now — not in a month.</p>
         <div class="card-footer">
-          <span class="card-link">Generate yours</span>
+          <span class="card-link">See your demo</span>
           <span class="card-price">R 7 500</span>
         </div>
       </a>
 
       <!-- 04 STRUCTURE -->
-      <a href="https://www.bookednow.co.za/portfoliopreview/" class="service-card">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20love%20to%20see%20a%20demo%20of%20my%20portfolio%20website" target="_blank" rel="noopener" class="service-card">
         <div class="card-meta">
           <span class="card-number">04 — STRUCTURE</span>
-          <span class="card-tag free">Free tool</span>
+          <span class="card-tag free">Free demo</span>
         </div>
         <h2>Full Portfolio<br>Website Build</h2>
         <p class="card-best-for">Best for: established creatives ready for a complete portfolio infrastructure build.</p>
-        <p>Generate a personalised portfolio direction built around your role, aesthetic, credits, and market. If the direction is right, I turn it into a full live portfolio system.</p>
+        <p>Your portfolio is the first thing a casting director reads before a human ever looks. I build it around your aesthetic, your credits, your market. See a personalised demo before you commit to anything.</p>
         <div class="card-footer">
-          <span class="card-link">Generate yours</span>
+          <span class="card-link">See your demo</span>
           <span class="card-price">From R 15 000</span>
         </div>
       </a>
 
     </div>
   </section>
+
+  <!-- AGENCY INTELLIGENCE -->
+  <section class="services agency-intelligence" id="agencies">
+
+    <p class="services-category-label">Agency Intelligence</p>
+    <div class="services-grid">
+
+      <!-- 05 ROSTER SCAN SPRINT -->
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20the%20Roster%20Scan%20Sprint%20for%20our%20agency" target="_blank" rel="noopener" class="service-card service-card-wide">
+        <div class="card-meta">
+          <span class="card-number">05 — ROSTER SCAN SPRINT</span>
+          <span class="card-tag live">R 15 000 once-off</span>
+        </div>
+        <h2>Agency<br>Intelligence</h2>
+        <p class="card-best-for">Best for: boutique agencies managing photographers, stylists, hair &amp; make-up artists, and creative rosters.</p>
+        <p>Most agencies know who they represent. Few can measure who is visible, under-positioned, AI-readable, or booking-ready across the talent pool. This 30-day diagnostic maps the roster into a clearer intelligence layer: visibility scores, booking-readiness tiers, infrastructure gaps, and a priority action plan.</p>
+        <div class="card-footer">
+          <span class="card-link">Start roster scan</span>
+          <span class="card-price">R 15 000</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
 
   <!-- WHAT BOOKED IMPROVES -->
   <section class="improves">
@@ -1183,7 +1525,7 @@
       <h2 class="contact-heading">Reach out.<br><em>I'll figure out what's<br>holding you back.</em></h2>
       <p class="contact-sub">Send one message. No form. Tell me what you do, where your work lives, and what feels stuck. I'll tell you what needs fixing first.</p>
       <div class="contact-actions">
-        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20came%20from%20the%20Booked%20homepage.%20Here%27s%20what%20I%20do%20and%20what%20feels%20stuck%3A%20%5Bsource%3A%20homepage_contact_cta%5D" class="btn-wa-full" target="_blank" rel="noopener">
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20came%20from%20the%20Booked%20homepage.%20Here%27s%20what%20I%20do%20and%20what%20feels%20stuck%3A" class="btn-wa-full" target="_blank" rel="noopener">
           Chat on WhatsApp
           <span class="arrow">→</span>
         </a>
@@ -1207,7 +1549,7 @@
         A decade on set.<br>
         Now building what gets you there.
       </p>
-      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect%20%5Bsource%3A%20founder_section%5D" class="founder-contact" target="_blank" rel="noopener">
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect" class="founder-contact" target="_blank" rel="noopener">
         Get in touch →
       </a>
     </div>
@@ -1261,7 +1603,7 @@
 <div class="post-founder-cta">
   <div class="post-founder-cta-inner">
     <p>Not sure where to start? Send me your portfolio. I'll tell you what I would fix first.</p>
-    <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20send%20you%20my%20portfolio%20for%20a%20quick%20read%20%5Bsource%3A%20post_founder_cta%5D" class="btn-primary" target="_blank" rel="noopener">Send Portfolio on WhatsApp</a>
+    <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20send%20you%20my%20portfolio%20for%20a%20quick%20read" class="btn-primary" target="_blank" rel="noopener">Send Portfolio on WhatsApp</a>
   </div>
 </div>
 
