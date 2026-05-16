@@ -256,6 +256,7 @@
 
     .btn:hover { transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
     .btn-primary:hover { background: var(--gold-light); color: var(--void); border-color: var(--gold-light); }
+    .btn:disabled { opacity: 0.55; cursor: wait; transform: none; }
 
     .btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
       outline: 2px solid var(--violet-italic);
@@ -567,6 +568,63 @@
       font-size: 14px;
       line-height: 1.6;
       max-width: 480px;
+    }
+
+
+    .processing {
+      display: none;
+      margin-top: 32px;
+      padding: 30px;
+      border: 1px solid rgba(200,169,110,0.30);
+      background: linear-gradient(180deg, rgba(200,169,110,0.07), rgba(14,16,32,0.92));
+      color: var(--off-white);
+    }
+
+    .processing.active { display: block; }
+
+    .processing-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 12px;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .processing h3 {
+      margin: 0 0 14px;
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      color: var(--off-white);
+    }
+
+    .processing p {
+      color: var(--subtext);
+      font-size: 16px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .processing-bar {
+      height: 6px;
+      margin-top: 22px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .processing-bar span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--violet-italic));
+      animation: bookedProcessing 10s linear forwards;
+    }
+
+    @keyframes bookedProcessing {
+      from { width: 0%; }
+      to { width: 100%; }
     }
 
     .results { display: none; margin-top: 32px; }
@@ -911,7 +969,7 @@
     <section class="wrap section" id="scan-form">
       <div class="section-head">
         <h2>Run the scan.</h2>
-        <p>Answer the questions below. You will receive a directional visibility readout based on your inputs, then the option to request a verified manual BOOKED. audit.</p>
+        <p>Answer the core questions below. You will receive a directional visibility readout based on your inputs, then the option to request a verified manual BOOKED. audit.</p>
       </div>
 
       <div class="form-shell">
@@ -925,17 +983,7 @@
         <section class="form-card" aria-labelledby="scan-form-title">
           <h2 class="sr-only" id="scan-form-title">BOOKED Visibility Scan form</h2>
           <form id="visibilityForm" novalidate>
-            <div class="question">
-              <label class="q-title" for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
-            </div>
-
-            <div class="question">
-              <label class="q-title" for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required />
-            </div>
-
-            <div class="question">
+<div class="question">
               <label class="q-title" for="creativeType">Creative type</label>
               <select id="creativeType" name="creativeType" required>
                 <option value="">Select one</option>
@@ -975,19 +1023,7 @@
                 <option>Other</option>
               </select>
             </div>
-
-            <div class="question">
-              <label class="q-title" for="timeline">How soon do you want to improve this?</label>
-              <select id="timeline" name="timeline" required>
-                <option value="">Select one</option>
-                <option>Immediately</option>
-                <option>Within 30 days</option>
-                <option>Within 90 days</option>
-                <option>Researching options</option>
-              </select>
-            </div>
-
-            <div class="question">
+<div class="question">
               <fieldset>
                 <legend class="q-title">What outcome matters most right now?</legend>
                 <div class="options">
@@ -1042,10 +1078,19 @@
             </div>
 
             <div class="submit-row">
-              <button class="btn btn-primary" type="submit">Generate readout</button>
+              <button class="btn btn-primary" type="submit" id="submitScan">Generate readout</button>
               <span class="microcopy">This first-pass readout is generated in-browser from your answers. The full audit is manually reviewed and built around your exact links, target market, and visible digital presence.</span>
             </div>
           </form>
+
+
+          <div class="processing" id="processing" aria-live="polite" aria-busy="true">
+            <div class="processing-label">Generating readout</div>
+            <h3>Building your visibility scan.</h3>
+            <p id="processingMessage">Reading your submitted creative signals...</p>
+            <div class="processing-bar" aria-hidden="true"><span id="processingProgress"></span></div>
+            <p class="data-note">This is a directional self-reported scan, not a live crawl. The verified audit reviews your actual links, search presence, portfolio structure, and trust signals.</p>
+          </div>
 
           <div class="results" id="results" aria-live="polite">
             <div class="result-card">
@@ -1118,7 +1163,20 @@
     const basisMetrics = document.getElementById('basisMetrics');
     const copyReadout = document.getElementById('copyReadout');
     const copyStatus = document.getElementById('copyStatus');
+    const processing = document.getElementById('processing');
+    const processingMessage = document.getElementById('processingMessage');
+    const submitScan = document.getElementById('submitScan');
     let latestReadout = '';
+    let processingTimer = null;
+    let messageTimer = null;
+
+    const processingMessages = [
+      'Reading your submitted creative signals...',
+      'Mapping your visibility infrastructure...',
+      'Checking likely booking friction...',
+      'Building your industry readability readout...',
+      'Preparing your BOOKED. diagnostic...'
+    ];
 
     function normalizeUrl(value, fallbackPrefix = 'https://') {
       const clean = String(value || '').trim();
@@ -1147,8 +1205,32 @@
         return;
       }
 
-      const data = new FormData(form);
-      let score = 38;
+      if (processingTimer) clearTimeout(processingTimer);
+      if (messageTimer) clearInterval(messageTimer);
+
+      results.classList.remove('active');
+      processing.classList.add('active');
+      processingMessage.textContent = processingMessages[0];
+      submitScan.disabled = true;
+      submitScan.textContent = 'Generating...';
+      processing.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      const progressBar = document.getElementById('processingProgress');
+      if (progressBar) {
+        progressBar.style.animation = 'none';
+        progressBar.offsetHeight;
+        progressBar.style.animation = 'bookedProcessing 10s linear forwards';
+      }
+
+      let messageIndex = 0;
+      messageTimer = setInterval(() => {
+        messageIndex = Math.min(messageIndex + 1, processingMessages.length - 1);
+        processingMessage.textContent = processingMessages[messageIndex];
+      }, 2000);
+
+      processingTimer = setTimeout(() => {
+        const data = new FormData(form);
+        let score = 38;
 
       const level = data.get('level');
       if (level === 'Working professional') score += 8;
@@ -1287,22 +1369,13 @@
 
       blockersEl.innerHTML = blockers.slice(0, 4).map(item => `<div class="blocker">${item}</div>`).join('');
 
-      const name = encodeURIComponent(data.get('name') || '');
-      const email = encodeURIComponent(data.get('email') || '');
-      const creativeType = encodeURIComponent(data.get('creativeType') || '');
-      const market = encodeURIComponent(data.get('market') || '');
-      const timeline = data.get('timeline') || '';
       const outcomeValue = data.get('outcome') || '';
       const contextRaw = (data.get('context') || '').slice(0, 420);
-      const context = encodeURIComponent(contextRaw);
 
       latestReadout = [
         'BOOKED. Visibility Scan',
-        `Name: ${data.get('name') || ''}`,
-        `Email: ${data.get('email') || ''}`,
         `Creative type: ${data.get('creativeType') || ''}`,
         `Market: ${data.get('market') || ''}`,
-        `Timeline: ${timeline}`,
         `Outcome: ${outcomeValue}`,
         `Score: ${display}/10`,
         `Readout basis: ${confidence}`,
@@ -1314,8 +1387,14 @@
       const auditRequestText = latestReadout + '\n\nI want to request the manual Full BOOKED. Audit.';
       whatsappLink.href = `https://wa.me/27637549122?text=${encodeURIComponent(auditRequestText)}`;
 
+      if (messageTimer) clearInterval(messageTimer);
+      processing.classList.remove('active');
+      submitScan.disabled = false;
+      submitScan.textContent = 'Generate readout';
+
       results.classList.add('active');
       results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 10000);
     });
 
     if (copyReadout) {
