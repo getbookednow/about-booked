@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0e0a1a" />
   <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="canonical" href="https://www.bookednow.co.za/scan" />
 
   <title>BOOKED. Visibility Scan | Directional Discoverability Readout for Fashion Creatives</title>
@@ -531,28 +534,87 @@
     }
 
     .option {
+      position: relative;
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      min-height: 64px;
-      padding: 16px;
-      border: 1px solid var(--gold-border-default);
-      background: rgba(10,14,39,0.36);
+      gap: 18px;
+      align-items: center;
+      min-height: 78px;
+      padding: 20px 22px 20px 62px;
+      border: 1px solid rgba(200,169,110,0.16);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.006)),
+        rgba(10,14,39,0.36);
       border-radius: 0;
       cursor: pointer;
-      color: var(--subtext);
+      color: rgba(240,237,232,0.68);
       font-size: 15px;
       line-height: 1.45;
-      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease, transform 0.22s ease;
     }
 
-    .option:hover { border-color: var(--gold-border-hover); color: var(--off-white); }
-    .option input { width: 18px; height: 18px; margin-top: 2px; flex: 0 0 18px; accent-color: var(--gold); }
+    .option::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      transform: translateY(-50%);
+      border: 1px solid rgba(200,169,110,0.34);
+      background: rgba(8,6,17,0.72);
+      transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .option::after {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      transform: translateY(-50%) scale(0);
+      background: var(--gold);
+      transition: transform 0.18s ease;
+    }
+
+    .option:has(input[type="radio"])::before,
+    .option:has(input[type="radio"])::after {
+      border-radius: 50%;
+    }
+
+    .option:hover {
+      border-color: rgba(200,169,110,0.42);
+      color: var(--off-white);
+      background: rgba(200,169,110,0.045);
+    }
+
+    .option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+    }
+
     .option.is-selected,
     .option:has(input:checked) {
-      border-color: rgba(200,169,110,0.58);
-      background: rgba(200,169,110,0.10);
+      border-color: rgba(200,169,110,0.72);
+      background:
+        linear-gradient(180deg, rgba(200,169,110,0.12), rgba(200,169,110,0.035)),
+        rgba(10,14,39,0.58);
       color: var(--off-white);
+    }
+
+    .option.is-selected::before,
+    .option:has(input:checked)::before {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200,169,110,0.08);
+    }
+
+    .option.is-selected::after,
+    .option:has(input:checked)::after {
+      transform: translateY(-50%) scale(1);
     }
 
     .submit-row {
@@ -795,8 +857,24 @@
       input, select, textarea { min-height: 54px; padding: 15px 0; font-size: 18px; color: var(--off-white); }
       textarea { min-height: 136px; }
       .options { gap: 9px; }
-      .option { min-height: 64px; align-items: center; gap: 12px; padding: 15px; font-size: 16px; line-height: 1.42; }
-      .option input { width: 19px; height: 19px; flex: 0 0 19px; margin-top: 0; }
+      .option {
+        min-height: 68px;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 16px 16px 54px;
+        font-size: 16px;
+        line-height: 1.42;
+      }
+      .option::before {
+        left: 18px;
+        width: 19px;
+        height: 19px;
+      }
+      .option::after {
+        left: 24px;
+        width: 7px;
+        height: 7px;
+      }
       .btn { width: 100%; min-height: 52px; padding: 15px 18px; font-size: 11px; letter-spacing: 0.16em; }
       .microcopy { font-size: 14px; line-height: 1.6; color: rgba(240,237,232,0.62); }
       .offer { padding: 20px; }
