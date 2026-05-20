@@ -50,7 +50,12 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
 
   body {
     background: var(--void);
@@ -59,9 +64,30 @@
     font-weight: 200;
     line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  @supports not (overflow-x: clip) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  }
+
+  main,
+  section,
+  nav,
+  footer {
+    max-width: 100%;
+  }
+
+  section,
+  [id] {
+    scroll-margin-top: 96px;
   }
 
   body::before {
@@ -76,6 +102,11 @@
   }
 
   a { color: inherit; }
+
+  h1, h2, h3, p, li, a, span {
+    overflow-wrap: break-word;
+  }
+
   ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
 
   /* NAV */
@@ -372,7 +403,7 @@
 
   .card-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
 
-  .card-number { font-size: 12px; letter-spacing: 0.2em; color: var(--gold); font-weight: 400; }
+  .card-number { font-size: 15px; letter-spacing: 0.2em; color: var(--gold); font-weight: 400; }
 
   .card-tag {
     font-size: 13px;
@@ -1360,7 +1391,7 @@
 
   /* RESPONSIVE */
   @media (min-width: 1440px) {
-    nav { max-width: 1440px; margin: 0 auto; left: 0; right: 0; }
+    nav { width: 100%; margin: 0; left: 0; right: 0; }
     .hero, .founder-strip, .diagnosis, .services, .improves,
     .pull-quote, .icp, .contact-cta, .post-founder-cta { max-width: 1400px; }
   }
@@ -1395,6 +1426,11 @@
   }
 
   @media (max-width: 768px) {
+    section,
+    [id] {
+      scroll-margin-top: 82px;
+    }
+
     nav { padding: 18px 20px; }
     .nav-links { display: none; }
     .nav-contact { display: none; }
@@ -1838,7 +1874,6 @@
           <span class="card-number">01 — VISIBILITY SCAN</span>
           <span class="card-tag live">FREE · DIRECTIONAL</span>
         </div>
-        <h2>Visibility<br>Scan</h2>
         <p class="card-best-for">Best for: creatives who want to know where their digital presence is losing visibility, trust, or booking clarity.</p>
         <p>Understand where your digital presence may be losing visibility, trust, or booking clarity. The scan identifies likely gaps across your portfolio, search presence, profile structure, and booking friction — before any larger build is recommended.</p>
         <div class="card-footer">
@@ -1853,7 +1888,6 @@
           <span class="card-number">02 — PORTFOLIO AUDIT</span>
           <span class="card-tag live">R4,000</span>
         </div>
-        <h2>Portfolio<br>Audit</h2>
         <p class="card-best-for">Best for: creatives who need a clear read on what to keep, remove, or reposition.</p>
         <p>A professional review of what your current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Each image is assessed for sequence, commercial strength, category fit, repetition, visual authority, and booking readability — with clear keep, remove, and repositioning logic.</p>
         <div class="card-footer">
@@ -1868,7 +1902,6 @@
           <span class="card-number">03 — LANDING PAGE PREVIEW</span>
           <span class="card-tag free">FREE PREVIEW</span>
         </div>
-        <h2>Landing Page<br>Preview</h2>
         <p class="card-best-for">Best for: creatives who do not yet have a clean portfolio page or booking link.</p>
         <p>Preview how your work could sit inside a cleaner professional landing page before committing to a build. This gives you a directional read on structure, positioning, contact flow, and the first layer of owned digital presence.</p>
         <div class="card-footer">
@@ -1883,7 +1916,6 @@
           <span class="card-number">04 — FIX SPRINT</span>
           <span class="card-tag live">FROM R4,500</span>
         </div>
-        <h2>Fix<br>Sprint</h2>
         <p class="card-best-for">Best for: creatives who need one high-friction part of their digital presence fixed properly.</p>
         <p>For creatives who do not need a full rebuild yet — but do need the highest-friction part of their digital presence fixed properly. This may include portfolio sequencing, bio structure, homepage copy, project captions, profile positioning, contact flow, AI-readable content improvements, or a focused one-page landing layer.</p>
         <div class="card-footer">
@@ -1903,7 +1935,6 @@
           <span class="card-number">05 — AI READABILITY LAYER</span>
           <span class="card-tag live">FROM R3,500</span>
         </div>
-        <h2>AI Readability<br>Layer</h2>
         <p class="card-best-for">Best for: creatives whose work looks strong visually, but is difficult for search and AI systems to understand.</p>
         <p>For creatives whose work looks strong visually, but is difficult for search engines, AI systems, and digital platforms to understand. This layer improves the structure around the work: role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes.</p>
         <div class="card-footer">
@@ -1918,7 +1949,6 @@
           <span class="card-number">06 — PORTFOLIO INFRASTRUCTURE BUILD</span>
           <span class="card-tag live">FROM R15,000</span>
         </div>
-        <h2>Portfolio Infrastructure<br>Build</h2>
         <p class="card-best-for">Best for: established creatives ready to move from scattered visibility into a structured portfolio system.</p>
         <p>For established creatives ready to move from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery. This is the full build layer: portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions.</p>
         <div class="card-footer">
