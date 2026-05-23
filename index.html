@@ -13,16 +13,13 @@
 <meta property="og:url" content="https://www.bookednow.co.za/">
 <meta property="og:image" content="https://www.bookednow.co.za/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<!-- BOOKED. FAVICON -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, serif' font-size='36' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="shortcut icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0e0a1a">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --gold:                 #C8A96E;
@@ -48,7 +45,6 @@
     --muted:      var(--subtext);
     --dim:        #444;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html {
     scroll-behavior: smooth;
@@ -56,7 +52,6 @@
     max-width: 100%;
     overflow-x: clip;
   }
-
   body {
     background: var(--void);
     color: var(--off-white);
@@ -70,26 +65,11 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-
   @supports not (overflow-x: clip) {
-    html,
-    body {
-      overflow-x: hidden;
-    }
+    html, body { overflow-x: hidden; }
   }
-
-  main,
-  section,
-  nav,
-  footer {
-    max-width: 100%;
-  }
-
-  section,
-  [id] {
-    scroll-margin-top: 96px;
-  }
-
+  main, section, nav, footer { max-width: 100%; }
+  section, [id] { scroll-margin-top: 96px; }
   body::before {
     content: '';
     position: fixed;
@@ -100,13 +80,8 @@
     pointer-events: none;
     z-index: 0;
   }
-
   a { color: inherit; }
-
-  h1, h2, h3, p, li, a, span {
-    overflow-wrap: break-word;
-  }
-
+  h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
   ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
 
   /* NAV */
@@ -122,7 +97,6 @@
     background: rgba(10,14,26,0.85);
     backdrop-filter: blur(12px);
   }
-
   .nav-logo {
     font-family: var(--font-display);
     font-size: 21px;
@@ -132,14 +106,12 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-
   .nav-links {
     display: flex;
     align-items: center;
     gap: 36px;
     list-style: none;
   }
-
   .nav-links a {
     font-size: 12px;
     letter-spacing: 0.25em;
@@ -148,9 +120,7 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-
   .nav-links a:hover { color: var(--gold); }
-
   .nav-contact {
     display: flex;
     align-items: center;
@@ -165,9 +135,7 @@
     transition: all 0.2s;
     font-family: var(--font-body);
   }
-
   .nav-contact:hover { background: var(--gold-dim); color: var(--gold-light) !important; }
-
   .nav-chat-mobile {
     display: none;
     padding: 9px 16px;
@@ -181,7 +149,6 @@
     white-space: nowrap;
     transition: all 0.2s;
   }
-
   .nav-chat-mobile:hover { background: var(--gold-dim); }
 
   /* HERO */
@@ -196,7 +163,6 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
   .hero-tag {
     font-size: 12px;
     letter-spacing: 0.3em;
@@ -207,7 +173,6 @@
     align-items: center;
     gap: 12px;
   }
-
   .hero-tag::before {
     content: '';
     display: block;
@@ -215,7 +180,6 @@
     height: 1px;
     background: var(--gold);
   }
-
   .hero h1 {
     font-family: var(--font-display);
     font-size: clamp(52px, 7vw, 96px);
@@ -225,9 +189,7 @@
     margin-bottom: 32px;
     max-width: 840px;
   }
-
   .hero h1 em { font-style: italic; color: var(--violet-italic); }
-
   .hero-sub {
     font-size: 1.05rem;
     font-weight: 200;
@@ -236,9 +198,7 @@
     line-height: 1.8;
     margin-bottom: 0;
   }
-
   .hero-sub strong { color: var(--text); font-weight: 400; }
-
   .hero-sub-note {
     margin-top: 18px;
     max-width: 720px;
@@ -246,7 +206,6 @@
     font-size: 15px;
     line-height: 1.7;
   }
-
   .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
 
   /* BUTTONS */
@@ -266,9 +225,7 @@
     font-family: var(--font-body);
     transition: background 0.2s, transform 0.2s;
   }
-
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-
   .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -285,7 +242,6 @@
     font-family: var(--font-body);
     transition: all 0.2s;
   }
-
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
   /* FOUNDER STRIP */
@@ -296,7 +252,6 @@
     max-width: 1200px;
     margin: 0 auto 80px;
   }
-
   .founder-strip-inner {
     border-top: 1px solid var(--gold-border-divider);
     padding-top: 24px;
@@ -304,9 +259,7 @@
     align-items: center;
     gap: 12px;
   }
-
   .founder-strip-line { width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
-
   .founder-strip p { font-size: 13px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
   .founder-strip strong { color: var(--gold); font-weight: 400; }
 
@@ -318,7 +271,6 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
   .diagnosis-inner {
     display: grid;
     grid-template-columns: 1fr 1.6fr;
@@ -327,7 +279,6 @@
     padding: 56px 0;
     border-top: 1px solid var(--gold-border-divider);
   }
-
   .diagnosis-label {
     font-size: 12px;
     letter-spacing: 0.3em;
@@ -338,7 +289,6 @@
     gap: 12px;
     padding-top: 4px;
   }
-
   .diagnosis-label::before {
     content: '';
     display: block;
@@ -347,7 +297,6 @@
     background: var(--gold);
     flex-shrink: 0;
   }
-
   .diagnosis-copy h3 {
     font-family: var(--font-display);
     font-size: clamp(26px, 3vw, 40px);
@@ -356,9 +305,7 @@
     margin-bottom: 20px;
     color: var(--off-white);
   }
-
   .diagnosis-copy h3 em { font-style: italic; color: var(--violet-italic); }
-
   .diagnosis-copy p {
     font-size: 16px;
     color: var(--muted);
@@ -374,9 +321,7 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
   .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-
   .service-card {
     background: var(--bg-card);
     border: 1px solid var(--gold-border-default);
@@ -388,7 +333,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .service-card::before {
     content: '';
     position: absolute;
@@ -397,14 +341,10 @@
     opacity: 0;
     transition: opacity 0.3s;
   }
-
   .service-card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); transform: translateY(-4px); }
   .service-card:hover::before { opacity: 1; }
-
   .card-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
-
   .card-number { font-size: 15px; letter-spacing: 0.2em; color: var(--gold); font-weight: 400; }
-
   .card-tag {
     font-size: 13px;
     letter-spacing: 0.2em;
@@ -413,10 +353,8 @@
     padding: 4px 10px;
     border: 1px solid var(--dim);
   }
-
   .card-tag.free, .card-tag.live { border-color: rgba(200,169,110,0.3); color: var(--gold); }
   .card-tag.live { background: var(--violet-fill); border-color: var(--violet-border); color: #c9afff; }
-
   .service-card h2 {
     font-family: var(--font-display);
     font-size: 36px;
@@ -424,7 +362,6 @@
     margin-bottom: 10px;
     line-height: 1.1;
   }
-
   .card-best-for {
     font-size: 12px;
     letter-spacing: 0.08em;
@@ -433,7 +370,6 @@
     font-weight: 300;
     opacity: 0.88;
   }
-
   .service-card p {
     font-size: 16px;
     color: var(--muted);
@@ -441,7 +377,6 @@
     margin-bottom: 32px;
     font-weight: 300;
   }
-
   .card-link {
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -451,14 +386,10 @@
     align-items: center;
     gap: 8px;
   }
-
   .card-link::after { content: '→'; transition: transform 0.2s; }
   .service-card:hover .card-link::after { transform: translateX(4px); }
-
   .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-
   .card-price { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
-
   .services-category-label {
     font-size: 13px;
     letter-spacing: 0.3em;
@@ -469,10 +400,6 @@
     border-bottom: 1px solid var(--gold-border-divider);
   }
 
-
-
-
-
   /* PROOF SNAPSHOT */
   .proof-snapshot {
     position: relative;
@@ -481,14 +408,8 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-
-  .proof-inner {
-    border-top: 1px solid var(--gold-border-divider);
-    padding-top: 64px;
-  }
-
-  .proof-kicker,
-  .faq-kicker {
+  .proof-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 64px; }
+  .proof-kicker, .faq-kicker {
     font-size: 12px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -498,18 +419,14 @@
     align-items: center;
     gap: 12px;
   }
-
-  .proof-kicker::before,
-  .faq-kicker::before {
+  .proof-kicker::before, .faq-kicker::before {
     content: '';
     display: block;
     width: 32px;
     height: 1px;
     background: var(--gold);
   }
-
-  .proof-heading,
-  .faq-heading {
+  .proof-heading, .faq-heading {
     font-family: var(--font-display);
     font-size: clamp(34px, 4.6vw, 64px);
     font-weight: 300;
@@ -518,10 +435,7 @@
     margin-bottom: 24px;
     max-width: 760px;
   }
-
-  .proof-heading em,
-  .faq-heading em { font-style: italic; color: var(--violet-italic); }
-
+  .proof-heading em, .faq-heading em { font-style: italic; color: var(--violet-italic); }
   .proof-sub {
     font-size: 16px;
     color: var(--muted);
@@ -530,166 +444,181 @@
     margin-bottom: 36px;
     font-weight: 300;
   }
-
-  .proof-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-  }
-
-  .proof-card {
-    background: var(--bg-card);
-    border: 1px solid var(--gold-border-default);
-    padding: 38px 36px;
-  }
-
+  .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .proof-card { background: var(--bg-card); border: 1px solid var(--gold-border-default); padding: 38px 36px; }
   .proof-card.after { border-color: rgba(200,169,110,0.25); }
-
-  .proof-card-label {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-
+  .proof-card-label { font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
   .proof-card.before .proof-card-label { color: var(--dim); }
-
-  .proof-card ul {
-    list-style: none;
-    display: grid;
-    gap: 14px;
-  }
-
-  .proof-card li {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.65;
-    padding-left: 18px;
-    position: relative;
-  }
-
+  .proof-card ul { list-style: none; display: grid; gap: 14px; }
+  .proof-card li { color: var(--muted); font-size: 15px; line-height: 1.65; padding-left: 18px; position: relative; }
   .proof-card.after li { color: var(--off-white); }
-
-  .proof-card li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-  }
-
-  /* AGENCY TEASER */
-  .agency-teaser {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 120px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .agency-teaser-inner {
-    border: 1px solid var(--gold-border-default);
-    background:
-      radial-gradient(ellipse at 80% 20%, rgba(169,143,224,0.10), transparent 55%),
-      var(--bg-card);
-    padding: 56px 48px;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 48px;
-    align-items: end;
-  }
-
-  .agency-teaser-label {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  .agency-teaser h2 {
-    font-family: var(--font-display);
-    font-size: clamp(38px, 5vw, 72px);
-    font-weight: 300;
-    line-height: 0.98;
-    letter-spacing: -0.02em;
-    max-width: 620px;
-    margin-bottom: 24px;
-  }
-
-  .agency-teaser h2 em { font-style: italic; color: var(--violet-italic); }
-
-  .agency-teaser p {
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.8;
-    max-width: 720px;
-  }
-
-  .agency-teaser-list {
-    list-style: none;
-    display: grid;
-    gap: 14px;
-    margin-bottom: 32px;
-  }
-
-  .agency-teaser-list li {
-    color: var(--off-white);
-    font-size: 15px;
-    line-height: 1.5;
-    padding-left: 18px;
-    position: relative;
-  }
-
-  .agency-teaser-list li::before {
-    content: '+';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-  }
+  .proof-card li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
 
   /* FAQ */
-  .faq {
+  .faq { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .faq-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 72px; }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 42px; }
+  .faq-item { border: 1px solid var(--gold-border-default); background: var(--bg-card); padding: 34px 32px; }
+  .faq-item h3 { font-family: var(--font-display); font-size: 26px; font-weight: 300; line-height: 1.15; margin-bottom: 16px; color: var(--off-white); }
+  .faq-item p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+
+  /* IMPROVES */
+  .improves { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .improves-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 64px; }
+  .improves-label {
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 48px; display: flex; align-items: center; gap: 12px;
+  }
+  .improves-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .improves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .improves-col { background: var(--bg-card); border: 1px solid var(--gold-border-default); padding: 40px; }
+  .improves-col-label { font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .improves-col.before .improves-col-label { color: var(--dim); }
+  .improves-col.after .improves-col-label { color: var(--gold); }
+  .improves-col-label .dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .improves-col.before .dot { background: var(--dim); }
+  .improves-col.after .dot { background: var(--gold); }
+  .improves-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .improves-list li { font-size: 16px; font-weight: 200; line-height: 1.5; padding-left: 16px; position: relative; }
+  .improves-col.before .improves-list li { color: var(--muted); }
+  .improves-col.after .improves-list li { color: var(--off-white); }
+  .improves-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 1px; }
+  .improves-col.before .improves-list li::before { background: var(--dim); }
+  .improves-col.after .improves-list li::before { background: var(--gold); }
+
+  /* PULL QUOTE */
+  .pull-quote { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .pull-quote-inner { border-left: 2px solid var(--gold); padding: 48px 64px; background: linear-gradient(135deg, rgba(120,80,200,0.05) 0%, transparent 70%); }
+  .pull-quote blockquote { font-family: var(--font-display); font-size: clamp(22px, 3vw, 36px); font-weight: 300; font-style: italic; line-height: 1.45; color: var(--off-white); }
+
+  /* FOR / NOT FOR */
+  .icp { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .icp-panel { background: var(--bg-card); border: 1px solid var(--gold-border-default); padding: 56px 48px; }
+  .icp-panel.not-for { border-color: rgba(68,68,68,0.4); }
+  .icp-label { display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 40px; }
+  .icp-label .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .icp-panel.for .icp-label { color: var(--gold); }
+  .icp-panel.for .dot { background: var(--gold); }
+  .icp-panel.not-for .icp-label { color: var(--dim); }
+  .icp-panel.not-for .dot { background: var(--dim); }
+  .icp-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+  .icp-list li { font-family: var(--font-display); font-size: clamp(17px, 1.8vw, 22px); font-weight: 300; font-style: italic; line-height: 1.3; display: flex; align-items: flex-start; gap: 16px; }
+  .icp-panel.for .icp-list li { color: var(--off-white); }
+  .icp-panel.not-for .icp-list li { color: var(--muted); }
+  .icp-list li .marker { font-family: var(--font-body); font-size: 16px; font-style: normal; font-weight: 300; flex-shrink: 0; margin-top: 3px; line-height: 1; }
+  .icp-panel.for .marker { color: var(--gold); }
+  .icp-panel.not-for .marker { color: var(--dim); }
+
+  /* CONTACT CTA */
+  .contact-cta { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .contact-cta-inner { padding: 96px 0 0; border-top: 1px solid var(--gold-border-divider); }
+  .contact-heading { font-family: var(--font-display); font-size: clamp(42px, 6vw, 80px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 700px; }
+  .contact-heading em { font-style: italic; color: var(--violet-italic); }
+  .contact-sub { font-size: 16px; font-weight: 200; color: var(--subtext); max-width: 440px; line-height: 1.8; margin-bottom: 56px; }
+  .contact-actions { display: flex; flex-direction: column; gap: 2px; max-width: 640px; }
+  .btn-wa-full { display: flex; align-items: center; justify-content: space-between; padding: 22px 32px; background: var(--violet-italic); color: var(--void); font-size: 12px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; font-family: var(--font-body); transition: background 0.2s; }
+  .btn-wa-full:hover { background: #bba3f0; }
+  .btn-wa-full .arrow { font-size: 16px; }
+  .btn-scan-outline { display: flex; align-items: center; justify-content: space-between; padding: 22px 32px; border: 1px solid var(--gold-border-default); color: var(--muted); font-size: 12px; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; font-family: var(--font-body); transition: border-color 0.2s, color 0.2s; }
+  .btn-scan-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* FOUNDER */
+  .founder { position: relative; z-index: 1; padding: 120px 48px 140px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--gold-border-divider); }
+  .founder-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 96px; align-items: start; }
+  .founder-left { position: sticky; top: 120px; }
+  .founder-tag { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+  .founder-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .founder-name { font-family: var(--font-display); font-size: clamp(42px, 5vw, 72px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .founder-name em { font-style: italic; color: var(--violet-italic); display: block; }
+  .founder-identity { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; line-height: 2.2; }
+  .founder-contact { display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; border: 1px solid var(--gold-border); color: var(--gold); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-family: var(--font-body); transition: all 0.2s; }
+  .founder-contact:hover { background: var(--gold-dim); border-color: rgba(200,169,110,0.35); }
+  .founder-bio p { font-size: 16px; font-weight: 200; color: var(--off-white); line-height: 1.85; margin-bottom: 20px; }
+  .founder-bio p:last-child { margin-bottom: 0; }
+  .founder-bio strong { color: var(--off-white); font-weight: 400; }
+  .founder-bio em { font-style: italic; color: var(--violet-italic); }
+  .founder-inline-link { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,110,0.28); transition: color 0.2s, border-color 0.2s; }
+  .founder-inline-link:hover { color: var(--gold-light); border-color: rgba(226,201,138,0.55); }
+  .founder-markets { margin-top: 48px; margin-bottom: 48px; padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+  .founder-markets-label, .founder-built-label { font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .markets-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .market-pill { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); padding: 6px 14px; border: 1px solid var(--gold-border-default); font-family: var(--font-body); }
+  .founder-built { padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+  .built-list { list-style: none; }
+  .built-list li { font-size: 16px; font-weight: 200; color: var(--muted); padding: 14px 0; border-bottom: 1px solid var(--gold-border-divider); display: flex; align-items: flex-start; gap: 16px; line-height: 1.6; }
+  .built-list li::before { content: ''; display: block; width: 4px; height: 4px; background: var(--gold); flex-shrink: 0; margin-top: 6px; opacity: 0.6; }
+  .built-list li:last-child { border-bottom: none; }
+
+  /* POST-FOUNDER CTA */
+  .post-founder-cta { position: relative; z-index: 1; padding: 0 48px 80px; max-width: 1200px; margin: 0 auto; }
+  .post-founder-cta-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 56px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .post-founder-cta p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 30px); font-weight: 300; font-style: italic; color: var(--off-white); max-width: 500px; line-height: 1.3; }
+
+  /* FOOTER */
+  footer {
     position: relative;
     z-index: 1;
-    padding: 0 48px 120px;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px 28px;
     max-width: 1200px;
     margin: 0 auto;
   }
-
-  .faq-inner {
-    border-top: 1px solid var(--gold-border-divider);
-    padding-top: 72px;
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
   }
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 42px;
-  }
-
-  .faq-item {
-    border: 1px solid var(--gold-border-default);
-    background: var(--bg-card);
-    padding: 34px 32px;
-  }
-
-  .faq-item h3 {
+  .footer-logo {
     font-family: var(--font-display);
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    color: var(--off-white);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
-
-  .faq-item p {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.75;
+  .footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
+  .footer-work {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--font-body);
   }
-
+  .footer-work:hover { color: var(--gold); }
+  .footer-legal {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .footer-legal-links a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: var(--subtext); }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+    font-family: var(--font-body);
+  }
 
   /* AGENCY INTELLIGENCE */
   .agency-intelligence {
@@ -700,12 +629,10 @@
     margin: 0 auto;
     scroll-margin-top: 120px;
   }
-
   .agency-intelligence-inner {
     border-top: 1px solid var(--gold-border-divider);
     padding-top: 72px;
   }
-
   .agency-kicker {
     font-size: 12px;
     letter-spacing: 0.35em;
@@ -716,7 +643,6 @@
     align-items: center;
     gap: 12px;
   }
-
   .agency-kicker::before {
     content: '';
     display: block;
@@ -724,152 +650,30 @@
     height: 1px;
     background: var(--gold);
   }
-
   .agency-intro {
-    max-width: 940px;
-    margin-bottom: 56px;
+    max-width: 760px;
+    margin-bottom: 40px;
   }
-
   .agency-intro h2 {
     font-family: var(--font-display);
-    font-size: clamp(42px, 6vw, 82px);
+    font-size: clamp(38px, 5vw, 72px);
     font-weight: 300;
     line-height: 1.02;
     letter-spacing: -0.02em;
     margin-bottom: 24px;
     color: var(--off-white);
   }
-
   .agency-intro h2 em {
     font-style: italic;
     color: var(--violet-italic);
   }
-
   .agency-intro p {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--muted);
     line-height: 1.8;
     font-weight: 300;
-    max-width: 860px;
   }
-
-  .agency-thesis {
-    margin-top: 28px;
-    padding: 22px 26px;
-    border-left: 2px solid var(--gold);
-    background: linear-gradient(135deg, rgba(169,143,224,0.06), transparent 70%);
-    color: var(--off-white) !important;
-  }
-
-  .agency-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2px;
-  }
-
-  .agency-card {
-    background: var(--bg-card);
-    border: 1px solid var(--gold-border-default);
-    padding: 44px;
-    min-height: 520px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .agency-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at top right, rgba(169,143,224,0.055), transparent 62%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-  }
-
-  .agency-card:hover { border-color: var(--gold-border-hover); }
-  .agency-card:hover::before { opacity: 1; }
-
-  .agency-meta {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 34px;
-    flex-wrap: wrap;
-  }
-
-  .agency-number {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  .agency-price {
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    color: #c9afff;
-    padding: 6px 10px;
-    border: 1px solid var(--violet-border);
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .agency-card h3 {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 4vw, 52px);
-    line-height: 1.02;
-    font-weight: 300;
-    margin-bottom: 18px;
-    color: var(--off-white);
-  }
-
-  .agency-best-for {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    margin-bottom: 18px;
-    opacity: 0.9;
-  }
-
-  .agency-card p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.75;
-    margin-bottom: 24px;
-    font-weight: 300;
-  }
-
-  .agency-list {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    margin: 0 0 34px;
-  }
-
-  .agency-list li {
-    font-size: 14px;
-    color: rgba(240,237,232,0.68);
-    line-height: 1.55;
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .agency-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 5px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .agency-card .agency-cta {
-    margin-top: auto;
+  .agency-cta-link {
     font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -879,506 +683,16 @@
     align-items: center;
     gap: 8px;
     transition: color 0.2s;
-  }
-
-  .agency-card .agency-cta::after {
-    content: '→';
-    transition: transform 0.2s;
-  }
-
-  .agency-card:hover .agency-cta::after { transform: translateX(4px); }
-  .agency-card .agency-cta:hover { color: var(--gold-light); }
-
-  .roster-index {
-    margin-top: 56px;
-    padding: 40px;
-    border: 1px solid var(--gold-border-default);
-    background: linear-gradient(135deg, rgba(200,169,110,0.035), rgba(169,143,224,0.035));
-  }
-
-  .roster-index-label {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 22px;
-  }
-
-  .roster-index h3 {
-    font-family: var(--font-display);
-    font-size: clamp(28px, 3.5vw, 44px);
-    font-weight: 300;
-    line-height: 1.1;
-    margin-bottom: 18px;
-  }
-
-  .roster-index p {
-    color: var(--muted);
-    max-width: 860px;
-    line-height: 1.8;
-    margin-bottom: 28px;
-  }
-
-  .signal-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 2px;
-  }
-
-  .signal-item {
-    border: 1px solid var(--gold-border-default);
-    padding: 18px 14px;
-    color: var(--off-white);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-align: center;
-    background: rgba(14,16,32,0.65);
-  }
-
-  /* IMPROVES */
-  .improves {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 120px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .improves-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 64px; }
-
-  .improves-label {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 48px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .improves-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-
-  .improves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-
-  .improves-col {
-    background: var(--bg-card);
-    border: 1px solid var(--gold-border-default);
-    padding: 40px;
-  }
-
-  .improves-col-label {
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .improves-col.before .improves-col-label { color: var(--dim); }
-  .improves-col.after .improves-col-label { color: var(--gold); }
-
-  .improves-col-label .dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
-  .improves-col.before .dot { background: var(--dim); }
-  .improves-col.after .dot { background: var(--gold); }
-
-  .improves-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-
-  .improves-list li {
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 1.5;
-    padding-left: 16px;
-    position: relative;
-  }
-
-  .improves-col.before .improves-list li { color: var(--muted); }
-  .improves-col.after .improves-list li { color: var(--off-white); }
-
-  .improves-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    width: 4px;
-    height: 1px;
-  }
-
-  .improves-col.before .improves-list li::before { background: var(--dim); }
-  .improves-col.after .improves-list li::before { background: var(--gold); }
-
-  /* PULL QUOTE */
-  .pull-quote {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 120px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .pull-quote-inner {
-    border-left: 2px solid var(--gold);
-    padding: 48px 64px;
-    background: linear-gradient(135deg, rgba(120,80,200,0.05) 0%, transparent 70%);
-  }
-
-  .pull-quote blockquote {
-    font-family: var(--font-display);
-    font-size: clamp(22px, 3vw, 36px);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.45;
-    color: var(--off-white);
-  }
-
-  /* FOR / NOT FOR */
-  .icp {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 120px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-
-  .icp-panel {
-    background: var(--bg-card);
-    border: 1px solid var(--gold-border-default);
-    padding: 56px 48px;
-  }
-
-  .icp-panel.not-for { border-color: rgba(68,68,68,0.4); }
-
-  .icp-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-  }
-
-  .icp-label .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-  .icp-panel.for .icp-label { color: var(--gold); }
-  .icp-panel.for .dot { background: var(--gold); }
-  .icp-panel.not-for .icp-label { color: var(--dim); }
-  .icp-panel.not-for .dot { background: var(--dim); }
-
-  .icp-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
-
-  .icp-list li {
-    font-family: var(--font-display);
-    font-size: clamp(17px, 1.8vw, 22px);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.3;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .icp-panel.for .icp-list li { color: var(--off-white); }
-  .icp-panel.not-for .icp-list li { color: var(--muted); }
-
-  .icp-list li .marker {
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    flex-shrink: 0;
-    margin-top: 3px;
-    line-height: 1;
-  }
-
-  .icp-panel.for .marker { color: var(--gold); }
-  .icp-panel.not-for .marker { color: var(--dim); }
-
-  /* CONTACT CTA */
-  .contact-cta {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 120px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .contact-cta-inner {
-    padding: 96px 0 0;
-    border-top: 1px solid var(--gold-border-divider);
-  }
-
-  .contact-heading {
-    font-family: var(--font-display);
-    font-size: clamp(42px, 6vw, 80px);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 24px;
-    max-width: 700px;
-  }
-
-  .contact-heading em { font-style: italic; color: var(--violet-italic); }
-
-  .contact-sub {
-    font-size: 16px;
-    font-weight: 200;
-    color: var(--subtext);
-    max-width: 440px;
-    line-height: 1.8;
-    margin-bottom: 56px;
-  }
-
-  .contact-actions { display: flex; flex-direction: column; gap: 2px; max-width: 640px; }
-
-  .btn-wa-full {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 32px;
-    background: var(--violet-italic);
-    color: var(--void);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: var(--font-body);
-    transition: background 0.2s;
-  }
-
-  .btn-wa-full:hover { background: #bba3f0; }
-  .btn-wa-full .arrow { font-size: 16px; }
-
-  .btn-scan-outline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 32px;
-    border: 1px solid var(--gold-border-default);
-    color: var(--muted);
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: var(--font-body);
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .btn-scan-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* FOUNDER */
-  .founder {
-    position: relative;
-    z-index: 1;
-    padding: 120px 48px 140px;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-top: 1px solid var(--gold-border-divider);
-  }
-
-  .founder-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 96px; align-items: start; }
-
-  .founder-left { position: sticky; top: 120px; }
-
-  .founder-tag {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .founder-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-
-  .founder-name {
-    font-family: var(--font-display);
-    font-size: clamp(42px, 5vw, 72px);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-    margin-bottom: 20px;
-  }
-
-  .founder-name em { font-style: italic; color: var(--violet-italic); display: block; }
-
-  .founder-identity {
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 40px;
-    line-height: 2.2;
-  }
-
-  .founder-contact {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 24px;
-    border: 1px solid var(--gold-border);
-    color: var(--gold);
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: var(--font-body);
-    transition: all 0.2s;
-  }
-
-  .founder-contact:hover { background: var(--gold-dim); border-color: rgba(200,169,110,0.35); }
-
-  .founder-bio p {
-    font-size: 16px;
-    font-weight: 200;
-    color: var(--off-white);
-    line-height: 1.85;
-    margin-bottom: 20px;
-  }
-
-  .founder-bio p:last-child { margin-bottom: 0; }
-  .founder-bio strong { color: var(--off-white); font-weight: 400; }
-  .founder-bio em { font-style: italic; color: var(--violet-italic); }
-  .founder-inline-link {
-    color: var(--gold);
-    text-decoration: none;
     border-bottom: 1px solid rgba(200,169,110,0.28);
-    transition: color 0.2s, border-color 0.2s;
+    padding-bottom: 2px;
   }
-  .founder-inline-link:hover {
-    color: var(--gold-light);
-    border-color: rgba(226,201,138,0.55);
-  }
-
-  .founder-markets { margin-top: 48px; margin-bottom: 48px; padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
-
-  .founder-markets-label, .founder-built-label {
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-
-  .markets-list { display: flex; flex-wrap: wrap; gap: 8px; }
-
-  .market-pill {
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 6px 14px;
-    border: 1px solid var(--gold-border-default);
-    font-family: var(--font-body);
-  }
-
-  .founder-built { padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
-  .built-list { list-style: none; }
-
-  .built-list li {
-    font-size: 16px;
-    font-weight: 200;
-    color: var(--muted);
-    padding: 14px 0;
-    border-bottom: 1px solid var(--gold-border-divider);
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    line-height: 1.6;
-  }
-
-  .built-list li::before {
-    content: '';
-    display: block;
-    width: 4px;
-    height: 4px;
-    background: var(--gold);
-    flex-shrink: 0;
-    margin-top: 6px;
-    opacity: 0.6;
-  }
-
-  .built-list li:last-child { border-bottom: none; }
-
-  /* POST-FOUNDER CTA */
-  .post-founder-cta {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .post-founder-cta-inner {
-    border-top: 1px solid var(--gold-border-divider);
-    padding-top: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  .post-founder-cta p {
-    font-family: var(--font-display);
-    font-size: clamp(20px, 2.5vw, 30px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--off-white);
-    max-width: 500px;
-    line-height: 1.3;
-  }
-
-  /* FOOTER */
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--gold-border);
-    padding: 40px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .footer-logo {
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
-
-  .footer-work {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--dim);
-    text-decoration: none;
-    transition: color 0.2s;
-    font-family: var(--font-body);
-  }
-
-  .footer-work:hover { color: var(--gold); }
+  .agency-cta-link:hover { color: var(--gold-light); border-color: rgba(226,201,138,0.55); }
 
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
   .hero-tag  { animation: fadeUp 0.6s ease both; }
   .hero h1   { animation: fadeUp 0.6s 0.1s ease both; }
   .hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
@@ -1395,7 +709,6 @@
     .hero, .founder-strip, .diagnosis, .services, .improves,
     .pull-quote, .icp, .contact-cta, .post-founder-cta { max-width: 1400px; }
   }
-
   @media (max-width: 1024px) {
     nav { padding: 20px 32px; }
     .hero { padding: 130px 32px 60px; }
@@ -1403,16 +716,9 @@
     .diagnosis { padding: 0 32px 48px; }
     .diagnosis-inner { grid-template-columns: 1fr; gap: 24px; }
     .services { padding: 0 32px 100px; }
-    .improves { padding: 0 32px 100px; }
-
-    .proof-snapshot { padding: 0 32px 80px; }
-    .agency-teaser { padding: 0 32px 100px; }
-    .faq { padding: 0 32px 100px; }
-    .agency-teaser-inner { grid-template-columns: 1fr; gap: 36px; }
-
     .agency-intelligence { padding: 0 32px 100px; }
-    .agency-grid { grid-template-columns: 1fr; }
-    .signal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .proof-snapshot { padding: 0 32px 80px; }
+    .faq { padding: 0 32px 100px; }
     .pull-quote { padding: 0 32px 80px; }
     .pull-quote-inner { padding: 40px 48px; }
     .icp { padding: 0 32px 80px; }
@@ -1422,15 +728,10 @@
     .founder-inner { grid-template-columns: 1fr; gap: 48px; }
     .founder-left { position: static; }
     .post-founder-cta { padding: 0 32px 60px; }
-    footer { padding: 36px 32px; }
+    footer { padding: 36px 32px 24px; }
   }
-
   @media (max-width: 768px) {
-    section,
-    [id] {
-      scroll-margin-top: 82px;
-    }
-
+    section, [id] { scroll-margin-top: 82px; }
     nav { padding: 18px 20px; }
     .nav-links { display: none; }
     .nav-contact { display: none; }
@@ -1448,21 +749,13 @@
     .service-card { padding: 32px 24px; }
     .service-card h2 { font-size: 28px; }
     .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
-    .improves { padding: 0 20px 80px; }
-
+    .agency-intelligence { padding: 0 20px 80px; }
     .proof-snapshot { padding: 0 20px 72px; }
     .proof-grid { grid-template-columns: 1fr; }
     .proof-card { padding: 32px 26px; }
-    .agency-teaser { padding: 0 20px 80px; }
-    .agency-teaser-inner { padding: 40px 28px; }
     .faq { padding: 0 20px 80px; }
     .faq-grid { grid-template-columns: 1fr; }
     .faq-item { padding: 30px 26px; }
-
-    .agency-intelligence { padding: 0 20px 80px; }
-    .agency-card { min-height: auto; padding: 32px 24px; }
-    .roster-index { padding: 32px 24px; }
-    .signal-grid { grid-template-columns: 1fr; }
     .improves-grid { grid-template-columns: 1fr; }
     .improves-col { padding: 32px 28px; }
     .pull-quote { padding: 0 20px 64px; }
@@ -1477,9 +770,11 @@
     .founder-name { font-size: clamp(38px, 9vw, 56px); }
     .post-founder-cta { padding: 0 20px 48px; }
     .post-founder-cta-inner { flex-direction: column; gap: 24px; }
-    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+    footer { padding: 28px 20px 20px; }
+    .footer-top { flex-direction: column; gap: 10px; text-align: center; }
+    .footer-legal { flex-direction: column; align-items: center; text-align: center; }
+    .footer-legal-links { gap: 16px; }
   }
-
   @media (max-width: 390px) {
     nav { padding: 16px 16px; }
     .nav-logo { font-size: 18px; }
@@ -1492,19 +787,11 @@
     .services { padding: 0 16px 64px; }
     .service-card { padding: 28px 20px; }
     .service-card h2 { font-size: 24px; }
-    .improves { padding: 0 16px 64px; }
-
+    .agency-intelligence { padding: 0 16px 64px; }
     .proof-snapshot { padding: 0 16px 60px; }
     .proof-card { padding: 28px 22px; }
-    .agency-teaser { padding: 0 16px 64px; }
-    .agency-teaser-inner { padding: 34px 22px; }
     .faq { padding: 0 16px 64px; }
     .faq-item { padding: 28px 22px; }
-
-    .agency-intelligence { padding: 0 16px 64px; }
-    .agency-card { padding: 28px 20px; }
-    .agency-card h3 { font-size: 30px; }
-    .roster-index { padding: 28px 20px; }
     .improves-col { padding: 28px 20px; }
     .pull-quote { padding: 0 16px 48px; }
     .pull-quote-inner { padding: 28px 20px; }
@@ -1515,7 +802,7 @@
     .founder { padding: 48px 16px 64px; }
     .founder-name { font-size: 38px; }
     .post-founder-cta { padding: 0 16px 40px; }
-    footer { padding: 24px 16px; }
+    footer { padding: 24px 16px 16px; }
     .footer-note { font-size: 12px; }
   }
 </style>
@@ -1529,9 +816,7 @@
       "url": "https://www.bookednow.co.za/",
       "name": "Booked.",
       "description": "Discoverability infrastructure for fashion creatives.",
-      "publisher": {
-        "@id": "https://www.bookednow.co.za/#business"
-      }
+      "publisher": { "@id": "https://www.bookednow.co.za/#business" }
     },
     {
       "@type": "WebPage",
@@ -1539,21 +824,12 @@
       "url": "https://www.bookednow.co.za/",
       "name": "Fashion Portfolio Audits & Visibility Scans | Cape Town | Booked.",
       "description": "Portfolio audits, visibility scans, Fix Sprints, AI Readability Layers, and portfolio infrastructure builds for fashion photographers, stylists, models, and creative directors in Cape Town and South Africa.",
-      "isPartOf": {
-        "@id": "https://www.bookednow.co.za/#website"
-      },
-      "about": {
-        "@id": "https://www.bookednow.co.za/#business"
-      },
-      "mainEntity": {
-        "@id": "https://www.bookednow.co.za/#business"
-      }
+      "isPartOf": { "@id": "https://www.bookednow.co.za/#website" },
+      "about": { "@id": "https://www.bookednow.co.za/#business" },
+      "mainEntity": { "@id": "https://www.bookednow.co.za/#business" }
     },
     {
-      "@type": [
-        "ProfessionalService",
-        "LocalBusiness"
-      ],
+      "@type": ["ProfessionalService","LocalBusiness"],
       "@id": "https://www.bookednow.co.za/#business",
       "name": "Booked.",
       "description": "Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, and portfolio infrastructure builds for fashion creatives.",
@@ -1565,137 +841,29 @@
         "name": "Luca Bold",
         "jobTitle": "Founder & Fashion Creative Infrastructure Specialist",
         "url": "https://www.bookednow.co.za/#founder",
-        "sameAs": [
-          "https://instagram.com/lucaboldcpt"
-        ]
+        "sameAs": ["https://instagram.com/lucaboldcpt"]
       },
       "areaServed": [
-        {
-          "@type": "Country",
-          "name": "South Africa"
-        },
-        {
-          "@type": "City",
-          "name": "Cape Town"
-        },
-        {
-          "@type": "City",
-          "name": "Johannesburg"
-        },
-        {
-          "@type": "City",
-          "name": "Milan"
-        },
-        {
-          "@type": "City",
-          "name": "Shanghai"
-        }
+        {"@type": "Country","name": "South Africa"},
+        {"@type": "City","name": "Cape Town"},
+        {"@type": "City","name": "Johannesburg"},
+        {"@type": "City","name": "Milan"},
+        {"@type": "City","name": "Shanghai"}
       ],
-      "knowsAbout": [
-        "fashion portfolio audits",
-        "fashion visibility scans",
-        "fashion creative discoverability",
-        "digital infrastructure for fashion creatives",
-        "portfolio sequencing",
-        "industry readability",
-        "AI readability infrastructure",
-        "AI-readable portfolio structure",
-        "machine-readable portfolios",
-        "semantic portfolio architecture",
-        "AI-agent compatibility",
-        "agency roster intelligence",
-        "landing page preview for fashion creatives"
-      ],
+      "knowsAbout": ["fashion portfolio audits","fashion visibility scans","fashion creative discoverability","digital infrastructure for fashion creatives","portfolio sequencing","industry readability","AI readability infrastructure","AI-readable portfolio structure","machine-readable portfolios","semantic portfolio architecture","AI-agent compatibility","agency roster intelligence","landing page preview for fashion creatives"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Booked. Services",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "position": 1,
-            "name": "Visibility Scan",
-            "description": "Understand where a fashion creative's digital presence may be losing visibility, trust, or booking clarity across portfolio, search presence, profile structure, and booking friction.",
-            "price": "0",
-            "priceCurrency": "ZAR",
-            "url": "https://www.bookednow.co.za/scan/",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 2,
-            "name": "Verified Manual Audit",
-            "description": "Verified manual audit for fashion creatives reviewing actual portfolio links, search presence, profile structure, trust signals, commercial readability, and booking friction.",
-            "price": "2500",
-            "priceCurrency": "ZAR",
-            "url": "https://www.bookednow.co.za/scan/",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 3,
-            "name": "Portfolio Audit",
-            "description": "Professional review of what a fashion creative's current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers, with keep, remove, and repositioning logic.",
-            "price": "4000",
-            "priceCurrency": "ZAR",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 4,
-            "name": "Landing Page Preview",
-            "description": "Free landing page preview for fashion creatives who do not have a proper portfolio website yet and need to see what a cleaner booking layer could look like before any paid build is recommended.",
-            "price": "0",
-            "priceCurrency": "ZAR",
-            "url": "https://www.bookednow.co.za/portfoliopreview/",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 5,
-            "name": "Fix Sprint",
-            "description": "Implementation sprint for fashion creatives who need the highest-friction part of their digital presence fixed properly, including portfolio sequencing, bio structure, homepage copy, project captions, profile positioning, contact flow, AI-readable content improvements, or a focused one-page landing layer.",
-            "price": "4500",
-            "priceCurrency": "ZAR",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 6,
-            "name": "AI Readability Layer",
-            "description": "AI readability layer for fashion creatives whose work looks strong visually but is difficult for search engines, AI systems, and digital platforms to understand. Includes role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes.",
-            "price": "3500",
-            "priceCurrency": "ZAR",
-            "url": "https://www.bookednow.co.za/infrastructure/",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 7,
-            "name": "Portfolio Infrastructure Build",
-            "description": "Full portfolio infrastructure build for established fashion creatives moving from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery.",
-            "price": "15000",
-            "priceCurrency": "ZAR",
-            "url": "https://www.bookednow.co.za/infrastructure/",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 8,
-            "name": "Roster Visibility Scan",
-            "description": "Roster diagnostic for boutique fashion agencies mapping visibility, positioning clarity, booking-readiness, AI-readability, and client-facing trust signals.",
-            "price": "15000",
-            "priceCurrency": "ZAR",
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "position": 9,
-            "name": "Roster Intelligence Retainer",
-            "description": "Ongoing roster visibility intelligence and profile infrastructure for boutique fashion agencies.",
-            "price": "12000",
-            "priceCurrency": "ZAR",
-            "availability": "https://schema.org/InStock"
-          }
+          {"@type":"Offer","position":1,"name":"Visibility Scan","description":"Understand where a fashion creative's digital presence may be losing visibility, trust, or booking clarity across portfolio, search presence, profile structure, and booking friction.","price":"0","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/scan/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":2,"name":"Verified Manual Audit","description":"Verified manual audit for fashion creatives reviewing actual portfolio links, search presence, profile structure, trust signals, commercial readability, and booking friction.","price":"2500","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/scan/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":3,"name":"Portfolio Audit","description":"Professional review of what a fashion creative's current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers, with keep, remove, and repositioning logic.","price":"4000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":4,"name":"Landing Page Preview","description":"Free landing page preview for fashion creatives who do not have a proper portfolio website yet and need to see what a cleaner booking layer could look like before any paid build is recommended.","price":"0","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/portfoliopreview/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":5,"name":"Fix Sprint","description":"Implementation sprint for fashion creatives who need the highest-friction part of their digital presence fixed properly.","price":"4500","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":6,"name":"AI Readability Layer","description":"AI readability layer for fashion creatives whose work looks strong visually but is difficult for search engines, AI systems, and digital platforms to understand.","price":"3500","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":7,"name":"Portfolio Infrastructure Build","description":"Full portfolio infrastructure build for established fashion creatives moving from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery.","price":"15000","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":8,"name":"Roster Visibility Scan","description":"Roster diagnostic for boutique fashion agencies mapping visibility, positioning clarity, booking-readiness, AI-readability, and client-facing trust signals.","price":"15000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":9,"name":"Roster Intelligence Retainer","description":"Ongoing roster visibility intelligence and profile infrastructure for boutique fashion agencies.","price":"12000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"}
         ]
       }
     },
@@ -1703,78 +871,15 @@
       "@type": "FAQPage",
       "@id": "https://www.bookednow.co.za/#faq",
       "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does Booked do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Booked builds discoverability infrastructure for fashion creatives. It audits visibility, portfolio structure, trust signals, contact paths, and AI-readable context so photographers, stylists, models, creative directors, and boutique agencies become easier to find, understand, trust, and book."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a fashion portfolio audit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A fashion portfolio audit is a professional review of what a portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Booked assesses sequence, commercial strength, category fit, repetition, visual authority, booking readability, and what should be kept, removed, or repositioned."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a Visibility Scan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A Visibility Scan identifies likely gaps in a fashion creative's digital presence across portfolio structure, search presence, trust signals, profile clarity, and booking friction before any larger build is recommended."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is an AI Readability Layer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An AI Readability Layer improves the structure around a creative's work so search engines, AI systems, digital platforms, and clients can understand it more clearly. It covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is a Portfolio Infrastructure Build?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A Portfolio Infrastructure Build is a full portfolio system for established fashion creatives. It includes portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I get more bookings as a fashion photographer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "More bookings usually require more than stronger images. A fashion photographer needs a clear portfolio sequence, searchable project context, named credits, direct contact flow, role clarity, and a digital presence that clients and agencies can quickly understand and trust."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does discoverability mean for a fashion creative?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Discoverability means the work is easy to find, understand, trust, and book across search engines, AI systems, portfolio pages, agency references, social profiles, and direct enquiry paths."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is agency roster intelligence?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Agency roster intelligence helps boutique agencies understand which talent is visible, under-positioned, pitch-ready, difficult to search, or missing the digital signals needed to be trusted and booked."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Booked only for fashion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Industries outside fashion are not the focus. Booked is built around fashion-specific visibility, taste, portfolio, and booking signals. The name stays in fashion."
-          }
-        }
+        {"@type":"Question","name":"What does Booked do?","acceptedAnswer":{"@type":"Answer","text":"Booked builds discoverability infrastructure for fashion creatives. It audits visibility, portfolio structure, trust signals, contact paths, and AI-readable context so photographers, stylists, models, creative directors, and boutique agencies become easier to find, understand, trust, and book."}},
+        {"@type":"Question","name":"What is a fashion portfolio audit?","acceptedAnswer":{"@type":"Answer","text":"A fashion portfolio audit is a professional review of what a portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Booked assesses sequence, commercial strength, category fit, repetition, visual authority, booking readability, and what should be kept, removed, or repositioned."}},
+        {"@type":"Question","name":"What is a Visibility Scan?","acceptedAnswer":{"@type":"Answer","text":"A Visibility Scan identifies likely gaps in a fashion creative's digital presence across portfolio structure, search presence, trust signals, profile clarity, and booking friction before any larger build is recommended."}},
+        {"@type":"Question","name":"What is an AI Readability Layer?","acceptedAnswer":{"@type":"Answer","text":"An AI Readability Layer improves the structure around a creative's work so search engines, AI systems, digital platforms, and clients can understand it more clearly. It covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes."}},
+        {"@type":"Question","name":"What is a Portfolio Infrastructure Build?","acceptedAnswer":{"@type":"Answer","text":"A Portfolio Infrastructure Build is a full portfolio system for established fashion creatives. It includes portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions."}},
+        {"@type":"Question","name":"How do I get more bookings as a fashion photographer?","acceptedAnswer":{"@type":"Answer","text":"More bookings usually require more than stronger images. A fashion photographer needs a clear portfolio sequence, searchable project context, named credits, direct contact flow, role clarity, and a digital presence that clients and agencies can quickly understand and trust."}},
+        {"@type":"Question","name":"What does discoverability mean for a fashion creative?","acceptedAnswer":{"@type":"Answer","text":"Discoverability means the work is easy to find, understand, trust, and book across search engines, AI systems, portfolio pages, agency references, social profiles, and direct enquiry paths."}},
+        {"@type":"Question","name":"What is agency roster intelligence?","acceptedAnswer":{"@type":"Answer","text":"Agency roster intelligence helps boutique agencies understand which talent is visible, under-positioned, pitch-ready, difficult to search, or missing the digital signals needed to be trusted and booked."}},
+        {"@type":"Question","name":"Is Booked only for fashion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Industries outside fashion are not the focus. Booked is built around fashion-specific visibility, taste, portfolio, and booking signals. The name stays in fashion."}}
       ]
     }
   ]
@@ -1782,14 +887,12 @@
 </script>
 </head>
 <body>
-
 <nav>
   <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
   <ul class="nav-links">
     <li><a href="https://www.bookednow.co.za/scan/" title="Free fashion creative visibility scan — Booked.">Visibility Scan</a></li>
     <li><a href="https://www.bookednow.co.za/infrastructure/" title="AI readability infrastructure for fashion portfolios — Booked.">Infrastructure</a></li>
     <li><a href="#services" title="Fashion portfolio audit Cape Town — Booked.">Audits</a></li>
-    <li><a href="#agency-intelligence">Agency</a></li>
     <li><a href="#founder" title="About Luca Bold and Booked.">About</a></li>
   </ul>
   <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
@@ -1797,7 +900,6 @@
 </nav>
 
 <main>
-
   <!-- HERO -->
   <section class="hero">
     <p class="hero-tag">Fashion careers are becoming infrastructure.</p>
@@ -1833,14 +935,12 @@
     </div>
   </section>
 
-
   <!-- PROOF SNAPSHOT -->
   <section class="proof-snapshot" id="proof">
     <div class="proof-inner">
       <p class="proof-kicker">Proof of structure</p>
       <h2 class="proof-heading">Strong work can still lose attention when the system around it is <em>unclear.</em></h2>
       <p class="proof-sub">Booked looks for the gaps that make a fashion portfolio harder to read, search, trust, or book from — then turns those gaps into a clearer digital infrastructure layer.</p>
-
       <div class="proof-grid">
         <div class="proof-card before">
           <p class="proof-card-label">Before Booked</p>
@@ -1864,10 +964,8 @@
 
   <!-- SERVICES -->
   <section class="services" id="services">
-
     <p class="services-category-label">Start here</p>
     <div class="services-grid" style="margin-bottom: 2px;">
-
       <!-- 01 VISIBILITY SCAN -->
       <a href="https://www.bookednow.co.za/scan/" class="service-card" title="Free fashion creative visibility scan — Booked.">
         <div class="card-meta">
@@ -1881,7 +979,6 @@
           <span class="card-price">Free · Verified manual audit from R2,500</span>
         </div>
       </a>
-
       <!-- 02 PORTFOLIO AUDIT -->
       <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit" target="_blank" rel="noopener" class="service-card" title="Fashion portfolio audit Cape Town — Booked.">
         <div class="card-meta">
@@ -1895,7 +992,6 @@
           <span class="card-price">R4,000</span>
         </div>
       </a>
-
       <!-- 03 LANDING PAGE PREVIEW -->
       <a href="https://www.bookednow.co.za/portfoliopreview/" class="service-card" title="Free landing page preview for fashion creatives — Booked.">
         <div class="card-meta">
@@ -1909,7 +1005,6 @@
           <span class="card-price">Free · Builds from R7,500</span>
         </div>
       </a>
-
       <!-- 04 FIX SPRINT -->
       <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Booked%20Fix%20Sprint" target="_blank" rel="noopener" class="service-card" title="Fix sprint for fashion creative digital presence — Booked.">
         <div class="card-meta">
@@ -1923,12 +1018,9 @@
           <span class="card-price">From R4,500 · Landing page builds from R7,500</span>
         </div>
       </a>
-
     </div>
-
     <p class="services-category-label" id="builds" style="margin-top: 48px; scroll-margin-top: 120px;">Infrastructure builds</p>
     <div class="services-grid">
-
       <!-- 05 AI READABILITY LAYER -->
       <a href="https://www.bookednow.co.za/infrastructure/" class="service-card" title="AI readability infrastructure for fashion portfolios — Booked.">
         <div class="card-meta">
@@ -1942,7 +1034,6 @@
           <span class="card-price">From R3,500</span>
         </div>
       </a>
-
       <!-- 06 PORTFOLIO INFRASTRUCTURE BUILD -->
       <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Infrastructure%20Build" target="_blank" rel="noopener" class="service-card" title="Portfolio infrastructure build for fashion creatives — Booked.">
         <div class="card-meta">
@@ -1956,7 +1047,20 @@
           <span class="card-price">From R15,000</span>
         </div>
       </a>
+    </div>
+  </section>
 
+  <!-- AGENCY INTELLIGENCE -->
+  <section class="agency-intelligence" id="agency-intelligence">
+    <div class="agency-intelligence-inner">
+      <p class="agency-kicker">For agencies</p>
+      <div class="agency-intro">
+        <h2>Your roster is invisible<br>to the systems <em>making the first cut.</em></h2>
+        <p>Boutique agencies manage some of the strongest creative talent in their markets — but agency profiles and individual talent pages are often near-zero in discoverability. No plain-text credits. No metadata. No consistent naming. AI systems pass over them before a human ever looks. Booked builds the infrastructure that fixes that.</p>
+      </div>
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20find%20out%20more%20about%20agency%20roster%20infrastructure" target="_blank" rel="noopener" class="agency-cta-link">
+        Find out more about agency services →
+      </a>
     </div>
   </section>
 
@@ -2003,7 +1107,6 @@
   <!-- FOR / NOT FOR -->
   <section class="icp">
     <div class="icp-grid">
-
       <div class="icp-panel for">
         <div class="icp-label"><span class="dot"></span> For</div>
         <ul class="icp-list">
@@ -2012,7 +1115,6 @@
           <li><span class="marker">+</span> Boutique agencies managing creative rosters</li>
         </ul>
       </div>
-
       <div class="icp-panel not-for">
         <div class="icp-label"><span class="dot"></span> Not for</div>
         <ul class="icp-list">
@@ -2023,17 +1125,14 @@
           <li><span class="marker">−</span> Industries outside fashion. The name stays in fashion.</li>
         </ul>
       </div>
-
     </div>
   </section>
-
 
   <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="faq-inner">
       <p class="faq-kicker">Search-readable answers</p>
       <h2 class="faq-heading">What Booked actually <em>fixes.</em></h2>
-
       <div class="faq-grid">
         <article class="faq-item">
           <h3>What does Booked do?</h3>
@@ -2087,13 +1186,11 @@
       </div>
     </div>
   </section>
-
 </main>
 
 <!-- FOUNDER -->
 <section class="founder" id="founder">
   <div class="founder-inner">
-
     <div class="founder-left">
       <p class="founder-tag">The founder</p>
       <h2 class="founder-name">Luca.<br><em>Built from<br>the inside.</em></h2>
@@ -2105,7 +1202,6 @@
         Get in touch →
       </a>
     </div>
-
     <div class="founder-right">
       <div class="founder-bio">
         <p>
@@ -2121,7 +1217,6 @@
           <em>Booked is what I would have needed.</em> A decade inside the industry, now applied to building the digital infrastructure that gets creatives found, understood, trusted, and hired. <a href="https://www.bookednow.co.za/scan/" class="founder-inline-link" title="Run the free Booked visibility scan">Run the visibility scan →</a>
         </p>
       </div>
-
       <div class="founder-markets">
         <p class="founder-markets-label">Markets worked</p>
         <div class="markets-list">
@@ -2135,7 +1230,6 @@
           <span class="market-pill">Istanbul</span>
         </div>
       </div>
-
       <div class="founder-built">
         <p class="founder-built-label">What Booked builds</p>
         <ul class="built-list">
@@ -2147,7 +1241,6 @@
         </ul>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -2160,9 +1253,18 @@
 </div>
 
 <footer>
-  <span class="footer-logo">Booked.</span>
-  <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
-  <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
+  <div class="footer-top">
+    <span class="footer-logo">Booked.</span>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+    <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+  </div>
 </footer>
 
 </body>
