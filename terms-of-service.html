@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Booked.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:                #C8A96E;
+    --gold-light:          #e2c98a;
+    --void:                #0e0a1a;
+    --off-white:           #f0ede8;
+    --subtext:             #9a9a9a;
+    --violet-italic:       #a98fe0;
+    --gold-border:         rgba(200,169,110,0.12);
+    --gold-border-divider: rgba(200,169,110,0.10);
+    --font-display:        'Cormorant Garamond', Georgia, serif;
+    --font-body:           'Helvetica Neue', Helvetica, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 70% 10%, rgba(120,80,200,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 90%, rgba(80,40,160,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--off-white);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-back {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--gold); }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 140px 48px 120px;
+  }
+
+  .doc-tag {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .doc-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--violet-italic);
+  }
+
+  .doc-meta {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--subtext);
+    margin-bottom: 64px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--gold-border);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--off-white);
+    margin-top: 52px;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  h2::before {
+    content: attr(data-n) ' — ';
+    color: var(--gold);
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--subtext);
+    margin-bottom: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  p strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  ul {
+    margin: 0 0 16px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  ul li {
+    font-size: 14px;
+    color: var(--subtext);
+    font-weight: 300;
+    padding: 6px 0 6px 20px;
+    position: relative;
+    line-height: 1.7;
+    border-bottom: 1px solid rgba(200,169,110,0.05);
+  }
+
+  ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 12px;
+  }
+
+  .highlight-block {
+    border-left: 1px solid var(--gold);
+    padding: 20px 24px;
+    margin: 32px 0;
+    background: rgba(200,169,110,0.02);
+  }
+
+  .highlight-block p {
+    margin: 0;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--off-white);
+    opacity: 0.85;
+  }
+
+  .rate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 13px;
+  }
+
+  .rate-table th {
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--gold-border);
+    font-family: var(--font-body);
+  }
+
+  .rate-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(200,169,110,0.05);
+    color: var(--subtext);
+    font-weight: 300;
+    vertical-align: top;
+  }
+
+  .rate-table td:first-child {
+    color: var(--off-white);
+    font-weight: 400;
+    width: 35%;
+  }
+
+  a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,169,110,0.3);
+    transition: border-color 0.2s;
+  }
+
+  a:hover { border-color: var(--gold); }
+
+  .contact-block {
+    margin-top: 64px;
+    padding: 32px;
+    border: 1px solid var(--gold-border);
+    background: rgba(200,169,110,0.02);
+  }
+
+  .contact-block p {
+    margin: 0 0 8px;
+    font-size: 13px;
+  }
+
+  .contact-block p:last-child { margin: 0; }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--subtext);
+  }
+
+  .footer-note {
+    font-size: 11px;
+    color: var(--subtext);
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .doc-tag { animation: fadeUp 0.5s ease both; }
+  h1 { animation: fadeUp 0.5s 0.08s ease both; }
+  .doc-meta { animation: fadeUp 0.5s 0.16s ease both; }
+
+  @media (max-width: 768px) {
+    nav { padding: 18px 20px; }
+    .container { padding: 110px 20px 80px; }
+    .rate-table th, .rate-table td { padding: 10px 8px; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://bookednow.co.za" class="nav-logo">Booked.</a>
+  <a href="https://bookednow.co.za" class="nav-back">← Back</a>
+</nav>
+
+<div class="container">
+
+  <p class="doc-tag">Legal</p>
+  <h1>Terms of <em>Service</em></h1>
+  <p class="doc-meta">Effective date: 1 June 2026 &nbsp;·&nbsp; Last updated: May 2026 &nbsp;·&nbsp; Governing law: Republic of South Africa</p>
+
+  <div class="highlight-block">
+    <p>These terms apply to all services provided by Booked. Engaging Booked — by paying a deposit, confirming a proposal, or requesting work — constitutes acceptance of these terms. Read them before I start.</p>
+  </div>
+
+  <h2 data-n="01">The Parties</h2>
+  <p><strong>Service provider:</strong> Luca Bold, trading as Booked. ("Booked"), a sole proprietor operating in South Africa.</p>
+  <p><strong>Client:</strong> The individual or entity engaging Booked for services, as identified in the proposal or invoice.</p>
+  <p>These terms govern all engagements between the parties unless a separate written agreement supersedes them.</p>
+
+  <h2 data-n="02">Services</h2>
+  <p>Booked provides digital infrastructure and discoverability services for fashion creatives. Services include but are not limited to:</p>
+  <ul>
+    <li>Scan — AI discoverability and digital presence audit</li>
+    <li>Structure — portfolio website build</li>
+    <li>Landing page design and build</li>
+    <li>Portfolio refresh and restructure</li>
+    <li>Bio rewrite and profile optimisation</li>
+    <li>Maintenance retainer and Scan Monitor subscription</li>
+    <li>Roster Infrastructure Retainer for agencies</li>
+  </ul>
+  <p>The specific scope, deliverables, and price for each engagement are confirmed in writing via a proposal or invoice prior to work commencing. No work begins without a confirmed scope and deposit receipt.</p>
+
+  <h2 data-n="03">Payment Terms</h2>
+
+  <p><strong>Project work (Structure, landing page, portfolio refresh):</strong></p>
+  <ul>
+    <li>50% deposit required to confirm the project and reserve the build slot</li>
+    <li>Remaining 50% due before the final deliverable is handed over or the site goes live</li>
+    <li>Payment must be received before the final password, transfer, or file is released</li>
+  </ul>
+
+  <p><strong>Quick-turn services (Scan, bio rewrite):</strong></p>
+  <ul>
+    <li>Full payment required before work commences</li>
+  </ul>
+
+  <p><strong>Subscription services (Maintenance Retainer, Scan Monitor, Roster Infrastructure Retainer):</strong></p>
+  <ul>
+    <li>Billed monthly in advance</li>
+    <li>Cancellable with 30 days written notice</li>
+    <li>No refund for the current billing period upon cancellation</li>
+  </ul>
+
+  <p><strong>Speed premium tiers</strong> apply across all project services:</p>
+  <table class="rate-table">
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Timeline</th>
+        <th>Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Standard</td>
+        <td>Project default</td>
+        <td>Base rate</td>
+      </tr>
+      <tr>
+        <td>Priority</td>
+        <td>10–14 days</td>
+        <td>+40–50% on base</td>
+      </tr>
+      <tr>
+        <td>Express</td>
+        <td>~1 week</td>
+        <td>+80–100% on base · subject to availability</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>All prices are quoted in South African Rand (ZAR) unless otherwise stated. International clients are invoiced in EUR or USD at the equivalent rate confirmed at time of proposal. Late payments beyond 14 days attract interest at the maximum rate permissible under South African law.</p>
+
+  <h2 data-n="04">Revisions</h2>
+  <p>All project services include a defined number of revision rounds:</p>
+  <ul>
+    <li><strong>Structure (website build):</strong> two revision rounds included. A third round is billable at R1,500 per round.</li>
+    <li><strong>Landing page:</strong> one revision round included. Additional rounds at R800 per round.</li>
+    <li><strong>Bio rewrite:</strong> one revision included. Additional revisions at R500 each.</li>
+  </ul>
+  <p>A revision is defined as consolidated feedback on a delivered draft, submitted in a single message or document. Feedback submitted in multiple rounds after a revision has been actioned is treated as an additional revision. Revisions that expand the original scope are treated as new work and quoted separately.</p>
+
+  <h2 data-n="05">Intellectual Property</h2>
+  <p><strong>Transferred upon final payment:</strong> All copy, written content, creative direction, website build, source files, and custom assets produced specifically for the client's project. Full IP transfer occurs when the final payment is received. Until that point, Booked retains all rights to all work produced.</p>
+    <p><strong>Retained by Booked permanently:</strong></p>
+  <ul>
+    <li>The audit methodology, scoring framework, and Scan system</li>
+    <li>Booked's own codebase, templates, and proprietary tools used in production</li>
+    <li>Any benchmark or aggregate data derived from audits (anonymised; no individual client data)</li>
+    <li>The right to reference the completed project as a case study, portfolio example, or before/after comparison — unless the client explicitly opts out in writing</li>
+  </ul>
+  <p>Client-supplied assets (photography, logos, written content) remain the property of the client. The client warrants that all supplied assets are owned by or licenced to them, and indemnifies Booked against any third-party claims arising from their use.</p>
+
+  <h2 data-n="06">Kill Fee and Cancellation</h2>
+  <p>If a project is cancelled by the client after work has commenced:</p>
+  <ul>
+    <li><strong>Cancelled before first delivery:</strong> deposit is non-refundable. No additional amount is owed.</li>
+    <li><strong>Cancelled after first delivery (draft or walkthrough):</strong> 75% of the total project fee is payable, regardless of how much work remains.</li>
+    <li><strong>Cancelled after second delivery or revision:</strong> 100% of the total project fee is payable.</li>
+  </ul>
+  <p>If Booked cancels a project due to circumstances within its control, the client receives a full refund of all amounts paid. If a project is paused at the client's request for more than 30 days, Booked reserves the right to treat it as cancelled and apply the kill fee structure above.</p>
+  <p>Deposits are non-refundable in all circumstances except where Booked cancels a project due to circumstances within its control, in which case the full deposit is returned.</p>
+
+  <h2 data-n="07">Client Responsibilities</h2>
+  <p>The client is responsible for:</p>
+  <ul>
+    <li>Providing all required assets, content, and access credentials within the agreed timeline</li>
+    <li>Reviewing deliverables and providing consolidated feedback within 5 business days of each delivery</li>
+    <li>Ensuring all supplied content and images are owned by or licenced to the client</li>
+    <li>Maintaining access to platforms handed over at project completion (domain, CMS, email)</li>
+  </ul>
+  <p>Delays caused by late asset delivery or slow feedback do not extend Booked's timeline obligation and may result in the project slot being rescheduled. Rescheduling to a later slot may attract a Priority or Express premium if the original timeline is no longer achievable at standard rate.</p>
+
+  <h2 data-n="08">Deliverables and Outcomes</h2>
+  <p>Booked builds digital infrastructure — websites, audit reports, written profiles, and positioning frameworks. The deliverables are clearly defined in each proposal.</p>
+
+  <div class="highlight-block">
+    <p>Booked does not guarantee booking outcomes, follower growth, revenue outcomes, or search ranking positions. Whether a creative gets hired depends on their work, their relationships, and market conditions — not the infrastructure alone. What Booked guarantees is the quality and scope of the deliverable as defined in the proposal.</p>
+  </div>
+
+  <p>Audit reports reflect the state of a creative's digital presence at the time of assessment. Results are not guaranteed to remain accurate beyond 90 days as platforms and algorithms change.</p>
+
+  <h2 data-n="09">Confidentiality</h2>
+  <p>Both parties agree to treat the other's non-public information with appropriate discretion. Booked will not share client career details, creative briefs, or business information with third parties without consent — except where required to deliver the service (e.g., domain registrars, platform integrations).</p>
+  <p>The client agrees not to share Booked's proprietary audit methodologies, scoring frameworks, or internal documents.</p>
+
+  <h2 data-n="10">Limitation of Liability</h2>
+  <p>Booked's liability in connection with any service is limited to the total amount paid by the client for that specific service. Booked is not liable for indirect, consequential, or incidental losses including lost revenue, lost bookings, reputational harm, or data loss caused by third-party platforms.</p>
+  <p>Booked is not liable for failures caused by third-party services (hosting providers, payment processors, social platforms) outside Booked's control.</p>
+
+  <h2 data-n="11">Force Majeure</h2>
+  <p>Booked will not be held liable for delays or failure to deliver caused by circumstances beyond reasonable control, including illness, natural disaster, platform outage, internet failure, or disruption to third-party services integral to delivery. In such cases, Booked will communicate promptly and reschedule delivery as soon as reasonably possible.</p>
+
+  <h2 data-n="12">Governing Law and Disputes</h2>
+  <p>These terms are governed by the laws of the <strong>Republic of South Africa</strong>. Any dispute that cannot be resolved between the parties directly will be referred to mediation before litigation. Either party may initiate mediation by written notice. The parties have 30 days from that notice to agree on a mediator before either may proceed to litigation.</p>
+  <p>For clients based in the European Union, mandatory consumer protections under applicable EU law are not affected by this clause.</p>
+
+  <h2 data-n="13">Modifications</h2>
+  <p>Booked may update these terms as the business evolves. Active clients will be notified of material changes. Continued use of services after notification constitutes acceptance. The version in effect at the time of a project proposal governs that project.</p>
+
+  <div class="contact-block">
+    <p><strong>Questions about these terms</strong></p>
+    <p>Luca Bold, trading as Booked.</p>
+    <p>Cape Town, South Africa</p>
+    <p>Email: <a href="mailto:luca@bookednow.co.za">luca@bookednow.co.za</a></p>
+    <p>WhatsApp: <a href="https://wa.me/27637549122" target="_blank">+27 63 754 9122</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-logo">Booked.</span>
+  <span class="footer-note">South African law · May 2026</span>
+</footer>
+
+</body>
+</html>
