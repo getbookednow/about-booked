@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Allow: /llms.txt
 Allow: /contact.json
+Sitemap: https://www.bookednow.co.za/sitemap.xml
