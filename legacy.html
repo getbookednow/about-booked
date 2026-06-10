@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legacy — Booked. Digital Infrastructure for Fashion Creatives</title>
+<meta name="description" content="A decade of work, made findable. Booked. Legacy is a complete digital infrastructure build for established fashion creatives — portfolio, schema, credit indexing, and AI readability. R50,000.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.bookednow.co.za/legacy/">
+<meta property="og:title" content="Legacy — Booked.">
+<meta property="og:description" content="A decade of work, made findable. Complete digital infrastructure for established fashion creatives. R50,000.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bookednow.co.za/legacy/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Legacy — Booked.">
+<meta name="twitter:description" content="A decade of work, made findable. Complete digital infrastructure for established fashion creatives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Helvetica+Neue:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-hover:      rgba(200,169,110,0.03);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --gold-dim:             rgba(200,169,110,0.15);
+    --bg-card:              #0e1020;
+    --dim:                  #444;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-back {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-back::before { content: '←'; }
+  .nav-back:hover { color: var(--gold); }
+
+  /* MAIN LAYOUT */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 160px 48px 120px;
+  }
+
+  /* EYEBROW */
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* HERO */
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--violet-italic);
+  }
+
+  .hero-premise {
+    font-size: 15px;
+    font-weight: 200;
+    color: var(--subtext);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 64px;
+    border-left: 1px solid var(--gold-border-default);
+    padding-left: 24px;
+  }
+
+  .hero-premise strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--gold-border-divider);
+    margin: 64px 0;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+
+  /* PROBLEM BLOCK */
+  .problem-block {
+    margin-bottom: 64px;
+  }
+
+  .problem-block h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .problem-block p {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--subtext);
+    line-height: 1.8;
+    max-width: 620px;
+    margin-bottom: 16px;
+  }
+
+  .problem-block p strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  /* WHAT'S INCLUDED */
+  .includes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 64px;
+  }
+
+  .include-item {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 36px 32px;
+  }
+
+  .include-number {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .include-item h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .include-item p {
+    font-size: 12px;
+    color: var(--subtext);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* FOR WHO */
+  .for-who {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 48px;
+    margin-bottom: 64px;
+  }
+
+  .for-who h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .signal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .signal-list li {
+    font-size: 13px;
+    font-weight: 200;
+    color: var(--subtext);
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .signal-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .signal-list li strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  /* NOT FOR WHO */
+  .not-for {
+    border-left: 1px solid var(--gold-border-default);
+    padding-left: 24px;
+    margin-bottom: 64px;
+  }
+
+  .not-for p {
+    font-size: 13px;
+    color: var(--subtext);
+    line-height: 1.7;
+    font-weight: 200;
+  }
+
+  .not-for p strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  /* PROCESS */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 64px;
+  }
+
+  .process-step {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1;
+  }
+
+  .step-content h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .step-content p {
+    font-size: 12px;
+    color: var(--subtext);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* PRICING */
+  .pricing-block {
+    border: 1px solid var(--gold-border-hover);
+    padding: 56px 48px;
+    margin-bottom: 64px;
+    position: relative;
+    background: rgba(200,169,110,0.02);
+  }
+
+  .price-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .price-figure {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .price-note {
+    font-size: 11px;
+    color: var(--subtext);
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  .price-terms {
+    font-size: 12px;
+    color: var(--subtext);
+    line-height: 1.8;
+    font-weight: 200;
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 24px;
+    margin-bottom: 40px;
+  }
+
+  .price-terms strong {
+    color: var(--off-white);
+    font-weight: 400;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: var(--gold);
+    color: var(--void);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border: 1px solid var(--gold-border-default);
+    color: var(--off-white);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .pricing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* FOUNDER NOTE */
+  .founder-note {
+    margin-bottom: 64px;
+  }
+
+  .founder-note blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--off-white);
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+
+  .founder-attribution {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--subtext);
+    text-transform: uppercase;
+  }
+
+  /* SCAN CTA */
+  .scan-cta {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+
+  .scan-cta-text h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .scan-cta-text p {
+    font-size: 12px;
+    color: var(--subtext);
+    font-weight: 200;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border-default);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--subtext);
+  }
+
+  .footer-note {
+    font-size: 11px;
+    color: var(--subtext);
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow    { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-premise { animation: fadeUp 0.6s 0.2s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 18px 20px; }
+    main { padding: 110px 20px 80px; }
+    .includes-grid { grid-template-columns: 1fr; }
+    .process-step { grid-template-columns: 48px 1fr; gap: 16px; }
+    .step-num { font-size: 32px; }
+    .for-who { padding: 32px 24px; }
+    .pricing-block { padding: 40px 28px; }
+    .pricing-actions { flex-direction: column; align-items: stretch; }
+    .pricing-actions .btn-primary,
+    .pricing-actions .btn-secondary { width: 100%; justify-content: center; }
+    .scan-cta { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .scan-cta .btn-primary { width: 100%; justify-content: center; }
+    .not-for { padding-left: 16px; }
+    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  @media (max-width: 390px) {
+    nav { padding: 16px 16px; }
+    main { padding: 100px 16px 64px; }
+    .hero-title { font-size: 38px; }
+    .include-item { padding: 28px 20px; }
+    .include-item h3 { font-size: 18px; }
+    .pricing-block { padding: 32px 20px; }
+    .price-figure { font-size: 48px; }
+    footer { padding: 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://bookednow.co.za" class="nav-logo">Booked.</a>
+  <a href="https://bookednow.co.za" class="nav-back">All services</a>
+</nav>
+
+<main>
+
+  <p class="eyebrow">05 — Legacy</p>
+
+  <h1 class="hero-title">A decade of work.<br><em>Made findable.</em></h1>
+
+  <p class="hero-premise">
+    You have been working at a high level for years. The credits exist.
+    The work is strong. <strong>The digital infrastructure around it does not reflect either.</strong>
+    Legacy is the complete technical layer — built once, built correctly —
+    that makes your career legible to every system that matters.
+  </p>
+
+  <div class="divider"></div>
+
+  <!-- PROBLEM -->
+  <div class="problem-block">
+    <p class="section-label">The problem</p>
+    <h2>The first casting now happens<br>before any human sees your work.</h2>
+    <p>
+      AI systems, casting platform algorithms, and brand search tools encounter your profile
+      before a casting director does. <strong>If your presence isn't structured for machine-readability,
+      you don't exist at that first filter.</strong>
+    </p>
+    <p>
+      Most established creatives have the career but not the infrastructure.
+      Credits live in images, not text. Websites load slowly or not at all.
+      Contact paths break silently. A decade of work is invisible to the systems
+      that are increasingly making the first cut.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHAT'S INCLUDED -->
+  <p class="section-label">What's included</p>
+  <div class="includes-grid">
+
+    <div class="include-item">
+      <span class="include-number">01</span>
+      <h3>Full Scan Audit</h3>
+      <p>Scored assessment across AI discoverability and general visibility. Two scores, named gaps, specific findings. This is the brief that drives everything else.</p>
+    </div>
+
+    <div class="include-item">
+      <span class="include-number">02</span>
+      <h3>Portfolio Website Build</h3>
+      <p>Custom-built against your category, market, and calibre. Static HTML, fast load, mobile-responsive, GitHub Pages hosted. Built around how casting directors actually evaluate — not web design convention.</p>
+    </div>
+
+    <div class="include-item">
+      <span class="include-number">03</span>
+      <h3>Credit Recovery & Indexing</h3>
+      <p>Every major credit you have — brands, publications, campaigns — written into plain text and structured on your site. AI systems read text, not images. Your Elle credits are currently invisible. This fixes that.</p>
+    </div>
+
+    <div class="include-item">
+      <span class="include-number">04</span>
+      <h3>AI Agent Infrastructure</h3>
+      <p>llms.txt, contact.json, and structured schema deployed. The layer that makes you findable to AI agents and brand discovery tools operating right now and building rapidly.</p>
+    </div>
+
+    <div class="include-item">
+      <span class="include-number">05</span>
+      <h3>Agency Profile Audit</h3>
+      <p>If you're represented, your agency page is audited. Most agency profile pages have near-zero text content — invisible to search and AI. Findings and a fix brief delivered to you directly.</p>
+    </div>
+
+    <div class="include-item">
+      <span class="include-number">06</span>
+      <h3>90-Day Readiness Report</h3>
+      <p>At 90 days post-launch, a follow-up audit against the same metrics. What's working, what's moved, what still needs attention. The infrastructure layer doesn't stop at delivery.</p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOR WHO -->
+  <div class="for-who">
+    <h2>This is for you if —</h2>
+    <ul class="signal-list">
+      <li>You have <strong>real editorial or commercial credits</strong> that exist nowhere in text form online.</li>
+      <li>Your <strong>website is outdated, broken, or non-existent</strong> — and you've known it for longer than you'd like to admit.</li>
+      <li>Searching your name on Google returns <strong>Instagram and nothing else.</strong></li>
+      <li>You are working at a level where <strong>the gap between your career and your digital presence is costing you bookings</strong> you never even hear about.</li>
+      <li>You've tried to sort this yourself and <strong>hit a capability wall</strong> — the technical layer is not your job, but you know it needs to exist.</li>
+    </ul>
+  </div>
+
+  <!-- NOT FOR -->
+  <div class="not-for">
+    <p>
+      <strong>This is not for creatives who are just starting out.</strong>
+      Legacy is built for the ones who have a body of work worth indexing.
+      If you're earlier in your career, the Scan and Structure builds are the right place to start.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PROCESS -->
+  <p class="section-label">How it works</p>
+  <div class="process-steps">
+
+    <div class="process-step">
+      <span class="step-num">01</span>
+      <div class="step-content">
+        <h3>Intake & Scan</h3>
+        <p>You send me your credits, your existing assets, and your market. I run the full Scan audit. The scores and findings become the brief for everything that follows. No guesswork — the build solves what the audit identifies.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <span class="step-num">02</span>
+      <div class="step-content">
+        <h3>Build</h3>
+        <p>Portfolio site, credit indexing, schema, AI agent infrastructure. Built to your category and market. Delivered within 3–4 weeks of deposit. You review via a Loom walkthrough before anything goes live.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <span class="step-num">03</span>
+      <div class="step-content">
+        <h3>Launch & Handover</h3>
+        <p>You own everything — domain, hosting, code. The handover document covers exactly what to update and what to leave alone. Google Search Console connected and verified.</p>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <span class="step-num">04</span>
+      <div class="step-content">
+        <h3>90-Day Check-In</h3>
+        <p>Booked for the day of handover. Not optional. At 90 days I run the audit again against the same metrics and tell you what's moved and what still needs work.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOUNDER NOTE -->
+  <div class="founder-note">
+    <blockquote>
+      "I built this because I watched photographers with a decade of strong work lose to people with worse portfolios but better infrastructure. That's not a talent problem. It's a legibility problem. Legacy fixes it."
+    </blockquote>
+    <span class="founder-attribution">Luca — Founder, Booked.</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PRICING -->
+  <div class="pricing-block">
+    <span class="price-label">Investment</span>
+    <div class="price-figure">R50,000</div>
+    <span class="price-note">South African market · ZAR · Single engagement</span>
+    <div class="price-terms">
+      <strong>50% deposit</strong> to confirm. Remaining 50% on launch.<br>
+      Timeline: 3–4 weeks from deposit to delivery.<br>
+      Availability is limited. If the start date matters, confirm early.<br>
+      European market pricing available in EUR on request.
+    </div>
+    <div class="pricing-actions">
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27m%20interested%20in%20the%20Legacy%20package.%20I%27d%20like%20to%20find%20out%20more." class="btn-primary" target="_blank">Start the conversation</a>
+      <a href="https://getbookednow.github.io/scan/scan.html" class="btn-secondary" target="_blank">Run the free Scan first</a>
+    </div>
+  </div>
+
+  <!-- SCAN CTA -->
+  <div class="scan-cta">
+    <div class="scan-cta-text">
+      <h3>Not sure if Legacy is the right fit?</h3>
+      <p>Run the free Scan first. Two scores, two minutes. It will tell you exactly where the gaps are — and whether this is the right engagement to close them.</p>
+    </div>
+    <a href="https://getbookednow.github.io/scan/scan.html" class="btn-primary" target="_blank">Run the Scan</a>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-logo">Booked.</span>
+  <span class="footer-note">One person. One lens. A decade inside the industry.</span>
+</footer>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.bookednow.co.za/legacy/",
+      "url": "https://www.bookednow.co.za/legacy/",
+      "name": "Legacy — Complete Digital Infrastructure Build | Booked.",
+      "description": "A decade of work, made findable. Legacy is Booked's complete digital infrastructure build for established fashion creatives — Scan audit, portfolio website, credit indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. R50,000.",
+      "isPartOf": { "@id": "https://www.bookednow.co.za/#website" },
+      "inLanguage": "en-ZA"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.bookednow.co.za/#website",
+      "url": "https://www.bookednow.co.za/",
+      "name": "Booked.",
+      "description": "Discoverability infrastructure for fashion creatives.",
+      "publisher": { "@id": "https://www.bookednow.co.za/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.bookednow.co.za/#person",
+      "name": "Luca Bold",
+      "url": "https://www.bookednow.co.za",
+      "jobTitle": "Founder, Booked.",
+      "description": "International fashion model and founder of Booked. — digital infrastructure for fashion creatives. A decade of experience across Cape Town, Milan, Shanghai, Hong Kong, Seoul, Mumbai, Istanbul, and Bali.",
+      "knowsAbout": [
+        "fashion portfolio audits",
+        "AI discoverability for fashion creatives",
+        "digital infrastructure for fashion creatives",
+        "portfolio sequencing",
+        "machine-readable portfolios",
+        "credit indexing",
+        "AI agent infrastructure"
+      ],
+      "sameAs": ["https://www.instagram.com/bookedofficialsa"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.bookednow.co.za/legacy/#service",
+      "name": "Legacy — Complete Digital Infrastructure Build",
+      "description": "Complete digital infrastructure build for established fashion creatives with a decade of work that is invisible to current discovery systems. Includes a full Scan audit, custom portfolio website build, credit recovery and indexing, AI agent infrastructure, agency profile audit, and a 90-day follow-up review.",
+      "provider": { "@id": "https://www.bookednow.co.za/#person" },
+      "serviceType": "Digital Infrastructure Build",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Established fashion creatives — photographers, stylists, models, creative directors, art directors with a decade or more of professional work"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "South Africa" },
+        { "@type": "Country", "name": "Italy" },
+        { "@type": "Country", "name": "Netherlands" }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Legacy — ZAR",
+          "price": "50000",
+          "priceCurrency": "ZAR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.bookednow.co.za/legacy/"
+        },
+        {
+          "@type": "Offer",
+          "name": "Legacy — EUR",
+          "description": "European market pricing available in EUR on request.",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.bookednow.co.za/legacy/"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Legacy — What's Included",
+        "itemListElement": [
+          { "@type": "Offer", "position": 1, "name": "Full Scan Audit", "description": "Scored assessment across AI discoverability and general visibility. Two scores, named gaps, specific findings." },
+          { "@type": "Offer", "position": 2, "name": "Portfolio Website Build", "description": "Custom-built against the creative's category, market, and calibre. Static HTML, fast load, mobile-responsive, GitHub Pages hosted." },
+          { "@type": "Offer", "position": 3, "name": "Credit Recovery & Indexing", "description": "Every major credit written into plain text and structured on the site. AI systems read text, not images." },
+          { "@type": "Offer", "position": 4, "name": "AI Agent Infrastructure", "description": "llms.txt, contact.json, and structured schema deployed for AI agent and brand discovery tool findability." },
+          { "@type": "Offer", "position": 5, "name": "Agency Profile Audit", "description": "Audit of the creative's agency page with findings and a fix brief." },
+          { "@type": "Offer", "position": 6, "name": "90-Day Follow-Up Audit", "description": "Follow-up audit at 90 days post-launch against the same metrics." }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Booked Legacy build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. It includes a full Scan audit, custom portfolio website build, credit recovery and indexing, AI agent infrastructure, agency profile audit, and a 90-day follow-up review. R50,000 ZAR."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the Legacy build for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Legacy is for established fashion creatives — photographers, stylists, creative directors, art directors, and models — who have a real body of work but whose digital infrastructure does not reflect the level they operate at. Their credits are invisible to search and AI systems, their website is outdated or missing, and a decade of work is being lost at the first digital filter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does the Legacy build take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "3–4 weeks from deposit to delivery. A 50% deposit confirms the start date. The remaining 50% is due on launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is European pricing available for Legacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Legacy is priced at R50,000 ZAR for the South African market. European market pricing is available in EUR on request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does credit indexing mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Credit indexing means writing every major professional credit — brands, publications, campaigns — into plain text and structuring it on the portfolio site. AI systems and search engines read text, not images. Most fashion creatives have strong credits that only exist in image form, making them invisible to discovery systems."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
