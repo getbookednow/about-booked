@@ -355,6 +355,7 @@
   }
   .card-tag.free, .card-tag.live { border-color: rgba(200,169,110,0.3); color: var(--gold); }
   .card-tag.live { background: var(--violet-fill); border-color: var(--violet-border); color: #c9afff; }
+  .card-tag.premium { border-color: rgba(200,169,110,0.5); color: var(--gold); background: rgba(200,169,110,0.05); }
   .service-card h2 {
     font-family: var(--font-display);
     font-size: 36px;
@@ -620,74 +621,6 @@
     font-family: var(--font-body);
   }
 
-  /* AGENCY INTELLIGENCE */
-  .agency-intelligence {
-    position: relative;
-    z-index: 1;
-    padding: 0 48px 120px;
-    max-width: 1200px;
-    margin: 0 auto;
-    scroll-margin-top: 120px;
-  }
-  .agency-intelligence-inner {
-    border-top: 1px solid var(--gold-border-divider);
-    padding-top: 72px;
-  }
-  .agency-kicker {
-    font-size: 12px;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .agency-kicker::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
-  }
-  .agency-intro {
-    max-width: 760px;
-    margin-bottom: 40px;
-  }
-  .agency-intro h2 {
-    font-family: var(--font-display);
-    font-size: clamp(38px, 5vw, 72px);
-    font-weight: 300;
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    margin-bottom: 24px;
-    color: var(--off-white);
-  }
-  .agency-intro h2 em {
-    font-style: italic;
-    color: var(--violet-italic);
-  }
-  .agency-intro p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.8;
-    font-weight: 300;
-  }
-  .agency-cta-link {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: color 0.2s;
-    border-bottom: 1px solid rgba(200,169,110,0.28);
-    padding-bottom: 2px;
-  }
-  .agency-cta-link:hover { color: var(--gold-light); border-color: rgba(226,201,138,0.55); }
-
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -716,7 +649,6 @@
     .diagnosis { padding: 0 32px 48px; }
     .diagnosis-inner { grid-template-columns: 1fr; gap: 24px; }
     .services { padding: 0 32px 100px; }
-    .agency-intelligence { padding: 0 32px 100px; }
     .proof-snapshot { padding: 0 32px 80px; }
     .faq { padding: 0 32px 100px; }
     .pull-quote { padding: 0 32px 80px; }
@@ -749,7 +681,8 @@
     .service-card { padding: 32px 24px; }
     .service-card h2 { font-size: 28px; }
     .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
-    .agency-intelligence { padding: 0 20px 80px; }
+    .card-number { font-size: 11px; }
+    .card-tag { font-size: 11px; }
     .proof-snapshot { padding: 0 20px 72px; }
     .proof-grid { grid-template-columns: 1fr; }
     .proof-card { padding: 32px 26px; }
@@ -787,7 +720,8 @@
     .services { padding: 0 16px 64px; }
     .service-card { padding: 28px 20px; }
     .service-card h2 { font-size: 24px; }
-    .agency-intelligence { padding: 0 16px 64px; }
+    .card-number { font-size: 10px; }
+    .card-tag { font-size: 10px; }
     .proof-snapshot { padding: 0 16px 60px; }
     .proof-card { padding: 28px 22px; }
     .faq { padding: 0 16px 64px; }
@@ -832,10 +766,10 @@
       "@type": ["ProfessionalService","LocalBusiness"],
       "@id": "https://www.bookednow.co.za/#business",
       "name": "Booked.",
-      "description": "Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, and portfolio infrastructure builds for fashion creatives.",
+      "description": "Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, portfolio infrastructure builds, and Legacy complete infrastructure builds for fashion creatives.",
       "url": "https://www.bookednow.co.za/",
       "telephone": "+27637549122",
-      "priceRange": "Free–R15000+",
+      "priceRange": "Free–R50000",
       "founder": {
         "@type": "Person",
         "name": "Luca Bold",
@@ -850,7 +784,7 @@
         {"@type": "City","name": "Milan"},
         {"@type": "City","name": "Shanghai"}
       ],
-      "knowsAbout": ["fashion portfolio audits","fashion visibility scans","fashion creative discoverability","digital infrastructure for fashion creatives","portfolio sequencing","industry readability","AI readability infrastructure","AI-readable portfolio structure","machine-readable portfolios","semantic portfolio architecture","AI-agent compatibility","agency roster intelligence","landing page preview for fashion creatives"],
+      "knowsAbout": ["fashion portfolio audits","fashion visibility scans","fashion creative discoverability","digital infrastructure for fashion creatives","portfolio sequencing","industry readability","AI readability infrastructure","AI-readable portfolio structure","machine-readable portfolios","semantic portfolio architecture","AI-agent compatibility","landing page preview for fashion creatives","legacy infrastructure build"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Booked. Services",
@@ -862,8 +796,7 @@
           {"@type":"Offer","position":5,"name":"Fix Sprint","description":"Implementation sprint for fashion creatives who need the highest-friction part of their digital presence fixed properly.","price":"4500","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
           {"@type":"Offer","position":6,"name":"AI Readability Layer","description":"AI readability layer for fashion creatives whose work looks strong visually but is difficult for search engines, AI systems, and digital platforms to understand.","price":"3500","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
           {"@type":"Offer","position":7,"name":"Portfolio Infrastructure Build","description":"Full portfolio infrastructure build for established fashion creatives moving from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery.","price":"15000","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":8,"name":"Roster Visibility Scan","description":"Roster diagnostic for boutique fashion agencies mapping visibility, positioning clarity, booking-readiness, AI-readability, and client-facing trust signals.","price":"15000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":9,"name":"Roster Intelligence Retainer","description":"Ongoing roster visibility intelligence and profile infrastructure for boutique fashion agencies.","price":"12000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"}
+          {"@type":"Offer","position":8,"name":"Legacy — Complete Infrastructure Build","description":"Complete digital infrastructure build for established fashion creatives with a decade of work that is invisible to discovery systems. Includes Scan audit, portfolio website, credit indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up.","price":"50000","priceCurrency":"ZAR","url":"https://www.bookednow.co.za/legacy/","availability":"https://schema.org/InStock"}
         ]
       }
     },
@@ -876,9 +809,9 @@
         {"@type":"Question","name":"What is a Visibility Scan?","acceptedAnswer":{"@type":"Answer","text":"A Visibility Scan identifies likely gaps in a fashion creative's digital presence across portfolio structure, search presence, trust signals, profile clarity, and booking friction before any larger build is recommended."}},
         {"@type":"Question","name":"What is an AI Readability Layer?","acceptedAnswer":{"@type":"Answer","text":"An AI Readability Layer improves the structure around a creative's work so search engines, AI systems, digital platforms, and clients can understand it more clearly. It covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes."}},
         {"@type":"Question","name":"What is a Portfolio Infrastructure Build?","acceptedAnswer":{"@type":"Answer","text":"A Portfolio Infrastructure Build is a full portfolio system for established fashion creatives. It includes portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions."}},
+        {"@type":"Question","name":"What is the Legacy build?","acceptedAnswer":{"@type":"Answer","text":"Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. It includes a full Scan audit, custom portfolio website build, credit recovery and indexing, AI agent infrastructure, agency profile audit, and a 90-day follow-up review. R50,000."}},
         {"@type":"Question","name":"How do I get more bookings as a fashion photographer?","acceptedAnswer":{"@type":"Answer","text":"More bookings usually require more than stronger images. A fashion photographer needs a clear portfolio sequence, searchable project context, named credits, direct contact flow, role clarity, and a digital presence that clients and agencies can quickly understand and trust."}},
         {"@type":"Question","name":"What does discoverability mean for a fashion creative?","acceptedAnswer":{"@type":"Answer","text":"Discoverability means the work is easy to find, understand, trust, and book across search engines, AI systems, portfolio pages, agency references, social profiles, and direct enquiry paths."}},
-        {"@type":"Question","name":"What is agency roster intelligence?","acceptedAnswer":{"@type":"Answer","text":"Agency roster intelligence helps boutique agencies understand which talent is visible, under-positioned, pitch-ready, difficult to search, or missing the digital signals needed to be trusted and booked."}},
         {"@type":"Question","name":"Is Booked only for fashion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Industries outside fashion are not the focus. Booked is built around fashion-specific visibility, taste, portfolio, and booking signals. The name stays in fashion."}}
       ]
     }
@@ -1019,6 +952,7 @@
         </div>
       </a>
     </div>
+
     <p class="services-category-label" id="builds" style="margin-top: 48px; scroll-margin-top: 120px;">Infrastructure builds</p>
     <div class="services-grid">
       <!-- 05 AI READABILITY LAYER -->
@@ -1047,19 +981,18 @@
           <span class="card-price">From R15,000</span>
         </div>
       </a>
-    </div>
-  </section>
-
-  <!-- AGENCY INTELLIGENCE -->
-  <section class="agency-intelligence" id="agency-intelligence">
-    <div class="agency-intelligence-inner">
-      <p class="agency-kicker">For agencies</p>
-      <div class="agency-intro">
-        <h2>Your roster is invisible<br>to the systems <em>making the first cut.</em></h2>
-        <p>Boutique agencies manage some of the strongest creative talent in their markets — but agency profiles and individual talent pages are often near-zero in discoverability. No plain-text credits. No metadata. No consistent naming. AI systems pass over them before a human ever looks. Booked builds the infrastructure that fixes that.</p>
-      </div>
-      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20find%20out%20more%20about%20agency%20roster%20infrastructure" target="_blank" rel="noopener" class="agency-cta-link">
-        Find out more about agency services →
+      <!-- 07 LEGACY -->
+      <a href="https://www.bookednow.co.za/legacy/" class="service-card" title="Legacy — complete digital infrastructure build for established fashion creatives — Booked." style="grid-column: 1 / -1;">
+        <div class="card-meta">
+          <span class="card-number">07 — LEGACY</span>
+          <span class="card-tag premium">R50,000 · COMPLETE BUILD</span>
+        </div>
+        <p class="card-best-for">Best for: established creatives with a decade of work that is invisible to the systems making the first cut.</p>
+        <p>A decade of work, made findable. Legacy is the complete technical layer — Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Built once, built correctly. For the established creative whose career deserves infrastructure that matches it.</p>
+        <div class="card-footer">
+          <span class="card-link">Find out more</span>
+          <span class="card-price">R50,000 · 50% deposit to confirm</span>
+        </div>
       </a>
     </div>
   </section>
@@ -1112,7 +1045,6 @@
         <ul class="icp-list">
           <li><span class="marker">+</span> Working photographers, stylists, creative directors, art directors, hair &amp; makeup artists, casting directors, set designers, and fashion filmmakers</li>
           <li><span class="marker">+</span> Creatives who know something is off — but not where to start</li>
-          <li><span class="marker">+</span> Boutique agencies managing creative rosters</li>
         </ul>
       </div>
       <div class="icp-panel not-for">
@@ -1152,15 +1084,11 @@
         </article>
         <article class="faq-item">
           <h3>How does Booked work?</h3>
-          <p>Booked starts with diagnosis. It reads your portfolio, search presence, trust signals, and industry readability before recommending a fix. The outcome may be a visibility scan, portfolio audit, AI readability layer, machine-readable portfolio build, or roster intelligence system for agencies.</p>
+          <p>Booked starts with diagnosis. It reads your portfolio, search presence, trust signals, and industry readability before recommending a fix. The outcome may be a visibility scan, portfolio audit, AI readability layer, machine-readable portfolio build, roster intelligence system for agencies, or a Legacy complete infrastructure build.</p>
         </article>
         <article class="faq-item">
-          <h3>Who is Booked for?</h3>
-          <p>Booked is for working fashion photographers, stylists, models, creative directors, art directors, hair and make-up artists, casting directors, set designers, fashion filmmakers, and boutique agencies managing creative rosters.</p>
-        </article>
-        <article class="faq-item">
-          <h3>What is agency roster intelligence?</h3>
-          <p>Agency roster intelligence helps boutique agencies understand which talent is visible, under-positioned, pitch-ready, difficult to search, or missing the digital signals needed to be trusted and booked.</p>
+          <h3>What is the Legacy build?</h3>
+          <p>Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. Includes a full Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. R50,000.</p>
         </article>
         <article class="faq-item">
           <h3>Is Booked only for fashion?</h3>
@@ -1237,7 +1165,7 @@
           <li>Portfolio audits calibrated against what casting directors, art directors, and clients actually evaluate</li>
           <li>One-page portfolio infrastructure for creatives who need a professional presence immediately</li>
           <li>AI readability infrastructure — semantic portfolio architecture, machine-readable credits, and cleaner discoverability signals</li>
-          <li>Roster intelligence systems for boutique agencies managing creative talent pools</li>
+          <li>Legacy complete infrastructure builds for established creatives with a decade of work that deserves to be found</li>
         </ul>
       </div>
     </div>
