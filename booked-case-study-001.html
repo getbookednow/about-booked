@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study 001 — Luca Bold | Booked.</title>
+<meta name="description" content="We ran the Booked. infrastructure framework on the founder. He scored 21 out of 100. This is what we found, and what it takes to close the gap.">
+<link rel="canonical" href="https://www.bookednow.co.za/case-studies/001/">
+<meta property="og:title" content="Case Study 001 — The Founder Ran It On Himself | Booked.">
+<meta property="og:description" content="We ran the Booked. infrastructure framework on the founder. He scored 21 out of 100. This is what we found.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.bookednow.co.za/case-studies/001/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, serif' font-size='36' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e0a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold:              #C8A96E;
+    --gold-light:        #e2c98a;
+    --void:              #0e0a1a;
+    --off-white:         #f0ede8;
+    --subtext:           #9a9a9a;
+    --violet:            #a98fe0;
+    --gold-border:       rgba(200,169,110,0.12);
+    --gold-border-hover: rgba(200,169,110,0.35);
+    --gold-dim:          rgba(200,169,110,0.15);
+    --gold-fill:         rgba(200,169,110,0.04);
+    --gold-subtle:       rgba(200,169,110,0.02);
+    --bg-card:           #0e1020;
+    --dim:               #444;
+    --font-display:      'Cormorant Garamond', Georgia, serif;
+    --font-body:         'DM Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    --font-mono:         'DM Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 65% 30%, rgba(120,80,200,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse at 15% 80%, rgba(80,40,160,0.07) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  a { color: inherit; }
+  ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
+  section, [id] { scroll-margin-top: 96px; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid rgba(200,169,110,0.08);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+  .nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+  .nav-contact:hover { background: var(--gold-dim); }
+  .nav-chat-mobile {
+    display: none;
+    padding: 9px 16px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+  .nav-chat-mobile:hover { background: var(--gold-dim); }
+
+  /* ─── KICKER ─── */
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .kicker::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--void);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold-border);
+    color: var(--off-white);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 160px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  .hero-left { flex: 1; min-width: 280px; }
+  .cs-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .cs-label-line { width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    max-width: 660px;
+  }
+  .hero h1 em { font-style: italic; color: var(--violet); }
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--subtext);
+    max-width: 460px;
+    line-height: 1.8;
+  }
+  .hero-sub strong { color: var(--off-white); font-weight: 400; }
+
+  .hero-score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-top: 8px;
+    flex-shrink: 0;
+  }
+  .hero-score-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    margin-bottom: 8px;
+    text-align: right;
+  }
+  .hero-score-num {
+    font-family: var(--font-display);
+    font-size: clamp(100px, 16vw, 180px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: var(--gold);
+    letter-spacing: -0.03em;
+  }
+  .hero-score-denom {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 300;
+    color: rgba(200,169,110,0.28);
+    letter-spacing: -0.01em;
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-top: 1px solid var(--gold-border);
+    padding-top: 32px;
+  }
+  .hero-meta-item {
+    flex: 1;
+    min-width: 130px;
+    padding: 0 28px 0 0;
+  }
+  .hero-meta-item:first-child { padding-left: 0; }
+  .hero-meta-item + .hero-meta-item {
+    border-left: 1px solid var(--gold-border);
+    padding-left: 28px;
+  }
+  .hero-meta-key {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .hero-meta-val {
+    font-size: 13px;
+    color: var(--off-white);
+    font-weight: 300;
+  }
+
+  /* ─── SHARED SECTION ─── */
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 96px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-inner {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 64px;
+  }
+
+  /* ─── SUBJECT STRIP ─── */
+  .subject {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .subject-inner {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .subject-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .subject-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .subject-copy h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--off-white);
+  }
+  .subject-copy h2 em { font-style: italic; color: var(--violet); }
+  .subject-copy p {
+    font-size: 16px;
+    color: var(--subtext);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .subject-copy p:last-child { margin-bottom: 0; }
+  .subject-copy strong { color: var(--off-white); font-weight: 400; }
+
+  /* ─── SCORECARD ─── */
+  .scorecard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 8px;
+  }
+  .big-score-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .big-score {
+    font-family: var(--font-display);
+    font-size: clamp(110px, 18vw, 200px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: var(--gold);
+    letter-spacing: -0.03em;
+  }
+  .big-denom {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 300;
+    color: rgba(200,169,110,0.2);
+    letter-spacing: -0.01em;
+  }
+  .score-verdict {
+    font-size: 13px;
+    color: var(--subtext);
+    line-height: 1.65;
+    margin-bottom: 24px;
+    max-width: 340px;
+  }
+  .score-callout {
+    border: 1px solid var(--gold-border);
+    border-left: 2px solid var(--gold);
+    padding: 18px 22px;
+    background: var(--gold-fill);
+  }
+  .score-callout p {
+    font-size: 14px;
+    color: rgba(240,237,232,0.72);
+    line-height: 1.65;
+  }
+  .score-callout strong { color: var(--off-white); font-weight: 400; }
+
+  .dim-list { display: flex; flex-direction: column; margin-top: 4px; }
+  .dim-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 72px;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(200,169,110,0.07);
+  }
+  .dim-row:last-child { border: none; }
+  .dim-name {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--off-white);
+    font-weight: 300;
+  }
+  .dim-bar-track {
+    height: 1px;
+    background: rgba(200,169,110,0.1);
+    position: relative;
+  }
+  .dim-bar-fill {
+    position: absolute;
+    left: 0; top: 0;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.55;
+  }
+  .dim-score-val {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--subtext);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .dim-score-val .num { color: var(--gold); }
+
+  /* ─── FINDINGS ─── */
+  .finding {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 96px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .finding-inner {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 64px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .finding-num {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(200,169,110,0.14);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .finding-tag {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .finding-tag::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .finding-title {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.4vw, 32px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--off-white);
+  }
+  .finding-title em { font-style: italic; color: var(--violet); }
+  .finding-body p {
+    font-size: 16px;
+    color: var(--subtext);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .finding-body p:last-child { margin-bottom: 0; }
+  .finding-body strong { color: var(--off-white); font-weight: 400; }
+  .finding-body em { font-style: italic; color: var(--off-white); }
+
+  /* Data callout grid */
+  .data-callout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin: 32px 0;
+    background: var(--gold-border);
+  }
+  .data-cell {
+    background: var(--bg-card);
+    padding: 28px 24px;
+  }
+  .data-cell-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .data-cell-val {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--gold);
+  }
+  .data-cell-note {
+    font-size: 12px;
+    color: var(--subtext);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* SERP table */
+  .serp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+  }
+  .serp-table td {
+    padding: 11px 0;
+    font-size: 13px;
+    vertical-align: top;
+    line-height: 1.45;
+    border-bottom: 1px solid rgba(200,169,110,0.06);
+  }
+  .serp-table tr:last-child td { border: none; }
+  .serp-pos {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--subtext);
+    width: 36px;
+    padding-right: 16px;
+    padding-top: 13px;
+  }
+  .serp-pos.hl { color: var(--gold); }
+  .serp-pos.dead-pos { color: rgba(200,80,80,0.6); }
+  .serp-title-cell { color: var(--off-white); padding-right: 24px; }
+  .serp-title-cell.faded { color: var(--subtext); }
+  .serp-domain {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--dim);
+    white-space: nowrap;
+    padding-top: 13px;
+  }
+  .serp-domain.hl { color: rgba(200,169,110,0.5); }
+  .serp-domain.dead-dom { color: rgba(200,80,80,0.4); }
+  .badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 6px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    border: 1px solid;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .badge-dead { color: rgba(200,80,80,0.75); border-color: rgba(200,80,80,0.28); background: rgba(200,80,80,0.06); }
+  .badge-home { color: var(--gold); border-color: rgba(200,169,110,0.3); background: rgba(200,169,110,0.06); }
+  .badge-off  { color: var(--dim); border-color: rgba(68,68,68,0.4); }
+
+  /* Tag extraction */
+  .tag-block {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.9;
+  }
+  .tag-row {
+    display: flex;
+    gap: 16px;
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(200,169,110,0.05);
+  }
+  .tag-row:last-child { border: none; }
+  .tag-key { color: var(--subtext); min-width: 170px; flex-shrink: 0; }
+  .tag-val { color: var(--off-white); }
+  .tag-absent { color: rgba(200,80,80,0.7); }
+  .tag-present { color: var(--gold); }
+
+  /* URL list */
+  .url-list { margin: 28px 0; }
+  .url-item {
+    display: grid;
+    grid-template-columns: 1fr 72px;
+    gap: 16px;
+    align-items: start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(200,169,110,0.07);
+  }
+  .url-item:last-child { border: none; }
+  .url-path {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--off-white);
+    word-break: break-all;
+    margin-bottom: 4px;
+  }
+  .url-note {
+    font-size: 12px;
+    color: var(--subtext);
+    line-height: 1.5;
+  }
+  .url-status {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-align: right;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .s-dead { color: rgba(200,80,80,0.75); }
+  .s-ok   { color: var(--gold); }
+
+  /* Contact path */
+  .path-steps { margin: 28px 0; }
+  .path-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(200,169,110,0.07);
+  }
+  .path-step:last-child { border: none; }
+  .path-step-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--subtext);
+    padding-top: 3px;
+    width: 44px;
+    flex-shrink: 0;
+  }
+  .path-step-text { font-size: 14px; color: var(--subtext); line-height: 1.6; }
+  .path-step-text strong { color: var(--off-white); font-weight: 400; }
+  .path-step.terminal .path-step-text { color: rgba(200,80,80,0.7); }
+  .path-step.terminal .path-step-num { color: rgba(200,80,80,0.45); }
+
+  /* ─── FOUNDER NOTE ─── */
+  .founder-note {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 96px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .founder-note-inner {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 64px;
+  }
+  .fn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .fn-left { position: sticky; top: 120px; }
+  .fn-kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .fn-kicker::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .fn-heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .fn-heading em { font-style: italic; color: var(--violet); display: block; }
+  .fn-sub { font-size: 13px; color: var(--subtext); line-height: 1.75; }
+  .fn-body p {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--off-white);
+    line-height: 1.85;
+    margin-bottom: 22px;
+  }
+  .fn-body p:last-child { margin-bottom: 0; }
+  .fn-body em { font-style: italic; color: var(--violet); }
+  .cobbler-quote {
+    margin: 40px 0 0;
+    padding: 36px 40px;
+    border-left: 2px solid var(--gold);
+    background: linear-gradient(135deg, rgba(120,80,200,0.05) 0%, transparent 70%);
+  }
+  .cobbler-quote blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.8vw, 34px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--off-white);
+  }
+
+  /* ─── REMEDIATION ─── */
+  .remediation {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 96px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .remediation-inner {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 64px;
+  }
+  .rem-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .rem-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+  .rem-header h2 em { font-style: italic; color: var(--gold); }
+  .rem-header p {
+    font-size: 16px;
+    color: var(--subtext);
+    line-height: 1.8;
+    max-width: 400px;
+  }
+  .fixes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gold-border);
+  }
+  .fix-card {
+    background: var(--bg-card);
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+  }
+  .fix-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .fix-card h3 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--off-white);
+    margin-bottom: 16px;
+  }
+  .fix-card h3 em { font-style: italic; color: var(--violet); }
+  .fix-card p {
+    font-size: 14px;
+    color: var(--subtext);
+    line-height: 1.75;
+    flex: 1;
+    margin-bottom: 28px;
+  }
+  .fix-meta {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .fix-time {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+  .fix-impact { font-size: 11px; color: var(--subtext); letter-spacing: 0.04em; }
+
+  .score-delta {
+    margin-top: 48px;
+    padding: 32px 36px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-fill);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .delta-from, .delta-to { display: flex; flex-direction: column; gap: 4px; }
+  .delta-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--subtext);
+  }
+  .delta-num {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--subtext);
+  }
+  .delta-arrow { font-size: 28px; color: var(--gold); opacity: 0.5; }
+  .delta-to .delta-num { color: var(--gold); }
+  .delta-note {
+    font-size: 14px;
+    color: var(--subtext);
+    line-height: 1.7;
+    max-width: 360px;
+    margin-left: auto;
+  }
+  .delta-note strong { color: var(--off-white); font-weight: 400; }
+
+  /* ─── CLOSING CTA ─── */
+  .closing-cta {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .closing-cta-inner {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 96px;
+  }
+  .closing-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    max-width: 680px;
+  }
+  .closing-cta h2 em { font-style: italic; color: var(--violet); }
+  .closing-cta > .closing-cta-inner > p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--subtext);
+    max-width: 440px;
+    line-height: 1.8;
+    margin-bottom: 52px;
+  }
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 560px;
+  }
+  .btn-cta-primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 32px;
+    background: var(--gold);
+    color: var(--void);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s;
+  }
+  .btn-cta-primary:hover { background: var(--gold-light); }
+  .btn-cta-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 32px;
+    border: 1px solid var(--gold-border);
+    color: var(--subtext);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .footer-note { font-size: 13px; color: var(--subtext); }
+  .footer-back {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.2s;
+  }
+  .footer-back:hover { color: var(--gold); }
+  .footer-legal {
+    border-top: 1px solid rgba(200,169,110,0.07);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-legal-links { display: flex; align-items: center; gap: 24px; }
+  .footer-legal-links a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: var(--subtext); }
+  .footer-copy { font-size: 11px; color: var(--dim); letter-spacing: 0.05em; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .cs-label  { animation: fadeUp 0.6s ease both; }
+  .hero h1   { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-score { animation: fadeUp 0.6s 0.15s ease both; }
+  .hero-meta { animation: fadeUp 0.6s 0.3s ease both; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .hero { padding: 130px 32px 64px; }
+    .hero-top { flex-direction: column; gap: 40px; }
+    .hero-score { align-items: flex-start; }
+    .subject { padding: 0 32px 64px; }
+    .subject-inner { grid-template-columns: 1fr; gap: 24px; }
+    .section { padding: 0 32px 80px; }
+    .scorecard-grid { grid-template-columns: 1fr; gap: 48px; }
+    .dim-row { grid-template-columns: 140px 1fr 60px; gap: 12px; }
+    .finding { padding: 0 32px 80px; }
+    .finding-inner { grid-template-columns: 1fr; gap: 32px; }
+    .data-callout { grid-template-columns: 1fr 1fr; }
+    .founder-note { padding: 0 32px 80px; }
+    .fn-grid { grid-template-columns: 1fr; gap: 48px; }
+    .fn-left { position: static; }
+    .remediation { padding: 0 32px 80px; }
+    .rem-header { grid-template-columns: 1fr; gap: 20px; }
+    .fixes-grid { grid-template-columns: 1fr 1fr; }
+    .closing-cta { padding: 0 32px 96px; }
+    footer { padding: 36px 32px 24px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 18px 20px; }
+    .nav-links { display: none; }
+    .nav-contact { display: none; }
+    .nav-chat-mobile { display: flex; }
+    .hero { padding: 110px 20px 56px; }
+    .hero-meta { flex-direction: column; gap: 0; }
+    .hero-meta-item + .hero-meta-item { border-left: none; padding-left: 0; border-top: 1px solid var(--gold-border); padding-top: 16px; margin-top: 16px; }
+    .subject { padding: 0 20px 56px; }
+    .section { padding: 0 20px 72px; }
+    .finding { padding: 0 20px 72px; }
+    .data-callout { grid-template-columns: 1fr; }
+    .tag-block { padding: 16px 18px; font-size: 11px; }
+    .tag-key { min-width: 120px; }
+    .dim-row { grid-template-columns: 1fr 52px; }
+    .dim-bar-track { display: none; }
+    .founder-note { padding: 0 20px 72px; }
+    .fn-body p { font-size: 16px; }
+    .cobbler-quote { padding: 28px 24px; }
+    .remediation { padding: 0 20px 72px; }
+    .fixes-grid { grid-template-columns: 1fr; }
+    .fix-card { padding: 32px 24px; }
+    .score-delta { flex-direction: column; gap: 20px; }
+    .delta-note { margin-left: 0; max-width: 100%; }
+    .closing-cta { padding: 0 20px 80px; }
+    .cta-actions { max-width: 100%; }
+    footer { padding: 28px 20px 20px; }
+    .footer-top { flex-direction: column; gap: 10px; }
+    .footer-legal { flex-direction: column; gap: 16px; }
+  }
+
+  @media (max-width: 390px) {
+    .hero { padding: 100px 16px 48px; }
+    .subject, .section, .finding, .founder-note, .remediation, .closing-cta { padding-left: 16px; padding-right: 16px; }
+    footer { padding: 24px 16px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="https://www.bookednow.co.za/scan/">Visibility Scan</a></li>
+    <li><a href="https://www.bookednow.co.za/infrastructure/">Infrastructure</a></li>
+    <li><a href="https://www.bookednow.co.za/#services">Audits</a></li>
+    <li><a href="#" class="active">Case Studies</a></li>
+  </ul>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked." class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-top">
+      <div class="hero-left">
+        <div class="cs-label">
+          <span class="cs-label-line"></span>
+          Booked. Case Study 001
+        </div>
+        <h1>The founder<br>ran it<br>on <em>himself.</em></h1>
+        <p class="hero-sub">
+          This is the framework Booked. uses to audit fashion creatives' digital infrastructure.
+          <strong>We ran it on the person who built it.</strong>
+          Here is what we found.
+        </p>
+      </div>
+      <div class="hero-score">
+        <span class="hero-score-label">Infrastructure Score</span>
+        <span class="hero-score-num">21</span>
+        <span class="hero-score-denom">/ 100</span>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-key">Subject</span>
+        <span class="hero-meta-val">Luca Bold — lucabold.com</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-key">Category</span>
+        <span class="hero-meta-val">International Fashion Model &amp; Founder</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-key">Markets</span>
+        <span class="hero-meta-val">Cape Town · Shanghai · Milan</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-key">Audit Date</span>
+        <span class="hero-meta-val">June 2026 — Live scan</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-key">Rubric</span>
+        <span class="hero-meta-val">Booked. 5-Dimension / 100pt</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBJECT -->
+  <section class="subject">
+    <div class="subject-inner">
+      <p class="subject-label">The subject</p>
+      <div class="subject-copy">
+        <h2>A decade on set.<br><em>21 out of 100.</em></h2>
+        <p>
+          Luca Bold is an international fashion model with ten years across South Africa, Europe, and Asia — represented by ICE Models Cape Town and Next Management Milan, currently operating out of Shanghai.
+        </p>
+        <p>
+          He also built Booked. — a service that audits the digital infrastructure of working fashion creatives and builds what needs to exist to close the legibility gap.
+        </p>
+        <p>
+          The Booked. framework scores five dimensions of a creative's digital presence: machine-readability, social presence, portfolio structure, contact friction, and discoverability. In June 2026, every test in the framework was run against lucabold.com and its associated digital assets. <strong>No adjustments. No exceptions.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCORECARD -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="kicker">The full scorecard</p>
+      <div class="scorecard-grid">
+        <div>
+          <div class="big-score-row">
+            <span class="big-score">21</span>
+            <span class="big-denom">/ 100</span>
+          </div>
+          <p class="score-verdict">Scored against the Booked. 5-dimension rubric. All data gathered from a live scan — no reliance on prior audits.</p>
+          <div class="score-callout">
+            <p>The industry-readable threshold on this rubric is <strong>65+</strong>. At 21, a creative's profile cannot be reliably found, parsed, or actioned by an AI-assisted discovery system before any human sees the work.</p>
+          </div>
+        </div>
+        <div>
+          <div class="dim-list">
+            <div class="dim-row">
+              <span class="dim-name">Machine-Readability</span>
+              <div class="dim-bar-track"><div class="dim-bar-fill" style="width:10%"></div></div>
+              <span class="dim-score-val"><span class="num">3</span>&thinsp;/&thinsp;30</span>
+            </div>
+            <div class="dim-row">
+              <span class="dim-name">Social Presence</span>
+              <div class="dim-bar-track"><div class="dim-bar-fill" style="width:24%"></div></div>
+              <span class="dim-score-val"><span class="num">6</span>&thinsp;/&thinsp;25</span>
+            </div>
+            <div class="dim-row">
+              <span class="dim-name">Portfolio Structure</span>
+              <div class="dim-bar-track"><div class="dim-bar-fill" style="width:35%"></div></div>
+              <span class="dim-score-val"><span class="num">7</span>&thinsp;/&thinsp;20</span>
+            </div>
+            <div class="dim-row">
+              <span class="dim-name">Contact Friction</span>
+              <div class="dim-bar-track"><div class="dim-bar-fill" style="width:27%"></div></div>
+              <span class="dim-score-val"><span class="num">4</span>&thinsp;/&thinsp;15</span>
+            </div>
+            <div class="dim-row">
+              <span class="dim-name">Discoverability</span>
+              <div class="dim-bar-track"><div class="dim-bar-fill" style="width:10%"></div></div>
+              <span class="dim-score-val"><span class="num">1</span>&thinsp;/&thinsp;10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINDING 01 — SERP -->
+  <div class="finding">
+    <div class="finding-inner">
+      <div>
+        <div class="finding-num">01</div>
+        <p class="finding-tag">Discoverability</p>
+        <h2 class="finding-title">His own name<br>ranks <em>sixth.</em></h2>
+      </div>
+      <div class="finding-body">
+        <p>
+          A search for <em>"Luca Bold model"</em> — the model's own name plus the word that describes what he does — returns ten results. lucabold.com appears at <strong>position six.</strong> LinkedIn holds position one.
+        </p>
+        <p>
+          Positions four and seven are occupied by indexed pages from lucabold.com that return 404. His own domain holds three of the top ten search positions — but two of those positions are dead ends. The homepage is outranked by a broken version of itself.
+        </p>
+
+        <div class="data-callout">
+          <div class="data-cell">
+            <span class="data-cell-label">SERP rank for own name</span>
+            <span class="data-cell-val">#6</span>
+            <p class="data-cell-note">Criterion is rank #1. LinkedIn is #1.</p>
+          </div>
+          <div class="data-cell">
+            <span class="data-cell-label">Indexed dead pages in top 10</span>
+            <span class="data-cell-val">2</span>
+            <p class="data-cell-note">Positions #4 and #7. Both return 404.</p>
+          </div>
+          <div class="data-cell">
+            <span class="data-cell-label">Entity authority</span>
+            <span class="data-cell-val">None</span>
+            <p class="data-cell-note">No Knowledge Panel. No Wikidata record.</p>
+          </div>
+        </div>
+
+        <p>Live SERP results — "Luca Bold model":</p>
+
+        <table class="serp-table">
+          <tbody>
+            <tr>
+              <td class="serp-pos">#1</td>
+              <td class="serp-title-cell">Luca Bold – Model – ICE Models Cape Town | LinkedIn</td>
+              <td class="serp-domain">linkedin.com</td>
+            </tr>
+            <tr>
+              <td class="serp-pos">#2</td>
+              <td class="serp-title-cell">Luca Bold (@lucaboldcpt) • Instagram</td>
+              <td class="serp-domain">instagram.com</td>
+            </tr>
+            <tr>
+              <td class="serp-pos">#3</td>
+              <td class="serp-title-cell">Luca Bold – Model Portfolio &amp; Booking</td>
+              <td class="serp-domain">swipecast.com</td>
+            </tr>
+            <tr>
+              <td class="serp-pos dead-pos">#4</td>
+              <td class="serp-title-cell faded">Fashion Model – Luca Bold <span class="badge badge-dead">404</span></td>
+              <td class="serp-domain dead-dom">lucabold.com/fashion-model</td>
+            </tr>
+            <tr>
+              <td class="serp-pos">#5</td>
+              <td class="serp-title-cell">Luca Bold – True Models Istanbul</td>
+              <td class="serp-domain">truemodelsistanbul.com</td>
+            </tr>
+            <tr>
+              <td class="serp-pos hl">#6</td>
+              <td class="serp-title-cell">Luca Bold <span class="badge badge-home">Homepage</span></td>
+              <td class="serp-domain hl">lucabold.com</td>
+            </tr>
+            <tr>
+              <td class="serp-pos dead-pos">#7</td>
+              <td class="serp-title-cell faded">Blogs – Luca Bold <span class="badge badge-dead">404</span></td>
+              <td class="serp-domain dead-dom">lucabold.com/blogs</td>
+            </tr>
+            <tr>
+              <td class="serp-pos">#8</td>
+              <td class="serp-title-cell">Luca Bold — Instagram post</td>
+              <td class="serp-domain">instagram.com</td>
+            </tr>
+            <tr>
+              <td class="serp-pos">#9</td>
+              <td class="serp-title-cell faded">Luca Iaconi-Stewart <span class="badge badge-off">Unrelated</span></td>
+              <td class="serp-domain">wikipedia.org</td>
+            </tr>
+            <tr>
+              <td class="serp-pos">#10</td>
+              <td class="serp-title-cell faded">Luca Calvani <span class="badge badge-off">Unrelated</span></td>
+              <td class="serp-domain">wikipedia.org</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Positions nine and ten are Wikipedia entries for entirely different people named Luca. This is not noise — it is a disambiguation failure. Without an entity record (JSON-LD schema, Wikidata entry, Knowledge Panel), search systems cannot resolve the subject with confidence and surface unrelated results to fill the gap.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDING 02 — MACHINE READABILITY -->
+  <div class="finding">
+    <div class="finding-inner">
+      <div>
+        <div class="finding-num">02</div>
+        <p class="finding-tag">Machine-Readability</p>
+        <h2 class="finding-title">What a machine reads<br>from this site:<br><em>almost nothing.</em></h2>
+      </div>
+      <div class="finding-body">
+        <p>
+          The machine-readability audit checks for structured data (JSON-LD Person schema), meta descriptions, Open Graph tags, Twitter card tags, canonical tags, and image alt text. These are the signals that allow search crawlers, AI systems, and casting platforms to determine who someone is, what they do, and how to reach them.
+        </p>
+        <p>Complete tag inventory from the live scan of lucabold.com:</p>
+
+        <div class="tag-block">
+          <div class="tag-row">
+            <span class="tag-key">Title tag</span>
+            <span class="tag-val tag-present">Luca Bold — International Fashion Model &amp; Founder of Booked</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">Meta description</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">JSON-LD schema</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">og:title</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">og:description</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">og:image</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">og:url</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">Twitter card</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">Canonical tag</span>
+            <span class="tag-val tag-absent">ABSENT</span>
+          </div>
+          <div class="tag-row">
+            <span class="tag-key">Image alt text</span>
+            <span class="tag-val tag-absent">ABSENT — all images are base64-encoded WebP with no alt attributes</span>
+          </div>
+        </div>
+
+        <p>
+          The title tag is the single piece of parseable identity on the site. Everything else — the agency, the current market, the category, the career credits, the contact path — exists only in the visual layer. A machine reading this site cannot determine that this person is a model, who represents them, or where they work.
+        </p>
+        <p>
+          A cold AI query — "Who is Luca Bold model?" — returns a basic physical description scraped from agency data. It does not return: current market (Shanghai), current operating agency, notable credits, company (Booked.), or any structured career context. A casting platform running AI-assisted first-pass filtering cannot construct a bookable entity record from available sources.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDING 03 — DEAD PAGES -->
+  <div class="finding">
+    <div class="finding-inner">
+      <div>
+        <div class="finding-num">03</div>
+        <p class="finding-tag">Indexed Dead Pages</p>
+        <h2 class="finding-title">Four pages Google<br>still sends people to.<br><em>All of them are dead.</em></h2>
+      </div>
+      <div class="finding-body">
+        <p>
+          Google has indexed multiple subpages from lucabold.com that return HTTP 404. These pages appear in search results for queries about this model's name and career. Every click terminates with an error — a structural trust failure at the point of discovery.
+        </p>
+        <p>
+          Beyond user experience, indexed 404s dilute domain authority. The domain is sending three competing signals for a single query: a functional homepage, a dead "fashion model" page, and a dead "blogs" index — all from the same domain, all in the top 10.
+        </p>
+
+        <div class="url-list">
+          <div class="url-item">
+            <div>
+              <div class="url-path">lucabold.com/fashion-model</div>
+              <div class="url-note">Indexed. Appears at SERP position #4 for "Luca Bold model."</div>
+            </div>
+            <span class="url-status s-dead">404</span>
+          </div>
+          <div class="url-item">
+            <div>
+              <div class="url-path">lucabold.com/blogs</div>
+              <div class="url-note">Indexed. Appears at SERP position #7 for "Luca Bold model."</div>
+            </div>
+            <span class="url-status s-dead">404</span>
+          </div>
+          <div class="url-item">
+            <div>
+              <div class="url-path">lucabold.com/blogs/f/being-a-fashion-model-in-shanghai</div>
+              <div class="url-note">Indexed. Would be the only geo-specific content anchoring the Shanghai market. Dead.</div>
+            </div>
+            <span class="url-status s-dead">404</span>
+          </div>
+          <div class="url-item">
+            <div>
+              <div class="url-path">lucabold.com/virtual-styling-sessions</div>
+              <div class="url-note">Indexed. Contradicts current positioning as a fashion model and founder.</div>
+            </div>
+            <span class="url-status s-dead">404</span>
+          </div>
+          <div class="url-item">
+            <div>
+              <div class="url-path">lucabold.com</div>
+            </div>
+            <span class="url-status s-ok">200 OK</span>
+          </div>
+        </div>
+
+        <p>
+          The Shanghai blog post is the most significant loss. A post about the experience of being a fashion model in Shanghai would be the single piece of geo-specific content anchoring this model to their current operating market. It is indexed and appears in searches for "Luca Bold Shanghai" — and it returns 404. That search context cannot be owned until the content is recreated and re-indexed.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDING 04 — CONTACT FRICTION -->
+  <div class="finding">
+    <div class="finding-inner">
+      <div>
+        <div class="finding-num">04</div>
+        <p class="finding-tag">Contact Friction</p>
+        <h2 class="finding-title">The contact page<br><em>does not exist.</em></h2>
+      </div>
+      <div class="finding-body">
+        <p>
+          lucabold.com includes a "Contact" link in the navigation. A contact section exists as an in-page anchor (#contact). The URL /contact does not exist. A casting director who receives a link to this site and clicks "Contact" directly reaches a dead page.
+        </p>
+        <p>
+          More critically: no email address appears anywhere in the extractable content of lucabold.com. No WhatsApp link. No agency reference. A professional encountering this site for the first time has no confirmed route to the subject from the page itself.
+        </p>
+
+        <div class="path-steps">
+          <div class="path-step">
+            <span class="path-step-num">Step 1</span>
+            <span class="path-step-text">Land on lucabold.com. <strong>No contact information visible in extractable content.</strong></span>
+          </div>
+          <div class="path-step">
+            <span class="path-step-num">Step 2</span>
+            <span class="path-step-text">Click "Contact" in the navigation.</span>
+          </div>
+          <div class="path-step terminal">
+            <span class="path-step-num">Step 3</span>
+            <span class="path-step-text"><strong>lucabold.com/contact — HTTP 404. The page does not exist.</strong></span>
+          </div>
+        </div>
+
+        <p>
+          The in-page anchor (#contact) technically exists and may render contact information in a browser. A crawler, a search engine, and any AI agent reading the page source finds nothing there. The confirmed contact path for a professional who finds this model online: Google → ICE Models website → agency email. A three-step external redirect. No direct approach is possible from the personal site.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDER NOTE -->
+  <section class="founder-note">
+    <div class="founder-note-inner">
+      <div class="fn-grid">
+        <div class="fn-left">
+          <p class="fn-kicker">A note from the founder</p>
+          <h2 class="fn-heading">The cobbler's<br>children<br><em>still need shoes.</em></h2>
+          <p class="fn-sub">All gaps are structural. None are personal. The creative's talent is not in question. The infrastructure is.</p>
+        </div>
+        <div class="fn-body">
+          <p>
+            I built Booked. because I watched talented people lose work to people with less talent and better infrastructure. I built the framework. I built the rubric. I built the scoring system.
+          </p>
+          <p>
+            Then I ran it on myself.
+          </p>
+          <p>
+            The score is 21 out of 100. My personal site ranks sixth for my own name. There are four indexed pages on my domain returning 404 — including a blog post about being a fashion model in Shanghai that would be the only content anchoring me to my current market. My contact page does not exist as a URL. There is no structured data anywhere. Every portfolio image is an unreadable base64 blob as far as any machine is concerned.
+          </p>
+          <p>
+            This is not a confession. It is a demonstration. The framework does not make exceptions. It reads what is there and scores what it finds. The same structural gaps I diagnose in clients' infrastructure exist in mine — because building the tool and using the tool are two different things, and I have been building.
+          </p>
+          <p>
+            The fixes are on my list. They are the same three fixes at the end of this page. They take one afternoon. I am publishing this case study before implementing them because the value of this work is in its precision, not its performance.
+          </p>
+
+          <div class="cobbler-quote">
+            <blockquote>
+              "The gap is always structural. The question is whether you know where it is."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REMEDIATION -->
+  <section class="remediation">
+    <div class="remediation-inner">
+      <div class="rem-header">
+        <h2>Three fixes.<br><em>One afternoon.</em></h2>
+        <p>These are not strategic recommendations. They are specific, scoped, executable changes — each with a time estimate and an expected score impact. The only variable is whether they get done.</p>
+      </div>
+
+      <div class="fixes-grid">
+        <div class="fix-card">
+          <span class="fix-num">Fix 01</span>
+          <h3>Deploy JSON-LD<br><em>Person schema</em></h3>
+          <p>
+            A structured data block in the &lt;head&gt; of lucabold.com declaring: name, jobTitle, url, sameAs (agency pages, Instagram, LinkedIn), description, knowsAbout, workLocation. This is the foundational fix — without it, no other infrastructure improvement can fully land. Every AI-assisted discovery system that encounters this site currently finds no structured identity.
+          </p>
+          <div class="fix-meta">
+            <span class="fix-time">≈ 3 hours</span>
+            <span class="fix-impact">+5–7 pts Machine-Readability</span>
+          </div>
+        </div>
+
+        <div class="fix-card">
+          <span class="fix-num">Fix 02</span>
+          <h3>Add meta description<br>&amp; <em>OG tags</em></h3>
+          <p>
+            The copy already exists on the homepage. Apply it to the tags. A 155-character meta description. og:title, og:description, og:image, og:url. Controls every social sharing preview, improves SERP snippet quality, and gives any system reading the page a parseable positioning statement before any visual element loads.
+          </p>
+          <div class="fix-meta">
+            <span class="fix-time">≈ 1 hour</span>
+            <span class="fix-impact">+2–3 pts Machine-Readability</span>
+          </div>
+        </div>
+
+        <div class="fix-card">
+          <span class="fix-num">Fix 03</span>
+          <h3>Redirect the<br><em>indexed dead pages</em></h3>
+          <p>
+            301 redirects from all four indexed 404 URLs to the homepage. /fashion-model, /blogs, /blogs/f/being-a-fashion-model-in-shanghai, /virtual-styling-sessions — all redirect to /. Stops domain authority bleeding to dead pages. Removes the trust failures at SERP positions #4 and #7.
+          </p>
+          <div class="fix-meta">
+            <span class="fix-time">≈ 2 hours</span>
+            <span class="fix-impact">+2–3 pts Discoverability</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="score-delta">
+        <div class="delta-from">
+          <span class="delta-label">Current Score</span>
+          <span class="delta-num">21</span>
+        </div>
+        <span class="delta-arrow">→</span>
+        <div class="delta-to">
+          <span class="delta-label">Post-Implementation (est.)</span>
+          <span class="delta-num">~30</span>
+        </div>
+        <p class="delta-note">
+          These three fixes alone move the infrastructure score by approximately <strong>9 points within 48 hours of deployment</strong> — without a rebuild, a rebrand, or a content strategy. The remaining gap (30 → 65+) requires portfolio architecture, credit documentation, and social identity consolidation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing-cta">
+    <div class="closing-cta-inner">
+      <p class="kicker">Your infrastructure</p>
+      <h2>If this is what the<br>founder's score looks<br>like — <em>what does yours?</em></h2>
+      <p>The free Booked. visibility scan reads your digital infrastructure across the same five dimensions. Four minutes. No form, no call — just the read.</p>
+      <div class="cta-actions">
+        <a href="https://www.bookednow.co.za/scan/" class="btn-cta-primary">
+          Run Your Visibility Scan
+          <span>→</span>
+        </a>
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20read%20Case%20Study%20001%20and%20want%20to%20find%20out%20what%20my%20infrastructure%20looks%20like." class="btn-cta-secondary" target="_blank" rel="noopener">
+          Or send me your portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <a href="https://www.bookednow.co.za/" class="footer-logo">Booked.</a>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+    <a href="https://www.bookednow.co.za/" class="footer-back">← Back to Booked.</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
