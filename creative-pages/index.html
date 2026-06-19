@@ -1,0 +1,2583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Pages — Nine tools every fashion creative needs | Booked.</title>
+<meta name="description" content="Nine live, functional tools for fashion creatives — availability, rate card, intake form, press kit, testimonials, deposit, AI profile, international booking guide, and pricing comparison. Built by Booked.">
+<link rel="canonical" href="https://www.bookednow.co.za/creative-pages/">
+<meta property="og:title" content="Creative Pages — Booked.">
+<meta property="og:description" content="Nine pages every fashion creative needs. All live. All functional. None built yet.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, serif' font-size='36' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="shortcut icon" href="https://www.bookednow.co.za/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="https://www.bookednow.co.za/apple-touch-icon.png">
+<meta name="theme-color" content="#0e0a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:                #C8A96E;
+  --gold-light:          #e2c98a;
+  --void:                #0e0a1a;
+  --off-white:           #f0ede8;
+  --subtext:             #9a9a9a;
+  --violet-italic:       #a98fe0;
+  --gold-border-default: rgba(200,169,110,0.12);
+  --gold-border-hover:   rgba(200,169,110,0.35);
+  --gold-border-divider: rgba(200,169,110,0.10);
+  --gold-fill-hover:     rgba(200,169,110,0.03);
+  --gold-fill-subtle:    rgba(200,169,110,0.02);
+  --gold-dim:            rgba(200,169,110,0.15);
+  --violet-fill:         rgba(169,143,224,0.08);
+  --violet-border:       rgba(169,143,224,0.22);
+  --bg-card:             #0e1020;
+  --dim:                 #444;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+}
+
+body {
+  background: var(--void);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-weight: 200;
+  line-height: 1.6;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@supports not (overflow-x: clip) {
+  html, body { overflow-x: hidden; }
+}
+
+h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
+
+/* iOS smooth scroll */
+.page-section-inner,
+.demo-card {
+  -webkit-overflow-scrolling: touch;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+section, [id] { scroll-margin-top: 96px; }
+a { color: inherit; }
+::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  border-bottom: 1px solid var(--gold-border-divider);
+  background: rgba(10,14,26,0.85);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.nav-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--gold-border-default);
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.nav-contact:hover { background: var(--gold-dim); color: var(--gold-light); }
+
+.nav-chat-mobile {
+  display: none;
+  padding: 9px 16px;
+  border: 1px solid var(--gold-border-default);
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+.nav-chat-mobile:hover { background: var(--gold-dim); }
+
+/* ── HERO ────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 48px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  max-width: 840px;
+}
+.hero h1 em { font-style: italic; color: var(--violet-italic); }
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 200;
+  color: var(--subtext);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+.hero-sub strong { color: var(--off-white); font-weight: 400; }
+
+.hero-sub-note {
+  margin-top: 18px;
+  max-width: 560px;
+  color: rgba(240,237,232,0.72);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: var(--void);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid var(--gold-border-default);
+  color: var(--off-white);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+  background: none;
+  cursor: pointer;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+/* ── SECTION WRAPPER ─────────────────────────────────────────── */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 0 48px 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-inner {
+  border-top: 1px solid var(--gold-border-divider);
+  padding-top: 72px;
+}
+
+.section-kicker {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-kicker::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.6vw, 64px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  max-width: 760px;
+}
+.section-heading em { font-style: italic; color: var(--violet-italic); }
+
+.section-sub {
+  font-size: 16px;
+  color: var(--subtext);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 48px;
+  font-weight: 200;
+}
+
+/* ── PAGE INDEX PILLS ────────────────────────────────────────── */
+.page-index {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.page-pill {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border: 1px solid var(--gold-border-default);
+  color: var(--subtext);
+  cursor: pointer;
+  transition: all 0.2s;
+  background: none;
+  text-decoration: none;
+  font-family: var(--font-body);
+  display: inline-block;
+  white-space: nowrap;
+}
+.page-pill:hover { border-color: var(--gold); color: var(--gold); }
+.page-pill:active { background: rgba(200,169,110,0.06); }
+
+/* ── PAGE SECTION HEADERS ────────────────────────────────────── */
+.page-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 48px 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-section-inner {
+  border-top: 1px solid var(--gold-border-divider);
+  padding-top: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.page-section-left { position: sticky; top: 90px; }
+
+.page-num {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 300;
+  color: rgba(200,169,110,0.10);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.page-label {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.page-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--off-white);
+  margin-bottom: 16px;
+}
+
+.page-desc {
+  font-size: 15px;
+  color: var(--subtext);
+  line-height: 1.8;
+  font-weight: 200;
+}
+
+/* ── DEMO CARD ───────────────────────────────────────────────── */
+.demo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-default);
+  padding: 48px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.demo-card:hover { border-color: var(--gold-border-hover); }
+
+.demo-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  border: 1px solid var(--dim);
+  padding: 4px 10px;
+  font-family: var(--font-body);
+}
+
+/* ── 01 CALENDAR ─────────────────────────────────────────────── */
+.cal-header-demo {
+  text-align: center;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gold-border-divider);
+}
+
+.cal-creative-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+
+.cal-creative-role {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  margin-top: 4px;
+  font-family: var(--font-body);
+}
+
+.cal-month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cal-nav-btn {
+  background: none;
+  border: 1px solid var(--gold-border-default);
+  color: var(--off-white);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: var(--font-body);
+}
+.cal-nav-btn:hover { border-color: var(--gold); background: rgba(200,169,110,0.05); }
+
+.cal-month-label {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--off-white);
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+.cal-weekdays span {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  padding: 4px 0;
+  font-family: var(--font-body);
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  touch-action: manipulation;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 300;
+  border: 1px solid transparent;
+  cursor: default;
+  min-height: 38px;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: var(--font-body);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cal-day.empty { background: transparent; }
+.cal-day.past { color: var(--dim); }
+.cal-day.available {
+  background: rgba(200,169,110,0.06);
+  border-color: var(--gold-border-default);
+  color: var(--off-white);
+}
+.cal-day.booked {
+  background: rgba(244,240,232,0.03);
+  color: var(--dim);
+}
+.cal-day.pending {
+  background: var(--violet-fill);
+  border-color: var(--violet-border);
+  color: var(--off-white);
+}
+.cal-day.today-mark {
+  outline: 1px solid var(--gold);
+  outline-offset: -2px;
+}
+
+.admin-active .cal-day:not(.empty):not(.past) { cursor: pointer; }
+.admin-active .cal-day.available:hover { background: rgba(200,169,110,0.14); border-color: var(--gold-border-hover); }
+.admin-active .cal-day.past { cursor: default; }
+
+.cal-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gold-border-divider);
+  flex-wrap: wrap;
+}
+.cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  font-family: var(--font-body);
+}
+.cal-legend-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+.cal-legend-dot.avail { background: rgba(200,169,110,0.06); border-color: var(--gold-border-default); }
+.cal-legend-dot.hold  { background: var(--violet-fill); border-color: var(--violet-border); }
+.cal-legend-dot.book  { background: rgba(244,240,232,0.03); border-color: var(--dim); }
+
+.cal-enquire {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  font-family: var(--font-body);
+}
+.cal-enquire a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-border-default);
+  transition: border-color 0.2s;
+}
+.cal-enquire a:hover { border-color: var(--gold); }
+
+/* ── ADMIN ───────────────────────────────────────────────────── */
+.admin-gate {
+  border-top: 1px solid var(--gold-border-divider);
+  padding-top: 18px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gate-lbl {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  flex-basis: 100%;
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+}
+
+.gate-inp {
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 9px 14px;
+  border: 1px solid var(--gold-border-default);
+  background: rgba(244,240,232,0.03);
+  color: var(--off-white);
+  letter-spacing: 0.05em;
+  width: 160px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.gate-inp:focus { border-color: var(--gold); }
+
+.gate-btn {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid var(--gold-border-default);
+  background: none;
+  color: var(--off-white);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.gate-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,169,110,0.04); }
+
+.gate-err {
+  font-size: 12px;
+  color: #ff7070;
+  flex-basis: 100%;
+  margin-top: 4px;
+  height: 16px;
+  font-family: var(--font-body);
+}
+
+.admin-panel {
+  display: none;
+  border-top: 1px solid var(--gold-border-divider);
+  padding-top: 16px;
+  margin-top: 16px;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin-panel-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  margin-right: 4px;
+  font-family: var(--font-body);
+}
+
+.mode-btn {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border: 1px solid var(--gold-border-default);
+  background: none;
+  color: var(--subtext);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mode-btn:hover { border-color: var(--gold-border-hover); color: var(--off-white); }
+.mode-btn.active { border-color: var(--gold-border-hover); color: var(--gold); background: rgba(200,169,110,0.05); }
+.mode-btn.danger:hover { border-color: rgba(255,80,80,0.4); color: #ff8080; }
+
+.admin-hint {
+  font-size: 11px;
+  color: var(--subtext);
+  flex-basis: 100%;
+  margin-top: 6px;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+  display: none;
+}
+
+/* ── 02 RATE CARD ────────────────────────────────────────────── */
+.rate-locked {
+  text-align: center;
+  padding: 48px 32px;
+}
+.rate-locked .lock-glyph {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 300;
+  color: rgba(200,169,110,0.15);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.rate-locked p {
+  font-size: 14px;
+  color: var(--subtext);
+  margin-bottom: 20px;
+  font-weight: 200;
+}
+.rate-locked .pw-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rate-content { display: none; }
+
+.rate-package {
+  border: 1px solid var(--gold-border-default);
+  padding: 32px;
+  margin-bottom: 2px;
+  position: relative;
+  background: rgba(244,240,232,0.01);
+  transition: border-color 0.2s;
+}
+.rate-package:hover { border-color: var(--gold-border-hover); }
+.rate-package.featured {
+  border-color: rgba(200,169,110,0.25);
+  background: rgba(200,169,110,0.03);
+}
+
+.pkg-badge {
+  position: absolute;
+  top: -1px;
+  right: 24px;
+  background: var(--gold);
+  color: var(--void);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.pkg-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--off-white);
+  margin-bottom: 6px;
+}
+
+.pkg-price {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.pkg-price span {
+  font-size: 14px;
+  color: var(--subtext);
+  font-family: var(--font-body);
+}
+
+.pkg-includes {
+  list-style: none;
+  font-size: 14px;
+  color: var(--subtext);
+  line-height: 1.9;
+  font-weight: 200;
+}
+.pkg-includes li { padding-left: 16px; position: relative; }
+.pkg-includes li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+.rate-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gold-border-divider);
+  font-size: 13px;
+  color: var(--subtext);
+  line-height: 1.7;
+  font-weight: 200;
+}
+
+/* ── 03 INTAKE ───────────────────────────────────────────────── */
+.intake-form { display: flex; flex-direction: column; gap: 18px; }
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+
+.form-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+}
+
+.form-input, .form-select, .form-textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  padding: 13px 16px;
+  border: 1px solid var(--gold-border-default);
+  background: rgba(244,240,232,0.03);
+  color: var(--off-white);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold-border-hover); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--dim); }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-select option { background: #0e1020; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid rgba(200,169,110,0.2);
+  background: rgba(200,169,110,0.03);
+}
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.form-success p { font-size: 14px; color: var(--subtext); font-weight: 200; }
+.form-success a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-border-default); }
+
+/* ── 04 PRESS KIT ────────────────────────────────────────────── */
+.press-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--gold-border-divider);
+}
+
+.press-avatar {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--gold-border-default);
+  background: rgba(200,169,110,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.press-name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--off-white);
+}
+
+.press-tagline {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  margin-top: 4px;
+  font-weight: 200;
+  font-family: var(--font-body);
+}
+
+.press-credits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.credit-block {
+  border: 1px solid var(--gold-border-default);
+  padding: 24px;
+  background: rgba(244,240,232,0.01);
+}
+
+.credit-type {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+}
+
+.credit-list {
+  list-style: none;
+  font-size: 14px;
+  color: var(--subtext);
+  line-height: 2;
+  font-weight: 200;
+}
+.credit-list li { padding-left: 14px; position: relative; }
+.credit-list li::before { content: '—'; position: absolute; left: 0; color: var(--dim); }
+
+.press-rates {
+  border: 1px solid var(--gold-border-default);
+  padding: 24px;
+  margin-bottom: 24px;
+  background: rgba(244,240,232,0.01);
+}
+
+.press-rates-title {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+}
+
+.rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gold-border-divider);
+  font-size: 14px;
+  font-weight: 200;
+}
+.rate-row:last-child { border-bottom: none; }
+.rate-row-label { color: var(--subtext); }
+.rate-row-val { color: var(--off-white); font-family: var(--font-mono); font-size: 13px; font-weight: 300; }
+
+.press-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-border-default);
+  padding: 12px 20px;
+  cursor: pointer;
+  background: none;
+  transition: all 0.2s;
+  text-decoration: none;
+  font-family: var(--font-body);
+}
+.press-download:hover { border-color: var(--gold-border-hover); background: rgba(200,169,110,0.04); }
+
+/* ── 05 TESTIMONIALS ─────────────────────────────────────────── */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.t-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-default);
+  padding: 38px 36px;
+  transition: border-color 0.2s;
+}
+.t-card:hover { border-color: var(--gold-border-hover); }
+.t-card.featured {
+  grid-column: span 2;
+  border-color: rgba(200,169,110,0.18);
+  background: rgba(200,169,110,0.02);
+}
+
+.t-stars {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.t-mark {
+  font-family: var(--font-display);
+  font-size: 56px;
+  color: var(--gold);
+  opacity: 0.18;
+  line-height: 0.7;
+  margin-bottom: 12px;
+}
+
+.t-text {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--off-white);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.t-card.featured .t-text { font-size: 22px; }
+
+.t-author {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+/* ── 06 DEPOSIT ──────────────────────────────────────────────── */
+.deposit-summary {
+  border: 1px solid var(--gold-border-default);
+  padding: 32px;
+  margin-bottom: 16px;
+  background: rgba(244,240,232,0.01);
+}
+
+.deposit-summary-title {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+}
+
+.deposit-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gold-border-divider);
+  font-size: 14px;
+  font-weight: 200;
+}
+.deposit-row:last-child { border-bottom: none; }
+.deposit-row-label { color: var(--subtext); }
+.deposit-row-val { color: var(--off-white); }
+
+.deposit-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--gold-border-divider);
+  margin-top: 8px;
+}
+.deposit-total-label { font-size: 13px; color: var(--subtext); font-weight: 200; font-family: var(--font-body); }
+.deposit-total-amount {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--gold);
+}
+
+.btn-wa-full {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  background: var(--violet-italic);
+  color: var(--void);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2px;
+}
+.btn-wa-full:hover { background: #bba3f0; }
+.btn-wa-full .arrow { font-size: 18px; }
+
+.deposit-note {
+  font-size: 12px;
+  color: var(--subtext);
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 12px;
+  font-weight: 200;
+}
+
+.deposit-success {
+  display: none;
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid rgba(200,169,110,0.2);
+  background: rgba(200,169,110,0.03);
+}
+.deposit-success h3 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.deposit-success p { font-size: 14px; color: var(--subtext); font-weight: 200; }
+.deposit-success a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-border-default); }
+
+/* ── CONTACT CTA ─────────────────────────────────────────────── */
+.contact-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 48px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact-inner {
+  border-top: 1px solid var(--gold-border-divider);
+  padding-top: 96px;
+}
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+.contact-heading em { font-style: italic; color: var(--violet-italic); }
+.contact-sub {
+  font-size: 16px;
+  font-weight: 200;
+  color: var(--subtext);
+  max-width: 440px;
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 640px;
+}
+.btn-scan-outline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border: 1px solid var(--gold-border-default);
+  color: var(--subtext);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: border-color 0.2s, color 0.2s;
+  background: none;
+}
+.btn-scan-outline:hover { border-color: var(--gold-border-hover); color: var(--gold); }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(200,169,110,0.12);
+  padding: 40px 48px 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+.footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
+.footer-legal {
+  border-top: 1px solid var(--gold-border-divider);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-legal-links { display: flex; align-items: center; gap: 24px; }
+.footer-legal-links a {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: color 0.2s;
+}
+.footer-legal-links a:hover { color: var(--subtext); }
+.footer-copy { font-size: 11px; color: var(--dim); letter-spacing: 0.05em; font-family: var(--font-body); }
+
+/* ── ANIMATIONS ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-tag  { animation: fadeUp 0.6s ease both; }
+.hero h1   { animation: fadeUp 0.6s 0.1s ease both; }
+.hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
+.hero-sub-note { animation: fadeUp 0.6s 0.25s ease both; }
+.hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  nav { padding: 20px 32px; }
+  .hero { padding: 130px 32px 60px; }
+  .section, .page-section, .contact-section { padding-left: 32px; padding-right: 32px; }
+  .page-section-inner { grid-template-columns: 1fr; gap: 40px; }
+  .page-section-left { position: static; }
+  footer { padding: 36px 32px 24px; }
+}
+@media (max-width: 768px) {
+  nav { padding: 18px 20px; }
+  .nav-links { display: none; }
+  .nav-contact { display: none; }
+  .nav-chat-mobile { display: flex; }
+  .hero { padding: 110px 20px 60px; }
+  .section, .page-section, .contact-section { padding-left: 20px; padding-right: 20px; }
+  .demo-card { padding: 28px 20px; }
+  .press-credits { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .t-card.featured { grid-column: span 1; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .footer-top { flex-direction: column; gap: 10px; text-align: center; }
+  .footer-legal { flex-direction: column; align-items: center; }
+  footer { padding: 28px 20px 20px; }
+}
+@media (max-width: 390px) {
+  nav { padding: 16px 16px; }
+  .hero { padding: 100px 16px 48px; }
+  .section, .page-section, .contact-section { padding-left: 16px; padding-right: 16px; }
+}
+
+
+/* ── PRICE CHIP ──────────────────────────────────────────────── */
+.page-price-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: 1px solid var(--gold-border-default);
+  background: rgba(200,169,110,0.04);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+.page-price-chip .price-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--subtext);
+}
+.page-price-chip.violet {
+  border-color: rgba(169,143,224,0.25);
+  background: rgba(169,143,224,0.04);
+  color: var(--violet-italic);
+}
+
+/* ── AI PROFILE PAGE ─────────────────────────────────────────── */
+.ai-profile-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(169,143,224,0.22);
+  padding: 48px;
+  position: relative;
+}
+
+.ai-profile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--gold-border-divider);
+}
+
+.ai-avatar {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(169,143,224,0.3);
+  background: rgba(169,143,224,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--violet-italic);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.ai-profile-identity { flex: 1; }
+
+.ai-profile-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--off-white);
+  margin-bottom: 4px;
+}
+
+.ai-profile-role {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--violet-italic);
+  font-family: var(--font-body);
+  margin-bottom: 10px;
+}
+
+.ai-profile-location {
+  font-size: 13px;
+  color: var(--subtext);
+  font-weight: 200;
+}
+
+.ai-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--violet-italic);
+  border: 1px solid rgba(169,143,224,0.25);
+  padding: 4px 10px;
+  font-family: var(--font-body);
+  background: rgba(169,143,224,0.06);
+  margin-top: 10px;
+  width: fit-content;
+}
+
+.ai-bio {
+  font-size: 15px;
+  color: var(--subtext);
+  line-height: 1.85;
+  font-weight: 200;
+  margin-bottom: 24px;
+}
+
+.ai-services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.ai-service-item {
+  border: 1px solid var(--gold-border-default);
+  padding: 16px;
+  background: rgba(244,240,232,0.01);
+}
+
+.ai-service-name {
+  font-size: 13px;
+  color: var(--off-white);
+  font-weight: 300;
+  margin-bottom: 3px;
+}
+
+.ai-service-detail {
+  font-size: 11px;
+  color: var(--subtext);
+  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+}
+
+.ai-schema-block {
+  background: rgba(14,10,26,0.8);
+  border: 1px solid rgba(169,143,224,0.15);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.ai-schema-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--violet-italic);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-schema-label::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: var(--violet-italic);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.ai-schema-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(169,143,224,0.8);
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.ai-schema-code .key { color: rgba(200,169,110,0.7); }
+.ai-schema-code .val { color: rgba(169,143,224,0.9); }
+.ai-schema-code .str { color: rgba(180,220,160,0.8); }
+
+.ai-stat-row {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.ai-stat {
+  flex: 1;
+  border: 1px solid rgba(169,143,224,0.15);
+  padding: 16px;
+  text-align: center;
+  background: rgba(169,143,224,0.04);
+}
+
+.ai-stat-number {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--violet-italic);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ai-stat-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  font-family: var(--font-body);
+}
+
+/* ── INTERNATIONAL PAGE ──────────────────────────────────────── */
+.intl-steps { display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
+
+.intl-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border: 1px solid var(--gold-border-default);
+  padding: 24px;
+  background: rgba(244,240,232,0.01);
+  transition: border-color 0.2s;
+}
+.intl-step:hover { border-color: var(--gold-border-hover); }
+
+.intl-step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold);
+  flex-shrink: 0;
+  padding-top: 2px;
+  letter-spacing: 0.1em;
+}
+
+.intl-step-content h4 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--off-white);
+  margin-bottom: 6px;
+}
+
+.intl-step-content p {
+  font-size: 14px;
+  color: var(--subtext);
+  line-height: 1.7;
+  font-weight: 200;
+}
+
+.intl-step-content .intl-note {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  border: 1px solid var(--gold-border-default);
+  padding: 3px 10px;
+}
+
+.intl-payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.intl-payment-item {
+  border: 1px solid var(--gold-border-default);
+  padding: 20px;
+  background: rgba(244,240,232,0.01);
+}
+
+.intl-payment-name {
+  font-size: 14px;
+  color: var(--off-white);
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.intl-payment-detail {
+  font-size: 12px;
+  color: var(--subtext);
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+.intl-payment-status {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  padding: 2px 8px;
+}
+
+.intl-payment-status.works { color: #7fcf8a; border: 1px solid rgba(127,207,138,0.25); background: rgba(127,207,138,0.05); }
+.intl-payment-status.partial { color: var(--gold); border: 1px solid var(--gold-border-default); background: rgba(200,169,110,0.04); }
+.intl-payment-status.blocked { color: #ff8080; border: 1px solid rgba(255,128,128,0.2); background: rgba(255,128,128,0.04); }
+
+/* ── PRICING COMPARISON ──────────────────────────────────────── */
+.pricing-vs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.pricing-col {
+  border: 1px solid var(--gold-border-default);
+  padding: 32px;
+  background: rgba(244,240,232,0.01);
+}
+
+.pricing-col.them { border-color: rgba(68,68,68,0.4); }
+.pricing-col.booked { border-color: rgba(200,169,110,0.25); background: rgba(200,169,110,0.02); }
+
+.pricing-col-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+}
+
+.pricing-col.them .pricing-col-label { color: var(--dim); }
+.pricing-col.booked .pricing-col-label { color: var(--gold); }
+
+.pricing-col-label .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pricing-col.them .dot { background: var(--dim); }
+.pricing-col.booked .dot { background: var(--gold); }
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gold-border-divider);
+  font-size: 14px;
+  font-weight: 200;
+  gap: 12px;
+}
+.pricing-item:last-child { border-bottom: none; }
+.pricing-item-label { color: var(--subtext); flex: 1; }
+.pricing-item-val { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+.pricing-col.them .pricing-item-val { color: #ff8080; }
+.pricing-col.booked .pricing-item-val { color: var(--gold); }
+
+.pricing-total {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gold-border-divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 300;
+}
+
+.pricing-total-label { font-size: 12px; color: var(--subtext); font-family: var(--font-body); }
+.pricing-total-val { font-family: var(--font-mono); font-size: 28px; }
+.pricing-col.them .pricing-total-val { color: #ff8080; }
+.pricing-col.booked .pricing-total-val { color: var(--gold); }
+
+.pricing-disclaimer {
+  font-size: 11px;
+  color: var(--subtext);
+  margin-top: 8px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.pricing-feature-list {
+  list-style: none;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gold-border-divider);
+}
+
+.pricing-feature-list li {
+  font-size: 13px;
+  color: var(--subtext);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gold-border-divider);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 200;
+}
+.pricing-feature-list li:last-child { border-bottom: none; }
+.pricing-feature-list li .fi { font-size: 12px; flex-shrink: 0; }
+.pricing-col.them .fi { color: #ff8080; }
+.pricing-col.booked .fi { color: #7fcf8a; }
+.pricing-col.booked .pricing-feature-list li { color: var(--off-white); }
+
+.pricing-fact-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.pricing-fact {
+  border: 1px solid var(--gold-border-default);
+  padding: 20px;
+  text-align: center;
+  background: rgba(244,240,232,0.01);
+}
+
+.pricing-fact-num {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 300;
+}
+
+.pricing-fact-label {
+  font-size: 11px;
+  color: var(--subtext);
+  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .ai-services-grid { grid-template-columns: 1fr; }
+  .ai-stat-row { flex-wrap: wrap; }
+  .ai-stat { flex: 1 1 45%; }
+  .intl-payment-grid { grid-template-columns: 1fr; }
+  .pricing-vs-grid { grid-template-columns: 1fr; }
+  .pricing-fact-strip { grid-template-columns: 1fr 1fr; }
+  .ai-profile-header { flex-direction: column; gap: 16px; }
+  .ai-profile-card { padding: 28px 20px; }
+}
+
+@media (max-width: 390px) {
+  .pricing-fact-strip { grid-template-columns: 1fr; }
+  .ai-stat { flex: 1 1 100%; }
+}
+
+@media (max-width: 768px) {
+  .bundle-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+</head>
+<body>
+<a href="#aiprofile" class="skip-link" style="position:absolute;left:-9999px;top:4px;z-index:999;padding:8px 16px;background:var(--gold);color:var(--void);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-family:var(--font-body);" onfocus="this.style.left='4px'" onblur="this.style.left='-9999px'">Skip to content</a>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="https://www.bookednow.co.za/scan/">Visibility Scan</a></li>
+    <li><a href="https://www.bookednow.co.za/infrastructure/">Infrastructure</a></li>
+    <li><a href="#pages">The Pages</a></li>
+    <li><a href="https://www.bookednow.co.za/#founder">About</a></li>
+  </ul>
+  <a href="https://wa.me/637549122?text=Hi%2C+I+want+to+know+which+Creative+Pages+I%27m+missing." class="nav-contact" target="_blank" rel="noopener">DM "PAGES"</a>
+  <a href="https://wa.me/637549122?text=Hi%2C+I+want+to+know+which+Creative+Pages+I%27m+missing." class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
+</nav>
+
+<main id="main" role="main">
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-tag">Booked. — Creative Pages</p>
+  <h1>Nine pages.<br>Every fashion<br><em>creative needs.</em></h1>
+  <p class="hero-sub">
+    <strong>Photographer. Makeup artist. Stylist. Model. Creative director.</strong> The infrastructure gap is the same regardless of discipline — the work exists, the pages that make it bookable don't.
+  </p>
+  <p class="hero-sub-note">Every demo below is live and functional. Pages 01–04 get you found and trusted. Pages 05–07 convert the enquiry into a confirmed booking. Pages 08–09 handle the gaps every other tool misses.</p>
+  <div class="hero-ctas">
+    <a href="https://wa.me/637549122?text=Hi%2C+I+want+to+know+which+Creative+Pages+I%27m+missing." class="btn-primary" target="_blank" rel="noopener">DM "PAGES"</a>
+    <a href="https://www.bookednow.co.za/scan/" class="btn-secondary">Run a free Visibility Scan</a>
+  </div>
+  <div class="page-index" style="margin-top:48px;">
+    <a class="page-pill" href="#aiprofile" style="border-color:rgba(169,143,224,0.35);color:#a98fe0;">01 AI Profile</a>
+    <a class="page-pill" href="#availability">02 Availability</a>
+    <a class="page-pill" href="#presskit">03 Press Kit</a>
+    <a class="page-pill" href="#testimonials">04 Testimonials</a>
+    <a class="page-pill" href="#ratecard">05 Rate Card</a>
+    <a class="page-pill" href="#intake">06 Client Intake</a>
+    <a class="page-pill" href="#deposit">07 Deposit</a>
+    <a class="page-pill" href="#international">08 International</a>
+    <a class="page-pill" href="#pricing">09 Why Booked.</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     07 — AI PROFILE PAGE
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="aiprofile">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">01</div>
+      <p class="page-label" style="color:var(--violet-italic);">AI Discovery Profile</p>
+      <h2 class="page-title">Get found by AI.<br>Before the competition does.</h2>
+      <p class="page-desc">ChatGPT, Perplexity, and Google AI Overviews now handle discovery queries. "Recommend a fashion photographer in Cape Town." Pages with proper JSON-LD schema appear in AI answers at <strong style="color:var(--off-white)">2.5× the rate</strong> of unstructured pages.<br><br>95% of Cape Town creatives have zero structured data. This page changes that — and the window is open right now.</p>
+      <div style="margin-top:20px;padding:16px;border:1px solid rgba(169,143,224,0.2);background:rgba(169,143,224,0.04);">
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--violet-italic);margin-bottom:8px;font-family:var(--font-body);">Research finding</div>
+        <p style="font-size:13px;color:var(--subtext);line-height:1.7;font-weight:200;">Sites with complete schema markup see up to <strong style="color:var(--off-white);">40% more AI Overview appearances.</strong> AI Overviews now appear in 13.1% of all Google searches — growing monthly.</p>
+      </div>
+      <div class="page-price-chip violet"><span class="price-label">From</span> R2,500</div>
+    </div>
+    <div class="ai-profile-card">
+      <div class="demo-badge" style="border-color:rgba(169,143,224,0.3);color:var(--violet-italic);">Live Demo</div>
+
+      <div class="ai-stat-row">
+        <div class="ai-stat">
+          <span class="ai-stat-number">2.5×</span>
+          <span class="ai-stat-label">AI answer inclusion with schema</span>
+        </div>
+        <div class="ai-stat">
+          <span class="ai-stat-number">40%</span>
+          <span class="ai-stat-label">More AI Overview appearances</span>
+        </div>
+        <div class="ai-stat">
+          <span class="ai-stat-number">95%</span>
+          <span class="ai-stat-label">Of creatives have zero schema</span>
+        </div>
+      </div>
+
+      <div class="ai-profile-header">
+        <div class="ai-avatar">DC</div>
+        <div class="ai-profile-identity">
+          <div class="ai-profile-name">Demo Creative</div>
+          <div class="ai-profile-role">Fashion Creative &middot; Cape Town, South Africa</div>
+          <div class="ai-profile-location">Editorial &middot; Campaign &middot; Lookbook &middot; International bookings welcome</div>
+          <div class="ai-verified-badge">&#10003; &nbsp; AI-Indexed Profile</div>
+        </div>
+      </div>
+
+      <p class="ai-bio">Cape Town-based fashion creative with a decade of editorial and commercial work across South Africa, Europe, and the UK. Known for a precise, considered approach — the kind that makes clients return for the next campaign rather than looking elsewhere. Available for international productions with full remote pre-production support via WhatsApp.</p>
+
+      <div class="ai-services-grid">
+        <div class="ai-service-item">
+          <div class="ai-service-name">Editorial</div>
+          <div class="ai-service-detail">Cape Town &middot; From R4,500 / half day</div>
+        </div>
+        <div class="ai-service-item">
+          <div class="ai-service-name">Commercial Campaign</div>
+          <div class="ai-service-detail">SA + International &middot; POA</div>
+        </div>
+        <div class="ai-service-item">
+          <div class="ai-service-name">Lookbook / E-Commerce</div>
+          <div class="ai-service-detail">Studio or location &middot; From R9,500/day</div>
+        </div>
+        <div class="ai-service-item">
+          <div class="ai-service-name">International Production</div>
+          <div class="ai-service-detail">Travel + per diem &middot; By enquiry</div>
+        </div>
+      </div>
+
+      <div class="ai-schema-block">
+        <div class="ai-schema-label">JSON-LD Schema — embedded invisibly in page &lt;head&gt;</div>
+        <div class="ai-schema-code"><span class="key">"@type"</span>: [<span class="str">"Person"</span>, <span class="str">"LocalBusiness"</span>],
+<span class="key">"name"</span>: <span class="str">"Demo Creative"</span>,
+<span class="key">"jobTitle"</span>: <span class="str">"Fashion Creative"</span>,
+<span class="key">"address"</span>: { <span class="key">"@type"</span>: <span class="str">"PostalAddress"</span>,
+  <span class="key">"addressLocality"</span>: <span class="str">"Cape Town"</span>,
+  <span class="key">"addressCountry"</span>: <span class="str">"ZA"</span> },
+<span class="key">"areaServed"</span>: [<span class="str">"South Africa"</span>, <span class="str">"United Kingdom"</span>, <span class="str">"Australia"</span>],
+<span class="key">"knowsAbout"</span>: [<span class="str">"fashion creative Cape Town"</span>, <span class="str">"editorial fashion"</span>,
+  <span class="str">"commercial campaign Cape Town"</span>],
+<span class="key">"sameAs"</span>: [<span class="str">"instagram.com/democreative"</span>,
+  <span class="str">"cherrydeck.com/democreative"</span>]</div>
+      </div>
+
+      <a href="https://wa.me/637549122?text=Hi%2C+I%27d+like+an+AI+Profile+Page+built+for+me." class="btn-wa-full" target="_blank" rel="noopener" style="background:var(--violet-italic);">
+        Get my AI Profile Page built
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     01 — AVAILABILITY
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="availability">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">02</div>
+      <p class="page-label">Availability Calendar</p>
+      <h2 class="page-title">Show open dates.<br>Stop losing bookings at the DM stage.</h2>
+      <p class="page-desc">A photographer on location, a stylist mid-campaign, a model between castings — all unreachable for booking because availability only exists in their head. A public page removes that friction instantly.<br><br>Try password: <strong style="color:var(--gold)">demo</strong></p>
+      <div class="page-price-chip"><span class="price-label">From</span> R1,500</div>
+    </div>
+    <div class="demo-card" id="cal-card">
+      <div class="demo-badge">Live Demo</div>
+      <div class="cal-header-demo">
+        <div class="cal-creative-name">Demo Creative</div>
+        <div class="cal-creative-role">Fashion Creative &middot; Cape Town &middot; By Enquiry</div>
+      </div>
+      <div class="cal-month-nav">
+        <button class="cal-nav-btn" onclick="calChangeMonth(-1)" aria-label="Previous month">&#8249;</button>
+        <div class="cal-month-label" id="cal-month-label"></div>
+        <button class="cal-nav-btn" onclick="calChangeMonth(1)" aria-label="Next month">&#8250;</button>
+      </div>
+      <div class="cal-weekdays">
+        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+      <div class="cal-legend">
+        <div class="cal-legend-item"><div class="cal-legend-dot avail"></div>Available</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot hold"></div>On hold</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot book"></div>Booked</div>
+      </div>
+      <p class="cal-enquire" style="margin-top:14px;">To enquire: <a href="https://wa.me/637549122?text=Hi%2C+I+checked+your+availability+calendar+and+wanted+to+enquire+about+a+date." target="_blank" rel="noopener">WhatsApp</a></p>
+      <div class="admin-gate" id="cal-gate">
+        <div class="gate-lbl">Admin — password required to manage dates</div>
+        <input class="gate-inp" type="password" id="cal-pw" placeholder="Password" onkeydown="if(event.key==='Enter')calLogin()">
+        <button class="gate-btn" onclick="calLogin()">Unlock</button>
+        <div class="gate-err" id="cal-err"></div>
+      </div>
+      <div class="admin-panel" id="cal-admin">
+        <span class="admin-panel-label">Mark as:</span>
+        <button class="mode-btn active" id="cal-btn-available" onclick="calSetMode('available')">Available</button>
+        <button class="mode-btn" id="cal-btn-pending" onclick="calSetMode('pending')">On hold</button>
+        <button class="mode-btn" id="cal-btn-booked" onclick="calSetMode('booked')">Booked</button>
+        <button class="mode-btn" id="cal-btn-erase" onclick="calSetMode('erase')">Clear</button>
+        <button class="mode-btn danger" onclick="calLock()" style="margin-left:auto;">Lock</button>
+        <div class="admin-hint" id="cal-hint">Tap any date above to mark it — changes save instantly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     04 — PRESS KIT
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="presskit">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">03</div>
+      <p class="page-label">Press Kit Page</p>
+      <h2 class="page-title">One URL.<br>Everything a brand needs.</h2>
+      <p class="page-desc">A photographer gets asked by brands. A stylist gets asked by magazines. A model gets asked by agencies. If assembling the answer takes 10 minutes, the opportunity is already cooling. One link, ready in 90 seconds.</p>
+      <div class="page-price-chip"><span class="price-label">From</span> R2,000</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+      <div class="press-header">
+        <div class="press-avatar">DC</div>
+        <div>
+          <div class="press-name">Demo Creative</div>
+          <div class="press-tagline">Fashion Creative &middot; Cape Town &middot; 10+ years experience</div>
+        </div>
+      </div>
+      <div class="press-credits">
+        <div class="credit-block">
+          <div class="credit-type">Editorial</div>
+          <ul class="credit-list">
+            <li>i-D Magazine</li>
+            <li>Another Magazine</li>
+            <li>Document Journal</li>
+            <li>Nataal &middot; Africa</li>
+          </ul>
+        </div>
+        <div class="credit-block">
+          <div class="credit-type">Commercial</div>
+          <ul class="credit-list">
+            <li>Zara</li>
+            <li>& Other Stories</li>
+            <li>Mr Porter</li>
+            <li>ASOS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="press-rates">
+        <div class="press-rates-title">Day rates</div>
+        <div class="rate-row"><span class="rate-row-label">Editorial half day</span><span class="rate-row-val">R4,500</span></div>
+        <div class="rate-row"><span class="rate-row-label">Commercial full day</span><span class="rate-row-val">R9,500</span></div>
+        <div class="rate-row"><span class="rate-row-label">Campaign / TVC</span><span class="rate-row-val">POA</span></div>
+        <div class="rate-row"><span class="rate-row-label">International</span><span class="rate-row-val">POA + travel</span></div>
+        <div class="rate-row"><span class="rate-row-label">Usage rights</span><span class="rate-row-val">Negotiated per brief</span></div>
+      </div>
+      <a class="press-download" href="https://wa.me/637549122?text=Hi%2C+I%27d+like+to+request+the+full+press+kit." target="_blank" rel="noopener">↓ &nbsp; Request full press kit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     05 — TESTIMONIALS
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="testimonials">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">04</div>
+      <p class="page-label">Testimonial Wall</p>
+      <h2 class="page-title">Proof in one place.<br>No algorithm required.</h2>
+      <p class="page-desc">A photographer gets reviewed by art directors. A model gets praised by agencies in DMs. A stylist gets credited in BTS captions. None of it is findable. A testimonial page consolidates the proof and makes it shareable as one link.</p>
+      <div class="page-price-chip"><span class="price-label">From</span> R1,200</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+      <div class="testimonial-grid">
+        <div class="t-card featured">
+          <div class="t-stars">★★★★★</div>
+          <div class="t-mark">"</div>
+          <div class="t-text">Found via Google from our London office. Brief, rate, confirmed date — within 48 hours, no agency involved. That kind of direct access to talent at this level is rare. We've used them on three campaigns since.</div>
+          <div class="t-author">Creative Director &middot; London-based brand &middot; Campaign client 2025</div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <div class="t-text">I work with creatives across four continents. The ones at this level who have their infrastructure sorted — availability visible, rate clear, deposit process clean — are the ones I call without hesitating.</div>
+          <div class="t-author">Fashion Editor &middot; Johannesburg</div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <div class="t-text">Brief, rate, usage rights — all confirmed before the call ended. No chasing, no ambiguity. That's how professionals operate and why we'll use them again.</div>
+          <div class="t-author">Art Director &middot; Cape Town / Amsterdam production</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     02 — RATE CARD
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="ratecard">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">05</div>
+      <p class="page-label">Rate Card Page</p>
+      <h2 class="page-title">Quote consistently.<br>Position at the right level.</h2>
+      <p class="page-desc">Photographers quote per shoot. Stylists quote per day. Models quote per usage. All answer the same question differently every time it arrives. A password-protected rate page makes the answer consistent — and positions the creative before the conversation starts.<br><br>Try password: <strong style="color:var(--gold)">demo</strong></p>
+      <div class="page-price-chip"><span class="price-label">From</span> R1,500</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+      <div class="rate-locked" id="rate-locked">
+        <div class="lock-glyph">⊘</div>
+        <p>Rate card is password protected. Shared only with serious enquiries.</p>
+        <div class="pw-row">
+          <input class="gate-inp" type="password" id="rate-pw" placeholder="Password" onkeydown="if(event.key==='Enter')rateLogin()">
+          <button class="gate-btn" onclick="rateLogin()">Unlock</button>
+        </div>
+        <div class="gate-err" id="rate-err" style="margin-top:8px;text-align:center;"></div>
+      </div>
+      <div class="rate-content" id="rate-content">
+        <div class="rate-package">
+          <div class="pkg-name">Half Day</div>
+          <div class="pkg-price">R4,500 <span>/ up to 4 hrs</span></div>
+          <ul class="pkg-includes">
+            <li>Single shoot or fitting</li>
+            <li>Cape Town locations</li>
+            <li>Usage: personal portfolio only</li>
+          </ul>
+        </div>
+        <div class="rate-package featured">
+          <div class="pkg-badge">Most booked</div>
+          <div class="pkg-name">Full Day</div>
+          <div class="pkg-price">R9,500 <span>/ full day</span></div>
+          <ul class="pkg-includes">
+            <li>Full production day — up to 10 hours</li>
+            <li>Commercial usage included (SA market)</li>
+            <li>Western Cape locations</li>
+            <li>Kit / equipment included</li>
+          </ul>
+        </div>
+        <div class="rate-package">
+          <div class="pkg-name">Campaign / International</div>
+          <div class="pkg-price">POA <span>/ by enquiry</span></div>
+          <ul class="pkg-includes">
+            <li>Campaign, TVC, or international production</li>
+            <li>Travel, accommodation, per diem quoted separately</li>
+            <li>Usage rights negotiated per brief</li>
+          </ul>
+        </div>
+        <div class="rate-footer">50% deposit confirms the date. Balance due before shoot day. Dates held 48 hours pending deposit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     03 — CLIENT INTAKE
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="intake">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">06</div>
+      <p class="page-label">Client Intake Form</p>
+      <h2 class="page-title">Start every job<br>with the full brief.</h2>
+      <p class="page-desc">Stylists chase mood boards over DM. Photographers get vague references. Makeup artists arrive without skin notes. A structured intake form collects everything before the first call — regardless of discipline.</p>
+      <div class="page-price-chip"><span class="price-label">From</span> R1,800</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+      <div class="intake-form" id="intake-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full name</label>
+            <input class="form-input" type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Shoot / project date</label>
+            <input class="form-input" type="date">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Location</label>
+            <input class="form-input" type="text" placeholder="Studio, on-location, city">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project type</label>
+            <select class="form-select">
+              <option>Editorial</option>
+              <option>Commercial / TVC</option>
+              <option>Campaign</option>
+              <option>Personal portfolio</option>
+              <option>Event / live</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Creative direction</label>
+          <select class="form-select">
+            <option>Minimal / clean</option>
+            <option>Editorial / high fashion</option>
+            <option>Commercial / accessible</option>
+            <option>Avant-garde / conceptual</option>
+            <option>Lifestyle / natural</option>
+            <option>To be discussed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Team involved</label>
+          <input class="form-input" type="text" placeholder="e.g. photographer, stylist, HMUA, model — who's confirmed?">
+        </div>
+        <div class="form-group">
+          <label class="form-label">References / mood board</label>
+          <textarea class="form-textarea" placeholder="Describe the vision, link Pinterest or Instagram references, or paste a brief..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Usage rights required</label>
+          <textarea class="form-textarea" placeholder="e.g. personal portfolio only / SA commercial / global digital / TVC broadcast..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="submitIntake()" style="align-self:flex-start;margin-top:8px;" aria-label="Submit project brief">Submit brief</button>
+      </div>
+      <div class="form-success" id="intake-success">
+        <h3>Brief received.</h3>
+        <p>You'll hear back within 24 hours. <a href="https://wa.me/637549122?text=Hi%2C+I%27ve+just+submitted+my+project+brief+and+wanted+to+follow+up." target="_blank" rel="noopener">WhatsApp directly</a> if you need a faster response.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     06 — DEPOSIT
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="deposit">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">07</div>
+      <p class="page-label">Deposit Page</p>
+      <h2 class="page-title">Confirm the date.<br>End the ghost‑after‑quote.</h2>
+      <p class="page-desc">A photographer holds a shoot date. A stylist turns down another client. A model blocks the week. The enquiry goes quiet. A deposit page with one action — pay to confirm — converts intent into a booking before the ghost happens.</p>
+      <div class="page-price-chip"><span class="price-label">From</span> R2,000</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+      <div id="deposit-form">
+        <div class="deposit-summary">
+          <div class="deposit-summary-title">Booking summary</div>
+          <div class="deposit-row"><span class="deposit-row-label">Service</span><span class="deposit-row-val">Full Day — Commercial</span></div>
+          <div class="deposit-row"><span class="deposit-row-label">Date</span><span class="deposit-row-val">14 March 2026</span></div>
+          <div class="deposit-row"><span class="deposit-row-label">Location</span><span class="deposit-row-val">Cape Town Studio</span></div>
+          <div class="deposit-row"><span class="deposit-row-label">Full fee</span><span class="deposit-row-val">R9,500</span></div>
+          <div class="deposit-total">
+            <span class="deposit-total-label">Deposit due today (50%)</span>
+            <span class="deposit-total-amount">R4,750</span>
+          </div>
+        </div>
+        <button class="btn-wa-full" onclick="submitDeposit()">
+          Pay deposit — R4,750
+          <span class="arrow">→</span>
+        </button>
+        <p class="deposit-note">Demo only — no payment will be processed.<br>Live version connects to Stripe or PayFast.</p>
+      </div>
+      <div class="deposit-success" id="deposit-success">
+        <h3>Date confirmed.</h3>
+        <p>Receipt sent. Balance of R4,750 due 48 hours before shoot day. <a href="https://wa.me/637549122?text=Hi%2C+I%27ve+paid+my+deposit+and+want+to+confirm+my+booking." target="_blank" rel="noopener">WhatsApp to confirm.</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     08 — INTERNATIONAL CLIENT GUIDE
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="international">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">08</div>
+      <p class="page-label">International Booking Guide</p>
+      <h2 class="page-title">Remove every reason a UK or AU client hesitates.</h2>
+      <p class="page-desc">International clients find Cape Town creatives via Cherrydeck, agency rosters, and Instagram — then stall. No visible availability. Unclear rates. Unfamiliar payment options. WhatsApp feels informal without framing.<br><br>A single "How to Book Me from Overseas" page removes all four friction points before they can speak.</p>
+      <div style="margin-top:20px;padding:16px;border:1px solid var(--gold-border-default);background:rgba(200,169,110,0.02);">
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-family:var(--font-body);">Why Cape Town</div>
+        <p style="font-size:13px;color:var(--subtext);line-height:1.7;font-weight:200;">Currency advantage. GMT+2 overlaps with UK working hours. English-speaking, internationally credited talent. Full production infrastructure. SA rates stretch further when paid in GBP or AUD.</p>
+      </div>
+      <div class="page-price-chip"><span class="price-label">From</span> R1,500</div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+
+      <div style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-family:var(--font-body);">How to book me from overseas</div>
+
+      <div class="intl-steps">
+        <div class="intl-step">
+          <div class="intl-step-num">01</div>
+          <div class="intl-step-content">
+            <h4>Check availability</h4>
+            <p>My availability calendar is public and updated weekly. Green dates are open. Gold dates are on hold pending deposit. If your dates aren't showing, message me — I may be able to move things.</p>
+            <span class="intl-note">↑ Links directly to the Availability Page</span>
+          </div>
+        </div>
+        <div class="intl-step">
+          <div class="intl-step-num">02</div>
+          <div class="intl-step-content">
+            <h4>Send a brief via WhatsApp</h4>
+            <p>WhatsApp is my primary booking channel — it's how the creative industry in South Africa operates professionally. Message with your shoot dates, brief, and usage requirements. I respond within 24 hours.</p>
+            <span class="intl-note">+27 63 754 9122 &middot; International welcome</span>
+          </div>
+        </div>
+        <div class="intl-step">
+          <div class="intl-step-num">03</div>
+          <div class="intl-step-content">
+            <h4>Receive a quote in your currency</h4>
+            <p>Rates are quoted in ZAR. I invoice via Grey.co or PayPal — both support GBP, AUD, and EUR payments directly to a South African account. No Stripe required. No currency conversion surprises.</p>
+            <span class="intl-note">Grey.co &middot; PayPal &middot; EFT accepted</span>
+          </div>
+        </div>
+        <div class="intl-step">
+          <div class="intl-step-num">04</div>
+          <div class="intl-step-content">
+            <h4>Confirm with a 50% deposit</h4>
+            <p>A 50% deposit via the link I send confirms your date. Balance is due 48 hours before shoot day. The deposit is your contract — it locks the date and triggers my production prep.</p>
+            <span class="intl-note">↑ Links directly to the Deposit Page</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-family:var(--font-body);">Payment options for international clients</div>
+
+      <div class="intl-payment-grid">
+        <div class="intl-payment-item">
+          <div class="intl-payment-name">Grey.co</div>
+          <div class="intl-payment-detail">Multi-currency invoicing. GBP, AUD, EUR, USD. Funds land in SA bank account.</div>
+          <span class="intl-payment-status works">Works ✓</span>
+        </div>
+        <div class="intl-payment-item">
+          <div class="intl-payment-name">PayPal</div>
+          <div class="intl-payment-detail">Accepted via FNB. Some withdrawal fees apply. Good for smaller amounts.</div>
+          <span class="intl-payment-status works">Works ✓</span>
+        </div>
+        <div class="intl-payment-item">
+          <div class="intl-payment-name">Bank EFT (Swift)</div>
+          <div class="intl-payment-detail">Direct international transfer. Slower (2–5 days) but zero platform fees.</div>
+          <span class="intl-payment-status partial">Available</span>
+        </div>
+        <div class="intl-payment-item">
+          <div class="intl-payment-name">Stripe</div>
+          <div class="intl-payment-detail">Does not operate in South Africa. Cannot receive Stripe payments.</div>
+          <span class="intl-payment-status blocked">Unavailable ✗</span>
+        </div>
+      </div>
+
+      <a href="https://wa.me/637549122?text=Hi%2C+I%27m+an+international+client+and+I%27d+like+to+book+you+for+a+shoot." class="btn-wa-full" target="_blank" rel="noopener">
+        Start a booking conversation
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     09 — WHY BOOKED. / PRICING COMPARISON
+══════════════════════════════════════════════════════════════ -->
+<section class="page-section" id="pricing">
+  <div class="page-section-inner">
+    <div class="page-section-left">
+      <div class="page-num">09</div>
+      <p class="page-label">Why Booked.</p>
+      <h2 class="page-title">Own it once.<br>Never pay again.</h2>
+      <p class="page-desc">HoneyBook raised prices 89% in February 2025. Linktree raised prices 67% in November 2025. Dubsado costs R990/month and requires Stripe — which doesn't work in South Africa.<br><br>Every tool in this space is rented. Booked. pages are owned outright. The difference compounds every month.</p>
+      <div style="margin-top:20px;padding:16px;border:1px solid rgba(255,128,128,0.2);background:rgba(255,128,128,0.04);">
+        <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#ff8080;margin-bottom:8px;font-family:var(--font-body);">The SA market gap</div>
+        <p style="font-size:13px;color:var(--subtext);line-height:1.7;font-weight:200;">HoneyBook requires a US/CA bank account to receive payments. Stripe doesn't operate in SA. Dubsado is $35/month — R630 at current rates. No major CRM platform targets South African fashion creatives. Booked. has no direct competitor in this vertical.</p>
+      </div>
+    </div>
+    <div class="demo-card">
+      <div class="demo-badge">Live Demo</div>
+
+      <div class="pricing-fact-strip">
+        <div class="pricing-fact">
+          <span class="pricing-fact-num">89%</span>
+          <span class="pricing-fact-label">HoneyBook price increase<br>Feb 2025</span>
+        </div>
+        <div class="pricing-fact">
+          <span class="pricing-fact-num">67%</span>
+          <span class="pricing-fact-label">Linktree price increase<br>Nov 2025</span>
+        </div>
+        <div class="pricing-fact">
+          <span class="pricing-fact-num">R0</span>
+          <span class="pricing-fact-label">Booked. monthly subscription<br>cost</span>
+        </div>
+      </div>
+
+      <div style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-family:var(--font-body);">Typical monthly stack vs Booked.</div>
+
+      <div class="pricing-vs-grid">
+        <div class="pricing-col them">
+          <div class="pricing-col-label"><span class="dot"></span>Subscription stack</div>
+          <div class="pricing-item"><span class="pricing-item-label">Portfolio site (Squarespace)</span><span class="pricing-item-val">R288/mo</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Booking / CRM (HoneyBook)</span><span class="pricing-item-val">R648/mo</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Bio link (Linktree Pro)</span><span class="pricing-item-val">R270/mo</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Intake forms (Jotform)</span><span class="pricing-item-val">R189/mo</span></div>
+          <div class="pricing-total">
+            <span class="pricing-total-label">Monthly</span>
+            <span class="pricing-total-val">R1,395</span>
+          </div>
+          <p class="pricing-disclaimer">= R16,740/year. In USD, repriceable at any time. HoneyBook still requires a US bank account to pay out.</p>
+          <ul class="pricing-feature-list">
+            <li><span class="fi">✗</span>Not built for SA payment flows</li>
+            <li><span class="fi">✗</span>No Stripe in South Africa</li>
+            <li><span class="fi">✗</span>Not fashion-specific</li>
+            <li><span class="fi">✗</span>Subscription can be repriced</li>
+            <li><span class="fi">✗</span>You don't own the infrastructure</li>
+          </ul>
+        </div>
+        <div class="pricing-col booked">
+          <div class="pricing-col-label"><span class="dot"></span>Booked. Creative Pages</div>
+          <div class="pricing-item"><span class="pricing-item-label">Availability Calendar</span><span class="pricing-item-val">Once</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Rate Card Page</span><span class="pricing-item-val">Once</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Client Intake Form</span><span class="pricing-item-val">Once</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Press Kit + Testimonials</span><span class="pricing-item-val">Once</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Deposit Page + AI Profile</span><span class="pricing-item-val">Once</span></div>
+          <div class="pricing-total">
+            <span class="pricing-total-label">Monthly</span>
+            <span class="pricing-total-val">R0</span>
+          </div>
+          <p class="pricing-disclaimer">One build cost. No subscription. No repricing. Yours permanently — hosted free on GitHub Pages or your own domain.</p>
+          <ul class="pricing-feature-list">
+            <li><span class="fi">✓</span>Built for SA payment reality</span></li>
+            <li><span class="fi">✓</span>PayFast, EFT, Grey.co, PayPal</li>
+            <li><span class="fi">✓</span>Fashion-specific, not generic</li>
+            <li><span class="fi">✓</span>Price never changes</li>
+            <li><span class="fi">✓</span>You own the HTML file</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="https://wa.me/637549122?text=Hi%2C+I+want+to+know+which+Creative+Pages+I%27m+missing." class="btn-wa-full" target="_blank" rel="noopener">
+        DM "PAGES" — find out what you need
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- BUNDLE PRICING -->
+<section class="contact-section" style="padding-bottom:0;">
+  <div style="border-top:1px solid var(--gold-border-divider);padding-top:72px;">
+    <p class="section-kicker" style="max-width:1200px;margin:0 auto 0;padding:0 48px;">Pricing</p>
+  </div>
+</section>
+<section style="position:relative;z-index:1;padding:24px 48px 96px;max-width:1200px;margin:0 auto;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:2px;align-items:stretch;">
+
+    <!-- SINGLE PAGE -->
+    <div style="border:1px solid var(--gold-border-default);padding:40px 32px;background:rgba(244,240,232,0.01);display:flex;flex-direction:column;">
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Single Page</div>
+      <div style="font-family:var(--font-display);font-size:52px;font-weight:300;color:var(--off-white);line-height:1;letter-spacing:-0.02em;margin-bottom:6px;">R1,200</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--subtext);letter-spacing:0.1em;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--gold-border-divider);">— R2,500 depending on complexity</div>
+      <div style="font-size:13px;color:var(--subtext);line-height:1.75;font-weight:200;margin-bottom:24px;flex:1;">One page, built and deployed. Yours permanently. No subscription, no monthly fees.</div>
+      <ul style="list-style:none;font-size:13px;color:var(--subtext);font-weight:200;">
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Choose any single page</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Branded to your identity</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Hosted at your URL</li>
+      </ul>
+    </div>
+
+    <!-- STARTER SUITE -->
+    <div style="border:1px solid rgba(200,169,110,0.3);padding:40px 32px;background:rgba(200,169,110,0.025);display:flex;flex-direction:column;position:relative;">
+      <div style="position:absolute;top:-1px;right:20px;background:var(--gold);color:var(--void);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;padding:4px 10px;font-family:var(--font-body);font-weight:400;">Most popular</div>
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Starter Suite</div>
+      <div style="font-family:var(--font-display);font-size:52px;font-weight:300;color:var(--off-white);line-height:1;letter-spacing:-0.02em;margin-bottom:6px;">R6,500</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--subtext);letter-spacing:0.1em;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--gold-border-divider);">4 pages &middot; deployed as one system</div>
+      <div style="font-size:13px;color:var(--subtext);line-height:1.75;font-weight:200;margin-bottom:24px;flex:1;">The four pages that close the most bookings — built together, deployed together.</div>
+      <ul style="list-style:none;font-size:13px;color:var(--subtext);font-weight:200;">
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>AI Discovery Profile</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Availability Calendar</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Client Intake Form</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Deposit Page</li>
+      </ul>
+    </div>
+
+    <!-- FULL SUITE -->
+    <div style="border:1px solid var(--gold-border-default);padding:40px 32px;background:rgba(244,240,232,0.01);display:flex;flex-direction:column;">
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Full Suite</div>
+      <div style="font-family:var(--font-display);font-size:52px;font-weight:300;color:var(--off-white);line-height:1;letter-spacing:-0.02em;margin-bottom:6px;">R12,000</div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--subtext);letter-spacing:0.1em;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--gold-border-divider);">All 9 pages &middot; complete infrastructure</div>
+      <div style="font-size:13px;color:var(--subtext);line-height:1.75;font-weight:200;margin-bottom:24px;flex:1;">Every page. Complete booking infrastructure. Built once, owned permanently.</div>
+      <ul style="list-style:none;font-size:13px;color:var(--subtext);font-weight:200;">
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>All 9 Creative Pages</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>AI Profile with JSON-LD schema</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>International Booking Guide</li>
+        <li style="padding-left:16px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--gold);">—</span>Deployed + URL configured</li>
+      </ul>
+    </div>
+
+  </div>
+  <div style="border:1px solid var(--gold-border-divider);padding:16px 24px;background:rgba(244,240,232,0.01);font-size:12px;color:var(--subtext);font-weight:200;line-height:1.7;">
+    All prices in ZAR &middot; No subscription &middot; No monthly fees &middot; Custom domain setup included &middot; WhatsApp-managed updates &middot; Built to your brand system
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2 class="contact-heading">Want these<br>built for you?<br><em>DM "PAGES".</em></h2>
+    <p class="contact-sub">Tell me what you do. I'll tell you which of the nine you're missing — and what it's costing you.</p>
+    <div class="contact-actions">
+      <a href="https://wa.me/637549122?text=Hi%2C+I+want+to+know+which+Creative+Pages+I%27m+missing." class="btn-wa-full" target="_blank" rel="noopener">
+        DM "PAGES" on WhatsApp
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://www.bookednow.co.za/scan/" class="btn-scan-outline">
+        Or run a free Visibility Scan first
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <a href="https://www.bookednow.co.za/" class="footer-logo">Booked.</a>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+    <a href="https://www.bookednow.co.za/" class="footer-logo" style="font-size:12px;letter-spacing:0.2em;font-family:var(--font-body);font-weight:300;color:var(--subtext);text-decoration:none;">bookednow.co.za</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="https://www.bookednow.co.za/privacy-policy">Privacy Policy</a>
+      <a href="https://www.bookednow.co.za/terms-of-service">Terms of Service</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════
+   CALENDAR
+══════════════════════════════════════ */
+const CAL_PASS = 'demo';
+const CAL_KEY  = 'booked_demo_cal_v1';
+let calYear    = new Date().getFullYear();
+let calMonth   = new Date().getMonth();
+let calAdmin   = false;
+let calMode    = 'available';
+const MONTHS   = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function calLoadDates() {
+  try { return JSON.parse(localStorage.getItem(CAL_KEY) || '{}'); } catch(e) { return {}; }
+}
+function calSaveDates(d) { try { localStorage.setItem(CAL_KEY, JSON.stringify(d)); } catch(e) {} }
+function calKey(y,m,d)   { return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'); }
+
+function calRender() {
+  const dates = calLoadDates();
+  const grid  = document.getElementById('cal-grid');
+  const label = document.getElementById('cal-month-label');
+  const card  = document.getElementById('cal-card');
+  const today = new Date();
+
+  label.textContent = MONTHS[calMonth] + ' ' + calYear;
+  calAdmin ? card.classList.add('admin-active') : card.classList.remove('admin-active');
+  grid.innerHTML = '';
+
+  const firstDay    = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const e = document.createElement('div');
+    e.className = 'cal-day empty';
+    grid.appendChild(e);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const key      = calKey(calYear, calMonth, d);
+    const cellDate = new Date(calYear, calMonth, d);
+    const isPast   = cellDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const isToday  = cellDate.toDateString() === today.toDateString();
+    const status   = dates[key];
+
+    const cell = document.createElement('div');
+    let cls = 'cal-day';
+    if (isPast)                      cls += ' past';
+    else if (status === 'available') cls += ' available';
+    else if (status === 'booked')    cls += ' booked';
+    else if (status === 'pending')   cls += ' pending';
+    if (isToday) cls += ' today-mark';
+    cell.className   = cls;
+    cell.textContent = d;
+    if (calAdmin && !isPast) cell.addEventListener('click', () => calToggle(key));
+    grid.appendChild(cell);
+  }
+}
+
+function calToggle(key) {
+  const dates = calLoadDates();
+  if (calMode === 'erase') delete dates[key];
+  else dates[key] = calMode;
+  calSaveDates(dates);
+  calRender();
+}
+
+function calChangeMonth(dir) {
+  calMonth += dir;
+  if (calMonth < 0)  { calMonth = 11; calYear--; }
+  if (calMonth > 11) { calMonth = 0;  calYear++; }
+  calRender();
+}
+
+function calLogin() {
+  if (document.getElementById('cal-pw').value === CAL_PASS) {
+    calAdmin = true;
+    document.getElementById('cal-gate').style.display  = 'none';
+    document.getElementById('cal-admin').style.display = 'flex';
+    document.getElementById('cal-hint').style.display  = 'block';
+    calRender();
+  } else {
+    const e = document.getElementById('cal-err');
+    e.textContent = 'Incorrect password';
+    setTimeout(() => { e.textContent = ''; }, 2000);
+  }
+}
+
+function calLock() {
+  calAdmin = false;
+  document.getElementById('cal-admin').style.display = 'none';
+  document.getElementById('cal-hint').style.display  = 'none';
+  document.getElementById('cal-gate').style.display  = 'flex';
+  document.getElementById('cal-pw').value = '';
+  calRender();
+}
+
+function calSetMode(mode) {
+  calMode = mode;
+  ['available','pending','booked','erase'].forEach(m => {
+    document.getElementById('cal-btn-'+m).classList.toggle('active', m === mode);
+  });
+}
+
+calRender();
+
+/* ══════════════════════════════════════
+   RATE CARD
+══════════════════════════════════════ */
+function rateLogin() {
+  if (document.getElementById('rate-pw').value === 'demo') {
+    document.getElementById('rate-locked').style.display  = 'none';
+    document.getElementById('rate-content').style.display = 'block';
+  } else {
+    const e = document.getElementById('rate-err');
+    e.textContent = 'Incorrect password';
+    setTimeout(() => { e.textContent = ''; }, 2000);
+  }
+}
+
+/* ══════════════════════════════════════
+   INTAKE
+══════════════════════════════════════ */
+function submitIntake() {
+  document.getElementById('intake-form').style.display    = 'none';
+  document.getElementById('intake-success').style.display = 'block';
+}
+
+/* ══════════════════════════════════════
+   DEPOSIT
+══════════════════════════════════════ */
+function submitDeposit() {
+  document.getElementById('deposit-form').style.display    = 'none';
+  document.getElementById('deposit-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
