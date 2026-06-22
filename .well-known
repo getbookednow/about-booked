@@ -11,7 +11,7 @@
     "type": "openapi",
     "url": "https://bookednow.co.za/services.json"
   },
-  "logo_url": "https://bookednow.co.za/assets/booked-logo.png",
+  "logo_url": "https://bookednow.co.za/favicon.ico",
   "contact_email": "luca@bookednow.co.za",
   "legal_info_url": "https://bookednow.co.za/terms-of-service.html"
 }
