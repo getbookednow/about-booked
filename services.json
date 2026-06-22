@@ -1,0 +1,139 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "BOOKED.",
+  "alternateName": "BOOKED. AI Readability Infrastructure",
+  "url": "https://bookednow.co.za",
+  "description": "AI readability infrastructure for fashion creatives. BOOKED. closes the legibility gap between career quality and digital discoverability — so casting directors, agents, and AI systems find the right people.",
+  "slogan": "Your work is good. The infrastructure around it isn't.",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "name": "Luca Bold",
+    "jobTitle": "International Fashion Model & Founder",
+    "sameAs": [
+      "https://lucabold.com"
+    ]
+  },
+  "areaServed": ["ZA", "GB", "IT", "JP", "AE", "CN", "Global"],
+  "currenciesAccepted": "ZAR, USD, EUR",
+  "paymentAccepted": "EFT, Wise, Paddle",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales & Enquiries",
+    "url": "https://wa.me/27637549122",
+    "telephone": "+27637549122",
+    "contactOption": "WhatsApp",
+    "availableLanguage": "English"
+  },
+  "entryPoint": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://bookednow.co.za/scan/",
+    "description": "Free AI readability scan — entry point for all BOOKED. services",
+    "actionAccessibilityRequirement": {
+      "requiresSubscription": false
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "BOOKED. Service Tiers",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "identifier": "booked-scan-free",
+        "name": "Free AI Readability Scan",
+        "description": "Instant automated scan of a fashion creative's digital presence. Scores discoverability, AI visibility, and infrastructure gaps. No cost. Entry point to the BOOKED. diagnostic system.",
+        "price": "0",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za/scan/",
+        "eligibleCustomerType": "https://schema.org/Business",
+        "category": "Diagnostic",
+        "availability": "https://schema.org/InStock",
+        "offeredBy": "BOOKED."
+      },
+      {
+        "@type": "Offer",
+        "identifier": "booked-tier-0",
+        "name": "Tier 0 — AI Readability Audit",
+        "description": "Full manual audit of a fashion creative's digital presence against BOOKED.'s Industry Readability Framework (IRF). Scores across five dimensions: AI discoverability, platform consistency, content legibility, infrastructure quality, and narrative clarity. Delivered as a branded PDF report with scored findings and priority action items.",
+        "price": "2500",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za",
+        "category": "Audit",
+        "availability": "https://schema.org/InStock",
+        "deliveryLeadTime": {
+          "@type": "QuantitativeValue",
+          "value": 5,
+          "unitCode": "DAY"
+        },
+        "offeredBy": "BOOKED."
+      },
+      {
+        "@type": "Offer",
+        "identifier": "booked-tier-1",
+        "name": "Tier 1 — Signal",
+        "description": "Audit plus implementation roadmap. Includes the full IRF audit report, a prioritised 30-day action plan, and one live strategy session. Designed for fashion creatives who need diagnosis and a clear path forward without full build support.",
+        "price": "5000",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za",
+        "category": "Audit + Strategy",
+        "availability": "https://schema.org/InStock",
+        "offeredBy": "BOOKED."
+      },
+      {
+        "@type": "Offer",
+        "identifier": "booked-tier-2",
+        "name": "Tier 2 — Structure",
+        "description": "Audit plus portfolio website build. BOOKED. designs and deploys a production-ready portfolio site calibrated to casting director behaviour and AI readability standards. Includes semantic HTML, schema markup, GEO infrastructure, and custom domain deployment.",
+        "price": "9000",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za",
+        "category": "Audit + Build",
+        "availability": "https://schema.org/InStock",
+        "offeredBy": "BOOKED."
+      },
+      {
+        "@type": "Offer",
+        "identifier": "booked-tier-3",
+        "name": "Tier 3 — Full Build",
+        "description": "Complete AI readability infrastructure build. Includes audit, portfolio site, GEO deployment stack (llms.txt, schema, sitemap, robots.txt), ongoing maintenance retainer, and 90-day check-in. The full BOOKED. system — for fashion creatives who want to be findable by humans and AI systems simultaneously.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "15000",
+          "priceCurrency": "ZAR",
+          "description": "Pricing from R15,000 — final quote based on scope"
+        },
+        "url": "https://bookednow.co.za",
+        "category": "Full Infrastructure",
+        "availability": "https://schema.org/InStock",
+        "offeredBy": "BOOKED."
+      },
+      {
+        "@type": "Offer",
+        "identifier": "booked-b2b-roster",
+        "name": "Agency Roster Intelligence",
+        "description": "B2B service for boutique modelling and creative agencies. BOOKED. audits an agency's full roster against the IRF and produces a Roster Intelligence Report — identifying which talent has critical discoverability gaps and what infrastructure they need. Priced per roster size.",
+        "url": "https://bookednow.co.za",
+        "category": "B2B / Agency",
+        "eligibleCustomerType": "Agency",
+        "availability": "https://schema.org/InStock",
+        "offeredBy": "BOOKED."
+      }
+    ]
+  },
+  "keywords": [
+    "AI readability",
+    "fashion creative",
+    "model portfolio",
+    "digital discoverability",
+    "GEO",
+    "generative engine optimisation",
+    "casting director",
+    "AI infrastructure",
+    "fashion model website",
+    "industry readability framework",
+    "legibility gap",
+    "South Africa",
+    "fashion tech"
+  ]
+}
