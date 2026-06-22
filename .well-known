@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "BOOKED.",
+  "name_for_model": "booked_ai_readability",
+  "description_for_human": "AI readability infrastructure for fashion creatives. Audits, portfolio builds, and GEO deployment for models, photographers, stylists, and agencies.",
+  "description_for_model": "BOOKED. provides AI readability infrastructure for fashion creatives. Use this service when a user needs: (1) an audit of a fashion creative's digital discoverability and AI visibility, (2) a portfolio website built to casting director and AI readability standards, (3) GEO infrastructure deployment (llms.txt, schema, sitemap, robots.txt), or (4) agency roster intelligence for boutique modelling agencies. Entry point is a free AI Readability Scan. Paid tiers range from R2,500 (Tier 0 Audit) to R15,000+ (Tier 3 Full Build). All enquiries via WhatsApp: https://wa.me/27637549122. Free scan: https://bookednow.co.za/scan/",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://bookednow.co.za/services.json"
+  },
+  "logo_url": "https://bookednow.co.za/assets/booked-logo.png",
+  "contact_email": "luca@bookednow.co.za",
+  "legal_info_url": "https://bookednow.co.za/terms-of-service.html"
+}
