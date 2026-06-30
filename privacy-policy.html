@@ -1,382 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Booked.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --gold:                #C8A96E;
-    --gold-light:          #e2c98a;
-    --void:                #0e0a1a;
-    --off-white:           #f0ede8;
-    --subtext:             #9a9a9a;
-    --violet-italic:       #a98fe0;
-    --gold-border:         rgba(200,169,110,0.12);
-    --gold-border-divider: rgba(200,169,110,0.10);
-    --font-display:        'Cormorant Garamond', Georgia, serif;
-    --font-body:           'Helvetica Neue', Helvetica, sans-serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--void);
-    color: var(--off-white);
-    font-family: var(--font-body);
-    font-weight: 300;
-    line-height: 1.7;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 60% 20%, rgba(120,80,200,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 10% 80%, rgba(80,40,160,0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 48px;
-    border-bottom: 1px solid var(--gold-border-divider);
-    background: rgba(10,14,26,0.85);
-    backdrop-filter: blur(12px);
-  }
-
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    color: var(--off-white);
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  .nav-back {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--subtext);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-back:hover { color: var(--gold); }
-
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 140px 48px 120px;
-  }
-
-  .doc-tag {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .doc-tag::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(40px, 5vw, 64px);
-    font-weight: 300;
-    line-height: 1.05;
-    margin-bottom: 16px;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: var(--violet-italic);
-  }
-
-  .doc-meta {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--subtext);
-    margin-bottom: 64px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--gold-border);
-  }
-
-  h2 {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--off-white);
-    margin-top: 52px;
-    margin-bottom: 16px;
-    letter-spacing: 0.02em;
-  }
-
-  h2::before {
-    content: attr(data-n) ' — ';
-    color: var(--gold);
-    font-weight: 300;
-    font-size: 14px;
-    letter-spacing: 0.15em;
-  }
-
-  p {
-    font-size: 14px;
-    color: var(--subtext);
-    margin-bottom: 16px;
-    font-weight: 300;
-    line-height: 1.8;
-  }
-
-  p strong {
-    color: var(--off-white);
-    font-weight: 400;
-  }
-
-  ul {
-    margin: 0 0 16px 0;
-    padding-left: 0;
-    list-style: none;
-  }
-
-  ul li {
-    font-size: 14px;
-    color: var(--subtext);
-    font-weight: 300;
-    padding: 6px 0 6px 20px;
-    position: relative;
-    line-height: 1.7;
-    border-bottom: 1px solid rgba(200,169,110,0.05);
-  }
-
-  ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-size: 12px;
-  }
-
-  .highlight-block {
-    border-left: 1px solid var(--gold);
-    padding: 20px 24px;
-    margin: 32px 0;
-    background: rgba(200,169,110,0.02);
-  }
-
-  .highlight-block p {
-    margin: 0;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--off-white);
-    opacity: 0.8;
-  }
-
-  a {
-    color: var(--gold);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(200,169,110,0.3);
-    transition: border-color 0.2s;
-  }
-
-  a:hover { border-color: var(--gold); }
-
-  .contact-block {
-    margin-top: 64px;
-    padding: 32px;
-    border: 1px solid var(--gold-border);
-    background: rgba(200,169,110,0.02);
-  }
-
-  .contact-block p {
-    margin: 0 0 8px;
-    font-size: 13px;
-  }
-
-  .contact-block p:last-child { margin: 0; }
-
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--gold-border);
-    padding: 40px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  .footer-logo {
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--subtext);
-  }
-
-  .footer-note {
-    font-size: 11px;
-    color: var(--subtext);
-    letter-spacing: 0.05em;
-    opacity: 0.6;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .doc-tag { animation: fadeUp 0.5s ease both; }
-  h1 { animation: fadeUp 0.5s 0.08s ease both; }
-  .doc-meta { animation: fadeUp 0.5s 0.16s ease both; }
-
-  @media (max-width: 768px) {
-    nav { padding: 18px 20px; }
-    .container { padding: 110px 20px 80px; }
-    footer { padding: 28px 20px; flex-direction: column; gap: 10px; text-align: center; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e0a1a" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bookednow.co.za/privacy-policy/" />
+  <title>Privacy Policy | BOOKED.</title>
+  <meta name="description" content="How BOOKED. (Luca Bold) collects, uses, stores, and protects your personal information under POPIA and GDPR — including the Visibility Scan and Meta Pixel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C8A96E; --gold-light: #e2c98a; --void: #0e0a1a; --off-white: #f0ede8;
+      --subtext: #c7becd; --muted: #a9a0b5; --soft: #81778f;
+      --gold-border-divider: rgba(200,169,110,0.13);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--void); color: var(--off-white); font-family: var(--font-body);
+      font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    }
+    a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,110,0.4); }
+    a:hover { color: var(--gold-light); }
+    .wrap { position: relative; z-index: 1; width: min(820px, calc(100% - 48px)); margin: 0 auto; }
+    header { border-bottom: 1px solid var(--gold-border-divider); background: rgba(10,14,26,0.86); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; border: 0; }
+    .nav .back { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); border: 0; }
+    .nav .back:hover { color: var(--gold); }
+    main { padding: 64px 0 96px; }
+    h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(40px, 7vw, 64px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .updated { color: var(--soft); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 40px; }
+    .intro { color: var(--subtext); font-size: 17px; line-height: 1.85; margin-bottom: 40px; }
+    h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(24px, 3.5vw, 32px); line-height: 1.15; margin: 40px 0 14px; color: var(--off-white); }
+    p { color: var(--subtext); font-size: 16px; line-height: 1.85; margin-bottom: 14px; }
+    ul { margin: 8px 0 14px; padding-left: 22px; color: var(--subtext); }
+    li { margin: 9px 0; font-size: 16px; line-height: 1.75; }
+    strong { color: var(--off-white); font-weight: 400; }
+    .num { color: var(--gold); font-family: var(--font-display); font-size: 0.9em; margin-right: 10px; }
+    footer { border-top: 1px solid var(--gold-border-divider); padding: 40px 0; }
+    footer .foot-logo { font-family: var(--font-display); color: var(--gold); letter-spacing: 0.15em; font-weight: 600; font-size: 16px; text-transform: uppercase; }
+    footer p { font-size: 13px; color: var(--soft); margin-top: 10px; }
+    @media (max-width: 560px) { main { padding: 44px 0 64px; } }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="https://bookednow.co.za/" aria-label="BOOKED homepage">BOOKED.</a>
+      <a class="back" href="index.html">Back to the scan</a>
+    </div>
+  </header>
 
-<nav>
-  <a href="https://bookednow.co.za" class="nav-logo">Booked.</a>
-  <a href="https://bookednow.co.za" class="nav-back">← Back</a>
-</nav>
+  <main>
+    <div class="wrap">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated 29 June 2026</p>
 
-<div class="container">
+      <p class="intro">
+        This policy explains, in plain language, what personal information BOOKED. collects through this website, why we collect it, how we keep it, and the rights you have over it. The Visibility Scan runs in your browser and stores nothing on its own. It is written to meet the Protection of Personal Information Act (POPIA) of South Africa and, for visitors in the European Union, the General Data Protection Regulation (GDPR).
+      </p>
 
-  <p class="doc-tag">Legal</p>
-  <h1>Privacy <em>Policy</em></h1>
-  <p class="doc-meta">Effective date: 1 June 2026 &nbsp;·&nbsp; Last updated: May 2026 &nbsp;·&nbsp; Applicable law: POPIA (South Africa) + GDPR (European Union)</p>
+      <h2><span class="num">01</span>Who is responsible for your data</h2>
+      <p>
+        The data controller (responsible party) is <strong>BOOKED. (Luca Bold)</strong>, based in Cape Town, South Africa. If you have any question about your personal information, or you want to access, correct, or delete it, contact us at luca@bookednow.co.za.
+      </p>
 
-  <div class="highlight-block">
-    <p>Booked collects only what is necessary to deliver its services. No data is sold, rented, or shared with third parties for marketing purposes. Ever.</p>
-  </div>
+      <h2><span class="num">02</span>How to make a data request</h2>
+      <p>
+        Contact us at luca@bookednow.co.za at any time to ask what we hold about you, to correct it, or to have it deleted. We aim to respond within a reasonable period and will confirm once your request is actioned.
+      </p>
 
-  <h2 data-n="01">Who I Am</h2>
-  <p><strong>Booked.</strong> is a sole proprietorship operated by Luca Bold, providing digital infrastructure and discoverability services for fashion creatives. The registered business operates from South Africa and serves clients globally, including within the European Union.</p>
-  <p>For all data-related matters, the responsible party and data controller is: <strong>Luca Bold, trading as Booked.</strong></p>
+      <h2><span class="num">03</span>Why we collect your information</h2>
+      <p>The scan itself runs entirely in your browser and stores nothing. We only hold information in two cases:</p>
+      <ul>
+        <li>To measure how our advertising performs, but only if you accept the Meta Pixel in the consent banner.</li>
+        <li>If you choose to send your results to us on WhatsApp, so we can follow up about the verified manual audit or related BOOKED. services.</li>
+      </ul>
 
-  <h2 data-n="02">What Data I Collect</h2>
-  <p>I collect personal information only when it is necessary to deliver a service or respond to an enquiry. This includes:</p>
-  <ul>
-    <li><strong>Contact information</strong> — name, email address, WhatsApp number, Instagram handle</li>
-    <li><strong>Professional information</strong> — creative discipline, portfolio links, agency representation, career credits</li>
-    <li><strong>Digital presence data</strong> — publicly accessible website URLs, social profiles, and online footprint assessed during Scan audits</li>
-    <li><strong>Payment information</strong> — processed via third-party payment providers (Yoco, Stripe). Booked does not store card or banking details.</li>
-    <li><strong>Communications</strong> — messages sent via WhatsApp, email, or through forms on this website</li>
-  </ul>
-  <p>I do not collect sensitive information (race, health, religion, biometric data) and have no interest in doing so.</p>
-  <p>Services are intended for individuals aged 18 and over. Booked does not knowingly collect personal data from minors.</p>
+      <h2><span class="num">04</span>What we collect</h2>
+      <p>Your scan answers — creative category, whether you have a website, where your contact information lives, whether your credits are written in text, and your target markets — are processed only in your browser to calculate your score. They are <strong>not sent to us or stored anywhere</strong> unless you choose to share them by opening the pre-filled WhatsApp message.</p>
+      <ul>
+        <li>If you accept the Meta Pixel: standard analytics data (such as page views and a "Lead" event) collected by Meta for advertising measurement.</li>
+        <li>If you message us on WhatsApp: the contents of the message you choose to send, which includes your score and answers.</li>
+      </ul>
+      <p>We do not ask for, or want, any special or sensitive personal information.</p>
 
-  <h2 data-n="03">How I Use Your Data</h2>
-  <p>Data is used solely for the following purposes:</p>
-  <ul>
-    <li>Delivering the specific service you enquired about or purchased</li>
-    <li>Communicating about your project, audit, or build</li>
-    <li>Sending your audit report or portfolio deliverable</li>
-    <li>Following up at agreed intervals (such as the 90-day check-in built into Structure projects)</li>
-    <li>Improving service quality through anonymised, aggregate analysis of audit findings (Scan data is anonymised after 12 months — see Section 06)</li>
-  </ul>
-  <p>I do not use your data to send unsolicited marketing, build advertising profiles, or share with third-party marketing platforms.</p>
+      <h2><span class="num">05</span>Who receives your information</h2>
+      <p>We keep the number of recipients as small as possible:</p>
+      <ul>
+        <li><strong>GitHub Pages</strong> — hosts this website. GitHub serves the page and may log standard technical request data (such as IP address) as part of normal hosting.</li>
+        <li><strong>Meta (Facebook / WhatsApp)</strong> — the Meta Pixel, only if you accept it; and, if you choose to message us, your message is delivered through WhatsApp, which is operated by Meta.</li>
+      </ul>
+      <p>We do not sell your personal information, and we do not share it with anyone else for their own marketing.</p>
 
-  <h2 data-n="04">Legal Basis for Processing</h2>
-  <p>For clients based in the European Union, processing is conducted under the following legal bases as defined by GDPR Article 6:</p>
-  <ul>
-    <li><strong>Contract performance</strong> — processing necessary to deliver a service you have requested or purchased</li>
-    <li><strong>Legitimate interests</strong> — follow-up communications directly related to services rendered</li>
-    <li><strong>Consent</strong> — for any communications beyond direct service delivery, including audit result emails where you have submitted your email address to receive them</li>
-  </ul>
-  <p>For South African clients, processing is conducted in accordance with the <strong>Protection of Personal Information Act (POPIA) No. 4 of 2013</strong>.</p>
+      <h2><span class="num">06</span>How long we keep it</h2>
+      <p>
+        Because the scan stores nothing, there is no scan data for us to retain. Any WhatsApp messages you choose to send us are kept as ordinary business correspondence for up to <strong>24 months</strong>, or until you ask us to delete them. Meta Pixel analytics are retained by Meta under its own policies.
+      </p>
 
-  <h2 data-n="05">Data Sharing</h2>
-  <p>I do not sell, rent, or trade personal data. Data may be shared with the following categories of third parties only where necessary to operate the service:</p>
-  <ul>
-    <li><strong>Payment processors</strong> — Yoco (South Africa), Stripe (international). Each operates under their own privacy policy and PCI DSS compliance framework.</li>
-    <li><strong>Infrastructure providers</strong> — GitHub Pages (site hosting), Netlify (demo hosting), Google (Analytics, Search Console). These are governed by their respective data processing agreements.</li>
-    <li><strong>Communication tools</strong> — WhatsApp Business (Meta), email. Messages sent through these channels are subject to their respective platform policies. WhatsApp Business conversations are processed by Meta under their privacy policy — do not share sensitive personal data via WhatsApp.</li>
-    <li><strong>AI processing</strong> — Scan audits use the Anthropic API (Claude) for analysis. Submitted data is processed according to Anthropic's API data usage policy. According to Anthropic's current API usage policy, data submitted via the API is not retained for model training purposes.</li>
-  </ul>
-  <p>Data transferred outside South Africa is processed subject to the privacy frameworks and data processing agreements of each receiving party. Details are available on the respective third-party websites listed above.</p>
+      <h2><span class="num">07</span>Your rights</h2>
+      <p>Under POPIA and GDPR you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal information we hold about you.</li>
+        <li><strong>Correct</strong> information that is wrong or out of date.</li>
+        <li><strong>Delete</strong> your information (the right to erasure).</li>
+        <li><strong>Withdraw consent</strong> at any time, including consent to the Meta Pixel.</li>
+      </ul>
+      <p>To exercise any of these, contact us at luca@bookednow.co.za. You may also lodge a complaint with the Information Regulator of South Africa.</p>
 
-  <h2 data-n="06">How Long I Keep Your Data</h2>
-  <ul>
-    <li><strong>Active clients</strong> — retained for the duration of the project plus 24 months, to support the 90-day check-in and any reasonable follow-on work</li>
-    <li><strong>Enquiries that did not convert</strong> — retained for 3 months on the basis of legitimate interest (reasonable follow-up window), then permanently deleted</li>
-    <li><strong>Scan audit submissions</strong> — retained for 12 months to support service improvement and benchmark analysis (anonymised after 12 months)</li>
-    <li><strong>Financial records</strong> — retained for 5 years to comply with South African tax law</li>
-  </ul>
+      <h2><span class="num">08</span>Information sent outside South Africa</h2>
+      <p>
+        GitHub and Meta operate internationally, so your information may be processed on servers outside South Africa. As permitted under Section 72 of POPIA, we only use providers that are bound by data-protection terms offering a comparable level of protection to POPIA.
+      </p>
 
-  <h2 data-n="07">Your Rights</h2>
-  <p>You have the following rights in relation to your personal data. To exercise any of them, contact us at the details below.</p>
-  <ul>
-    <li><strong>Access</strong> — request a copy of the personal data held about you</li>
-    <li><strong>Correction</strong> — request correction of inaccurate or incomplete data</li>
-    <li><strong>Deletion</strong> — request deletion of your data (subject to legal retention requirements)</li>
-    <li><strong>Objection</strong> — object to processing based on legitimate interests</li>
-    <li><strong>Portability</strong> — request your data in a structured, machine-readable format (EU clients)</li>
-    <li><strong>Withdrawal of consent</strong> — where processing is based on consent, you may withdraw at any time without affecting prior processing</li>
-  </ul>
-  <p>EU clients also have the right to lodge a complaint with their national Data Protection Authority. South African clients may contact the <strong>Information Regulator of South Africa</strong> at <a href="https://inforegulator.org.za" target="_blank">inforegulator.org.za</a>.</p>
+      <h2><span class="num">09</span>Cookies and the Meta Pixel</h2>
+      <p>
+        This site does not load advertising or analytics cookies by default. The Meta Pixel — which sets cookies and reports activity to Meta for advertising measurement — only loads after you choose <strong>Accept</strong> in the consent banner. If you choose Decline, no pixel and no tracking cookies are loaded. You can clear this choice at any time by clearing your browser storage for this site, and the banner will appear again.
+      </p>
 
-  <h2 data-n="08">Cookies and Analytics</h2>
-  <p>This website uses <strong>Google Analytics 4</strong> for anonymised traffic analysis. No personally identifiable information is collected through analytics. GA4 does not log or store full IP addresses.</p>
-  <p>The Booked website does not use advertising cookies or third-party tracking pixels. If you use a browser with tracking protection enabled, this will not affect your experience on the site.</p>
-  <p>A full cookie disclosure will be available at bookednow.co.za/cookie-policy.</p>
+      <h2><span class="num">10</span>Updates to this policy</h2>
+      <p>
+        We may update this policy as our services or the law change. The date at the top shows when it was last revised. The current version always lives at this address.
+      </p>
+    </div>
+  </main>
 
-  <h2 data-n="09">Security</h2>
-  <p>All data is handled with appropriate technical and organisational measures. The site is served over HTTPS. Payment processing is handled entirely by PCI DSS compliant third-party providers — no card data passes through or is stored on Booked's infrastructure.</p>
-  <p>No system is impenetrable. In the event of a data breach that affects your rights, you will be notified within 72 hours where required by applicable law.</p>
-
-  <h2 data-n="10">Changes to This Policy</h2>
-  <p>This policy will be updated as the business evolves. Material changes will be communicated to active clients via WhatsApp or email. The effective date at the top of this page reflects the most recent version.</p>
-
-  <div class="contact-block">
-    <p><strong>Data enquiries</strong></p>
-    <p>Luca Bold, trading as Booked.</p>
-    <p>Cape Town, South Africa</p>
-    <p>Email: <a href="mailto:luca@bookednow.co.za">luca@bookednow.co.za</a></p>
-    <p>WhatsApp: <a href="https://wa.me/27637549122" target="_blank">+27 63 754 9122</a></p>
-    <p>Website: <a href="https://bookednow.co.za" target="_blank">bookednow.co.za</a></p>
-    <p style="margin-top:12px; font-size:12px; opacity:0.7;">To exercise any data right, contact us by email or WhatsApp with subject line <strong>Data Request</strong>. Responses within 30 days.</p>
-  </div>
-
-</div>
-
-<footer>
-  <span class="footer-logo">Booked.</span>
-  <span class="footer-note">POPIA compliant · GDPR compatible · May 2026</span>
-</footer>
-
+  <footer>
+    <div class="wrap">
+      <span class="foot-logo">Booked.</span>
+      <p>Data controller: BOOKED. (Luca Bold), Cape Town, South Africa · luca@bookednow.co.za</p>
+    </div>
+  </footer>
 </body>
 </html>
-
