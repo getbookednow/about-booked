@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booked. — The Work</title>
+<meta name="description" content="Infrastructure audits and digital builds for fashion creatives in South Africa. IRF scores, AI discoverability stacks, portfolio builds, and visibility audits — anonymised case studies.">
+<link rel="canonical" href="https://bookednow.co.za/work">
+<meta property="og:title" content="Booked. — The Work">
+<meta property="og:description" content="Infrastructure audits and digital builds for fashion creatives in South Africa. IRF scores, AI discoverability stacks, portfolio builds, and visibility audits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bookednow.co.za/work">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, serif' font-size='36' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e0a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Booked. — The Work",
+  "description": "Portfolio of infrastructure audits and digital builds for fashion creatives in South Africa.",
+  "url": "https://bookednow.co.za/work",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Booked.",
+    "url": "https://bookednow.co.za"
+  }
+}
+</script>
+<style>
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-hover:      rgba(200,169,110,0.03);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --violet-fill:          rgba(169,143,224,0.08);
+    --violet-border:        rgba(169,143,224,0.22);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    --bg:         var(--void);
+    --bg-card:    #0e1020;
+    --gold-border: var(--gold-border-default);
+    --gold-dim:   rgba(200,169,110,0.15);
+    --text:       var(--off-white);
+    --muted:      var(--subtext);
+    --dim:        #444;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  @supports not (overflow-x: clip) {
+    html, body { overflow-x: hidden; }
+  }
+  main, section, nav, footer { max-width: 100%; }
+  section, [id] { scroll-margin-top: 96px; }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  a { color: inherit; }
+  h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
+  ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a.active { color: var(--gold); }
+  .nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+  .nav-contact:hover { background: var(--gold-dim); color: var(--gold-light) !important; }
+  .nav-chat-mobile {
+    display: none;
+    padding: 9px 16px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-chat-mobile:hover { background: var(--gold-dim); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-tag {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    max-width: 840px;
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 200;
+    color: var(--subtext);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold-border);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* FILTER BAR */
+  .filter-bar-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px 40px;
+  }
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .filter-btn {
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 0 0 5px;
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .filter-btn:hover { color: var(--gold); }
+  .filter-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* SERVICE CARD BASE */
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 48px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, background 0.2s, transform 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, var(--gold-fill-subtle), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .service-card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); transform: translateY(-4px); }
+  .service-card:hover::before { opacity: 1; }
+
+  /* WORK SECTION */
+  .work-section {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .work-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .work-card {
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: border-color 0.2s, background 0.2s, transform 0.35s ease, opacity 0.2s;
+  }
+
+  /* CARD INTERNALS */
+  .card-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+  .card-market-cat {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: var(--font-body);
+  }
+  .card-num {
+    font-size: 10px;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-weight: 300;
+  }
+  .card-irf-delta {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .irf-before { color: var(--muted); }
+  .irf-arrow  { color: var(--muted); }
+  .irf-after  { color: var(--gold); }
+  .irf-dash   { color: var(--muted); }
+  .card-score {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .score-value { color: var(--off-white); }
+  .score-denom { color: var(--muted); }
+  .card-field { margin-bottom: 20px; }
+  .card-field.card-last { margin-bottom: 32px; }
+  .card-field-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+  .card-field-text {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .card-divider {
+    height: 1px;
+    background: var(--gold-border-divider);
+    margin-bottom: 24px;
+    border: none;
+    flex-shrink: 0;
+  }
+  .card-outcome-text {
+    font-size: 13px;
+    color: var(--off-white);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .card-footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 24px;
+  }
+  .card-badge {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid;
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+  .card-badge.complete,
+  .card-badge.core-complete {
+    border-color: var(--gold-border-default);
+    color: var(--gold);
+  }
+  .card-badge.in-progress,
+  .card-badge.awaiting,
+  .card-badge.scan {
+    border-color: var(--dim);
+    color: var(--muted);
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
+  .footer-work {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--font-body);
+  }
+  .footer-work:hover { color: var(--gold); }
+  .footer-legal {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .footer-legal-links a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: var(--subtext); }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+    font-family: var(--font-body);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag { animation: fadeUp 0.6s ease both; }
+  .hero h1  { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .work-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
+  .work-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
+  .work-card:nth-child(3) { animation: fadeUp 0.5s 0.3s ease both; }
+  .work-card:nth-child(4) { animation: fadeUp 0.5s 0.4s ease both; }
+  .work-card:nth-child(5) { animation: fadeUp 0.5s 0.5s ease both; }
+  .work-card:nth-child(6) { animation: fadeUp 0.5s 0.6s ease both; }
+  .work-card:nth-child(7) { animation: fadeUp 0.5s 0.7s ease both; }
+  .work-card:nth-child(8) { animation: fadeUp 0.5s 0.8s ease both; }
+
+  /* RESPONSIVE */
+  @media (min-width: 1440px) {
+    nav { width: 100%; margin: 0; left: 0; right: 0; }
+    .hero, .filter-bar-wrap, .work-section, footer { max-width: 1400px; }
+  }
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .hero { padding: 130px 32px 60px; }
+    .filter-bar-wrap { padding: 0 32px 32px; }
+    .work-section { padding: 0 32px 100px; }
+    footer { padding: 36px 32px 24px; }
+  }
+  @media (max-width: 768px) {
+    section, [id] { scroll-margin-top: 82px; }
+    nav { padding: 18px 20px; }
+    .nav-links { display: none; }
+    .nav-contact { display: none; }
+    .nav-chat-mobile { display: flex; }
+    .hero { padding: 110px 20px 60px; }
+    .hero h1 { font-size: clamp(40px, 10vw, 64px); }
+    .hero-sub { font-size: 16px; max-width: 100%; }
+    .filter-bar-wrap { padding: 0 20px 32px; }
+    .filter-bar { justify-content: space-around; gap: 0; }
+    .filter-btn { flex: 1; text-align: center; }
+    .work-section { padding: 0 20px 80px; }
+    .work-cards-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 32px 24px; }
+    .card-irf-delta { font-size: clamp(44px, 12vw, 64px); }
+    .card-score { font-size: clamp(44px, 12vw, 64px); }
+    footer { padding: 28px 20px 20px; }
+    .footer-top { flex-direction: column; gap: 10px; text-align: center; }
+    .footer-legal { flex-direction: column; align-items: center; text-align: center; }
+    .footer-legal-links { gap: 16px; }
+  }
+  @media (max-width: 390px) {
+    nav { padding: 16px 16px; }
+    .nav-logo { font-size: 18px; }
+    .hero { padding: 100px 16px 48px; }
+    .hero h1 { font-size: 38px; }
+    .hero-tag { font-size: 12px; line-height: 1.4; }
+    .hero-sub { font-size: 16px; }
+    .filter-bar-wrap { padding: 0 16px 28px; }
+    .work-section { padding: 0 16px 64px; }
+    .service-card { padding: 28px 20px; }
+    footer { padding: 24px 16px 16px; }
+    .footer-note { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="https://www.bookednow.co.za/scan/" title="Free fashion creative visibility scan — Booked.">Visibility Scan</a></li>
+    <li><a href="https://www.bookednow.co.za/infrastructure/" title="AI readability infrastructure for fashion portfolios — Booked.">Infrastructure</a></li>
+    <li><a href="https://www.bookednow.co.za/#services" title="Fashion portfolio audit Cape Town — Booked.">Audits</a></li>
+    <li><a href="/work" class="active" title="Case studies — Booked.">Work</a></li>
+    <li><a href="https://www.bookednow.co.za/#founder" title="About Luca Bold and Booked.">About</a></li>
+  </ul>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked." class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <p class="hero-tag">Infrastructure Proof</p>
+    <h1>Before the booking.<br>After the build.</h1>
+    <p class="hero-sub">Every project runs against the same five-dimension framework. The gap found. What was built. The score before and after.</p>
+  </section>
+
+  <div class="filter-bar-wrap">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="build">Builds</button>
+      <button class="filter-btn" data-filter="scan">Scans</button>
+    </div>
+  </div>
+
+  <section class="work-section">
+    <div class="work-cards-grid" id="work-grid">
+
+      <!-- CARD 01 — BUILD — Complete -->
+      <div class="service-card work-card" data-type="build">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Johannesburg · Photographer / Director</h2>
+          <span class="card-num">01</span>
+        </div>
+        <div class="card-irf-delta">
+          <span class="irf-before">48</span><span class="irf-arrow"> → </span><span class="irf-after">78</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Gap</h3>
+          <p class="card-field-text">Three decades of tier-1 career credits held entirely in visual format. Zero structured data. Undiscoverable by any AI system performing a first-pass search.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Delivered</h3>
+          <p class="card-field-text">llms.txt, schema.org JSON-LD, AI-optimised sitemap, non-technical deployment guide.</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-field">
+          <h3 class="card-field-label">Outcome</h3>
+          <p class="card-outcome-text">Career metadata now parseable by AI before any human is involved. Credits, market, contact path — legible at the first filter.</p>
+        </div>
+        <div class="card-footer-bar">
+          <span class="card-badge complete">Complete</span>
+        </div>
+      </div>
+
+      <!-- CARD 02 — BUILD — Core complete -->
+      <div class="service-card work-card" data-type="build">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · Bridal HMUA</h2>
+          <span class="card-num">02</span>
+        </div>
+        <div class="card-irf-delta">
+          <span class="irf-before">35</span><span class="irf-arrow"> → </span><span class="irf-after">66</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Gap</h3>
+          <p class="card-field-text">22 years of editorial credits and a live international career — listed under a brand name on every platform. Invisible on Google, ChatGPT, Perplexity, and Gemini by name.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Delivered</h3>
+          <p class="card-field-text">Google Business Profile rebuilt under her name, availability calendar replacing DM-only booking path, Instagram strategy, paid ads infrastructure ready to activate.</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-field">
+          <h3 class="card-field-label">Outcome</h3>
+          <p class="card-outcome-text">Discoverable by name across major AI search systems. Booking path: DM-only → direct calendar link.</p>
+        </div>
+        <div class="card-footer-bar">
+          <span class="card-badge core-complete">Core complete</span>
+        </div>
+      </div>
+
+      <!-- CARD 03 — BUILD — In progress, no outcome -->
+      <div class="service-card work-card" data-type="build">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · Stylist</h2>
+          <span class="card-num">03</span>
+        </div>
+        <div class="card-irf-delta">
+          <span class="irf-before">27</span><span class="irf-dash"> → —</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Gap</h3>
+          <p class="card-field-text">Real industry credits — international streaming and major fashion weeks — buried in IG highlights. Institutional URL as the only external link. Zero indexed web presence.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Delivered</h3>
+          <p class="card-field-text">Landing page with full AI discoverability stack — schema.org, llms.txt, sitemap, Open Graph. Role anchored from four-role generalist to research-led stylist.</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-footer-bar">
+          <span class="card-badge in-progress">In progress</span>
+        </div>
+      </div>
+
+      <!-- CARD 04 — BUILD — Awaiting go-live, has outcome -->
+      <div class="service-card work-card" data-type="build">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · Photographer</h2>
+          <span class="card-num">04</span>
+        </div>
+        <div class="card-irf-delta">
+          <span class="irf-before">39</span><span class="irf-dash"> → —</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Gap</h3>
+          <p class="card-field-text">Instagram-only touchpoint. No website, no visible pricing, no owned contact infrastructure. Inquiry path: DM-only.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Delivered</h3>
+          <p class="card-field-text">Full website (services, pricing, two portfolio categories), WhatsApp prefill per service, photography services agreement under SA law, asset permission form.</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-field">
+          <h3 class="card-field-label">Outcome</h3>
+          <p class="card-outcome-text">Pricing public for the first time. Legal and booking infrastructure in place before the next engagement. Inquiry path: DM → direct WhatsApp per service.</p>
+        </div>
+        <div class="card-footer-bar">
+          <span class="card-badge awaiting">Awaiting go-live</span>
+        </div>
+      </div>
+
+      <!-- CARD 05 — BUILD — In progress, no outcome -->
+      <div class="service-card work-card" data-type="build">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · Stylist</h2>
+          <span class="card-num">05</span>
+        </div>
+        <div class="card-irf-delta">
+          <span class="irf-before">42</span><span class="irf-dash"> → —</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Gap</h3>
+          <p class="card-field-text">25 years of film, TVC, editorial, and major brand credits split across five fragmented identities and a structurally weak website. Portfolio not sequenced for agency board submissions.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Delivered</h3>
+          <p class="card-field-text">Instagram audit and 3-pillar content strategy, 86-image portfolio board scored and sequenced across 8 sections, website audit, gallery prototype.</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-footer-bar">
+          <span class="card-badge in-progress">In progress</span>
+        </div>
+      </div>
+
+      <!-- CARD 06 — BUILD — In progress, has outcome -->
+      <div class="service-card work-card" data-type="build">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · HMUA</h2>
+          <span class="card-num">06</span>
+        </div>
+        <div class="card-irf-delta">
+          <span class="irf-before">29</span><span class="irf-dash"> → —</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Gap</h3>
+          <p class="card-field-text">22 years and an international client roster — CV on a third-party server, portfolio behind someone else's platform, zero bridal signal despite actively pivoting to that market.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Delivered</h3>
+          <p class="card-field-text">Bridal market audit, structured service menu, site mockup with JSON-LD schema deployed.</p>
+        </div>
+        <hr class="card-divider">
+        <div class="card-field">
+          <h3 class="card-field-label">Outcome</h3>
+          <p class="card-outcome-text">First time she has seen herself outside a third-party platform. Referral generated before formal proposal was sent.</p>
+        </div>
+        <div class="card-footer-bar">
+          <span class="card-badge in-progress">In progress</span>
+        </div>
+      </div>
+
+      <!-- CARD 07 — SCAN -->
+      <div class="service-card work-card" data-type="scan">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · HMUA</h2>
+          <span class="card-num">07</span>
+        </div>
+        <div class="card-score">
+          <span class="score-value">43</span><span class="score-denom">/100</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Finding</h3>
+          <p class="card-field-text">Agency representation and 20+ production house credits — none of it crawlable. IMDb unclaimed. No owned domain. Career level significantly outpaces digital representation.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Recommendation</h3>
+          <p class="card-field-text">Owned domain, structured credit page, single contact path.</p>
+        </div>
+        <div class="card-footer-bar">
+          <span class="card-badge scan">Scan</span>
+        </div>
+      </div>
+
+      <!-- CARD 08 — SCAN -->
+      <div class="service-card work-card" data-type="scan">
+        <div class="card-meta-bar">
+          <h2 class="card-market-cat">Cape Town · HMUA</h2>
+          <span class="card-num">08</span>
+        </div>
+        <div class="card-score">
+          <span class="score-value">29</span><span class="score-denom">/100</span>
+        </div>
+        <div class="card-field">
+          <h3 class="card-field-label">Finding</h3>
+          <p class="card-field-text">20 years of industry work. Three active Instagram accounts, zero owned domain. Strongest career context living on a third-party aggregator she doesn't control. A "Visit Website" button on a major wedding publication leads nowhere.</p>
+        </div>
+        <div class="card-field card-last">
+          <h3 class="card-field-label">Recommendation</h3>
+          <p class="card-field-text">Register one domain. Build one text-rich owned page. Make 20 years of credits readable by search and AI systems.</p>
+        </div>
+        <div class="card-footer-bar">
+          <span class="card-badge scan">Scan</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-logo">Booked.</span>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+    <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var grid = document.getElementById('work-grid');
+  var cards = Array.from(document.querySelectorAll('.work-card'));
+  var filterBtns = document.querySelectorAll('.filter-btn');
+
+  // Remove page-load animations after they complete so filtering doesn't retrigger them
+  setTimeout(function () {
+    cards.forEach(function (c) { c.style.animation = 'none'; });
+  }, 1400);
+
+  function setFilter(type) {
+    filterBtns.forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.filter === type);
+    });
+
+    // Fade out all visible cards
+    cards.forEach(function (c) {
+      if (c.style.display !== 'none') {
+        c.style.opacity = '0';
+      }
+    });
+
+    setTimeout(function () {
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        var show = type === 'all' || card.dataset.type === type;
+        if (show) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '';
+        }
+      });
+
+      // Collapse to 1 column when fewer than 2 cards are visible
+      grid.style.gridTemplateColumns = visible < 2 ? '1fr' : '';
+
+      // Trigger reflow then fade visible cards back in
+      grid.offsetHeight;
+      cards.forEach(function (c) {
+        if (c.style.display !== 'none') {
+          c.style.opacity = '';
+        }
+      });
+    }, 200);
+  }
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setFilter(btn.dataset.filter);
+    });
+  });
+}());
+</script>
+
+</body>
+</html>
