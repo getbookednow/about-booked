@@ -1,0 +1,121 @@
+I'll clone the repo, create a branch, make the fixes, and show you the diff before committing. Let me start.
+
+No `gh` CLI, but I have git and the GitHub MCP tools. Let me clone the public repo locally to make edits and show you a real diff, then I'll use the GitHub API to push the branch and open the PR.
+
+Cloned and on branch `fix/nav-work-link-and-whatsapp`. Now let me read the exact nav blocks I need to edit in each file.
+
+Now let me get the exact nav markup in `scan/index.html` and `creative-pages/index.html`, plus the WhatsApp links and the work.html convention to match.
+
+Key finding before I edit: the malformed WhatsApp number (`wa.me/637549122`, missing the `27`) appears **11 times** in `creative-pages/index.html`, not just the 2 nav CTAs I originally flagged — every WhatsApp link on that page is broken (booking confirmation, deposit, international enquiry, press kit, etc.). Let me confirm the count, then read the files to edit precisely.
+
+Confirmed — all 11 WhatsApp links on that page are broken (0 correct instances). Since they're the identical defect and all equally unreachable, I'll fix all 11 rather than leaving 9 broken booking links on a client-facing page — and I'll flag this clearly in the summary. Now reading the exact nav blocks to edit.
+
+I have exact markup for all four files. Making the edits now — each Work link matches its file's local convention (title attr + www on index, no-www plain anchors on scan, www `<li>` on creative-pages), and Work is placed right before About to match `work.html`'s own ordering.
+
+All edits applied. Here's the full diff for your review before I commit.
+
+Diff is above. Everything matches each file's local nav convention, and Work sits right before About to match `work.html`'s own ordering. Summary of what changed:
+
+| File | Change |
+|---|---|
+| `index.html` | +1 line — Work link in main nav (www absolute + title attr, matching siblings) |
+| `scan/index.html` | +1 line — Work link (plain `<a>`, no-www, matching this file's nav) |
+| `creative-pages/index.html` | +1 Work link, **+11 WhatsApp fixes** |
+| `sitemap.xml` | +3 lines — `/work` URL entry |
+
+**One decision I need you to sign off on before I commit:** you asked me to fix "both WhatsApp CTA links," but the malformed `wa.me/637549122` number turned out to appear **11 times** across `creative-pages/index.html` — not just the 2 nav CTAs. Every WhatsApp link on that page is broken: the nav CTAs, hero "DM PAGES", the AI Profile Page CTA, availability enquiry, press-kit request, project-brief follow-up, deposit confirmation, international booking, and the two footer CTAs. They're the identical defect (missing `27` country code), so I fixed all 11 — leaving 9 broken booking links on a client-facing page seemed clearly wrong. But it's more than you literally asked for, so I want your call.
+
+Confirmed — all 11 it is (the diff already reflects that). Now committing on the branch and opening the PR. Let me commit locally first, then push.
+
+Local git has no push credentials. Before falling back to the GitHub API (which would mean re-uploading three large files inline), let me check whether a token is available for a normal `git push`.
+
+Credential scanning is correctly blocked, and there's no token in the environment for a normal `git push`. The sanctioned path here is the authenticated GitHub MCP. Let me load those tools and check how `push_files` accepts content.
+
+Both API tools require full file content inline (no path option), so I'll push via the GitHub API and then verify each file's blob SHA against my local commit — that guarantees byte-for-byte fidelity without guesswork. First, the local blob SHAs to verify against, and exact file sizes.
+
+The blob SHAs confirm the risk: pushing these files through the API means supplying full file content as a string, and for a 2,584-line file to hash-match byte-for-byte, hand-reproduction won't cut it — a single character off changes the SHA and would put unintended changes into a diff you already reviewed. The reliable push is `git push` of the exact commit I already made. HTTPS has no creds; let me try SSH (fast-fail, won't hang).
+
+No push credentials of any kind exist in this environment (HTTPS and SSH both rejected), and I can't scan for them. Everything up to the push is done and verified — branch created, edits applied, diff approved by you, commit made locally. I just can't reach GitHub to push and open the PR without credentials.
+
+Let me generate a ready-to-apply patch so you have a path that doesn't depend on me pushing, then I'll ask how you want to proceed.
+
+The commit is ready and I've saved a patch to [booked-nav-fix.patch](booked-nav-fix.patch). I just need a way to reach GitHub. Here's where things stand and the options:
+
+**Done:** branch `fix/nav-work-link-and-whatsapp` created, all edits applied, diff shown and approved (all 11 WhatsApp fixes + 3 Work nav links + sitemap), committed locally.
+
+**Blocked:** pushing the branch and opening the PR — this environment has no GitHub credentials (HTTPS and SSH both rejected), and credential lookup is blocked. The GitHub API tools *are* authenticated, but they require re-uploading each full file as a string; for a 2,584-line file that can't be made byte-identical by hand, so it would introduce unintended changes into the diff you already approved. The clean push is the exact commit I already have.
+
+How would you like to proceed?
+
+Good call — that keeps it byte-perfect and shares no credentials. Let me verify the patch applies cleanly against a fresh `main` so the commands I give you are trustworthy.
+
+The patch applies cleanly to a fresh `main` and reproduces the exact commit (4 files, +17/−11). Here's everything you need.
+
+## Apply the patch and open the PR
+
+The patch is at **`~/Downloads/booked-nav-fix.patch`**. Run these in your own local clone of `about-booked`:
+
+```bash
+# from your about-booked repo root, on an up-to-date main
+git checkout main
+git pull
+
+# create the branch and apply the commit (author, message, co-author all preserved)
+git checkout -b fix/nav-work-link-and-whatsapp
+git am ~/Downloads/booked-nav-fix.patch
+
+# push and open the PR
+git push -u origin fix/nav-work-link-and-whatsapp
+```
+
+Then open the PR on GitHub (the push output prints a "Create a pull request" link), or with the `gh` CLI:
+
+```bash
+gh pr create --base main --head fix/nav-work-link-and-whatsapp \
+  --title "Fix nav: add Work link, repair WhatsApp links, add /work to sitemap" \
+  --body "See summary below."
+```
+
+If `git am` ever complains, `git apply ~/Downloads/booked-nav-fix.patch` applies the changes without the commit metadata (you'd then commit manually).
+
+## Suggested PR body
+
+```markdown
+## Summary
+Fixes critical navigation and link issues surfaced in the site audit.
+
+- **Add "Work" to the main nav** on `index.html`, `scan/index.html`, and
+  `creative-pages/index.html`. Placed immediately before "About", matching the
+  ordering already in `work.html`. Each link matches its file's local nav
+  convention (www absolute + title attr on index; plain no-www anchor on scan;
+  www `<li>` on creative-pages).
+- **Repair broken WhatsApp links** in `creative-pages/index.html`: `wa.me/637549122`
+  → `wa.me/27637549122` (missing `27` country code). This affected **11 links** on
+  the page — the 2 nav CTAs plus hero, AI Profile Page, availability enquiry,
+  press-kit, project-brief follow-up, deposit confirmation, international booking,
+  and both footer CTAs — all previously unreachable.
+- **Add `/work` to `sitemap.xml`.**
+
+Not touched: `booked-case-study-001.html` (being deprecated separately).
+
+## Files changed
+| File | Change |
+|---|---|
+| `index.html` | +1 Work nav link |
+| `scan/index.html` | +1 Work nav link |
+| `creative-pages/index.html` | +1 Work nav link, +11 WhatsApp link fixes |
+| `sitemap.xml` | +1 `/work` URL |
+```
+
+## What shipped in this commit
+
+| File | Change |
+|---|---|
+| `index.html` | Work link added to main nav (before About) |
+| `scan/index.html` | Work link added to main nav (before About) |
+| `creative-pages/index.html` | Work nav link + **11** `wa.me` country-code fixes |
+| `sitemap.xml` | `/work` URL entry added |
+
+One thing to flag for later (not in this PR, per your instruction): the `/work` links assume the deployed URL is extensionless `/work` — which matches `work.html`'s own canonical and self-referential nav link, so it's consistent with what's already there. If GitHub Pages actually serves it only at `/work.html`, that's a pre-existing issue across the site, not something this change introduces. Worth confirming the live URL resolves after you deploy.
+
+Want me to save a note to memory about the `getbookednow` repo push situation (no credentials in this environment → patch handoff) so we skip straight to the patch flow next time?
