@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.className += ' js';</script>
+<title>Ande Mafenuka — Wardrobe Stylist & Creative Researcher · Cape Town / Johannesburg</title>
+<meta name="description" content="Ande Mafenuka (Samba) — wardrobe stylist, designer and creative researcher between Cape Town and Johannesburg. Where African fashion research meets the shoot.">
+<meta name="author" content="Ande Mafenuka">
+<meta name="theme-color" content="#0F0D0B">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ande Mafenuka — Wardrobe Stylist & Creative Researcher">
+<meta property="og:description" content="Where African fashion research meets the shoot. Styling, design and creative direction between Cape Town and Johannesburg.">
+<meta property="og:image" content="https://bookednow.co.za/andemafenuka/images/ande-mafenuka-stylist-balance-water-editorial.jpg">
+<meta property="og:url" content="https://bookednow.co.za/andemafenuka">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://bookednow.co.za/andemafenuka">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0F0D0B;
+    --bg-soft:#15120F;
+    --text:#F0EBE2;
+    --muted:#9C9286;
+    --accent:#C4A882;
+    --secondary:#8A7055;
+    --line:rgba(196,168,130,.22);
+    --maxw:1240px;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"DM Sans",system-ui,sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  .kicker{
+    font-family:"DM Sans",sans-serif;
+    font-weight:400;
+    font-size:.7rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+
+  /* ── NAV ─────────────────────────────────────── */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.4rem clamp(1.2rem,4vw,3rem);
+    transition:background .5s var(--ease),padding .5s var(--ease),border-color .5s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{
+    background:rgba(15,13,11,.82);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding-top:1rem;padding-bottom:1rem;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-brand{
+    font-family:"Syne",sans-serif;font-weight:800;
+    font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;
+  }
+  .nav-links{display:flex;gap:clamp(1rem,3vw,2.4rem);align-items:center}
+  .nav-links a{
+    font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);position:relative;padding:.2rem 0;transition:color .3s ease;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;
+    background:var(--accent);transition:width .4s var(--ease);
+  }
+  .nav-links a:hover,.nav-links a.active{color:var(--text)}
+  .nav-links a.active::after{width:100%}
+  @media(max-width:560px){.nav-links a.nav-hide{display:none}}
+
+  /* ── HERO ────────────────────────────────────── */
+  .hero{position:relative;height:100svh;min-height:560px;width:100%;overflow:hidden}
+  .hero img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:50% 38%;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(15,13,11,.45) 0%,rgba(15,13,11,.05) 32%,rgba(15,13,11,.15) 60%,rgba(15,13,11,.92) 100%);
+  }
+  .hero-inner{
+    position:absolute;z-index:2;left:0;right:0;bottom:0;
+    padding:0 clamp(1.2rem,4vw,3rem) clamp(2.2rem,6vh,4rem);
+  }
+  .hero-name{
+    font-family:"Syne",sans-serif;font-weight:800;
+    font-size:clamp(2rem,9vw,7rem);line-height:.92;
+    letter-spacing:-.03em;text-transform:uppercase;
+  }
+  .hero-sub{
+    margin-top:1.1rem;max-width:30ch;
+    font-family:"Fraunces",serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.05rem,2.6vw,1.5rem);color:var(--text);line-height:1.35;
+  }
+  .hero-roles{
+    margin-top:1.3rem;font-size:.72rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);
+  }
+  .scroll-cue{
+    position:absolute;z-index:3;right:clamp(1.2rem,4vw,3rem);bottom:clamp(2.2rem,6vh,4rem);
+    font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
+    writing-mode:vertical-rl;display:flex;align-items:center;gap:.8rem;
+  }
+  .scroll-cue::after{content:"";width:1px;height:46px;background:linear-gradient(var(--accent),transparent);animation:cue 2.4s var(--ease) infinite}
+  @keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+  @media(max-width:560px){.scroll-cue{display:none}}
+
+  /* ── WORK / FILM SCROLL ──────────────────────── */
+  .work{padding:clamp(3.5rem,9vh,7rem) 0 1rem}
+  .section-head{
+    padding:0 clamp(1.2rem,4vw,3rem);margin-bottom:clamp(2.2rem,6vh,4rem);
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-family:"Syne",sans-serif;font-weight:700;
+    font-size:clamp(1.5rem,4vw,2.4rem);letter-spacing:-.01em;line-height:1;
+  }
+
+  figure{margin:0}
+  .shot{margin:0 auto clamp(3rem,8vh,6rem)}
+  .shot-full{padding:0 clamp(1.2rem,4vw,3rem)}
+  .shot-full img{
+    width:auto;height:auto;max-width:100%;max-height:90svh;margin:0 auto;
+    box-shadow:0 30px 80px -40px rgba(0,0,0,.8);
+  }
+  .shot-pair{
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(.5rem,1.5vw,1rem);
+    padding:0 clamp(1.2rem,4vw,3rem);max-width:var(--maxw);
+  }
+  .shot-pair figure{display:flex;flex-direction:column}
+  .shot-pair .frame{aspect-ratio:4/5;overflow:hidden;background:var(--bg-soft)}
+  .shot-pair .frame img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+  .credit{padding:.95rem clamp(1.2rem,4vw,3rem) 0;text-align:left}
+  .shot-full .credit{max-width:var(--maxw);margin:0 auto}
+  .shot-pair .credit{padding:.85rem 0 0}
+  .credit-project{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+    font-size:1.05rem;color:var(--accent);display:inline-block;
+  }
+  .credit-year{color:var(--secondary);font-style:italic}
+  .credit-meta{
+    display:block;margin-top:.35rem;
+    font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);line-height:1.7;
+  }
+  .credit-meta .role{color:var(--text)}
+
+  @media(max-width:680px){
+    .shot-pair{grid-template-columns:1fr;gap:0}
+    .shot-pair figure{margin-bottom:clamp(2.2rem,6vh,3rem)}
+    .shot-pair figure:last-child{margin-bottom:0}
+    .shot-pair .frame{aspect-ratio:auto}
+    .shot-pair .frame img{height:auto}
+    .shot-full img{max-height:none;width:100%}
+  }
+
+  /* ── CLIENT STRIP ────────────────────────────── */
+  .clients{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:clamp(2.4rem,6vh,3.6rem) clamp(1.2rem,4vw,3rem);
+    margin-top:clamp(2rem,5vh,3.5rem);text-align:center;
+  }
+  .clients .kicker{margin-bottom:1.3rem}
+  .clients-list{
+    font-family:"Syne",sans-serif;font-weight:700;
+    font-size:clamp(1rem,3.4vw,1.7rem);line-height:1.5;
+    letter-spacing:.01em;color:var(--text);
+  }
+  .clients-list span{color:var(--secondary);margin:0 .5em;font-weight:400}
+
+  /* ── ABOUT ───────────────────────────────────── */
+  .about{
+    max-width:880px;margin:0 auto;
+    padding:clamp(4rem,11vh,7.5rem) clamp(1.2rem,5vw,2rem);
+  }
+  .about .kicker{margin-bottom:1.8rem}
+  .about p{
+    font-family:"Fraunces",serif;font-weight:300;
+    font-size:clamp(1.3rem,3.6vw,2.05rem);line-height:1.42;letter-spacing:-.005em;
+  }
+  .about p + p{margin-top:1.4rem}
+  .about em{font-style:italic;color:var(--accent)}
+  .disciplines{
+    margin-top:2.6rem;padding-top:1.8rem;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:.6rem .9rem;
+  }
+  .disciplines span{
+    font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  }
+  .disciplines span::before{content:"—  ";color:var(--secondary)}
+
+  /* ── CONTACT ─────────────────────────────────── */
+  .contact{
+    padding:clamp(4rem,12vh,8rem) clamp(1.2rem,5vw,3rem);
+    text-align:center;border-top:1px solid var(--line);
+  }
+  .contact .kicker{margin-bottom:1.6rem}
+  .contact h2{
+    font-family:"Syne",sans-serif;font-weight:800;
+    font-size:clamp(2rem,7vw,4.2rem);line-height:1.02;margin-bottom:.4rem;
+  }
+  .contact-line{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:300;
+    font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--muted);margin-bottom:2.6rem;
+  }
+  .contact-email{
+    display:inline-block;font-family:"Syne",sans-serif;font-weight:700;
+    font-size:clamp(1.1rem,4vw,2rem);letter-spacing:-.01em;
+    border-bottom:1px solid var(--line);padding-bottom:.25rem;transition:border-color .35s ease,color .35s ease;
+  }
+  .contact-email:hover{border-color:var(--accent);color:var(--accent)}
+  .contact-meta{
+    margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.7rem 1.6rem;justify-content:center;
+    font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  }
+  .contact-meta a{transition:color .3s ease}
+  .contact-meta a:hover{color:var(--accent)}
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer{
+    padding:2.4rem clamp(1.2rem,4vw,3rem);
+    border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between;
+    font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--secondary);
+  }
+  footer .fn{font-family:"Syne",sans-serif;font-weight:700;color:var(--muted);letter-spacing:.06em}
+
+  /* ── REVEAL ──────────────────────────────────── */
+  .js .reveal{opacity:0;clip-path:inset(8% 0 0 0);transform:translateY(18px);
+    transition:opacity 1s var(--ease),clip-path 1.1s var(--ease),transform 1.1s var(--ease)}
+  .js .reveal.in{opacity:1;clip-path:inset(0 0 0 0);transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .js .reveal{opacity:1;clip-path:none;transform:none;transition:none}
+    .scroll-cue::after{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ande Mafenuka",
+  "alternateName": "Samba",
+  "jobTitle": ["Wardrobe Stylist", "Fashion Designer", "Creative Researcher"],
+  "url": "https://bookednow.co.za/andemafenuka",
+  "image": "https://bookednow.co.za/andemafenuka/images/ande-mafenuka-stylist-balance-water-editorial.jpg",
+  "email": "mailto:sambastylist@gmail.com",
+  "sameAs": [
+    "https://instagram.com/samba.the.stylist"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cape Town / Johannesburg",
+    "addressCountry": "ZA"
+  },
+  "knowsAbout": ["Fashion Styling", "Wardrobe Styling", "Editorial Styling", "Campaign Styling", "Creative Direction", "Fashion Research"],
+  "workExample": [
+    {
+      "@type": "CreativeWork",
+      "name": "Vogue — Let the light hold you, let the moment shape you",
+      "creator": { "@type": "Person", "name": "Ande Mafenuka" },
+      "locationCreated": "Signal Hill, Cape Town"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Mannequin Installation",
+      "creator": { "@type": "Person", "name": "Ande Mafenuka" },
+      "publisher": "The Market Theatre Foundation",
+      "locationCreated": "Newtown, Johannesburg",
+      "dateCreated": "2022"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-brand">Ande Mafenuka</a>
+  <div class="nav-links">
+    <a href="#work" class="nav-hide" data-nav="work">Work</a>
+    <a href="#about" data-nav="about">About</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────── -->
+<header class="hero" id="top">
+  <img src="images/ande-mafenuka-stylist-balance-water-editorial.jpg"
+       alt="Ande Mafenuka wardrobe styling — BALANCE editorial, model in African-print garment reclining in water"
+       width="1080" height="1350" fetchpriority="high" decoding="async">
+  <div class="hero-inner">
+    <h1 class="hero-name">Ande<br>Mafenuka</h1>
+    <p class="hero-sub">Where African fashion research meets the shoot.</p>
+    <p class="hero-roles">Wardrobe Stylist · Designer · Creative Researcher — Cape Town / Johannesburg</p>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<!-- ── WORK ────────────────────────────────────── -->
+<main class="work" id="work">
+  <div class="section-head reveal">
+    <h2>Selected Work</h2>
+    <span class="kicker">Styling · Editorial · Campaign</span>
+  </div>
+
+  <!-- 00 — VOGUE (full, landscape) — PENDING HI-RES, using placeholder -->
+  <figure class="shot shot-full reveal">
+    <img src="images/ande-mafenuka-stylist-vogue-coat-signalhill-PLACEHOLDER.jpg"
+         alt="Ande Mafenuka wardrobe styling — Vogue editorial, white embroidered coat at Signal Hill, Cape Town"
+         width="1280" height="853" loading="lazy" decoding="async">
+    <figcaption class="credit">
+      <span class="credit-project">Vogue — &ldquo;Let the light hold you, let the moment shape you&rdquo;</span>
+      <span class="credit-meta"><span class="role">Wardrobe Styling — Ande Mafenuka</span> · Photography — @laura.iikkanen · Muse — @brad_ewing_ · Signal Hill, Cape Town</span>
+    </figcaption>
+  </figure>
+
+  <!-- 01 — BALANCE duo (full) -->
+  <figure class="shot shot-full reveal">
+    <img src="images/ande-mafenuka-stylist-balance-water-duo.jpg"
+         alt="Ande Mafenuka styling — BALANCE editorial, two figures in African-print and crochet by water"
+         width="1080" height="1352" loading="lazy" decoding="async">
+    <figcaption class="credit">
+      <span class="credit-project">Balance</span> <span class="credit-year">— 2024</span>
+      <span class="credit-meta"><span class="role">Styling &amp; Set Design — Ande Mafenuka</span> · Photography — Marlon Sasman · Art Direction — Elelwani Makhuva</span>
+    </figcaption>
+  </figure>
+
+  <!-- 02 — Aesthetics pair (editorial + detail) -->
+  <div class="shot shot-pair reveal">
+    <figure>
+      <div class="frame">
+        <img src="images/ande-mafenuka-stylist-brooch-blazer-fishhoek.jpg"
+             alt="Ande Mafenuka styling — Aesthetics editorial, two models in brooch-laden white blazer and corset"
+             width="1080" height="1350" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="credit">
+        <span class="credit-project">Aesthetics</span> <span class="credit-year">— 2026</span>
+        <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · with @melissa.maxtadhenderson · Photography — @rubytwoblue · Fish Hoek, Cape Town</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <div class="frame">
+        <img src="images/ande-mafenuka-stylist-brooch-blazer-detail.jpg"
+             alt="Ande Mafenuka styling detail — vintage brooches and cameos on a white blazer"
+             width="1080" height="720" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="credit">
+        <span class="credit-project">Aesthetics</span> <span class="credit-year">— detail</span>
+        <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · Photography — @rubytwoblue · Fish Hoek, Cape Town</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- 03 — Old Money (full) -->
+  <figure class="shot shot-full reveal">
+    <img src="images/ande-mafenuka-stylist-menswear-oldmoney-capetown.jpg"
+         alt="Ande Mafenuka menswear styling — The Old Money Look, burgundy tailoring with travel trunk"
+         width="1080" height="1439" loading="lazy" decoding="async">
+    <figcaption class="credit">
+      <span class="credit-project">The Old Money Look</span> <span class="credit-year">— 2026</span>
+      <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · Photography — Laura Ikkanen · Vredehoek, Cape Town</span>
+    </figcaption>
+  </figure>
+
+  <!-- 04 — Gold + Retro pair (bold portraits) -->
+  <div class="shot shot-pair reveal">
+    <figure>
+      <div class="frame">
+        <img src="images/ande-mafenuka-stylist-gold-headpiece-jhb.jpg"
+             alt="Ande Mafenuka styling — gold headpiece and sheer black, Sweet Pull Up music video"
+             width="1080" height="1350" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="credit">
+        <span class="credit-project">Sweet Pull Up</span> <span class="credit-year">— 2021</span>
+        <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · with @jadestarflex · DoP — @cloutcassette · Sandton, Johannesburg</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <div class="frame">
+        <img src="images/ande-mafenuka-stylist-retro-red-capetown.jpg"
+             alt="Ande Mafenuka styling — RETRO, red beret and tailoring against white shutters"
+             width="1080" height="1350" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="credit">
+        <span class="credit-project">Retro</span> <span class="credit-year">— 2024</span>
+        <span class="credit-meta"><span class="role">Styling, Model &amp; Direction — Ande Mafenuka</span> · Photography — Marlon Sasman · Bree Street, Cape Town</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- 05 — Fitness / Basketball (full) -->
+  <figure class="shot shot-full reveal">
+    <img src="images/ande-mafenuka-stylist-basketball-waterfront.jpg"
+         alt="Ande Mafenuka styling — Fitness Series, blue athleticwear on a Cape Town basketball court"
+         width="1080" height="1440" loading="lazy" decoding="async">
+    <figcaption class="credit">
+      <span class="credit-project">Fitness Series</span> <span class="credit-year">— 2026</span>
+      <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · Photography — @thomas.faehnrich · Model — Karla Santos · Waterfront, Cape Town</span>
+    </figcaption>
+  </figure>
+
+  <!-- 06 — Market Theatre mannequin pair (design / client) -->
+  <div class="shot shot-pair reveal">
+    <figure>
+      <div class="frame">
+        <img src="images/ande-mafenuka-stylist-folk-dress-markettheatre.jpg"
+             alt="Ande Mafenuka styling — Mannequin Installation, green velvet and orange folk dress for The Market Theatre Foundation"
+             width="1080" height="1350" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="credit">
+        <span class="credit-project">Mannequin Installation</span> <span class="credit-year">— 2022</span>
+        <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · The Market Theatre Foundation · Photography — Andile Tshaba · Newtown, Johannesburg</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <div class="frame">
+        <img src="images/ande-mafenuka-stylist-red-print-markettheatre.jpg"
+             alt="Ande Mafenuka styling — Mannequin Installation, red dress with African-print bodice for The Market Theatre Foundation"
+             width="1080" height="1350" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="credit">
+        <span class="credit-project">Mannequin Installation</span> <span class="credit-year">— 2022</span>
+        <span class="credit-meta"><span class="role">Styling — Ande Mafenuka</span> · The Market Theatre Foundation · Photography — Andile Tshaba · Newtown, Johannesburg</span>
+      </figcaption>
+    </figure>
+  </div>
+</main>
+
+<!-- ── CLIENTS / PUBLICATIONS ──────────────────── -->
+<section class="clients reveal">
+  <p class="kicker">Clients, Publications &amp; Collaborators</p>
+  <p class="clients-list">
+    The Market Theatre Foundation <span>·</span> Vogue <span>·</span> 17.23 Magazine <span>·</span> Twenty Model Management
+  </p>
+</section>
+
+<!-- ── ABOUT ───────────────────────────────────── -->
+<section class="about" id="about">
+  <p class="kicker reveal">About</p>
+  <p class="reveal">Ande Mafenuka — known as <em>Samba</em> — is a wardrobe stylist, designer and creative researcher working between Cape Town and Johannesburg.</p>
+  <p class="reveal">His practice treats styling as research: every shoot begins with cultural reference and ends as image — building looks that carry intellectual rigour and cultural specificity, not just taste.</p>
+  <div class="disciplines reveal">
+    <span>Wardrobe Styling</span>
+    <span>Campaign Styling</span>
+    <span>E-commerce Styling</span>
+    <span>Editorial Styling</span>
+    <span>Creative Direction</span>
+    <span>Fashion Research</span>
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────────── -->
+<section class="contact" id="contact">
+  <p class="kicker reveal">Contact</p>
+  <h2 class="reveal">Let's make the image.</h2>
+  <p class="contact-line reveal">Available for editorial, campaign &amp; creative direction.</p>
+  <a class="contact-email reveal" href="mailto:sambastylist@gmail.com">sambastylist@gmail.com</a>
+  <div class="contact-meta reveal">
+    <a href="https://instagram.com/samba.the.stylist" target="_blank" rel="noopener">Instagram — @samba.the.stylist</a>
+    <a href="https://wa.me/27735759707" target="_blank" rel="noopener">WhatsApp — 073 575 9707</a>
+  </div>
+</section>
+
+<footer>
+  <span class="fn">Ande Mafenuka — Samba</span>
+  <span>Cape Town / Johannesburg</span>
+  <span>© 2026</span>
+</footer>
+
+<script>
+  // Nav background on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Reveal on intersect
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target);} });
+  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+  // Active nav link by section
+  const sections = ['work','about','contact'].map(id => document.getElementById(id)).filter(Boolean);
+  const links = new Map([...document.querySelectorAll('.nav-links a')].map(a => [a.dataset.nav, a]));
+  const navIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        links.forEach(a => a.classList.remove('active'));
+        const a = links.get(e.target.id); if (a) a.classList.add('active');
+      }
+    });
+  }, {threshold:.25, rootMargin:'-45% 0px -45% 0px'});
+  sections.forEach(s => navIO.observe(s));
+</script>
+</body>
+</html>
