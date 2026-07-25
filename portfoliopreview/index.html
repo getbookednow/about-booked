@@ -1185,10 +1185,15 @@ footer{padding:28px 0;border-top:1px solid ${border};}
 
 // ── Claude API ─────────────────────────────────────────────────────
 const PROXY_URL = 'https://booked-claude-proxy.luca-a74.workers.dev';
-const CLAUDE_MODEL = 'claude-sonnet-5';
-// The proxy allowlist may lag behind CLAUDE_MODEL: if it rejects the
-// primary model, retry once on the known-allowed fallback so the tool
-// keeps working until the worker allowlist is updated.
+// claude-sonnet-5 is NOT on the proxy's model allowlist, and its rejection
+// response omits CORS headers entirely — real browsers hard-block that
+// response before any JS runs, so a client-side retry can never fire for
+// it (curl/Node don't enforce CORS, which is why that path looked fine in
+// script-based testing but fails for every real visitor). Calling the
+// allowed model directly avoids ever hitting that broken response.
+// Move this back to claude-sonnet-5 once the proxy's allowlist (and its
+// CORS headers on rejections) are fixed server-side.
+const CLAUDE_MODEL = 'claude-haiku-4-5-20251001';
 const FALLBACK_MODEL = 'claude-haiku-4-5-20251001';
 
 // Errors carry a .kind (timeout / network / proxy / parse) so the
