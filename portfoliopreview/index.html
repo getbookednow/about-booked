@@ -447,6 +447,15 @@ nav {
 .generate-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
 .generate-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 .form-error { font-size: 10px; letter-spacing: 0.14em; color: #e07070; margin-top: 14px; display: none; }
+.retry-btn {
+  display: none; margin-top: 14px;
+  background: transparent; border: 1px solid var(--gold-border);
+  color: var(--gold); font-family: var(--font-body);
+  font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+  padding: 12px 26px; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.retry-btn:hover { border-color: var(--gold); background: var(--gold-fill-hover); }
 
 .trust-line {
   font-size: 11px; letter-spacing: 0.1em; color: var(--dim);
@@ -818,6 +827,7 @@ nav {
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
     <p class="form-error" id="form-error">Please select a visual direction and confirm consent to continue.</p>
+    <button type="button" class="retry-btn" id="retry-btn" onclick="startGenerate()">Try Again</button>
     <p class="trust-line">Luca reviews every direction personally — typically responds within 24 hours.</p>
   </div>
 </div>
@@ -855,9 +865,8 @@ let selectedSpecs = [];
 let lastCopy = null;
 let lastSiteData = null;
 let lastHTML = '';
-let leadSent = false;
+let lastWaFull = '';
 const imgs = { hero: null, about: null, port1: null, port2: null };
-const MAKE_URL = 'https://hook.eu1.make.com/8wifwwyx8ztms4zyfd9ouct6ackcmkbi';
 
 const goalCTA = {
   'attract agency representation': 'Request Composite Card',
@@ -879,20 +888,46 @@ const roleSpecMap = {
   'Casting Director': 'spec-general'
 };
 
+// ── Image downscale ────────────────────────────────────────────────
+// Phone photos arrive at 4–12MB; raw base64 of 4 of them breaks the
+// iframe srcdoc on mobile Safari and bloats the vision API call.
+// Everything is re-encoded to JPEG ≤1600px before it is stored.
+const MAX_IMG_EDGE = 1600;
+const IMG_QUALITY  = 0.82;
+
+function downscaleImage(file) {
+  return new Promise(resolve => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const long  = Math.max(img.naturalWidth, img.naturalHeight);
+      const scale = Math.min(1, MAX_IMG_EDGE / long);
+      const w = Math.max(1, Math.round(img.naturalWidth * scale));
+      const h = Math.max(1, Math.round(img.naturalHeight * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      try { resolve(canvas.toDataURL('image/jpeg', IMG_QUALITY)); }
+      catch (e) { resolve(null); }
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
+    img.src = url;
+  });
+}
+
 // ── Entry page ─────────────────────────────────────────────────────
-function handleHeroUpload(input) {
+async function handleHeroUpload(input) {
   const file = input.files[0];
   if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    imgs.hero = e.target.result;
-    document.getElementById('hero-preview').src = e.target.result;
-    document.getElementById('hero-zone').classList.add('has-img');
-    const fi = document.getElementById('fis-img');
-    fi.src = e.target.result;
-    fi.classList.add('visible');
-  };
-  reader.readAsDataURL(file);
+  const dataUrl = await downscaleImage(file);
+  if (!dataUrl) { input.value = ''; return; }
+  imgs.hero = dataUrl;
+  document.getElementById('hero-preview').src = dataUrl;
+  document.getElementById('hero-zone').classList.add('has-img');
+  const fi = document.getElementById('fis-img');
+  fi.src = dataUrl;
+  fi.classList.add('visible');
 }
 
 function removeHero(e) {
@@ -934,20 +969,19 @@ function backToEntry() {
   document.getElementById('page-form').style.display = 'none';
   document.getElementById('page-demo').style.display = 'none';
   document.getElementById('page-entry').style.display = 'block';
+  document.querySelector('nav').style.display = '';
   window.scrollTo(0,0);
 }
 
 // ── Form interactions ──────────────────────────────────────────────
-function handleImg(input, zoneId, prevId, key) {
+async function handleImg(input, zoneId, prevId, key) {
   const file = input.files[0];
   if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    imgs[key] = e.target.result;
-    document.getElementById(prevId).src = e.target.result;
-    document.getElementById(zoneId).classList.add('has-img');
-  };
-  reader.readAsDataURL(file);
+  const dataUrl = await downscaleImage(file);
+  if (!dataUrl) { input.value = ''; return; }
+  imgs[key] = dataUrl;
+  document.getElementById(prevId).src = dataUrl;
+  document.getElementById(zoneId).classList.add('has-img');
 }
 
 function removeImg(e, inputId, zoneId, prevId, key) {
@@ -1017,6 +1051,40 @@ function waUrl(data, intent) {
     data.goal     ? `Goal: ${data.goal}`          : '',
     ``,
     intent || `I'd like to know what it costs to build this properly.`
+  ].filter(l => l !== '');
+  return `https://wa.me/27637549122?text=${encodeURIComponent(lines.join('\n'))}`;
+}
+
+// Full-submission message: fired into the reserved tab when generation
+// finishes, and reused by the demo-bar "Send to Luca" button.
+function waUrlFull(d, copy) {
+  const s = (copy && copy.snapshot) || {};
+  const scoreLine = [
+    s.roleClarity       ? `Role clarity ${s.roleClarity}`         : '',
+    s.visualDirection   ? `Visual direction ${s.visualDirection}` : '',
+    s.bookingPath       ? `Booking path ${s.bookingPath}`         : '',
+    s.categoryStructure ? `Categories ${s.categoryStructure}`     : '',
+    s.aiReadability     ? `AI readability ${s.aiReadability}`     : ''
+  ].filter(Boolean).join(' · ');
+  const lines = [
+    `Hi Luca. I just generated my portfolio direction.`, ``,
+    d.name     ? `Name: ${d.name}`              : '',
+    d.role     ? `Role: ${d.role}`              : '',
+    d.location ? `Based: ${d.location}`         : '',
+    d.insta    ? `Instagram: ${d.insta}`        : '',
+    d.goal     ? `Goal: ${d.goal}`              : '',
+    d.stage    ? `Career stage: ${d.stage}`     : '',
+    d.clients  ? `Clients: ${d.clients}`        : '',
+    d.words    ? `Work in 5 words: ${d.words}`  : '',
+    d.specs    ? `Specialisms: ${d.specs}`      : '',
+    d.services ? `Services: ${d.services}`      : '',
+    d.vibe     ? `Visual direction: ${d.vibe}`  : '',
+    ``,
+    copy && copy.headline     ? `Generated headline: "${copy.headline}"` : '',
+    copy && copy.nextPriority ? `Flagged priority: ${copy.nextPriority}` : '',
+    scoreLine ? `Snapshot: ${scoreLine}` : '',
+    ``,
+    `Please take a look and tell me what you would fix first.`
   ].filter(l => l !== '');
   return `https://wa.me/27637549122?text=${encodeURIComponent(lines.join('\n'))}`;
 }
@@ -1117,32 +1185,82 @@ footer{padding:28px 0;border-top:1px solid ${border};}
 
 // ── Claude API ─────────────────────────────────────────────────────
 const PROXY_URL = 'https://booked-claude-proxy.luca-a74.workers.dev';
+const CLAUDE_MODEL = 'claude-sonnet-5';
+// The proxy allowlist may lag behind CLAUDE_MODEL: if it rejects the
+// primary model, retry once on the known-allowed fallback so the tool
+// keeps working until the worker allowlist is updated.
+const FALLBACK_MODEL = 'claude-haiku-4-5-20251001';
 
-async function callClaude(messages, maxTokens=1200) {
-  const res = await fetch(PROXY_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: maxTokens,
-      messages
-    })
-  });
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Proxy error ${res.status}: ${err}`);
+// Errors carry a .kind (timeout / network / proxy / parse) so the
+// catch in startGenerate can show the right message.
+function taggedError(message, kind) {
+  const err = new Error(message);
+  err.kind = kind;
+  return err;
+}
+
+async function callClaude(messages, maxTokens=1200, timeoutMs=45000, model=CLAUDE_MODEL) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  let res;
+  try {
+    res = await fetch(PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model,
+        max_tokens: maxTokens,
+        messages
+      }),
+      signal: ctrl.signal
+    });
+  } catch (e) {
+    throw (e && e.name === 'AbortError')
+      ? taggedError('Request timed out', 'timeout')
+      : taggedError(e.message || 'Network error', 'network');
+  } finally {
+    clearTimeout(timer);
   }
-  const data = await res.json();
-  if (data.error) throw new Error(data.error.message || JSON.stringify(data.error));
+  if (!res.ok) {
+    const bodyText = await res.text().catch(() => '');
+    if (model !== FALLBACK_MODEL && /model not allowed/i.test(bodyText)) {
+      return callClaude(messages, maxTokens, timeoutMs, FALLBACK_MODEL);
+    }
+    // The proxy origin-gates on the live site's Origin header. A 403 here
+    // means this page isn't running on an allowed origin (e.g. opened as
+    // a local file, or a preview/staging domain) — retrying never helps,
+    // so this needs its own message rather than falling into 'proxy'.
+    if (res.status === 403) throw taggedError('This preview only runs on the live Booked site', 'origin');
+    throw taggedError(`Proxy error ${res.status}`, 'proxy');
+  }
+  let data;
+  try { data = await res.json(); }
+  catch (e) { throw taggedError('Invalid proxy response', 'parse'); }
+  if (data.error) throw taggedError(data.error.message || 'Proxy error', 'proxy');
   return data.content.find(b => b.type === 'text')?.text || '';
 }
 
 // ── Generate ───────────────────────────────────────────────────────
 async function startGenerate() {
-  const consent = document.getElementById('f-consent')?.checked;
-  const errEl   = document.getElementById('form-error');
-  if (!chosenVibe || !consent) { errEl.style.display = 'block'; return; }
+  const consent  = document.getElementById('f-consent')?.checked;
+  const errEl    = document.getElementById('form-error');
+  const retryBtn = document.getElementById('retry-btn');
+  if (!chosenVibe || !consent) {
+    errEl.textContent = 'Please select a visual direction and confirm consent to continue.';
+    errEl.style.display = 'block';
+    retryBtn.style.display = 'none';
+    return;
+  }
   errEl.style.display = 'none';
+  retryBtn.style.display = 'none';
+
+  // Reserve the WhatsApp tab now, synchronously — window.open only
+  // survives popup blockers while still inside the click gesture.
+  let waTab = null;
+  try {
+    waTab = window.open('about:blank', '_blank');
+    if (waTab) waTab.document.write('<body style="background:#0e0a1a;color:#C8A96E;font-family:Helvetica,Arial,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;font-size:11px;letter-spacing:3px;text-transform:uppercase;">Preparing your WhatsApp message…</body>');
+  } catch (e) { waTab = null; }
 
   const name     = document.getElementById('e-name').value.trim();
   const role     = document.getElementById('e-role').value;
@@ -1178,7 +1296,7 @@ async function startGenerate() {
         const vt  = await callClaude([{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: mt, data: b64 } },
           { type: 'text', text: `Analyse this portrait/fashion photo. Return ONLY a JSON object, no markdown:\n{"textSide":"left or right — which side has most empty space","overlayOpacity":0.3-0.65,"textColor":"light or dark","focalX":"20%-80%","focalY":"10%-40%"}` }
-        ]}], 180);
+        ]}], 180, 20000);
         const parsed = JSON.parse(vt.replace(/```json?\n?/gi, '').replace(/```/g, '').trim());
         heroLayout = { ...heroLayout, ...parsed };
       } catch(e) {}
@@ -1212,33 +1330,27 @@ RULES:
 Return exactly:
 {"headline":"4-7 words, direct, role-specific","bio":"2-3 sentences, third person, factual","pullQuote":"8-12 words, real-sounding approach statement","contactHeadline":"5-8 words, direct CTA","projects":[{"title":"project name","category":"specialism","year":"2024"},{"title":"project name","category":"specialism","year":"2024"},{"title":"project name","category":"specialism","year":"2025"}],"services":[{"title":"service","description":"one sentence"},{"title":"service","description":"one sentence"},{"title":"service","description":"one sentence"}],"snapshot":{"roleClarity":"x.x","visualDirection":"x.x","bookingPath":"x.x","categoryStructure":"x.x","aiReadability":"x.x"},"nextPriority":"one direct sentence"}`;
 
-    const raw = await callClaude([{ role: 'user', content: prompt }], 1200);
+    const parseCopy = raw => JSON.parse(raw.replace(/```json?\n?/gi, '').replace(/```/g, '').trim());
+    let copy;
+    try {
+      copy = parseCopy(await callClaude([{ role: 'user', content: prompt }], 1200));
+    } catch (e) {
+      if (e.kind && e.kind !== 'parse') throw e;
+      // Malformed copy JSON: re-ask once before surfacing an error.
+      try { copy = parseCopy(await callClaude([{ role: 'user', content: prompt }], 1200)); }
+      catch (e2) { throw (e2.kind && e2.kind !== 'parse') ? e2 : taggedError('Malformed response', 'parse'); }
+    }
     clearInterval(timerRef);
-    const copy = JSON.parse(raw.replace(/```json?\n?/gi, '').replace(/```/g, '').trim());
 
     const theme = vibeThemes[chosenVibe] || vibeThemes['Dark & Moody'];
     const siteData = { name, role, insta: instaHandle, location, ctaCopy, goal, chosenVibe, clients, specs, headline: copy.headline, contactHeadline: copy.contactHeadline };
     lastCopy = copy; lastSiteData = siteData;
 
-    if (!leadSent) {
-      leadSent = true;
-      const body = new URLSearchParams();
-      Object.entries({
-        timestamp: new Date().toISOString(), source: 'portfolio_direction_v2',
-        name, role, location, instagram: instaHandle || '', goal,
-        visualDirection: chosenVibe, specialisms: specs, clients,
-        careerStage: stage || 'not specified', workDescriptors: words,
-        servicesOffered: services,
-        uploadedImages: Object.values(imgs).filter(Boolean).length,
-        generatedHeadline: copy.headline || '',
-        nextPriority: copy.nextPriority || '',
-        roleClarity: copy.snapshot?.roleClarity || '',
-        bookingPath: copy.snapshot?.bookingPath || '',
-        aiReadability: copy.snapshot?.aiReadability || '',
-        userAgent: navigator.userAgent || ''
-      }).forEach(([k,v]) => body.append(k, v == null ? '' : String(v)));
-      fetch(MAKE_URL, { method: 'POST', mode: 'no-cors', body }).catch(() => {});
-    }
+    lastWaFull = waUrlFull({
+      name, role, location, insta: instaHandle, goal,
+      stage, clients, words, specs: selectedSpecs.join(', '),
+      services, vibe: chosenVibe
+    }, copy);
 
     const html = buildSite(copy, theme, siteData, heroLayout);
     lastHTML = html;
@@ -1247,18 +1359,35 @@ Return exactly:
 
     document.getElementById('page-loading').style.display = 'none';
     document.getElementById('page-demo').style.display = 'flex';
+    // The fixed site nav sits on top of the demo bar and hides the
+    // Edit / Send / Build buttons — swap it out while the demo shows.
+    document.querySelector('nav').style.display = 'none';
     document.getElementById('demo-name').textContent = name.toUpperCase();
     document.getElementById('demo-frame').srcdoc = html;
+    document.getElementById('gen-btn').disabled = false;
+
+    if (waTab && !waTab.closed) {
+      try { waTab.location.href = lastWaFull; } catch (e) {}
+    }
 
   } catch(err) {
     clearInterval(timerRef);
+    if (waTab && !waTab.closed) { try { waTab.close(); } catch (e) {} }
     document.getElementById('page-loading').style.display = 'none';
     document.getElementById('page-form').style.display = 'block';
-    const errEl2 = document.getElementById('form-error');
-    errEl2.textContent = 'Generation failed: ' + err.message;
-    errEl2.style.display = 'block';
+    const messages = {
+      timeout: 'This is taking longer than usual — tap Try Again.',
+      network: 'Connection dropped — check your signal and try again.',
+      proxy:   'Our side is busy right now — give it a moment, then try again.',
+      parse:   'Something came back wrong — tap Try Again.',
+      origin:  'This preview only runs on the live Booked site — please open it at bookednow.co.za/portfoliopreview/.'
+    };
+    errEl.textContent = messages[err.kind] || 'Generation failed — tap Try Again.';
+    errEl.style.display = 'block';
+    // Retrying can never fix an origin mismatch — don't offer a dead-end button.
+    retryBtn.style.display = err.kind === 'origin' ? 'none' : 'inline-block';
     document.getElementById('gen-btn').disabled = false;
-    window.scrollTo(0,0);
+    errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }
 
@@ -1275,7 +1404,7 @@ function getCurrentData() {
     headline: lastCopy?.headline || '', contactHeadline: lastCopy?.contactHeadline || ''
   };
 }
-function sendToLuca() { window.open(waUrl(getCurrentData(), "Please take a look and tell me what you would fix first."), '_blank'); }
+function sendToLuca() { window.open(lastWaFull || waUrl(getCurrentData(), "Please take a look and tell me what you would fix first."), '_blank'); }
 function bookNow()    { window.open(waUrl(getCurrentData(), "I'd like to know what it costs to build this properly."), '_blank'); }
 </script>
 </body>
