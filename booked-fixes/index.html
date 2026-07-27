@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Portfolio Audits & Visibility Scans | Cape Town | Booked.</title>
+<meta name="description" content="Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, and portfolio infrastructure builds for fashion photographers, stylists, models, and creative directors in Cape Town and South Africa.">
+<link rel="canonical" href="https://bookednow.co.za/">
+<link rel="sitemap" type="application/xml" href="https://bookednow.co.za/sitemap.xml">
+<meta property="og:title" content="Fashion Portfolio Audits & Visibility Scans | Cape Town | Booked.">
+<meta property="og:description" content="Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, and portfolio infrastructure builds for fashion creatives.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bookednow.co.za/">
+<meta property="og:image" content="https://bookednow.co.za/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, serif' font-size='36' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="shortcut icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0e0a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-hover:      rgba(200,169,110,0.03);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --violet-fill:          rgba(169,143,224,0.08);
+    --violet-border:        rgba(169,143,224,0.22);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    --bg:         var(--void);
+    --bg-card:    #0e1020;
+    --gold-border: var(--gold-border-default);
+    --gold-dim:   rgba(200,169,110,0.15);
+    --text:       var(--off-white);
+    --muted:      var(--subtext);
+    --dim:        #444;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  @supports not (overflow-x: clip) {
+    html, body { overflow-x: hidden; }
+  }
+  main, section, nav, footer { max-width: 100%; }
+  section, [id] { scroll-margin-top: 96px; }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  a { color: inherit; }
+  h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
+  ::selection { background: rgba(200,169,110,0.25); color: var(--off-white); }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+  .nav-contact:hover { background: var(--gold-dim); color: var(--gold-light) !important; }
+  .nav-chat-mobile {
+    display: none;
+    padding: 9px 16px;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-chat-mobile:hover { background: var(--gold-dim); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-tag {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    max-width: 840px;
+  }
+  .hero h1 em { font-style: italic; color: var(--violet-italic); }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 200;
+    color: var(--subtext);
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 400; }
+  .hero-sub-note {
+    margin-top: 18px;
+    max-width: 720px;
+    color: rgba(255,255,255,0.62);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid var(--gold-border);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* FOUNDER STRIP */
+  .founder-strip {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+  }
+  .founder-strip-inner {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .founder-strip-line { width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .founder-strip p { font-size: 13px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
+  .founder-strip strong { color: var(--gold); font-weight: 400; }
+
+  /* DIAGNOSIS */
+  .diagnosis {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .diagnosis-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
+    padding: 56px 0;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+  .diagnosis-label {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 4px;
+  }
+  .diagnosis-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diagnosis-copy h3 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--off-white);
+  }
+  .diagnosis-copy h3 em { font-style: italic; color: var(--violet-italic); }
+  .diagnosis-copy p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  .services {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    padding: 48px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s, background 0.2s, transform 0.35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, var(--gold-fill-subtle), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .service-card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); transform: translateY(-4px); }
+  .service-card:hover::before { opacity: 1; }
+  .card-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+  .card-number { font-size: 15px; letter-spacing: 0.2em; color: var(--gold); font-weight: 400; }
+  .card-tag {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 4px 10px;
+    border: 1px solid var(--dim);
+  }
+  .card-tag.free, .card-tag.live { border-color: rgba(200,169,110,0.3); color: var(--gold); }
+  .card-tag.live { background: var(--violet-fill); border-color: var(--violet-border); color: #c9afff; }
+  .card-tag.premium { border-color: rgba(200,169,110,0.5); color: var(--gold); background: rgba(200,169,110,0.05); }
+  .service-card h2 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  .card-best-for {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 300;
+    opacity: 0.88;
+  }
+  .service-card p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .card-link {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-link::after { content: '→'; transition: transform 0.2s; }
+  .service-card:hover .card-link::after { transform: translateX(4px); }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .card-price { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
+  .services-category-label {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gold-border-divider);
+  }
+
+  /* PROOF SNAPSHOT */
+  .proof-snapshot {
+    position: relative;
+    z-index: 1;
+    padding: 0 48px 96px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .proof-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 64px; }
+  .proof-kicker, .faq-kicker {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .proof-kicker::before, .faq-kicker::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .proof-heading, .faq-heading {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4.6vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    max-width: 760px;
+  }
+  .proof-heading em, .faq-heading em { font-style: italic; color: var(--violet-italic); }
+  .proof-sub {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 760px;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .proof-card { background: var(--bg-card); border: 1px solid var(--gold-border-default); padding: 38px 36px; }
+  .proof-card.after { border-color: rgba(200,169,110,0.25); }
+  .proof-card-label { font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .proof-card.before .proof-card-label { color: var(--dim); }
+  .proof-card ul { list-style: none; display: grid; gap: 14px; }
+  .proof-card li { color: var(--muted); font-size: 15px; line-height: 1.65; padding-left: 18px; position: relative; }
+  .proof-card.after li { color: var(--off-white); }
+  .proof-card li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  /* FAQ */
+  .faq { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .faq-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 72px; }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 42px; }
+  .faq-item { border: 1px solid var(--gold-border-default); background: var(--bg-card); padding: 34px 32px; }
+  .faq-item h3 { font-family: var(--font-display); font-size: 26px; font-weight: 300; line-height: 1.15; margin-bottom: 16px; color: var(--off-white); }
+  .faq-item p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+
+  /* IMPROVES */
+  .improves { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .improves-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 64px; }
+  .improves-label {
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 48px; display: flex; align-items: center; gap: 12px;
+  }
+  .improves-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .improves-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .improves-col { background: var(--bg-card); border: 1px solid var(--gold-border-default); padding: 40px; }
+  .improves-col-label { font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .improves-col.before .improves-col-label { color: var(--dim); }
+  .improves-col.after .improves-col-label { color: var(--gold); }
+  .improves-col-label .dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .improves-col.before .dot { background: var(--dim); }
+  .improves-col.after .dot { background: var(--gold); }
+  .improves-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .improves-list li { font-size: 16px; font-weight: 200; line-height: 1.5; padding-left: 16px; position: relative; }
+  .improves-col.before .improves-list li { color: var(--muted); }
+  .improves-col.after .improves-list li { color: var(--off-white); }
+  .improves-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 4px; height: 1px; }
+  .improves-col.before .improves-list li::before { background: var(--dim); }
+  .improves-col.after .improves-list li::before { background: var(--gold); }
+
+  /* PULL QUOTE */
+  .pull-quote { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .pull-quote-inner { border-left: 2px solid var(--gold); padding: 48px 64px; background: linear-gradient(135deg, rgba(120,80,200,0.05) 0%, transparent 70%); }
+  .pull-quote blockquote { font-family: var(--font-display); font-size: clamp(22px, 3vw, 36px); font-weight: 300; font-style: italic; line-height: 1.45; color: var(--off-white); }
+
+  /* FOR / NOT FOR */
+  .icp { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .icp-panel { background: var(--bg-card); border: 1px solid var(--gold-border-default); padding: 56px 48px; }
+  .icp-panel.not-for { border-color: rgba(68,68,68,0.4); }
+  .icp-label { display: flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 40px; }
+  .icp-label .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .icp-panel.for .icp-label { color: var(--gold); }
+  .icp-panel.for .dot { background: var(--gold); }
+  .icp-panel.not-for .icp-label { color: var(--dim); }
+  .icp-panel.not-for .dot { background: var(--dim); }
+  .icp-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+  .icp-list li { font-family: var(--font-display); font-size: clamp(17px, 1.8vw, 22px); font-weight: 300; font-style: italic; line-height: 1.3; display: flex; align-items: flex-start; gap: 16px; }
+  .icp-panel.for .icp-list li { color: var(--off-white); }
+  .icp-panel.not-for .icp-list li { color: var(--muted); }
+  .icp-list li .marker { font-family: var(--font-body); font-size: 16px; font-style: normal; font-weight: 300; flex-shrink: 0; margin-top: 3px; line-height: 1; }
+  .icp-panel.for .marker { color: var(--gold); }
+  .icp-panel.not-for .marker { color: var(--dim); }
+
+  /* CONTACT CTA */
+  .contact-cta { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
+  .contact-cta-inner { padding: 96px 0 0; border-top: 1px solid var(--gold-border-divider); }
+  .contact-heading { font-family: var(--font-display); font-size: clamp(42px, 6vw, 80px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 24px; max-width: 700px; }
+  .contact-heading em { font-style: italic; color: var(--violet-italic); }
+  .contact-sub { font-size: 16px; font-weight: 200; color: var(--subtext); max-width: 440px; line-height: 1.8; margin-bottom: 56px; }
+  .contact-actions { display: flex; flex-direction: column; gap: 2px; max-width: 640px; }
+  .btn-wa-full { display: flex; align-items: center; justify-content: space-between; padding: 22px 32px; background: var(--violet-italic); color: var(--void); font-size: 12px; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; font-family: var(--font-body); transition: background 0.2s; }
+  .btn-wa-full:hover { background: #bba3f0; }
+  .btn-wa-full .arrow { font-size: 16px; }
+  .btn-scan-outline { display: flex; align-items: center; justify-content: space-between; padding: 22px 32px; border: 1px solid var(--gold-border-default); color: var(--muted); font-size: 12px; font-weight: 300; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; font-family: var(--font-body); transition: border-color 0.2s, color 0.2s; }
+  .btn-scan-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* FOUNDER */
+  .founder { position: relative; z-index: 1; padding: 120px 48px 140px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--gold-border-divider); }
+  .founder-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 96px; align-items: start; }
+  .founder-left { position: sticky; top: 120px; }
+  .founder-tag { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+  .founder-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .founder-name { font-family: var(--font-display); font-size: clamp(42px, 5vw, 72px); font-weight: 300; line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 20px; }
+  .founder-name em { font-style: italic; color: var(--violet-italic); display: block; }
+  .founder-identity { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; line-height: 2.2; }
+  .founder-contact { display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; border: 1px solid var(--gold-border); color: var(--gold); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-family: var(--font-body); transition: all 0.2s; }
+  .founder-contact:hover { background: var(--gold-dim); border-color: rgba(200,169,110,0.35); }
+  .founder-bio p { font-size: 16px; font-weight: 200; color: var(--off-white); line-height: 1.85; margin-bottom: 20px; }
+  .founder-bio p:last-child { margin-bottom: 0; }
+  .founder-bio strong { color: var(--off-white); font-weight: 400; }
+  .founder-bio em { font-style: italic; color: var(--violet-italic); }
+  .founder-inline-link { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,169,110,0.28); transition: color 0.2s, border-color 0.2s; }
+  .founder-inline-link:hover { color: var(--gold-light); border-color: rgba(226,201,138,0.55); }
+  .founder-markets { margin-top: 48px; margin-bottom: 48px; padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+  .founder-markets-label, .founder-built-label { font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .markets-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .market-pill { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); padding: 6px 14px; border: 1px solid var(--gold-border-default); font-family: var(--font-body); }
+  .founder-built { padding-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+  .built-list { list-style: none; }
+  .built-list li { font-size: 16px; font-weight: 200; color: var(--muted); padding: 14px 0; border-bottom: 1px solid var(--gold-border-divider); display: flex; align-items: flex-start; gap: 16px; line-height: 1.6; }
+  .built-list li::before { content: ''; display: block; width: 4px; height: 4px; background: var(--gold); flex-shrink: 0; margin-top: 6px; opacity: 0.6; }
+  .built-list li:last-child { border-bottom: none; }
+
+  /* POST-FOUNDER CTA */
+  .post-founder-cta { position: relative; z-index: 1; padding: 0 48px 80px; max-width: 1200px; margin: 0 auto; }
+  .post-founder-cta-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 56px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .post-founder-cta p { font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 30px); font-weight: 300; font-style: italic; color: var(--off-white); max-width: 500px; line-height: 1.3; }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
+  .footer-work {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--font-body);
+  }
+  .footer-work:hover { color: var(--gold); }
+  .footer-legal {
+    border-top: 1px solid var(--gold-border-divider);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .footer-legal-links a {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.2s;
+  }
+  .footer-legal-links a:hover { color: var(--subtext); }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 0.05em;
+    font-family: var(--font-body);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag  { animation: fadeUp 0.6s ease both; }
+  .hero h1   { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub  { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-sub-note { animation: fadeUp 0.6s 0.25s ease both; }
+  .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+  .service-card:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
+  .service-card:nth-child(2) { animation: fadeUp 0.5s 0.2s ease both; }
+  .service-card:nth-child(3) { animation: fadeUp 0.5s 0.3s ease both; }
+  .service-card:nth-child(4) { animation: fadeUp 0.5s 0.4s ease both; }
+
+  /* RESPONSIVE */
+  @media (min-width: 1440px) {
+    nav { width: 100%; margin: 0; left: 0; right: 0; }
+    .hero, .founder-strip, .diagnosis, .services, .improves,
+    .pull-quote, .icp, .contact-cta, .post-founder-cta { max-width: 1400px; }
+  }
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .hero { padding: 130px 32px 60px; }
+    .founder-strip { padding: 0 32px; margin-bottom: 60px; }
+    .diagnosis { padding: 0 32px 48px; }
+    .diagnosis-inner { grid-template-columns: 1fr; gap: 24px; }
+    .services { padding: 0 32px 100px; }
+    .proof-snapshot { padding: 0 32px 80px; }
+    .faq { padding: 0 32px 100px; }
+    .pull-quote { padding: 0 32px 80px; }
+    .pull-quote-inner { padding: 40px 48px; }
+    .icp { padding: 0 32px 80px; }
+    .icp-panel { padding: 44px 36px; }
+    .contact-cta { padding: 0 32px 80px; }
+    .founder { padding: 80px 32px 100px; }
+    .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+    .founder-left { position: static; }
+    .post-founder-cta { padding: 0 32px 60px; }
+    footer { padding: 36px 32px 24px; }
+  }
+  @media (max-width: 768px) {
+    section, [id] { scroll-margin-top: 82px; }
+    nav { padding: 18px 20px; }
+    .nav-links { display: none; }
+    .nav-contact { display: none; }
+    .nav-chat-mobile { display: flex; }
+    .hero { padding: 110px 20px 60px; }
+    .hero h1 { font-size: clamp(40px, 10vw, 64px); }
+    .hero-sub { font-size: 16px; max-width: 100%; }
+    .hero-sub-note { font-size: 14px; max-width: 100%; }
+    .hero-ctas { flex-direction: column; gap: 12px; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 16px 24px; }
+    .founder-strip { padding: 0 20px; margin-bottom: 40px; }
+    .diagnosis { padding: 0 20px 40px; }
+    .services { padding: 0 20px 80px; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+    .service-card { padding: 32px 24px; }
+    .service-card h2 { font-size: 28px; }
+    .card-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .card-number { font-size: 11px; }
+    .card-tag { font-size: 11px; }
+    .proof-snapshot { padding: 0 20px 72px; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .proof-card { padding: 32px 26px; }
+    .faq { padding: 0 20px 80px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-item { padding: 30px 26px; }
+    .improves-grid { grid-template-columns: 1fr; }
+    .improves-col { padding: 32px 28px; }
+    .pull-quote { padding: 0 20px 64px; }
+    .pull-quote-inner { padding: 32px 28px; }
+    .icp { padding: 0 20px 64px; }
+    .icp-grid { grid-template-columns: 1fr; }
+    .icp-panel { padding: 40px 28px; }
+    .contact-cta { padding: 0 20px 64px; }
+    .contact-heading { font-size: clamp(36px, 9vw, 56px); }
+    .contact-actions { max-width: 100%; }
+    .founder { padding: 60px 20px 80px; }
+    .founder-name { font-size: clamp(38px, 9vw, 56px); }
+    .post-founder-cta { padding: 0 20px 48px; }
+    .post-founder-cta-inner { flex-direction: column; gap: 24px; }
+    footer { padding: 28px 20px 20px; }
+    .footer-top { flex-direction: column; gap: 10px; text-align: center; }
+    .footer-legal { flex-direction: column; align-items: center; text-align: center; }
+    .footer-legal-links { gap: 16px; }
+  }
+  @media (max-width: 390px) {
+    nav { padding: 16px 16px; }
+    .nav-logo { font-size: 18px; }
+    .hero { padding: 100px 16px 48px; }
+    .hero h1 { font-size: 38px; }
+    .hero-tag { font-size: 12px; line-height: 1.4; }
+    .hero-sub { font-size: 16px; }
+    .founder-strip { padding: 0 16px; }
+    .diagnosis { padding: 0 16px 32px; }
+    .services { padding: 0 16px 64px; }
+    .service-card { padding: 28px 20px; }
+    .service-card h2 { font-size: 24px; }
+    .card-number { font-size: 10px; }
+    .card-tag { font-size: 10px; }
+    .proof-snapshot { padding: 0 16px 60px; }
+    .proof-card { padding: 28px 22px; }
+    .faq { padding: 0 16px 64px; }
+    .faq-item { padding: 28px 22px; }
+    .improves-col { padding: 28px 20px; }
+    .pull-quote { padding: 0 16px 48px; }
+    .pull-quote-inner { padding: 28px 20px; }
+    .icp { padding: 0 16px 48px; }
+    .icp-panel { padding: 32px 20px; }
+    .contact-cta { padding: 0 16px 48px; }
+    .contact-heading { font-size: 34px; }
+    .founder { padding: 48px 16px 64px; }
+    .founder-name { font-size: 38px; }
+    .post-founder-cta { padding: 0 16px 40px; }
+    footer { padding: 24px 16px 16px; }
+    .footer-note { font-size: 12px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://bookednow.co.za/#website",
+      "url": "https://bookednow.co.za/",
+      "name": "Booked.",
+      "description": "Discoverability infrastructure for fashion creatives.",
+      "publisher": { "@id": "https://bookednow.co.za/#business" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bookednow.co.za/#webpage",
+      "url": "https://bookednow.co.za/",
+      "name": "Fashion Portfolio Audits & Visibility Scans | Cape Town | Booked.",
+      "description": "Portfolio audits, visibility scans, Fix Sprints, AI Readability Layers, and portfolio infrastructure builds for fashion photographers, stylists, models, and creative directors in Cape Town and South Africa.",
+      "isPartOf": { "@id": "https://bookednow.co.za/#website" },
+      "about": { "@id": "https://bookednow.co.za/#business" },
+      "mainEntity": { "@id": "https://bookednow.co.za/#business" }
+    },
+    {
+      "@type": ["ProfessionalService","LocalBusiness"],
+      "@id": "https://bookednow.co.za/#business",
+      "name": "Booked.",
+      "description": "Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, portfolio infrastructure builds, and Legacy complete infrastructure builds for fashion creatives.",
+      "url": "https://bookednow.co.za/",
+      "telephone": "+27637549122",
+      "priceRange": "Free–R50000",
+      "founder": {
+        "@type": "Person",
+        "name": "Luca Bold",
+        "jobTitle": "Founder & Fashion Creative Infrastructure Specialist",
+        "url": "https://bookednow.co.za/#founder",
+        "sameAs": ["https://instagram.com/lucaboldcpt"]
+      },
+      "areaServed": [
+        {"@type": "Country","name": "South Africa"},
+        {"@type": "City","name": "Cape Town"},
+        {"@type": "City","name": "Johannesburg"},
+        {"@type": "City","name": "Milan"},
+        {"@type": "City","name": "Shanghai"}
+      ],
+      "knowsAbout": ["fashion portfolio audits","fashion visibility scans","fashion creative discoverability","digital infrastructure for fashion creatives","portfolio sequencing","industry readability","AI readability infrastructure","AI-readable portfolio structure","machine-readable portfolios","semantic portfolio architecture","AI-agent compatibility","landing page preview for fashion creatives","legacy infrastructure build"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Booked. Services",
+        "itemListElement": [
+          {"@type":"Offer","position":1,"name":"Visibility Scan","description":"Understand where a fashion creative's digital presence may be losing visibility, trust, or booking clarity across portfolio, search presence, profile structure, and booking friction.","price":"0","priceCurrency":"ZAR","url":"https://bookednow.co.za/scan/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":2,"name":"Verified Manual Audit","description":"Verified manual audit for fashion creatives reviewing actual portfolio links, search presence, profile structure, trust signals, commercial readability, and booking friction.","priceSpecification":{"@type":"PriceSpecification","minPrice":"2500","priceCurrency":"ZAR","valueAddedTaxIncluded":true},"url":"https://bookednow.co.za/scan/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":3,"name":"Portfolio Audit","description":"Professional review of what a fashion creative's current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers, with keep, remove, and repositioning logic.","price":"4000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":4,"name":"Landing Page Preview","description":"Free landing page preview for fashion creatives who do not have a proper portfolio website yet and need to see what a cleaner booking layer could look like before any paid build is recommended.","price":"0","priceCurrency":"ZAR","url":"https://bookednow.co.za/portfoliopreview/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":5,"name":"Fix Sprint","description":"Implementation sprint for fashion creatives who need the highest-friction part of their digital presence fixed properly.","priceSpecification":{"@type":"PriceSpecification","minPrice":"4500","priceCurrency":"ZAR","valueAddedTaxIncluded":true},"availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":6,"name":"AI Readability Layer","description":"AI readability layer for fashion creatives whose work looks strong visually but is difficult for search engines, AI systems, and digital platforms to understand.","priceSpecification":{"@type":"PriceSpecification","minPrice":"3500","priceCurrency":"ZAR","valueAddedTaxIncluded":true},"url":"https://bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":7,"name":"Landing Page Build","description":"Single-page professional landing and booking layer for fashion creatives who need an owned, search-readable presence without a full portfolio system.","priceSpecification":{"@type":"PriceSpecification","minPrice":"7500","priceCurrency":"ZAR","valueAddedTaxIncluded":true},"url":"https://bookednow.co.za/portfoliopreview/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":8,"name":"Portfolio Infrastructure Build","description":"Full portfolio infrastructure build for established fashion creatives moving from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery.","priceSpecification":{"@type":"PriceSpecification","minPrice":"15000","priceCurrency":"ZAR","valueAddedTaxIncluded":true},"url":"https://bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":9,"name":"Legacy — Complete Infrastructure Build","description":"Complete digital infrastructure build for established fashion creatives with a decade of work that is invisible to discovery systems. Includes Scan audit, portfolio website, credit indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up.","price":"50000","priceCurrency":"ZAR","url":"https://bookednow.co.za/legacy/","availability":"https://schema.org/InStock"}
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bookednow.co.za/#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"What does Booked do?","acceptedAnswer":{"@type":"Answer","text":"Booked builds discoverability infrastructure for fashion creatives. It audits visibility, portfolio structure, trust signals, contact paths, and AI-readable context so photographers, stylists, models, creative directors, and boutique agencies become easier to find, understand, trust, and book."}},
+        {"@type":"Question","name":"What is a fashion portfolio audit?","acceptedAnswer":{"@type":"Answer","text":"A fashion portfolio audit is a professional review of what a portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Booked assesses sequence, commercial strength, category fit, repetition, visual authority, booking readability, and what should be kept, removed, or repositioned."}},
+        {"@type":"Question","name":"What is a Visibility Scan?","acceptedAnswer":{"@type":"Answer","text":"A Visibility Scan identifies likely gaps in a fashion creative's digital presence across portfolio structure, search presence, trust signals, profile clarity, and booking friction before any larger build is recommended."}},
+        {"@type":"Question","name":"What is an AI Readability Layer?","acceptedAnswer":{"@type":"Answer","text":"An AI Readability Layer improves the structure around a creative's work so search engines, AI systems, digital platforms, and clients can understand it more clearly. It covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes."}},
+        {"@type":"Question","name":"What is a Portfolio Infrastructure Build?","acceptedAnswer":{"@type":"Answer","text":"A Portfolio Infrastructure Build is a full portfolio system for established fashion creatives. It includes portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions."}},
+        {"@type":"Question","name":"What is the Legacy build?","acceptedAnswer":{"@type":"Answer","text":"Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. It includes a full Scan audit, custom portfolio website build, credit recovery and indexing, AI agent infrastructure, agency profile audit, and a 90-day follow-up review. R50,000."}},
+        {"@type":"Question","name":"How do I get more bookings as a fashion photographer?","acceptedAnswer":{"@type":"Answer","text":"More bookings usually require more than stronger images. A fashion photographer needs a clear portfolio sequence, searchable project context, named credits, direct contact flow, role clarity, and a digital presence that clients and agencies can quickly understand and trust."}},
+        {"@type":"Question","name":"What does discoverability mean for a fashion creative?","acceptedAnswer":{"@type":"Answer","text":"Discoverability means the work is easy to find, understand, trust, and book across search engines, AI systems, portfolio pages, agency references, social profiles, and direct enquiry paths."}},
+        {"@type":"Question","name":"Is Booked only for fashion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Industries outside fashion are not the focus. Booked is built around fashion-specific visibility, taste, portfolio, and booking signals. The name stays in fashion."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://bookednow.co.za/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="https://bookednow.co.za/scan/" title="Free fashion creative visibility scan — Booked.">Visibility Scan</a></li>
+    <li><a href="https://bookednow.co.za/infrastructure/" title="AI readability infrastructure for fashion portfolios — Booked.">Infrastructure</a></li>
+    <li><a href="#services" title="Fashion portfolio audit Cape Town — Booked.">Audits</a></li> <li><a href="https://bookednow.co.za/work" title="Case studies — Booked.">Work</a></li>
+    <li><a href="#founder" title="About Luca Bold and Booked.">About</a></li>
+  </ul>
+  <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked." class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Fashion careers are becoming infrastructure.</p>
+    <h1>Strong work<br>still needs<br><em>structure.</em></h1>
+    <p class="hero-sub">
+      Booked helps <strong>working fashion creatives</strong> become easier to find, understand, trust, and book. I audit your portfolio, search presence, trust signals, and AI-readable structure — then build the infrastructure that helps you surface before the opportunity disappears.
+    </p>
+    <p class="hero-sub-note">
+      The free scan is directional. The full audit is manually verified against your actual portfolio, search presence, structure, trust signals, and commercial readability.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://bookednow.co.za/scan/" class="btn-primary" title="Free fashion creative visibility scan — Booked.">Run the Visibility Scan</a>
+      <a href="https://wa.me/27637549122?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Booked" class="btn-secondary" target="_blank" rel="noopener">Chat with me</a>
+    </div>
+  </section>
+
+  <!-- FOUNDER CREDIBILITY STRIP -->
+  <div class="founder-strip">
+    <div class="founder-strip-inner">
+      <div class="founder-strip-line"></div>
+      <p>Built by <strong>Luca Bold</strong> — 10 years inside fashion across Cape Town, Milan, Shanghai, Hong Kong, Seoul, Mumbai, Istanbul, and Bali.</p>
+    </div>
+  </div>
+
+  <!-- DIAGNOSIS INTRO -->
+  <section class="diagnosis">
+    <div class="diagnosis-inner">
+      <p class="diagnosis-label">Start with diagnosis</p>
+      <div class="diagnosis-copy">
+        <h3>Booked does not guess<br><em>what you need.</em></h3>
+        <p>It reads your visibility, portfolio structure, and digital presence first — then builds the infrastructure that closes the gap. Industry readability is the distance between how you see your work and how the industry reads it in three seconds. Booked measures that gap. Then builds what needs to exist to close it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF SNAPSHOT -->
+  <section class="proof-snapshot" id="proof">
+    <div class="proof-inner">
+      <p class="proof-kicker">Proof of structure</p>
+      <h2 class="proof-heading">Strong work can still lose attention when the system around it is <em>unclear.</em></h2>
+      <p class="proof-sub">Booked looks for the gaps that make a fashion portfolio harder to read, search, trust, or book from — then turns those gaps into a clearer digital infrastructure layer.</p>
+      <div class="proof-grid">
+        <div class="proof-card before">
+          <p class="proof-card-label">Before Booked</p>
+          <ul>
+            <li>Strong creative work, but no clear sequence or commercial read.</li>
+            <li>Credits, categories, and contact paths buried across platforms.</li>
+            <li>Portfolio context difficult for clients, search engines, and AI systems to understand.</li>
+          </ul>
+        </div>
+        <div class="proof-card after">
+          <p class="proof-card-label">After Booked</p>
+          <ul>
+            <li>Clearer portfolio order built around casting and client-readability logic.</li>
+            <li>Sharper positioning, cleaner contact path, and stronger trust signals.</li>
+            <li>Search-readable copy, credits, and structure around the work — not just a prettier page.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <p class="services-category-label">Start here</p>
+    <div class="services-grid" style="margin-bottom: 2px;">
+      <!-- 01 VISIBILITY SCAN -->
+      <a href="https://bookednow.co.za/scan/" class="service-card" title="Free fashion creative visibility scan — Booked.">
+        <div class="card-meta">
+          <span class="card-number">01 — VISIBILITY SCAN</span>
+          <span class="card-tag live">FREE · DIRECTIONAL</span>
+        </div>
+        <p class="card-best-for">Best for: creatives who want to know where their digital presence is losing visibility, trust, or booking clarity.</p>
+        <p>Understand where your digital presence may be losing visibility, trust, or booking clarity. The scan identifies likely gaps across your portfolio, search presence, profile structure, and booking friction — before any larger build is recommended.</p>
+        <div class="card-footer">
+          <span class="card-link">Run the scan</span>
+          <span class="card-price">Free · Verified manual audit from R2,500</span>
+        </div>
+      </a>
+      <!-- 02 PORTFOLIO AUDIT -->
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit" target="_blank" rel="noopener" class="service-card" title="Fashion portfolio audit Cape Town — Booked.">
+        <div class="card-meta">
+          <span class="card-number">02 — PORTFOLIO AUDIT</span>
+          <span class="card-tag live">R4,000</span>
+        </div>
+        <p class="card-best-for">Best for: creatives who need a clear read on what to keep, remove, or reposition.</p>
+        <p>A professional review of what your current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Each image is assessed for sequence, commercial strength, category fit, repetition, visual authority, and booking readability — with clear keep, remove, and repositioning logic.</p>
+        <div class="card-footer">
+          <span class="card-link">Get your audit</span>
+          <span class="card-price">R4,000</span>
+        </div>
+      </a>
+      <!-- 03 LANDING PAGE PREVIEW -->
+      <a href="https://bookednow.co.za/portfoliopreview/" class="service-card" title="Free landing page preview for fashion creatives — Booked.">
+        <div class="card-meta">
+          <span class="card-number">03 — LANDING PAGE PREVIEW</span>
+          <span class="card-tag free">FREE PREVIEW</span>
+        </div>
+        <p class="card-best-for">Best for: creatives who do not yet have a clean portfolio page or booking link.</p>
+        <p>Preview how your work could sit inside a cleaner professional landing page before committing to a build. This gives you a directional read on structure, positioning, contact flow, and the first layer of owned digital presence.</p>
+        <div class="card-footer">
+          <span class="card-link">See your preview</span>
+          <span class="card-price">Free · Builds from R7,500</span>
+        </div>
+      </a>
+      <!-- 04 FIX SPRINT -->
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Booked%20Fix%20Sprint" target="_blank" rel="noopener" class="service-card" title="Fix sprint for fashion creative digital presence — Booked.">
+        <div class="card-meta">
+          <span class="card-number">04 — FIX SPRINT</span>
+          <span class="card-tag live">FROM R4,500</span>
+        </div>
+        <p class="card-best-for">Best for: creatives who need one high-friction part of their digital presence fixed properly.</p>
+        <p>For creatives who do not need a full rebuild yet — but do need the highest-friction part of their digital presence fixed properly. This may include portfolio sequencing, bio structure, homepage copy, project captions, profile positioning, contact flow, AI-readable content improvements, or a focused one-page landing layer.</p>
+        <div class="card-footer">
+          <span class="card-link">Fix the friction</span>
+          <span class="card-price">From R4,500 · Landing page builds from R7,500</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="services-category-label" id="builds" style="margin-top: 48px; scroll-margin-top: 120px;">Infrastructure builds</p>
+    <div class="services-grid">
+      <!-- 05 AI READABILITY LAYER -->
+      <a href="https://bookednow.co.za/infrastructure/" class="service-card" title="AI readability infrastructure for fashion portfolios — Booked.">
+        <div class="card-meta">
+          <span class="card-number">05 — AI READABILITY LAYER</span>
+          <span class="card-tag live">FROM R3,500</span>
+        </div>
+        <p class="card-best-for">Best for: creatives whose work looks strong visually, but is difficult for search and AI systems to understand.</p>
+        <p>For creatives whose work looks strong visually, but is difficult for search engines, AI systems, and digital platforms to understand. This layer improves the structure around the work: role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes.</p>
+        <div class="card-footer">
+          <span class="card-link">Make the work readable</span>
+          <span class="card-price">From R3,500</span>
+        </div>
+      </a>
+      <!-- 06 PORTFOLIO INFRASTRUCTURE BUILD -->
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Infrastructure%20Build" target="_blank" rel="noopener" class="service-card" title="Portfolio infrastructure build for fashion creatives — Booked.">
+        <div class="card-meta">
+          <span class="card-number">06 — PORTFOLIO INFRASTRUCTURE BUILD</span>
+          <span class="card-tag live">FROM R15,000</span>
+        </div>
+        <p class="card-best-for">Best for: established creatives ready to move from scattered visibility into a structured portfolio system.</p>
+        <p>For established creatives ready to move from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery. This is the full build layer: portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions.</p>
+        <div class="card-footer">
+          <span class="card-link">Build the system</span>
+          <span class="card-price">From R15,000</span>
+        </div>
+      </a>
+      <!-- 07 LEGACY -->
+      <a href="https://bookednow.co.za/legacy/" class="service-card" title="Legacy — complete digital infrastructure build for established fashion creatives — Booked." style="grid-column: 1 / -1;">
+        <div class="card-meta">
+          <span class="card-number">07 — LEGACY</span>
+          <span class="card-tag premium">R50,000 · COMPLETE BUILD</span>
+        </div>
+        <p class="card-best-for">Best for: established creatives with a decade of work that is invisible to the systems making the first cut.</p>
+        <p>A decade of work, made findable. Legacy is the complete technical layer — Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Built once, built correctly. For the established creative whose career deserves infrastructure that matches it.</p>
+        <div class="card-footer">
+          <span class="card-link">Find out more</span>
+          <span class="card-price">R50,000 · 50% deposit to confirm</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- WHAT BOOKED IMPROVES -->
+  <section class="improves">
+    <div class="improves-inner">
+      <p class="improves-label">What gets improved</p>
+      <div class="improves-grid">
+        <div class="improves-col before">
+          <div class="improves-col-label"><span class="dot"></span> Before Booked</div>
+          <ul class="improves-list">
+            <li>Unclear portfolio sequence — strong work, weak structure</li>
+            <li>Invisible on Google and AI search</li>
+            <li>Instagram-only visibility — no owned infrastructure</li>
+            <li>No professional contact path</li>
+            <li>Credits buried or absent — AI can't read them</li>
+            <li>No consistent positioning across platforms</li>
+          </ul>
+        </div>
+        <div class="improves-col after">
+          <div class="improves-col-label"><span class="dot"></span> After Booked</div>
+          <ul class="improves-list">
+            <li>Clearer portfolio sequence built around casting logic</li>
+            <li>Indexed, structured, AI-readable digital presence</li>
+            <li>Owned infrastructure on a custom domain</li>
+            <li>Direct, frictionless contact path</li>
+            <li>Named credits in structured, searchable format</li>
+            <li>Consistent identity across all surfaces</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="pull-quote">
+    <div class="pull-quote-inner">
+      <blockquote>
+        "The next advantage in fashion is not only talent. It is being easier to find, read, trust, and book."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FOR / NOT FOR -->
+  <section class="icp">
+    <div class="icp-grid">
+      <div class="icp-panel for">
+        <div class="icp-label"><span class="dot"></span> For</div>
+        <ul class="icp-list">
+          <li><span class="marker">+</span> Working photographers, stylists, creative directors, art directors, hair &amp; makeup artists, casting directors, set designers, and fashion filmmakers</li>
+          <li><span class="marker">+</span> Creatives who know something is off — but not where to start</li>
+        </ul>
+      </div>
+      <div class="icp-panel not-for">
+        <div class="icp-label"><span class="dot"></span> Not for</div>
+        <ul class="icp-list">
+          <li><span class="marker">−</span> Emerging models, students, pre-career creatives</li>
+          <li><span class="marker">−</span> Anyone looking for cheaper, faster, generic</li>
+          <li><span class="marker">−</span> Creatives looking for isolated design tasks without diagnosis</li>
+          <li><span class="marker">−</span> Anyone looking for surface-level design without fixing structure, visibility, or positioning</li>
+          <li><span class="marker">−</span> Industries outside fashion. The name stays in fashion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-inner">
+      <p class="faq-kicker">Search-readable answers</p>
+      <h2 class="faq-heading">What Booked actually <em>fixes.</em></h2>
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>What does Booked do?</h3>
+          <p>Booked builds discoverability infrastructure for fashion creatives. It audits visibility, portfolio structure, trust signals, contact paths, and AI-readable context so photographers, stylists, models, creative directors, and boutique agencies become easier to find, understand, trust, and book.</p>
+        </article>
+        <article class="faq-item">
+          <h3>What does a Booked portfolio audit include?</h3>
+          <p>A Booked portfolio audit reviews image sequencing, casting readability, art-direction value, brand fit, credits, contact friction, search readability, and AI-discoverability signals. The goal is to clarify what to keep, what to cut, and what infrastructure needs to be built around the work.</p>
+        </article>
+        <article class="faq-item">
+          <h3>How do I get more bookings as a fashion photographer?</h3>
+          <p>More bookings usually require more than stronger images. A fashion photographer needs a clear portfolio sequence, searchable project context, visible credits, a direct contact path, and a digital presence that makes their style, market, and commercial value easy to understand quickly.</p>
+        </article>
+        <article class="faq-item">
+          <h3>What does discoverability mean for a fashion creative?</h3>
+          <p>Discoverability means whether the right people and systems can find, understand, trust, and recommend your work. For a fashion creative, this includes Google visibility, portfolio structure, credits, captions, filenames, metadata, social consistency, and a professional booking path.</p>
+        </article>
+        <article class="faq-item">
+          <h3>How does Booked work?</h3>
+          <p>Booked starts with diagnosis. It reads your portfolio, search presence, trust signals, and industry readability before recommending a fix. The outcome may be a visibility scan, portfolio audit, AI readability layer, machine-readable portfolio build, roster intelligence system for agencies, or a Legacy complete infrastructure build.</p>
+        </article>
+        <article class="faq-item">
+          <h3>What is the Legacy build?</h3>
+          <p>Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. Includes a full Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. R50,000.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Is Booked only for fashion?</h3>
+          <p>Yes. Industries outside fashion are not the focus. Booked is built around fashion-specific visibility, taste, portfolio, and booking signals. The name stays in fashion.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="contact-cta-inner">
+      <h2 class="contact-heading">Reach out.<br><em>I'll figure out what's<br>holding you back.</em></h2>
+      <p class="contact-sub">Send one message. No form. Tell me what you do, where your work lives, and what feels stuck. I'll tell you what needs fixing first.</p>
+      <div class="contact-actions">
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%20came%20from%20the%20Booked%20homepage.%20Here%27s%20what%20I%20do%20and%20what%20feels%20stuck%3A" class="btn-wa-full" target="_blank" rel="noopener">
+          Chat on WhatsApp
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://bookednow.co.za/scan/" class="btn-scan-outline">
+          Or run a free Visibility Scan first
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <div class="founder-left">
+      <p class="founder-tag">The founder</p>
+      <h2 class="founder-name">Luca.<br><em>Built from<br>the inside.</em></h2>
+      <p class="founder-identity">
+        A decade on set.<br>
+        Now building what gets you there.
+      </p>
+      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20connect" class="founder-contact" target="_blank" rel="noopener">
+        Get in touch →
+      </a>
+    </div>
+    <div class="founder-right">
+      <div class="founder-bio">
+        <p>
+          I spent a decade being booked — across South Africa, Asia, and Europe. Not observing the industry. Working in it. On set in Shanghai, in the showrooms in Milan, in the castings in Cape Town. I know what a casting director looks at in the first three seconds, because I was on the other side of that table more times than I can count.
+        </p>
+        <p>
+          That decade also showed me something most people building for creatives miss: <strong>the gap isn't talent. It's infrastructure.</strong> The creatives who consistently get hired are often the ones who are findable, credible, and professional before anyone even sees the full body of work.
+        </p>
+        <p>
+          I tried the digital marketing agency route before this. Broad services, no clear focus, no industry-specific edge. It didn't stick. Booked is what happened when I stopped trying to serve everyone and started building for the one industry I actually know from the inside.
+        </p>
+        <p>
+          <em>Booked is what I would have needed.</em> A decade inside the industry, now applied to building the digital infrastructure that gets creatives found, understood, trusted, and hired. <a href="https://bookednow.co.za/scan/" class="founder-inline-link" title="Run the free Booked visibility scan">Run the visibility scan →</a>
+        </p>
+      </div>
+      <div class="founder-markets">
+        <p class="founder-markets-label">Markets worked</p>
+        <div class="markets-list">
+          <span class="market-pill">Cape Town</span>
+          <span class="market-pill">Milan</span>
+          <span class="market-pill">Shanghai</span>
+          <span class="market-pill">Hong Kong</span>
+          <span class="market-pill">Seoul</span>
+          <span class="market-pill">Bali</span>
+          <span class="market-pill">Mumbai</span>
+          <span class="market-pill">Istanbul</span>
+        </div>
+      </div>
+      <div class="founder-built">
+        <p class="founder-built-label">What Booked builds</p>
+        <ul class="built-list">
+          <li>Directional visibility scans — helping creatives understand how their presence may be read before a client ever messages</li>
+          <li>Portfolio audits calibrated against what casting directors, art directors, and clients actually evaluate</li>
+          <li>One-page portfolio infrastructure for creatives who need a professional presence immediately</li>
+          <li>AI readability infrastructure — semantic portfolio architecture, machine-readable credits, and cleaner discoverability signals</li>
+          <li>Legacy complete infrastructure builds for established creatives with a decade of work that deserves to be found</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POST-FOUNDER CTA -->
+<div class="post-founder-cta">
+  <div class="post-founder-cta-inner">
+    <p>Not sure where to start? Send me your portfolio. I'll tell you what I would fix first.</p>
+    <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20send%20you%20my%20portfolio%20for%20a%20quick%20read" class="btn-primary" target="_blank" rel="noopener">Send Portfolio on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-logo">Booked.</span>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+    <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "BOOKED.",
+  "alternateName": "BOOKED. Discoverability Infrastructure",
+  "url": "https://bookednow.co.za",
+  "description": "Discoverability infrastructure for fashion creatives. BOOKED. closes the legibility gap between career quality and digital discoverability — so casting directors, agents, and AI systems find the right people.",
+  "slogan": "Strong work still needs structure.",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "name": "Luca Bold",
+    "jobTitle": "Founder & Fashion Creative Infrastructure Specialist",
+    "sameAs": [
+      "https://instagram.com/bookedofficialsa"
+    ]
+  },
+  "sameAs": [
+    "https://instagram.com/bookedofficialsa"
+  ],
+  "areaServed": [
+    "ZA",
+    "IT",
+    "CN",
+    "GB",
+    "AE",
+    "JP",
+    "Global"
+  ],
+  "currenciesAccepted": "ZAR",
+  "paymentAccepted": "Credit Card, Debit Card, EFT",
+  "email": "luca@bookednow.co.za",
+  "telephone": "+27637549122",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales & Enquiries",
+    "url": "https://wa.me/27637549122",
+    "telephone": "+27637549122",
+    "contactOption": "WhatsApp",
+    "availableLanguage": "English"
+  },
+  "entryPoint": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://bookednow.co.za/scan/",
+    "description": "Free Visibility Scan — entry point for all BOOKED. services",
+    "actionAccessibilityRequirement": {
+      "requiresSubscription": false
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "BOOKED. Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "position": 1,
+        "name": "Visibility Scan",
+        "description": "Understand where a fashion creative's digital presence may be losing visibility, trust, or booking clarity across portfolio, search presence, profile structure, and booking friction.",
+        "price": "0",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za/scan/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 2,
+        "name": "Verified Manual Audit",
+        "description": "Verified manual audit for fashion creatives reviewing actual portfolio links, search presence, profile structure, trust signals, commercial readability, and booking friction.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "2500",
+          "priceCurrency": "ZAR",
+          "valueAddedTaxIncluded": true
+        },
+        "url": "https://bookednow.co.za/scan/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 3,
+        "name": "Portfolio Audit",
+        "description": "Professional review of what a fashion creative's current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers, with keep, remove, and repositioning logic.",
+        "price": "4000",
+        "priceCurrency": "ZAR",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 4,
+        "name": "Landing Page Preview",
+        "description": "Free landing page preview for fashion creatives who do not have a proper portfolio website yet and need to see what a cleaner booking layer could look like before any paid build is recommended.",
+        "price": "0",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za/portfoliopreview/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 5,
+        "name": "Fix Sprint",
+        "description": "Implementation sprint for fashion creatives who need the highest-friction part of their digital presence fixed properly.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "4500",
+          "priceCurrency": "ZAR",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 6,
+        "name": "AI Readability Layer",
+        "description": "AI readability layer for fashion creatives whose work looks strong visually but is difficult for search engines, AI systems, and digital platforms to understand.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "3500",
+          "priceCurrency": "ZAR",
+          "valueAddedTaxIncluded": true
+        },
+        "url": "https://bookednow.co.za/infrastructure/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 7,
+        "name": "Landing Page Build",
+        "description": "Single-page professional landing and booking layer for fashion creatives who need an owned, search-readable presence without a full portfolio system.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "7500",
+          "priceCurrency": "ZAR",
+          "valueAddedTaxIncluded": true
+        },
+        "url": "https://bookednow.co.za/portfoliopreview/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 8,
+        "name": "Portfolio Infrastructure Build",
+        "description": "Full portfolio infrastructure build for established fashion creatives moving from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "15000",
+          "priceCurrency": "ZAR",
+          "valueAddedTaxIncluded": true
+        },
+        "url": "https://bookednow.co.za/infrastructure/",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "position": 9,
+        "name": "Legacy — Complete Infrastructure Build",
+        "description": "Complete digital infrastructure build for established fashion creatives with a decade of work that is invisible to discovery systems. Includes Scan audit, portfolio website, credit indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up.",
+        "price": "50000",
+        "priceCurrency": "ZAR",
+        "url": "https://bookednow.co.za/legacy/",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  }
+}
