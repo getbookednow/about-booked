@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.bookednow.co.za/</loc>
+    <loc>https://bookednow.co.za/</loc>
   </url>
   <url>
-    <loc>https://www.bookednow.co.za/scan/</loc>
+    <loc>https://bookednow.co.za/work</loc>
   </url>
   <url>
-    <loc>https://www.bookednow.co.za/scan/fanie-nel-case-study.html</loc>
+    <loc>https://bookednow.co.za/scan/</loc>
   </url>
   <url>
-    <loc>https://www.bookednow.co.za/portfoliopreview/</loc>
+    <loc>https://bookednow.co.za/scan/fanie-nel-case-study.html</loc>
   </url>
   <url>
-    <loc>https://www.bookednow.co.za/infrastructure/</loc>
+    <loc>https://bookednow.co.za/booked-case-study-001</loc>
   </url>
   <url>
-    <loc>https://www.bookednow.co.za/creative-pages/</loc>
+    <loc>https://bookednow.co.za/founder</loc>
+  </url>
+  <url>
+    <loc>https://bookednow.co.za/infrastructure/</loc>
+  </url>
+  <url>
+    <loc>https://bookednow.co.za/portfoliopreview/</loc>
+  </url>
+  <url>
+    <loc>https://bookednow.co.za/creative-pages/</loc>
+  </url>
+  <url>
+    <loc>https://bookednow.co.za/privacy-policy</loc>
+  </url>
+  <url>
+    <loc>https://bookednow.co.za/terms-of-service</loc>
   </url>
 </urlset>
