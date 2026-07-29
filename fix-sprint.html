@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix Sprint — One friction point, fixed and live | Booked.</title>
+<meta name="description" content="The single thing most costing you bookings, fixed and live. Portfolio sequencing, bio structure, contact flow, or AI-readable content. R8,000, one scope, one turnaround.">
+<link rel="canonical" href="https://bookednow.co.za/fix-sprint">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0e0a1a">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://bookednow.co.za/fix-sprint">
+<meta property="og:title" content="Fix Sprint — One friction point, fixed and live | Booked.">
+<meta property="og:description" content="The single thing most costing you bookings, fixed and live. R8,000.">
+<meta property="og:image" content="https://bookednow.co.za/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="BOOKED.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fix Sprint — One friction point, fixed and live | Booked.">
+<meta name="twitter:description" content="The single thing most costing you bookings, fixed and live. R8,000.">
+<meta name="twitter:image" content="https://bookednow.co.za/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --violet-fill:          rgba(169,143,224,0.08);
+    --violet-border:        rgba(169,143,224,0.22);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    --bg:          var(--void);
+    --bg-card:     #0e1020;
+    --gold-border: var(--gold-border-default);
+    --text:        var(--off-white);
+    --muted:       var(--subtext);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 65% 30%, rgba(120,80,200,0.09) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  ::selection { background: rgba(200,169,110,0.2); }
+  h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    background: var(--gold); color: var(--bg);
+    padding: 12px 20px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    padding: 6px 0;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
+    display: inline-block; padding: 12px 0;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-contact {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 12px 22px;
+    border: 1px solid var(--gold-border);
+    color: var(--text); text-decoration: none;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .nav-contact:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-subtle); }
+  .nav-chat-mobile { display: none; }
+
+  main { position: relative; z-index: 1; }
+
+  /* ── BREADCRUMB ── */
+  .crumb {
+    max-width: 1200px; margin: 0 auto;
+    padding: 116px 48px 0;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  }
+  .crumb a { color: var(--muted); text-decoration: none; }
+  .crumb a:hover { color: var(--gold); }
+  .crumb span { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero { max-width: 1200px; margin: 0 auto; padding: 28px 48px 72px; }
+  .hero-tag {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 22px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-tag::before {
+    content: ''; display: block; width: 24px; height: 1px;
+    background: var(--gold); opacity: 0.6; flex-shrink: 0;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: 300; line-height: 1.0; letter-spacing: -0.01em;
+    margin-bottom: 26px;
+  }
+  .hero h1 em { font-style: italic; color: var(--violet-italic); }
+  .hero-sub {
+    font-size: 16px; line-height: 1.75; color: var(--muted);
+    max-width: 640px; margin-bottom: 34px;
+  }
+
+  /* ── PRICE BLOCK + CTA ── */
+  .buy {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 22px;
+    padding: 26px 28px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-fill-subtle);
+    max-width: 640px;
+  }
+  .price { display: flex; flex-direction: column; gap: 2px; }
+  .price-amount {
+    font-family: var(--font-display); font-size: 44px; line-height: 1;
+    font-weight: 400; color: var(--off-white);
+  }
+  .price-note { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .buy-actions { display: flex; flex-direction: column; gap: 10px; margin-left: auto; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 15px 30px;
+    background: var(--gold); color: var(--bg);
+    font-size: 12px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 15px 30px;
+    border: 1px solid var(--gold-border); color: var(--text);
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-subtle); }
+  .pay-note {
+    font-size: 12px; color: var(--muted); margin-top: 14px; max-width: 640px;
+  }
+
+  /* ── SECTIONS ── */
+  section.band { max-width: 1200px; margin: 0 auto; padding: 0 48px 76px; }
+  .band-label {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .band h2 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4.4vw, 50px);
+    font-weight: 300; line-height: 1.1; margin-bottom: 22px;
+  }
+  .band h2 em { font-style: italic; color: var(--violet-italic); }
+  .band p { font-size: 15px; line-height: 1.8; color: var(--muted); max-width: 700px; }
+  .band p + p { margin-top: 16px; }
+
+  .rule { height: 1px; background: var(--gold-border-divider); max-width: 1200px; margin: 0 auto 62px; }
+
+  /* ── LISTS ── */
+  .deliverables { list-style: none; display: grid; gap: 2px; margin-top: 30px; }
+  .deliverables li {
+    padding: 20px 24px; background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    font-size: 15px; color: var(--text); line-height: 1.6;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .deliverables li::before {
+    content: '—'; color: var(--gold); flex-shrink: 0;
+  }
+
+  .steps { list-style: none; counter-reset: step; display: grid; gap: 2px; margin-top: 30px; }
+  .steps li {
+    counter-increment: step;
+    padding: 24px 26px; background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+  }
+  .steps li h3 {
+    font-family: var(--font-display); font-size: 24px; font-weight: 400;
+    margin-bottom: 8px; color: var(--off-white);
+  }
+  .steps li h3::before {
+    content: '0' counter(step) ' — ';
+    font-family: var(--font-body); font-size: 12px; letter-spacing: 0.2em;
+    color: var(--gold); vertical-align: middle;
+  }
+  .steps li p { font-size: 14px; color: var(--muted); max-width: none; }
+
+  /* ── FIT ── */
+  .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 30px; }
+  .fit-col { padding: 28px 26px; background: var(--bg-card); border: 1px solid var(--gold-border); }
+  .fit-col.no { background: transparent; }
+  .fit-col h3 {
+    font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+    margin-bottom: 18px; font-weight: 400;
+  }
+  .fit-col.yes h3 { color: var(--gold); }
+  .fit-col.no h3 { color: var(--muted); }
+  .fit-col ul { list-style: none; display: grid; gap: 12px; }
+  .fit-col li { font-size: 14px; color: var(--muted); line-height: 1.6; padding-left: 18px; position: relative; }
+  .fit-col li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+
+  /* ── FAQ ── */
+  .faq-item { border-top: 1px solid var(--gold-border-divider); padding: 26px 0; }
+  .faq-item:last-child { border-bottom: 1px solid var(--gold-border-divider); }
+  .faq-item h3 {
+    font-family: var(--font-display); font-size: 24px; font-weight: 300;
+    line-height: 1.2; margin-bottom: 12px; color: var(--off-white);
+  }
+  .faq-item p { font-size: 15px; }
+
+  /* ── CLOSING CTA ── */
+  .closing {
+    max-width: 1200px; margin: 0 auto; padding: 0 48px 90px;
+  }
+  .closing-inner {
+    border: 1px solid var(--violet-border); background: var(--violet-fill);
+    padding: 46px 40px; text-align: center;
+  }
+  .closing-inner h2 {
+    font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300; line-height: 1.15; margin-bottom: 16px;
+  }
+  .closing-inner p { color: var(--muted); font-size: 15px; margin: 0 auto 28px; max-width: 520px; }
+  .closing-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px 28px; max-width: 1200px; margin: 0 auto;
+  }
+  .footer-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
+  .footer-logo {
+    font-family: var(--font-display); font-size: 19px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+  }
+  .footer-note { font-size: 13px; color: var(--muted); }
+  .footer-work {
+    margin-left: auto; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text); text-decoration: none; border-bottom: 1px solid var(--gold-border);
+    display: inline-block; min-height: 44px; line-height: 44px;
+  }
+  .footer-work:hover { border-color: var(--gold-border-hover); color: var(--gold); }
+  .footer-legal {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px; padding-top: 20px;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+  .footer-legal-links { display: flex; gap: 24px; }
+  .footer-legal-links a {
+    font-size: 12px; color: var(--muted); text-decoration: none;
+    display: inline-block; min-height: 44px; line-height: 44px;
+  }
+  .footer-legal-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 12px; color: #444; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .nav-links { gap: 22px; }
+    .crumb { padding: 108px 32px 0; }
+    .hero, section.band, .closing { padding-left: 32px; padding-right: 32px; }
+    footer { padding: 40px 32px 28px; }
+  }
+
+  @media (max-width: 760px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .nav-contact { display: none; }
+    .nav-chat-mobile {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; min-width: 64px; padding: 10px 20px;
+      border: 1px solid var(--gold-border); color: var(--text);
+      text-decoration: none; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .crumb { padding: 92px 20px 0; font-size: 10px; }
+    .hero { padding: 24px 20px 56px; }
+    .hero h1 { font-size: clamp(38px, 11vw, 52px); }
+    .hero-sub { font-size: 15px; }
+    section.band, .closing { padding-left: 20px; padding-right: 20px; padding-bottom: 56px; }
+    .rule { margin-bottom: 46px; }
+
+    .buy { flex-direction: column; align-items: stretch; gap: 20px; padding: 24px 20px; }
+    .buy-actions { margin-left: 0; width: 100%; }
+    .btn-primary, .btn-secondary { width: 100%; }
+    .price-amount { font-size: 38px; }
+
+    .fit { grid-template-columns: 1fr; }
+    .closing-inner { padding: 34px 22px; }
+    .closing-actions { flex-direction: column; }
+    .closing-actions a { width: 100%; }
+
+    footer { padding: 32px 20px 24px; }
+    .footer-top { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .footer-work { margin-left: 0; }
+    .footer-legal { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://bookednow.co.za/fix-sprint#service",
+  "name": "Fix Sprint",
+  "serviceType": "Digital infrastructure remediation for fashion creatives",
+  "description": "One friction point, fixed and live. A targeted fix of the highest-friction part of a fashion creative's digital presence — portfolio sequencing, bio structure, homepage copy, project captions, contact flow, or AI-readable content improvements.",
+  "url": "https://bookednow.co.za/fix-sprint",
+  "image": "https://bookednow.co.za/og-image.jpg",
+  "inLanguage": "en-ZA",
+  "provider": {
+    "@type": "Organization",
+    "name": "Booked.",
+    "url": "https://bookednow.co.za",
+    "founder": { "@type": "Person", "name": "Luca Bold" }
+  },
+  "areaServed": { "@type": "Country", "name": "South Africa" },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Fashion models, photographers, stylists, hair and makeup artists, creative directors"
+  },
+  "offers": {
+    "@type": "Offer",
+    "name": "Fix Sprint",
+    "sku": "BKD-04",
+    "price": "8000",
+    "priceCurrency": "ZAR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://bookednow.co.za/fix-sprint",
+    "seller": { "@type": "Organization", "name": "Booked." }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Booked.", "item": "https://bookednow.co.za/" },
+    { "@type": "ListItem", "position": 2, "name": "Fix Sprint", "item": "https://bookednow.co.za/fix-sprint" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What counts as one friction point?",
+      "acceptedAnswer": { "@type": "Answer", "text": "One defined problem in your digital presence — portfolio sequencing, bio structure, homepage copy, project captions, contact flow, or AI-readable content. The scope is agreed before payment so both sides know what is being fixed." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a Fix Sprint different from a Portfolio Audit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A Portfolio Audit diagnoses and tells you what to change. A Fix Sprint changes it. If you already know what is wrong, start here. If you do not, start with the audit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need my own website for a Fix Sprint?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A Fix Sprint can be applied to an existing site, a portfolio page, or a focused one-page landing layer built for the purpose." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a Fix Sprint cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "R8,000 for one agreed scope, fixed and live." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav>
+  <a href="/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="/scan/" title="Free fashion creative visibility scan — Booked.">Visibility Scan</a></li>
+    <li><a href="/infrastructure/" title="AI readability infrastructure for fashion portfolios — Booked.">Infrastructure</a></li>
+    <li><a href="/#services" title="Fashion portfolio audit Cape Town — Booked.">Audits</a></li>
+    <li><a href="/work" title="Case studies — Booked.">Work</a></li>
+    <li><a href="/founder" title="About Luca Bold and Booked.">About</a></li>
+  </ul>
+  <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20talk%20about%20a%20Fix%20Sprint" class="nav-contact" target="_blank" rel="noopener">Chat with me</a>
+  <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20talk%20about%20a%20Fix%20Sprint" class="nav-chat-mobile" target="_blank" rel="noopener">Chat</a>
+</nav>
+
+<main id="main">
+
+  <p class="crumb"><a href="/">Booked.</a> &nbsp;/&nbsp; <span>Fix Sprint</span></p>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">04 — Fix Sprint</p>
+    <h1>One friction point.<br><em>Fixed and live.</em></h1>
+    <p class="hero-sub">
+      The single thing most costing you bookings right now — found, fixed, and shipped. Not a document telling you what to do. The change itself, live on your presence.
+    </p>
+
+    <div class="buy">
+      <div class="price">
+        <span class="price-amount">R8,000</span>
+        <span class="price-note">One agreed scope</span>
+      </div>
+      <div class="buy-actions">
+        <!-- TODO: replace with the live Yoco payment link for BKD-04 -->
+        <a href="#YOCO_LINK_BKD_04" class="btn-primary" rel="noopener">Pay &amp; start</a>
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20scope%20a%20Fix%20Sprint" class="btn-secondary" target="_blank" rel="noopener">Scope it first</a>
+      </div>
+    </div>
+    <p class="pay-note">
+      Scope is agreed before payment. Paying takes you to Yoco's secure checkout — you'll come straight back here afterwards.
+    </p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- WHAT IT IS -->
+  <section class="band">
+    <p class="band-label">What it is</p>
+    <h2>Diagnosis is cheap.<br><em>Change is the product.</em></h2>
+    <p>
+      Most creatives already suspect what is wrong. The bio is vague. The sequence opens weak. The contact path dies in a DM. Knowing it and fixing it are different problems, and the second one is where momentum usually stops.
+    </p>
+    <p>
+      A Fix Sprint takes one defined friction point and closes it. Scope agreed up front, work done, change live. One thing, properly, rather than six things half-done.
+    </p>
+  </section>
+
+  <!-- SCOPE -->
+  <section class="band">
+    <p class="band-label">Scope may include</p>
+    <h2>Pick the one that is<br><em>costing you most.</em></h2>
+    <ul class="deliverables">
+      <li>Portfolio sequencing — what opens the book, what gets cut, what order the work reads in.</li>
+      <li>Bio structure — role clarity, market, credits, and the read a client gets in three seconds.</li>
+      <li>Homepage copy — the positioning statement above the fold, rewritten to be understood and searched.</li>
+      <li>Project captions — credits, context, and the searchable detail that is currently missing.</li>
+      <li>Contact flow — removing the friction between someone deciding to book you and reaching you.</li>
+      <li>AI-readable content — structure, schema, and metadata so retrieval systems can parse your work.</li>
+      <li>A focused one-page landing layer, where no usable page exists to fix.</li>
+    </ul>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="band">
+    <p class="band-label">How it works</p>
+    <h2>Scope, fix, <em>ship.</em></h2>
+    <ol class="steps">
+      <li>
+        <h3>Scope</h3>
+        <p>A short conversation to name the single highest-friction point and agree exactly what will change. Written down before anything is paid, so there is no ambiguity about what you are buying.</p>
+      </li>
+      <li>
+        <h3>Fix</h3>
+        <p>The work is done against the agreed scope. You are not managing it, briefing it repeatedly, or reviewing five rounds of concepts.</p>
+      </li>
+      <li>
+        <h3>Ship</h3>
+        <p>The change goes live on your presence — not delivered as a recommendation for you to implement later.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- FIT -->
+  <section class="band">
+    <p class="band-label">Fit</p>
+    <h2>Who this is <em>for.</em></h2>
+    <div class="fit">
+      <div class="fit-col yes">
+        <h3>Right fit</h3>
+        <ul>
+          <li>You have an established body of work and a live digital presence.</li>
+          <li>You already know roughly what is broken.</li>
+          <li>You want one thing fixed properly, not a full rebuild.</li>
+          <li>You want the change made, not documented.</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>Wrong fit</h3>
+        <ul>
+          <li>You are pre-career or still building a first body of work.</li>
+          <li>You need diagnosis first — start with the Portfolio Audit.</li>
+          <li>You need a full site — that is an Infrastructure Build.</li>
+          <li>You work outside fashion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band">
+    <p class="band-label">Questions</p>
+    <h2>Before you <em>book it.</em></h2>
+    <div class="faq-item">
+      <h3>What counts as one friction point?</h3>
+      <p>One defined problem in your digital presence — sequencing, bio, copy, captions, contact flow, or AI-readable structure. Scope is agreed before payment so both sides know what is being fixed.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is this different from a Portfolio Audit?</h3>
+      <p>A Portfolio Audit diagnoses and tells you what to change. A Fix Sprint changes it. If you already know what is wrong, start here. If you do not, start with the audit.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need my own website?</h3>
+      <p>No. A Fix Sprint can be applied to an existing site, a portfolio page, or a focused one-page landing layer built for the purpose.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does it cost?</h3>
+      <p>R8,000 for one agreed scope, fixed and live.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="closing-inner">
+      <h2>Name the one thing.</h2>
+      <p>If you already know what is costing you bookings, this is the shortest path to it being gone.</p>
+      <div class="closing-actions">
+        <!-- TODO: replace with the live Yoco payment link for BKD-04 -->
+        <a href="#YOCO_LINK_BKD_04" class="btn-primary" rel="noopener">Pay R8,000 &amp; start</a>
+        <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20scope%20a%20Fix%20Sprint" class="btn-secondary" target="_blank" rel="noopener">Scope it first</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-logo">Booked.</span>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+    <a href="https://tally.so/r/68rPoe" target="_blank" rel="noopener" class="footer-work">Work with Booked</a>
+  </div>
+  <div class="footer-legal">
+    <div class="footer-legal-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-of-service">Terms of Service</a>
+    </div>
+    <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
