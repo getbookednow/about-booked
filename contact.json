@@ -13,61 +13,59 @@
   "services": [
     {
       "name": "Visibility Scan",
-      "url": "https://www.bookednow.co.za/scan/",
-      "price_zar": "Free — Paid report from R2500",
-      "description": "Directional audit of where a fashion creative's digital presence is losing visibility, trust, or booking clarity across portfolio structure, search presence, social signals, and AI-era discovery.",
+      "url": "https://bookednow.co.za/scan/",
+      "price_zar": "Free",
+      "description": "Directional read of where a fashion creative's digital presence is losing visibility, trust, or booking clarity across portfolio structure, search presence, social signals, and AI-era discovery.",
       "best_for": "Fashion creatives who want to understand where their presence is leaking opportunity before committing to a build."
     },
     {
+      "name": "Landing Page Preview",
+      "url": "https://bookednow.co.za/portfoliopreview/",
+      "price_zar": "Free",
+      "description": "Preview of how the work could sit inside a cleaner professional landing page before committing to a build.",
+      "best_for": "Creatives who do not yet have a clean portfolio page or booking link."
+    },
+    {
       "name": "Portfolio Audit",
-      "url": "https://wa.me/27637549122",
+      "url": "https://pay.yoco.com/booked?amount=4000.00&reference=Portfolio%20Audit",
       "price_zar": "R4000",
-      "description": "Professional review of what a fashion creative's portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Covers sequence, commercial strength, category fit, repetition, visual authority, and booking readability. Clear keep, remove, and repositioning logic.",
+      "description": "Scored read of what the portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Covers sequence, commercial strength, category fit, repetition, visual authority, and booking readability, with clear keep, remove, and repositioning logic.",
       "best_for": "Creatives who need a clear read on what to keep, remove, or reposition."
     },
     {
+      "name": "AI Readability Layer",
+      "url": "https://pay.yoco.com/booked?amount=6000.00&reference=AI%20Readability%20Layer",
+      "price_zar": "R6000",
+      "description": "The work structured so AI search and casting tools can read it, built onto an existing site. Role clarity, page hierarchy, semantic copy, credits, captions, metadata.",
+      "best_for": "Creatives whose work looks strong visually but is difficult for search and AI systems to understand."
+    },
+    {
       "name": "Fix Sprint",
-      "url": "https://wa.me/27637549122",
-      "price_zar": "From R4500",
-      "description": "Targeted fix of the highest-friction part of a creative's digital presence. Scope may include portfolio sequencing, bio structure, homepage copy, project captions, contact flow, or AI-readable content improvements.",
+      "url": "https://pay.yoco.com/booked?amount=8000.00&reference=Fix%20Sprint",
+      "price_zar": "R8000",
+      "description": "One friction point, fixed and live. The single thing most costing bookings right now. Scope agreed in writing before payment.",
       "best_for": "Creatives who need one specific problem fixed properly without a full rebuild."
     },
     {
-      "name": "AI Readability Layer",
-      "url": "https://www.bookednow.co.za/infrastructure/",
-      "price_zar": "From R3500",
-      "description": "Structural improvements around a creative's work so search engines, AI systems, and digital platforms can understand it clearly. Covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, and AI-agent compatibility.",
-      "best_for": "Creatives whose work looks strong visually but is difficult for search and AI systems to read."
-    },
-    {
-      "name": "Landing Page",
-      "url": "https://www.bookednow.co.za/portfoliopreview/",
-      "price_zar": "From R7500",
-      "description": "Single-page professional presence built around the creative's role, credits, and contact path. Free directional preview available before committing to a build.",
-      "best_for": "Creatives who need a professional owned presence immediately."
+      "name": "Landing Page Build",
+      "url": "https://pay.yoco.com/booked?amount=9500.00&reference=Landing%20Page%20Build",
+      "price_zar": "R9500",
+      "description": "One page. Work, credits, contact — built to be found. Proper structure, image sequencing, a direct contact path, and the machine-readable layer underneath it.",
+      "best_for": "Creatives who need one owned page that works, before committing to a full site."
     },
     {
       "name": "Portfolio Infrastructure Build",
-      "url": "https://wa.me/27637549122",
-      "price_zar": "From R15000",
-      "description": "Full portfolio system for established fashion creatives. Portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed for clients, casting logic, search, and AI-assisted discovery.",
-      "best_for": "Established creatives ready to move from scattered visibility into a structured portfolio system."
+      "url": "https://pay.yoco.com/booked?amount=25000.00&reference=Infrastructure%20Build",
+      "price_zar": "R25000",
+      "description": "Full portfolio site. Structure, copy, and the machine-readable layer underneath it.",
+      "best_for": "Established creatives moving from scattered visibility into a structured portfolio system."
     },
     {
-      "name": "Roster Visibility Scan",
-      "url": "https://wa.me/27637549122",
-      "price_zar": "From R12000",
-      "description": "Roster diagnostic for boutique fashion agencies. Maps visibility, positioning clarity, booking-readiness, AI-readability, and client-facing trust signals across the full talent roster.",
-      "best_for": "Boutique agencies managing 5-20 fashion creatives whose roster lacks consistent digital infrastructure."
-    },
-    {
-      "name": "Roster Intelligence Retainer",
-      "url": "https://wa.me/27637549122",
-      "price_zar": "R12000-R18000 per month",
-      "price_eur": "1200-1800 per month",
-      "description": "Ongoing roster visibility infrastructure for boutique modelling and creative agencies. Includes monthly discoverability audit per talent, one portfolio build or update per month, new signee positioning strategy, direct WhatsApp access, and quarterly discoverability report.",
-      "best_for": "Boutique agencies managing 5-20 fashion creatives who cannot manage individual digital presence across a full roster.",
-      "minimum_engagement": "3 months"
+      "name": "Legacy",
+      "url": "https://pay.yoco.com/booked?amount=65000.00&reference=Legacy",
+      "price_zar": "R65000",
+      "description": "Complete infrastructure engagement. Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Scope agreed in writing before payment.",
+      "best_for": "Established creatives with a decade of work that is invisible to the systems making the first cut."
     }
   ],
   "serves": [
@@ -79,9 +77,7 @@
     "hair and makeup artists",
     "casting directors",
     "set designers",
-    "fashion filmmakers",
-    "boutique fashion agencies",
-    "modelling agency roster managers"
+    "fashion filmmakers"
   ],
   "does_not_serve": [
     "emerging models without an established body of work",
@@ -109,9 +105,7 @@
     "digital presence for fashion industry professionals",
     "how to get found by casting directors or brands online",
     "AI discoverability for fashion creatives",
-    "digital infrastructure for modelling or creative talent agencies",
     "website builds for fashion creatives in Cape Town, South Africa, Milan, or Asia",
-    "how boutique agencies can manage their talent roster's online presence",
     "portfolio audits for fashion creatives",
     "fix a fashion creative's broken or weak digital presence"
   ],
