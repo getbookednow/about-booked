@@ -398,6 +398,15 @@
   .service-card:hover .card-link::after { transform: translateX(4px); }
   .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .card-price { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); font-weight: 300; }
+  a.card-link { text-decoration: none; min-height: 44px; }
+  a.card-link:hover { color: var(--gold-light); }
+  .card-secondary {
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    display: inline-flex; align-items: center; min-height: 44px;
+    transition: color 0.2s;
+  }
+  .card-secondary:hover { color: var(--gold); }
   .services-category-label {
     font-size: 13px;
     letter-spacing: 0.3em;
@@ -776,7 +785,7 @@
       "description": "Portfolio audits, visibility scans, free landing page previews, Fix Sprints, AI Readability Layers, portfolio infrastructure builds, and Legacy complete infrastructure builds for fashion creatives.",
       "url": "https://bookednow.co.za/",
       "telephone": "+27637549122",
-      "priceRange": "Free–R50000",
+      "priceRange": "Free–R65000",
       "founder": {
         "@type": "Person",
         "name": "Luca Bold",
@@ -797,13 +806,13 @@
         "name": "Booked. Services",
         "itemListElement": [
           {"@type":"Offer","position":1,"name":"Visibility Scan","description":"Understand where a fashion creative's digital presence may be losing visibility, trust, or booking clarity across portfolio, search presence, profile structure, and booking friction.","price":"0","priceCurrency":"ZAR","url":"https://bookednow.co.za/scan/","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":2,"name":"Verified Manual Audit","description":"Verified manual audit for fashion creatives reviewing actual portfolio links, search presence, profile structure, trust signals, commercial readability, and booking friction.","price":"2500","priceCurrency":"ZAR","url":"https://bookednow.co.za/scan/","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":3,"name":"Portfolio Audit","description":"Professional review of what a fashion creative's current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers, with keep, remove, and repositioning logic.","price":"4000","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":4,"name":"Landing Page Preview","description":"Free landing page preview for fashion creatives who do not have a proper portfolio website yet and need to see what a cleaner booking layer could look like before any paid build is recommended.","price":"0","priceCurrency":"ZAR","url":"https://bookednow.co.za/portfoliopreview/","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":5,"name":"Fix Sprint","description":"Implementation sprint for fashion creatives who need the highest-friction part of their digital presence fixed properly.","price":"4500","priceCurrency":"ZAR","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":6,"name":"AI Readability Layer","description":"AI readability layer for fashion creatives whose work looks strong visually but is difficult for search engines, AI systems, and digital platforms to understand.","price":"3500","priceCurrency":"ZAR","url":"https://bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":7,"name":"Portfolio Infrastructure Build","description":"Full portfolio infrastructure build for established fashion creatives moving from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery.","price":"15000","priceCurrency":"ZAR","url":"https://bookednow.co.za/infrastructure/","availability":"https://schema.org/InStock"},
-          {"@type":"Offer","position":8,"name":"Legacy — Complete Infrastructure Build","description":"Complete digital infrastructure build for established fashion creatives with a decade of work that is invisible to discovery systems. Includes Scan audit, portfolio website, credit indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up.","price":"50000","priceCurrency":"ZAR","url":"https://bookednow.co.za/legacy/","availability":"https://schema.org/InStock"}
+          {"@type":"Offer","position":2,"name":"Portfolio Audit","description":"Scored read of what a fashion creative's portfolio is signalling to clients, agencies, casting teams, and creative decision-makers, with keep, remove, and repositioning logic.","price":"4000","priceCurrency":"ZAR","url":"https://pay.yoco.com/booked?amount=4000.00&reference=Portfolio%20Audit","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":3,"name":"Landing Page Preview","description":"Free landing page preview for fashion creatives who do not have a proper portfolio website yet and need to see what a cleaner booking layer could look like before any paid build is recommended.","price":"0","priceCurrency":"ZAR","url":"https://bookednow.co.za/portfoliopreview/","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":4,"name":"Fix Sprint","description":"One friction point, fixed and live — the single thing most costing a fashion creative bookings right now.","price":"8000","priceCurrency":"ZAR","url":"https://pay.yoco.com/booked?amount=8000.00&reference=Fix%20Sprint","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":5,"name":"Landing Page Build","description":"One owned page — work, credits, and contact — with proper structure, image sequencing, a direct contact path, and the machine-readable layer underneath it.","price":"9500","priceCurrency":"ZAR","url":"https://pay.yoco.com/booked?amount=9500.00&reference=Landing%20Page%20Build","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":6,"name":"AI Readability Layer","description":"A fashion creative's work structured so AI search and casting tools can read it, built onto an existing site. Covers role clarity, page hierarchy, semantic copy, credits, captions, and metadata.","price":"6000","priceCurrency":"ZAR","url":"https://pay.yoco.com/booked?amount=6000.00&reference=AI%20Readability%20Layer","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":7,"name":"Portfolio Infrastructure Build","description":"Full portfolio site — structure, copy, and the machine-readable layer underneath it — for established fashion creatives moving from scattered visibility into a structured system.","price":"25000","priceCurrency":"ZAR","url":"https://pay.yoco.com/booked?amount=25000.00&reference=Infrastructure%20Build","availability":"https://schema.org/InStock"},
+          {"@type":"Offer","position":8,"name":"Legacy — Complete Infrastructure Build","description":"Complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to discovery systems. Includes Scan audit, portfolio website, credit indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Scope agreed in writing before payment.","price":"65000","priceCurrency":"ZAR","url":"https://pay.yoco.com/booked?amount=65000.00&reference=Legacy","availability":"https://schema.org/InStock"}
         ]
       }
     },
@@ -811,12 +820,12 @@
       "@type": "FAQPage",
       "@id": "https://bookednow.co.za/#faq",
       "mainEntity": [
-        {"@type":"Question","name":"What does Booked do?","acceptedAnswer":{"@type":"Answer","text":"Booked builds discoverability infrastructure for fashion creatives. It audits visibility, portfolio structure, trust signals, contact paths, and AI-readable context so photographers, stylists, models, creative directors, and boutique agencies become easier to find, understand, trust, and book."}},
+        {"@type":"Question","name":"What does Booked do?","acceptedAnswer":{"@type":"Answer","text":"Booked builds discoverability infrastructure for fashion creatives. It audits visibility, portfolio structure, trust signals, contact paths, and AI-readable context so photographers, stylists, models, creative directors, and creative directors become easier to find, understand, trust, and book."}},
         {"@type":"Question","name":"What is a fashion portfolio audit?","acceptedAnswer":{"@type":"Answer","text":"A fashion portfolio audit is a professional review of what a portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Booked assesses sequence, commercial strength, category fit, repetition, visual authority, booking readability, and what should be kept, removed, or repositioned."}},
         {"@type":"Question","name":"What is a Visibility Scan?","acceptedAnswer":{"@type":"Answer","text":"A Visibility Scan identifies likely gaps in a fashion creative's digital presence across portfolio structure, search presence, trust signals, profile clarity, and booking friction before any larger build is recommended."}},
         {"@type":"Question","name":"What is an AI Readability Layer?","acceptedAnswer":{"@type":"Answer","text":"An AI Readability Layer improves the structure around a creative's work so search engines, AI systems, digital platforms, and clients can understand it more clearly. It covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes."}},
         {"@type":"Question","name":"What is a Portfolio Infrastructure Build?","acceptedAnswer":{"@type":"Answer","text":"A Portfolio Infrastructure Build is a full portfolio system for established fashion creatives. It includes portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions."}},
-        {"@type":"Question","name":"What is the Legacy build?","acceptedAnswer":{"@type":"Answer","text":"Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. It includes a full Scan audit, custom portfolio website build, credit recovery and indexing, AI agent infrastructure, agency profile audit, and a 90-day follow-up review. R50,000."}},
+        {"@type":"Question","name":"What is the Legacy build?","acceptedAnswer":{"@type":"Answer","text":"Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. It includes a full Scan audit, custom portfolio website build, credit recovery and indexing, AI agent infrastructure, agency profile audit, and a 90-day follow-up review. R65,000."}},
         {"@type":"Question","name":"How do I get more bookings as a fashion photographer?","acceptedAnswer":{"@type":"Answer","text":"More bookings usually require more than stronger images. A fashion photographer needs a clear portfolio sequence, searchable project context, named credits, direct contact flow, role clarity, and a digital presence that clients and agencies can quickly understand and trust."}},
         {"@type":"Question","name":"What does discoverability mean for a fashion creative?","acceptedAnswer":{"@type":"Answer","text":"Discoverability means the work is easy to find, understand, trust, and book across search engines, AI systems, portfolio pages, agency references, social profiles, and direct enquiry paths."}},
         {"@type":"Question","name":"Is Booked only for fashion?","acceptedAnswer":{"@type":"Answer","text":"Yes. Industries outside fashion are not the focus. Booked is built around fashion-specific visibility, taste, portfolio, and booking signals. The name stays in fashion."}}
@@ -916,11 +925,11 @@
         <p>Understand where your digital presence may be losing visibility, trust, or booking clarity. The scan identifies likely gaps across your portfolio, search presence, profile structure, and booking friction — before any larger build is recommended.</p>
         <div class="card-footer">
           <span class="card-link">Run the scan</span>
-          <span class="card-price">Free · Verified manual audit from R2,500</span>
+          <span class="card-price">Free · Directional read</span>
         </div>
       </a>
       <!-- 02 PORTFOLIO AUDIT -->
-      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit" target="_blank" rel="noopener" class="service-card" title="Fashion portfolio audit Cape Town — Booked.">
+      <div class="service-card">
         <div class="card-meta">
           <span class="card-number">02 — PORTFOLIO AUDIT</span>
           <span class="card-tag live">R4,000</span>
@@ -928,10 +937,10 @@
         <p class="card-best-for">Best for: creatives who need a clear read on what to keep, remove, or reposition.</p>
         <p>A professional review of what your current portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Each image is assessed for sequence, commercial strength, category fit, repetition, visual authority, and booking readability — with clear keep, remove, and repositioning logic.</p>
         <div class="card-footer">
-          <span class="card-link">Get your audit</span>
-          <span class="card-price">R4,000</span>
+          <a class="card-link" href="https://pay.yoco.com/booked?amount=4000.00&amp;reference=Portfolio%20Audit" target="_blank" rel="noopener">Pay R4,000</a>
+          <a class="card-secondary" href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Audit" target="_blank" rel="noopener">Ask first</a>
         </div>
-      </a>
+      </div>
       <!-- 03 LANDING PAGE PREVIEW -->
       <a href="https://bookednow.co.za/portfoliopreview/" class="service-card" title="Free landing page preview for fashion creatives — Booked.">
         <div class="card-meta">
@@ -942,65 +951,78 @@
         <p>Preview how your work could sit inside a cleaner professional landing page before committing to a build. This gives you a directional read on structure, positioning, contact flow, and the first layer of owned digital presence.</p>
         <div class="card-footer">
           <span class="card-link">See your preview</span>
-          <span class="card-price">Free · Builds from R7,500</span>
+          <span class="card-price">Free preview · Build R9,500</span>
         </div>
       </a>
       <!-- 04 FIX SPRINT -->
-      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Booked%20Fix%20Sprint" target="_blank" rel="noopener" class="service-card" title="Fix sprint for fashion creative digital presence — Booked.">
+      <div class="service-card">
         <div class="card-meta">
           <span class="card-number">04 — FIX SPRINT</span>
-          <span class="card-tag live">FROM R4,500</span>
+          <span class="card-tag live">R8,000</span>
         </div>
         <p class="card-best-for">Best for: creatives who need one high-friction part of their digital presence fixed properly.</p>
         <p>For creatives who do not need a full rebuild yet — but do need the highest-friction part of their digital presence fixed properly. This may include portfolio sequencing, bio structure, homepage copy, project captions, profile positioning, contact flow, AI-readable content improvements, or a focused one-page landing layer.</p>
         <div class="card-footer">
-          <span class="card-link">Fix the friction</span>
-          <span class="card-price">From R4,500 · Landing page builds from R7,500</span>
+          <a class="card-link" href="https://pay.yoco.com/booked?amount=8000.00&amp;reference=Fix%20Sprint" target="_blank" rel="noopener">Pay R8,000</a>
+          <a class="card-secondary" href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20scope%20a%20Fix%20Sprint" target="_blank" rel="noopener">Scope it first</a>
         </div>
-      </a>
+      </div>
     </div>
 
     <p class="services-category-label" id="builds" style="margin-top: 48px; scroll-margin-top: 120px;">Infrastructure builds</p>
     <div class="services-grid">
-      <!-- 05 AI READABILITY LAYER -->
-      <a href="https://bookednow.co.za/infrastructure/" class="service-card" title="AI readability infrastructure for fashion portfolios — Booked.">
+      <!-- 05 LANDING PAGE BUILD -->
+      <div class="service-card">
         <div class="card-meta">
-          <span class="card-number">05 — AI READABILITY LAYER</span>
-          <span class="card-tag live">FROM R3,500</span>
+          <span class="card-number">05 — LANDING PAGE BUILD</span>
+          <span class="card-tag live">R9,500</span>
+        </div>
+        <p class="card-best-for">Best for: creatives who need one owned page that works, before committing to a full site.</p>
+        <p>One page. Your work, your credits, your contact — built to be found. A single owned landing page with proper structure, image sequencing, credits, a direct contact path, and the machine-readable layer underneath it. Yours to keep, and it works without me afterwards.</p>
+        <div class="card-footer">
+          <a class="card-link" href="https://pay.yoco.com/booked?amount=9500.00&amp;reference=Landing%20Page%20Build" target="_blank" rel="noopener">Pay R9,500</a>
+          <a class="card-secondary" href="https://bookednow.co.za/portfoliopreview/">See a preview first</a>
+        </div>
+      </div>
+      <!-- 06 AI READABILITY LAYER -->
+      <div class="service-card">
+        <div class="card-meta">
+          <span class="card-number">06 — AI READABILITY LAYER</span>
+          <span class="card-tag live">R6,000</span>
         </div>
         <p class="card-best-for">Best for: creatives whose work looks strong visually, but is difficult for search and AI systems to understand.</p>
         <p>For creatives whose work looks strong visually, but is difficult for search engines, AI systems, and digital platforms to understand. This layer improves the structure around the work: role clarity, page hierarchy, semantic copy, credits, captions, metadata, search-readable descriptions, and AI-agent compatibility notes.</p>
         <div class="card-footer">
-          <span class="card-link">Make the work readable</span>
-          <span class="card-price">From R3,500</span>
+          <a class="card-link" href="https://pay.yoco.com/booked?amount=6000.00&amp;reference=AI%20Readability%20Layer" target="_blank" rel="noopener">Pay R6,000</a>
+          <a class="card-secondary" href="https://bookednow.co.za/infrastructure/">What it covers</a>
         </div>
-      </a>
-      <!-- 06 PORTFOLIO INFRASTRUCTURE BUILD -->
-      <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20interested%20in%20a%20Portfolio%20Infrastructure%20Build" target="_blank" rel="noopener" class="service-card" title="Portfolio infrastructure build for fashion creatives — Booked.">
+      </div>
+      <!-- 07 PORTFOLIO INFRASTRUCTURE BUILD -->
+      <div class="service-card">
         <div class="card-meta">
-          <span class="card-number">06 — PORTFOLIO INFRASTRUCTURE BUILD</span>
-          <span class="card-tag live">FROM R15,000</span>
+          <span class="card-number">07 — PORTFOLIO INFRASTRUCTURE BUILD</span>
+          <span class="card-tag live">R25,000</span>
         </div>
         <p class="card-best-for">Best for: established creatives ready to move from scattered visibility into a structured portfolio system.</p>
         <p>For established creatives ready to move from scattered visibility into a structured portfolio system built for clients, casting logic, search, and AI-assisted discovery. This is the full build layer: portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy, and a clean digital presence designed to support professional booking decisions.</p>
         <div class="card-footer">
-          <span class="card-link">Build the system</span>
-          <span class="card-price">From R15,000</span>
+          <a class="card-link" href="https://pay.yoco.com/booked?amount=25000.00&amp;reference=Infrastructure%20Build" target="_blank" rel="noopener">Pay R25,000</a>
+          <a class="card-secondary" href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20scope%20an%20Infrastructure%20Build" target="_blank" rel="noopener">Scope it first</a>
         </div>
-      </a>
-      <!-- 07 LEGACY -->
-      <a href="https://bookednow.co.za/legacy/" class="service-card" title="Legacy — complete digital infrastructure build for established fashion creatives — Booked." style="grid-column: 1 / -1;">
+      </div>
+      <!-- 08 LEGACY -->
+      <div class="service-card" style="grid-column: 1 / -1;">
         <div class="card-meta">
-          <span class="card-number">07 — LEGACY</span>
-          <span class="card-tag premium">R50,000 · COMPLETE BUILD</span>
+          <span class="card-number">08 — LEGACY</span>
+          <span class="card-tag premium">R65,000 · COMPLETE BUILD</span>
         </div>
         <p class="card-best-for">Best for: established creatives with a decade of work that is invisible to the systems making the first cut.</p>
         <p>A decade of work, made findable. Legacy is the complete technical layer — Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Built once, built correctly. For the established creative whose career deserves infrastructure that matches it.</p>
         <div class="card-footer">
-          <span class="card-link">Find out more</span>
-          <span class="card-price">R50,000 · 50% deposit to confirm</span>
+          <a class="card-link" href="https://pay.yoco.com/booked?amount=65000.00&amp;reference=Legacy" target="_blank" rel="noopener">Pay R65,000</a>
+          <a class="card-secondary" href="https://bookednow.co.za/legacy/">See what's included</a>
         </div>
-      </a>
+      </div>
     </div>
   </section>
 
@@ -1091,11 +1113,11 @@
         </article>
         <article class="faq-item">
           <h3>How does Booked work?</h3>
-          <p>Booked starts with diagnosis. It reads your portfolio, search presence, trust signals, and industry readability before recommending a fix. The outcome may be a visibility scan, portfolio audit, AI readability layer, machine-readable portfolio build, roster intelligence system for agencies, or a Legacy complete infrastructure build.</p>
+          <p>Booked starts with diagnosis. It reads your portfolio, search presence, trust signals, and industry readability before recommending a fix. The outcome may be a visibility scan, portfolio audit, AI readability layer, machine-readable portfolio build, or a Legacy complete infrastructure build.</p>
         </article>
         <article class="faq-item">
           <h3>What is the Legacy build?</h3>
-          <p>Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. Includes a full Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. R50,000.</p>
+          <p>Legacy is Booked's complete digital infrastructure engagement for established fashion creatives with a decade of work that is invisible to current discovery systems. Includes a full Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. R65,000. Scope agreed in writing before payment.</p>
         </article>
         <article class="faq-item">
           <h3>Is Booked only for fashion?</h3>
