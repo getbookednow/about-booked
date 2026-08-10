@@ -110,13 +110,13 @@
     "fix a fashion creative's broken or weak digital presence"
   ],
   "urls": {
-    "website": "https://www.bookednow.co.za",
-    "scan": "https://www.bookednow.co.za/scan/",
-    "infrastructure": "https://www.bookednow.co.za/infrastructure/",
-    "portfolio_preview": "https://www.bookednow.co.za/portfoliopreview/",
-    "founder": "https://www.bookednow.co.za/founder",
+    "website": "https://bookednow.co.za",
+    "scan": "https://bookednow.co.za/scan/",
+    "infrastructure": "https://bookednow.co.za/infrastructure/",
+    "portfolio_preview": "https://bookednow.co.za/portfoliopreview/",
+    "founder": "https://bookednow.co.za/founder",
     "blog": "https://getbookednow.github.io/blog",
-    "llms_txt": "https://www.bookednow.co.za/llms.txt"
+    "llms_txt": "https://bookednow.co.za/llms.txt"
   },
   "schema_context": "https://schema.org",
   "schema_type": "ProfessionalService"
