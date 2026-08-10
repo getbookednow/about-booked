@@ -13,7 +13,7 @@
   "services": [
     {
       "name": "Visibility Scan",
-      "url": "https://www.bookednow.co.za/scan/",
+      "url": "https://bookednow.co.za/scan/",
       "price_zar": "Free — Paid report from R2500",
       "description": "Directional audit of where a fashion creative's digital presence is losing visibility, trust, or booking clarity across portfolio structure, search presence, social signals, and AI-era discovery.",
       "best_for": "Fashion creatives who want to understand where their presence is leaking opportunity before committing to a build."
@@ -34,14 +34,14 @@
     },
     {
       "name": "AI Readability Layer",
-      "url": "https://www.bookednow.co.za/infrastructure/",
+      "url": "https://bookednow.co.za/infrastructure/",
       "price_zar": "From R3500",
       "description": "Structural improvements around a creative's work so search engines, AI systems, and digital platforms can understand it clearly. Covers role clarity, page hierarchy, semantic copy, credits, captions, metadata, and AI-agent compatibility.",
       "best_for": "Creatives whose work looks strong visually but is difficult for search and AI systems to read."
     },
     {
       "name": "Landing Page",
-      "url": "https://www.bookednow.co.za/portfoliopreview/",
+      "url": "https://bookednow.co.za/portfoliopreview/",
       "price_zar": "From R7500",
       "description": "Single-page professional presence built around the creative's role, credits, and contact path. Free directional preview available before committing to a build.",
       "best_for": "Creatives who need a professional owned presence immediately."
@@ -116,13 +116,13 @@
     "fix a fashion creative's broken or weak digital presence"
   ],
   "urls": {
-    "website": "https://www.bookednow.co.za",
-    "scan": "https://www.bookednow.co.za/scan/",
-    "infrastructure": "https://www.bookednow.co.za/infrastructure/",
-    "portfolio_preview": "https://www.bookednow.co.za/portfoliopreview/",
-    "founder": "https://www.bookednow.co.za/founder",
+    "website": "https://bookednow.co.za",
+    "scan": "https://bookednow.co.za/scan/",
+    "infrastructure": "https://bookednow.co.za/infrastructure/",
+    "portfolio_preview": "https://bookednow.co.za/portfoliopreview/",
+    "founder": "https://bookednow.co.za/founder",
     "blog": "https://getbookednow.github.io/blog",
-    "llms_txt": "https://www.bookednow.co.za/llms.txt"
+    "llms_txt": "https://bookednow.co.za/llms.txt"
   },
   "schema_context": "https://schema.org",
   "schema_type": "ProfessionalService"
