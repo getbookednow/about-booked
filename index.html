@@ -471,6 +471,38 @@
   .proof-card.after li { color: var(--off-white); }
   .proof-card li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
 
+  /* PROOF — LIVE BUILD */
+  .proof-live {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap; margin-top: 2px;
+    background: var(--bg-card);
+    border: 1px solid rgba(200,169,110,0.25);
+    padding: 30px 36px; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .proof-live:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); }
+  .proof-live:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .proof-live-label {
+    font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .proof-live-name {
+    font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px);
+    font-weight: 300; line-height: 1.1; color: var(--off-white);
+  }
+  .proof-live-name em { font-style: italic; color: var(--violet-italic); }
+  .proof-live-role {
+    display: block; margin-top: 8px;
+    font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.6;
+  }
+  .proof-live-cta {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap;
+  }
+  .proof-live-cta::after { content: '\2192'; transition: transform 0.2s; }
+  .proof-live:hover .proof-live-cta::after { transform: translateX(4px); }
+
   /* FAQ */
   .faq { position: relative; z-index: 1; padding: 0 48px 120px; max-width: 1200px; margin: 0 auto; }
   .faq-inner { border-top: 1px solid var(--gold-border-divider); padding-top: 72px; }
@@ -702,6 +734,7 @@
     .proof-snapshot { padding: 0 20px 72px; }
     .proof-grid { grid-template-columns: 1fr; }
     .proof-card { padding: 32px 26px; }
+    .proof-live { padding: 26px 24px; }
     .faq { padding: 0 20px 80px; }
     .faq-grid { grid-template-columns: 1fr; }
     .faq-item { padding: 30px 26px; }
@@ -908,6 +941,15 @@
           </ul>
         </div>
       </div>
+
+      <a class="proof-live" href="https://bookednow.co.za/andemafenuka/">
+        <div>
+          <p class="proof-live-label">A build you can open</p>
+          <p class="proof-live-name">Ande <em>Mafenuka.</em></p>
+          <span class="proof-live-role">Wardrobe stylist and creative researcher, Cape Town / Johannesburg. Named portfolio, structured credits, machine-readable underneath.</span>
+        </div>
+        <span class="proof-live-cta">See the build</span>
+      </a>
     </div>
   </section>
 
