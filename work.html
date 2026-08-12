@@ -254,6 +254,53 @@
   .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
   /* FILTER BAR */
+  /* ── LIVE BUILD BAND ── */
+  .live-build {
+    position: relative; z-index: 1;
+    max-width: 1200px; margin: 0 auto; padding: 0 48px 48px;
+  }
+  .live-build-inner {
+    display: flex; align-items: center; gap: 36px; flex-wrap: wrap;
+    padding: 34px 36px;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, transform 0.35s ease;
+  }
+  .live-build-inner:hover {
+    border-color: var(--gold-border-hover);
+    background: var(--gold-fill-hover);
+    transform: translateY(-2px);
+  }
+  .live-build-inner:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .live-build-label {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px; font-family: var(--font-body);
+  }
+  .live-build-name {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 300; line-height: 1.05; color: var(--off-white);
+    margin-bottom: 6px;
+  }
+  .live-build-name em { font-style: italic; color: var(--violet-italic); }
+  .live-build-role {
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-family: var(--font-body);
+  }
+  .live-build-copy { flex: 1 1 300px; }
+  .live-build-copy p {
+    font-size: 14px; line-height: 1.75; color: var(--muted);
+    font-weight: 200; margin-top: 14px;
+  }
+  .live-build-cta {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); font-family: var(--font-body); white-space: nowrap;
+  }
+  .live-build-cta::after { content: '\2192'; transition: transform 0.2s; }
+  .live-build-inner:hover .live-build-cta::after { transform: translateX(4px); }
+
   .filter-bar-wrap {
     position: relative;
     z-index: 1;
@@ -513,11 +560,12 @@
   /* RESPONSIVE */
   @media (min-width: 1440px) {
     nav { width: 100%; margin: 0; left: 0; right: 0; }
-    .hero, .filter-bar-wrap, .work-section, footer { max-width: 1400px; }
+    .hero, .live-build, .filter-bar-wrap, .work-section, footer { max-width: 1400px; }
   }
   @media (max-width: 1024px) {
     nav { padding: 20px 32px; }
     .hero { padding: 130px 32px 60px; }
+    .live-build { padding: 0 32px 40px; }
     .filter-bar-wrap { padding: 0 32px 32px; }
     .work-section { padding: 0 32px 100px; }
     footer { padding: 36px 32px 24px; }
@@ -531,6 +579,8 @@
     .hero { padding: 110px 20px 60px; }
     .hero h1 { font-size: clamp(40px, 10vw, 64px); }
     .hero-sub { font-size: 16px; max-width: 100%; }
+    .live-build { padding: 0 20px 32px; }
+    .live-build-inner { flex-direction: column; align-items: flex-start; gap: 20px; padding: 26px 20px; }
     .filter-bar-wrap { padding: 0 20px 32px; }
     .filter-bar { justify-content: space-around; gap: 0; }
     .filter-btn { flex: 1; text-align: center; }
@@ -551,6 +601,7 @@
     .hero h1 { font-size: 38px; }
     .hero-tag { font-size: 12px; line-height: 1.4; }
     .hero-sub { font-size: 16px; }
+    .live-build { padding: 0 16px 28px; }
     .filter-bar-wrap { padding: 0 16px 28px; }
     .work-section { padding: 0 16px 64px; }
     .service-card { padding: 28px 20px; }
@@ -580,6 +631,19 @@
     <p class="hero-tag">Infrastructure Proof</p>
     <h1>Before the booking.<br>After the build.</h1>
     <p class="hero-sub">Every project runs against the same five-dimension framework. The gap found. What was built. The score before and after.</p>
+  </section>
+
+  <!-- LIVE BUILD — named, public, verifiable -->
+  <section class="live-build">
+    <a class="live-build-inner" href="https://bookednow.co.za/andemafenuka/">
+      <div class="live-build-copy">
+        <p class="live-build-label">Live build · Open it yourself</p>
+        <p class="live-build-name">Ande <em>Mafenuka.</em></p>
+        <p class="live-build-role">Cape Town / Johannesburg · Wardrobe stylist &amp; creative researcher</p>
+        <p>Named portfolio site with sequenced selected work, Person and CreativeWork schema, its own llms.txt, and a direct contact path. Every other project on this page is anonymised. This one is public — open it and check the structure yourself.</p>
+      </div>
+      <span class="live-build-cta">View the build</span>
+    </a>
   </section>
 
   <div class="filter-bar-wrap">
