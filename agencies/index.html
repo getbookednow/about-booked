@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roster Discoverability for Brands, Retail and Production | Booked.</title>
+<meta name="description" content="Booked builds the machine readable layer for an entire roster, on your own domain, alongside the platform you already use. For brands, retail groups and production companies responsible for 20 to 200 people. Roster engagements start at R45,000.">
+<link rel="canonical" href="https://bookednow.co.za/agencies/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0e0a1a">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bookednow.co.za/agencies/">
+<meta property="og:title" content="Roster Discoverability for Brands, Retail and Production | Booked.">
+<meta property="og:description" content="Your roster is a commercial asset. To a machine reading your site, most of it does not exist. Booked builds the layer that fixes it.">
+<meta property="og:image" content="https://bookednow.co.za/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="BOOKED.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roster Discoverability for Brands, Retail and Production | Booked.">
+<meta name="twitter:description" content="Your roster is a commercial asset. To a machine reading your site, most of it does not exist.">
+<meta name="twitter:image" content="https://bookednow.co.za/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:                 #C8A96E;
+    --gold-light:           #e2c98a;
+    --void:                 #0e0a1a;
+    --off-white:            #f0ede8;
+    --subtext:              #9a9a9a;
+    --violet-italic:        #a98fe0;
+    --gold-border-default:  rgba(200,169,110,0.12);
+    --gold-border-hover:    rgba(200,169,110,0.35);
+    --gold-border-divider:  rgba(200,169,110,0.10);
+    --gold-fill-hover:      rgba(200,169,110,0.03);
+    --gold-fill-subtle:     rgba(200,169,110,0.02);
+    --violet-fill:          rgba(169,143,224,0.08);
+    --violet-border:        rgba(169,143,224,0.22);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    --bg:          var(--void);
+    --bg-card:     #0e1020;
+    --gold-border: var(--gold-border-default);
+    --text:        var(--off-white);
+    --muted:       var(--subtext);
+    --dim:         #444;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  ::selection { background: rgba(200,169,110,0.2); }
+  h1, h2, h3, p, li, a, span { overflow-wrap: break-word; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute; left: -9999px; top: 0; z-index: 200;
+    display: inline-flex; align-items: center; min-height: 44px;
+    background: var(--gold); color: var(--bg);
+    padding: 12px 20px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-display); font-size: 18px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+    text-decoration: none; padding: 8px 0;
+  }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
+    display: inline-block; padding: 14px 0;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 12px 24px;
+    border: 1px solid var(--gold-border); color: var(--text); text-decoration: none;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .nav-cta:hover { border-color: var(--gold); color: var(--gold); }
+
+  main { position: relative; z-index: 1; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+
+  .section-tag {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); display: flex; align-items: center; gap: 12px;
+    margin-bottom: 32px;
+  }
+  .section-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+
+  /* HERO */
+  .hero { padding: 150px 48px 90px; max-width: 1200px; margin: 0 auto; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300; line-height: 1.05; letter-spacing: -0.02em;
+    margin-bottom: 34px; max-width: 15ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--violet-italic); }
+  .hero-sub {
+    font-size: 16px; line-height: 1.7; color: var(--muted);
+    max-width: 620px; font-weight: 200; margin-bottom: 20px;
+  }
+  .hero-anchor {
+    font-size: 13px; letter-spacing: 0.08em; color: var(--text);
+    max-width: 620px; margin-bottom: 40px;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 16px 32px;
+    background: var(--gold); color: var(--bg);
+    font-size: 10px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    font-family: var(--font-body); transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+
+  section.band { padding: 0 48px 96px; max-width: 1200px; margin: 0 auto; }
+  .band h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 300; line-height: 1.2; letter-spacing: -0.01em;
+    margin-bottom: 26px; max-width: 20ch;
+  }
+  .band h2 em { font-style: italic; color: var(--violet-italic); }
+  .band p { font-size: 15px; line-height: 1.7; color: var(--muted); max-width: 680px; font-weight: 200; }
+  .band p + p { margin-top: 18px; }
+  .rule { border: none; border-top: 1px solid var(--gold-border-divider); max-width: 1200px; margin: 0 auto 72px; }
+
+  /* CARDS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 40px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 40px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--gold-border-default);
+    padding: 40px 36px; position: relative; overflow: hidden;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .card:hover { border-color: var(--gold-border-hover); background: var(--gold-fill-hover); }
+  .card-num { font-size: 10px; letter-spacing: 0.25em; color: var(--gold); display: block; margin-bottom: 16px; }
+  .card h3 {
+    font-family: var(--font-display); font-size: 28px; font-weight: 400;
+    line-height: 1.15; margin-bottom: 14px; color: var(--off-white);
+  }
+  .card p { font-size: 14px; line-height: 1.7; color: var(--muted); font-weight: 200; }
+  .card-meta {
+    margin-top: 20px; padding-top: 18px;
+    border-top: 1px solid var(--gold-border-divider);
+    font-size: 11px; letter-spacing: 0.06em; color: var(--muted);
+  }
+  .card-meta strong { color: var(--gold); font-weight: 400; }
+
+  /* METHOD TABLE */
+  .method { margin-top: 40px; border-top: 1px solid var(--gold-border-divider); }
+  .method-row {
+    display: grid; grid-template-columns: 44px 1fr; gap: 24px;
+    padding: 26px 0; border-bottom: 1px solid var(--gold-border-divider);
+  }
+  .method-score {
+    font-family: var(--font-display); font-size: 26px; font-weight: 300; color: var(--gold); line-height: 1;
+  }
+  .method-row h3 {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--off-white); font-weight: 400; margin-bottom: 10px;
+  }
+  .method-row p { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 660px; font-weight: 200; }
+  .method-total {
+    margin-top: 26px; font-size: 13px; color: var(--muted); letter-spacing: 0.05em;
+  }
+  .method-total strong { color: var(--gold); font-weight: 400; }
+
+  /* PRICE ANCHOR */
+  .anchor-block {
+    margin-top: 40px; padding: 40px 36px;
+    border: 1px solid var(--violet-border); background: var(--violet-fill);
+  }
+  .anchor-figure {
+    font-family: var(--font-display); font-size: clamp(38px, 5vw, 58px);
+    font-weight: 300; line-height: 1; color: var(--off-white); margin-bottom: 12px;
+  }
+  .anchor-note { font-size: 13px; color: var(--muted); max-width: 640px; line-height: 1.7; }
+
+  /* FIT */
+  .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 40px; }
+  .fit-col { padding: 36px 32px; border: 1px solid var(--gold-border-default); background: var(--bg-card); }
+  .fit-col.no { background: transparent; }
+  .fit-col h3 {
+    font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 22px; font-weight: 400;
+  }
+  .fit-col.yes h3 { color: var(--gold); }
+  .fit-col.no h3 { color: var(--dim); }
+  .fit-col ul { list-style: none; display: grid; gap: 14px; }
+  .fit-col li {
+    font-size: 14px; line-height: 1.65; color: var(--muted);
+    padding-left: 20px; position: relative; font-weight: 200;
+  }
+  .fit-col li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+  .fit-col.no li::before { color: var(--dim); }
+
+  /* FAQ */
+  .faq-item { border-bottom: 1px solid var(--gold-border-divider); padding: 28px 0; }
+  .faq-item:first-of-type { border-top: 1px solid var(--gold-border-divider); }
+  .faq-item h3 {
+    font-family: var(--font-display); font-size: 24px; font-weight: 300;
+    line-height: 1.25; margin-bottom: 12px; color: var(--off-white);
+  }
+  .faq-item p { font-size: 14px; line-height: 1.75; color: var(--muted); max-width: 700px; font-weight: 200; }
+
+  /* FORM */
+  .enquiry { border: 1px solid var(--gold-border-default); background: var(--bg-card); padding: 48px 40px; margin-top: 40px; }
+  .enquiry-step {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .enquiry h3 {
+    font-family: var(--font-display); font-size: 26px; font-weight: 400;
+    margin-bottom: 26px; color: var(--off-white);
+  }
+  .field { margin-bottom: 26px; }
+  .field label {
+    display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text); margin-bottom: 10px; font-weight: 400;
+  }
+  .field-hint { display: block; font-size: 12px; color: var(--muted); margin-bottom: 10px; font-weight: 200; letter-spacing: 0; text-transform: none; }
+  .field select, .field input, .field textarea {
+    width: 100%; min-height: 48px; padding: 12px 14px;
+    background: var(--void); color: var(--off-white);
+    border: 1px solid var(--gold-border-default);
+    font-family: var(--font-body); font-size: 14px; font-weight: 200;
+    border-radius: 0; appearance: none;
+  }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .field select:hover, .field input:hover, .field textarea:hover { border-color: var(--gold-border-hover); }
+  .form-divider { border: none; border-top: 1px solid var(--gold-border-divider); margin: 34px 0 30px; }
+  .form-note { font-size: 12px; color: var(--muted); margin-top: 18px; line-height: 1.7; font-weight: 200; }
+  .form-alt { font-size: 13px; color: var(--muted); margin-top: 26px; font-weight: 200; line-height: 2.6; }
+  .form-alt a {
+    color: var(--gold); text-decoration: none;
+    border-bottom: 1px solid var(--gold-border);
+    display: inline-block; padding: 12px 0; min-height: 44px;
+  }
+  .form-alt a:hover { border-color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--gold-border);
+    padding: 40px 48px; max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 18px; position: relative; z-index: 1;
+  }
+  .footer-name {
+    font-family: var(--font-display); font-size: 14px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  }
+  .footer-role { font-size: 11px; color: var(--subtext); letter-spacing: 0.05em; }
+  .footer-contact {
+    font-size: 11px; color: var(--gold); text-decoration: none; letter-spacing: 0.05em;
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+
+  /* RESPONSIVE */
+  @media (min-width: 1440px) {
+    .hero, section.band, .rule, footer, .container { max-width: 1400px; }
+  }
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    .nav-links { gap: 20px; }
+    .hero { padding: 130px 32px 70px; }
+    section.band { padding: 0 32px 80px; }
+    footer { padding: 40px 32px; }
+    .grid-3 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 110px 20px 60px; }
+    .hero h1 { font-size: clamp(38px, 11vw, 56px); }
+    section.band { padding: 0 20px 72px; }
+    .rule { margin-bottom: 52px; }
+    .grid-2, .grid-3, .fit { grid-template-columns: 1fr; }
+    .card { padding: 32px 24px; }
+    .fit-col { padding: 30px 24px; }
+    .enquiry { padding: 36px 24px; }
+    .anchor-block { padding: 32px 24px; }
+    .method-row { grid-template-columns: 36px 1fr; gap: 16px; }
+    footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 390px) {
+    .hero { padding: 100px 16px 48px; }
+    section.band { padding: 0 16px 60px; }
+    .card, .fit-col, .enquiry, .anchor-block { padding-left: 20px; padding-right: 20px; }
+    footer { padding: 28px 16px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://bookednow.co.za/#organization",
+  "name": "Booked.",
+  "url": "https://bookednow.co.za",
+  "description": "Booked builds discoverability infrastructure for fashion creatives and for the organisations that hold rosters of them.",
+  "founder": {
+    "@type": "Person",
+    "name": "Luca Bold",
+    "jobTitle": "Founder and Fashion Creative Infrastructure Specialist"
+  },
+  "email": "mailto:luca@bookednow.co.za",
+  "telephone": "+27637549122",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cape Town",
+    "addressCountry": "ZA"
+  },
+  "areaServed": { "@type": "Country", "name": "South Africa" },
+  "knowsAbout": [
+    "roster discoverability",
+    "machine readable talent data",
+    "schema.org structured data for talent rosters",
+    "AI search visibility",
+    "POPIA compliance for talent data"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://bookednow.co.za/agencies/#service",
+  "name": "Roster Discoverability Layer",
+  "serviceType": "Machine readable infrastructure for talent rosters",
+  "description": "Booked audits, rebuilds and maintains the machine readable layer for an entire roster, on the roster holder's own domain, alongside the booking or asset platform already in use.",
+  "url": "https://bookednow.co.za/agencies/",
+  "inLanguage": "en-ZA",
+  "provider": { "@id": "https://bookednow.co.za/#organization" },
+  "areaServed": { "@type": "Country", "name": "South Africa" },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Fashion and retail brands, retail groups, production companies, creative agencies and talent agencies responsible for rosters of 20 to 200 people"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "ZAR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "ZAR",
+      "minPrice": "45000",
+      "description": "Roster engagements start at R45,000. Final scope is set after roster size, category and timeline are confirmed."
+    },
+    "availability": "https://schema.org/InStock",
+    "url": "https://bookednow.co.za/agencies/#enquiry"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://bookednow.co.za/agencies/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is talent data handled, and how does this work under POPIA?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Only information you already publish or hold a release for is used. Booked acts as an operator under POPIA, works to a written operator agreement, and does not process special personal information. Talent data stays on your domain and your hosting. Nothing is sold, syndicated or used to train anything." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns the output?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You do, on handover, in full. The pages, the structured data, the image pipeline and the documentation sit on your domain and your repository. There is no licence to revoke and no platform to be locked into. If you stop working with Booked the layer keeps running." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you need from our side?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A current roster export, the highest resolution images you hold, whatever credits exist in any form including spreadsheets and inboxes, and one named person who can confirm facts about talent. Access to the domain and DNS at build stage. No design sign off cycle is required, because this is not a rebrand." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Scan returns inside two weeks. The Structure build runs roughly four to six weeks depending on roster size and how much credit recovery is needed. Indexing is slower than building: expect meaningful movement in AI and search results from about 90 days, which is when the baseline is re-run." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when someone leaves the roster?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Departures are removed in the same month and the structured data is updated so search and AI systems stop associating that person with you. New signings are onboarded within five working days. Because maintenance is priced against roster size, the cost moves with the roster instead of being fixed for a year." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this replace our booking or asset platform?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The layer sits alongside whatever you already run and does not touch it. Those platforms were built for a booker browsing on a laptop and they do that job well. They were never built to output a page a machine can parse, and you do not control the markup they produce." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this procured and invoiced?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fixed scope against a written brief, 50 percent on signature to hold the slot and the balance on handover, payment terms net 14. Quoted in ZAR. Scope is set only after roster size, category and timeline are confirmed, so there is no estimate before those three things are known." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav>
+  <a href="/" class="nav-logo">Booked.</a>
+  <ul class="nav-links">
+    <li><a href="#shift">The shift</a></li>
+    <li><a href="#breaks">What breaks</a></li>
+    <li><a href="#layer">The layer</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#engagement">Engagement</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#enquiry" class="nav-cta">Start with roster size</a>
+</nav>
+
+<main id="main">
+
+  <!-- 1 HERO -->
+  <section class="hero">
+    <p class="section-tag">Roster discoverability</p>
+    <h1>You represent forty people. A machine can <em>name none of them.</em></h1>
+    <p class="hero-sub">
+      Booked builds and maintains the machine readable layer for an entire roster, on your own domain, alongside the booking or asset platform you already pay for.
+    </p>
+    <p class="hero-anchor">
+      For brands, retail groups and production companies responsible for 20 to 200 people. Roster engagements start at R45,000.
+    </p>
+    <a href="#enquiry" class="btn-primary">Start with roster size</a>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 2 THE SHIFT -->
+  <section class="band" id="shift">
+    <p class="section-tag">The shift</p>
+    <h2>The first cut moved <em>upstream of the person.</em></h2>
+    <p>
+      A brand casting twelve faces for a summer campaign used to start with a booker and a set of boards. Increasingly the first pass runs through a search tool or an assistant before anyone picks up a phone. The system reads what it can parse, returns a shortlist, and a person starts from that shortlist rather than from the whole market.
+    </p>
+    <p>
+      That only matters if your roster is legible to the thing doing the reading. A page that looks correct to a human can be almost empty to a crawler. Names shortened to an initial are not entities. Credits held inside images are not text. A roster that lives only on Instagram and inside a rented platform has almost nothing a machine can turn into an answer.
+    </p>
+    <p>
+      Nobody is claiming every brand runs its casting through an assistant today. Some do, most do not yet. The direction is one way, and the fix takes about 90 days to index, so the useful question is whether your roster is readable before that matters rather than after.
+    </p>
+  </section>
+
+  <!-- 3 WHAT BREAKS -->
+  <section class="band" id="breaks">
+    <p class="section-tag">What breaks at roster level</p>
+    <h2>Four failures, all of them <em>structural.</em></h2>
+    <p>
+      These are not hypotheticals. Every one was found on a live South African roster site checked directly in August 2026. The organisations are described rather than named, because the point is the pattern and not a callout.
+    </p>
+    <div class="grid-2">
+      <article class="card">
+        <span class="card-num">01</span>
+        <h3>Names truncated to an initial</h3>
+        <p>A premium Cape Town board lists every person as a first name and a surname initial. "Princess S" is not an entity. No system can connect that string to a campaign, an editorial or a credit anywhere else on the web, so the person has no findable identity at all.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">02</span>
+        <h3>One alt string across every image</h3>
+        <p>On the same site, 22 images carry an identical alt attribute. To a crawler the entire roster is one undifferentiated object repeated 22 times. Nothing distinguishes a womenswear lead from a new face, because nothing describes either.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">03</span>
+        <h3>Images on links that expire</h3>
+        <p>Roster images served from signed storage URLs that expire after 30 minutes. Nothing can be indexed, Google Images holds nothing permanent, and any system that cached the page is holding a dead link. The photography budget is real and the asset is not durable.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">04</span>
+        <h3>Credits attached to nobody</h3>
+        <p>A second board names Cartier, Armani, Chanel and Vogue on its homepage. Not one talent name appears in machine readable text. The credits are real, they belong to specific people, and to any system reading the page those people are anonymous.</p>
+      </article>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 4 THE ROSTER LAYER -->
+  <section class="band" id="layer">
+    <p class="section-tag">The roster layer</p>
+    <h2>Scan, structure, <em>maintain.</em></h2>
+    <p>
+      Three stages. Each one produces something you keep, and each one is useful on its own if you stop after it.
+    </p>
+    <div class="grid-3">
+      <article class="card">
+        <span class="card-num">Stage 01</span>
+        <h3>Scan</h3>
+        <p>Your full roster scored against the five dimensions below, per person and aggregated to a board score out of 20. Named findings against your actual site rather than general advice. A baseline of the plain language queries a client would really run, recorded with what comes back today.</p>
+        <p class="card-meta">Out: scored report and query baseline. <strong>Inside two weeks.</strong></p>
+      </article>
+      <article class="card">
+        <span class="card-num">Stage 02</span>
+        <h3>Structure</h3>
+        <p>The layer itself, built on your domain. Full names restored, credits recovered into text, a permanent image pipeline with descriptive filenames and per person alt text, Person schema for every talent, Organization schema for you, and the crawler files underneath it.</p>
+        <p class="card-meta">Out: the live layer and its documentation. <strong>Four to six weeks.</strong></p>
+      </article>
+      <article class="card">
+        <span class="card-num">Stage 03</span>
+        <h3>Maintain</h3>
+        <p>A roster changes and a static fix rots. New signings on within five working days, departures removed the same month, monthly monitoring for broken links, expired images and schema drift, and a quarterly re-run of the same query baseline so movement is measured rather than asserted.</p>
+        <p class="card-meta">Out: monthly report and quarterly baseline. <strong>Ongoing, monthly.</strong></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5 METHOD -->
+  <section class="band" id="method">
+    <p class="section-tag">Method</p>
+    <h2>What actually gets <em>scored.</em></h2>
+    <p>
+      The same five dimensions Booked uses on an individual creative, applied per person across a roster and aggregated. Four points each, twenty in total. Scores reflect what exists rather than what could exist, and nothing is rounded up.
+    </p>
+    <div class="method">
+      <div class="method-row">
+        <span class="method-score">01</span>
+        <div>
+          <h3>AI discoverability</h3>
+          <p>Whether systems can find, understand and recommend this person. Killed by social only presence, credits held in image captions instead of text, and no structured data. Weighted first because it is where the first cut now happens.</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-score">02</span>
+        <div>
+          <h3>Positioning clarity</h3>
+          <p>Whether someone who finds the person immediately understands role, market and level. A profile that could describe anyone at any level scores low here regardless of how good the work is.</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-score">03</span>
+        <div>
+          <h3>Digital infrastructure</h3>
+          <p>Whether the presence is owned or rented. A domain, a working contact path and pages you control score high. Everything living inside a platform you licence scores low, because you do not control what it outputs.</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-score">04</span>
+        <div>
+          <h3>Work visibility</h3>
+          <p>Whether the calibre and range of the work is actually legible. Strong images with no named client or publication in text score in the middle: the work is visible, the context is not, and context is what a search returns.</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-score">05</span>
+        <div>
+          <h3>Platform coherence</h3>
+          <p>Whether the person presents consistently everywhere they appear. Different names and different credits across your site, their social and any agency listing fragment the entity, and a fragmented entity gets full weight nowhere.</p>
+        </div>
+      </div>
+    </div>
+    <p class="method-total">Aggregated to a board score out of <strong>20</strong>, with per person scores underneath so you can see which part of the roster is carrying the loss.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 6 ENGAGEMENT -->
+  <section class="band" id="engagement">
+    <p class="section-tag">Engagement models</p>
+    <h2>Three ways this <em>runs.</em></h2>
+    <div class="grid-3">
+      <article class="card">
+        <span class="card-num">Model 01</span>
+        <h3>Roster Audit</h3>
+        <p>The Scan on its own, delivered as a scored report with named findings and a query baseline. Some organisations take this to a board or a procurement committee before committing to a build, which is a reasonable way to use it.</p>
+        <p class="card-meta">Scoped on roster size.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">Model 02</span>
+        <h3>Roster Build</h3>
+        <p>Audit and the full layer. Fixed scope against a written brief, 50 percent on signature to hold the slot, balance on handover. You own everything at handover and it runs without Booked afterwards.</p>
+        <p class="card-meta">Scoped on roster size.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">Model 03</span>
+        <h3>Ongoing Retainer</h3>
+        <p>Maintenance after a build. Onboarding, removals, monitoring, monthly reporting and the quarterly baseline. Priced against roster size and billed monthly, so it moves as the roster moves rather than locking you into an annual figure.</p>
+        <p class="card-meta">Monthly, no annual lock in.</p>
+      </article>
+    </div>
+    <div class="anchor-block">
+      <p class="anchor-figure">Roster engagements start at R45,000.</p>
+      <p class="anchor-note">
+        Scope is set after roster size, category and timeline are confirmed, which is why there is no calculator on this page and no estimate before that conversation. Quoted in ZAR, fixed scope against a written brief, net 14. Where budget is fixed, scope moves to fit it. The rate does not.
+      </p>
+    </div>
+  </section>
+
+  <!-- 7 FIT -->
+  <section class="band" id="fit">
+    <p class="section-tag">Fit</p>
+    <h2>Worth being direct about <em>who this suits.</em></h2>
+    <div class="fit">
+      <div class="fit-col yes">
+        <h3>Right fit</h3>
+        <ul>
+          <li>Fashion and retail brands, and retail groups, carrying an in house or contracted roster.</li>
+          <li>Production companies with a standing pool of talent or crew they book repeatedly.</li>
+          <li>Creative and marketing agencies representing photographers, stylists, directors or art directors.</li>
+          <li>Between 20 and 200 people, where one named person can confirm facts about talent.</li>
+          <li>You already hold the images and the releases, and the credits exist somewhere even if only in an inbox.</li>
+          <li>You want the layer to run without Booked once it is built.</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>Not a fit</h3>
+        <ul>
+          <li>A single creative buying for themselves. That is the individual ladder on the main site, and it is cheaper.</li>
+          <li>Rosters under about 20 people. The economics do not work and you would be paying for structure you do not need yet.</li>
+          <li>Anyone who wants a rebrand, a new visual identity or a redesigned website. None of that is in scope here.</li>
+          <li>Anyone who needs their booking platform replaced. The layer sits alongside it and does not touch it.</li>
+          <li>Work that needs live presence at a fixed hour in a fixed timezone. Delivery is asynchronous by design.</li>
+          <li>Anyone looking for a guarantee on bookings. The score can be moved and measured. Bookings cannot be promised.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 8 FAQ -->
+  <section class="band" id="faq">
+    <p class="section-tag">Procurement questions</p>
+    <h2>The things a buyer <em>actually asks.</em></h2>
+
+    <div class="faq-item">
+      <h3>How is talent data handled, and how does this work under POPIA?</h3>
+      <p>Only information you already publish or hold a release for is used. Booked acts as an operator under POPIA, works to a written operator agreement, and does not process special personal information. Talent data stays on your domain and your hosting. Nothing is sold, syndicated or used to train anything.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Who owns the output?</h3>
+      <p>You do, on handover, in full. The pages, the structured data, the image pipeline and the documentation sit on your domain and your repository. There is no licence to revoke and no platform to be locked into. If you stop working with Booked the layer keeps running.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What do you need from our side?</h3>
+      <p>A current roster export, the highest resolution images you hold, whatever credits exist in any form including spreadsheets and inboxes, and one named person who can confirm facts about talent. Access to the domain and DNS at build stage. No design sign off cycle is required, because this is not a rebrand.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does it take?</h3>
+      <p>The Scan returns inside two weeks. The Structure build runs roughly four to six weeks depending on roster size and how much credit recovery is needed. Indexing is slower than building: expect meaningful movement in AI and search results from about 90 days, which is when the baseline is re-run.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What happens when someone leaves the roster?</h3>
+      <p>Departures are removed in the same month and the structured data is updated so search and AI systems stop associating that person with you. New signings are onboarded within five working days. Because maintenance is priced against roster size, the cost moves with the roster instead of being fixed for a year.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does this replace our booking or asset platform?</h3>
+      <p>No. The layer sits alongside whatever you already run and does not touch it. Those platforms were built for a booker browsing on a laptop and they do that job well. They were never built to output a page a machine can parse, and you do not control the markup they produce.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is this procured and invoiced?</h3>
+      <p>Fixed scope against a written brief, 50 percent on signature to hold the slot and the balance on handover, payment terms net 14. Quoted in ZAR. Scope is set only after roster size, category and timeline are confirmed, so there is no estimate before those three things are known.</p>
+    </div>
+  </section>
+
+  <!-- 9 CTA -->
+  <section class="band" id="enquiry">
+    <p class="section-tag">Start here</p>
+    <h2>Roster size first, <em>then everything else.</em></h2>
+    <p>
+      No number can be quoted before roster size, category and timeline are known, so those are the first three questions rather than the last. It takes about a minute and it is the same information the first call would open with.
+    </p>
+
+    <form class="enquiry" action="mailto:luca@bookednow.co.za" method="post" enctype="text/plain">
+      <p class="enquiry-step">Step one of two</p>
+      <h3>About the roster</h3>
+
+      <div class="field">
+        <label for="roster-size">How many people are on the roster?</label>
+        <span class="field-hint">Everyone you represent or book repeatedly, across all boards or divisions.</span>
+        <select id="roster-size" name="01_roster_size" required>
+          <option value="">Select roster size</option>
+          <option value="Under 20">Under 20</option>
+          <option value="20 to 45">20 to 45</option>
+          <option value="46 to 100">46 to 100</option>
+          <option value="101 to 200">101 to 200</option>
+          <option value="Over 200">Over 200</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="category">What kind of roster is it?</label>
+        <select id="category" name="02_category" required>
+          <option value="">Select category</option>
+          <option value="Fashion or retail brand">Fashion or retail brand</option>
+          <option value="Retail group">Retail group</option>
+          <option value="Production company">Production company</option>
+          <option value="Creative or marketing agency">Creative or marketing agency</option>
+          <option value="Talent or modelling agency">Talent or modelling agency</option>
+          <option value="Something else">Something else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="timeline">When would you want this running?</label>
+        <select id="timeline" name="03_timeline" required>
+          <option value="">Select timeline</option>
+          <option value="Inside 3 months">Inside 3 months</option>
+          <option value="3 to 6 months">3 to 6 months</option>
+          <option value="Later this year">Later this year</option>
+          <option value="Researching, no date yet">Researching, no date yet</option>
+        </select>
+      </div>
+
+      <hr class="form-divider">
+
+      <p class="enquiry-step">Step two of two</p>
+      <h3>Where to send the answer</h3>
+
+      <div class="field">
+        <label for="org">Organisation</label>
+        <input type="text" id="org" name="04_organisation" required autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label for="name">Your name and role</label>
+        <input type="text" id="name" name="05_name_and_role" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="email">Work email</label>
+        <input type="email" id="email" name="06_email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="context">Anything useful to know before we speak</label>
+        <span class="field-hint">Optional. The platform you run on, whether credits exist anywhere in writing, who signs.</span>
+        <textarea id="context" name="07_context"></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Send roster details</button>
+      <p class="form-note">
+        Answered inside two working days, by Luca, not by a scheduler. If it is not a fit you get told that plainly and quickly.
+      </p>
+    </form>
+
+    <p class="form-alt">
+      Rather talk first? <a href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20enquiring%20about%20the%20roster%20layer%20for%20our%20organisation">WhatsApp</a> or <a href="mailto:luca@bookednow.co.za?subject=Roster%20layer%20enquiry">luca@bookednow.co.za</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-name">Booked.</span>
+  <span class="footer-role">Roster discoverability · Cape Town</span>
+  <a href="mailto:luca@bookednow.co.za" class="footer-contact">luca@bookednow.co.za</a>
+</footer>
+
+</body>
+</html>
