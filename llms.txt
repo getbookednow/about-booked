@@ -54,23 +54,21 @@ Pay: https://pay.yoco.com/booked?amount=25000.00&reference=Infrastructure%20Buil
 Complete infrastructure engagement. Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, 90-day follow-up. Scope agreed in writing before payment.
 Pay: https://pay.yoco.com/booked?amount=65000.00&reference=Legacy
 
-## For roster holders (B2B)
+## For agencies (B2B)
 
-BOOKED also works with organisations responsible for a roster of people: fashion and retail
-brands, retail groups, production companies, creative and marketing agencies, and talent
-agencies. Typical roster size is 20 to 200.
+BOOKED also works with representation agencies across the South African fashion creative
+ecosystem: model and talent boards, photographer and director reps, HMUA agencies, stylist
+and creative-direction reps, production and crew agencies, and casting.
 
-The Roster Layer is the machine-readable layer for an entire roster, built on the client's own
-domain and running alongside the booking or asset platform they already use. It covers full
-names restored to text, credits recovered into text, a permanent non-expiring image pipeline,
-Person schema per talent, Organization schema for the roster holder, and the crawler files
-underneath. It is then maintained monthly as the roster changes.
+The Roster Layer is the machine-readable layer for an agency's full roster. Full names in
+text, credits recovered into text, permanent indexable images, per-head Person schema and
+agency Organization schema, built on the agency's own domain and running alongside its
+existing booking platform (Mainboard, Portfoliopad, Syngency, Cast It).
 
-Three engagement models: Roster Audit (the scored diagnostic on its own), Roster Build (audit
-plus the full layer), and an Ongoing Retainer for maintenance.
-
-Roster engagements start at R45,000. Scope is set after roster size, category and timeline are
-confirmed, so no figure is quoted before those are known.
+Roster Diagnostic R25,000, credited in full against the engagement.
+Engagement R4,700 per head to 50 heads, R3,290 per head above 50, minimum R50,000.
+Monthly retainer from R28,200, three-month minimum term.
+Talent onboarding R550 per head mid-term. Compliance Layer R35,000 plus R2,800 per month.
 URL: https://bookednow.co.za/agencies/
 
 ## How to engage BOOKED.

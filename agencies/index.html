@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roster Discoverability for Brands, Retail and Production | Booked.</title>
-<meta name="description" content="Booked builds the machine readable layer for an entire roster, on your own domain, alongside the platform you already use. For brands, retail groups and production companies responsible for 20 to 200 people. Roster engagements start at R45,000.">
+<title>Roster Discoverability for Representation Agencies | Booked.</title>
+<meta name="description" content="Booked builds the machine readable layer for an entire roster, on your own domain, alongside the booking platform you already use. For photographer and director reps, HMUA and stylist agencies, production companies and talent boards. R4,700 per head, minimum R50,000.">
 <link rel="canonical" href="https://bookednow.co.za/agencies/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0e0a1a">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bookednow.co.za/agencies/">
-<meta property="og:title" content="Roster Discoverability for Brands, Retail and Production | Booked.">
+<meta property="og:title" content="Roster Discoverability for Representation Agencies | Booked.">
 <meta property="og:description" content="Your roster is a commercial asset. To a machine reading your site, most of it does not exist. Booked builds the layer that fixes it.">
 <meta property="og:image" content="https://bookednow.co.za/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="BOOKED.">
 <meta property="og:locale" content="en_ZA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Roster Discoverability for Brands, Retail and Production | Booked.">
+<meta name="twitter:title" content="Roster Discoverability for Representation Agencies | Booked.">
 <meta name="twitter:description" content="Your roster is a commercial asset. To a machine reading your site, most of it does not exist.">
 <meta name="twitter:image" content="https://bookednow.co.za/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,6 +223,26 @@
   }
   .anchor-note { font-size: 13px; color: var(--muted); max-width: 640px; line-height: 1.7; }
 
+  /* PRICE TABLE */
+  .table-wrap { overflow-x: auto; margin: 28px 0 24px; }
+  .price-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+  .price-table th, .price-table td {
+    text-align: left; padding: 14px 16px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    font-size: 14px; font-weight: 200; color: var(--muted);
+  }
+  .price-table thead th {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 400; border-bottom-color: var(--gold-border-default);
+  }
+  .price-table tbody th { color: var(--off-white); font-weight: 400; letter-spacing: 0.04em; }
+  .price-table tbody tr:last-child th, .price-table tbody tr:last-child td { border-bottom: none; }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  h3.anchor-figure { font-family: var(--font-display); font-weight: 300; }
+
   /* FIT */
   .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 40px; }
   .fit-col { padding: 36px 32px; border: 1px solid var(--gold-border-default); background: var(--bg-card); }
@@ -380,20 +400,60 @@
   "areaServed": { "@type": "Country", "name": "South Africa" },
   "audience": {
     "@type": "BusinessAudience",
-    "audienceType": "Fashion and retail brands, retail groups, production companies, creative agencies and talent agencies responsible for rosters of 20 to 200 people"
+    "audienceType": "Representation agencies in the South African fashion creative ecosystem: photographer and director reps, HMUA agencies, stylist and creative direction reps, production and crew agencies, casting agencies, and model and talent boards"
   },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "ZAR",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Roster Diagnostic",
+      "description": "Full roster scored per head and aggregated out of 20, named findings against the live site, a five query AI baseline, and three talent rebuilt as a working demo. Credited in full against the engagement.",
+      "price": "25000",
       "priceCurrency": "ZAR",
-      "minPrice": "45000",
-      "description": "Roster engagements start at R45,000. Final scope is set after roster size, category and timeline are confirmed."
+      "availability": "https://schema.org/InStock",
+      "url": "https://bookednow.co.za/agencies/#engagement"
     },
-    "availability": "https://schema.org/InStock",
-    "url": "https://bookednow.co.za/agencies/#enquiry"
-  }
+    {
+      "@type": "Offer",
+      "name": "Roster Engagement",
+      "description": "The machine readable layer built across the full roster on the agency's own domain. Priced per head: R4,700 per head to 50 heads, R3,290 per head above 50, minimum R50,000.",
+      "priceCurrency": "ZAR",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "4700",
+        "priceCurrency": "ZAR",
+        "unitText": "per head",
+        "minPrice": "50000",
+        "description": "R4,700 per head to 50 heads, R3,290 per head above 50. Minimum engagement R50,000."
+      },
+      "availability": "https://schema.org/InStock",
+      "url": "https://bookednow.co.za/agencies/#engagement"
+    },
+    {
+      "@type": "Offer",
+      "name": "Roster Retainer",
+      "description": "Monthly maintenance of the layer. Onboarding within five working days, same month removals, drift monitoring, quarterly re-baseline and a monthly visibility report. Three month minimum term.",
+      "priceCurrency": "ZAR",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "28200",
+        "priceCurrency": "ZAR",
+        "unitCode": "MON",
+        "billingIncrement": 1,
+        "description": "From R28,200 per month to 40 heads, then R475 per head per month above 40."
+      },
+      "availability": "https://schema.org/InStock",
+      "url": "https://bookednow.co.za/agencies/#engagement"
+    },
+    {
+      "@type": "Offer",
+      "name": "Compliance Layer",
+      "description": "POPIA compliance across the roster: model release audit, likeness and AI usage clauses, operator agreement. R35,000 setup plus R2,800 per month folded into the retainer.",
+      "price": "35000",
+      "priceCurrency": "ZAR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://bookednow.co.za/agencies/#engagement"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -435,7 +495,7 @@
     {
       "@type": "Question",
       "name": "How is this procured and invoiced?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Fixed scope against a written brief, 50 percent on signature to hold the slot and the balance on handover, payment terms net 14. Quoted in ZAR. Scope is set only after roster size, category and timeline are confirmed, so there is no estimate before those three things are known." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The diagnostic is R25,000 upfront and credited in full against the engagement. The engagement is 50 percent on signature and 50 percent on go live. The retainer is billed on the first of the month with head count trued up the same day, three month minimum, then 30 days notice. Net 14, quoted in ZAR, annual prepay is twelve for ten." }
     }
   ]
 }
@@ -464,10 +524,10 @@
     <p class="section-tag">Roster discoverability</p>
     <h1>You represent forty people. A machine can <em>name none of them.</em></h1>
     <p class="hero-sub">
-      Booked builds and maintains the machine readable layer for an entire roster, on your own domain, alongside the booking or asset platform you already pay for.
+      Booked builds and maintains the machine readable layer for an entire roster, on your own domain, alongside the booking platform you already pay for.
     </p>
     <p class="hero-anchor">
-      For brands, retail groups and production companies responsible for 20 to 200 people. Roster engagements start at R45,000.
+      For photographer and director reps, HMUA and stylist agencies, production and crew agencies, casting, and talent boards. R4,700 per head, minimum R50,000, then a monthly retainer from R28,200.
     </p>
     <a href="#enquiry" class="btn-primary">Start with roster size</a>
   </section>
@@ -602,33 +662,72 @@
 
   <!-- 6 ENGAGEMENT -->
   <section class="band" id="engagement">
-    <p class="section-tag">Engagement models</p>
-    <h2>Three ways this <em>runs.</em></h2>
+    <p class="section-tag">What it costs</p>
+    <h2>Priced per head, because that is <em>the unit you already think in.</em></h2>
+    <p>
+      Not priced on my hours. If it were, every hour of automation I build would reduce your price, which is the wrong incentive for both of us. The schedule below is published so you can work out your own number before you speak to me.
+    </p>
+
     <div class="grid-3">
       <article class="card">
-        <span class="card-num">Model 01</span>
-        <h3>Roster Audit</h3>
-        <p>The Scan on its own, delivered as a scored report with named findings and a query baseline. Some organisations take this to a board or a procurement committee before committing to a build, which is a reasonable way to use it.</p>
-        <p class="card-meta">Scoped on roster size.</p>
+        <span class="card-num">Step 01</span>
+        <h3>Roster Diagnostic</h3>
+        <p>Your full roster scored per head and aggregated out of 20. Named findings against your live site. A baseline of five plain language queries a client would really run, put through ChatGPT, Claude, Perplexity and Google AI Mode. Three of your people rebuilt as a working demo.</p>
+        <p class="card-meta"><strong>R25,000</strong>, credited in full against the engagement. Under 25 heads, skip it.</p>
       </article>
       <article class="card">
-        <span class="card-num">Model 02</span>
-        <h3>Roster Build</h3>
-        <p>Audit and the full layer. Fixed scope against a written brief, 50 percent on signature to hold the slot, balance on handover. You own everything at handover and it runs without Booked afterwards.</p>
-        <p class="card-meta">Scoped on roster size.</p>
+        <span class="card-num">Step 02</span>
+        <h3>Engagement</h3>
+        <p>The layer itself. Full roster mirror on your domain, Person schema per head, ImageObject markup on flagship work, a permanent image pipeline, full names restored, credits recovered into text, category and market signals per head, your Organization schema, the crawler files, Search Console, and a 90 day re-baseline.</p>
+        <p class="card-meta"><strong>R4,700 per head</strong> to 50 heads, R3,290 above 50. Minimum R50,000.</p>
       </article>
       <article class="card">
-        <span class="card-num">Model 03</span>
-        <h3>Ongoing Retainer</h3>
-        <p>Maintenance after a build. Onboarding, removals, monitoring, monthly reporting and the quarterly baseline. Priced against roster size and billed monthly, so it moves as the roster moves rather than locking you into an annual figure.</p>
-        <p class="card-meta">Monthly, no annual lock in.</p>
+        <span class="card-num">Step 03</span>
+        <h3>Retainer</h3>
+        <p>New talent on within five working days, departures removed the same month, monthly crawl and drift monitoring, a quarterly re-run of the same query baseline, and a one page visibility report you can actually read.</p>
+        <p class="card-meta"><strong>From R28,200 a month</strong> to 40 heads, then R475 per head above 40. Three month minimum.</p>
       </article>
     </div>
+
     <div class="anchor-block">
-      <p class="anchor-figure">Roster engagements start at R45,000.</p>
+      <h3 class="anchor-figure">R4,700 per head.</h3>
       <p class="anchor-note">
-        Scope is set after roster size, category and timeline are confirmed, which is why there is no calculator on this page and no estimate before that conversation. Quoted in ZAR, fixed scope against a written brief, net 14. Where budget is fixed, scope moves to fit it. The rate does not.
+        Every figure below re-derives from that one rate. Nothing here is a package, and nothing is rounded to look friendlier.
       </p>
+      <div class="table-wrap">
+        <table class="price-table">
+          <caption class="visually-hidden">Roster discoverability pricing by roster size, in South African Rand</caption>
+          <thead>
+            <tr><th scope="col">Roster</th><th scope="col">Engagement</th><th scope="col">Retainer, monthly</th><th scope="col">Year one</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">12 heads</th><td>R56,400</td><td>R28,200</td><td>R394,800</td></tr>
+            <tr><th scope="row">20 heads</th><td>R94,000</td><td>R28,200</td><td>R432,400</td></tr>
+            <tr><th scope="row">30 heads</th><td>R141,000</td><td>R28,200</td><td>R479,400</td></tr>
+            <tr><th scope="row">45 heads</th><td>R211,500</td><td>R30,575</td><td>R578,400</td></tr>
+            <tr><th scope="row">60 heads</th><td>R267,900</td><td>R37,700</td><td>R720,300</td></tr>
+            <tr><th scope="row">100 heads</th><td>R399,500</td><td>R56,700</td><td>R1,079,900</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="anchor-note">
+        Roughly one to two extra booking days per person per year covers it. That is the number worth checking against your own commission, rather than a break even count I could make say anything.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <span class="card-num">Add ons</span>
+        <h3>Priced separately</h3>
+        <p>Talent onboarding for anyone added mid term, R550 per head. A 45 head board at 40 percent churn is eighteen builds a year, so this is not padding.</p>
+        <p>Compliance Layer, R35,000 plus R2,800 a month folded into the retainer. POPIA across the roster, model release audit, likeness and AI usage clauses, operator agreement.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">Terms</span>
+        <h3>How it is paid</h3>
+        <p>Diagnostic upfront, credited in full. Engagement 50 percent on signature to hold the slot, 50 percent on go live. Retainer billed on the first, head count trued up the same day, three month minimum then 30 days notice.</p>
+        <p>Net 14, quoted in ZAR. Annual prepay is twelve months for ten. Retainers carry a CPI plus 2 percent escalator from day one. The rate does not move, scope does.</p>
+      </article>
     </div>
   </section>
 
@@ -640,19 +739,19 @@
       <div class="fit-col yes">
         <h3>Right fit</h3>
         <ul>
-          <li>Fashion and retail brands, and retail groups, carrying an in house or contracted roster.</li>
-          <li>Production companies with a standing pool of talent or crew they book repeatedly.</li>
-          <li>Creative and marketing agencies representing photographers, stylists, directors or art directors.</li>
-          <li>Between 20 and 200 people, where one named person can confirm facts about talent.</li>
-          <li>You already hold the images and the releases, and the credits exist somewhere even if only in an inbox.</li>
-          <li>You want the layer to run without Booked once it is built.</li>
+          <li>Photographer and director reps. Your artists are already searched for by name, which makes this the highest value roster to fix.</li>
+          <li>HMUA agencies. High commercial volume, real name level search demand, credits scattered across other people's posts.</li>
+          <li>Stylist and creative direction reps. Small rosters, senior buyers, and the sharpest positioning problem of the lot.</li>
+          <li>Production and crew agencies. International productions scout remotely and almost entirely on search.</li>
+          <li>Casting agencies and talent boards. Largest rosters, and the ones where names often do not exist in text at all.</li>
+          <li>You can carry R28,200 a month, and one named person can confirm facts about talent.</li>
         </ul>
       </div>
       <div class="fit-col no">
         <h3>Not a fit</h3>
         <ul>
           <li>A single creative buying for themselves. That is the individual ladder on the main site, and it is cheaper.</li>
-          <li>Rosters under about 20 people. The economics do not work and you would be paying for structure you do not need yet.</li>
+          <li>Anyone who cannot carry the retainer. The engagement is not worth buying without it, because a static fix rots as the roster changes.</li>
           <li>Anyone who wants a rebrand, a new visual identity or a redesigned website. None of that is in scope here.</li>
           <li>Anyone who needs their booking platform replaced. The layer sits alongside it and does not touch it.</li>
           <li>Work that needs live presence at a fixed hour in a fixed timezone. Delivery is asynchronous by design.</li>
@@ -695,7 +794,7 @@
     </div>
     <div class="faq-item">
       <h3>How is this procured and invoiced?</h3>
-      <p>Fixed scope against a written brief, 50 percent on signature to hold the slot and the balance on handover, payment terms net 14. Quoted in ZAR. Scope is set only after roster size, category and timeline are confirmed, so there is no estimate before those three things are known.</p>
+      <p>The diagnostic is R25,000 upfront and is credited in full against the engagement. The engagement is 50 percent on signature to hold the slot and 50 percent on go live. The retainer is billed on the first of the month with head count trued up the same day, three month minimum, then 30 days notice. Net 14, quoted in ZAR, annual prepay is twelve for ten.</p>
     </div>
   </section>
 
