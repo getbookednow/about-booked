@@ -245,6 +245,12 @@
     font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--secondary);
   }
   footer .fn{font-family:"Syne",sans-serif;font-weight:700;color:var(--muted);letter-spacing:.06em}
+  footer .footer-credit{color:var(--secondary);transition:color .3s ease}
+  footer .footer-credit span{font-family:"Syne",sans-serif;font-weight:700;color:var(--muted);letter-spacing:.06em;transition:color .3s ease}
+  footer .footer-credit:hover,footer .footer-credit:hover span{color:var(--accent)}
+  @media(max-width:560px){
+    footer{flex-direction:column;align-items:flex-start;gap:.75rem}
+  }
 
   /* ── REVEAL ──────────────────────────────────── */
   .js .reveal{opacity:0;clip-path:inset(8% 0 0 0);transform:translateY(18px);
@@ -489,6 +495,7 @@
   <span class="fn">Ande Mafenuka — Samba</span>
   <span>Cape Town / Johannesburg</span>
   <span>© 2026</span>
+  <a class="footer-credit" href="https://www.bookednow.co.za" target="_blank" rel="noopener">Proudly designed by <span>Booked.</span></a>
 </footer>
 
 <script>
