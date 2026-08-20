@@ -13,7 +13,25 @@
     "jobTitle": "International Fashion Model & Founder",
     "sameAs": [
       "https://lucabold.com"
-    ]
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certificate",
+      "name": "AI Fluency: Framework & Foundations",
+      "url": "https://verify.skilljar.com/c/epopek6oioqe",
+      "datePublished": "2026-07",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Skilljar credential ID",
+        "value": "epopek6oioqe"
+      },
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Anthropic",
+        "alternateName": "Anthropic Academy",
+        "url": "https://www.anthropic.com"
+      }
+    }
   },
   "areaServed": [
     "ZA",
