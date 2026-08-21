@@ -208,14 +208,32 @@
   .contact-meta dt{font-size:var(--t--1);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);font-weight:600}
   .contact-meta dd{margin-top:.3rem;font-size:var(--t-1)}
   .contact-meta a:hover{color:var(--gold-ink);text-decoration:underline}
-  .form{display:grid;gap:1.1rem}
-  .field{display:grid;gap:.4rem}
-  .field label{font-size:var(--t--1);letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
-  .field input,.field select,.field textarea{
-    font:inherit;font-size:var(--t-0);padding:.8rem .9rem;border:1px solid var(--line);
-    background:#fff;color:var(--ink);border-radius:0;width:100%}
-  .field textarea{min-height:150px;resize:vertical}
-  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold-ink);outline:none;box-shadow:0 0 0 2px rgba(119,108,65,.22)}
+  /* ── WHATSAPP CONTACT (replaces the Wix form; static hosting has no backend) ── */
+  .wa-panel{border:1px solid var(--line);background:var(--cream-warm);padding:clamp(1.6rem,4vw,2.4rem)}
+  .wa-h{font-size:var(--t-3);margin-top:.5rem}
+  .wa-note{margin-top:.9rem;color:var(--ink-soft);max-width:38ch}
+  .wa-btn{display:inline-flex;align-items:center;gap:.7rem}
+  .wa-ico{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+  .wa-num{margin-top:1.3rem;font-size:var(--t-1);font-variant-numeric:tabular-nums}
+  .wa-num a:hover{color:var(--gold-ink);text-decoration:underline}
+  .wa-alt{margin-top:1rem;font-size:.95rem;color:var(--ink-soft)}
+  .wa-alt a{text-decoration:underline}
+  .wa-alt a:hover{color:var(--gold-ink)}
+
+  /* floating button — her Wix site had one; kept, but in her palette, not WhatsApp green */
+  .wa-float{position:fixed;right:clamp(.9rem,3vw,1.6rem);bottom:clamp(.9rem,3vw,1.6rem);z-index:90;
+    display:inline-flex;align-items:center;gap:.55rem;
+    padding:.8rem 1.15rem;border-radius:999px;
+    background:var(--gold-deep);color:var(--cream);
+    box-shadow:0 8px 26px rgba(21,18,12,.28);
+    font-size:var(--t--1);letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    transition:background .3s ease,transform .3s var(--ease)}
+  .wa-float svg{width:1.25em;height:1.25em;fill:currentColor;flex:none}
+  .wa-float:hover{background:var(--ink);transform:translateY(-2px)}
+  @media(max-width:520px){.wa-float-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    /* collapsed to a circle, but never below the 44px minimum tap target */
+    .wa-float{padding:0;border-radius:50%;min-width:48px;min-height:48px;justify-content:center}
+    .wa-float svg{width:1.5em;height:1.5em}}
 
   /* ── RIGHTS + FOOTER ── */
   .rights{background:var(--cream-warm);border-top:1px solid var(--line)}
@@ -442,39 +460,22 @@
         </dl>
       </div>
       <div>
-        <!-- VERIFY: this form posts via the visitor's mail client because GitHub Pages has no
-             backend. If enquiries should land in an inbox directly, a form endpoint is needed. -->
-        <form class="form" action="mailto:tarryn.taylor@gmail.com" method="post" enctype="text/plain">
-          <div class="field">
-            <label for="f-name">First name</label>
-            <input id="f-name" name="First name" type="text" autocomplete="given-name">
-          </div>
-          <div class="field">
-            <label for="f-phone">Phone</label>
-            <input id="f-phone" name="Phone" type="tel" autocomplete="tel">
-          </div>
-          <div class="field">
-            <label for="f-email">Email <span aria-hidden="true">*</span></label>
-            <input id="f-email" name="Email" type="email" required autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-interest">I&rsquo;m interested in&hellip;</label>
-            <select id="f-interest" name="Interested in">
-              <option value="">Please choose</option>
-              <option>Model portfolio shoot</option>
-              <option>Digitals &amp; polaroids</option>
-              <option>Commercial shoot</option>
-              <option>Couples &amp; post-wedding</option>
-              <option>Creative direction &amp; posing</option>
-              <option>Mentorship</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-msg">Message <span aria-hidden="true">*</span></label>
-            <textarea id="f-msg" name="Message" required placeholder="Tell me about your project…"></textarea>
-          </div>
-          <p><button class="btn" type="submit">Send Message</button></p>
-        </form>
+        <div class="wa-panel">
+          <p class="kicker" style="color:var(--gold-ink)">Fastest way to reach me</p>
+          <h3 class="wa-h">WhatsApp</h3>
+          <p class="wa-note">Tell me what you’re shooting and when. I’ll come back with availability and a rate.</p>
+          <p style="margin-top:1.6rem">
+            <a class="btn wa-btn" href="https://wa.me/27682969691?text=Hi%20Tarryn%20%E2%80%94%20I%20found%20you%20through%20your%20site.%20I%27d%20like%20to%20ask%20about%20a%20shoot." rel="noopener">
+              <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/>
+                <path d="M8.9 7.4c-.2-.4-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5 0 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.3-1.7c-.2-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.6-1.8Z"/>
+              </svg>
+              <span>Message on WhatsApp</span>
+            </a>
+          </p>
+          <p class="wa-num"><a href="https://wa.me/27682969691" rel="noopener">+27 68 296 9691</a></p>
+          <p class="wa-alt">Prefer email? <a href="mailto:tarryn.taylor@gmail.com">tarryn.taylor@gmail.com</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -488,6 +489,14 @@
   </section>
 
 </main>
+
+<a class="wa-float" href="https://wa.me/27682969691?text=Hi%20Tarryn%20%E2%80%94%20I%20found%20you%20through%20your%20site." rel="noopener" aria-label="Message Tarryn Taylor on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/>
+    <path d="M8.9 7.4c-.2-.4-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5 0 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.5-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.3-1.7c-.2-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.6-1.8Z"/>
+  </svg>
+  <span class="wa-float-t">WhatsApp</span>
+</a>
 
 <footer class="foot">
   <nav class="foot-nav" aria-label="Footer">

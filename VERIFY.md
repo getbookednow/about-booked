@@ -102,17 +102,29 @@ from scratch, not inferred. Tested at 375 / 768 / 1440.
 
 ## D. Contact & practical
 
-**D1. The contact form has no backend.** GitHub Pages can't process form
-submissions. Right now the form opens the visitor's own mail app with the
-message pre-filled. It works, but it's clunky, and some people will drop off.
-→ *Want me to wire it to a proper form service so enquiries land straight in
-your inbox? Takes about ten minutes.*
+**D1. RESOLVED — the form is gone, replaced with WhatsApp.**
+Static hosting can't process form submissions, and a form that opens the
+visitor's mail app loses people. The contact section is now a WhatsApp block,
+plus a floating WhatsApp button on every page (your Wix site had one too).
+Email is still listed underneath as the alternative.
+
+Each page sends a different pre-filled message, so you can see which offer the
+enquiry came from before you even open the chat:
+- Home → "I'd like to ask about a shoot"
+- Model Portfolio → "I'd like to book a model portfolio shoot"
+- Commercial → "I'd like to talk about a commercial shoot"
+- Couples → "I'd like to book a couples session"
+
+**D1a. Confirm the number: +27 68 296 9691.**
+→ *This is on every page of your site now — worth double-checking the digits.*
+It is not Booked's number, so enquiries come to you directly, not via Luca.
 
 **D2. Is `tarryn.taylor@gmail.com` still the right address?**
 
-**D3. Do you want a WhatsApp button?** The Wix site had a floating WhatsApp
-widget. It hasn't been carried over — I don't have the number, and I didn't
-want to guess it.
+**D3. RESOLVED — floating WhatsApp button is back**, on all four pages.
+One difference from Wix: it is in your gold, not WhatsApp green. Green fought
+with the gold-and-cream palette in exactly the way the old Send Message button
+did. → *Say the word if you'd rather have the standard green.*
 
 **D4. Is "Based in Cape Town, South Africa" still accurate?**
 
