@@ -207,6 +207,19 @@
   .contact-meta dt{font-size:var(--t--1);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);font-weight:600}
   .contact-meta dd{margin-top:.3rem;font-size:var(--t-1)}
   .contact-meta a:hover{color:var(--gold-ink);text-decoration:underline}
+  /* ── EMPTY IMAGE SLOTS ──────────────────────────────────────────────────
+     Slots whose photograph has not been delivered yet. The flat placeholder
+     tone is already on the container; this hides the browser's broken-image
+     rendering so the gap reads as deliberate rather than as a broken page.
+     Every one of these disappears on its own the moment the file exists. */
+  .is-empty img{opacity:0}
+  .shot.is-empty::before,.door-img.is-empty::before,.split-img.is-empty::before{
+    content:"Photograph to come";position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    padding:1rem;font-size:var(--t--1);letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold-ink)}
+  .door-img.is-empty,.split-img.is-empty{position:relative}
+
   /* ── WHATSAPP CONTACT (replaces the Wix form; static hosting has no backend) ── */
   .wa-panel{border:1px solid var(--line);background:var(--cream-warm);padding:clamp(1.6rem,4vw,2.4rem)}
   .wa-h{font-size:var(--t-3);margin-top:.5rem}
@@ -427,5 +440,29 @@
     Site by <a href="https://bookednow.co.za/">Booked.</a>
   </p>
 </footer>
+<script>
+/* Mark image slots whose file is not on disk yet so they render as a flat
+   placeholder rather than a broken image. Two paths are needed: the listener
+   catches images that fail later (lazy ones, as they scroll in), the sweep
+   catches those that already failed before this script parsed. Purely
+   cosmetic, no dependency, and inert once the photographs exist. */
+(function(){
+  function mark(img){
+    var slot=img.closest('.shot,.door-img,.split-img,.hero');
+    if(slot)slot.classList.add('is-empty');
+  }
+  document.addEventListener('error',function(e){
+    if(e.target&&e.target.tagName==='IMG')mark(e.target);
+  },true);
+  function sweep(){
+    var imgs=document.getElementsByTagName('img');
+    for(var i=0;i<imgs.length;i++){
+      if(imgs[i].complete&&imgs[i].naturalWidth===0)mark(imgs[i]);
+    }
+  }
+  sweep();
+  window.addEventListener('load',sweep);
+})();
+</script>
 </body>
 </html>
