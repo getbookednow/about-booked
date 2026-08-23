@@ -15,7 +15,7 @@ B=0; W=0
 blk(){ printf '  BLOCK  %s\n' "$1"; B=$((B+1)); }
 wrn(){ printf '  warn   %s\n' "$1"; W=$((W+1)); }
 sec(){ printf '\n== %s\n' "$1"; }
-PAGES="index.html model.html commercial.html couples.html"
+PAGES="index.html model.html commercial.html couples.html about.html contact.html"
 
 sec "Placeholder copy"
 for p in $PAGES; do
@@ -29,7 +29,7 @@ sec "Indexing"
 for p in $PAGES; do
   grep -q 'name="robots" content="noindex' "$SITE/$p" && blk "$p is still noindex"
 done
-for u in "" model.html commercial.html couples.html; do
+for u in "" model.html commercial.html couples.html about.html contact.html; do
   grep -q "tarryntaylor/$u<" "$ROOT/sitemap.xml" || blk "sitemap.xml missing /tarryntaylor/$u"
 done
 

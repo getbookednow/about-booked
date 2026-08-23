@@ -12,7 +12,7 @@
 set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SITE="$ROOT/tarryntaylor"
-PAGES="index.html model.html commercial.html couples.html"
+PAGES="index.html model.html commercial.html couples.html about.html contact.html"
 MODE="${1:-}"
 
 if [ "$MODE" = "--revert" ]; then
@@ -61,7 +61,9 @@ p=sys.argv[1]; s=open(p).read()
 urls=["https://bookednow.co.za/tarryntaylor/",
       "https://bookednow.co.za/tarryntaylor/model.html",
       "https://bookednow.co.za/tarryntaylor/commercial.html",
-      "https://bookednow.co.za/tarryntaylor/couples.html"]
+      "https://bookednow.co.za/tarryntaylor/couples.html",
+      "https://bookednow.co.za/tarryntaylor/about.html",
+      "https://bookednow.co.za/tarryntaylor/contact.html"]
 add="".join(f"  <url>\n    <loc>{u}</loc>\n  </url>\n" for u in urls if u not in s)
 if add:
     s=s.replace("</urlset>",add+"</urlset>"); open(p,'w').write(s)

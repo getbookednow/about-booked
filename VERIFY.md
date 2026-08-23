@@ -154,11 +154,30 @@ placeholder tone. They will fill in the moment the originals land — run
 | `og/tarryn-taylor-og-model` | model social preview | **empty** |
 | `og/tarryn-taylor-og-commercial` | commercial social preview | **empty** |
 | `og/tarryn-taylor-og-couples` | couples social preview | **empty** |
+| `og/tarryn-taylor-og-about` | about social preview | **empty** |
+| `og/tarryn-taylor-og-contact` | contact social preview | **empty** |
 
 **E1.** Which photograph should be the hero on the home page?
 **E2.** Which photograph of *you* goes in the About section?
 **E3.** The OG images are what show as the thumbnail when someone shares a link
-on WhatsApp or Instagram. Which photo for each of the four pages?
+on WhatsApp or Instagram. Which photo for each of the six pages?
+
+---
+
+## G. Structure change — About and Contact are now their own pages
+
+The site was four pages; it is now six. About and Contact were sections on the
+home page and are now `about.html` and `contact.html`, each with its own URL,
+title, description and social preview — so they can be shared directly.
+
+The home page keeps the hero, credits, the Words by Taylor quote, the three
+doors and the rates, and ends on a CTA into Contact and About.
+
+One thing deliberately left alone: the `#rights` copyright anchor stays on the
+home page. Ninety image files already carry
+`WebStatement=https://bookednow.co.za/tarryntaylor/#rights` embedded in their
+metadata. Moving that anchor would break the link inside every file already
+built, so it stays put.
 
 ---
 
