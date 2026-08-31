@@ -172,9 +172,37 @@
     color:var(--gold-deep);font-weight:600;font-size:var(--t--1);letter-spacing:.12em;text-transform:uppercase}
 
   /* ── GALLERY ── */
-  .gal{display:grid;gap:clamp(.6rem,1.6vw,1.1rem);grid-template-columns:1fr;margin-top:3rem}
-  @media(min-width:560px){.gal{grid-template-columns:repeat(2,1fr)}}
-  @media(min-width:1000px){.gal{grid-template-columns:repeat(3,1fr)}}
+  /* ── SWIPE GALLERY ──────────────────────────────────────────────────────
+     Horizontal scroll-snap carousel. The swipe itself is native browser
+     scrolling — touch, trackpad and shift+wheel all work with no JS. The
+     script only drives the arrows and the counter, so the gallery still
+     scrolls perfectly if JS never runs. */
+  .gal-wrap{margin-top:3rem;position:relative}
+  .gal{display:flex;gap:var(--gal-gap);overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    padding-bottom:.25rem;overscroll-behavior-x:contain;scroll-padding-left:0}
+  .gal::-webkit-scrollbar{display:none}
+  :root{--gal-gap:clamp(.6rem,1.6vw,1.1rem)}
+  .gal>.shot{flex:0 0 82%;scroll-snap-align:start;margin:0}
+  @media(min-width:560px){.gal>.shot{flex:0 0 calc((100% - var(--gal-gap))/2)}}
+  @media(min-width:1000px){.gal>.shot{flex:0 0 calc((100% - 2*var(--gal-gap))/3)}}
+  @media(prefers-reduced-motion:reduce){.gal{scroll-behavior:auto}}
+
+  .gal-bar{display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;margin-top:1.1rem}
+  .gal-count{font-size:var(--t--1);letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .sec-gold .gal-count{color:var(--cream)}
+  .gal-nav{display:flex;gap:.6rem}
+  .gal-btn{width:48px;height:48px;display:grid;place-items:center;
+    border:1px solid var(--gold-deep);background:transparent;color:var(--gold-ink);
+    cursor:pointer;border-radius:50%;transition:background .3s ease,color .3s ease,opacity .3s ease}
+  .gal-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+  .gal-btn:hover:not(:disabled){background:var(--gold-deep);color:var(--cream)}
+  .gal-btn:disabled{opacity:.32;cursor:default}
+  .gal-hint{font-size:var(--t--1);color:var(--ink-soft);margin-top:.6rem}
+  @media(hover:hover){.gal-hint{display:none}}
   .shot{margin:0;background:var(--placeholder);position:relative;aspect-ratio:4/5;overflow:hidden}
   .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
   .shot:hover img{transform:scale(1.03)}
@@ -285,7 +313,8 @@
       <p class="sec-lead">Campaign and brand imagery, shot on location and in studio in Cape Town.</p>
       <!-- VERIFY: the Wix site labelled this carousel "Commercial Photography" but carried no
            section copy of its own. This line is descriptive, not transcribed — confirm or replace. -->
-      <div class="gal">
+      <div class="gal-wrap" data-gal role="group" aria-roledescription="carousel" aria-label="Gallery — swipe or use the arrows">
+      <div class="gal" tabindex="0">
         <!-- VERIFY: per-image alt text for slot 01 once originals are sorted into _source/tarryn/commercial/ -->
         <figure class="shot">
           <picture>
@@ -407,6 +436,19 @@
           </picture>
         </figure>
       </div>
+      <div class="gal-bar">
+        <p class="gal-count" aria-hidden="true"><span data-gal-i>1</span> / <span data-gal-n>0</span></p>
+        <div class="gal-nav">
+          <button class="gal-btn" type="button" data-gal-prev aria-label="Previous images" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="gal-btn" type="button" data-gal-next aria-label="Next images">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="gal-hint">Swipe to browse</p>
+      </div>
     </div>
   </section>
 
@@ -464,6 +506,62 @@
   }
   sweep();
   window.addEventListener('load',sweep);
+})();
+</script>
+<script>
+/* Swipe gallery. Native scroll-snap does the swiping; this only wires the
+   arrows, the counter and keyboard paging. If it never runs, the gallery is
+   still a working horizontal scroller. */
+(function(){
+  var wraps=document.querySelectorAll('[data-gal]');
+  Array.prototype.forEach.call(wraps,function(w){
+    var strip=w.querySelector('.gal'),
+        prev=w.querySelector('[data-gal-prev]'),
+        next=w.querySelector('[data-gal-next]'),
+        iEl=w.querySelector('[data-gal-i]'),
+        nEl=w.querySelector('[data-gal-n]'),
+        items=strip.querySelectorAll('.shot');
+    if(!items.length)return;
+    if(nEl)nEl.textContent=items.length;
+
+    function step(){
+      var a=items[0].getBoundingClientRect();
+      var b=items[1]?items[1].getBoundingClientRect():null;
+      var s=b?Math.round(b.left-a.left):Math.round(a.width);
+      /* Zero width happens before layout, in a hidden tab, and in print. Without
+         this floor, scrollBy(0) makes the arrows look dead and scrollLeft/0
+         turns the counter into NaN. */
+      return s>0?s:1;
+    }
+    function atStart(){return strip.scrollLeft<=2;}
+    function atEnd(){return strip.scrollLeft>=strip.scrollWidth-strip.clientWidth-2;}
+    function sync(){
+      if(prev)prev.disabled=atStart();
+      if(next)next.disabled=atEnd();
+      if(iEl){
+        var idx=Math.round(strip.scrollLeft/step())+1;
+        if(!isFinite(idx))idx=1;
+        iEl.textContent=Math.min(Math.max(idx,1),items.length);
+      }
+    }
+    function go(dir){strip.scrollBy({left:dir*step(),behavior:'smooth'});}
+
+    if(prev)prev.addEventListener('click',function(){go(-1);});
+    if(next)next.addEventListener('click',function(){go(1);});
+    strip.addEventListener('scroll',function(){
+      window.clearTimeout(strip._t);
+      strip._t=window.setTimeout(sync,60);
+    },{passive:true});
+    strip.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){e.preventDefault();go(1);}
+      else if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}
+    });
+    window.addEventListener('resize',function(){
+      window.clearTimeout(strip._r);
+      strip._r=window.setTimeout(sync,120);
+    });
+    sync();
+  });
 })();
 </script>
 </body>
