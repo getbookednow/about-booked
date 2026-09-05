@@ -1,3 +1,13 @@
+# bookednow.co.za
+#
+# Booked's own pages stay open to AI training crawlers — that is deliberate,
+# the machine layer is part of the product.
+#
+# /tarryntaylor/ is not Booked's to give away. Tarryn Taylor's photographs are
+# closed to AI training and data mining, and open to search and citing crawlers
+# so the work stays findable and attributable.
+# Rights statement: https://bookednow.co.za/tarryntaylor/#rights
+
 User-agent: *
 Allow: /
 Allow: /llms.txt
@@ -5,22 +15,96 @@ Allow: /services.json
 Allow: /contact.json
 Allow: /.well-known/ai-plugin.json
 
-User-agent: GPTBot
+# ── Search crawlers: full access, including /tarryntaylor/ ──────────────────
+User-agent: Googlebot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ── Citing / answer-engine crawlers: full access ────────────────────────────
+# These fetch to answer and cite, not to train. Tarryn benefits from being cited.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Perplexity-User
+Allow: /
+
+# Applebot-Extended (AI training) must be listed BEFORE Applebot (search), or a
+# parser that substring-matches user agents will apply Applebot's rules to it.
+User-agent: Applebot-Extended
+Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Applebot
 Allow: /
 
+# ── AI training crawlers: Booked yes, Tarryn no ─────────────────────────────
+# Disallow is listed BEFORE Allow in each group deliberately. Google and Bing
+# resolve conflicts by longest-match (Disallow wins either way), but simpler
+# parsers take the first matching rule. Leading with Disallow denies under both.
+User-agent: GPTBot
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: anthropic-ai
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: Claude-Web
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: CCBot
+Disallow: /tarryntaylor/
+Allow: /
+
 User-agent: Meta-ExternalAgent
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: Bytespider
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: Amazonbot
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: cohere-ai
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: Diffbot
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: omgili
+Disallow: /tarryntaylor/
+Allow: /
+
+User-agent: ImagesiftBot
+Disallow: /tarryntaylor/
 Allow: /
 
 Sitemap: https://bookednow.co.za/sitemap.xml
