@@ -189,6 +189,7 @@
   @media(min-width:1000px){.gal>.shot{flex:0 0 calc((100% - 2*var(--gal-gap))/3)}}
   @media(prefers-reduced-motion:reduce){.gal{scroll-behavior:auto}}
 
+
   .gal-bar{display:flex;align-items:center;justify-content:space-between;
     gap:1rem;margin-top:1.1rem}
   .gal-count{font-size:var(--t--1);letter-spacing:.2em;text-transform:uppercase;
@@ -203,6 +204,19 @@
   .gal-btn:disabled{opacity:.32;cursor:default}
   .gal-hint{font-size:var(--t--1);color:var(--ink-soft);margin-top:.6rem}
   @media(hover:hover){.gal-hint{display:none}}
+
+  /* ── MOBILE: vertical, full-bleed ───────────────────────────────────────
+     Below 560px the carousel becomes a single edge-to-edge column. A
+     horizontal strip on a phone hides most of the set behind a gesture people
+     rarely make, and competes with the vertical scroll they are already doing.
+     Full width is also the largest these photographs can be on the device. */
+  @media(max-width:559px){
+    .gal{display:block;overflow:visible;scroll-snap-type:none;padding-bottom:0;
+      margin-inline:calc(var(--gut) * -1)}
+    .gal>.shot{width:100%;margin:0 0 var(--gal-gap)}
+    .gal>.shot:last-child{margin-bottom:0}
+    .gal-bar,.gal-hint{display:none}
+  }
   .shot{margin:0;background:var(--placeholder);position:relative;aspect-ratio:4/5;overflow:hidden}
   .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
   .shot:hover img{transform:scale(1.03)}
@@ -313,124 +327,112 @@
       <p class="sec-lead">Agency-level images that elevate your presence — whether you&rsquo;re building a portfolio or a brand. Agency-ready portfolios, and the digitals and polaroids that go with them.</p>
       <div class="gal-wrap" data-gal role="group" aria-roledescription="carousel" aria-label="Gallery — swipe or use the arrows">
       <div class="gal" tabindex="0">
-        <!-- VERIFY: per-image alt text for slot 01 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-01-800.webp 800w, images/model/tarryn-taylor-model-01-1600.webp 1600w, images/model/tarryn-taylor-model-01-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-01-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-01-800.jpg 800w, images/model/tarryn-taylor-model-01-1600.jpg 1600w, images/model/tarryn-taylor-model-01-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a ribbed black long-sleeved dress standing with hands on hips, photographed in black and white against a dark studio background.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 02 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-02-800.webp 800w, images/model/tarryn-taylor-model-02-1600.webp 1600w, images/model/tarryn-taylor-model-02-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-02-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-02-800.jpg 800w, images/model/tarryn-taylor-model-02-1600.jpg 1600w, images/model/tarryn-taylor-model-02-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model with curly dark hair in a deep green fur coat and a gold chain, against a warm cream wall.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 03 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-03-800.webp 800w, images/model/tarryn-taylor-model-03-1600.webp 1600w, images/model/tarryn-taylor-model-03-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-03-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-03-800.jpg 800w, images/model/tarryn-taylor-model-03-1600.jpg 1600w, images/model/tarryn-taylor-model-03-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in black with one arm raised, striped shadows from window blinds falling across her.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 04 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-04-800.webp 800w, images/model/tarryn-taylor-model-04-1600.webp 1600w, images/model/tarryn-taylor-model-04-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-04-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-04-800.jpg 800w, images/model/tarryn-taylor-model-04-1600.jpg 1600w, images/model/tarryn-taylor-model-04-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model seated on the floor in a black off-shoulder top, in a warm wood-panelled interior.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 05 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-05-800.webp 800w, images/model/tarryn-taylor-model-05-1600.webp 1600w, images/model/tarryn-taylor-model-05-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-05-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-05-800.jpg 800w, images/model/tarryn-taylor-model-05-1600.jpg 1600w, images/model/tarryn-taylor-model-05-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="Close portrait of a model resting her hand against her chin, gold earring catching low warm light.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 06 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-06-800.webp 800w, images/model/tarryn-taylor-model-06-1600.webp 1600w, images/model/tarryn-taylor-model-06-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-06-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-06-800.jpg 800w, images/model/tarryn-taylor-model-06-1600.jpg 1600w, images/model/tarryn-taylor-model-06-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a rust-coloured cutout dress leaning against a white railing beside a rattan chair.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 07 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-07-800.webp 800w, images/model/tarryn-taylor-model-07-1600.webp 1600w, images/model/tarryn-taylor-model-07-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-07-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-07-800.jpg 800w, images/model/tarryn-taylor-model-07-1600.jpg 1600w, images/model/tarryn-taylor-model-07-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a leopard-print top and dark wide-leg trousers against a dark studio background.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 08 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-08-800.webp 800w, images/model/tarryn-taylor-model-08-1600.webp 1600w, images/model/tarryn-taylor-model-08-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-08-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-08-800.jpg 800w, images/model/tarryn-taylor-model-08-1600.jpg 1600w, images/model/tarryn-taylor-model-08-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a brown overcoat on a rocky Cape Town shoreline at sunset.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 09 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-09-800.webp 800w, images/model/tarryn-taylor-model-09-1600.webp 1600w, images/model/tarryn-taylor-model-09-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-09-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-09-800.jpg 800w, images/model/tarryn-taylor-model-09-1600.jpg 1600w, images/model/tarryn-taylor-model-09-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a black suit and white shirt mid-stride between stone columns, in black and white.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 10 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-10-800.webp 800w, images/model/tarryn-taylor-model-10-1600.webp 1600w, images/model/tarryn-taylor-model-10-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-10-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-10-800.jpg 800w, images/model/tarryn-taylor-model-10-1600.jpg 1600w, images/model/tarryn-taylor-model-10-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a black suit seated against stone columns with one hand raised to his head, in black and white.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 11 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-11-800.webp 800w, images/model/tarryn-taylor-model-11-1600.webp 1600w, images/model/tarryn-taylor-model-11-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-11-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-11-800.jpg 800w, images/model/tarryn-taylor-model-11-1600.jpg 1600w, images/model/tarryn-taylor-model-11-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a dark jacket and pale blue shirt outdoors, one hand raised behind his head.">
           </picture>
         </figure>
-        <!-- VERIFY: per-image alt text for slot 12 once originals are sorted into _source/tarryn/model/ -->
         <figure class="shot">
           <picture>
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-12-800.webp 800w, images/model/tarryn-taylor-model-12-1600.webp 1600w, images/model/tarryn-taylor-model-12-2400.webp 2400w">
             <img src="images/model/tarryn-taylor-model-12-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/model/tarryn-taylor-model-12-800.jpg 800w, images/model/tarryn-taylor-model-12-1600.jpg 1600w, images/model/tarryn-taylor-model-12-2400.jpg 2400w"
                  width="2400" height="3000" loading="lazy" decoding="async"
-                 alt="Model Portfolio photograph by Tarryn Taylor.">
+                 alt="A model in a white t-shirt and dark shorts on a sunlit street.">
           </picture>
         </figure>
       </div>
@@ -531,9 +533,29 @@
          turns the counter into NaN. */
       return s>0?s:1;
     }
+    /* Below 560px the strip is a plain vertical column. It is then not a
+       carousel, so it must not keep the carousel roles, the tab stop, or the
+       arrow-key handler — otherwise a screen reader announces a scrollable
+       region that cannot scroll. tabindex stays in the HTML so keyboard users
+       still get the scroller if this script never runs. */
+    function scrollable(){return strip.scrollWidth>strip.clientWidth+1;}
+    function mode(){
+      var s=scrollable();
+      if(s){
+        strip.setAttribute('tabindex','0');
+        w.setAttribute('role','group');
+        w.setAttribute('aria-roledescription','carousel');
+      }else{
+        strip.removeAttribute('tabindex');
+        w.removeAttribute('role');
+        w.removeAttribute('aria-roledescription');
+      }
+      return s;
+    }
     function atStart(){return strip.scrollLeft<=2;}
     function atEnd(){return strip.scrollLeft>=strip.scrollWidth-strip.clientWidth-2;}
     function sync(){
+      if(!mode())return;
       if(prev)prev.disabled=atStart();
       if(next)next.disabled=atEnd();
       if(iEl){
@@ -551,6 +573,7 @@
       strip._t=window.setTimeout(sync,60);
     },{passive:true});
     strip.addEventListener('keydown',function(e){
+      if(!scrollable())return;
       if(e.key==='ArrowRight'){e.preventDefault();go(1);}
       else if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}
     });

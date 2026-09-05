@@ -48,7 +48,7 @@ need exiftool
 SLOTS=(
   "hero|tarryn-taylor-hero|3:2|$Q_HERO|0"
   "model|tarryn-taylor-model|4:5|$Q_GALLERY|12"
-  "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|12"
+  "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|9"
   "couples|tarryn-taylor-couples|4:5|$Q_GALLERY|15"
   "og|tarryn-taylor-og|1200:630|$Q_HERO|0"
 )

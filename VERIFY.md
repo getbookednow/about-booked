@@ -26,13 +26,23 @@ capped at 827px. Wix's compression is the reason for this migration; shipping
 these would reproduce the exact problem we are leaving.
 → *Can you send the full-resolution exports straight from Lightroom / your card?*
 
-**A3. Which photographs go on which page?**
-22 originals are sitting unsorted in `_source/tarryn/_unsorted/`. They have
-UUID filenames, so there is no way to tell model work from commercial work
-without you saying so. They have not been used anywhere.
-→ *Split them into: model, commercial, hero, and I'll wire them in.*
-Slots currently wired: **model 12**, **commercial 12**, **couples 15**.
-→ *If you want a different number of images per page, say the number.*
+**A3. DONE — but please sanity-check my split.**
+The 22 loose photographs are now sorted and live on the site: **12 into Model
+Portfolio**, **9 into Commercial**, and the sunset profile as the home page hero
+(that was the hero on your Wix site too).
+
+I split them on what the picture is doing: if the person is the subject it went
+to Model Portfolio; if something is being sold — activewear, swimwear, a couple
+in a lifestyle setting — it went to Commercial. Two of the Commercial ones (the
+black-and-white beach couple, and the man crouching in the long grass) were on
+your old "Commercial Photography" carousel, so those are confirmed.
+
+→ *Have a look and tell me if anything is in the wrong gallery.* It is a
+two-minute fix.
+
+→ *Also: the order matters.* The first three set what people think you shoot.
+Model opens on the black-and-white studio shot, Commercial opens on the
+black-and-white beach couple. Say the word if you want a different opener.
 
 **A4. Your full credits list.**
 The credits marquee on the old site scrolled, so the screenshots caught it
@@ -54,13 +64,11 @@ invented marketing copy.
 rates, but not what the number is. (currently `[VERIFY]`)
 **B3.** Should this page say "Couples & Post-Wedding", or something else?
 
-**B4. Alt text for the 15 couples images.**
-Every couples image currently carries the same honest but general line:
-*"Editorial couples photograph by Tarryn Taylor, shot on location in Cape Town."*
-I had per-image descriptions drafted, but spot-checking showed the ordering
-couldn't be trusted, and wrong alt text is worse than general alt text for
-anyone using a screen reader.
-→ *One sentence per image, in slot order 01–15, whenever you have a minute.*
+**B4. DONE — alt text is written, all 36 images.**
+Every photograph now has its own description rather than a shared generic line.
+These are what a blind visitor hears, and what a search engine reads.
+
+→ *No action needed unless one reads wrong to you.*
 
 ---
 
@@ -145,20 +153,20 @@ placeholder tone. They will fill in the moment the originals land — run
 
 | Slot | Page | Status |
 |---|---|---|
-| `hero/tarryn-taylor-hero-home` | index | **empty** — no hero photo chosen |
+| `hero/tarryn-taylor-hero-home` | index | **built** — the sunset profile from your Wix hero |
 | `hero/tarryn-taylor-portrait` | index (About) | **empty** — need a portrait of you |
-| `model/tarryn-taylor-model-01…12` | model + index door | **empty** — 12 slots |
-| `commercial/tarryn-taylor-commercial-01…12` | commercial + index door | **empty** — 12 slots |
+| `model/tarryn-taylor-model-01…12` | model + index door | **built** — 12 images |
+| `commercial/tarryn-taylor-commercial-01…09` | commercial + index door | **built** — 9 images |
 | `couples/tarryn-taylor-couples-01…15` | couples + index door | **built**, but see A2 (low resolution) |
-| `og/tarryn-taylor-og-home` | index social preview | **empty** |
-| `og/tarryn-taylor-og-model` | model social preview | **empty** |
-| `og/tarryn-taylor-og-commercial` | commercial social preview | **empty** |
-| `og/tarryn-taylor-og-couples` | couples social preview | **empty** |
+| `og/tarryn-taylor-og-home` | index social preview | **built** |
+| `og/tarryn-taylor-og-model` | model social preview | **built** |
+| `og/tarryn-taylor-og-commercial` | commercial social preview | **built** |
+| `og/tarryn-taylor-og-couples` | couples social preview | **built** |
 | `og/tarryn-taylor-og-about` | about social preview | **empty** |
 | `og/tarryn-taylor-og-contact` | contact social preview | **empty** |
 
-**E1.** Which photograph should be the hero on the home page?
-**E2.** Which photograph of *you* goes in the About section?
+**E1.** DONE — using the sunset profile that led your Wix site. Say if you want another.
+**E2.** STILL NEEDED — a photograph of **you**. None of the 22 you sent is you; they are all your subjects, and I am not going to put a model on the page and imply it is the photographer. The About page has an empty slot until you send one.
 **E3.** The OG images are what show as the thumbnail when someone shares a link
 on WhatsApp or Instagram. Which photo for each of the six pages?
 
