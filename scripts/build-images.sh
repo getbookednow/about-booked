@@ -42,20 +42,25 @@ if command -v magick >/dev/null 2>&1; then IM="magick"; else IM="convert"; fi
 need "$IM"
 need exiftool
 
-# ── expected slots: folder | filename prefix | aspect | quality | count ─────
+# ── slots: folder | prefix | aspect | quality | count | crop gravity ────────
+# Gravity matters. Her sources are 2:3 portraits. Centre-cropping one to a 3:2
+# hero throws away the top and bottom and leaves a face macro with the whole
+# composition gone. Heroes crop from the top so the head and sky survive;
+# galleries stay centred, where 2:3 to 4:5 only trims a little off each end.
 # Counts match the slots wired into the HTML. A mismatch is reported, not
 # silently absorbed — a missing file is a broken <img> on a live page.
 SLOTS=(
-  "hero|tarryn-taylor-hero|3:2|$Q_HERO|0"
-  "model|tarryn-taylor-model|4:5|$Q_GALLERY|12"
-  "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|9"
-  "couples|tarryn-taylor-couples|4:5|$Q_GALLERY|15"
-  "og|tarryn-taylor-og|1200:630|$Q_HERO|0"
+  "hero|tarryn-taylor-hero|native|$Q_HERO|0|center"
+  "model|tarryn-taylor-model|4:5|$Q_GALLERY|12|center"
+  "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|9|center"
+  "couples|tarryn-taylor-couples|4:5|$Q_GALLERY|15|center"
+  "og|tarryn-taylor-og|1200:630|$Q_HERO|0|north"
 )
 
 # aspect "W:H" -> geometry for centre-crop at a given width
-crop_geom() { # $1=aspect  $2=width
+crop_geom() { # $1=aspect  $2=width  ("native" = width only, no crop)
   local aw ah w h
+  if [ "$1" = "native" ]; then echo "$2"; return; fi
   aw="${1%%:*}"; ah="${1##*:}"; w="$2"
   h=$(( w * ah / aw ))
   echo "${w}x${h}"
@@ -86,7 +91,8 @@ embed_rights() { # $1=file
 built=0; missing=0; warned=0; underres=0
 
 for g in "${SLOTS[@]}"; do
-  IFS='|' read -r folder prefix aspect quality expected <<< "$g"
+  IFS='|' read -r folder prefix aspect quality expected grav <<< "$g"
+  : "${grav:=center}"
   sdir="$SRC/$folder"
   odir="$OUT/$folder"
 
@@ -151,15 +157,29 @@ for g in "${SLOTS[@]}"; do
       fi
 
       # 1 ─ deterministic resize + centre-crop + compress. -strip drops GPS.
+      if [ "$aspect" = "native" ]; then
+        # resize only. Cropping a 2:3 portrait into a landscape hero destroys
+        # the composition, so the layout holds the whole frame instead.
+        "$IM" "$f" -auto-orient -strip -resize "${geom}x>" \
+          -colorspace sRGB -interlace Plane -sampling-factor 4:2:0 \
+          -quality "$quality" "$base.jpg"
+        "$IM" "$f" -auto-orient -strip -resize "${geom}x>" \
+          -colorspace sRGB -define webp:method=6 \
+          -quality "$quality" "$base.webp"
+        embed_rights "$base.jpg"; embed_rights "$base.webp"
+        built=$(( built + 2 )); echo "OK    ${base#$ROOT/}.{jpg,webp} (native aspect)"
+        continue
+      fi
+
       "$IM" "$f" \
         -auto-orient -strip \
-        -resize "${geom}^" -gravity center -extent "$geom" \
+        -resize "${geom}^" -gravity "$grav" -extent "$geom" \
         -colorspace sRGB -interlace Plane -sampling-factor 4:2:0 \
         -quality "$quality" "$base.jpg"
 
       "$IM" "$f" \
         -auto-orient -strip \
-        -resize "${geom}^" -gravity center -extent "$geom" \
+        -resize "${geom}^" -gravity "$grav" -extent "$geom" \
         -colorspace sRGB -define webp:method=6 \
         -quality "$quality" "$base.webp"
 
