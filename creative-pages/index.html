@@ -1675,50 +1675,17 @@ footer {
 .pricing-col.booked .fi { color: #7fcf8a; }
 .pricing-col.booked .pricing-feature-list li { color: var(--off-white); }
 
-.pricing-fact-strip {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2px;
-  margin-bottom: 24px;
-}
-
-.pricing-fact {
-  border: 1px solid var(--gold-border-default);
-  padding: 20px;
-  text-align: center;
-  background: rgba(244,240,232,0.01);
-}
-
-.pricing-fact-num {
-  font-family: var(--font-mono);
-  font-size: 28px;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 4px;
-  font-weight: 300;
-}
-
-.pricing-fact-label {
-  font-size: 11px;
-  color: var(--subtext);
-  letter-spacing: 0.1em;
-  font-family: var(--font-body);
-  line-height: 1.5;
-}
-
 @media (max-width: 768px) {
   .ai-services-grid { grid-template-columns: 1fr; }
   .ai-stat-row { flex-wrap: wrap; }
   .ai-stat { flex: 1 1 45%; }
   .intl-payment-grid { grid-template-columns: 1fr; }
   .pricing-vs-grid { grid-template-columns: 1fr; }
-  .pricing-fact-strip { grid-template-columns: 1fr 1fr; }
   .ai-profile-header { flex-direction: column; gap: 16px; }
   .ai-profile-card { padding: 28px 20px; }
 }
 
 @media (max-width: 390px) {
-  .pricing-fact-strip { grid-template-columns: 1fr; }
   .ai-stat { flex: 1 1 100%; }
 }
 
@@ -2271,78 +2238,58 @@ footer {
     <div class="page-section-left">
       <div class="page-num">09</div>
       <p class="page-label">Why Booked.</p>
-      <h2 class="page-title">Own it once.<br>Never pay again.</h2>
-      <p class="page-desc">HoneyBook raised prices 89% in February 2025. Linktree raised prices 67% in November 2025. Dubsado costs R990/month and requires Stripe — which doesn't work in South Africa.<br><br>Every tool in this space is rented. Booked. pages are owned outright. The difference compounds every month.</p>
+      <h2 class="page-title">Built for how<br>this market<br><em>actually books.</em></h2>
+      <p class="page-desc">Stripe does not operate in South Africa. HoneyBook needs a US or Canadian bank account before it will pay you. The international booking stack was built around a payment reality that isn't yours.<br><br>Booked. pages are built around PayFast, EFT, Grey.co and PayPal &mdash; and the files are yours, on your own domain.</p>
       <div style="margin-top:20px;padding:16px;border:1px solid rgba(255,128,128,0.2);background:rgba(255,128,128,0.04);">
         <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#ff8080;margin-bottom:8px;font-family:var(--font-body);">The SA market gap</div>
-        <p style="font-size:13px;color:var(--subtext);line-height:1.7;font-weight:200;">HoneyBook requires a US/CA bank account to receive payments. Stripe doesn't operate in SA. Dubsado is $35/month — R630 at current rates. No major CRM platform targets South African fashion creatives. Booked. has no direct competitor in this vertical.</p>
+        <p style="font-size:13px;color:var(--subtext);line-height:1.7;font-weight:200;">No major booking or CRM platform is built for South African fashion creatives. The tools that dominate the category assume a US bank account and a Stripe merchant profile, and they model none of what this work actually runs on &mdash; castings, call sheets, agency credits, usage terms. Booked. has no direct competitor in this vertical.</p>
       </div>
     </div>
     <div class="demo-card">
-      <div class="demo-badge">Live Demo</div>
-
-      <div class="pricing-fact-strip">
-        <div class="pricing-fact">
-          <span class="pricing-fact-num">89%</span>
-          <span class="pricing-fact-label">HoneyBook price increase<br>Feb 2025</span>
-        </div>
-        <div class="pricing-fact">
-          <span class="pricing-fact-num">67%</span>
-          <span class="pricing-fact-label">Linktree price increase<br>Nov 2025</span>
-        </div>
-        <div class="pricing-fact">
-          <span class="pricing-fact-num">R0</span>
-          <span class="pricing-fact-label">Booked. monthly subscription<br>cost</span>
-        </div>
-      </div>
-
-      <div style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-family:var(--font-body);">Typical monthly stack vs Booked.</div>
-
+      <div style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-family:var(--font-body);">The international stack vs Booked.</div>
       <div class="pricing-vs-grid">
         <div class="pricing-col them">
-          <div class="pricing-col-label"><span class="dot"></span>Subscription stack</div>
-          <div class="pricing-item"><span class="pricing-item-label">Portfolio site (Squarespace)</span><span class="pricing-item-val">R288/mo</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Booking / CRM (HoneyBook)</span><span class="pricing-item-val">R648/mo</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Bio link (Linktree Pro)</span><span class="pricing-item-val">R270/mo</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Intake forms (Jotform)</span><span class="pricing-item-val">R189/mo</span></div>
+          <div class="pricing-col-label"><span class="dot"></span>International stack</div>
+          <div class="pricing-item"><span class="pricing-item-label">SA bank payout</span><span class="pricing-item-val">Not direct</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Fashion credits</span><span class="pricing-item-val">Not modelled</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Domain and files</span><span class="pricing-item-val">Rented</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Page edits</span><span class="pricing-item-val">Support ticket</span></div>
           <div class="pricing-total">
-            <span class="pricing-total-label">Monthly</span>
-            <span class="pricing-total-val">R1,395</span>
+            <span class="pricing-total-label">Who owns it</span>
+            <span class="pricing-total-val">They do</span>
           </div>
-          <p class="pricing-disclaimer">= R16,740/year. In USD, repriceable at any time. HoneyBook still requires a US bank account to pay out.</p>
+          <p class="pricing-disclaimer">Built for a US payment stack. Stripe has no South African entity, and HoneyBook still requires a US bank account to pay out.</p>
           <ul class="pricing-feature-list">
             <li><span class="fi">✗</span>Not built for SA payment flows</li>
             <li><span class="fi">✗</span>No Stripe in South Africa</li>
             <li><span class="fi">✗</span>Not fashion-specific</li>
-            <li><span class="fi">✗</span>Subscription can be repriced</li>
+            <li><span class="fi">✗</span>Generic structure, generic templates</li>
             <li><span class="fi">✗</span>You don't own the infrastructure</li>
           </ul>
         </div>
         <div class="pricing-col booked">
           <div class="pricing-col-label"><span class="dot"></span>Booked. Creative Pages</div>
-          <div class="pricing-item"><span class="pricing-item-label">Availability Calendar</span><span class="pricing-item-val">Once</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Rate Card Page</span><span class="pricing-item-val">Once</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Client Intake Form</span><span class="pricing-item-val">Once</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Press Kit + Testimonials</span><span class="pricing-item-val">Once</span></div>
-          <div class="pricing-item"><span class="pricing-item-label">Deposit Page + AI Profile</span><span class="pricing-item-val">Once</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">SA bank payout</span><span class="pricing-item-val">Direct</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Fashion credits</span><span class="pricing-item-val">Built in</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Domain and files</span><span class="pricing-item-val">Yours</span></div>
+          <div class="pricing-item"><span class="pricing-item-label">Page edits</span><span class="pricing-item-val">WhatsApp</span></div>
           <div class="pricing-total">
-            <span class="pricing-total-label">Monthly</span>
-            <span class="pricing-total-val">R0</span>
+            <span class="pricing-total-label">Who owns it</span>
+            <span class="pricing-total-val">You do</span>
           </div>
-          <p class="pricing-disclaimer">One build cost. No subscription. No repricing. Yours permanently — hosted free on GitHub Pages or your own domain.</p>
+          <p class="pricing-disclaimer">Built around South African payment reality. One build, handed over — the files sit on your domain, under your control.</p>
           <ul class="pricing-feature-list">
             <li><span class="fi">✓</span>Built for SA payment reality</li>
             <li><span class="fi">✓</span>PayFast, EFT, Grey.co, PayPal</li>
             <li><span class="fi">✓</span>Fashion-specific, not generic</li>
-            <li><span class="fi">✓</span>Price never changes</li>
+            <li><span class="fi">✓</span>Structured for search and AI readers</li>
             <li><span class="fi">✓</span>You own the HTML file</li>
           </ul>
         </div>
       </div>
-
       <a href="https://wa.me/637549122?text=Hi%2C+I+want+to+know+which+Creative+Pages+I%27m+missing." class="btn-wa-full" target="_blank" rel="noopener">
-        DM "PAGES" — find out what you need
-        <span class="arrow">→</span>
+        DM "PAGES" &mdash; find out what you need
+        <span class="arrow">&rarr;</span>
       </a>
     </div>
   </div>
@@ -2392,7 +2339,7 @@ footer {
 
   </div>
   <div style="border:1px solid var(--gold-border-divider);padding:16px 24px;background:rgba(244,240,232,0.01);font-size:12px;color:var(--subtext);font-weight:200;line-height:1.7;">
-    All prices in ZAR &middot; No subscription &middot; No monthly fees &middot; Custom domain setup included &middot; WhatsApp-managed updates &middot; Built to your brand system
+    All prices in ZAR &middot; Custom domain setup included &middot; WhatsApp-managed updates &middot; Built to your brand system
   </div>
 </section>
 
