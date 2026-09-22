@@ -44,12 +44,12 @@ two-minute fix.
 Model opens on the black-and-white studio shot, Commercial opens on the
 black-and-white beach couple. Say the word if you want a different opener.
 
-**A4. Your full credits list.**
-The credits marquee on the old site scrolled, so the screenshots caught it
-mid-scroll. Fully legible: **Topco**, **Topco Kids**, **Hey Judes**. Two more
-were cut off — one ending "…0 Management", one starting "D Ma…".
-→ *Full list please.* These are labelled **Credits:** on the site — not
-"represented by" and not "signed with", per your instruction.
+**A4. DONE — full credits list is in.**
+Boss Models, Ice Models, Outlaws, 20 Management, Topco, Topco Kids, Hey Judes,
+D Management. The two that were cut off mid-scroll on the old site turned out to
+be 20 Management and D Management.
+
+Still labelled **Credits:** on the site, never "represented by" or "signed with".
 
 ---
 
