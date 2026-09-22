@@ -188,6 +188,10 @@
   .ticks li{padding-left:1.6rem;position:relative}
   .ticks li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:currentColor;opacity:.75}
 
+  /* About runs text-led while there is no portrait of Tarryn to place. */
+  .about-lede{max-width:66ch}
+  .about-big{font-size:clamp(var(--t-1),2.6vw,var(--t-2));color:var(--ink)}
+
   /* ── SPLIT ── */
   .split{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center;grid-template-columns:1fr}
   @media(min-width:860px){.split{grid-template-columns:1fr 1fr}}
@@ -278,26 +282,21 @@
 
 <main id="main">
 
+  <!-- Portrait slot deliberately removed rather than left broken: there is no
+       photograph of Tarryn on hand, and a missing <img> renders as an icon and
+       alt text over an empty block. To restore it, drop the portrait into
+       _source/tarryn/hero/tarryn-taylor-portrait.jpg, run scripts/build-images.sh,
+       and wrap this section back into a .split with a .split-img figure. -->
   <section class="sec">
-    <div class="wrap split">
-      <div class="split-img">
-        <picture>
-          <source type="image/webp" sizes="(min-width:860px) 50vw, 100vw" srcset="images/hero/tarryn-taylor-portrait-800.webp 800w, images/hero/tarryn-taylor-portrait-1600.webp 1600w">
-          <img src="images/hero/tarryn-taylor-portrait-800.jpg" sizes="(min-width:860px) 50vw, 100vw"
-               srcset="images/hero/tarryn-taylor-portrait-800.jpg 800w, images/hero/tarryn-taylor-portrait-1600.jpg 1600w"
-               width="2400" height="3000" loading="lazy" decoding="async"
-               alt="Portrait of Tarryn Taylor."><!-- VERIFY: which portrait, and a description of it -->
-        </picture>
-      </div>
-      <div>
-        <p class="kicker">Model Portfolio &amp; Personal Branding Photography</p>
-        <h1 class="sec-h" style="margin-top:.8rem">Creative Catalyst</h1>
-        <hr class="rule">
-        <p class="sec-lead">More than a photographer — I help you step into presence, confidence, and clarity in front of the camera.</p>
-        <p class="sec-lead" style="margin-top:1.2rem">
-          With <!-- VERIFY: years of experience -->[VERIFY: years of experience] in the modelling industry, I understand what books — and what gets overlooked. Every shoot is designed to create images that don&rsquo;t just look beautiful, but work for you.
-        </p>
-      </div>
+    <div class="wrap about-lede">
+      <p class="kicker">Model Portfolio &amp; Personal Branding Photography</p>
+      <h1 class="sec-h" style="margin-top:.8rem">Creative Catalyst</h1>
+      <hr class="rule">
+      <p class="sec-lead about-big">More than a photographer &mdash; I help you step into presence, confidence, and clarity in front of the camera.</p>
+      <p class="sec-lead" style="margin-top:1.4rem">
+        With <!-- VERIFY: years of experience -->[VERIFY: years of experience] in the modelling industry, I understand what books &mdash; and what gets overlooked. Every shoot is designed to create images that don&rsquo;t just look beautiful, but work for you.
+      </p>
+      <p style="margin-top:2.4rem"><a class="btn" href="/tarryntaylor/contact.html">Work with me</a></p>
     </div>
   </section>
 
@@ -357,5 +356,11 @@
     var imgs=document.getElementsByTagName('img');
     for(var i=0;i<imgs.length;i++){
       if(imgs[i].complete&&imgs[i].naturalWidth===0)mark(imgs[i]);
+    }
+  }
+  sweep();
+  window.addEventListener('load',sweep);
+})();
+</script>
 </body>
 </html>

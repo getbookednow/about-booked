@@ -359,5 +359,11 @@
     var imgs=document.getElementsByTagName('img');
     for(var i=0;i<imgs.length;i++){
       if(imgs[i].complete&&imgs[i].naturalWidth===0)mark(imgs[i]);
+    }
+  }
+  sweep();
+  window.addEventListener('load',sweep);
+})();
+</script>
 </body>
 </html>
