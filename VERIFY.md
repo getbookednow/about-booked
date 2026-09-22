@@ -11,12 +11,16 @@ plausible-sounding invention.
 
 ## A. Blockers — the site should not go live until these are answered
 
-**A1. How many years have you been working in the industry?**
-The old site said two different things in two different places — "Three decades
-within the industry" in the Words by Taylor quote, and "over a decade in the
-modelling industry" in the Creative Catalyst section. Neither has been carried
-forward. Both spots currently read `[VERIFY: years of experience]`.
-→ *One number, and I'll put it in both places.*
+**A1. PARTLY DONE — shooting since 2020 is in. One number still missing.**
+The site now says "Shooting since 2020" in the Words by Taylor quote.
+
+The About page has a second, different claim: "With [X] in the modelling
+industry, I understand what books." That one is about your time **in front of**
+the camera, as a model, which is the reason you mentor. 2020 does not answer it.
+→ *What year did you start modelling?*
+
+Using a year rather than a count ("since 2020", not "six years") on purpose, so
+the site does not quietly go stale every January.
 
 **A2. The photographs are compressed re-exports, not originals.**
 Every couples image supplied is 827px wide (one is 853px). They look like
