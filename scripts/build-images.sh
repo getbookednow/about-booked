@@ -51,7 +51,7 @@ need exiftool
 # silently absorbed — a missing file is a broken <img> on a live page.
 SLOTS=(
   "hero|tarryn-taylor-hero|native|$Q_HERO|0|center"
-  "model|tarryn-taylor-model|4:5|$Q_GALLERY|12|center"
+  "model|tarryn-taylor-model|4:5|$Q_GALLERY|14|center"
   "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|9|center"
   "couples|tarryn-taylor-couples|4:5|$Q_GALLERY|15|center"
   "og|tarryn-taylor-og|1200:630|$Q_HERO|0|north"
