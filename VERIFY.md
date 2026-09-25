@@ -57,22 +57,28 @@ Still labelled **Credits:** on the site, never "represented by" or "signed with"
 
 ---
 
-## B. Couples & Post-Wedding — a brand new page
+## B. Wedding Couple Portraits — DONE
 
-This category did not exist on the Wix site, so there is no copy to migrate.
-The page structure is built; the words are not written. Nothing on it is
-invented marketing copy.
+Tarryn wrote this section herself and it is on the site in her words, including
+the opening rhythm ("Not wedding-day coverage. Not the bridal party. Not the
+speeches. Just the two of you.").
 
-**B1.** What's the intro paragraph for couples sessions? (currently `[VERIFY]`)
-**B2.** What does a couples session cost? The brief says priced above your model
-rates, but not what the number is. (currently `[VERIFY]`)
-**B3.** Should this page say "Couples & Post-Wedding", or something else?
+Packages live: **The Editorial** R6500 (1 hour, 1 location, 15 edited images)
+and **The Signature** R10 000 (2 hours, 2 locations, 30 edited images, extended
+creative session). Both sit well above the model-shoot rates, as intended.
 
-**B4. DONE — alt text is written, all 36 images.**
-Every photograph now has its own description rather than a shared generic line.
-These are what a blind visitor hears, and what a search engine reads.
+Two small calls made, easy to reverse:
 
-→ *No action needed unless one reads wrong to you.*
+**B5.** The page is now titled **Wedding Couple Portraits**, her name for it,
+not "Couples & Post-Wedding". The nav still says "Couples" because it needs to
+stay short, and because her own copy rules out wedding-day coverage — a nav item
+saying "Weddings" would attract exactly the enquiries she does not want.
+The URL stays `/couples.html` so any link already shared keeps working.
+→ *Happy with that, or do you want the nav to match the page title?*
+
+**B6.** She wrote "R10K". Rendered as **R10 000** to sit consistently beside
+R6500 and the R2500 / R1000 rates elsewhere.
+→ *Say if you'd rather it read R10K.*
 
 ---
 
