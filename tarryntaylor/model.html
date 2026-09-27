@@ -225,6 +225,13 @@
     background:linear-gradient(0deg,rgba(21,18,12,.72),transparent);opacity:0;transition:opacity .35s ease}
   .shot:hover figcaption,.shot:focus-within figcaption{opacity:1}
 
+  /* ── REELS ── */
+  .reels{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gal-gap,1.2rem);margin-top:2rem}
+  .reel{margin:0}
+  .reel video{width:100%;height:auto;border-radius:6px;background:var(--ink)}
+  @media(max-width:799px){.reels{grid-template-columns:repeat(3,1fr);gap:.8rem}}
+  @media(max-width:559px){.reels{grid-template-columns:1fr;max-width:360px;margin-inline:auto}}
+
   /* ── LISTS ── */
   .ticks{list-style:none;margin-top:2rem;display:grid;gap:1rem;max-width:52ch}
   .ticks li{padding-left:1.6rem;position:relative}
@@ -466,6 +473,27 @@
         </div>
       </div>
       <p class="gal-hint">Swipe to browse</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2 class="sec-h" style="text-align:center">Reels</h2>
+      <hr class="rule">
+      <div class="reels">
+        <figure class="reel">
+          <video src="video/reel-edit.mp4" poster="video/reel-edit-poster.jpg" playsinline preload="metadata" muted loop controls
+                 width="1080" height="1920" aria-label="Model portfolio reel — combined edit"></video>
+        </figure>
+        <figure class="reel">
+          <video src="video/reel-look-2.mp4" poster="video/reel-look-2-poster.jpg" playsinline preload="metadata" muted loop controls
+                 width="1080" height="1920" aria-label="Model portfolio reel — Look 2"></video>
+        </figure>
+        <figure class="reel">
+          <video src="video/reel-look-3.mp4" poster="video/reel-look-3-poster.jpg" playsinline preload="metadata" muted loop controls
+                 width="1080" height="1920" aria-label="Model portfolio reel — Look 3"></video>
+        </figure>
       </div>
     </div>
   </section>
