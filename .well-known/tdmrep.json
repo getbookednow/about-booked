@@ -1,0 +1,12 @@
+[
+  {
+    "location": "/andemafenuka/*",
+    "tdm-reservation": 1,
+    "tdm-policy": "https://bookednow.co.za/andemafenuka/#rights"
+  },
+  {
+    "location": "/tarryntaylor/*",
+    "tdm-reservation": 1,
+    "tdm-policy": "https://bookednow.co.za/tarryntaylor/#rights"
+  }
+]
