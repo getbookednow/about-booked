@@ -206,11 +206,13 @@
   .disciplines{
     margin-top:2.6rem;padding-top:1.8rem;border-top:1px solid var(--line);
     display:flex;flex-wrap:wrap;gap:.6rem .9rem;
+    padding-left:0;
   }
-  .disciplines span{
+  .disciplines li{
     font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+    list-style:none;
   }
-  .disciplines span::before{content:"—  ";color:var(--secondary)}
+  .disciplines li::before{content:"—  ";color:var(--secondary)}
 
   /* ── CONTACT ─────────────────────────────────── */
   .contact{
@@ -638,14 +640,14 @@
   <p class="kicker reveal">About</p>
   <p class="reveal">Ande Mafenuka — known as <em>Samba</em> — is a wardrobe stylist, designer and creative researcher working between Cape Town and Johannesburg.</p>
   <p class="reveal">His practice treats styling as research: every shoot begins with cultural reference and ends as image — building looks that carry intellectual rigour and cultural specificity, not just taste.</p>
-  <div class="disciplines reveal">
-    <span>Wardrobe Styling</span>
-    <span>Campaign Styling</span>
-    <span>E-commerce Styling</span>
-    <span>Editorial Styling</span>
-    <span>Creative Direction</span>
-    <span>Fashion Research</span>
-  </div>
+  <ul class="disciplines reveal">
+    <li>Wardrobe Styling</li>
+    <li>Campaign Styling</li>
+    <li>E-commerce Styling</li>
+    <li>Editorial Styling</li>
+    <li>Creative Direction</li>
+    <li>Fashion Research</li>
+  </ul>
 </section>
 
 <!-- ── CONTACT ─────────────────────────────────── -->
@@ -656,7 +658,7 @@
   <a class="contact-email reveal" href="mailto:sambastylist@gmail.com">sambastylist@gmail.com</a>
   <div class="contact-meta reveal">
     <a href="https://instagram.com/samba.the.stylist" target="_blank" rel="noopener">Instagram — @samba.the.stylist</a>
-    <a href="https://wa.me/27735759707" target="_blank" rel="noopener">WhatsApp — 073 575 9707</a>
+    <a href="https://wa.me/27735759707" target="_blank" rel="noopener">WhatsApp — +27 73 575 9707</a>
   </div>
 </section>
 
