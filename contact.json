@@ -27,42 +27,42 @@
     },
     {
       "name": "Portfolio Audit",
-      "url": "https://pay.yoco.com/booked?amount=4000.00&reference=Portfolio%20Audit",
+      "url": "https://pay.yoco.com/r/Q66jVD",
       "price_zar": "R4000",
       "description": "Scored read of what the portfolio is signalling to clients, agencies, casting teams, and creative decision-makers. Covers sequence, commercial strength, category fit, repetition, visual authority, and booking readability, with clear keep, remove, and repositioning logic.",
       "best_for": "Creatives who need a clear read on what to keep, remove, or reposition."
     },
     {
       "name": "AI Readability Layer",
-      "url": "https://pay.yoco.com/booked?amount=6000.00&reference=AI%20Readability%20Layer",
+      "url": "https://pay.yoco.com/r/X88EZw",
       "price_zar": "R6000",
       "description": "The work structured so AI search and casting tools can read it, built onto an existing site. Role clarity, page hierarchy, semantic copy, credits, captions, metadata.",
       "best_for": "Creatives whose work looks strong visually but is difficult for search and AI systems to understand."
     },
     {
       "name": "Fix Sprint",
-      "url": "https://pay.yoco.com/booked?amount=8000.00&reference=Fix%20Sprint",
+      "url": "https://pay.yoco.com/r/6MML6D",
       "price_zar": "R8000",
       "description": "One friction point, fixed and live. The single thing most costing bookings right now. Scope agreed in writing before payment.",
       "best_for": "Creatives who need one specific problem fixed properly without a full rebuild."
     },
     {
       "name": "Landing Page Build",
-      "url": "https://pay.yoco.com/booked?amount=9500.00&reference=Landing%20Page%20Build",
+      "url": "https://pay.yoco.com/r/rvvjqe",
       "price_zar": "R9500",
       "description": "One page. Work, credits, contact — built to be found. Proper structure, image sequencing, a direct contact path, and the machine-readable layer underneath it.",
       "best_for": "Creatives who need one owned page that works, before committing to a full site."
     },
     {
       "name": "Portfolio Infrastructure Build",
-      "url": "https://pay.yoco.com/booked?amount=25000.00&reference=Infrastructure%20Build",
+      "url": "https://pay.yoco.com/r/2QVZd0",
       "price_zar": "R25000",
       "description": "Full portfolio site. Structure, copy, and the machine-readable layer underneath it.",
       "best_for": "Established creatives moving from scattered visibility into a structured portfolio system."
     },
     {
       "name": "Legacy",
-      "url": "https://pay.yoco.com/booked?amount=65000.00&reference=Legacy",
+      "url": "https://pay.yoco.com/r/4qD8jx",
       "price_zar": "R65000",
       "description": "Complete infrastructure engagement. Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Scope agreed in writing before payment.",
       "best_for": "Established creatives with a decade of work that is invisible to the systems making the first cut."

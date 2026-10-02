@@ -95,7 +95,7 @@
         "description": "Scored read of the portfolio: what is working, what is costing bookings, and the order to fix it in. Each image assessed for sequence, commercial strength, category fit, repetition, visual authority, and booking readability.",
         "price": "4000",
         "priceCurrency": "ZAR",
-        "url": "https://pay.yoco.com/booked?amount=4000.00&reference=Portfolio%20Audit",
+        "url": "https://pay.yoco.com/r/Q66jVD",
         "category": "Audit",
         "availability": "https://schema.org/InStock",
         "offeredBy": "BOOKED."
@@ -107,7 +107,7 @@
         "description": "The work structured so AI search and casting tools can read it, built onto an existing site. Role clarity, page hierarchy, semantic copy, credits, captions, metadata.",
         "price": "6000",
         "priceCurrency": "ZAR",
-        "url": "https://pay.yoco.com/booked?amount=6000.00&reference=AI%20Readability%20Layer",
+        "url": "https://pay.yoco.com/r/X88EZw",
         "category": "Infrastructure",
         "availability": "https://schema.org/InStock",
         "offeredBy": "BOOKED."
@@ -119,7 +119,7 @@
         "description": "One friction point, fixed and live — the single thing most costing bookings right now. Scope agreed in writing before payment.",
         "price": "8000",
         "priceCurrency": "ZAR",
-        "url": "https://pay.yoco.com/booked?amount=8000.00&reference=Fix%20Sprint",
+        "url": "https://pay.yoco.com/r/6MML6D",
         "category": "Remediation",
         "availability": "https://schema.org/InStock",
         "offeredBy": "BOOKED."
@@ -131,7 +131,7 @@
         "description": "One page: work, credits, contact — built to be found. Proper structure, image sequencing, a direct contact path, and the machine-readable layer underneath it.",
         "price": "9500",
         "priceCurrency": "ZAR",
-        "url": "https://pay.yoco.com/booked?amount=9500.00&reference=Landing%20Page%20Build",
+        "url": "https://pay.yoco.com/r/rvvjqe",
         "category": "Build",
         "availability": "https://schema.org/InStock",
         "offeredBy": "BOOKED."
@@ -143,7 +143,7 @@
         "description": "Full portfolio site. Structure, copy, and the machine-readable layer underneath it: portfolio architecture, page structure, image sequencing, project context, credits, contact path, semantic copy.",
         "price": "25000",
         "priceCurrency": "ZAR",
-        "url": "https://pay.yoco.com/booked?amount=25000.00&reference=Infrastructure%20Build",
+        "url": "https://pay.yoco.com/r/2QVZd0",
         "category": "Full Infrastructure",
         "availability": "https://schema.org/InStock",
         "offeredBy": "BOOKED."
@@ -155,7 +155,7 @@
         "description": "Complete infrastructure engagement. Scan audit, custom portfolio website, credit recovery and indexing, AI agent infrastructure, agency profile audit, and 90-day follow-up. Scope agreed in writing before payment.",
         "price": "65000",
         "priceCurrency": "ZAR",
-        "url": "https://pay.yoco.com/booked?amount=65000.00&reference=Legacy",
+        "url": "https://pay.yoco.com/r/4qD8jx",
         "category": "Full Infrastructure",
         "availability": "https://schema.org/InStock",
         "offeredBy": "BOOKED."
