@@ -188,9 +188,10 @@
   .ticks li{padding-left:1.6rem;position:relative}
   .ticks li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:currentColor;opacity:.75}
 
-  /* About runs text-led while there is no portrait of Tarryn to place. */
   .about-lede{max-width:66ch}
   .about-big{font-size:clamp(var(--t-1),2.6vw,var(--t-2));color:var(--ink)}
+  .about-portrait{aspect-ratio:auto;background:var(--placeholder);overflow:hidden}
+  .about-portrait img{width:100%;height:100%;object-fit:cover}
 
   /* ── SPLIT ── */
   .split{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center;grid-template-columns:1fr}
@@ -282,21 +283,28 @@
 
 <main id="main">
 
-  <!-- Portrait slot deliberately removed rather than left broken: there is no
-       photograph of Tarryn on hand, and a missing <img> renders as an icon and
-       alt text over an empty block. To restore it, drop the portrait into
-       _source/tarryn/hero/tarryn-taylor-portrait.jpg, run scripts/build-images.sh,
-       and wrap this section back into a .split with a .split-img figure. -->
   <section class="sec">
-    <div class="wrap about-lede">
-      <p class="kicker">Model Portfolio &amp; Personal Branding Photography</p>
-      <h1 class="sec-h" style="margin-top:.8rem">Creative Catalyst</h1>
-      <hr class="rule">
-      <p class="sec-lead about-big">More than a photographer &mdash; I help you step into presence, confidence, and clarity in front of the camera.</p>
-      <p class="sec-lead" style="margin-top:1.4rem">
-        With <!-- VERIFY: this is her time in FRONT of the camera, as a model, not behind it. "Shooting since 2020" does not answer this one. -->[VERIFY: years in the modelling industry], I understand what books &mdash; and what gets overlooked. Every shoot is designed to create images that don&rsquo;t just look beautiful, but work for you.
-      </p>
-      <p style="margin-top:2.4rem"><a class="btn" href="/tarryntaylor/contact.html">Work with me</a></p>
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Model Portfolio &amp; Personal Branding Photography</p>
+        <h1 class="sec-h" style="margin-top:.8rem">Creative Catalyst</h1>
+        <hr class="rule">
+        <p class="sec-lead about-big">More than a photographer &mdash; I help you step into presence, confidence, and clarity in front of the camera.</p>
+        <p class="sec-lead" style="margin-top:1.4rem">
+          Having worked on both sides of the lens, I understand what books &mdash; and what gets overlooked. Every shoot is designed to create images that don&rsquo;t just look beautiful, but work for you.
+        </p>
+        <p style="margin-top:2.4rem"><a class="btn" href="/tarryntaylor/contact.html">Work with me</a></p>
+      </div>
+      <figure class="about-portrait">
+        <picture>
+          <source type="image/webp" srcset="images/about/tarryn-portrait-400.webp 400w, images/about/tarryn-portrait-800.webp 800w" sizes="(min-width:860px) 50vw, 100vw">
+          <img src="images/about/tarryn-portrait-400.jpg"
+               srcset="images/about/tarryn-portrait-400.jpg 400w, images/about/tarryn-portrait-800.jpg 800w"
+               sizes="(min-width:860px) 50vw, 100vw"
+               width="1080" height="1191" loading="eager" decoding="async"
+               alt="Tarryn Taylor holding a Canon camera, photographed in black and white.">
+        </picture>
+      </figure>
     </div>
   </section>
 
@@ -331,6 +339,7 @@
     <a href="/tarryntaylor/couples.html">Couples</a>
     <a href="/tarryntaylor/about.html">About</a>
     <a href="/tarryntaylor/contact.html">Contact</a>
+    <a href="https://www.instagram.com/tarryntaylorphoto/" rel="noopener">Instagram</a>
     <a href="/tarryntaylor/#rights">Copyright</a>
   </nav>
   <p class="foot-legal">
