@@ -2,7 +2,7 @@
 
 ## Current state
 
-The receiver is deployed with user approval at `https://booked-production-enquiries.luca-a74.workers.dev/api/production-enquiry`. A synthetic request through the deployed receiver returned HTTP 200 with its matching UUID after Make saved the record. Ten mocked receiver tests also pass. Make is active with user approval. Website publication is approved and in progress.
+The receiver is deployed with user approval at `https://booked-production-enquiries.luca-a74.workers.dev/api/production-enquiry`. A synthetic request through the deployed receiver returned HTTP 200 with its matching UUID after Make saved the record. Ten mocked receiver tests also pass. Make is active with user approval. Website publication is complete at https://bookednow.co.za/productions/.
 
 `productions/config.js` now selects the verified endpoint only on the two approved production hostnames. Local previews still offer WhatsApp, since localhost is deliberately absent from the receiver origin list.
 
@@ -64,3 +64,7 @@ Cloudflare runtime testing required using manual redirect mode. Redirect respons
 `node --check productions/enquiry.js`
 
 Unit tests use synthetic data and mocked Make responses. The separately observed live test proves receiver-to-Make storage and matching receipt, and Make is now active for the approved website release.
+
+## Live activation correction
+
+Process data in order is OFF: Make rejects live Webhook Response confirmation when sequential processing is ON. Immediate scheduling and stored incomplete executions remain enabled. A live form retry returned a saved receipt for `4f9f6aa9-b295-4ade-ac45-624f90e5b57a`, verified in the actual store as one record. Earlier draft instructions requiring sequential processing are superseded by this verified setting.

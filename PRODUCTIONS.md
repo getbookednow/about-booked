@@ -2,7 +2,7 @@
 
 ## Result and scope
 
-Website release has been approved and is being published from `codex/productions-v1`. The enquiry receiver is separately deployed with user approval. `/productions` follows the existing directory/index.html convention and redirects to `/productions/` on directory-based hosting.
+Website release was approved and published via PR #11 to GitHub Pages on 10 October 2026. The enquiry receiver is separately deployed with user approval. `/productions` follows the existing directory/index.html convention and redirects to `/productions/` on directory-based hosting.
 
 Three services, Cape Town as the initial destination, future destinations clearly unlaunched, homepage introduction, core navigation links and a validated project-brief builder. Typography, colour tokens, mobile menu and buttons follow the existing brand. Decorative type and CSS graphics avoid using client photographs or unlicensed images.
 
@@ -30,7 +30,7 @@ The local preview offers the existing WhatsApp handoff. On the two approved prod
 
 The page itself stores no brief between visits. Refreshing clears the form. WhatsApp review says “Not sent yet”; direct submission confirms only after Make returns a saved reference. A failure preserves the brief and reference for retry. Copy/edit and WhatsApp controls provide fallbacks. No Make address or API key is exposed in browser code.
 
-**Updated 10 October:** The receiver and direct-submit mode are implemented in `automation/` and `productions/enquiry.js`. Ten mocked checks and browser tests against a local synthetic receiver pass. A real test through the deployed Cloudflare receiver returned HTTP 200 and the matching UUID after a record was written in Make. Two synthetic projects for the same email were verified in the actual store; retries reuse their UUID. Make is now active with user approval; website publication is approved. The user chose Make-only storage, without Google Sheets or Gmail. See `automation/README.md` for current configuration and release requirements.
+**Updated 10 October:** The receiver and direct-submit mode are implemented in `automation/` and `productions/enquiry.js`. Ten mocked checks and browser tests against a local synthetic receiver pass. A real test through the deployed Cloudflare receiver returned HTTP 200 and the matching UUID after a record was written in Make. Two synthetic projects for the same email were verified in the actual store; retries reuse their UUID. Make is now active with user approval; website publication is complete. The user chose Make-only storage, without Google Sheets or Gmail. See `automation/README.md` for current configuration and release requirements.
 
 **Release gate:** The receiver is verified. Make activation and the GitHub Pages website release have user approval. Internal notifications remain outside the chosen Make-only scope. The store has a 1 MB allocation and needs capacity review before increasing volume. The existing generic Tally link remains separate.
 
@@ -59,4 +59,8 @@ Unique title/description, canonical and Open Graph URL, existing brand social im
 
 ## Next development step
 
-Publish the approved release to main, then verify the live form and saved receipt.
+Review enquiries in Make and review the 1 MB store capacity before increasing volume.
+
+## Live release verification
+
+Make is active. The live page returned a saved receipt for synthetic reference `4f9f6aa9-b295-4ade-ac45-624f90e5b57a`; that same key is present in the actual data store. Retries left one record. Make warned that Webhook Response is incompatible with sequential processing. Process data in order was disabled and saved; immediate scheduling remains enabled. This corrects the earlier draft setting. The store key provides retry deduplication.
