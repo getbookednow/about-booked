@@ -2,3 +2,9 @@
 _source/
 _reference/
 .DS_Store
+
+# Enquiry server secrets and local tooling
+.dev.vars*
+.env*
+.wrangler/
+node_modules/

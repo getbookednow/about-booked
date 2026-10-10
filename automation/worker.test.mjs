@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createHandler} from './worker.mjs';
+const id='11111111-1111-4111-8111-111111111111';
+const body=()=>({submission_id:id,full_name:'Test Producer',email:'producer@example.com',project_type:'Fashion campaign',destination:'Cape Town, South Africa',project_description:'A campaign test with six creatives in Cape Town.',team_size:6,required_services:['Location research'],consent_to_contact:true,consent_version:'productions-v1',consent_at:new Date().toISOString()});
+const env={ALLOWED_ORIGINS:'https://bookednow.co.za',MAKE_WEBHOOK_URL:'https://hook.eu1.make.com/test-only',ENQUIRY_RATE_LIMITER:{limit:async()=>({success:true})}};
+const req=(data=body(),origin='https://bookednow.co.za')=>new Request('https://example.com/api/production-enquiry',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json','CF-Connecting-IP':'192.0.2.1'},body:JSON.stringify(data)});
+test('saved receipt returns success and server controls source/timestamp',async()=>{let sent;const h=createHandler(async(_,options)=>{sent=JSON.parse(options.body);return Response.json({ok:true,submission_id:id});});const response=await h(req({...body(),source:'forged',received_at:'forged'}),env);assert.equal(response.status,200);assert.equal(sent.source,'booked-productions');assert.notEqual(sent.received_at,'forged');assert.equal((await response.json()).submission_id,id);});
+test('missing consent never reaches Make',async()=>{const h=createHandler(()=>assert.fail('Must not forward'));assert.equal((await h(req({...body(),consent_to_contact:false}),env)).status,400);});
+test('bad origin never reaches Make',async()=>{const h=createHandler(()=>assert.fail('Must not forward'));assert.equal((await h(req(body(),'https://attacker.example'),env)).status,403);});
+test('honeypot, unlaunched destination, invalid team and missing name are rejected',async()=>{const h=createHandler(()=>assert.fail('Must not forward'));for(const patch of [{website:'bot'},{destination:'Milan, Italy'},{team_size:0},{full_name:'   '}])assert.equal((await h(req({...body(),...patch}),env)).status,400);});
+test('Make queue acceptance is not confirmed storage',async()=>{const h=createHandler(async()=>new Response('Accepted'));assert.equal((await h(req(),env)).status,502);});
+test('wrong reference is not confirmed storage',async()=>{const h=createHandler(async()=>Response.json({ok:true,submission_id:'different'}));assert.equal((await h(req(),env)).status,502);});
+test('upstream outage returns safe error without webhook disclosure',async()=>{const h=createHandler(async()=>{throw Error(env.MAKE_WEBHOOK_URL);});const response=await h(req(),env);assert.equal(response.status,503);assert.ok(!(await response.text()).includes('hook.eu1'));});
+test('rate limit blocks forwarding',async()=>{const h=createHandler(()=>assert.fail('Must not forward'));assert.equal((await h(req(),{...env,ENQUIRY_RATE_LIMITER:{limit:async()=>({success:false})}})).status,429);});
+test('missing configuration fails closed',async()=>{const h=createHandler(()=>assert.fail('Must not forward'));assert.equal((await h(req(),{...env,MAKE_WEBHOOK_URL:''})).status,503);});
+test('oversized body is blocked',async()=>{const h=createHandler(()=>assert.fail('Must not forward'));assert.equal((await h(req({...body(),extra:'x'.repeat(17000)}),env)).status,413);});

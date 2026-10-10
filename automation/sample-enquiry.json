@@ -1,0 +1,24 @@
+{
+  "submission_id": "11111111-1111-4111-8111-111111111111",
+  "full_name": "Test Producer",
+  "company": "Example Studio",
+  "email": "producer@example.com",
+  "phone": "",
+  "project_type": "Fashion campaign",
+  "destination": "Cape Town, South Africa",
+  "preferred_dates": "March 2027, flexible",
+  "team_size": 6,
+  "budget_range": "To be discussed",
+  "budget_detail": "",
+  "required_services": [
+    "Location research",
+    "Production coordination"
+  ],
+  "project_description": "Synthetic test of a Cape Town editorial campaign with a team of six.",
+  "consent_to_contact": true,
+  "consent_version": "productions-v1",
+  "consent_at": "2026-10-10T11:27:38.687249+00:00",
+  "received_at": "2026-10-10T11:27:38.688000+00:00",
+  "source": "booked-productions",
+  "schema_version": 1
+}
