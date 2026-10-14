@@ -9,8 +9,6 @@ window.BOOKED_PRODUCTIONS = {
   // Add priced bands only when approved. No assumed package pricing.
   budgetOptions: ['To be discussed', 'Budget not yet set'],
   destinations: [
-    { id: 'cape-town', name: 'Cape Town, South Africa', status: 'enquiry', description: 'Creative production planning in Cape Town.', gallery: [], capabilities: ['Location research', 'Production coordination'], creativePartners: [], accommodationPartners: [], experiences: ['Destination productions', 'Creative residencies', 'Brand retreats'] },
-    { id: 'milan', name: 'Milan, Italy', status: 'not-launched', gallery: [], capabilities: [], creativePartners: [], accommodationPartners: [], experiences: [] },
-    { id: 'bali', name: 'Bali, Indonesia', status: 'not-launched', gallery: [], capabilities: [], creativePartners: [], accommodationPartners: [], experiences: [] }
+    { id: 'cape-town', name: 'Cape Town, South Africa', status: 'enquiry', description: 'Creative production planning in Cape Town.', gallery: [], capabilities: ['Location research', 'Production coordination'], creativePartners: [], accommodationPartners: [], experiences: ['Destination productions', 'Creative residencies', 'Brand retreats'] }
   ]
 };

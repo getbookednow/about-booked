@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 body{font-weight:300}.nav-links a{font-weight:400}.nav-links a[aria-current=page]{color:var(--gold)}
+
+.starting-price{margin:32px 0;padding:24px 0;border-top:1px solid var(--gold-border);border-bottom:1px solid var(--gold-border);max-width:720px;line-height:1.7}.starting-price strong{font-family:var(--font-display);font-size:clamp(30px,4vw,46px);font-weight:400;color:var(--off-white)}.starting-price strong span{font-family:var(--font-body);font-size:16px;color:var(--subtext)}.example-brief>p{max-width:760px;margin-bottom:22px}

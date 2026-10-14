@@ -64,3 +64,7 @@ Review enquiries in Make and review the 1 MB store capacity before increasing vo
 ## Live release verification
 
 Make is active. The live page returned a saved receipt for synthetic reference `4f9f6aa9-b295-4ade-ac45-624f90e5b57a`; that same key is present in the actual data store. Retries left one record. Make warned that Webhook Response is incompatible with sequential processing. Process data in order was disabled and saved; immediate scheduling remains enabled. This corrects the earlier draft setting. The store key provides retry deduplication.
+
+## Focused destination draft — 14 October 2026
+
+Local revision leads only with Cape Town destination productions. Retreats and residencies are one on-request line. Future destinations are removed from copy and config. Main menu links and homepage teaser are removed; direct URL remains available. Added an explicitly illustrative one-day campaign brief and the user-approved starting copy: From R25,000 (about €1,250) for planning and coordination; suppliers, travel and stay separately at cost. Approximate euro amount is supplied by the owner, not an automatic currency quote. Publication of this revision was approved on 14 October 2026. No outreach sent.
