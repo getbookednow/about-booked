@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundation — Booked.</title>
+<meta name="description" content="Booked is setting up a Foundation to give young South Africans a laptop, data, and a findable creative portfolio. We start with a pilot of 10 to 20 people.">
+<link rel="canonical" href="https://bookednow.co.za/foundation">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bookednow.co.za/foundation">
+<meta property="og:title" content="Foundation — Booked.">
+<meta property="og:description" content="A laptop, data, and a findable creative portfolio for young South Africans aged 18 to 25.">
+<meta property="og:image" content="https://bookednow.co.za/og-image.jpg">
+<meta property="og:site_name" content="BOOKED.">
+<meta property="og:locale" content="en_ZA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Foundation — Booked.">
+<meta name="twitter:description" content="A laptop, data, and a findable creative portfolio for young South Africans aged 18 to 25.">
+<meta name="twitter:image" content="https://bookednow.co.za/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, serif' font-size='36' fill='%23C8A96E'%3EB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e0a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Helvetica+Neue:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:                #C8A96E;
+    --gold-light:          #e2c98a;
+    --void:                #0e0a1a;
+    --off-white:           #f0ede8;
+    --subtext:             #9a9a9a;
+    --violet-italic:       #a98fe0;
+    --gold-border-default: rgba(200,169,110,0.12);
+    --gold-border-hover:   rgba(200,169,110,0.35);
+    --gold-border-divider: rgba(200,169,110,0.10);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Helvetica Neue', Helvetica, sans-serif;
+    --bg:           var(--void);
+    --bg-card:      #0e1020;
+    --gold-border:  var(--gold-border-default);
+    --gold-dim:     rgba(200,169,110,0.15);
+    --text:         var(--off-white);
+    --muted:        var(--subtext);
+    --dim:          #444;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--void);
+    color: var(--off-white);
+    font-family: var(--font-body);
+    font-weight: 200;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(120,80,200,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(80,40,160,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--gold-border-divider);
+    background: rgba(10,14,26,0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .nav-back {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--subtext);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .nav-back:hover { color: var(--gold); }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 140px 24px 80px;
+  }
+
+  .hero-tag {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--off-white);
+    margin-bottom: 32px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--violet-italic);
+  }
+
+  .intro {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.7;
+    color: var(--off-white);
+    margin-bottom: 48px;
+  }
+
+  .note {
+    border-left: 2px solid var(--gold);
+    padding: 0 0 0 20px;
+    margin-bottom: 48px;
+  }
+  .note-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .note p {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 1.7;
+    color: var(--off-white);
+  }
+
+  .cta-section {
+    margin-bottom: 48px;
+  }
+  .cta-section h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--off-white);
+    margin-bottom: 20px;
+  }
+  .cta-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-wa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border-default);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--off-white);
+    font-size: 15px;
+    font-weight: 300;
+    transition: border-color 0.2s;
+  }
+  .cta-wa:hover { border-color: var(--gold); }
+  .cta-wa-label {
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .status-line {
+    margin-top: 48px;
+    padding: 16px 0;
+    border-top: 1px solid var(--gold-border-divider);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--subtext);
+    letter-spacing: 0.02em;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 48px;
+    border-top: 1px solid var(--gold-border-divider);
+  }
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .footer-logo { font-family: var(--font-display); font-size: 18px; font-weight: 400; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; }
+  .footer-note { font-size: 13px; color: var(--subtext); letter-spacing: 0.05em; }
+  .footer-copy { font-size: 12px; color: var(--dim); letter-spacing: 0.04em; }
+
+  @media (max-width: 600px) {
+    nav { padding: 18px 20px; }
+    main { padding: 120px 20px 60px; }
+    .form-section { padding: 24px 20px; }
+    footer { padding: 28px 20px 20px; }
+    .footer-top { flex-direction: column; gap: 10px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://www.bookednow.co.za/" class="nav-logo">Booked.</a>
+  <a href="https://www.bookednow.co.za/" class="nav-back">Back to site</a>
+</nav>
+
+<main>
+  <p class="hero-tag">Foundation</p>
+  <h1>What we're <em>building.</em></h1>
+
+  <p class="intro">Booked is setting up a Foundation to give young South Africans between 18 and 25 a laptop, data, and a findable creative portfolio. We start with a pilot of 10 to 20 people.</p>
+
+  <div class="note">
+    <p class="note-label">From Luca</p>
+    <p>I spent ten years working as a model before I understood what infrastructure actually does for a creative career. Most young creatives in South Africa don't have a laptop, consistent data, or a portfolio that anyone can find. This is the piece I want to build next.</p>
+  </div>
+
+  <div class="cta-section">
+    <h2>Get involved</h2>
+    <div class="cta-links">
+      <a class="cta-wa" href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27m%20a%20young%20creative%20and%20I%27m%20interested%20in%20the%20Foundation%20pilot" target="_blank" rel="noopener">
+        <span class="cta-wa-label">Young creative</span>
+        I'm between 18 and 25 and I want in
+      </a>
+      <a class="cta-wa" href="https://wa.me/27637549122?text=Hi%20Luca%2C%20my%20company%20has%20laptops%20we%20could%20contribute%20to%20the%20Foundation%20pilot" target="_blank" rel="noopener">
+        <span class="cta-wa-label">Hardware</span>
+        My company has laptops
+      </a>
+      <a class="cta-wa" href="https://wa.me/27637549122?text=Hi%20Luca%2C%20I%27d%20like%20to%20help%20fund%20the%20Foundation%20pilot" target="_blank" rel="noopener">
+        <span class="cta-wa-label">Funding</span>
+        I want to help fund this
+      </a>
+    </div>
+  </div>
+
+  <p class="status-line">The Foundation is being set up. We are not taking donations yet.</p>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <a href="https://www.bookednow.co.za/" class="footer-logo">Booked.</a>
+    <span class="footer-note">Discoverability infrastructure for fashion creatives.</span>
+  </div>
+  <span class="footer-copy">&copy; 2026 Booked. All rights reserved.</span>
+</footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c5019272dde4410aa02a64d208900039"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
