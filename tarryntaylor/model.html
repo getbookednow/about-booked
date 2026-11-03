@@ -231,6 +231,8 @@
   .reel video{width:100%;height:auto;border-radius:6px;background:var(--ink)}
   @media(max-width:799px){.reels{grid-template-columns:repeat(3,1fr);gap:.8rem}}
   @media(max-width:559px){.reels{grid-template-columns:1fr;max-width:360px;margin-inline:auto}}
+  .bts{max-width:360px;margin:2.5rem auto 0;text-align:center}
+  .bts .kicker{margin-bottom:1rem}
 
   /* ── LISTS ── */
   .ticks{list-style:none;margin-top:2rem;display:grid;gap:1rem;max-width:52ch}
@@ -477,6 +479,11 @@
                  width="1080" height="1920" aria-label="Model portfolio reel — Look 3"></video>
         </figure>
       </div>
+      <figure class="reel bts">
+        <p class="kicker">Behind the scenes &middot; polaroid updates</p>
+        <video src="video/bts-polaroids.mp4" poster="video/bts-polaroids-poster.jpg" playsinline preload="metadata" muted loop controls
+               width="478" height="850" aria-label="Behind the scenes of a polaroid update shoot"></video>
+      </figure>
     </div>
   </section>
 
