@@ -116,33 +116,25 @@
   .btn-on-gold:hover{background:var(--ink);border-color:var(--ink);color:var(--cream)}
 
   /* ── HERO ── */
-  /* The hero photograph is landscape (2.01:1) against a ~2.05:1 container, so
-     full-bleed costs almost no crop. A cream veil sits over it, the way her Wix
-     hero faded the image, so the dark type reads over any part of the frame. */
-  .hero{position:relative;min-height:clamp(420px,76svh,720px);display:grid;place-items:center;
-    background:var(--placeholder);overflow:hidden}
-  .hero>picture{position:absolute;inset:0;width:100%;height:100%}
-  .hero>picture img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
-  .hero::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(244,241,235,.68),rgba(244,241,235,.64) 55%,rgba(244,241,235,.76))}
-  /* the hero's direct child is <picture>, not <img> — position the picture */
-  .hero-in{position:relative;z-index:2;text-align:center;padding:3.5rem var(--gut);color:var(--ink)}
-  /* Deeper than --gold-ink: measured against the actual hero pixels under the
-     veil, #6E6339 came out at 2.94:1 average and 1.89:1 at its worst, under the
-     3:1 floor for display text. #4A4326 measures 5.50 / 3.91. */
-  .hero-name{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.4rem,8vw,5.2rem);
+  /* Split, not full-bleed: the portrait is near-square (1080x1191), and a
+     2:1 full-width crop would cut her face and enlarge it past native size. */
+  .hero{background:var(--cream);border-bottom:1px solid var(--line)}
+  .hero-grid{max-width:var(--maxw);margin:0 auto;padding:clamp(2rem,5vw,4rem) var(--gut);
+    display:grid;gap:clamp(2rem,5vw,4rem);align-items:center;grid-template-columns:1fr}
+  @media(min-width:860px){.hero-grid{grid-template-columns:1.1fr 1fr}}
+  .hero-img{margin:0;background:var(--placeholder);aspect-ratio:1080/1191;overflow:hidden;
+    max-width:520px;width:100%;justify-self:center}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero-in{text-align:center;color:var(--ink)}
+  @media(min-width:860px){.hero-in{text-align:left}.hero-cta{justify-content:flex-start}}
+  .hero-name{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.4rem,7vw,4.8rem);
     letter-spacing:.06em;line-height:1.02;color:#4A4326}
   .hero-place{margin-top:.8rem;font-size:clamp(.78rem,1.8vw,.95rem);letter-spacing:.3em;
     text-transform:uppercase;color:var(--ink)}
   .hero-roles{margin-top:1.9rem;display:flex;flex-direction:column;gap:.3rem;
-    font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.05rem,2.8vw,1.8rem);
+    font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.05rem,2.4vw,1.6rem);
     letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
   .hero-cta{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-  /* Transparent buttons over a photograph cannot be contrast-checked: the
-     backdrop changes per pixel. Both hero buttons get a solid fill, which is
-     also what her Wix hero had. */
-  .hero .btn-ghost{background:var(--cream);border-color:var(--cream);color:var(--gold-deep)}
-  .hero .btn-ghost:hover{background:var(--ink);border-color:var(--ink);color:var(--cream)}
 
   /* ── SECTIONS ── */
   .sec{padding:clamp(3.5rem,9vw,7rem) 0}
@@ -288,25 +280,29 @@
 <main id="main">
 
   <section class="hero">
-    <picture>
-      <source type="image/webp" sizes="100vw" srcset="images/hero/tarryn-taylor-hero-home-800.webp 800w, images/hero/tarryn-taylor-hero-home-1600.webp 1600w, images/hero/tarryn-taylor-hero-home-2400.webp 2400w">
-      <img src="images/hero/tarryn-taylor-hero-home-1600.jpg" sizes="100vw"
-           srcset="images/hero/tarryn-taylor-hero-home-800.jpg 800w, images/hero/tarryn-taylor-hero-home-1600.jpg 1600w, images/hero/tarryn-taylor-hero-home-2400.jpg 2400w"
-           width="1194" height="594" fetchpriority="high" decoding="async"
-           alt="A model in a zebra-print slip dress and sunglasses standing on open grassland beside a helicopter, palm trees on the horizon.">
-    </picture>
-    <div class="hero-in">
-      <h1 class="hero-name">Tarryn Taylor</h1>
-      <p class="hero-place">Based in Cape Town</p>
-      <p class="hero-roles">
-        <span>Photographer</span>
-        <span>Portfolio Shoot Director</span>
-        <span>Model Mentor</span>
-      </p>
-      <div class="hero-cta">
-        <a class="btn" href="/tarryntaylor/contact.html">Book Your Portfolio Shoot</a>
-        <a class="btn btn-ghost" href="#work">View Portfolio</a>
+    <div class="hero-grid">
+      <div class="hero-in">
+        <h1 class="hero-name">Tarryn Taylor</h1>
+        <p class="hero-place">Based in Cape Town</p>
+        <p class="hero-roles">
+          <span>Photographer</span>
+          <span>Portfolio Shoot Director</span>
+          <span>Model Mentor</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="/tarryntaylor/contact.html">Book Your Portfolio Shoot</a>
+          <a class="btn btn-ghost" href="#work">View Portfolio</a>
+        </div>
       </div>
+      <figure class="hero-img">
+        <picture>
+          <source type="image/webp" sizes="(min-width:860px) 520px, 100vw" srcset="images/hero/tarryn-taylor-hero-portrait-640.webp 640w, images/hero/tarryn-taylor-hero-portrait-1080.webp 1080w">
+          <img src="images/hero/tarryn-taylor-hero-portrait-640.jpg" sizes="(min-width:860px) 520px, 100vw"
+               srcset="images/hero/tarryn-taylor-hero-portrait-640.jpg 640w, images/hero/tarryn-taylor-hero-portrait-1080.jpg 1080w"
+               width="1080" height="1191" fetchpriority="high" decoding="async"
+               alt="Tarryn Taylor holding a Canon camera to her eye, photographed in black and white.">
+        </picture>
+      </figure>
     </div>
   </section>
 
