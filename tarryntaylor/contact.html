@@ -252,6 +252,28 @@
   .wa-alt a{text-decoration:underline}
   .wa-alt a:hover{color:var(--gold-ink)}
 
+  /* ── ENQUIRY FORM ── no backend: answers are composed into a WhatsApp or email message the client sends. */
+  .enq{max-width:780px}
+  .enq-form{margin-top:2.2rem;display:grid;gap:1.4rem;grid-template-columns:1fr}
+  @media(min-width:700px){.enq-form{grid-template-columns:1fr 1fr}.enq-full{grid-column:1/-1}}
+  .enq-f{display:flex;flex-direction:column;gap:.45rem}
+  .enq-f label,.enq-legend{font-size:var(--t--1);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold-ink)}
+  .enq-req{color:var(--ink-soft);font-weight:400;letter-spacing:0;text-transform:none}
+  .enq-f input,.enq-f select,.enq-f textarea{font:inherit;font-size:1rem;color:var(--ink);background:#fff;
+    border:1px solid rgba(21,18,12,.28);border-radius:0;padding:.75rem .85rem;width:100%}
+  .enq-f textarea{min-height:7.5rem;resize:vertical}
+  .enq-f input:focus,.enq-f select:focus,.enq-f textarea:focus{outline:2px solid var(--gold-ink);outline-offset:1px;border-color:var(--gold-ink)}
+  .enq-f input:user-invalid,.enq-f select:user-invalid,.enq-f textarea:user-invalid{border-color:#9B2C1F}
+  .enq-hint{font-size:.88rem;color:var(--ink-soft)}
+  .enq-warn{font-size:.9rem;color:#7A2E1C;background:#F6E9E2;border-left:2px solid #9B2C1F;padding:.6rem .8rem}
+  .enq-warn[hidden]{display:none}
+  .enq-checks{border:0;padding:0;margin:0;display:grid;gap:.8rem}
+  .enq-check{display:flex;gap:.7rem;align-items:flex-start;font-size:.97rem;color:var(--ink)}
+  .enq-check input{width:1.15rem;height:1.15rem;margin-top:.2rem;flex:none;accent-color:var(--gold-deep)}
+  .enq-check a{text-decoration:underline}
+  .enq-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .enq-note{font-size:.85rem;color:var(--ink-soft);max-width:60ch}
+
   /* floating button — her Wix site had one; kept, but in her palette, not WhatsApp green */
   .wa-float{position:fixed;right:clamp(.9rem,3vw,1.6rem);bottom:clamp(.9rem,3vw,1.6rem);z-index:90;
     display:inline-flex;align-items:center;gap:.55rem;
@@ -341,8 +363,95 @@
           </p>
           <p class="wa-num"><a href="https://wa.me/27682969691" rel="noopener">+27 68 296 9691</a></p>
           <p class="wa-alt">Prefer email? <a href="mailto:tarryn.taylor@gmail.com">tarryn.taylor@gmail.com</a></p>
+          <p class="wa-alt">Booking a shoot? <a href="#enquiry">Fill in the booking form</a> so I can reply with a date and a rate.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec sec-warm" id="enquiry">
+    <div class="wrap enq">
+      <p class="kicker">Booking enquiry</p>
+      <h2 class="sec-h" style="margin-top:.8rem">Before we book</h2>
+      <hr class="rule">
+      <p class="sec-lead">A few quick questions so I can come back to you with a date and a rate, not more questions.</p>
+      <noscript><p class="enq-warn" style="margin-top:1.4rem">This form needs JavaScript. Please message me on <a href="https://wa.me/27682969691">WhatsApp</a> or <a href="mailto:tarryn.taylor@gmail.com">email</a> instead.</p></noscript>
+      <form class="enq-form" id="enq-form" novalidate>
+        <div class="enq-f">
+          <label for="enq-name">Your name <span class="enq-req">(required)</span></label>
+          <input id="enq-name" name="name" type="text" autocomplete="name" required maxlength="80">
+        </div>
+        <div class="enq-f">
+          <label for="enq-link">Instagram or portfolio link <span class="enq-req">(required)</span></label>
+          <input id="enq-link" name="link" type="text" autocomplete="url" required maxlength="160" placeholder="@yourhandle or a link">
+        </div>
+        <div class="enq-f enq-full">
+          <label for="enq-service">What do you need? <span class="enq-req">(required)</span></label>
+          <select id="enq-service" name="service" required>
+            <option value="">Choose one</option>
+            <option data-min="2500" data-label="Test shoots">Model portfolio / test shoot</option>
+            <option data-min="1000" data-label="Digitals and polaroids">Digitals &amp; polaroids</option>
+            <option>Creative direction &amp; posing</option>
+            <option>Commercial / brand shoot</option>
+            <option data-min="6500" data-label="Wedding couple portraits">Wedding couple portraits</option>
+            <option>Real estate</option>
+            <option>DJ shoot</option>
+            <option>Creative portraits</option>
+            <option>Tourist shoot</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="enq-f enq-full">
+          <label for="enq-purpose">What are the images for? <span class="enq-req">(required)</span></label>
+          <textarea id="enq-purpose" name="purpose" required minlength="20" maxlength="800" aria-describedby="enq-purpose-h"></textarea>
+          <p class="enq-hint" id="enq-purpose-h">E.g. agency submissions, a brand launch, a listing, your EPK. A sentence or two is enough.</p>
+        </div>
+        <div class="enq-f">
+          <label for="enq-when">When do you want to shoot? <span class="enq-req">(required)</span></label>
+          <select id="enq-when" name="when" required>
+            <option value="">Choose one</option>
+            <option>Within 2 weeks</option>
+            <option>Within a month</option>
+            <option>In 1&ndash;3 months</option>
+            <option>Just exploring for now</option>
+          </select>
+        </div>
+        <div class="enq-f">
+          <label for="enq-date">Preferred date</label>
+          <input id="enq-date" name="date" type="date">
+        </div>
+        <div class="enq-f">
+          <label for="enq-budget">Your budget <span class="enq-req">(required)</span></label>
+          <select id="enq-budget" name="budget" required>
+            <option value="">Choose one</option>
+            <option data-max="999">Under R1000</option>
+            <option data-max="2500">R1000&ndash;R2500</option>
+            <option data-max="5000">R2500&ndash;R5000</option>
+            <option data-max="10000">R5000&ndash;R10 000</option>
+            <option data-max="999999">R10 000+</option>
+          </select>
+        </div>
+        <div class="enq-f">
+          <label for="enq-agency">Agency status (models)</label>
+          <select id="enq-agency" name="agency">
+            <option value="">Not applicable</option>
+            <option>Signed to an agency</option>
+            <option>Freelance</option>
+            <option>Looking to get signed</option>
+          </select>
+        </div>
+        <p class="enq-warn enq-full" id="enq-budget-warn" role="status" hidden></p>
+        <fieldset class="enq-checks enq-full">
+          <legend class="enq-legend" style="margin-bottom:.8rem">Before you send</legend>
+          <label class="enq-check"><input type="checkbox" name="prices" required> <span>I&rsquo;ve seen the <a href="/tarryntaylor/#bookings">starting prices</a> for what I&rsquo;m asking about.</span></label>
+          <label class="enq-check"><input type="checkbox" name="ready" required> <span>I&rsquo;m ready to book if the date and rate work for me.</span></label>
+        </fieldset>
+        <div class="enq-actions enq-full">
+          <button class="btn wa-btn" type="submit" data-via="wa">Send on WhatsApp</button>
+          <button class="btn btn-ghost" type="submit" data-via="email">Send by email</button>
+        </div>
+        <p class="enq-note enq-full">Nothing is stored on this site. Your answers open as a message in WhatsApp or your email app, and you choose whether to send it.</p>
+      </form>
     </div>
   </section>
 
@@ -401,6 +510,42 @@
   var dd=document.querySelector('.nav-dd');if(!dd)return;
   document.addEventListener('click',function(e){if(dd.open&&!dd.contains(e.target))dd.open=false;});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dd.open){dd.open=false;dd.querySelector('summary').focus();}});
+})();
+</script>
+<script>
+/* Booking enquiry: validate, then hand the answers to WhatsApp or email. */
+(function(){
+  var f=document.getElementById('enq-form');if(!f)return;
+  var svc=f.elements.service,bud=f.elements.budget,warn=document.getElementById('enq-budget-warn'),via='wa';
+  function opt(sel){return sel.options[sel.selectedIndex];}
+  function check(){
+    var o=opt(svc),b=opt(bud),min=+(o&&o.getAttribute('data-min')||0),max=+(b&&b.getAttribute('data-max')||0);
+    if(min&&max&&max<min){
+      warn.textContent=o.getAttribute('data-label')+' start from R'+min+'. Your budget may not cover it. You can still send, but expect a quote from R'+min+'.';
+      warn.hidden=false;
+    }else{warn.hidden=true;}
+  }
+  svc.addEventListener('change',check);bud.addEventListener('change',check);
+  Array.prototype.forEach.call(f.querySelectorAll('[data-via]'),function(b){
+    b.addEventListener('click',function(){via=b.getAttribute('data-via');});
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    var v=function(n){return (f.elements[n].value||'').trim();};
+    var lines=['Hi Tarryn, booking enquiry from your site.','',
+      'Name: '+v('name'),'Instagram / portfolio: '+v('link'),'Service: '+v('service'),
+      'For: '+v('purpose'),'When: '+v('when')+(v('date')?' (preferred '+v('date')+')':''),
+      'Budget: '+v('budget')];
+    if(v('agency'))lines.push('Agency: '+v('agency'));
+    lines.push('','I have seen the starting prices and am ready to book if the date and rate work.');
+    var msg=lines.join('\n');
+    if(via==='email'){
+      location.href='mailto:tarryn.taylor@gmail.com?subject='+encodeURIComponent('Booking enquiry: '+v('service')+' / '+v('name'))+'&body='+encodeURIComponent(msg);
+    }else{
+      window.open('https://wa.me/27682969691?text='+encodeURIComponent(msg),'_blank','noopener');
+    }
+  });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c5019272dde4410aa02a64d208900039"}'></script><!-- End Cloudflare Web Analytics -->
