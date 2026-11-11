@@ -12,7 +12,7 @@
 set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SITE="$ROOT/tarryntaylor"
-PAGES="index.html model.html commercial.html couples.html about.html contact.html"
+PAGES="index.html model.html commercial.html couples.html about.html contact.html terms.html privacy.html"
 MODE="${1:-}"
 
 if [ "$MODE" = "--revert" ]; then
