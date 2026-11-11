@@ -54,6 +54,7 @@ SLOTS=(
   "model|tarryn-taylor-model|4:5|$Q_GALLERY|12|center"
   "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|9|center"
   "couples|tarryn-taylor-couples|4:5|$Q_GALLERY|15|center"
+  "new-faces|tarryn-taylor-new-faces|4:5|$Q_GALLERY|6|center"
   "og|tarryn-taylor-og|1200:630|$Q_HERO|0|north"
 )
 
