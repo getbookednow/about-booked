@@ -139,9 +139,9 @@
   /* Name and calls to action, then the model-portfolio carousel. On phones the
      carousel stays a horizontal swipe (.gal-hero) rather than the model page's
      vertical column, which would stack 12 images above everything else. */
-  .hero{background:var(--cream);padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2.5rem,6vw,4rem);border-bottom:1px solid var(--line)}
+  .hero{background:var(--cream);padding:clamp(1.2rem,3vw,2rem) 0 clamp(2.5rem,6vw,4rem);border-bottom:1px solid var(--line)}
   .hero-in{text-align:center;color:var(--ink)}
-  .hero .gal-wrap{margin-top:clamp(2.2rem,5vw,3.2rem)}
+  .hero .gal-wrap{margin-top:0;margin-bottom:clamp(2.2rem,5vw,3.2rem)}
   .hero-name{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.4rem,7vw,4.8rem);
     letter-spacing:.06em;line-height:1.02;color:#4A4326}
   .hero-place{margin-top:.8rem;font-size:clamp(.78rem,1.8vw,.95rem);letter-spacing:.3em;
@@ -358,25 +358,6 @@
 
   <section class="hero">
     <div class="wrap">
-      <div class="hero-in">
-        <h1 class="hero-name">Tarryn Taylor</h1>
-        <p class="hero-place">Based in Cape Town</p>
-        <p class="hero-roles">
-          <span>Photographer</span>
-          <span>Portfolio Shoot Director</span>
-          <span>Model Mentor</span>
-        </p>
-        <div class="hero-cta">
-          <a class="btn" href="/tarryntaylor/contact.html">Book Your Portfolio Shoot</a>
-          <a class="btn btn-ghost" href="#work">View Portfolio</a>
-        </div>
-        <ul class="hero-pk" id="bookings" aria-label="Packages">
-          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Book Your Test Shoot</span><span class="hero-pk-d">Agency-ready portfolios. High-end editorial imagery designed to get you booked.</span><span class="hero-pk-p">From R2500</span></a></li>
-          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Digitals &amp; Polaroids</span><span class="hero-pk-d">The industry standard. Raw, unedited, and authentic captures for agency submissions.</span><span class="hero-pk-p">From R1000</span></a></li>
-          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Creative Direction &amp; Posing</span><span class="hero-pk-d">Expert guidance on movement, angles, and confidence behind the lens.</span><span class="hero-pk-p">Inquire for Rates</span></a></li>
-        </ul>
-        <p class="hero-fast">Rapid delivery: same-day turnarounds or within 24&ndash;48 hours.</p>
-      </div>
         <div class="gal-wrap gal-hero" data-gal role="group" aria-roledescription="carousel" aria-label="Model portfolio — swipe or use the arrows">
         <div class="gal" tabindex="0">
           <figure class="shot">
@@ -501,6 +482,25 @@
         </div>
         <p class="gal-hint">Swipe to browse</p>
         </div>
+      <div class="hero-in">
+        <h1 class="hero-name">Tarryn Taylor</h1>
+        <p class="hero-place">Based in Cape Town</p>
+        <p class="hero-roles">
+          <span>Photographer</span>
+          <span>Portfolio Shoot Director</span>
+          <span>Model Mentor</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="/tarryntaylor/contact.html">Book Your Portfolio Shoot</a>
+          <a class="btn btn-ghost" href="#work">View Portfolio</a>
+        </div>
+        <ul class="hero-pk" id="bookings" aria-label="Packages">
+          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Book Your Test Shoot</span><span class="hero-pk-d">Agency-ready portfolios. High-end editorial imagery designed to get you booked.</span><span class="hero-pk-p">From R2500</span></a></li>
+          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Digitals &amp; Polaroids</span><span class="hero-pk-d">The industry standard. Raw, unedited, and authentic captures for agency submissions.</span><span class="hero-pk-p">From R1000</span></a></li>
+          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Creative Direction &amp; Posing</span><span class="hero-pk-d">Expert guidance on movement, angles, and confidence behind the lens.</span><span class="hero-pk-p">Inquire for Rates</span></a></li>
+        </ul>
+        <p class="hero-fast">Rapid delivery: same-day turnarounds or within 24&ndash;48 hours.</p>
+      </div>
     </div>
   </section>
 
