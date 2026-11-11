@@ -241,6 +241,9 @@
   .nf-book{background:var(--gold-deep);color:var(--cream);padding:clamp(2.6rem,7vw,4.5rem) 0}
   .nf-book h2{font-size:var(--t-3)}
   .nf-who{margin-top:1.8rem;font-size:var(--t--1);letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .nf-mailalt{margin-top:1.4rem;font-size:.95rem;color:var(--cream)}
+  .nf-mailalt[hidden]{display:none}
+  .nf-mailalt a,.nf-mailalt button{color:var(--cream);text-decoration:underline;font:inherit;background:none;border:0;padding:.4rem 0;cursor:pointer;min-height:44px}
   .nf-btns{margin-top:.8rem;display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:520px}
   .nf-btns .btn{display:flex;align-items:center;justify-content:center;text-align:center;padding:.85rem .5rem;letter-spacing:.1em;white-space:nowrap}
   .nf-box{border:0;padding:0;background:transparent;max-width:min(92vw,900px);max-height:92svh;margin:auto}
@@ -422,13 +425,14 @@
       <p class="nf-who">Agency bookers</p>
       <div class="nf-btns">
         <a class="btn btn-on-gold" href="https://wa.me/27682969691?text=Hi%20Tarryn%2C%20I%27m%20a%20booker%20at%20%5Bagency%5D%20and%20I%27d%20like%20to%20book%20a%20New%20Faces%20shoot%20for%20%5Bmodel%20name%5D.%0AInstagram%20%2F%20digitals%3A%20%5Blink%5D%0APreferred%20dates%3A%20%5Bdates%5D" rel="noopener">WhatsApp Tarryn</a>
-        <a class="btn btn-on-gold" href="mailto:tarryn.taylor@gmail.com?subject=New%20Faces%20booking&amp;body=Hi%20Tarryn%2C%20I%27m%20a%20booker%20at%20%5Bagency%5D%20and%20I%27d%20like%20to%20book%20a%20New%20Faces%20shoot%20for%20%5Bmodel%20name%5D.%0AInstagram%20%2F%20digitals%3A%20%5Blink%5D%0APreferred%20dates%3A%20%5Bdates%5D">Email Tarryn</a>
+        <a class="btn btn-on-gold" data-nf-mail href="mailto:tarryn.taylor@gmail.com?subject=New%20Faces%20booking&amp;body=Hi%20Tarryn%2C%20I%27m%20a%20booker%20at%20%5Bagency%5D%20and%20I%27d%20like%20to%20book%20a%20New%20Faces%20shoot%20for%20%5Bmodel%20name%5D.%0AInstagram%20%2F%20digitals%3A%20%5Blink%5D%0APreferred%20dates%3A%20%5Bdates%5D">Email Tarryn</a>
       </div>
       <p class="nf-who">Models booking directly</p>
       <div class="nf-btns">
         <a class="btn btn-on-gold" href="https://wa.me/27682969691?text=Hi%20Tarryn%2C%20I%27d%20like%20to%20book%20a%20New%20Faces%20shoot.%0AName%3A%20%5Byour%20name%5D%0AAgency%3A%20%5Bagency%2C%20or%20not%20signed%20yet%5D%0AInstagram%3A%20%5B%40handle%5D%0APreferred%20dates%3A%20%5Bdates%5D" rel="noopener">WhatsApp Tarryn</a>
-        <a class="btn btn-on-gold" href="mailto:tarryn.taylor@gmail.com?subject=New%20Faces%20booking&amp;body=Hi%20Tarryn%2C%20I%27d%20like%20to%20book%20a%20New%20Faces%20shoot.%0AName%3A%20%5Byour%20name%5D%0AAgency%3A%20%5Bagency%2C%20or%20not%20signed%20yet%5D%0AInstagram%3A%20%5B%40handle%5D%0APreferred%20dates%3A%20%5Bdates%5D">Email Tarryn</a>
+        <a class="btn btn-on-gold" data-nf-mail href="mailto:tarryn.taylor@gmail.com?subject=New%20Faces%20booking&amp;body=Hi%20Tarryn%2C%20I%27d%20like%20to%20book%20a%20New%20Faces%20shoot.%0AName%3A%20%5Byour%20name%5D%0AAgency%3A%20%5Bagency%2C%20or%20not%20signed%20yet%5D%0AInstagram%3A%20%5B%40handle%5D%0APreferred%20dates%3A%20%5Bdates%5D">Email Tarryn</a>
       </div>
+      <p class="nf-mailalt" id="nf-mailalt" hidden>Email not opening? <a id="nf-gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=tarryn.taylor%40gmail.com" target="_blank" rel="noopener">Open in Gmail</a> &middot; <button type="button" id="nf-copy">Copy address</button> <span id="nf-copied" role="status"></span></p>
     </div>
   </section>
 
@@ -495,6 +499,29 @@
   });
   box.querySelector('[data-nf-close]').addEventListener('click',function(){box.close();});
   box.addEventListener('click',function(e){if(e.target===box)box.close();});
+})();
+</script>
+<script>
+/* mailto needs a mail app on the device. Many bookers only use Gmail in a
+   browser, where the button does nothing, so after a tap offer Gmail on the
+   web (same subject and message) or the address to copy. */
+(function(){
+  var alt=document.getElementById('nf-mailalt');if(!alt)return;
+  var gm=document.getElementById('nf-gmail'),cp=document.getElementById('nf-copy'),ok=document.getElementById('nf-copied');
+  var ADDR='tarryn.taylor@gmail.com';
+  document.querySelectorAll('[data-nf-mail]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var q=new URLSearchParams(a.getAttribute('href').split('?')[1]||'');
+      gm.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(ADDR)+
+        '&su='+encodeURIComponent(q.get('subject')||'')+'&body='+encodeURIComponent(q.get('body')||'');
+      alt.hidden=false;
+    });
+  });
+  cp.addEventListener('click',function(){
+    function done(){ok.textContent='Copied';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ADDR).then(done,function(){ok.textContent=ADDR;});}
+    else{ok.textContent=ADDR;}
+  });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c5019272dde4410aa02a64d208900039"}'></script><!-- End Cloudflare Web Analytics -->
