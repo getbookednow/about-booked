@@ -43,6 +43,8 @@ need "$IM"
 need exiftool
 
 # ── slots: folder | prefix | aspect | quality | count | crop gravity ────────
+# Galleries are built at native aspect; the page frames each image at its own
+# proportions, so nothing is cropped at build time.
 # Gravity matters. Her sources are 2:3 portraits. Centre-cropping one to a 3:2
 # hero throws away the top and bottom and leaves a face macro with the whole
 # composition gone. Heroes crop from the top so the head and sky survive;
@@ -51,10 +53,10 @@ need exiftool
 # silently absorbed — a missing file is a broken <img> on a live page.
 SLOTS=(
   "hero|tarryn-taylor-hero|native|$Q_HERO|0|center"
-  "model|tarryn-taylor-model|4:5|$Q_GALLERY|12|center"
-  "commercial|tarryn-taylor-commercial|4:5|$Q_GALLERY|9|center"
-  "couples|tarryn-taylor-couples|4:5|$Q_GALLERY|15|center"
-  "new-faces|tarryn-taylor-new-faces|4:5|$Q_GALLERY|4|center"
+  "model|tarryn-taylor-model|native|$Q_GALLERY|12|center"
+  "commercial|tarryn-taylor-commercial|native|$Q_GALLERY|9|center"
+  "couples|tarryn-taylor-couples|native|$Q_GALLERY|15|center"
+  "new-faces|tarryn-taylor-new-faces|native|$Q_GALLERY|4|center"
   "og|tarryn-taylor-og|1200:630|$Q_HERO|0|north"
 )
 
