@@ -88,6 +88,8 @@
   .nav-in{max-width:var(--maxw);margin:0 auto;padding:.9rem var(--gut);
     display:flex;align-items:center;justify-content:space-between;gap:1rem}
   .brand{font-family:"Playfair Display",Georgia,serif;font-size:var(--t-2);letter-spacing:.14em;color:var(--gold-ink)}
+  /* Standalone: reachable from New Faces while the rest of the site is in review. */
+  .nf-nav .nav-in{justify-content:center}
   .nav-links{display:flex;gap:clamp(.9rem,2.4vw,2rem);align-items:center;flex-wrap:wrap}
   .nav-links a{font-size:var(--t--1);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
     padding:.35rem 0;position:relative;transition:color .3s ease}
@@ -295,26 +297,9 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav">
+<header class="nav nf-nav">
   <div class="nav-in">
-    <a class="brand" href="/tarryntaylor/" aria-label="Tarryn Taylor — home">TT</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/tarryntaylor/">Home</a>
-      <details class="nav-dd">
-        <summary>Packages <svg class="nav-dd-car" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-        <div class="nav-dd-menu">
-          <a href="/tarryntaylor/model.html">Model Portfolio</a>
-          <a href="/tarryntaylor/commercial.html">Commercial</a>
-          <a href="/tarryntaylor/couples.html">Couples</a>
-          <a href="/tarryntaylor/contact.html">Real Estate</a>
-          <a href="/tarryntaylor/contact.html">DJs</a>
-          <a href="/tarryntaylor/contact.html">Creatives</a>
-          <a href="/tarryntaylor/contact.html">Tourist Offer</a>
-        </div>
-      </details>
-      <a href="/tarryntaylor/about.html">About</a>
-      <a href="/tarryntaylor/contact.html">Contact</a>
-    </nav>
+    <span class="brand" aria-label="Tarryn Taylor">TT</span>
   </div>
 </header>
 
@@ -365,7 +350,7 @@
       <p>I take care with every shoot and back up files after it. If files are lost or damaged through equipment failure or anything beyond my control, my liability is limited to refunding what you paid for the affected work. Nothing in these terms limits rights you have under the Consumer Protection Act 68 of 2008.</p>
 
       <h2>9. Website content</h2>
-      <p>All photographs and video on this site are &copy; Tarryn Taylor. No licence is granted to copy, download for reuse, or use them in machine-learning or generative AI systems. See the <a href="/tarryntaylor/#rights">copyright notice</a>.</p>
+      <p>All photographs and video on this site are &copy; Tarryn Taylor. No licence is granted to copy, download for reuse, or use them in machine-learning or generative AI systems.</p>
 
       <h2>10. General</h2>
       <p>These terms are governed by the law of South Africa. Questions: <a href="mailto:tarryn.taylor@gmail.com">tarryn.taylor@gmail.com</a>. How I handle your personal information is covered in the <a href="/tarryntaylor/privacy.html">privacy notice</a>.</p>
@@ -382,14 +367,7 @@
 
 <footer class="foot">
   <nav class="foot-nav" aria-label="Footer">
-    <a href="/tarryntaylor/">Home</a>
-    <a href="/tarryntaylor/model.html">Model Portfolio</a>
-    <a href="/tarryntaylor/commercial.html">Commercial</a>
-    <a href="/tarryntaylor/couples.html">Couples</a>
-    <a href="/tarryntaylor/about.html">About</a>
-    <a href="/tarryntaylor/contact.html">Contact</a>
     <a href="https://www.instagram.com/tarryntaylorphoto/" rel="noopener">Instagram</a>
-    <a href="/tarryntaylor/#rights">Copyright</a>
     <a href="/tarryntaylor/terms.html">Terms</a>
     <a href="/tarryntaylor/privacy.html">Privacy</a>
   </nav>
