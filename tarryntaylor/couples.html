@@ -204,9 +204,9 @@
     padding-bottom:.25rem;overscroll-behavior-x:contain;scroll-padding-left:0}
   .gal::-webkit-scrollbar{display:none}
   :root{--gal-gap:clamp(.6rem,1.6vw,1.1rem)}
-  .gal>.shot{flex:0 0 82%;scroll-snap-align:start;margin:0}
-  @media(min-width:560px){.gal>.shot{flex:0 0 calc((100% - var(--gal-gap))/2)}}
-  @media(min-width:1000px){.gal>.shot{flex:0 0 calc((100% - 2*var(--gal-gap))/3)}}
+  .gal>.shot{flex:0 0 min(100%,calc(82% * var(--ar) * 1.5));scroll-snap-align:start;margin:0}
+  @media(min-width:560px){.gal>.shot{flex:0 0 min(100%,calc((100% - var(--gal-gap))/2 * var(--ar) * 1.5))}}
+  @media(min-width:1000px){.gal>.shot{flex:0 0 min(100%,calc((100% - 2*var(--gal-gap))/3 * var(--ar) * 1.5))}}
   @media(prefers-reduced-motion:reduce){.gal{scroll-behavior:auto}}
 
 
@@ -237,7 +237,7 @@
     .gal>.shot:last-child{margin-bottom:0}
     .gal-bar,.gal-hint{display:none}
   }
-  .shot{margin:0;background:var(--placeholder);position:relative;aspect-ratio:4/5;overflow:hidden}
+  .shot{margin:0;background:var(--placeholder);position:relative;--ar:.6667;aspect-ratio:var(--ar);overflow:hidden}
   .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
   .shot:hover img{transform:scale(1.03)}
   .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:.7rem .9rem;
@@ -387,7 +387,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-01-800.webp 800w, images/couples/tarryn-taylor-couples-01-1600.webp 1600w, images/couples/tarryn-taylor-couples-01-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-01-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-01-800.jpg 800w, images/couples/tarryn-taylor-couples-01-1600.jpg 1600w, images/couples/tarryn-taylor-couples-01-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="A bride in a long white gown and birdcage veil holding a bouquet, the groom in a black tuxedo beside her on the rocks at golden hour.">
           </picture>
         </figure>
@@ -396,7 +396,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-02-800.webp 800w, images/couples/tarryn-taylor-couples-02-1600.webp 1600w, images/couples/tarryn-taylor-couples-02-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-02-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-02-800.jpg 800w, images/couples/tarryn-taylor-couples-02-1600.jpg 1600w, images/couples/tarryn-taylor-couples-02-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The couple close together at sunset, foreheads almost touching, her hand resting on his chest.">
           </picture>
         </figure>
@@ -405,7 +405,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-03-800.webp 800w, images/couples/tarryn-taylor-couples-03-1600.webp 1600w, images/couples/tarryn-taylor-couples-03-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-03-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-03-800.jpg 800w, images/couples/tarryn-taylor-couples-03-1600.jpg 1600w, images/couples/tarryn-taylor-couples-03-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The couple walking together along the beach in black and white, palm trees behind them and a bouquet in her hand.">
           </picture>
         </figure>
@@ -414,7 +414,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-04-800.webp 800w, images/couples/tarryn-taylor-couples-04-1600.webp 1600w, images/couples/tarryn-taylor-couples-04-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-04-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-04-800.jpg 800w, images/couples/tarryn-taylor-couples-04-1600.jpg 1600w, images/couples/tarryn-taylor-couples-04-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The bride laughing as the groom holds her from behind, sea and granite boulders behind them.">
           </picture>
         </figure>
@@ -423,7 +423,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-05-800.webp 800w, images/couples/tarryn-taylor-couples-05-1600.webp 1600w, images/couples/tarryn-taylor-couples-05-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-05-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-05-800.jpg 800w, images/couples/tarryn-taylor-couples-05-1600.jpg 1600w, images/couples/tarryn-taylor-couples-05-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The bride in a birdcage veil facing the camera, the groom standing close behind her, bouquet at her side.">
           </picture>
         </figure>
@@ -432,7 +432,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-06-800.webp 800w, images/couples/tarryn-taylor-couples-06-1600.webp 1600w, images/couples/tarryn-taylor-couples-06-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-06-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-06-800.jpg 800w, images/couples/tarryn-taylor-couples-06-1600.jpg 1600w, images/couples/tarryn-taylor-couples-06-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The groom lifting the bride off the sand between the rocks, her bouquet still in her hand.">
           </picture>
         </figure>
@@ -441,7 +441,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-07-800.webp 800w, images/couples/tarryn-taylor-couples-07-1600.webp 1600w, images/couples/tarryn-taylor-couples-07-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-07-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-07-800.jpg 800w, images/couples/tarryn-taylor-couples-07-1600.jpg 1600w, images/couples/tarryn-taylor-couples-07-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The bride glancing back over her shoulder to camera in black and white, the groom standing behind her.">
           </picture>
         </figure>
@@ -450,7 +450,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-08-800.webp 800w, images/couples/tarryn-taylor-couples-08-1600.webp 1600w, images/couples/tarryn-taylor-couples-08-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-08-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-08-800.jpg 800w, images/couples/tarryn-taylor-couples-08-1600.jpg 1600w, images/couples/tarryn-taylor-couples-08-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The couple walking hand in hand across the sand, palm trees and white buildings behind them.">
           </picture>
         </figure>
@@ -459,7 +459,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-09-800.webp 800w, images/couples/tarryn-taylor-couples-09-1600.webp 1600w, images/couples/tarryn-taylor-couples-09-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-09-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-09-800.jpg 800w, images/couples/tarryn-taylor-couples-09-1600.jpg 1600w, images/couples/tarryn-taylor-couples-09-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The couple embracing on the rocks at sunset, the bride looking up at the groom.">
           </picture>
         </figure>
@@ -468,7 +468,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-10-800.webp 800w, images/couples/tarryn-taylor-couples-10-1600.webp 1600w, images/couples/tarryn-taylor-couples-10-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-10-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-10-800.jpg 800w, images/couples/tarryn-taylor-couples-10-1600.jpg 1600w, images/couples/tarryn-taylor-couples-10-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The couple close against a stone wall, the bride looking straight to camera as the groom leans into her shoulder.">
           </picture>
         </figure>
@@ -477,7 +477,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-11-800.webp 800w, images/couples/tarryn-taylor-couples-11-1600.webp 1600w, images/couples/tarryn-taylor-couples-11-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-11-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-11-800.jpg 800w, images/couples/tarryn-taylor-couples-11-1600.jpg 1600w, images/couples/tarryn-taylor-couples-11-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The bride and groom smiling to camera, her bouquet lifted over her shoulder.">
           </picture>
         </figure>
@@ -486,7 +486,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-12-800.webp 800w, images/couples/tarryn-taylor-couples-12-1600.webp 1600w, images/couples/tarryn-taylor-couples-12-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-12-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-12-800.jpg 800w, images/couples/tarryn-taylor-couples-12-1600.jpg 1600w, images/couples/tarryn-taylor-couples-12-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="805" height="1208" loading="lazy" decoding="async"
                  alt="The bride throwing her bouquet into the air, the groom beside her and a beach house behind.">
           </picture>
         </figure>
@@ -495,7 +495,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-13-800.webp 800w, images/couples/tarryn-taylor-couples-13-1600.webp 1600w, images/couples/tarryn-taylor-couples-13-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-13-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-13-800.jpg 800w, images/couples/tarryn-taylor-couples-13-1600.jpg 1600w, images/couples/tarryn-taylor-couples-13-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="853" height="1280" loading="lazy" decoding="async"
                  alt="The couple laughing with foreheads together in black and white, her hand raised beside his face.">
           </picture>
         </figure>
@@ -504,7 +504,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-14-800.webp 800w, images/couples/tarryn-taylor-couples-14-1600.webp 1600w, images/couples/tarryn-taylor-couples-14-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-14-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-14-800.jpg 800w, images/couples/tarryn-taylor-couples-14-1600.jpg 1600w, images/couples/tarryn-taylor-couples-14-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1241" loading="lazy" decoding="async"
                  alt="The bride leaning against a sandstone wall holding her bouquet, the groom standing behind her.">
           </picture>
         </figure>
@@ -513,7 +513,7 @@
             <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/couples/tarryn-taylor-couples-15-800.webp 800w, images/couples/tarryn-taylor-couples-15-1600.webp 1600w, images/couples/tarryn-taylor-couples-15-2400.webp 2400w">
             <img src="images/couples/tarryn-taylor-couples-15-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                  srcset="images/couples/tarryn-taylor-couples-15-800.jpg 800w, images/couples/tarryn-taylor-couples-15-1600.jpg 1600w, images/couples/tarryn-taylor-couples-15-2400.jpg 2400w"
-                 width="2400" height="3000" loading="lazy" decoding="async"
+                 width="827" height="1240" loading="lazy" decoding="async"
                  alt="The couple walking the beach at sunset hand in hand, the bride mid-stride in a white gown.">
           </picture>
         </figure>
@@ -674,7 +674,9 @@
       if(prev)prev.disabled=atStart();
       if(next)next.disabled=atEnd();
       if(iEl){
-        var idx=Math.round(strip.scrollLeft/step())+1;
+        /* frames differ in width, so count the frames whose start has scrolled past */
+        var idx=1,o=items[0].offsetLeft;
+        for(var k=1;k<items.length;k++){if(items[k].offsetLeft-o<=strip.scrollLeft+4)idx=k+1;}
         if(!isFinite(idx))idx=1;
         iEl.textContent=Math.min(Math.max(idx,1),items.length);
       }

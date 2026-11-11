@@ -181,7 +181,7 @@
     transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
   .door:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(21,18,12,.13)}
   .door-img{aspect-ratio:4/5;background:var(--placeholder);overflow:hidden}
-  .door-img img{width:100%;height:100%;object-fit:cover}
+  .door-img img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
   .door-body{padding:1.6rem 1.5rem 1.9rem;display:flex;flex-direction:column;flex:1}
   .door h3{font-size:var(--t-2);margin-bottom:.6rem}
   .door p{color:var(--ink-soft);font-size:.95rem;flex:1}
@@ -211,9 +211,9 @@
     padding-bottom:.25rem;overscroll-behavior-x:contain;scroll-padding-left:0}
   .gal::-webkit-scrollbar{display:none}
   :root{--gal-gap:clamp(.6rem,1.6vw,1.1rem)}
-  .gal>.shot{flex:0 0 82%;scroll-snap-align:start;margin:0}
-  @media(min-width:560px){.gal>.shot{flex:0 0 calc((100% - var(--gal-gap))/2)}}
-  @media(min-width:1000px){.gal>.shot{flex:0 0 calc((100% - 2*var(--gal-gap))/3)}}
+  .gal>.shot{flex:0 0 min(100%,calc(82% * var(--ar) * 1.5));scroll-snap-align:start;margin:0}
+  @media(min-width:560px){.gal>.shot{flex:0 0 min(100%,calc((100% - var(--gal-gap))/2 * var(--ar) * 1.5))}}
+  @media(min-width:1000px){.gal>.shot{flex:0 0 min(100%,calc((100% - 2*var(--gal-gap))/3 * var(--ar) * 1.5))}}
   @media(prefers-reduced-motion:reduce){.gal{scroll-behavior:auto}}
 
 
@@ -244,7 +244,7 @@
     .gal-wrap:not(.gal-hero) .gal>.shot:last-child{margin-bottom:0}
     .gal-wrap:not(.gal-hero) .gal-bar,.gal-wrap:not(.gal-hero) .gal-hint{display:none}
   }
-  .shot{margin:0;background:var(--placeholder);position:relative;aspect-ratio:4/5;overflow:hidden}
+  .shot{margin:0;background:var(--placeholder);position:relative;--ar:.6667;aspect-ratio:var(--ar);overflow:hidden}
   .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
   .shot:hover img{transform:scale(1.03)}
   .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:.7rem .9rem;
@@ -384,10 +384,10 @@
               <img src="images/model/tarryn-taylor-model-03-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-03-800.jpg 800w, images/model/tarryn-taylor-model-03-1600.jpg 1600w, images/model/tarryn-taylor-model-03-2400.jpg 2400w"
                    width="1080" height="1620" loading="eager" decoding="async"
-                   alt="Close-up of a model in blue-tinted sunglasses and a suit, lit in cool blue tones.">
+                   alt="Close-up of a model in dark sunglasses and a satin blue shirt, lit in cool blue tones.">
             </picture>
           </figure>
-          <figure class="shot">
+          <figure class="shot" style="--ar:1.0000">
             <picture>
               <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-04-800.webp 800w, images/model/tarryn-taylor-model-04-1600.webp 1600w, images/model/tarryn-taylor-model-04-2400.webp 2400w">
               <img src="images/model/tarryn-taylor-model-04-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
@@ -402,16 +402,16 @@
               <img src="images/model/tarryn-taylor-model-05-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-05-800.jpg 800w, images/model/tarryn-taylor-model-05-1600.jpg 1600w, images/model/tarryn-taylor-model-05-2400.jpg 2400w"
                    width="1080" height="1620" loading="lazy" decoding="async"
-                   alt="Close-up portrait of a model in a green sweater against a warm interior backdrop.">
+                   alt="A model in blue-tinted sunglasses and a suede jacket over a grey suit, in a warm interior.">
             </picture>
           </figure>
-          <figure class="shot">
+          <figure class="shot" style="--ar:0.7494">
             <picture>
               <source type="image/webp" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw" srcset="images/model/tarryn-taylor-model-06-800.webp 800w, images/model/tarryn-taylor-model-06-1600.webp 1600w, images/model/tarryn-taylor-model-06-2400.webp 2400w">
               <img src="images/model/tarryn-taylor-model-06-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-06-800.jpg 800w, images/model/tarryn-taylor-model-06-1600.jpg 1600w, images/model/tarryn-taylor-model-06-2400.jpg 2400w"
                    width="1199" height="1600" loading="lazy" decoding="async"
-                   alt="A model in a black suit seated against stone columns with one hand raised to his head, in black and white.">
+                   alt="A model in a black suit standing between stone columns with one hand raised to his head, in black and white.">
             </picture>
           </figure>
           <figure class="shot">
@@ -420,7 +420,7 @@
               <img src="images/model/tarryn-taylor-model-07-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-07-800.jpg 800w, images/model/tarryn-taylor-model-07-1600.jpg 1600w, images/model/tarryn-taylor-model-07-2400.jpg 2400w"
                    width="1080" height="1620" loading="lazy" decoding="async"
-                   alt="A model reclining in shadow, dramatic light falling across the face.">
+                   alt="A model in a black draped dress and knee boots standing poolside, photographed in black and white.">
             </picture>
           </figure>
           <figure class="shot">
@@ -438,7 +438,7 @@
               <img src="images/model/tarryn-taylor-model-09-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-09-800.jpg 800w, images/model/tarryn-taylor-model-09-1600.jpg 1600w, images/model/tarryn-taylor-model-09-2400.jpg 2400w"
                    width="1080" height="1620" loading="lazy" decoding="async"
-                   alt="A model in a black draped dress and knee boots standing poolside, photographed in black and white.">
+                   alt="A model in a black top with both hands raised behind her head, beside a pool.">
             </picture>
           </figure>
           <figure class="shot">
@@ -465,7 +465,7 @@
               <img src="images/model/tarryn-taylor-model-12-800.jpg" sizes="(min-width:1000px) 33vw, (min-width:560px) 50vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-12-800.jpg 800w, images/model/tarryn-taylor-model-12-1600.jpg 1600w, images/model/tarryn-taylor-model-12-2400.jpg 2400w"
                    width="1080" height="1620" loading="lazy" decoding="async"
-                   alt="A model in a grey suit and tie seated in a mid-century interior.">
+                   alt="A model in a suede jacket over a grey suit and tie, seated in front of bright cartoon paintings.">
             </picture>
           </figure>
         </div>
@@ -759,7 +759,9 @@
       if(prev)prev.disabled=atStart();
       if(next)next.disabled=atEnd();
       if(iEl){
-        var idx=Math.round(strip.scrollLeft/step())+1;
+        /* frames differ in width, so count the frames whose start has scrolled past */
+        var idx=1,o=items[0].offsetLeft;
+        for(var k=1;k<items.length;k++){if(items[k].offsetLeft-o<=strip.scrollLeft+4)idx=k+1;}
         if(!isFinite(idx))idx=1;
         iEl.textContent=Math.min(Math.max(idx,1),items.length);
       }
