@@ -104,6 +104,26 @@
     .nav-links a{font-size:.7rem;letter-spacing:.1em;padding:.25rem 0}
   }
 
+  /* Packages dropdown: <details> so it opens without JS and by keyboard. */
+  .nav-dd{position:relative}
+  .nav-dd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.4em;
+    font-size:var(--t--1);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+    padding:.35rem 0;position:relative;transition:color .3s ease}
+  .nav-dd>summary::-webkit-details-marker{display:none}
+  .nav-dd>summary::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold-ink);transition:width .35s var(--ease)}
+  .nav-dd>summary:hover,.nav-dd[open]>summary,.nav-dd.is-current>summary{color:var(--ink)}
+  .nav-dd>summary:hover::after,.nav-dd.is-current>summary::after{width:100%}
+  .nav-dd-car{width:.8em;height:.8em;fill:none;stroke:currentColor;stroke-width:2;transition:transform .3s ease}
+  .nav-dd[open] .nav-dd-car{transform:rotate(180deg)}
+  .nav-dd-menu{position:absolute;top:calc(100% + .55rem);left:50%;transform:translateX(-50%);z-index:120;
+    min-width:14.5rem;display:flex;flex-direction:column;padding:.45rem 0;
+    background:var(--cream);border:1px solid var(--line);box-shadow:0 14px 34px rgba(21,18,12,.12)}
+  .nav-links .nav-dd-menu a{padding:.6rem 1.15rem;white-space:nowrap;text-align:left}
+  .nav-links .nav-dd-menu a::after{display:none}
+  .nav-links .nav-dd-menu a:hover{background:var(--cream-warm)}
+  .nav-links .nav-dd-menu a[aria-current="page"]{color:var(--ink);box-shadow:inset 2px 0 0 var(--gold-ink)}
+  @media(max-width:640px){.nav-dd>summary{font-size:.7rem;letter-spacing:.1em;padding:.25rem 0}}
+
   /* ── BUTTONS (palette accent — never Wix blue) ── */
   .btn{display:inline-block;padding:.85rem 1.9rem;font-size:var(--t--1);letter-spacing:.16em;
     text-transform:uppercase;font-weight:600;border:1px solid var(--gold-deep);
@@ -309,9 +329,18 @@
     <a class="brand" href="/tarryntaylor/" aria-label="Tarryn Taylor — home">TT</a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/tarryntaylor/">Home</a>
-      <a href="/tarryntaylor/model.html">Model Portfolio</a>
-      <a href="/tarryntaylor/commercial.html" aria-current="page">Commercial</a>
-      <a href="/tarryntaylor/couples.html">Couples</a>
+      <details class="nav-dd is-current">
+        <summary>Packages <svg class="nav-dd-car" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="nav-dd-menu">
+          <a href="/tarryntaylor/model.html">Model Portfolio</a>
+          <a href="/tarryntaylor/commercial.html" aria-current="page">Commercial</a>
+          <a href="/tarryntaylor/couples.html">Couples</a>
+          <a href="/tarryntaylor/contact.html">Real Estate</a>
+          <a href="/tarryntaylor/contact.html">DJs</a>
+          <a href="/tarryntaylor/contact.html">Creatives</a>
+          <a href="/tarryntaylor/contact.html">Tourist Offer</a>
+        </div>
+      </details>
       <a href="/tarryntaylor/about.html">About</a>
       <a href="/tarryntaylor/contact.html">Contact</a>
     </nav>
@@ -559,6 +588,14 @@
     });
     sync();
   });
+})();
+</script>
+<script>
+/* Close the Packages menu on outside click or Escape. */
+(function(){
+  var dd=document.querySelector('.nav-dd');if(!dd)return;
+  document.addEventListener('click',function(e){if(dd.open&&!dd.contains(e.target))dd.open=false;});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dd.open){dd.open=false;dd.querySelector('summary').focus();}});
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c5019272dde4410aa02a64d208900039"}'></script><!-- End Cloudflare Web Analytics -->
