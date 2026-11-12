@@ -45,3 +45,6 @@ pick() { ls "$SRC/$1"/* | sed -n "${2}p"; }
 
 card tarryn-taylor-og-home      "$(pick model 1)" "$(pick model 2)" "$(pick model 3)"
 card tarryn-taylor-og-new-faces "$(ls "$SRC"/hero/tarryn-taylor-new-faces-hero.*)" "$(pick new-faces 1)" "$(pick new-faces 3)"
+card tarryn-taylor-og-artist-dj "$(pick artist-dj 1)" "$(pick artist-dj 2)" "$(pick artist-dj 4)"
+card tarryn-taylor-og-creatives "$(pick creatives 1)" "$(pick creatives 2)" "$(pick creatives 3)"
+card tarryn-taylor-og-wellness  "$(pick wellness 1)" "$(pick wellness 2)" "$(pick wellness 3)"

@@ -315,10 +315,11 @@
           <a href="/tarryntaylor/model.html">Model Portfolio</a>
           <a href="/tarryntaylor/commercial.html">Commercial</a>
           <a href="/tarryntaylor/couples.html">Couples</a>
-          <a href="/tarryntaylor/contact.html">Real Estate</a>
-          <a href="/tarryntaylor/contact.html">DJs</a>
-          <a href="/tarryntaylor/contact.html">Creatives</a>
-          <a href="/tarryntaylor/contact.html">Tourist Offer</a>
+          <a href="/tarryntaylor/artist-dj.html">Artists &amp; DJs</a>
+          <a href="/tarryntaylor/creatives.html">Creatives</a>
+          <a href="/tarryntaylor/wellness.html">Wellness &amp; Business</a>
+          <a href="/tarryntaylor/contact.html?s=real-estate#enquiry">Real Estate</a>
+          <a href="/tarryntaylor/contact.html?s=tourist#enquiry">Tourist Offer</a>
         </div>
       </details>
       <a href="/tarryntaylor/about.html">About</a>
@@ -394,10 +395,11 @@
             <option>Creative direction &amp; posing</option>
             <option>Commercial / brand shoot</option>
             <option data-min="6500" data-label="Wedding couple portraits">Wedding couple portraits</option>
-            <option>Real estate</option>
-            <option>DJ shoot</option>
-            <option>Creative portraits</option>
-            <option>Tourist shoot</option>
+            <option data-s="real-estate">Real estate</option>
+            <option data-s="dj">Artist / DJ shoot</option>
+            <option data-s="creative">Creative portraits</option>
+            <option data-s="wellness">Wellness / business portraits</option>
+            <option data-s="tourist">Tourist shoot</option>
             <option>Something else</option>
           </select>
         </div>
@@ -551,5 +553,14 @@
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c5019272dde4410aa02a64d208900039"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+/* Preselect the service when a package page links here with ?s=… */
+(function(){
+  var m=/[?&]s=([a-z-]+)/.exec(location.search),sel=document.getElementById("enq-service");
+  if(!m||!sel)return;
+  var o=sel.querySelector('option[data-s="'+m[1]+'"]');
+  if(o){sel.value=o.value;sel.dispatchEvent(new Event("change",{bubbles:true}));}
+})();
+</script>
 </body>
 </html>
