@@ -55,8 +55,11 @@ SLOTS=(
   "hero|tarryn-taylor-hero|native|$Q_HERO|0|center"
   "model|tarryn-taylor-model|native|$Q_GALLERY|12|center"
   "commercial|tarryn-taylor-commercial|native|$Q_GALLERY|9|center"
-  "couples|tarryn-taylor-couples|native|$Q_GALLERY|15|center"
+  "couples|tarryn-taylor-couples|native|$Q_GALLERY|18|center"
   "new-faces|tarryn-taylor-new-faces|native|$Q_GALLERY|4|center"
+  "artist-dj|tarryn-taylor-artist-dj|native|$Q_GALLERY|4|center"
+  "creatives|tarryn-taylor-creatives|native|$Q_GALLERY|20|center"
+  "wellness|tarryn-taylor-wellness|native|$Q_GALLERY|4|center"
   "og|tarryn-taylor-og|1200:630|$Q_HERO|0|north"
 )
 
@@ -95,6 +98,8 @@ built=0; missing=0; warned=0; underres=0
 
 for g in "${SLOTS[@]}"; do
   IFS='|' read -r folder prefix aspect quality expected grav <<< "$g"
+  # ONLY="a b" limits the run to those folders (others are left untouched)
+  if [ -n "${ONLY:-}" ] && [[ " $ONLY " != *" $folder "* ]]; then continue; fi
   : "${grav:=center}"
   sdir="$SRC/$folder"
   odir="$OUT/$folder"
