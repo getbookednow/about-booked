@@ -150,17 +150,29 @@
     font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.05rem,2.4vw,1.6rem);
     letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
   .hero-cta{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-  .hero-pk{list-style:none;margin:2.4rem auto 0;max-width:980px;display:grid;grid-template-columns:1fr;
-    border:1px solid var(--line)}
-  @media(min-width:700px){.hero-pk{grid-template-columns:repeat(3,1fr)}}
-  .hero-pk li+li{border-top:1px solid var(--line)}
-  @media(min-width:700px){.hero-pk li+li{border-top:0;border-left:1px solid var(--line)}}
-  .hero-pk a{display:flex;flex-direction:column;gap:.35rem;padding:1rem 1.1rem;height:100%;transition:background .3s ease}
-  .hero-pk a:hover{background:var(--cream-warm)}
+  /* Packages as a price list: no box, hairline rules, name left / price right.
+     Phones: one row per package. 700px+: three columns, price pinned to the foot. */
+  .hero-pk{list-style:none;margin:2.6rem auto 0;max-width:980px;display:grid;grid-template-columns:1fr;
+    text-align:left;border-bottom:1px solid var(--line)}
+  .hero-pk li{border-top:1px solid var(--line)}
+  .hero-pk a{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:.4rem 1.2rem;
+    padding:1.15rem .2rem;height:100%;transition:background .3s ease}
   .hero-pk-t{font-family:"Playfair Display",Georgia,serif;font-size:var(--t-1);color:var(--ink);line-height:1.2}
-  .hero-pk-d{font-size:.9rem;line-height:1.5;color:var(--ink-soft);flex:1}
-  .hero-pk-p{font-size:var(--t--1);letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold-ink)}
-  .hero-fast{margin-top:.9rem;font-size:.95rem;color:var(--ink-soft)}
+  .hero-pk-p{font-size:var(--t--1);letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold-ink);white-space:nowrap;grid-column:2;grid-row:1}
+  .hero-pk-d{grid-column:1/-1;font-size:.9rem;line-height:1.55;color:var(--ink-soft);max-width:46ch}
+  .hero-pk-go{grid-column:1/-1;font-size:var(--t--1);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+    margin-top:.2rem;display:inline-flex;gap:.5em;align-items:center}
+  .hero-pk-go::after{content:"\2192";transition:transform .3s var(--ease)}
+  .hero-pk a:hover{background:var(--cream-warm)}
+  .hero-pk a:hover .hero-pk-go::after{transform:translateX(4px)}
+  @media(min-width:700px){
+    .hero-pk{grid-template-columns:repeat(3,1fr);gap:0 2rem;border-bottom:0}
+    .hero-pk li{border-top:1px solid var(--gold-ink)}
+    .hero-pk a{grid-template-columns:1fr;grid-template-rows:auto 1fr auto auto;padding:1.2rem .2rem 1rem}
+    .hero-pk-p{grid-column:1;grid-row:3;margin-top:.6rem}
+    .hero-pk-d{grid-row:2}
+  }
+  .hero-fast{margin-top:1.1rem;font-size:.9rem;color:var(--ink-soft);text-align:center}
 
   /* ── SECTIONS ── */
   .sec{padding:clamp(3.5rem,9vw,7rem) 0}
@@ -510,9 +522,9 @@
           <a class="btn btn-ghost" href="#work">View Portfolio</a>
         </div>
         <ul class="hero-pk" id="bookings" aria-label="Packages">
-          <li><a href="/tarryntaylor/contact.html?s=test#enquiry"><span class="hero-pk-t">Book Your Test Shoot</span><span class="hero-pk-d">Agency-ready portfolios. High-end editorial imagery designed to get you booked.</span><span class="hero-pk-p">From R2500</span></a></li>
-          <li><a href="/tarryntaylor/contact.html?s=digitals#enquiry"><span class="hero-pk-t">Digitals &amp; Polaroids</span><span class="hero-pk-d">The industry standard. Raw, unedited, and authentic captures for agency submissions.</span><span class="hero-pk-p">From R1000</span></a></li>
-          <li><a href="/tarryntaylor/contact.html?s=direction#enquiry"><span class="hero-pk-t">Creative Direction &amp; Posing</span><span class="hero-pk-d">Expert guidance on movement, angles, and confidence behind the lens.</span><span class="hero-pk-p">Inquire for Rates</span></a></li>
+          <li><a href="/tarryntaylor/contact.html?s=test#enquiry"><span class="hero-pk-t">Test Shoots</span><span class="hero-pk-d">Agency-ready portfolios. High-end editorial imagery designed to get you booked.</span><span class="hero-pk-p">From R2500</span><span class="hero-pk-go" aria-hidden="true">Enquire</span></a></li>
+          <li><a href="/tarryntaylor/contact.html?s=digitals#enquiry"><span class="hero-pk-t">Digitals &amp; Polaroids</span><span class="hero-pk-d">The industry standard. Raw, unedited, and authentic captures for agency submissions.</span><span class="hero-pk-p">From R1000</span><span class="hero-pk-go" aria-hidden="true">Enquire</span></a></li>
+          <li><a href="/tarryntaylor/contact.html?s=direction#enquiry"><span class="hero-pk-t">Creative Direction &amp; Posing</span><span class="hero-pk-d">Expert guidance on movement, angles, and confidence behind the lens.</span><span class="hero-pk-p">On enquiry</span><span class="hero-pk-go" aria-hidden="true">Enquire</span></a></li>
         </ul>
         <p class="hero-fast">Rapid delivery: same-day turnarounds or within 24&ndash;48 hours.</p>
       </div>
@@ -732,7 +744,7 @@
         "@type":"OfferCatalog",
         "name":"Photography services",
         "itemListElement":[
-          {"@type":"Offer","name":"Book Your Test Shoot","description":"Agency-ready portfolios. High-end editorial imagery designed to get you booked.","price":"2500","priceCurrency":"ZAR","priceSpecification":{"@type":"PriceSpecification","minPrice":"2500","priceCurrency":"ZAR"}},
+          {"@type":"Offer","name":"Test Shoots","description":"Agency-ready portfolios. High-end editorial imagery designed to get you booked.","price":"2500","priceCurrency":"ZAR","priceSpecification":{"@type":"PriceSpecification","minPrice":"2500","priceCurrency":"ZAR"}},
           {"@type":"Offer","name":"Digitals & Polaroids","description":"The industry standard. Raw, unedited, and authentic captures for agency submissions.","price":"1000","priceCurrency":"ZAR","priceSpecification":{"@type":"PriceSpecification","minPrice":"1000","priceCurrency":"ZAR"}},
           {"@type":"Offer","name":"Creative Direction & Posing","description":"Expert guidance on movement, angles, and confidence behind the lens."},
           {"@type":"Offer","name":"Wedding Couple Portraits — The Editorial","description":"One hour, one location, 15 edited images. An editorial portrait session for brides and grooms in their wedding attire, before or after the wedding day.","price":"6500","priceCurrency":"ZAR"},
