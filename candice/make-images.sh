@@ -37,9 +37,9 @@ if [[ "${1:-}" == "--placeholders" ]]; then
   for s in $SLOTS; do
     IFS=: read slot rw rh <<<"$s"
     tmp=$(mktemp -t ph).png
-    magick -size 1600x$(( 1600 * rh / rw )) gradient:'#2a2140-#16112a' \
-      -gravity center -fill '#C8A96E' -font /System/Library/Fonts/Supplemental/Arial.ttf -pointsize 64 \
-      -annotate +0-40 "IMAGE FROM CANDICE" -pointsize 48 -fill '#a98fe0' \
+    magick -size 1600x$(( 1600 * rh / rw )) gradient:'#E9E0D4-#D3C4B1' \
+      -gravity center -fill '#7E5F37' -font /System/Library/Fonts/Supplemental/Arial.ttf -pointsize 64 \
+      -annotate +0-40 "IMAGE FROM CANDICE" -pointsize 48 -fill '#6E5F54' \
       -annotate +0+50 "$slot" "$tmp"
     build "$tmp" "$slot" "$rw" "$rh"; rm -f "$tmp"
   done

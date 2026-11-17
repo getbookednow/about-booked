@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en-ZA" class="theme-dark">
+<html lang="en-ZA" class="theme-light">
 <!--
-  Theme: "theme-dark" is the Booked. look (default). The open design question
-  (lighter feel for brides) is answered by switching the class above to
-  "theme-light" — same fonts, spacing and gold, warm off-white background.
-  Use one or the other site-wide; never mix.
+  Direction: "Cape light, editorial" (17 Nov 2026). Warm ivory page, one deep
+  umber band for commercial work. To show Candice the dark Booked alternative,
+  change the class above to "theme-dark". Use one or the other; never mix.
 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
 <title>Candice Kuit | Bridal &amp; Editorial Hair and Makeup Artist, Cape Town</title>
 <meta name="description" content="Cape Town hair and makeup artist Candice Kuit. Skin-first soft glam for brides, plus editorial and campaign work. Represented by One League.">
 <meta name="author" content="Candice Kuit">
-<meta name="theme-color" content="#0e0a1a">
+<meta name="theme-color" content="#F6F1EA">
 <meta name="robots" content="noai, noimageai">
 <meta name="tdm-reservation" content="1">
 <link rel="license" href="https://bookednow.co.za/candice/#rights">
 <link rel="canonical" href="https://bookednow.co.za/candice/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e0a1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='40' fill='%23C8A96E'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23F6F1EA'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='40' fill='%237E5F37'%3EC%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Candice Kuit">
@@ -84,180 +84,192 @@
 </script>
 
 <style>
+/* ── Cape light (default) ─────────────────────────────────────────────── */
+:root,.theme-light{
+  --bg:#F6F1EA;          /* warm ivory */
+  --alt:#EDE4D8;         /* sand */
+  --text:#2A211C;        /* espresso */
+  --muted:#6E5F54;       /* taupe, one step deeper than #7D6E62 so it passes 4.5:1 on sand */
+  --gold:#B8976A;        /* champagne: hairlines, button fill, labels on dark */
+  --gold-ink:#7E5F37;    /* champagne darkened for small text on ivory/sand (5.2:1) */
+  --gold-hover:#A6845A;
+  --line:rgba(184,151,106,.45);
+  --band:#1E1915;        /* deep umber, commercial band only */
+  --band-text:#F6F1EA;
+  --band-muted:#B9AC9F;
+  --band-line:rgba(184,151,106,.35);
+  --nav-bg:rgba(246,241,234,.82);
+  --ph:#E6DDD1;
+  --flag:#a8432c;
+}
+/* ── Dark Booked alternative, for Candice's A/B only ──────────────────── */
+.theme-dark{
+  --bg:#0e0a1a; --alt:#151027; --text:#f0ede8; --muted:rgba(240,237,232,.66);
+  --gold:#C8A96E; --gold-ink:#C8A96E; --gold-hover:#e2c98a; --line:rgba(200,169,110,.28);
+  --band:#07050f; --band-text:#f0ede8; --band-muted:rgba(240,237,232,.62); --band-line:rgba(200,169,110,.25);
+  --nav-bg:rgba(14,10,26,.72); --ph:#1b1530; --flag:#ffb4a2;
+}
+.theme-dark body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60vmax 50vmax at 12% -10%,rgba(124,92,214,.22),transparent 60%),
+             radial-gradient(50vmax 45vmax at 95% 105%,rgba(169,143,224,.12),transparent 60%);
+}
+.theme-dark .hero h1 em{color:#a98fe0}
+
 :root{
-  --void:#0e0a1a;
-  --surface:rgba(255,255,255,.025);
-  --text:#f0ede8;
-  --muted:rgba(240,237,232,.62);
-  --line:rgba(200,169,110,.28);
-  --gold:#C8A96E;
-  --gold-hover:#e2c98a;
-  --violet:#a98fe0;
-  --on-gold:#0e0a1a;
-  --glow-a:rgba(124,92,214,.22);
-  --glow-b:rgba(169,143,224,.12);
-  --nav-bg:rgba(14,10,26,.72);
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
-  --gutter:clamp(20px,5vw,64px);
-  --maxw:1240px;
+  --gutter:clamp(16px,5vw,64px);
+  --maxw:1280px;
+  --gap:10px;
 }
-/* Optional warm, lighter bridal feel. Same fonts, spacing and gold. */
-.theme-light{
-  --void:#f6f1ea;
-  --surface:rgba(40,28,20,.03);
-  --text:#2a2320;
-  --muted:rgba(42,35,32,.66);
-  --line:rgba(160,128,70,.35);
-  --gold:#9c7b3e;        /* darkened gold: #C8A96E fails contrast on off-white */
-  --gold-hover:#7f6230;
-  --violet:#7a5fb8;
-  --on-gold:#f6f1ea;
-  --glow-a:rgba(200,169,110,.14);
-  --glow-b:rgba(169,143,224,.08);
-  --nav-bg:rgba(246,241,234,.8);
-}
-
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{
-  margin:0;background:var(--void);color:var(--text);
-  font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-body::before{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(60vmax 50vmax at 12% -10%,var(--glow-a),transparent 60%),
-    radial-gradient(50vmax 45vmax at 95% 105%,var(--glow-b),transparent 60%);
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
-.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--gold);color:var(--on-gold);padding:8px 14px;text-decoration:none}
+:focus-visible{outline:1px solid var(--gold-ink);outline-offset:4px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;background:var(--text);color:var(--bg);padding:8px 14px;text-decoration:none}
 .skip:focus{left:8px}
 
-/* type */
-h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.08;margin:0;letter-spacing:-.01em}
-h1{font-size:clamp(52px,7vw,96px)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.06;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(56px,9vw,128px);letter-spacing:-.02em}
 h2{font-size:clamp(32px,4vw,56px)}
 h3{font-size:clamp(22px,2.2vw,28px);font-weight:400}
 p{margin:0 0 1.1em;max-width:62ch}
-.label{
-  display:block;font-family:var(--sans);font-size:10px;font-weight:400;
-  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:0 0 20px;
-}
-em.v{font-style:italic;color:var(--violet)}
-.rule{border:0;height:1px;background:var(--line);margin:0}
+.label{display:block;font:400 10px/1.4 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold-ink);margin:0 0 20px}
 
-/* draft-only markers — remove every one before launch */
-.confirm{
-  display:inline-block;font:400 10px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;
-  color:#ffb4a2;border:1px dashed #ffb4a2;padding:2px 6px;margin-left:6px;vertical-align:middle;
-}
-.theme-light .confirm{color:#b3412a;border-color:#b3412a}
-.draft-flag{
-  position:fixed;bottom:12px;right:12px;z-index:60;
-  font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;
-  background:#ffb4a2;color:#0e0a1a;padding:8px 12px;
-}
+/* draft-only markers: remove every one before launch */
+.confirm{display:inline-block;font:400 10px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--flag);border:1px dashed currentColor;padding:2px 6px;margin-left:6px;vertical-align:middle}
+.band .confirm{color:#ffb4a2}
+.draft-flag{position:fixed;bottom:12px;right:12px;z-index:60;font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:#a8432c;color:#F6F1EA;padding:8px 12px}
 
 /* nav */
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  background:var(--nav-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--nav-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-family:var(--serif);font-size:20px;font-weight:400;text-decoration:none;white-space:nowrap}
+.brand{font-family:var(--serif);font-size:21px;font-weight:400;text-decoration:none;white-space:nowrap}
 .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:clamp(16px,3vw,36px)}
 .nav ul a{font-size:10px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--muted);transition:color .2s}
-.nav ul a:hover{color:var(--gold)}
+.nav ul a:hover{color:var(--gold-ink)}
 @media (max-width:479px){.brand{display:none}.nav-in{justify-content:center}}
 
-/* layout */
-section{padding:clamp(88px,12vw,160px) 0}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+section{padding:clamp(88px,12vw,160px) 0}
 .head{margin-bottom:clamp(40px,6vw,72px);max-width:760px}
 .head h2{margin-bottom:28px}
 .head p{color:var(--muted)}
 
-/* hero */
-.hero{position:relative;min-height:100svh;padding:0;display:flex;align-items:flex-end;overflow:hidden}
-.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,10,26,0) 35%,rgba(14,10,26,.55) 65%,rgba(14,10,26,.92) 100%)}
-.hero-copy{position:relative;z-index:1;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter) clamp(48px,9vh,96px);color:#f0ede8}
-.hero h1{margin:0 0 14px}
-.hero .role{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#C8A96E;margin:0 0 22px}
-.hero .spec{font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);font-weight:300;line-height:1.3;margin:0 0 36px;max-width:28ch}
-.hero .spec em.v{color:#a98fe0}
-
+/* buttons */
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;
-  font:400 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
-  border:1px solid var(--gold);transition:background .2s,color .2s,border-color .2s;
-}
-.btn-solid{background:var(--gold);color:var(--on-gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;font:400 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);transition:background .2s,color .2s,border-color .2s}
+.btn-solid{background:var(--gold);color:#2A211C}
 .btn-solid:hover{background:var(--gold-hover);border-color:var(--gold-hover)}
-.btn-line{color:var(--gold)}
-.btn-line:hover{color:var(--gold-hover);border-color:var(--gold-hover)}
-.hero .btn-solid{background:#C8A96E;border-color:#C8A96E;color:#0e0a1a}
-.hero .btn-solid:hover{background:#e2c98a;border-color:#e2c98a}
-.hero .btn-line{color:#C8A96E;border-color:#C8A96E}
-.hero .btn-line:hover{color:#e2c98a;border-color:#e2c98a}
+.btn-line{color:var(--text)}
+.btn-line:hover{border-color:var(--text)}
+.band .btn-line{color:var(--band-text)}
+.band .btn-line:hover{border-color:var(--band-text)}
 
-/* grids */
-.grid{display:grid;gap:clamp(10px,1.6vw,20px);grid-template-columns:repeat(2,1fr)}
-@media (min-width:1024px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-.grid figure{margin:0}
-.grid img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--surface)}
-.credit{font-size:11px;letter-spacing:.04em;color:var(--muted);margin-top:10px;line-height:1.5}
-@media (max-width:479px){.grid-ed{grid-template-columns:1fr}}
+/* 1. hero: full-bleed image, name below on ivory (works whatever the image) */
+.hero{padding:0}
+.hero-img{display:block;height:min(64svh,960px);background:var(--ph);overflow:hidden}
+/* desktop: leave room for the name below so it is always above the fold */
+@media (min-width:768px){.hero-img{height:max(420px,calc(100svh - 290px))}}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-copy{padding-top:clamp(28px,4vw,56px);padding-bottom:clamp(40px,6vw,72px);display:grid;gap:20px 64px;align-items:end}
+@media (min-width:900px){.hero-copy{grid-template-columns:auto minmax(0,1fr)}.hero h1{white-space:nowrap}.spec{margin-bottom:20px}}
+.hero h1{margin:0}
+.hero h1 em{font-style:italic}
+.role{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-ink);margin:14px 0 0}
+.spec{font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.3;margin:0 0 24px;max-width:26ch}
 
-/* included list */
-.included{margin-top:clamp(56px,7vw,88px);display:grid;gap:40px}
+/* 2. statement */
+.statement{text-align:center;padding:clamp(72px,10vw,140px) 0;border-top:1px solid var(--line)}
+.statement p{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.2vw,58px);line-height:1.15;max-width:20ch;margin:0 auto}
+.statement .label{margin:32px 0 0}
+
+/* 3. bridal: asymmetric grid, one tall beside two stacked, then a row of three */
+.alt{background:var(--alt)}
+.bgrid{display:grid;gap:var(--gap);grid-template-columns:repeat(2,minmax(0,1fr))}
+.bgrid figure{margin:0;background:var(--ph)}
+.bgrid img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.bgrid .b1,.bgrid .b6{grid-column:span 2}
+.bgrid .b1 img{aspect-ratio:4/5}
+.bgrid .b6 img{aspect-ratio:4/3}
+@media (min-width:768px){
+  .bgrid{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .bgrid .b1{grid-column:1 / span 4;grid-row:1 / span 2}
+  .bgrid .b1 img{aspect-ratio:auto}
+  .bgrid .b2,.bgrid .b3{grid-column:5 / span 2}
+  .bgrid .b4,.bgrid .b5,.bgrid .b6{grid-column:span 2}
+  .bgrid .b6 img{aspect-ratio:3/4}
+}
+.included{margin-top:clamp(56px,7vw,88px);display:grid;gap:32px}
 @media (min-width:768px){.included{grid-template-columns:1fr 2fr}}
 .included ul{list-style:none;margin:0;padding:0}
 .included li{padding:16px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .included li:last-child{border-bottom:1px solid var(--line)}
 
-/* selected work */
-.work dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
-.work .row{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;padding:28px 0;border-top:1px solid var(--line)}
-.work .row:last-child{border-bottom:1px solid var(--line)}
-@media (min-width:768px){.work .row{grid-template-columns:220px 1fr;gap:40px}}
-.work dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);padding-top:8px}
-.work dd{margin:0;font-family:var(--serif);font-size:clamp(20px,2vw,26px);line-height:1.45}
-.work dd .sep{color:var(--gold);white-space:pre-wrap}
-.work dd small{display:block;font:300 14px/1.6 var(--sans);color:var(--muted);margin-top:4px}
+/* 4. commercial band (deep umber) */
+.band{background:var(--band);color:var(--band-text)}
+.band .label{color:var(--gold)}
+.band .head p{color:var(--band-muted)}
+.brandline{font:400 11px/2 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--band-muted);margin:0 0 clamp(40px,5vw,64px);max-width:none;padding:18px 0;border-top:1px solid var(--band-line);border-bottom:1px solid var(--band-line)}
+.egrid{display:grid;gap:var(--gap) clamp(10px,1.6vw,20px);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:479px){.egrid{grid-template-columns:minmax(0,1fr)}}
+.egrid figure{margin:0}
+.egrid img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#2a231d}
+.credit{font-size:11px;letter-spacing:.04em;color:var(--band-muted);margin:10px 0 18px;line-height:1.5}
 
-/* about */
+/* 5. credits: text rows, small caps feel, champagne hairlines */
+.credits dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr)}
+.credits .row{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:24px 0;border-top:1px solid var(--line)}
+.credits .row:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:768px){.credits .row{grid-template-columns:200px minmax(0,1fr);gap:40px}}
+.credits dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-ink);padding-top:3px}
+.credits dd{margin:0;font-size:12px;line-height:2;letter-spacing:.16em;text-transform:uppercase}
+.credits dd .sep{color:var(--gold);white-space:pre-wrap}
+.credits dd small{display:block;font-size:13px;letter-spacing:.02em;text-transform:none;color:var(--muted)}
+
+/* 6. testimonials (enabled only when real quotes arrive) */
+.quote{text-align:center}
+.quote blockquote{margin:0 auto;max-width:28ch;font:italic 300 clamp(26px,3.4vw,44px)/1.25 var(--serif)}
+.quote cite{display:block;margin-top:24px;font:400 10px/1 var(--sans);font-style:normal;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-ink)}
+
+/* 7. about, on sand */
 .about-grid{display:grid;gap:clamp(40px,6vw,96px);align-items:center}
 @media (min-width:768px){.about-grid{grid-template-columns:5fr 7fr}}
+.about-grid picture{background:var(--ph)}
 .about-grid img{aspect-ratio:4/5;object-fit:cover;width:100%}
 .about-grid p{font-size:17px}
 
-/* contact */
+/* 8. contact */
 .contact-grid{display:grid;gap:clamp(48px,6vw,80px)}
 @media (min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
-.contact-grid h3{margin-bottom:18px}
-.contact-grid p{color:var(--muted)}
+.route{padding-top:28px;border-top:1px solid var(--gold)}
+.route h3{margin-bottom:14px}
+.route p{color:var(--muted)}
 .lines{list-style:none;padding:0;margin:24px 0 0}
 .lines li{padding:12px 0;border-top:1px solid var(--line);font-size:15px}
-.lines a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
-.lines a:hover{color:var(--gold-hover);border-color:var(--gold-hover)}
-.lines .k{display:inline-block;min-width:96px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.lines a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
+.lines a:hover{border-color:var(--text)}
+.lines .k{display:inline-block;min-width:96px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-ink)}
 .ig{margin-top:clamp(56px,7vw,80px);display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.ig a{text-decoration:none;border-bottom:1px solid var(--line)}
 
 .rights{padding:clamp(56px,7vw,88px) 0;border-top:1px solid var(--line)}
 .rights p{font-size:13px;color:var(--muted);max-width:78ch}
-.rights a{color:var(--gold)}
+.rights a{color:var(--gold-ink)}
 footer{padding:40px 0 56px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-footer a{color:var(--gold);text-decoration:none}
-footer a:hover{color:var(--gold-hover)}
+footer a{color:var(--gold-ink);text-decoration:none}
+
+/* motion: soft fade-in only; content is visible without JS */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
 </style>
 </head>
 <body>
@@ -282,64 +294,78 @@ footer a:hover{color:var(--gold-hover)}
 
   <!-- 1. HERO -->
   <section class="hero" id="top" aria-label="Introduction">
-    <picture>
+    <picture class="hero-img">
       <source type="image/avif" srcset="images/hero-480.avif 480w, images/hero-960.avif 960w, images/hero-1600.avif 1600w" sizes="100vw">
       <source type="image/webp" srcset="images/hero-480.webp 480w, images/hero-960.webp 960w, images/hero-1600.webp 1600w" sizes="100vw">
       <img src="images/hero-960.jpg" srcset="images/hero-480.jpg 480w, images/hero-960.jpg 960w, images/hero-1600.jpg 1600w" sizes="100vw"
            width="1600" height="2000" fetchpriority="high" decoding="async"
-           alt="Bride with soft glam makeup and luminous skin, by Candice Kuit, Cape Town">
+           alt="Bride in golden-hour light with soft glam makeup and luminous skin, by Candice Kuit, Cape Town">
     </picture>
-    <div class="hero-copy">
-      <h1>Candice Kuit</h1>
-      <p class="role">Hair &amp; Makeup Artist · Cape Town</p>
-      <p class="spec">Soft glam bridal and editorial makeup. <em class="v">Skin</em> first.</p>
-      <div class="btns">
-        <a class="btn btn-solid" href="https://wa.me/27794444257?text=Hi%20Candice%2C%20I%27m%20getting%20married%20on%20%5Bdate%5D%20at%20%5Bvenue%5D%20and%20would%20love%20to%20chat%20about%20bridal%20makeup." rel="noopener">Bridal enquiries</a>
-        <a class="btn btn-line" href="https://oneleague.co.za/talent/candice-kuit/" rel="noopener">Commercial bookings</a>
+    <div class="wrap hero-copy">
+      <div>
+        <h1>Candice Kuit</h1>
+        <p class="role">Hair &amp; Makeup Artist · Cape Town</p>
+      </div>
+      <div>
+        <p class="spec">Soft glam bridal and editorial makeup. Skin first, and <em>still you</em>.</p>
+        <div class="btns">
+          <a class="btn btn-solid" href="https://wa.me/27794444257?text=Hi%20Candice%2C%20I%27m%20getting%20married%20on%20%5Bdate%5D%20at%20%5Bvenue%5D%20and%20would%20love%20to%20chat%20about%20bridal%20makeup." rel="noopener">Bridal enquiries</a>
+          <a class="btn btn-line" href="https://oneleague.co.za/talent/candice-kuit/" rel="noopener">Commercial bookings</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. BRIDAL -->
-  <section id="bridal" aria-labelledby="bridal-h">
+  <!-- 2. STATEMENT -->
+  <section class="statement" aria-label="Approach">
+    <div class="wrap">
+      <p class="reveal">Your wedding day isn’t about becoming someone&nbsp;else.</p>
+      <span class="label">Enhance, don’t mask</span>
+    </div>
+  </section>
+
+  <!-- 3. BRIDAL -->
+  <section id="bridal" class="alt" aria-labelledby="bridal-h">
     <div class="wrap">
       <div class="head">
         <span class="label">Bridal · The Makeup Company</span>
-        <h2 id="bridal-h">Your wedding day isn’t about becoming someone else.</h2>
-        <p>Candice works skin-first. The skin is prepared until it is luminous, then definition goes only where it is needed: a little at the eyes, the brows, the lips. The aim is to enhance, not mask, so you still recognise yourself in the mirror and in the photographs years from now.</p>
-        <p>She is especially strong with mature skin, and every look is built to photograph well and to last from the first portrait to the last dance.</p>
+        <h2 id="bridal-h">Luminous skin, then delicate definition.</h2>
+        <p>Candice works skin-first. The skin is prepared until it glows, then definition goes only where it is needed: a little at the eyes, the brows, the lips. You still recognise yourself in the mirror, and in the photographs years from now.</p>
+        <p>She is especially strong with mature skin, works across every skin tone, and builds each look to photograph well and to last from the first portrait to the last dance.</p>
       </div>
 
-      <div class="grid grid-3">
-        <figure><picture>
-          <source type="image/avif" srcset="images/bridal-01-480.avif 480w, images/bridal-01-960.avif 960w, images/bridal-01-1600.avif 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <source type="image/webp" srcset="images/bridal-01-480.webp 480w, images/bridal-01-960.webp 960w, images/bridal-01-1600.webp 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <img src="images/bridal-01-960.jpg" srcset="images/bridal-01-480.jpg 480w, images/bridal-01-960.jpg 960w, images/bridal-01-1600.jpg 1600w" sizes="(min-width:1024px) 30vw, 46vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bride with soft glam makeup and luminous skin, by Candice Kuit, Cape Town">
+      <!-- Image order: natural-light bridal first (b1–b3), range of skin tones early,
+           one mature-skin bride if she has one with permission; glam/retro looks in b4–b6. -->
+      <div class="bgrid">
+        <figure class="b1 reveal"><picture>
+          <source type="image/avif" srcset="images/bridal-01-480.avif 480w, images/bridal-01-960.avif 960w, images/bridal-01-1600.avif 1600w" sizes="(min-width:768px) 62vw, 100vw">
+          <source type="image/webp" srcset="images/bridal-01-480.webp 480w, images/bridal-01-960.webp 960w, images/bridal-01-1600.webp 1600w" sizes="(min-width:768px) 62vw, 100vw">
+          <img src="images/bridal-01-960.jpg" srcset="images/bridal-01-480.jpg 480w, images/bridal-01-960.jpg 960w, images/bridal-01-1600.jpg 1600w" sizes="(min-width:768px) 62vw, 100vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bride in natural light with soft glam makeup and luminous skin, by Candice Kuit, Cape Town">
         </picture></figure>
-        <figure><picture>
-          <source type="image/avif" srcset="images/bridal-02-480.avif 480w, images/bridal-02-960.avif 960w, images/bridal-02-1600.avif 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <source type="image/webp" srcset="images/bridal-02-480.webp 480w, images/bridal-02-960.webp 960w, images/bridal-02-1600.webp 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <img src="images/bridal-02-960.jpg" srcset="images/bridal-02-480.jpg 480w, images/bridal-02-960.jpg 960w, images/bridal-02-1600.jpg 1600w" sizes="(min-width:1024px) 30vw, 46vw" width="960" height="1280" loading="lazy" decoding="async" alt="Close-up of bridal makeup with delicate eye definition and natural skin, by Candice Kuit">
+        <figure class="b2 reveal"><picture>
+          <source type="image/avif" srcset="images/bridal-02-480.avif 480w, images/bridal-02-960.avif 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <source type="image/webp" srcset="images/bridal-02-480.webp 480w, images/bridal-02-960.webp 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <img src="images/bridal-02-960.jpg" srcset="images/bridal-02-480.jpg 480w, images/bridal-02-960.jpg 960w" sizes="(min-width:768px) 31vw, 50vw" width="960" height="1280" loading="lazy" decoding="async" alt="Close-up of bridal makeup with delicate eye definition and natural skin, by Candice Kuit">
         </picture></figure>
-        <figure><picture>
-          <source type="image/avif" srcset="images/bridal-03-480.avif 480w, images/bridal-03-960.avif 960w, images/bridal-03-1600.avif 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <source type="image/webp" srcset="images/bridal-03-480.webp 480w, images/bridal-03-960.webp 960w, images/bridal-03-1600.webp 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <img src="images/bridal-03-960.jpg" srcset="images/bridal-03-480.jpg 480w, images/bridal-03-960.jpg 960w, images/bridal-03-1600.jpg 1600w" sizes="(min-width:1024px) 30vw, 46vw" width="960" height="1280" loading="lazy" decoding="async" alt="Mature bride with soft, skin-first wedding makeup, by Candice Kuit, Cape Town">
+        <figure class="b3 reveal"><picture>
+          <source type="image/avif" srcset="images/bridal-03-480.avif 480w, images/bridal-03-960.avif 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <source type="image/webp" srcset="images/bridal-03-480.webp 480w, images/bridal-03-960.webp 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <img src="images/bridal-03-960.jpg" srcset="images/bridal-03-480.jpg 480w, images/bridal-03-960.jpg 960w" sizes="(min-width:768px) 31vw, 50vw" width="960" height="1280" loading="lazy" decoding="async" alt="Mature bride with soft, skin-first wedding makeup, by Candice Kuit, Cape Town">
         </picture></figure>
-        <figure><picture>
-          <source type="image/avif" srcset="images/bridal-04-480.avif 480w, images/bridal-04-960.avif 960w, images/bridal-04-1600.avif 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <source type="image/webp" srcset="images/bridal-04-480.webp 480w, images/bridal-04-960.webp 960w, images/bridal-04-1600.webp 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <img src="images/bridal-04-960.jpg" srcset="images/bridal-04-480.jpg 480w, images/bridal-04-960.jpg 960w, images/bridal-04-1600.jpg 1600w" sizes="(min-width:1024px) 30vw, 46vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bridal hair and makeup with soft glam finish, by Candice Kuit">
+        <figure class="b4 reveal"><picture>
+          <source type="image/avif" srcset="images/bridal-04-480.avif 480w, images/bridal-04-960.avif 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <source type="image/webp" srcset="images/bridal-04-480.webp 480w, images/bridal-04-960.webp 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <img src="images/bridal-04-960.jpg" srcset="images/bridal-04-480.jpg 480w, images/bridal-04-960.jpg 960w" sizes="(min-width:768px) 31vw, 50vw" width="960" height="1280" loading="lazy" decoding="async" alt="Editorial bridal look with veil and sculpted gown, makeup by Candice Kuit">
         </picture></figure>
-        <figure><picture>
-          <source type="image/avif" srcset="images/bridal-05-480.avif 480w, images/bridal-05-960.avif 960w, images/bridal-05-1600.avif 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <source type="image/webp" srcset="images/bridal-05-480.webp 480w, images/bridal-05-960.webp 960w, images/bridal-05-1600.webp 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <img src="images/bridal-05-960.jpg" srcset="images/bridal-05-480.jpg 480w, images/bridal-05-960.jpg 960w, images/bridal-05-1600.jpg 1600w" sizes="(min-width:1024px) 30vw, 46vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bride photographed in natural light wearing luminous, long-wear makeup by Candice Kuit">
+        <figure class="b5 reveal"><picture>
+          <source type="image/avif" srcset="images/bridal-05-480.avif 480w, images/bridal-05-960.avif 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <source type="image/webp" srcset="images/bridal-05-480.webp 480w, images/bridal-05-960.webp 960w" sizes="(min-width:768px) 31vw, 50vw">
+          <img src="images/bridal-05-960.jpg" srcset="images/bridal-05-480.jpg 480w, images/bridal-05-960.jpg 960w" sizes="(min-width:768px) 31vw, 50vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bridal glam with retro waves and soft pink tones, hair and makeup by Candice Kuit">
         </picture></figure>
-        <figure><picture>
-          <source type="image/avif" srcset="images/bridal-06-480.avif 480w, images/bridal-06-960.avif 960w, images/bridal-06-1600.avif 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <source type="image/webp" srcset="images/bridal-06-480.webp 480w, images/bridal-06-960.webp 960w, images/bridal-06-1600.webp 1600w" sizes="(min-width:1024px) 30vw, 46vw">
-          <img src="images/bridal-06-960.jpg" srcset="images/bridal-06-480.jpg 480w, images/bridal-06-960.jpg 960w, images/bridal-06-1600.jpg 1600w" sizes="(min-width:1024px) 30vw, 46vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bridal portrait with soft glam makeup and defined brows, by Candice Kuit, Cape Town">
+        <figure class="b6 reveal"><picture>
+          <source type="image/avif" srcset="images/bridal-06-480.avif 480w, images/bridal-06-960.avif 960w, images/bridal-06-1600.avif 1600w" sizes="(min-width:768px) 31vw, 100vw">
+          <source type="image/webp" srcset="images/bridal-06-480.webp 480w, images/bridal-06-960.webp 960w, images/bridal-06-1600.webp 1600w" sizes="(min-width:768px) 31vw, 100vw">
+          <img src="images/bridal-06-960.jpg" srcset="images/bridal-06-480.jpg 480w, images/bridal-06-960.jpg 960w, images/bridal-06-1600.jpg 1600w" sizes="(min-width:768px) 31vw, 100vw" width="960" height="1280" loading="lazy" decoding="async" alt="Bridal portrait on the Cape coast with soft glam makeup, by Candice Kuit">
         </picture></figure>
       </div>
 
@@ -359,10 +385,8 @@ footer a:hover{color:var(--gold-hover)}
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- 3. EDITORIAL & COMMERCIAL -->
-  <section id="work" aria-labelledby="work-h">
+  <!-- 4. COMMERCIAL BAND -->
+  <section id="work" class="band" aria-labelledby="work-h">
     <div class="wrap">
       <div class="head">
         <span class="label">Editorial &amp; commercial</span>
@@ -370,27 +394,28 @@ footer a:hover{color:var(--gold-hover)}
         <p>The same skin-first discipline, adjusted for camera, lighting and a production schedule. Commercial bookings go through One League Creative Management.</p>
         <p><span class="confirm">Only images Candice confirms she may use</span></p>
       </div>
+      <p class="brandline">Adidas · Timberland · Unilever · Glamour · Essie · Orlebar Brown · Superbalist · Ace &amp; Tate</p>
 
-      <div class="grid grid-ed">
-        <figure><picture>
+      <div class="egrid">
+        <figure class="reveal"><picture>
           <source type="image/avif" srcset="images/editorial-01-480.avif 480w, images/editorial-01-960.avif 960w, images/editorial-01-1600.avif 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <source type="image/webp" srcset="images/editorial-01-480.webp 480w, images/editorial-01-960.webp 960w, images/editorial-01-1600.webp 1600w" sizes="(min-width:480px) 46vw, 92vw">
-          <img src="images/editorial-01-960.jpg" srcset="images/editorial-01-480.jpg 480w, images/editorial-01-960.jpg 960w, images/editorial-01-1600.jpg 1600w" sizes="(min-width:480px) 46vw, 92vw" width="960" height="1280" loading="lazy" decoding="async" alt="Editorial beauty makeup by Candice Kuit [CONFIRM: describe image]">
+          <img src="images/editorial-01-960.jpg" srcset="images/editorial-01-480.jpg 480w, images/editorial-01-960.jpg 960w, images/editorial-01-1600.jpg 1600w" sizes="(min-width:480px) 46vw, 92vw" width="960" height="1280" loading="lazy" decoding="async" alt="Close-up beauty makeup on a dark background by Candice Kuit [CONFIRM: describe image]">
         </picture>
         <figcaption class="credit">Photographer: [Name] · Talent: [Name] · Client: [Brand] <span class="confirm">From Candice</span></figcaption></figure>
-        <figure><picture>
+        <figure class="reveal"><picture>
           <source type="image/avif" srcset="images/editorial-02-480.avif 480w, images/editorial-02-960.avif 960w, images/editorial-02-1600.avif 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <source type="image/webp" srcset="images/editorial-02-480.webp 480w, images/editorial-02-960.webp 960w, images/editorial-02-1600.webp 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <img src="images/editorial-02-960.jpg" srcset="images/editorial-02-480.jpg 480w, images/editorial-02-960.jpg 960w, images/editorial-02-1600.jpg 1600w" sizes="(min-width:480px) 46vw, 92vw" width="960" height="1280" loading="lazy" decoding="async" alt="Fashion editorial hair and makeup by Candice Kuit [CONFIRM: describe image]">
         </picture>
         <figcaption class="credit">Photographer: [Name] · Talent: [Name] · Client: [Brand] <span class="confirm">From Candice</span></figcaption></figure>
-        <figure><picture>
+        <figure class="reveal"><picture>
           <source type="image/avif" srcset="images/editorial-03-480.avif 480w, images/editorial-03-960.avif 960w, images/editorial-03-1600.avif 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <source type="image/webp" srcset="images/editorial-03-480.webp 480w, images/editorial-03-960.webp 960w, images/editorial-03-1600.webp 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <img src="images/editorial-03-960.jpg" srcset="images/editorial-03-480.jpg 480w, images/editorial-03-960.jpg 960w, images/editorial-03-1600.jpg 1600w" sizes="(min-width:480px) 46vw, 92vw" width="960" height="1280" loading="lazy" decoding="async" alt="Campaign hair and makeup by Candice Kuit [CONFIRM: describe image]">
         </picture>
         <figcaption class="credit">Photographer: [Name] · Talent: [Name] · Client: [Brand] <span class="confirm">From Candice</span></figcaption></figure>
-        <figure><picture>
+        <figure class="reveal"><picture>
           <source type="image/avif" srcset="images/editorial-04-480.avif 480w, images/editorial-04-960.avif 960w, images/editorial-04-1600.avif 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <source type="image/webp" srcset="images/editorial-04-480.webp 480w, images/editorial-04-960.webp 960w, images/editorial-04-1600.webp 1600w" sizes="(min-width:480px) 46vw, 92vw">
           <img src="images/editorial-04-960.jpg" srcset="images/editorial-04-480.jpg 480w, images/editorial-04-960.jpg 960w, images/editorial-04-1600.jpg 1600w" sizes="(min-width:480px) 46vw, 92vw" width="960" height="1280" loading="lazy" decoding="async" alt="Beauty campaign makeup by Candice Kuit [CONFIRM: describe image]">
@@ -400,10 +425,8 @@ footer a:hover{color:var(--gold-hover)}
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- 4. SELECTED WORK (text only) -->
-  <section class="work" aria-labelledby="sel-h">
+  <!-- 5. CREDITS (text only) -->
+  <section class="credits" aria-labelledby="sel-h">
     <div class="wrap">
       <div class="head">
         <span class="label">Selected work</span>
@@ -425,32 +448,26 @@ footer a:hover{color:var(--gold-hover)}
         </div>
         <div class="row">
           <dt>Featured in</dt>
-          <dd>SA Weddings<small>“Top 8 Makeup Artists in Cape Town”</small></dd>
-        </div>
-        <div class="row">
-          <dt></dt>
-          <dd>SA Weddings<small>“Top Bridal Makeup Artists in the Western Cape”</small></dd>
+          <dd>SA Weddings<small>“Top 8 Makeup Artists in Cape Town” · “Top Bridal Makeup Artists in the Western Cape”</small></dd>
         </div>
       </dl>
     </div>
   </section>
 
-  <!-- 5. KIND WORDS — left out until real bride quotes arrive. Never use placeholder reviews.
-       When they do, uncomment and fill (2–3 quotes, first name + month/year):
-  <section aria-labelledby="kind-h">
+  <!-- 6. KIND WORDS — off until real bride quotes arrive. Never use placeholder reviews.
+       One quote at a time; uncomment and fill (first name + month/year):
+  <section class="quote" aria-label="Kind words">
     <div class="wrap">
-      <div class="head"><span class="label">Kind words</span><h2 id="kind-h">From her brides.</h2></div>
-      <blockquote><p>“…”</p><footer>— First name, Month Year</footer></blockquote>
+      <span class="label">Kind words</span>
+      <blockquote class="reveal">“…”<cite>First name, Month Year</cite></blockquote>
     </div>
   </section>
   -->
 
-  <hr class="rule">
-
-  <!-- 6. ABOUT -->
-  <section id="about" aria-labelledby="about-h">
+  <!-- 7. ABOUT, on sand -->
+  <section id="about" class="alt" aria-labelledby="about-h">
     <div class="wrap about-grid">
-      <picture>
+      <picture class="reveal">
         <source type="image/avif" srcset="images/portrait-480.avif 480w, images/portrait-960.avif 960w, images/portrait-1600.avif 1600w" sizes="(min-width:768px) 40vw, 92vw">
         <source type="image/webp" srcset="images/portrait-480.webp 480w, images/portrait-960.webp 960w, images/portrait-1600.webp 1600w" sizes="(min-width:768px) 40vw, 92vw">
         <img src="images/portrait-960.jpg" srcset="images/portrait-480.jpg 480w, images/portrait-960.jpg 960w, images/portrait-1600.jpg 1600w" sizes="(min-width:768px) 40vw, 92vw" width="960" height="1200" loading="lazy" decoding="async" alt="Portrait of Candice Kuit, hair and makeup artist, Cape Town">
@@ -465,9 +482,7 @@ footer a:hover{color:var(--gold-hover)}
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- 7. CONTACT — no form; the page collects no client data -->
+  <!-- 8. CONTACT: no form; the page collects no client data -->
   <section id="contact" aria-labelledby="contact-h">
     <div class="wrap">
       <div class="head">
@@ -475,7 +490,7 @@ footer a:hover{color:var(--gold-hover)}
         <h2 id="contact-h">Tell her the date and the venue.</h2>
       </div>
       <div class="contact-grid">
-        <div>
+        <div class="route">
           <h3>Brides</h3>
           <p>Message Candice directly on WhatsApp. The message opens ready to send: just add your date and venue.</p>
           <a class="btn btn-solid" href="https://wa.me/27794444257?text=Hi%20Candice%2C%20I%27m%20getting%20married%20on%20%5Bdate%5D%20at%20%5Bvenue%5D%20and%20would%20love%20to%20chat%20about%20bridal%20makeup." rel="noopener">WhatsApp Candice</a>
@@ -484,7 +499,7 @@ footer a:hover{color:var(--gold-hover)}
             <li><span class="k">Email</span> <span class="confirm">Email address</span></li>
           </ul>
         </div>
-        <div>
+        <div class="route">
           <h3>Commercial</h3>
           <p>Represented by One League Creative Management, Cape Town.</p>
           <a class="btn btn-line" href="https://oneleague.co.za/talent/candice-kuit/" rel="noopener">One League profile</a>
@@ -497,10 +512,8 @@ footer a:hover{color:var(--gold-hover)}
       </div>
       <div class="ig">
         <span class="label" style="margin:0">Instagram</span>
-        <ul class="lines" style="margin:0;display:flex;gap:28px;flex-wrap:wrap">
-          <li style="border:0;padding:0"><a href="https://www.instagram.com/themakeupcompanyy/" rel="noopener">@themakeupcompanyy</a></li>
-          <li style="border:0;padding:0"><a href="https://www.instagram.com/tmc_brides/" rel="noopener">@tmc_brides</a> <span style="color:var(--muted)">· bridal</span></li>
-        </ul>
+        <a href="https://www.instagram.com/themakeupcompanyy/" rel="noopener">@themakeupcompanyy</a>
+        <span><a href="https://www.instagram.com/tmc_brides/" rel="noopener">@tmc_brides</a> <span style="color:var(--muted)">· bridal</span></span>
       </div>
     </div>
   </section>
@@ -518,8 +531,21 @@ footer a:hover{color:var(--gold-hover)}
 <footer>
   <div class="wrap">
     <span>© Candice Kuit · <a href="#rights">Copyright &amp; reuse</a></span>
+    <!-- Logo question open: recommendation is name only, with the small "Tmc" mark here if Candice wants it. -->
     <span>Page by <a href="https://bookednow.co.za/">Booked.</a></span>
   </div>
 </footer>
+
+<script>
+/* Soft fade-in as images scroll in. Progressive: without JS (or IO) everything is visible. */
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
