@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarryn Taylor — Photographer, Portfolio Shoot Director &amp; Model Mentor · Cape Town</title>
-<meta name="description" content="Tarryn Taylor is a photographer, portfolio shoot director and model mentor based in Cape Town, South Africa. Model portfolio, commercial and editorial couples photography.">
+<meta name="description" content="Tarryn Taylor is a photographer, portfolio shoot director and model mentor in Cape Town. Model portfolios, commercial, couples, and portraits for artists, DJs, creatives and business owners.">
 <meta name="author" content="Tarryn Taylor">
 <meta name="theme-color" content="#F4F1EB">
 <link rel="canonical" href="https://bookednow.co.za/tarryntaylor/">
@@ -244,6 +244,16 @@
     .gal-wrap:not(.gal-hero) .gal>.shot:last-child{margin-bottom:0}
     .gal-wrap:not(.gal-hero) .gal-bar,.gal-wrap:not(.gal-hero) .gal-hint{display:none}
   }
+
+  /* Phones: cap the hero strip's height so the name sits on the first screen.
+     Width follows each frame's own aspect, so nothing is cropped. */
+  @media(max-width:559px){
+    .gal-hero .gal>.shot{flex:0 0 calc(min(40svh,82vw * 1.5) * var(--ar))}
+    .hero .gal-wrap{margin-bottom:1.2rem}
+    .gal-hero .gal-hint{display:none}
+    .hero-roles{margin-top:1rem;gap:.1rem;font-size:.95rem}
+    .hero-cta{margin-top:1.2rem}
+  }
   .shot{margin:0;background:var(--placeholder);position:relative;--ar:.6667;aspect-ratio:var(--ar);overflow:hidden}
   .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
   .shot:hover img{transform:scale(1.03)}
@@ -326,6 +336,10 @@
   .foot-nav a:hover{opacity:1;color:var(--gold)}
   .foot-legal{font-size:.85rem;opacity:.7;line-height:1.8}
   .foot-legal a{text-decoration:underline}
+  /* Tap areas: grow the hit box to ~44px without moving the layout */
+  .nav-links>a,.nav-dd>summary,.foot-nav a{position:relative}
+  .nav-links>a::before,.nav-dd>summary::before{content:"";position:absolute;inset:-9px -6px}
+  .foot-nav a::before{content:"";position:absolute;inset:-12px -6px}
 </style>
 </head>
 <body>
@@ -492,13 +506,13 @@
           <span>Model Mentor</span>
         </p>
         <div class="hero-cta">
-          <a class="btn" href="/tarryntaylor/contact.html">Book Your Portfolio Shoot</a>
+          <a class="btn" href="/tarryntaylor/contact.html?s=test#enquiry">Book Your Portfolio Shoot</a>
           <a class="btn btn-ghost" href="#work">View Portfolio</a>
         </div>
         <ul class="hero-pk" id="bookings" aria-label="Packages">
-          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Book Your Test Shoot</span><span class="hero-pk-d">Agency-ready portfolios. High-end editorial imagery designed to get you booked.</span><span class="hero-pk-p">From R2500</span></a></li>
-          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Digitals &amp; Polaroids</span><span class="hero-pk-d">The industry standard. Raw, unedited, and authentic captures for agency submissions.</span><span class="hero-pk-p">From R1000</span></a></li>
-          <li><a href="/tarryntaylor/contact.html#enquiry"><span class="hero-pk-t">Creative Direction &amp; Posing</span><span class="hero-pk-d">Expert guidance on movement, angles, and confidence behind the lens.</span><span class="hero-pk-p">Inquire for Rates</span></a></li>
+          <li><a href="/tarryntaylor/contact.html?s=test#enquiry"><span class="hero-pk-t">Book Your Test Shoot</span><span class="hero-pk-d">Agency-ready portfolios. High-end editorial imagery designed to get you booked.</span><span class="hero-pk-p">From R2500</span></a></li>
+          <li><a href="/tarryntaylor/contact.html?s=digitals#enquiry"><span class="hero-pk-t">Digitals &amp; Polaroids</span><span class="hero-pk-d">The industry standard. Raw, unedited, and authentic captures for agency submissions.</span><span class="hero-pk-p">From R1000</span></a></li>
+          <li><a href="/tarryntaylor/contact.html?s=direction#enquiry"><span class="hero-pk-t">Creative Direction &amp; Posing</span><span class="hero-pk-d">Expert guidance on movement, angles, and confidence behind the lens.</span><span class="hero-pk-p">Inquire for Rates</span></a></li>
         </ul>
         <p class="hero-fast">Rapid delivery: same-day turnarounds or within 24&ndash;48 hours.</p>
       </div>
@@ -530,7 +544,7 @@
   <section class="sec sec-warm" id="work">
     <div class="wrap">
       <p class="kicker">Portfolio</p>
-      <h2 class="sec-h">Three ways to work together.</h2>
+      <h2 class="sec-h">Ways to work together.</h2>
       <p class="sec-lead">Each one is its own shoot, its own rate, and its own page.</p>
 
       <div class="doors">
@@ -540,8 +554,8 @@
               <source type="image/webp" sizes="(min-width:760px) 33vw, 100vw" srcset="images/model/tarryn-taylor-model-01-800.webp 800w, images/model/tarryn-taylor-model-01-1600.webp 1600w">
               <img src="images/model/tarryn-taylor-model-01-800.jpg" sizes="(min-width:760px) 33vw, 100vw"
                    srcset="images/model/tarryn-taylor-model-01-800.jpg 800w, images/model/tarryn-taylor-model-01-1600.jpg 1600w"
-                   width="2400" height="3000" loading="lazy" decoding="async"
-                   alt="A model in a ribbed black long-sleeved dress standing with hands on hips, photographed in black and white.">
+                   width="1080" height="1620" loading="lazy" decoding="async"
+                   alt="A model in a grey suit and tie standing in a mid-century interior, photographed in black and white.">
             </picture>
           </div>
           <div class="door-body">
@@ -557,7 +571,7 @@
               <source type="image/webp" sizes="(min-width:760px) 33vw, 100vw" srcset="images/commercial/tarryn-taylor-commercial-01-800.webp 800w, images/commercial/tarryn-taylor-commercial-01-1600.webp 1600w">
               <img src="images/commercial/tarryn-taylor-commercial-01-800.jpg" sizes="(min-width:760px) 33vw, 100vw"
                    srcset="images/commercial/tarryn-taylor-commercial-01-800.jpg 800w, images/commercial/tarryn-taylor-commercial-01-1600.jpg 1600w"
-                   width="2400" height="3000" loading="lazy" decoding="async"
+                   width="1024" height="1280" loading="lazy" decoding="async"
                    alt="A couple on the beach in black and white, one drinking from a can in sunglasses.">
             </picture>
           </div>
@@ -574,7 +588,7 @@
               <source type="image/webp" sizes="(min-width:760px) 33vw, 100vw" srcset="images/couples/tarryn-taylor-couples-01-800.webp 800w, images/couples/tarryn-taylor-couples-01-1600.webp 1600w">
               <img src="images/couples/tarryn-taylor-couples-01-800.jpg" sizes="(min-width:760px) 33vw, 100vw"
                    srcset="images/couples/tarryn-taylor-couples-01-800.jpg 800w, images/couples/tarryn-taylor-couples-01-1600.jpg 1600w"
-                   width="2400" height="3000" loading="lazy" decoding="async"
+                   width="827" height="1241" loading="lazy" decoding="async"
                    alt="A bride in a long white gown and birdcage veil beside the groom in a black tuxedo, on the rocks at golden hour.">
             </picture>
           </div>
@@ -582,6 +596,57 @@
             <h3>Wedding Couple Portraits</h3>
             <p>Not the wedding day. Just the two of you, in your wedding attire, before or after. From R6500.</p>
             <span class="door-more">View couples work &rarr;</span>
+          </div>
+        </a>
+
+        <a class="door" href="/tarryntaylor/artist-dj.html">
+          <div class="door-img">
+            <picture>
+              <source type="image/webp" sizes="(min-width:760px) 33vw, 100vw" srcset="images/artist-dj/tarryn-taylor-artist-dj-01-800.webp 800w, images/artist-dj/tarryn-taylor-artist-dj-01-1600.webp 1600w">
+              <img src="images/artist-dj/tarryn-taylor-artist-dj-01-800.jpg" sizes="(min-width:760px) 33vw, 100vw"
+                   srcset="images/artist-dj/tarryn-taylor-artist-dj-01-800.jpg 800w, images/artist-dj/tarryn-taylor-artist-dj-01-1600.jpg 1600w"
+                   width="936" height="1404" loading="lazy" decoding="async"
+                   alt="An artist in a black tee, white sling bag and red bandana, shot outdoors in Cape Town.">
+            </picture>
+          </div>
+          <div class="door-body">
+            <h3>Artists &amp; DJs</h3>
+            <p>Images for your press kit, gig posters and socials.</p>
+            <span class="door-more">View artist work &rarr;</span>
+          </div>
+        </a>
+
+        <a class="door" href="/tarryntaylor/creatives.html">
+          <div class="door-img">
+            <picture>
+              <source type="image/webp" sizes="(min-width:760px) 33vw, 100vw" srcset="images/creatives/tarryn-taylor-creatives-01-800.webp 800w, images/creatives/tarryn-taylor-creatives-01-1600.webp 1600w">
+              <img src="images/creatives/tarryn-taylor-creatives-01-800.jpg" sizes="(min-width:760px) 33vw, 100vw"
+                   srcset="images/creatives/tarryn-taylor-creatives-01-800.jpg 800w, images/creatives/tarryn-taylor-creatives-01-1600.jpg 1600w"
+                   width="983" height="1600" loading="lazy" decoding="async"
+                   alt="A creative portrait session by Tarryn Taylor.">
+            </picture>
+          </div>
+          <div class="door-body">
+            <h3>Creatives</h3>
+            <p>Portraits of you and your craft, made in the space where you work.</p>
+            <span class="door-more">View creative work &rarr;</span>
+          </div>
+        </a>
+
+        <a class="door" href="/tarryntaylor/wellness.html">
+          <div class="door-img">
+            <picture>
+              <source type="image/webp" sizes="(min-width:760px) 33vw, 100vw" srcset="images/wellness/tarryn-taylor-wellness-01-800.webp 800w, images/wellness/tarryn-taylor-wellness-01-1600.webp 1600w">
+              <img src="images/wellness/tarryn-taylor-wellness-01-800.jpg" sizes="(min-width:760px) 33vw, 100vw"
+                   srcset="images/wellness/tarryn-taylor-wellness-01-800.jpg 800w, images/wellness/tarryn-taylor-wellness-01-1600.jpg 1600w"
+                   width="1066" height="1600" loading="lazy" decoding="async"
+                   alt="A woman in white seated on a Pilates reformer beside a fig plant.">
+            </picture>
+          </div>
+          <div class="door-body">
+            <h3>Wellness &amp; Business</h3>
+            <p>Personal brand portraits for studio owners, practitioners and founders.</p>
+            <span class="door-more">View business work &rarr;</span>
           </div>
         </a>
       </div>
@@ -593,7 +658,7 @@
       <h2 class="sec-h">Ready for Your Breakthrough?</h2>
       <p class="sec-lead">Whether it&rsquo;s a creative shoot or a 1-on-1 mentorship session, let&rsquo;s unlock the next level of your visual story.</p>
       <p style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a class="btn btn-on-gold" href="/tarryntaylor/contact.html">Get in Contact</a>
+        <a class="btn btn-on-gold" href="/tarryntaylor/contact.html#enquiry">Get in Contact</a>
         <a class="btn btn-on-gold" href="/tarryntaylor/about.html">More about Tarryn</a>
       </p>
     </div>
@@ -623,6 +688,9 @@
     <a href="/tarryntaylor/model.html">Model Portfolio</a>
     <a href="/tarryntaylor/commercial.html">Commercial</a>
     <a href="/tarryntaylor/couples.html">Couples</a>
+    <a href="/tarryntaylor/artist-dj.html">Artists &amp; DJs</a>
+    <a href="/tarryntaylor/creatives.html">Creatives</a>
+    <a href="/tarryntaylor/wellness.html">Wellness &amp; Business</a>
     <a href="/tarryntaylor/about.html">About</a>
     <a href="/tarryntaylor/contact.html">Contact</a>
     <a href="https://www.instagram.com/tarryntaylorphoto/" rel="noopener">Instagram</a>
@@ -668,6 +736,9 @@
           {"@type":"Offer","name":"Digitals & Polaroids","description":"The industry standard. Raw, unedited, and authentic captures for agency submissions.","price":"1000","priceCurrency":"ZAR","priceSpecification":{"@type":"PriceSpecification","minPrice":"1000","priceCurrency":"ZAR"}},
           {"@type":"Offer","name":"Creative Direction & Posing","description":"Expert guidance on movement, angles, and confidence behind the lens."},
           {"@type":"Offer","name":"Wedding Couple Portraits — The Editorial","description":"One hour, one location, 15 edited images. An editorial portrait session for brides and grooms in their wedding attire, before or after the wedding day.","price":"6500","priceCurrency":"ZAR"},
+          {"@type":"Offer","name":"Artist & DJ Portraits","description":"Images for your press kit, gig posters and socials.","url":"https://bookednow.co.za/tarryntaylor/artist-dj.html"},
+          {"@type":"Offer","name":"Creative Portraits","description":"Portraits of you and your craft, made in the space where you work.","url":"https://bookednow.co.za/tarryntaylor/creatives.html"},
+          {"@type":"Offer","name":"Wellness & Business Portraits","description":"Personal brand portraits for studio owners, practitioners and founders.","url":"https://bookednow.co.za/tarryntaylor/wellness.html"},
           {"@type":"Offer","name":"Wedding Couple Portraits — The Signature","description":"Two hours, two locations, 30 edited images. Extended creative session.","price":"10000","priceCurrency":"ZAR"}
         ]
       }
