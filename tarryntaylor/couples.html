@@ -337,6 +337,10 @@
   .foot-nav a:hover{opacity:1;color:var(--gold)}
   .foot-legal{font-size:.85rem;opacity:.7;line-height:1.8}
   .foot-legal a{text-decoration:underline}
+  /* Tap areas: grow the hit box to ~44px without moving the layout */
+  .nav-links>a,.nav-dd>summary,.foot-nav a{position:relative}
+  .nav-links>a::before,.nav-dd>summary::before{content:"";position:absolute;inset:-9px -6px}
+  .foot-nav a::before{content:"";position:absolute;inset:-12px -6px}
 </style>
 </head>
 <body>
@@ -615,6 +619,9 @@
     <a href="/tarryntaylor/model.html">Model Portfolio</a>
     <a href="/tarryntaylor/commercial.html">Commercial</a>
     <a href="/tarryntaylor/couples.html">Couples</a>
+    <a href="/tarryntaylor/artist-dj.html">Artists &amp; DJs</a>
+    <a href="/tarryntaylor/creatives.html">Creatives</a>
+    <a href="/tarryntaylor/wellness.html">Wellness &amp; Business</a>
     <a href="/tarryntaylor/about.html">About</a>
     <a href="/tarryntaylor/contact.html">Contact</a>
     <a href="https://www.instagram.com/tarryntaylorphoto/" rel="noopener">Instagram</a>

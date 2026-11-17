@@ -321,6 +321,10 @@
   .foot-nav a:hover{opacity:1;color:var(--gold)}
   .foot-legal{font-size:.85rem;opacity:.7;line-height:1.8}
   .foot-legal a{text-decoration:underline}
+  /* Tap areas: grow the hit box to ~44px without moving the layout */
+  .nav-links>a,.nav-dd>summary,.foot-nav a{position:relative}
+  .nav-links>a::before,.nav-dd>summary::before{content:"";position:absolute;inset:-9px -6px}
+  .foot-nav a::before{content:"";position:absolute;inset:-12px -6px}
 </style>
 </head>
 <body>
