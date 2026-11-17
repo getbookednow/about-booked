@@ -3,12 +3,13 @@
 # Booked's own pages stay open to AI training crawlers — that is deliberate,
 # the machine layer is part of the product.
 #
-# /tarryntaylor/ and /andemafenuka/ are not Booked's to give away. Those
+# /tarryntaylor/, /andemafenuka/ and /candice/ are not Booked's to give away. Those
 # creatives' work is closed to AI training and data mining, and open to search
 # and citing crawlers so the work stays findable and attributable.
 # Rights statements:
 #   https://bookednow.co.za/tarryntaylor/#rights
 #   https://bookednow.co.za/andemafenuka/#rights
+#   https://bookednow.co.za/candice/#rights
 
 User-agent: *
 Allow: /
@@ -48,6 +49,7 @@ Allow: /
 # parser that substring-matches user agents will apply Applebot's rules to it.
 User-agent: Applebot-Extended
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
@@ -60,66 +62,79 @@ Allow: /
 # parsers take the first matching rule. Leading with Disallow denies under both.
 User-agent: GPTBot
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: ClaudeBot
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: anthropic-ai
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Claude-Web
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Google-Extended
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: CCBot
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Meta-ExternalAgent
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Bytespider
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Amazonbot
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: cohere-ai
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: Diffbot
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: omgili
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
 User-agent: ImagesiftBot
 Disallow: /andemafenuka/
+Disallow: /candice/
 Disallow: /tarryntaylor/
 Allow: /
 
